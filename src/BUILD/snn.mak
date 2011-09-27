@@ -39,7 +39,7 @@ SYMROOT		=  SNN\precomp
 SYMS		= $(SYMROOT).SYM 
 LIBS		= ..\win32\trace.lib snnuni.lib 
 
-OBJS1 = $O\inttypes.obj $O\strtoll.obj $O\wcstoll.obj $O\wcstoull.obj $O\hypot.obj $O\file.obj $O\u64_ldbl.obj \
+OBJS1 = $O\inttypes.obj $O\strtoll.obj $O\wcstoll.obj $O\wcstoull.obj $O\hypot.obj $O\file.obj $O\u64_ldbl.obj $O\ldblullng \
 	$O\wmem.obj $O\math2.obj
 
 DEFINES		= -D_MT -D_MBCS
@@ -331,6 +331,10 @@ $O\dbllng.obj:	..\core32\dbllng.asm
 
 $O\u64_ldbl.obj: ..\core32\u64_ldbl.c
 		$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -o$O\u64_ldbl.obj ..\core32\u64_ldbl.c
+
+
+$O\ldblullng.obj: ..\core32\ldblullng.c
+		$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -o$O\ldblullng.obj ..\core32\ldblullng.c
 
 
 $O\double.obj:	..\core32\double.asm

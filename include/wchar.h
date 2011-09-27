@@ -45,8 +45,8 @@ typedef unsigned short wchar_t;
 typedef wchar_t wint_t;
 struct tm;
 
-#define WCHAR_MIN	(wchar_t)0
-#define WCHAR_MAX	(wchar_t)0xFFFF
+#define WCHAR_MIN	0
+#define WCHAR_MAX	0xFFFF
 
 #define WEOF (wint_t) (0xFFFF)
 

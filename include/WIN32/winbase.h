@@ -952,9 +952,17 @@ InterlockedExchange(
     LONG Value
     );
 
+LONG
+__cdecl
+InterlockedCompareExchange (
+    LONG volatile *Destination,
+    LONG Exchange,
+    LONG Comperand
+    );
+
 PVOID
 WINAPI
-InterlockedCompareExchange (
+InterlockedCompareExchangePointer (
     PVOID *Destination,
     PVOID Exchange,
     PVOID Comperand

@@ -183,8 +183,8 @@ typedef unsigned short wchar_t;
 #define _WCHAR_T_DEFINED 1
 #endif
 
-#define WCHAR_MIN	(wchar_t)0
-#define WCHAR_MAX	(wchar_t)0xFFFF
+#define WCHAR_MIN	0
+#define WCHAR_MAX	0xFFFF
 
 #define WINT_MIN	0
 #define WINT_MAX	65535

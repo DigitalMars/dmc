@@ -42,9 +42,9 @@ CREATEOUTPUTDIR	=
 CREATEOUTPUTDIR	= if not exist $O\*.* md $O
 !ENDIF
 
-OBJS1=  $O\inttypes.OBJ $O\strtoll.OBJ $O\wcstoll.OBJ $O\wcstoull.OBJ $O\hypot.OBJ $O\u64_ldbl.obj $O\wmem.obj \
+OBJS1=  $O\inttypes.OBJ $O\strtoll.OBJ $O\wcstoll.OBJ $O\wcstoull.OBJ $O\hypot.OBJ $O\u64_ldbl.obj $O\ldblullng $O\wmem.obj \
 	$O\math2.obj
-POBJS1= $O\inttypes.OBJ+$O\strtoll.OBJ+$O\wcstoll.OBJ+$O\wcstoull.OBJ+$O\hypot.OBJ+$O\u64_ldbl.obj+$O\wmem.obj
+POBJS1= $O\inttypes.OBJ+$O\strtoll.OBJ+$O\wcstoll.OBJ+$O\wcstoull.OBJ+$O\hypot.OBJ+$O\u64_ldbl.obj+$O\ldblullng+$O\wmem.obj
 
 
 !IF $(DEBUG)
@@ -541,6 +541,10 @@ $O\dbllng.OBJ:	..\core32\dbllng.asm
 
 $O\u64_ldbl.OBJ:	..\core32\u64_ldbl.c
 		$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -o$O\u64_ldbl.obj ..\core32\u64_ldbl.c
+
+
+$O\ldblullng.OBJ:	..\core32\ldblullng.c
+		$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -o$O\ldblullng.obj ..\core32\ldblullng.c
 
 
 $O\double.OBJ:	..\core32\double.asm
