@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\MM\LOWPASS\LOWPAS32.PRJ
+LOWPAS32.OPN
+novcs
+lowpas32.def
+16
+812035224
+0 0 0 0 0 "lowpass.c" ""
+0 0 0 0 0 "lowpass.rc" ""
+0 0 0 0 0 "lowpas32.def" ""
+0 0 0 0 0 "winmm.lib" ""

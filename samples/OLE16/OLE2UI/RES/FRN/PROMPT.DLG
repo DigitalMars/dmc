@@ -1,0 +1,78 @@
+Exclamation ICON    bang.ico
+
+
+IDD_LINKSOURCEUNAVAILABLE DIALOG 21, 34, 175, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON        "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Cette action ne peut pas jtre exicutie car la source de la liaison silectionnie n'est actuellement pas disponible.", ID_PU_TEXT, 48, 8, 117, 32
+	DEFPUSHBUTTON   "OK", IDOK, 39,  58, 40, 14
+	PUSHBUTTON      "&Liaisons...", ID_PU_LINKS, 95, 58,  40, 14
+END
+
+
+IDD_CANNOTUPDATELINK DIALOG 21, 34, 175, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON        "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Certaines des liaisons n'ont pas pu jtre mises ` jour car leurs sources ne sont actuellement pas disponibles.", ID_PU_TEXT, 48, 8, 123, 32
+	DEFPUSHBUTTON   "OK", IDOK, 39,  58, 42, 14
+	PUSHBUTTON      "&Liaisons...", ID_PU_LINKS, 95, 58,  42, 14
+END
+
+
+IDD_SERVERNOTREG DIALOG 39, 30, 198, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "L'application nicessaire pour activer cet objet %s n'est pas disponible. Vous pouvez le convertir ou l'activer comme autre type d'objet en utilisant le bouton Convertir...", ID_PU_TEXT, 39, 8, 152, 43
+	DEFPUSHBUTTON   "&Convertir...", ID_PU_CONVERT, 19, 58, 44, 14
+	PUSHBUTTON      "Annuler", IDCANCEL, 75, 58, 44,  14
+	PUSHBUTTON      "&Aide", ID_OLEUIHELP, 131, 58, 44, 14
+END
+
+
+IDD_LINKTYPECHANGED DIALOG 39, 30, 198, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "La liaison n'est plus une liaison %s. Choisissez une autre commande offerte par le nouveau type de liaison.",  ID_PU_TEXT, 39, 8, 152, 36
+	PUSHBUTTON      "OK", IDOK, 79, 58, 40, 14
+END
+
+
+IDD_SERVERNOTFOUND DIALOG 36, 39, 192, 92
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Impossible de trouver l'application serveur.\n\nAssurez-vous que l'application est correctement installie, qu'elle existe dans votre chemin d'acchs de DOS et qu'elle n'a pas iti supprimie, diplacie ou renommie.",  ID_PU_TEXT, 38, 8, 147, 64
+	DEFPUSHBUTTON   "OK", IDOK, 71,  74, 40, 14
+END
+
+
+IDD_UPDATELINKS DIALOG 50, 57, 179, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "", ID_PU_METER, "Static", SS_BLACKFRAME, 5, 40, 122, 9
+	DEFPUSHBUTTON   "&Arrjter", ID_PU_STOP, 134, 37, 40, 14
+	LTEXT           "Mettre ` jour les liaisons...", ID_DUMMY, 5, 7, 126, 8
+	LTEXT           "", ID_PU_PERCENT, 56, 26, 20, 8
+END
+
+
+IDD_OUTOFMEMORY DIALOG 36, 39, 107, 73
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Mimoire insuffisante !", ID_PU_TEXT, 41, 13, 49, 25
+	DEFPUSHBUTTON   "OK", IDOK, 33,  53, 40, 14
+END

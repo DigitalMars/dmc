@@ -1,0 +1,52 @@
+//+---------------------------------------------------------------------------
+//
+//  Microsoft Windows
+//  Copyright (C) Microsoft Corporation, 1992 - 1995.
+//
+//  File:       qudngn.idl
+//
+//  Contents:   definition for IQuadrantEngine
+//
+//  History:    4-13-94   stevebl   Created
+//
+//----------------------------------------------------------------------------
+
+//+---------------------------------------------------------------------------
+//
+//  Class:      IQuadrantEngine (qe)
+//
+//  Purpose:    interface used to communicate to the Quadrant Fractal Engine
+//              Helper
+//
+//  Interface:  Init             -- initializes the object (call first)
+//              UseBoundingBoxes -- enables/disables bounding box optimization
+//              SetGraphSize     -- tells the engine how big the graph is
+//              Start            -- starts the engine
+//              Stop             -- stops the engine
+//              Reset            -- tells the engine restart drawing the graph
+//
+//  History:    4-13-94   stevebl   Created
+//
+//----------------------------------------------------------------------------
+
+[
+    local,
+    object,
+    uuid(2a0e4fbd-3908-101b-8963-00000b65c75b),
+    pointer_default(unique)
+]
+
+interface IQuadrantEngine : IUnknown
+{
+    import "qudcln.idl";
+    import "frhost.idl";
+
+    HRESULT Init(IQuadrantClient * pqc, IFractalHost * pfh);
+    HRESULT UseBoundingBoxes(BOOL fFlag);
+    HRESULT SetGraphSize(
+        unsigned uWidth,
+        unsigned uHeight);
+    HRESULT Start(void);
+    HRESULT Stop(void);
+    HRESULT Reset(void);
+}

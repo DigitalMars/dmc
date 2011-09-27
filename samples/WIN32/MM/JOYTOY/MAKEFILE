@@ -1,0 +1,30 @@
+# Nmake macros for building Windows 32-Bit apps
+
+APPVER=4.0
+
+!include <win32.mak>
+
+all: joytoy32.exe
+
+LIBS=msacm32.lib vfw32.lib winmm.lib shell32.lib $(int64lib)
+
+OTHERCLOPTS=-DWIN32_LEAN_AND_MEAN -nologo -I. -I..\include
+OTHERRCOPTS=-DWIN32_LEAN_AND_MEAN -I. -I..\include
+
+
+# Update the resource if necessary
+
+joytoy.res: joytoy.rc joytoy.rcv
+    $(rc) $(rcflags) $(rcvars) $(OTHERRCOPTS) joytoy.rc
+
+
+# Update the object file if necessary
+
+.c.obj:
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) $<
+
+# Update the executable file if necessary, and if so, add the resource back in.
+
+joytoy32.exe:   joytoy.obj \
+                joytoy.res
+    $(link) $(linkdebug) $(guiflags) -out:joytoy32.exe $** $(guilibs) $(LIBS)

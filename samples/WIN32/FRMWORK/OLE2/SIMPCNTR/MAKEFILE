@@ -1,0 +1,57 @@
+# THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+# ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+# PARTICULAR PURPOSE.
+#
+# Copyright (C) 1993 - 1995  Microsoft Corporation.  All Rights Reserved.
+#
+#
+# Processor independent makefile
+
+# Nmake macros for building Windows 32-Bit apps
+!include <ntwin32.mak>
+
+PROJ = SIMPCNTR
+
+all: $(PROJ).exe
+
+# Define project specific macros
+PROJ_OBJS  = app.obj doc.obj ias.obj iocs.obj ioipf.obj ioips.obj \
+             simpcntr.obj site.obj
+BASE_OBJS  =
+EXTRA_LIBS = oledlg.lib
+GLOBAL_DEP = resource.h simpcntr.h
+RC_DEP     = resource.h
+
+# Dependencies
+
+app.obj:      app.cpp      $(GLOBAL_DEP)
+doc.obj:      doc.cpp      $(GLOBAL_DEP)
+ias.obj:      ias.cpp      $(GLOBAL_DEP)
+iocs.obj:     iocs.cpp     $(GLOBAL_DEP)
+ioipf.obj:    ioipf.cpp    $(GLOBAL_DEP)
+ioips.obj:    ioips.cpp    $(GLOBAL_DEP)
+simpcntr.obj: simpcntr.cpp $(GLOBAL_DEP)
+site.obj:     site.cpp     $(GLOBAL_DEP)
+
+
+
+# Inference rule for updating the object files
+.cpp.obj:
+  $(cc) $(cdebug) $(cflags4) $(cvars) $*.cpp
+
+# Build rule for resource file
+$(PROJ).res: $(PROJ).rc $(RC_DEP)
+    $(rc) $(rcflags) $(rcvars) /fo $(PROJ).res $(PROJ).rc
+
+# Build rule for EXE
+$(PROJ).EXE: $(BASE_OBJS) $(PROJ_OBJS) $(PROJ).res
+    $(link) $(linkdebug) $(guilflags4) \
+    $(BASE_OBJS) $(PROJ_OBJS) $(PROJ).res $(olelibs) $(EXTRA_LIBS) \
+    -out:$(PROJ).exe $(MAPFILE)
+
+
+
+# Rules for cleaning out those old files
+clean:
+    del *.bak *.pdb *.obj *.res *.exp *.map *.sbr *.bsc

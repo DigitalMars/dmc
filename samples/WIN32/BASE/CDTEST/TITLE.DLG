@@ -1,0 +1,22 @@
+1 DLGINCLUDE "TITLE.H"
+
+ID_TITLEDIALOG DIALOG 9, 28, 297, 92
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "GetFileTitle()"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Path:", 101, 7, 26, 16, 8
+    LTEXT           "Title:", 102, 7, 42, 15, 8
+    LTEXT           "Buffer Size:", 103, 7, 64, 39, 8
+    LTEXT           "Return:", 104, 7, 76, 25, 8
+    EDITTEXT        ID_PATHTI, 52, 23, 238, 13, ES_AUTOHSCROLL
+    EDITTEXT        ID_TITLETI, 52, 38, 238, 13, ES_AUTOHSCROLL
+    EDITTEXT        ID_BUFFSIZETI, 52, 61, 42, 12, ES_AUTOHSCROLL
+    EDITTEXT        ID_RETURNTI, 52, 75, 42, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "OK", IDOK, 201, 73, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 250, 73, 40, 14
+    LTEXT           "Enter a path name in the Path: box below, click OK, and the file title will appear in the Title: box...", 
+                    602, 51, 3, 240, 17
+    PUSHBUTTON      "Reset", ID_RESETTITLE, 152, 73, 40, 14
+END

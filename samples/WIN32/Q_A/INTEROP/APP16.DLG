@@ -1,0 +1,29 @@
+InfoDlg DIALOG 6, 18, 192, 111
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Enter Record Information:", 201, 9, 10, 86, 8
+    EDITTEXT        IDC_FIRSTNAME, 83, 30, 73, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDC_LASTNAME, 83, 48, 74, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDC_AGE, 83, 66, 32, 12, ES_AUTOHSCROLL
+    LTEXT           "&First Name:", 205, 19, 33, 42, 8
+    LTEXT           "&Last Name:", 206, 19, 51, 39, 8
+    LTEXT           "&Age:", 207, 19, 68, 20, 8
+    DEFPUSHBUTTON   "&OK", ID_OK, 34, 92, 40, 14
+    PUSHBUTTON      "&Cancel", ID_CANCEL, 109, 92, 40, 14
+END
+
+AboutDlg DIALOG FIXED 6, 21, 198, 99
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About App16"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&OK", IDOK, 72, 74, 40, 14
+    ICON            "App16Icon", -1, 10, 18, 18, 20
+    LTEXT           "Thunking/WM_COPYDATA Sample", 104, 45, 14,
+                    128, 8
+    LTEXT           "By Julie Solon", 105, 45, 35, 59, 8
+    LTEXT           "Microsoft Developer Support", 106, 45, 45, 98, 8
+    LTEXT           "Copyright \251 1992-1995 Microsoft Corporation", 107, 45,
+                    54, 138, 8
+END

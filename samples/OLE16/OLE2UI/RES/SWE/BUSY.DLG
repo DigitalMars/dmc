@@ -1,0 +1,11 @@
+IDD_BUSY DIALOG DISCARDABLE  0, 0, 214, 76
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Server upptagen"
+FONT 8, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON   "&Vdxla till...", IDBZ_SWITCHTO, 33, 55, 53, 15
+	PUSHBUTTON      "&Avbryt", IDCANCEL, 152, 55, 53, 15
+	PUSHBUTTON      "Fvrsvk &igen", IDBZ_RETRY, 92, 55, 53, 15
+	LTEXT           "Det ger inte att slutfvra aktuell operation eftersom det andra programmet kvrs. Vdlj ""Vdxla till"" om du vill aktivera programmet och korrigera felet.", IDBZ_MESSAGE1, 35, 11, 167, 35
+	ICON            "", IDBZ_ICON, 8, 18, 18, 20
+END

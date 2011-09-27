@@ -1,0 +1,46 @@
+REGEDIT
+
+; Registration information for the hello application
+;
+; IDispatch*	Hello.Application	{D3CE6D43-F1AF-1068-9FBB-08002B32372A}
+; Type library:	hello.tlb		{D3CE6D44-F1AF-1068-9FBB-08002B32372A}
+; Interface:	IHello			{D3CE6D45-F1AF-1068-9FBB-08002B32372A}
+;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info Hello.Application (defaults to Hello.Application.1)
+
+HKEY_CLASSES_ROOT\Hello.Application = OLE Automation Hello Application
+HKEY_CLASSES_ROOT\Hello.Application\Clsid = {D3CE6D43-F1AF-1068-9FBB-08002B32372A}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info Hello.Application.1
+
+HKEY_CLASSES_ROOT\Hello.Application.1 = OLE Automation Hello 1.0 Application
+HKEY_CLASSES_ROOT\Hello.Application.1\Clsid = {D3CE6D43-F1AF-1068-9FBB-08002B32372A}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info Hello 1.0
+
+HKEY_CLASSES_ROOT\CLSID\{D3CE6D43-F1AF-1068-9FBB-08002B32372A} = IDispatch Hello Example
+HKEY_CLASSES_ROOT\CLSID\{D3CE6D43-F1AF-1068-9FBB-08002B32372A}\ProgID = Hello.Application.1
+HKEY_CLASSES_ROOT\CLSID\{D3CE6D43-F1AF-1068-9FBB-08002B32372A}\VersionIndependentProgID = Hello.Application
+HKEY_CLASSES_ROOT\CLSID\{D3CE6D43-F1AF-1068-9FBB-08002B32372A}\LocalServer = hello.exe /Automation
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info Hello TypeLib
+
+HKEY_CLASSES_ROOT\TypeLib\{D3CE6D44-F1AF-1068-9FBB-08002B32372A}
+HKEY_CLASSES_ROOT\TypeLib\{D3CE6D44-F1AF-1068-9FBB-08002B32372A}\1.0 = OLE Automation Hello 1.0 Type Library
+HKEY_CLASSES_ROOT\TypeLib\{D3CE6D44-F1AF-1068-9FBB-08002B32372A}\1.0\HELPDIR =
+;Localized language is US english
+HKEY_CLASSES_ROOT\TypeLib\{D3CE6D44-F1AF-1068-9FBB-08002B32372A}\1.0\409\win16 = hello.tlb
+
+HKEY_CLASSES_ROOT\Interface\{D3CE6D46-F1AF-1068-9FBB-08002B32372A} = _DHello
+HKEY_CLASSES_ROOT\Interface\{D3CE6D46-F1AF-1068-9FBB-08002B32372A}\ProxyStubClsid = {00020420-0000-0000-C000-000000000046}
+HKEY_CLASSES_ROOT\Interface\{D3CE6D46-F1AF-1068-9FBB-08002B32372A}\NumMethod = 7
+HKEY_CLASSES_ROOT\Interface\{D3CE6D46-F1AF-1068-9FBB-08002B32372A}\BaseInterface = {00020400-0000-0000-C000-000000000046}
+

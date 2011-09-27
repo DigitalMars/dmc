@@ -1,0 +1,128 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\.ai]
+"Content Type"="application/postscript"
+
+[HKEY_CLASSES_ROOT\.aif]
+"Content Type"="audio/aiff"
+
+[HKEY_CLASSES_ROOT\.aifc]
+"Content Type"="audio/aiff"
+
+[HKEY_CLASSES_ROOT\.aiff]
+"Content Type"="audio/aiff"
+
+[HKEY_CLASSES_ROOT\.au]
+"Content Type"="audio/basic"
+
+[HKEY_CLASSES_ROOT\.avi]
+"Content Type"="video/avi"
+
+[HKEY_CLASSES_ROOT\.eps]
+"Content Type"="application/postscript"
+
+[HKEY_CLASSES_ROOT\.fif]
+"Content Type"="application/fractals"
+
+[HKEY_CLASSES_ROOT\.gif]
+"Content Type"="image/gif"
+
+[HKEY_CLASSES_ROOT\.gz]
+"Content Type"="application/x-gzip"
+
+[HKEY_CLASSES_ROOT\.hqx]
+"Content Type"="application/mac-binhex40"
+
+[HKEY_CLASSES_ROOT\.htm]
+"Content Type"="text/html"
+
+[HKEY_CLASSES_ROOT\.html]
+"Content Type"="text/html"
+
+[HKEY_CLASSES_ROOT\.jpe]
+"Content Type"="image/jpeg"
+
+[HKEY_CLASSES_ROOT\.jpeg]
+"Content Type"="image/jpeg"
+
+[HKEY_CLASSES_ROOT\.jpg]
+"Content Type"="image/jpeg"
+
+[HKEY_CLASSES_ROOT\.latex]
+"Content Type"="application/x-latex"
+
+[HKEY_CLASSES_ROOT\.man]
+"Content Type"="application/x-troff-man"
+
+[HKEY_CLASSES_ROOT\.mov]
+"Content Type"="video/quicktime"
+
+[HKEY_CLASSES_ROOT\.movie]
+"Content Type"="video/x-sgi-movie"
+
+[HKEY_CLASSES_ROOT\.mpe]
+"Content Type"="video/mpeg"
+
+[HKEY_CLASSES_ROOT\.mpeg]
+"Content Type"="video/mpeg"
+
+[HKEY_CLASSES_ROOT\.mpg]
+"Content Type"="video/mpeg"
+
+[HKEY_CLASSES_ROOT\.ps]
+"Content Type"="application/postscript"
+
+[HKEY_CLASSES_ROOT\.qt]
+"Content Type"="video/quicktime"
+
+[HKEY_CLASSES_ROOT\.ra]
+"Content Type"="audio/x-pn-realaudio"
+
+[HKEY_CLASSES_ROOT\.ram]
+"Content Type"="audio/x-pn-realaudio"
+
+[HKEY_CLASSES_ROOT\.sit]
+"Content Type"="application/x-stuffit"
+
+[HKEY_CLASSES_ROOT\.snd]
+"Content Type"="audio/basic"
+
+[HKEY_CLASSES_ROOT\.tar]
+"Content Type"="application/x-tar"
+
+[HKEY_CLASSES_ROOT\.tgz]
+"Content Type"="application/x-compressed"
+
+[HKEY_CLASSES_ROOT\.tif]
+"Content Type"="image/tiff"
+
+[HKEY_CLASSES_ROOT\.tiff]
+"Content Type"="image/tiff"
+
+[HKEY_CLASSES_ROOT\.txt]
+"Content Type"="text/plain"
+
+[HKEY_CLASSES_ROOT\.vrml]
+"Content Type"="x-world/x-vrml"
+
+[HKEY_CLASSES_ROOT\.wav]
+"Content Type"="audio/wav"
+
+[HKEY_CLASSES_ROOT\.wrl]
+"Content Type"="x-world/x-vrml"
+
+[HKEY_CLASSES_ROOT\.xaf]
+"Content Type"="x-world/x-vrml"
+
+[HKEY_CLASSES_ROOT\.xbm]
+"Content Type"="image/x-xbitmap"
+
+[HKEY_CLASSES_ROOT\.xof]
+"Content Type"="x-world/x-vrml"
+
+[HKEY_CLASSES_ROOT\.z]
+"Content Type"="application/x-compress"
+
+[HKEY_CLASSES_ROOT\.zip]
+"Content Type"="application/x-zip-compress"
+

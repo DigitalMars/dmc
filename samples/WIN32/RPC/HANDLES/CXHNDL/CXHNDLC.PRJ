@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\RPC\HANDLES\CXHNDL\CXHNDLC.PRJ
+CXHNDLC.OPN
+novcs
+cxhndlc.DEF
+4
+812035224
+0 0 0 0 0 "cxhndl_c.c" ""
+0 0 0 0 0 "cxhndlc.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "cxhndlc.def" ""

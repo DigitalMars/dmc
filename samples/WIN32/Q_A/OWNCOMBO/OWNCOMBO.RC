@@ -1,0 +1,36 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include "windows.h"
+#include "owncombo.h"
+#include "owncombo.dlg"
+
+owncombo ICON owncombo.ico
+
+OwnComboMenu MENU
+BEGIN
+  POPUP         "&File"
+    BEGIN
+      MENUITEM  "&Exit",               IDM_EXIT
+      MENUITEM  SEPARATOR
+      MENUITEM  "&About OwnCombo...",  IDM_ABOUT
+    END
+
+  POPUP         "E&xamples"
+    BEGIN
+      MENUITEM  "Owner Draw &List Box",                     IDM_LISTBOX
+      MENUITEM  "Owner Draw &Multiple Selection List Box",  IDM_MULTILISTBOX
+      MENUITEM  SEPARATOR
+      MENUITEM  "Drop Down &Combo Box",                     IDM_COMBOBOX
+      MENUITEM  "Owner Draw Combo &Box",                    IDM_OWNERCOMBOBOX
+    END
+END

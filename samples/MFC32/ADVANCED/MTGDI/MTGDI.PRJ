@@ -1,0 +1,14 @@
+82570
+c:\SamplesMFC32\ADVANCED\MTGDI\mtgdi.prj
+mtgdi.OPN
+novcs
+mtgdi.DEF
+16
+834106338
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "mtgdi.cpp" ""
+0 0 0 0 0 "mtgdidoc.cpp" ""
+0 0 0 0 0 "mtgdivw.cpp" ""
+0 0 0 0 0 "threads.cpp" ""
+0 0 0 0 0 "mtgdi.DEF" ""
+0 0 0 0 0 "mtgdi.rc" ""

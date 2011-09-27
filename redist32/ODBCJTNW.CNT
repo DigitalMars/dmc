@@ -1,0 +1,34 @@
+:Base odbcjtnw.hlp
+:Title ODBC Desktop Database Drivers--What's New Help
+:Index ODBC Desktop Database Drivers--What's New Help=odbcjtnw.hlp
+1 Overview=Overview>ref
+1 Driver ISAM Files=DriverISAMs>ref
+1 Software Requirements=SoftwareRequirements>ref
+1 ODBC Component Files=ODBCComponentFiles>ref
+1 Unsupported Data Formats=UnsupportedData>ref
+1 Product Support=ProductSupport>ref
+1 Setup Issues
+2 Setting Up Drivers=SettingUpDrivers>ref
+2 Adding a System Data Source=AddingASystemDataSource>howto
+2 Extensions List Setup Option=ExtensionsListSetupOption>ref
+2 Data Source Conversion=DataSourceConversion>ref
+2 Create Database Button=DatabaseCreate>ref
+1 Error Messages=Errors>ref
+1 SQLGetInfo
+2 SQLGetInfo Returned Values=SQLGetInfoReturnValues>ref
+1 Limitations to SQL Grammar
+2 CREATE TABLE Statement Limitations=CREATETABLEStatementLimitations>ref
+2 Identifiers Limitations=IdentifiersLimitations>ref
+2 INSERT Statement Limitations=INSERTStatementLimitations>ref
+1 Data Types
+2 Microsoft Access=AccessDataTypes>ref
+2 dBASE=dBASEDataTypes>ref
+2 Paradox=ParadoxDataTypes>ref
+2 Data Type Limitations=DataTypeLimit>ref
+1 ODBC API Functions
+2 SQLBindParameter=SQLBindParameter>ref
+2 SQLConfigDataSource=SQLConfigDataSource>ref
+2 SQLExtendedFetch=SQLExtendedFetch>ref
+2 SQLSetPos=SQLSetPos>ref
+1 Implementation Issues
+2 Base Address of Drivers=BaseAddressOfDrivers>ref

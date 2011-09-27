@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\Q_A\SIMPLDLL\LINKTEST.PRJ
+LINKTEST.OPN
+novcs
+linktest.def
+16
+812035224
+0 0 0 0 0 "linktest.c" ""
+0 0 0 0 0 "linktest.def" ""
+0 0 0 0 0 "linktest.rc" ""
+0 0 0 0 0 "the_dll.lib" ""

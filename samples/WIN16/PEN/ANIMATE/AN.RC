@@ -1,0 +1,42 @@
+// AN.rc
+
+#include "ANres.h"
+
+iconAN      ICON AN.ico
+
+
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+   RS_FILTER,     "Pendata files (*.pdt)|*.pdt|"
+   RS_OFNREADTITLE,  "Read Pendata File"
+   RS_OFNWRITETITLE, "Write Pendata File"
+END
+
+ANMenu MENU
+BEGIN
+   POPUP "&File"
+      BEGIN
+      MENUITEM "&Open...", IDM_OPEN
+      MENUITEM "&Save...", IDM_SAVE
+      MENUITEM SEPARATOR
+      MENUITEM "E&xit", IDM_EXIT
+      END
+   POPUP "&View"
+      BEGIN
+      MENUITEM "&Dialog", IDM_DLG
+      MENUITEM "&Output Window", IDM_OUTPUT
+      MENUITEM "&Callback Display", IDM_CBDISP
+      END
+   POPUP "&DrawProc"
+      BEGIN
+      MENUITEM "&AnimatePenData", IDM_DRAWEX, CHECKED
+#ifdef WIN32
+      MENUITEM "&DrawPenData", IDM_DRAW, GRAYED
+#else
+      MENUITEM "&DrawPenData", IDM_DRAW
+#endif // WIN32
+      MENUITEM "DrawPenDataE&x", IDM_DRAWPARTIAL
+      END
+END
+
+#include "an.dlg"

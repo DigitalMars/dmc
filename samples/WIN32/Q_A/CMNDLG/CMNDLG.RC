@@ -1,0 +1,376 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1992-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include <windows.h>        // standard windows include
+#include <dlgs.h>           // includes common dialog template defines
+#include "cmndlg.h"         // includes basic common dialog functions
+
+CmnDlgMenu MENU
+BEGIN
+    POPUP        "&File"
+    BEGIN
+        MENUITEM "&Open...", IDM_OPENFILE
+        MENUITEM "&Save", IDM_SAVEFILE, GRAYED
+        MENUITEM "Save &As...", IDM_SAVEFILEAS
+        MENUITEM "&Print...", IDM_PRINT
+        MENUITEM "E&xit", IDM_EXIT
+    END
+    POPUP        "&Options"
+    BEGIN
+        MENUITEM "&Enter New Text...", IDM_ENTERNEW
+        MENUITEM "&Chose Color...", IDM_CHOOSECOLOR
+        MENUITEM "Chose &Font...", IDM_CHOOSEFONT
+        MENUITEM "&Find Text...", IDM_FINDTEXT
+        MENUITEM "&Replace Text...", IDM_REPLACETEXT
+        MENUITEM SEPARATOR
+        MENUITEM "&Standard", IDM_STANDARD, CHECKED
+        MENUITEM "&Using a Hook", IDM_HOOK
+        MENUITEM "&Custom Template", IDM_CUSTOM
+    END
+    POPUP        "&Help"
+    BEGIN
+        MENUITEM "&About CmnDlg...", IDM_ABOUT
+    END
+END
+
+AboutBox DIALOG 22, 17, 144, 75
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About Generic"
+BEGIN
+    CTEXT "Microsoft Windows NT"     -1,       0,  5, 144,  8
+    CTEXT "Common Dialogs Sample"   -1,       0, 14, 144,  8
+    CTEXT "Version 1.01"           -1,       0, 34, 144,  8
+    DEFPUSHBUTTON "OK"          IDOK,      53, 59,  32, 14,      WS_GROUP
+END
+
+
+
+EnterNewBox DIALOG 6, 18, 243, 72
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Enter New Text"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "Enter new text for buffer here:", -1, 7, 18, 134, 8
+    EDITTEXT        IDEDIT, 6, 32, 237, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "OK", IDOK, 66, 55, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 134, 55, 40, 14
+END
+
+
+//---------------------------------------------------------------------------
+// FileOpen.dlg :  File Open and Save As dialog descriptions
+//
+// Copyright (c) Microsoft Corporation, 1990-1995
+//---------------------------------------------------------------------------
+
+FILEOPENORD DIALOG LOADONCALL MOVEABLE DISCARDABLE 
+36, 24,  264, 134
+CAPTION "Open"
+STYLE WS_CAPTION | WS_SYSMENU | WS_POPUP | DS_MODALFRAME
+FONT 8, "Helv"
+BEGIN
+    LTEXT "File &Name:", stc3,   6,   6,  76,  9
+    CONTROL "", edt1, "edit", ES_LEFT | ES_AUTOHSCROLL | WS_BORDER |
+            WS_TABSTOP | WS_CHILD | ES_OEMCONVERT,
+            6,    16,  90,  12
+    CONTROL "", lst1, "listbox",
+            LBS_SORT | LBS_HASSTRINGS | LBS_NOTIFY | LBS_DISABLENOSCROLL
+            | WS_VSCROLL | WS_CHILD | WS_BORDER | WS_TABSTOP
+            | LBS_OWNERDRAWFIXED,
+            6,    32,  90,  68
+
+    LTEXT "&Directories:", -1, 110,   6,  92,   9
+    LTEXT "",            stc1, 110,  18,  92,   9, SS_NOPREFIX
+    CONTROL "", lst2, "listbox", 
+            LBS_SORT | LBS_HASSTRINGS | LBS_NOTIFY | LBS_DISABLENOSCROLL
+            | WS_VSCROLL | WS_CHILD | WS_BORDER | WS_TABSTOP
+            | LBS_OWNERDRAWFIXED,
+            110,  32,  92,  68
+
+    LTEXT "List Files of &Type:", stc2, 6,  104,  90,   9
+    CONTROL "", cmb1, "combobox", CBS_DROPDOWNLIST | CBS_AUTOHSCROLL |
+            WS_BORDER | WS_VSCROLL | WS_TABSTOP | WS_CHILD,
+            6,  114,  90,  36
+
+    LTEXT "Dri&ves:", stc4,      110, 104,  92,  9
+    CONTROL "", cmb2, "combobox", 
+            CBS_SORT | CBS_HASSTRINGS | CBS_OWNERDRAWFIXED | CBS_DROPDOWNLIST 
+            | WS_CHILD | CBS_AUTOHSCROLL | WS_BORDER | WS_VSCROLL 
+            | WS_TABSTOP,
+            110, 114,  92, 68 
+
+    DEFPUSHBUTTON "OK", IDOK,       208,  6, 50, 14, WS_GROUP
+    PUSHBUTTON "Cancel", IDCANCEL,  208, 24, 50, 14, WS_GROUP
+
+    PUSHBUTTON "&Help", pshHelp,      208, 46, 50, 14, WS_GROUP
+
+    AUTOCHECKBOX "&Read Only", chx1,    208, 68, 50, 12,
+                        WS_TABSTOP | WS_GROUP
+
+    AUTOCHECKBOX "&Create", chx2,    208, 68, 50, 12,
+                        WS_TABSTOP | WS_GROUP
+    LTEXT "File?", stc5, 208, 82, 50, 9
+
+
+END
+
+
+// font dialog
+
+
+FORMATDLGORD31 DIALOG 13, 54, 264, 147
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Font"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "&Font:", stc1, 6, 3, 40, 9
+    COMBOBOX        cmb1, 6, 13, 94, 54, CBS_SIMPLE | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP | CBS_HASSTRINGS | CBS_OWNERDRAWFIXED | CBS_DISABLENOSCROLL
+
+    LTEXT           "Font St&yle:", stc2, 108, 3, 44, 9
+    COMBOBOX        cmb2, 108, 13, 64, 54, CBS_SIMPLE | WS_VSCROLL | CBS_DISABLENOSCROLL | WS_TABSTOP
+
+    LTEXT           "&Size:", stc3, 179, 3, 30, 9
+    COMBOBOX        cmb3, 179, 13, 32, 54, CBS_SIMPLE | WS_VSCROLL | WS_TABSTOP | CBS_HASSTRINGS | CBS_OWNERDRAWFIXED | CBS_SORT | CBS_DISABLENOSCROLL
+
+    DEFPUSHBUTTON   "OK", IDOK, 218, 6, 40, 14, WS_GROUP | WS_TABSTOP
+    PUSHBUTTON      "Cancel", IDCANCEL, 218, 23, 40, 14, WS_GROUP | WS_TABSTOP
+    PUSHBUTTON      "&Apply", psh3, 218, 40, 40, 14, WS_GROUP | WS_TABSTOP
+    PUSHBUTTON      "&Help", pshHelp, 218, 57, 40, 14, WS_GROUP | WS_TABSTOP
+
+    GROUPBOX        "Effects", grp1, 6, 72, 84, 34, WS_GROUP
+    CONTROL         "Stri&keout", chx1, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 10, 82, 49, 10
+    CONTROL         "&Underline", chx2, "Button", BS_AUTOCHECKBOX, 10, 94, 51, 10
+
+    LTEXT           "&Color:", stc4, 6, 110, 30, 9
+    COMBOBOX        cmb4, 6, 120, 84, 100, CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_AUTOHSCROLL | CBS_HASSTRINGS | WS_BORDER | WS_VSCROLL | WS_TABSTOP
+
+    GROUPBOX        "Sample", grp2, 98, 72, 160, 49, WS_GROUP
+    CTEXT           "", stc6, 98, 124, 160, 20,  SS_NOPREFIX | NOT WS_GROUP
+    CTEXT           "AaBbYyZz", stc5, 104, 81, 149, 37, SS_NOPREFIX | NOT WS_VISIBLE
+END
+
+
+
+// find text dialogs
+
+
+FINDDLGORD DIALOG LOADONCALL MOVEABLE DISCARDABLE
+30, 73, 236, 62
+CAPTION "Find"
+STYLE WS_BORDER | WS_CAPTION | DS_MODALFRAME | WS_POPUP | WS_SYSMENU
+FONT 8, "Helv"
+BEGIN
+    CONTROL "Fi&nd What:", -1, "static", SS_LEFT | WS_CHILD,
+        4, 8, 42, 8
+    CONTROL "", edt1, "edit", ES_LEFT | ES_AUTOHSCROLL | WS_BORDER | WS_GROUP |
+            WS_TABSTOP | WS_CHILD | WS_BORDER,
+        47, 7, 128, 12
+
+    CONTROL "Match &Whole Word Only", chx1, "button", BS_AUTOCHECKBOX |
+            WS_TABSTOP | WS_CHILD | WS_GROUP,
+        4, 26, 100, 12
+    CONTROL "Match &Case", chx2, "button", BS_AUTOCHECKBOX | 
+            WS_TABSTOP | WS_CHILD,
+        4, 42, 64, 12
+
+    CONTROL "Direction", grp1, "button", BS_GROUPBOX | WS_CHILD,
+        107, 26, 68, 28
+    CONTROL "&Up", rad1, "button", BS_AUTORADIOBUTTON | 
+            WS_TABSTOP | WS_CHILD | WS_GROUP,
+         111, 38, 20, 12
+    CONTROL "&Down", rad2, "button", BS_AUTORADIOBUTTON | WS_TABSTOP |
+            WS_CHILD,
+         138, 38, 30, 12
+
+    CONTROL "&Find", IDOK, "button", BS_DEFPUSHBUTTON | WS_CHILD |
+            WS_TABSTOP | WS_GROUP,
+       182, 5, 50, 14
+    CONTROL "Cancel", IDCANCEL, "button", BS_PUSHBUTTON | WS_CHILD | 
+            WS_TABSTOP | WS_GROUP,
+       182, 23, 50, 14
+    CONTROL "&Help", pshHelp, "button", BS_PUSHBUTTON | WS_CHILD |
+            WS_TABSTOP | WS_GROUP,
+       182, 45, 50, 14
+END
+
+
+REPLACEDLGORD DIALOG LOADONCALL MOVEABLE DISCARDABLE
+36, 44, 230, 94
+CAPTION "Replace"
+STYLE WS_BORDER | WS_CAPTION | WS_SYSMENU | DS_MODALFRAME | WS_POPUP
+FONT 8, "Helv"
+BEGIN
+    CONTROL "Fi&nd What:", -1, "static", SS_LEFT | WS_CHILD,
+        4, 9, 48, 8
+    CONTROL "", edt1, "edit", ES_LEFT | ES_AUTOHSCROLL | WS_BORDER | 
+            WS_TABSTOP | WS_CHILD | WS_GROUP,
+        54, 7, 114, 12
+    CONTROL "Re&place With:", -1, "static", SS_LEFT | WS_CHILD,
+        4, 26, 48, 8
+    CONTROL "", edt2, "edit", ES_LEFT | ES_AUTOHSCROLL | WS_BORDER |
+            WS_TABSTOP | WS_CHILD | WS_GROUP,
+        54, 24, 114, 12
+
+    CONTROL "Match &Whole Word Only", chx1, "button", BS_AUTOCHECKBOX |
+            WS_TABSTOP | WS_CHILD | WS_GROUP,
+        5, 46, 104, 12
+    CONTROL "Match &Case", chx2, "button", BS_AUTOCHECKBOX | WS_TABSTOP 
+            | WS_CHILD,
+        5, 62, 59, 12
+
+    CONTROL "&Find", IDOK, "button", BS_DEFPUSHBUTTON | WS_CHILD |
+            WS_TABSTOP | WS_GROUP,
+        174, 4, 50, 14
+    CONTROL "&Replace", psh1, "button", BS_PUSHBUTTON | WS_CHILD | 
+            WS_TABSTOP | WS_GROUP,
+        174, 21, 50, 14
+    CONTROL "Replace &All", psh2, "button", BS_PUSHBUTTON | WS_CHILD | 
+            WS_TABSTOP | WS_GROUP,
+        174, 38, 50, 14
+    CONTROL "Cancel", IDCANCEL, "button", BS_PUSHBUTTON | WS_CHILD |
+            WS_TABSTOP | WS_GROUP,
+        174, 55, 50, 14
+    CONTROL "&Help", pshHelp, "button", BS_PUSHBUTTON | WS_CHILD |
+            WS_TABSTOP | WS_GROUP,
+        174, 75, 50, 14
+
+END
+
+
+
+// printing dialogs
+
+
+
+PRINTDLGORD DIALOG LOADONCALL MOVEABLE DISCARDABLE 
+36, 52,  225, 130
+CAPTION "Print"
+STYLE WS_CAPTION | WS_SYSMENU | WS_POPUP | DS_MODALFRAME
+FONT 8, "Helv"
+BEGIN
+  LTEXT "Printer:"  stc6,
+          4,    4,  40,   8
+  LTEXT "System Default"  stc1,
+          44,   4, 120,  18
+  GROUPBOX "Print Range", grp1,
+          4,   27,  132,  67
+  RADIOBUTTON "&All" rad1,
+          10,  39,  76,  12,  WS_TABSTOP | WS_GROUP
+  RADIOBUTTON "S&election" rad2,
+          10,  52,  76,  12
+  RADIOBUTTON "&Pages" rad3,
+          10,  65,  76,  12
+  RTEXT "&From:"  stc2,
+          24,  80,  24,   9,  WS_GROUP
+  EDITTEXT edt1,
+          52,  78,  26,  12,  WS_TABSTOP | ES_RIGHT
+  RTEXT "&To:"  stc3,
+          82,  80,  16,   9
+  EDITTEXT edt2,
+         102,  78,  26,  12,  WS_TABSTOP | ES_RIGHT
+
+  LTEXT "Print &Quality:"  stc4,
+          4,  100,  50,   9
+  CONTROL "", cmb1, "combobox", CBS_DROPDOWNLIST | WS_BORDER |
+                                                   WS_VSCROLL | WS_TABSTOP,
+          55,  98,  81,  36
+
+  LTEXT "&Copies:", stc5,
+         153, 100,  29,   9
+  EDITTEXT, edt3,
+         184,  98,  22,  12,  WS_TABSTOP | ES_RIGHT
+
+  AUTOCHECKBOX "Print to Fi&le"   chx1,
+          4,  113, 120,  12,  WS_TABSTOP | WS_GROUP
+  AUTOCHECKBOX "Collate Cop&ies"  chx2,
+         153, 113,  67,  12,  WS_TABSTOP | WS_GROUP
+
+  DEFPUSHBUTTON "OK"  IDOK,
+          170,  4,  50,  14,  WS_GROUP
+  PUSHBUTTON "Cancel"  IDCANCEL,
+          170,  21,  50,  14,  WS_GROUP
+
+  PUSHBUTTON "&Setup..."  psh1,
+          170,  41,  50,  14,  WS_GROUP
+  PUSHBUTTON "&Help"  pshHelp,
+          170,  75,  50,  14,  WS_GROUP
+#if 0
+  /* If an "Options" button is desired, it goes here... */
+  CONTROL "&Options >>" 0, "BUTTON", WS_CHILD | WS_VISIBLE | WS_TABSTOP,
+          170, 58, 50, 15
+#endif
+
+END
+
+
+PRNSETUPDLGORD DIALOG LOADONCALL MOVEABLE DISCARDABLE 30, 23, 287, 122
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Print Setup"
+FONT 8, "Helv"
+BEGIN
+  GROUPBOX      "Printer", grp3, 4, 6, 224, 66
+  LTEXT         "(No Default Printer)", stc1, 18, 30, 208, 9
+  RADIOBUTTON   "&Default Printer", rad3, 8, 16, 218, 12, WS_GROUP | WS_TABSTOP
+  RADIOBUTTON   "Specific &Printer:", rad4, 8, 42, 218, 12
+  COMBOBOX      cmb1, 18, 56, 208, 80, CBS_DROPDOWNLIST | WS_GROUP |
+                WS_BORDER | WS_VSCROLL
+  GROUPBOX      "Orientation", grp1, 4, 74, 91, 46
+  ICON          "", ico1, 12, 92, 24, 16
+  RADIOBUTTON   "Po&rtrait", rad1, 40, 86, 53, 12, WS_GROUP | WS_TABSTOP
+  RADIOBUTTON   "&Landscape", rad2, 40, 102, 53, 12
+  GROUPBOX      "Paper", grp2, 100, 74, 128, 46, WS_GROUP
+  LTEXT         "Si&ze:", stc2, 104, 88, 26, 9
+  COMBOBOX      cmb2, 134, 86, 92, 80, CBS_DROPDOWNLIST | WS_BORDER | 
+                WS_VSCROLL | WS_TABSTOP
+  LTEXT         "&Source:", stc3, 104, 104, 28, 9
+  COMBOBOX      cmb3, 134, 102, 92, 80, CBS_DROPDOWNLIST | WS_BORDER | 
+                WS_VSCROLL | WS_TABSTOP
+  DEFPUSHBUTTON "OK", IDOK, 232, 4, 50, 14, WS_GROUP
+  PUSHBUTTON    "Cancel", IDCANCEL, 232, 20, 50, 14, WS_GROUP
+  PUSHBUTTON    "&Options...", psh1, 232, 40, 50, 14, WS_GROUP
+  PUSHBUTTON    "&Help", pshHelp, 232, 56, 50, 14, WS_GROUP
+END
+
+
+STRINGTABLE
+BEGIN
+   IDS_DIALOGFAILURE,   "Creation of CD failed on call to DialogBox()"
+   IDS_STRUCTSIZE,      "Invalid structure size passed to CD"
+   IDS_INITIALIZATION,  "Failure initializing CD.  Possibly\n\r do to insufficient memory."
+   IDS_NOTEMPLATE,      "Failure finding custom template for CD"       
+   IDS_NOHINSTANCE,     "Instance handle not passed to CD"
+   IDS_LOADSTRFAILURE,  "Failure loading specified string"
+   IDS_FINDRESFAILURE,  "Failure finding specified resource"           
+   IDS_LOADRESFAILURE,  "Failure loading specified resource"
+   IDS_LOCKRESFAILURE,  "Failure locking specified resource"
+   IDS_MEMALLOCFAILURE, "Failure allocating memory for internal CD structure"
+   IDS_MEMLOCKFAILURE,  "Failure locking memory for internal CD structure"
+   IDS_NOHOOK,          "No hook function passed to CD but ENABLEHOOK\n\r was passed as a flag"
+   IDS_SETUPFAILURE,    "Failure setting up resources for CD"
+   IDS_PARSEFAILURE,    "Failure parsing strings in [devices]\n\rsection of WIN.INI"
+   IDS_RETDEFFAILURE,   "PD_RETURNDEFAULT flag was set but either the \n\rhDevMode or hDevNames field was nonzero"
+   IDS_LOADDRVFAILURE,  "Failure loading the printers device driver"
+   IDS_GETDEVMODEFAIL,  "The printer driver failed to initialize a DEVMODE data structure"
+   IDS_INITFAILURE,     "Print CD failed during initialization"
+   IDS_NODEVICES,       "No printer device drivers were found"
+   IDS_NODEFAULTPRN,    "No default printer was found"
+   IDS_DNDMMISMATCH,    "Data in DEVMODE contradicts data in DEVNAMES"
+   IDS_CREATEICFAILURE, "Failure creating an IC"
+   IDS_PRINTERNOTFOUND, "Printer not found"
+   IDS_NOFONTS,         "No fonts exist"
+   IDS_SUBCLASSFAILURE, "Failure subclassing during initialization of CD"
+   IDS_INVALIDFILENAME, "Invalide filename passed to FileOpen or FileSave"
+   IDS_BUFFERTOOSMALL,  "Buffer passed to CD too small to accomodate string"
+   IDS_FILTERSTRING,    "Write Files(*.WRI)|*.WRI|Word  Files(*.DOC; *.TXT)|*.doc;*.txt|"
+   IDS_UNKNOWNERROR,    "Unknown error."
+
+END

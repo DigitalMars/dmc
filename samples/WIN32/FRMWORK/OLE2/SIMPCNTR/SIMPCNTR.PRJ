@@ -1,0 +1,18 @@
+82572
+C:\SC\samples\win32\FRMWORK\OLE2\SIMPCNTR\SIMPCNTR.PRJ
+SIMPCNTR.OPN
+novcs
+simpcntr.def
+16
+812035224
+0 0 0 0 0 "app.cpp" ""
+0 0 0 0 0 "doc.cpp" ""
+0 0 0 0 0 "ias.cpp" ""
+0 0 0 0 0 "iocs.cpp" ""
+0 0 0 0 0 "ioipf.cpp" ""
+0 0 0 0 0 "ioips.cpp" ""
+0 0 0 0 0 "simpcntr.cpp" ""
+0 0 0 0 0 "site.cpp" ""
+0 0 0 0 0 "simpcntr.rc" ""
+0 0 0 0 0 "simpcntr.def" ""
+0 0 0 0 0 "oledlg.lib" ""

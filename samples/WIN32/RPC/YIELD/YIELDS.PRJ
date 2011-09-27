@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\RPC\YIELD\YIELDS.PRJ
+YIELDS.OPN
+novcs
+yields.DEF
+4
+812035224
+0 0 0 0 0 "yield_s.c" ""
+0 0 0 0 0 "yieldp.c" ""
+0 0 0 0 0 "yields.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "yields.def" ""

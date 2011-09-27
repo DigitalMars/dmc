@@ -1,0 +1,15 @@
+82572
+c:\NewSamples\MFC32\Advanced\DLLHUSK\dllhusk.prj
+dllhusk.OPN
+novcs
+dllhusk.DEF
+16
+836003830
+0 0 0 0 0 "dllhusk.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "dllhusk.DEF" ""
+0 0 0 0 0 "dllhusk.rc" ""
+0 0 0 0 0 "testdll1.prj" ""
+0 0 0 0 0 "testdll2.prj" ""
+0 0 0 0 0 "testdll1.LIB" ""
+0 0 0 0 0 "testdll2.LIB" ""

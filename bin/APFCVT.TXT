@@ -1,0 +1,142 @@
+
+
+
+		      Apfcvt User Documentation
+
+			    June 28, 1994
+
+
+
+	Apfcvt is used to convert executables or libraries so that
+they load profiling libraries rather than their conventional
+libraries.  Apfcvt works for both 16-bit and 32-bit programs.
+
+
+
+1	GUI Interface
+
+	The GUI interface provides for easy converting of binaries or
+for setting up a "project" of conversions for automation.  Each
+control of interface is explained below.
+
+
+1.1	Binary List
+
+	The Binary List shows the executables and libraries that will
+be converted.  Double-clicking on an entry will display the current
+state of its libraries, i.e., converted or not converted.
+
+	Binaries may be added or removed using the ADD and REMOVE
+buttons.  When adding binaries, an option can selected, RECURSIVE
+LOAD, which causes all libraries that the binary uses to be loaded and
+then all libraries that they use, etc.  These libraries do not have to
+be in the same directory.  Apfcvt will search for them the same way
+that Windows searches for libraries loaded with the LoadLibrary()
+command.  If a library is already being used by another process, it
+will not be loaded.
+
+	For convenience when changing from computer to computer, a
+Base Directory is associated with the binaries listing.  This base
+directory holds the common path for the binaries.  For example, if the
+following binaries were added:
+
+	c:\apps\excel\excel.exe
+	c:\apps\winword\winword.exe
+
+the base directory would be "c:\apps" and the binaries listbox would
+contain "excel\excel" and "winword\winword".  If one moves to another
+computer where the paths of the binaries are:
+
+	d:\excel\excel.exe
+	d:\winword\winword.exe
+
+the user would select the BASE DIRECTORY button and change it from
+"c:\apps\" to "d:\"
+
+	The Windows directory and the Windows System directory do not
+lend themselves nicely to the concept of a base directory.  Therefore,
+for any binary located in Windows or System directory, the binary name
+is preceded by "%win%", "%sys%", or "%sys32%".  This also simplifies
+changing from machine to machine since the Windows and System
+directory may change from machine to machine (Ex: "\win", "\winnt",
+:"\windows", etc.).
+
+
+1.2	Modification List
+
+	There are two listboxes (DON'T MODIFY and MODIFY) that used
+for deciding which libraries to convert and which not to.  When a
+binary is ADDed, its libraries are placed in one of the two lists
+depending on its current state.  If the library is modified, it is
+placed in the MODIFY list.  Keep in mind that these lists do not
+necessarily reflect the true state of the libraries in each binary
+(Double-click on a binary in the BINARY list to check its state).
+
+
+1.3	Convert Character
+
+	The CONVERT CHARACTER box holds the character to be used for
+the conversion.  While changing this character changes the names in
+the MODIFY list, the change does not take effect until the CONVERT
+button is pressed (See next section).
+	
+
+1.4	Convert/Unconvert
+
+	The CONVERT and UNCONVERT buttons are used for modifying the
+libraries in the MODIFY list.  CONVERT replaces the first character of
+each library with the CONVERT CHARACTER.  UNCONVERT switches the first
+character back to its original value.  Keep in mind that UNCONVERT
+only affects those libraries in the MODIFY list and not all libraries
+that converted.
+
+
+1.5	.CVT files
+
+	The current settings can be saved and reloaded later by
+choosing the options under the FILE menu.  The settings are saved as
+as a .CVT file.  Besides the obvious benefits of saving and reloading
+the settings, .CVT files can be used in conjunction with the command
+line options for automation purposes.
+
+
+2	Command Line Interface
+
+	The command line options are divided into two categories:
+support of the options for the old version of Apfcvt and .CVT
+processing.
+
+
+2.1	Old Style Command Line
+	
+	The format for the old Apfcvt is:
+
+	apfcvt < new import names > < modules to convert >
+
+For example:
+
+	apfcvt fernel32 sol.exe freecell.exe
+
+will cause the libraries "kernel32.dll" to be changed to "fernel32"
+in the binaries "sol.exe" and "freecell.exe".  To undo this conversion,
+the following command line would be used:
+
+	apfcvt kernel32 sol.exe freecell.exe
+
+	By not specifying any import names, Apfcvt will display the
+import names of the specified binaries.  For example,
+
+	apfcvt sol.exe freecell.exe
+
+will display the import names of "sol.exe" and "freecell.exe".
+
+
+2.2	.CVT Processing
+
+	The command line format for .CVT processing is:
+
+	apfcvt { /c | /u } < file.cvt >
+
+The /c option loads the settings from the .CVT file and converts the
+libraries in the MODIFY list.  The /u option does the same except it
+unconverts the libraries.

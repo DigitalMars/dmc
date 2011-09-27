@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\ole32\BTTNCUR\BTTNCUR.PRJ
+BTTNCUR.OPN
+novcs
+bttncur.def
+3
+812035224
+0 0 0 0 0 "bttncur.c" ""
+0 0 0 0 0 "cursors.c" ""
+0 0 0 0 0 "bttncur.def" ""
+0 0 0 0 0 "bttncur.rc" ""
+0 0 0 0 1001 "..\bin\movelib.bat" ""

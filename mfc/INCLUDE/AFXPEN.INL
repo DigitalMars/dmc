@@ -1,0 +1,10 @@
+/* copyright 1994  - Symantec Corporation */
+/* wrapper for MFC header files*/
+
+#include <16-bit\afxpen.inl>
+
+
+
+
+
+

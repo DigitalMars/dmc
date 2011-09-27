@@ -1,0 +1,15 @@
+82569
+D:\SC\SAMPLES\MFC25\DIBLOOK\DIBLOOK.PRJ
+DIBLOOK.OPN
+novcs
+DIBLOOK.DEF
+0
+805039278
+0 0 0 0 0 "diblook.def"
+0 0 0 0 0 "dibapi.cpp"
+0 0 0 0 0 "dibdoc.cpp"
+0 0 0 0 0 "diblook.cpp"
+0 0 0 0 0 "dibview.cpp"
+0 0 0 0 0 "mainfrm.cpp"
+0 0 0 0 0 "myfile.cpp"
+0 0 0 0 0 "diblook.rc"

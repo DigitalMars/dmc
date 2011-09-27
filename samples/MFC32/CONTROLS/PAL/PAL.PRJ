@@ -1,0 +1,12 @@
+82570
+c:\SamplesMFC32\CONTROLS\PAL\pal.prj
+pal.OPN
+novcs
+pal.def
+17
+837039004
+0 0 0 0 0 "pal.cpp" ""
+0 0 0 0 0 "palctl.cpp" ""
+0 0 0 0 0 "palppg.cpp" ""
+0 0 0 0 0 "pal.def" ""
+0 0 0 0 0 "pal.rc" ""

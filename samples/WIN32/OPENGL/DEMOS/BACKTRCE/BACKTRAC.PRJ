@@ -1,0 +1,20 @@
+82572
+C:\SC\Samples\WIN32\opengl\demos\backtrce\backtrac.prj
+backtrac.OPN
+novcs
+backtrac.DEF
+19
+853548324
+0 0 0 0 0 "backtrac.cxx" ""
+0 0 0 0 0 "cbacks.cxx" ""
+0 0 0 0 0 "point.cxx" ""
+0 0 0 0 0 "scene.cxx" ""
+0 0 0 0 0 "unitdisk.cxx" ""
+0 0 0 0 0 "backtrac.rc" ""
+0 0 0 0 0 "backtrac.DEF" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "comctl32.lib" ""

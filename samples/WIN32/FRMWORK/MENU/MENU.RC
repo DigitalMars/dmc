@@ -1,0 +1,217 @@
+//Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "globals.h"
+#include "winver.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+CHECKON                 BITMAP  MOVEABLE PURE   "checkon.bmp"
+CHECKOFF                BITMAP  MOVEABLE PURE   "checkoff.bmp"
+DOT                     BITMAP  MOVEABLE PURE   "dot.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_APPICON             ICON    DISCARDABLE     "MENU.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Exit",                       IDM_EXIT
+    END
+    POPUP "&Colors"
+    BEGIN
+        MENUITEM "&Owner Draw Colors",          IDM_COLOROWNERDR
+        MENUITEM SEPARATOR
+        MENUITEM "&Black",                      IDM_BLACK, CHECKED
+        MENUITEM "B&lue",                       IDM_BLUE
+        MENUITEM "&Red",                        IDM_RED
+        MENUITEM "&Green",                      IDM_GREEN
+    END
+    POPUP "&Software"
+    BEGIN
+        POPUP "&Word Processing"
+        BEGIN
+            MENUITEM "&Word 6.0",                   0
+            MENUITEM "W&rite",                      0
+        END
+        POPUP "&Spreadsheet"
+        BEGIN
+            MENUITEM "&Microsoft Excel",            0
+            MENUITEM "&1+2=4",                      0
+        END
+        POPUP "&Languages"
+        BEGIN
+            POPUP "&C"
+            BEGIN
+                MENUITEM "&Visual C++",                 0
+                MENUITEM "&Quick C",                    0
+            END
+            MENUITEM "Quick &BASIC",                0
+            MENUITEM "&Pascal",                     0
+        END
+    END
+END
+
+POPUPMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "FOO-Dummy Popup"
+    BEGIN
+        POPUP "Fonts"
+        BEGIN
+            MENUITEM "Courier",                     IDM_FONT
+            MENUITEM "Times Roman",                 IDM_FONT
+            MENUITEM "Swiss",                       IDM_FONT
+            MENUITEM "Helvetica",                   IDM_FONT
+            MENUITEM "Old English",                 IDM_FONT
+        END
+        POPUP "Sizes"
+        BEGIN
+            MENUITEM "7",                           IDM_SIZE
+            MENUITEM "8",                           IDM_SIZE
+            MENUITEM "9",                           IDM_SIZE
+            MENUITEM "10",                          IDM_SIZE
+            MENUITEM "11",                          IDM_SIZE
+            MENUITEM "12",                          IDM_SIZE
+            MENUITEM "14",                          IDM_SIZE
+        END
+        POPUP "Styles"
+        BEGIN
+            MENUITEM "Bold",                        IDM_STYLE
+            MENUITEM "Italic",                      IDM_STYLE
+            MENUITEM "Strike Out",                  IDM_STYLE
+            MENUITEM "Superscript",                 IDM_STYLE
+            MENUITEM "Subscript",                   IDM_STYLE
+        END
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+MENU ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "Q",            IDM_EXIT,               VIRTKEY, CONTROL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x10001L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "Microsoft Corporation\0"
+            VALUE "FileDescription", "Menu Example Application\0"
+            VALUE "FileVersion", "Version 4.0\0"
+            VALUE "InternalName", "Menu\0"
+            VALUE "LegalCopyright", "Copyright \251 Microsoft Corp. 1990-1995\0"
+            VALUE "LegalTrademarks", "Microsoft\256 is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation\0"
+            VALUE "ProductName", "Menu\0"
+            VALUE "ProductVersion", "Version 4.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""globals.h""\r\n"
+    "#include ""winver.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APPNAME             "Menu"
+    IDS_DESCRIPTION         "Menu Example Application"
+END
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

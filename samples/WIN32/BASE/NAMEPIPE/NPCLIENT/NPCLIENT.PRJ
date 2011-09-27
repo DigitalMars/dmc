@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\BASE\NAMEPIPE\NPCLIENT\NPCLIENT.PRJ
+NPCLIENT.OPN
+novcs
+npclient.DEF
+2
+812035224
+0 0 0 0 0 "client32.c" ""
+0 0 0 0 0 "client32.rc" ""
+0 0 0 0 0 "npclient.def" ""

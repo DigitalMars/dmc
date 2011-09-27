@@ -1,0 +1,16 @@
+82572
+C:\SC\samples\win32\FRMWORK\MENU\MENU.PRJ
+MENU.OPN
+novcs
+menu.def
+16
+812035224
+0 0 0 0 0 "dispatch.c" ""
+0 0 0 0 0 "init.c" ""
+0 0 0 0 0 "menu.c" ""
+0 0 0 0 0 "ownrdraw.c" ""
+0 0 0 0 0 "popup.c" ""
+0 0 0 0 0 "winmain.c" ""
+0 0 0 0 0 "menu.rc" ""
+0 0 0 0 0 "menu.def" ""
+0 0 0 0 0 "version.lib" ""

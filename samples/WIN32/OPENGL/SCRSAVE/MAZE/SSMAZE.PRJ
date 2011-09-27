@@ -1,0 +1,22 @@
+82572
+C:\sc\samples\win32\opengl\scrsave\maze\ssmaze.prj
+ssmaze.OPN
+novcs
+ssmaze.DEF
+16
+852907800
+0 0 0 0 0 "genmaze.c" ""
+0 0 0 0 0 "glmaze.c" ""
+0 0 0 0 0 "pch.c" ""
+0 0 0 0 0 "slvmaze.c" ""
+0 0 0 0 0 "ssmaze.c" ""
+0 0 0 0 0 "dialog.cxx" ""
+0 0 0 0 0 "maze.rc" ""
+0 0 0 0 0 "ssmaze.DEF" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "sscommon.lib" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "comctl32.lib" ""

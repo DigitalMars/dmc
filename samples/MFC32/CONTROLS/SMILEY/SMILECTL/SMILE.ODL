@@ -1,0 +1,75 @@
+// Smile.odl : type library source for OLE Custom Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (Smile.tlb) that will become a resource in
+// Smile.ocx.
+
+#include <olectl.h>
+
+[ uuid(175CB000-BEED-11CE-9611-00AA004A75CF), version(1.0),
+  helpstring("Smile OLE Custom Control module"), control ]
+library SMILELib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CSmileCtrl
+
+	[ uuid(175CB001-BEED-11CE-9611-00AA004A75CF),
+	  helpstring("Dispatch interface for Smile Control"), hidden ]
+	dispinterface _DSmile
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CSmileCtrl)
+			[id(DISPID_BACKCOLOR), bindable, requestedit] OLE_COLOR BackColor;
+			[id(DISPID_FONT), bindable] IFontDisp* Font;
+			[id(DISPID_FORECOLOR), bindable, requestedit] OLE_COLOR ForeColor;
+			[id(DISPID_CAPTION), bindable, requestedit] BSTR Caption;
+			[id(DISPID_BORDERSTYLE), bindable, requestedit] short BorderStyle;
+			[id(1)] boolean Sad;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CSmileCtrl)
+			[id(2)] void Beep();
+			[id(3)] void Wink(boolean bWink);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CSmileCtrl
+
+	[ uuid(175CB002-BEED-11CE-9611-00AA004A75CF),
+	  helpstring("Event interface for Smile Control") ]
+	dispinterface _DSmileEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CSmileCtrl)
+			[id(1)] void Outside();
+			[id(2)] void Inside(OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CSmileCtrl
+
+	[ uuid(175CB003-BEED-11CE-9611-00AA004A75CF),
+	  helpstring("Smile Control"), control ]
+	coclass Smile
+	{
+		[default] dispinterface _DSmile;
+		[default, source] dispinterface _DSmileEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+};

@@ -1,0 +1,15 @@
+82572
+C:\SC\samples\win32\FRMWORK\GEN32\GEN32.PRJ
+GEN32.OPN
+novcs
+GEN32.DEF
+16
+812035224
+0 0 0 0 0 "about.c" ""
+0 0 0 0 0 "dispatch.c" ""
+0 0 0 0 0 "generic.c" ""
+0 0 0 0 0 "init.c" ""
+0 0 0 0 0 "misc.c" ""
+0 0 0 0 0 "winmain.c" ""
+0 0 0 0 0 "generic.rc" ""
+0 0 0 0 0 "version.lib" ""

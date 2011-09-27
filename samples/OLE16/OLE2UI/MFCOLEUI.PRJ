@@ -1,0 +1,39 @@
+82572
+C:\SC\samples\ole16\OLE2UI\MFCOLEUI.PRJ
+MFCOLEUI.OPN
+novcs
+mfcoleui.def
+1
+812035224
+0 0 0 0 0 "busy.c" ""
+0 0 0 0 0 "common.c" ""
+0 0 0 0 0 "convert.c" ""
+0 0 0 0 0 "dbgutil.c" ""
+0 0 0 0 0 "dllfuncs.c" ""
+0 0 0 0 0 "drawicon.c" ""
+0 0 0 0 0 "enumfetc.c" ""
+0 0 0 0 0 "enumstat.c" ""
+0 0 0 0 0 "geticon.c" ""
+0 0 0 0 0 "hatch.c" ""
+0 0 0 0 0 "icon.c" ""
+0 0 0 0 0 "iconbox.c" ""
+0 0 0 0 0 "insobj.c" ""
+0 0 0 0 0 "links.c" ""
+0 0 0 0 0 "msgfiltr.c" ""
+0 0 0 0 0 "objfdbk.c" ""
+0 0 0 0 0 "ole2ui.c" ""
+0 0 0 0 0 "olestd.c" ""
+0 0 0 0 0 "oleutl.c" ""
+0 0 0 0 0 "pastespl.c" ""
+0 0 0 0 0 "precomp.c" ""
+0 0 0 0 0 "regdb.c" ""
+0 0 0 0 0 "resimage.c" ""
+0 0 0 0 0 "stdpal.c" ""
+0 0 0 0 0 "targtdev.c" ""
+0 0 0 0 0 "utility.c" ""
+0 0 0 0 0 "dballoc.cpp" ""
+0 0 0 0 0 "suminfo.cpp" ""
+0 0 0 0 0 "mfcoleui.def" ""
+0 0 0 0 0 "ole2ui.rc" ""
+0 0 0 0 0 "miclass.h" ""
+0 0 0 0 1001 "..\bin\movelib.bat" ""

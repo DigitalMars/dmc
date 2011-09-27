@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\Q_A\CMNDLG\CMNDLG.PRJ
+CMNDLG.OPN
+novcs
+CMNDLG.DEF
+16
+812035224
+0 0 0 0 0 "cmndlg.c" ""
+0 0 0 0 0 "cmndlg.def" ""
+0 0 0 0 0 "cmndlg.rc" ""
+0 0 0 0 0 "comdlg32.lib" ""

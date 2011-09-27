@@ -1,0 +1,39 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include "windows.h"
+#include "wsock.h"
+RCINCLUDE wsock.dlg
+wsockicon ICON wsock.ICO
+ 
+WSockMenu MENU
+BEGIN
+    POPUP        "&WinSock"
+    BEGIN
+        MENUITEM "&Check Host Name (gethostbyname)", IDM_HOSTNAME
+        MENUITEM SEPARATOR
+        MENUITEM "Co&nnect", IDM_CONNECT
+        MENUITEM SEPARATOR
+        MENUITEM "&Listen (blocking)", IDM_LISTEN
+        MENUITEM "Listen with &Threads", IDM_TLISTEN
+        MENUITEM "&Async Listen - (WSA extensions)", IDM_ALISTEN
+        MENUITEM "&Cancel async listen", IDM_CANCEL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Send a message", IDM_SENDTCP, GRAYED
+    END
+    POPUP        "&Help"
+    BEGIN
+        MENUITEM "&About Windows Sockets...", IDM_ABOUT
+    END
+
+END
+

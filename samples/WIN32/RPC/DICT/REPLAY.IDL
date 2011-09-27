@@ -1,0 +1,276 @@
+/*************************************************************/
+/**                                                         **/
+/**                 Microsoft RPC Examples                  **/
+/**                 Dictionary Application                  **/
+/**           Copyright(c) Microsoft Corp. 1992-1995        **/
+/**                                                         **/
+/*************************************************************/
+
+[ uuid (12345678-1234-ABCD-EF00-0123456789AB),
+  version(1.0),
+//  endpoint("msc_np:[\\pipe\\splay]"),
+  pointer_default(unique)
+]
+interface dict
+{
+
+/*************************************************************************/
+/***            Strongly typed tree nodes and dictionaries             ***/
+/*************************************************************************/
+
+/*
+ ************************************************************************
+ * Record type - previously imported from util1.idl
+ * This is the type of items stored in the remote dictionary.
+ ************************************************************************
+*/
+
+typedef struct _Record {
+    short key;                      // RPC "generation"
+    [string] char* name;            // contributor
+} Record;
+
+typedef Record * PRecord;
+
+/*
+ ************************************************************************
+ * The following definitions (RDict, RecordTreeNode) are required
+ * for marshalling a complete dictionary, binary tree, respectively.
+ * All pointers are based on RPC-able types, replacing "void*"
+ * pointers in the local dictionary (dict0) which are non-transmissible.
+ ************************************************************************
+*/
+
+typedef struct _RecordTreeNode {
+    struct _RecordTreeNode *left;   // left child pointer
+    struct _RecordTreeNode *right;  // right child pointer
+    Record *item;                   // pointer to a Record structure
+} RecordTreeNode;
+
+typedef struct _DictState {
+    short ref_count;                // for shared dictionaries
+    Record * curr_record;           // for global iterators
+} DictState;
+
+typedef struct _RDict {
+    RecordTreeNode *root;           // pointer to the root of a SAT
+    long size;                      // number of records in dictionary
+    DictState * state;              // pointer to state info
+} RDict;
+
+/*
+ * VDict is a "virtual dictionary" object.  It is used in the client
+ * application as a handle on a dictionary maintained by a server
+*/
+typedef [context_handle] void * VDict;
+
+typedef enum {
+    DICT_SUCCESS,
+    DICT_ITEM_ALREADY_PRESENT,
+    DICT_ITEM_NOT_FOUND,
+    DICT_FIRST_ITEM,
+    DICT_LAST_ITEM,
+    DICT_EMPTY_DICTIONARY,
+    DICT_NULL_ITEM
+} VDict_Status;
+
+/*************************************************************************/
+/***    Generic Dictionary Operations: (From dict0.h)                  ***/
+/***                                                                   ***/
+/***    Dictionary *Dict_New(Cmp_rec*, Splay*, print_rec*)             ***/
+/***                                                                   ***/
+/***    Dict_Status Dict_Find(Dictionary*, Item*)                      ***/
+/***    Dict_Status Dict_Next(Dictionary*, Item*)                      ***/
+/***    Dict_Status Dict_Prev(Dictionary*, Item*)                      ***/
+/***    Dict_Status Dict_Insert(Dictionary*, Item*)                    ***/
+/***    Dict_Status Dict_Delete(Dictionary*, Item**)                   ***/
+/***                                                                   ***/
+/***    Item* DICT_CURR_ITEM(Dict*)                                    ***/
+/*************************************************************************/
+
+/*************************************************************************/
+/***    Virtual Dictionary Operations (on remote dictionaries)         ***/
+/***                                                                   ***/
+/***    VDict_Status VDict_New(OUT VDict *)                            ***/
+/***                                                                   ***/
+/***    VDict_Status VDict_Find(IN VDict, IN OUT Record**)             ***/
+/***    VDict_Status VDict_Next(IN VDict, IN OUT Record**)             ***/
+/***    VDict_Status VDict_Prev(IN VDict, IN OUT Record**)             ***/
+/***    VDict_Status VDict_Insert(IN VDict, IN Record*)                ***/
+/***    VDict_Status VDict_Delete(IN VDict, IN OUT Record**)           ***/
+/***                                                                   ***/
+/***    VDict_Status VDict_Get_Dict(IN VDict, OUT RDict**)             ***/
+/***    VDict_Status VDict_Curr_Item(IN VDict, OUT Record**);          ***/
+/***    VDict_Status VDict_Delete_Curr(IN VDict, OUT Record**);        ***/
+/***    VDict_Status VDict_Curr_Next(IN VDict, OUT Record**);          ***/
+/***    VDict_Status VDict_Curr_Prev(IN VDict, OUT Record**);          ***/
+/***                                                                   ***/
+/*************************************************************************/
+
+/*
+ ************************************************************************
+ * Most of the remote operations interfacing to a remote dictionary
+ * are very close to operations on local dictionaries, with the
+ * following noted exceptions.  To compansate for the fact that it is
+ * possible to "peek" and get the current item of a local dictionary,
+ * some interfaces had to be added, and others have to be changed to
+ * closely match the capabilities of a local dictionaries by a remote
+ * dictionary.  In particular the item (Record) argument became an OUT
+ * or an IN OUT argument, returning the value of the "current_item"
+ * following an operation (VDict_Find, VDict_Next, VDict_Prev).
+ * The operations VDict_Curr_Item, VDict_Delete_Curr, VDict_Curr_Next,
+ * and VDict_Curr_Prev were added to get functionality obtained in
+ * local dictionaries by the DICT_CURR_ITEM macro, and by passing the
+ * current item as an IN argument to Dict_Delete, Dict_Next
+ * and Dict_Prev.  The basic return [IN] OUT parameter was changed
+ * from (Item*) to (Record**), partly to further test the pointer
+ * handling capabilities of the MIDL compiler.
+ *************************************************************************
+*/
+
+/*
+ *************************************************************************
+ * In non-shared mode: Creates and initializes a new (private copy of
+ * the) dictionary.
+ *
+ * In shared mode: If there is an existing shared dictionary, return
+ * it, otherwise Creates and initializes a new (shared copy of
+ * the) dictionary.
+ *************************************************************************
+*/
+
+VDict_Status
+VDict_New(
+  [in] short shared_dict,
+  [out] VDict * v_dict
+  );
+
+/*
+ *************************************************************************
+ * Find *item in the dictionary.  If *item was not present a "neighbor"
+ * of *item will be returned instead
+ *************************************************************************
+*/
+
+VDict_Status
+VDict_Find(
+    [in] VDict  v_dict,
+    [in, out] Record ** item
+    );
+
+/*
+ *************************************************************************
+ * Get successor / predecessor of *item, and update *item to point to it
+ *************************************************************************
+*/
+
+VDict_Status
+VDict_Next(
+    [in] VDict  v_dict,
+    [in, out] Record ** item
+    );
+
+VDict_Status
+VDict_Prev(
+    [in] VDict  v_dict,
+    [in, out] Record ** item
+    );
+
+/*
+ *************************************************************************
+ * Get successor / predecessor of RDICT_CURR_RECORD(v_dict),
+ * and update *item to point to it (global iterator prev)
+ *************************************************************************
+*/
+
+VDict_Status
+VDict_Curr_Next(
+    [in] VDict  v_dict,
+    [out] Record ** item
+    );
+
+VDict_Status
+VDict_Curr_Prev(
+    [in] VDict  v_dict,
+    [out] Record ** item
+    );
+
+/*
+ *************************************************************************
+ * Insert *item into the dictionary
+ *************************************************************************
+*/
+
+VDict_Status
+VDict_Insert(
+    [in] VDict  v_dict,
+    [in] Record * item
+    );
+
+/*
+ *************************************************************************
+ * Delete *item from the dictionary.  (It is the callers responsibility
+ * to free the storage allocated for the returned record)
+ *************************************************************************
+*/
+
+VDict_Status
+VDict_Delete(
+    [in] VDict  v_dict,
+    [in, out] Record ** item
+    );
+
+/*
+ *************************************************************************
+ * Return a local copy of the whole dictionary
+ *************************************************************************
+*/
+
+VDict_Status
+VDict_Get_Dict(
+    [in] VDict  v_dict,
+    [out] RDict ** r_dict
+    );
+
+/*
+ *************************************************************************
+ * Return DICT_CURR_ITEM(v_dict)
+ *************************************************************************
+*/
+
+VDict_Status
+VDict_Curr_Item(
+    [in] VDict  v_dict,
+    [out] Record ** item
+    );
+
+/*
+ *************************************************************************
+ * Delete RDICT_CURR_RECORD(v_dict) from the dictionary.
+ * (It is the callers responsibility to free the storage
+ * allocated for the returned record)
+ *************************************************************************
+*/
+
+VDict_Status
+VDict_Curr_Delete(
+    [in] VDict  v_dict,
+    [out] Record ** item
+    );
+
+/*************************************************************************/
+/***                        Play oriented Functions ...                ***/
+/*************************************************************************/
+
+VDict_Status
+VDict_X_Dict(
+    [in] VDict  v_dict
+    );
+
+VDict_Status
+VDict_I_Dict(
+    [in] VDict  v_dict,
+    [in] short  size
+    );
+
+}

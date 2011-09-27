@@ -1,0 +1,515 @@
+<html>
+<!--
+	Copyright (c) 1999-2002 by Digital Mars
+	All Rights Reserved
+	Written by Walter Bright
+	www.digitalmars.com
+  -->
+<head>
+<title>Digital Mars FAQ</title>
+</head>
+
+<body bgcolor="white">
+<a href="http://www.digitalmars.com/"><IMG SRC="dmlogo.gif" BORDER=0 WIDTH=270 HEIGHT=53 ALT="www.digitalmars.com"></a>
+[<a href="http://www.digitalmars.com/" title="www.digitalmars.com">Home</a>]
+[FAQ]
+[<a href="http://www.digitalmars.com/NewsGroup.html" title="join News Groups">News Groups</a>]
+[<a href="advancedsearch.html" title="Search web site">Search</a>]
+[<a href="http://www.digitalmars.com/bibliography.html" title="books we recommend">Books</a>]
+[<a href="http://www.digitalmars.com/shop.html" title="Buy DMC++ CD">Buy CD</a>]
+<p><small><i>Last update Mar 17, 2003</i></small>
+<hr>
+<h1>Frequently Asked Questions</h1>
+
+<ul>
+	<li><a href="http://www.eskimo.com/~scs/C-faq/top.html">C FAQ</a> from comp.lang.c
+
+	<li><a href="http://www.parashift.com/c++-faq-lite/">C++ FAQ</a> from comp.lang.c++
+
+	<li><a href="http://snurse-l.org/acllc-c++/faq.html">C-C++ FAQ</a> from alt.comp.lang.learn.c-c++
+
+	<li><a href="http://www.faqs.org/">FAQs</a> for other newsgroups
+
+	<li> <a href="#cd">Can I get it on CD?</a>
+	<li> <a href="#debugger">Where's the debugger?</a>
+	<li> <a href="#idde">Where's the IDDE?</a>
+	<li> <a href="#console">When I click on it, a window flashes and disappears?</a>
+	<li> <a href="#documentation">Can I download the documentation in one zip file?</a>
+	<li> <a href="#dosx">Is DOSX still available?</a>
+	<li> <a href="#wdosx">Does the WDOSX (Wuschel's DOS eXtender) work with DMC?</a>
+	<li> <a href="#zed">Is the Zed editor still available?</a>
+	<li> <a href="#dos16tools">Will the compiler run under DOS?</a>
+	<li> <a href="#otherflags">How do I specify other compiler flags to the IDDE?</a>
+	<li> <a href="#fd_set">Redefined type errors when including the socket header files</a>
+	<li> <a href="rtl/disp.html#clrscr">How do I clear the screen?</a>
+	<li> <a href="#sct3d32">I'm getting a message about SCT3D32.DLL not installed</a>
+	<li> <a href="#codeview">How do I work with old CodeView?</a>
+	<li> <a href="#sysimport">I need an import library for a Windows system DLL</a>
+	<li> <a href="#classexpress">ClassExpress crashes reading resources created by VC++</a>
+	<li> <a href="ctg/implib.html#coff2omf">COFF2OMF converts .lib files to empty files?</a>
+	<li> <a href="bugs.html">How do I report a bug?</a>
+	<li> <a href="#path">IDDE sometimes can't find files, shows paths wrong?</a>
+	<li> <a href="#winsdk">I need winfax.h or some other new Win SDK header file</a>
+	<li> <a href="#rs32">Resource Editor crashes under Windows ME?</a>
+	<li> <a href="#directx">How do I use DirectX with DMC?</a>
+	<li> <a href="#workspace">Why can't I create a workspace in the IDDE?</a>
+	<li> <a href="ctg/ctgLinkOps.html#symbolundefined">I'm getting 'Symbol Undefined' messages while linking</a>
+	<li> <a href="#console">When I run the compiler, it just flashes on the screen and disappears?</a>
+	<li> <a href="ctg/dos32.html#vram">How do I access video ram in DOSX?</a>
+	<li> <a href="ctg/dos32.html#intreal">How do I call a real mode interrupt not implemented by DOSX?</a>
+	<li> <a href="ctg/dos32.html#realbuffer">How do I pass a buffer to a real mode interrupt?</a>
+	<li> <a href="ctg/dos32.html#nasm">NASM built .obj files crash with DOSX?</a>
+	<li> <a href="#iostream">Where is the header file &lt;iostream&gt;?</a>
+	<li> <a href="#winmain">I get 'Symbol Undefined _WinMain@16'?</a>
+	<li> <a href="#consolewindow">How do I stop the console window from appearing?</a>
+</ul>
+
+<a name="cd">
+<h3>Can I get it on CD?</h3>
+</a>
+<ul>
+	<a href="shop.html" title="Digital Mars CD">CD</a> now available!
+	It's very reasonably priced at $25 plus S&H.
+</ul>
+
+<a name="#debugger">
+<h3>Where's the debugger?</h3>
+</a>
+<ul>
+	The
+	<a href="shop.html" title="purchase CD">CD</a>
+	version includes the DMC++ debugger.
+	Alternatively,
+	you can use any debugger that works with the Microsoft CodeView
+	format or linker <b>.MAP</b> format. These include the:
+	<ul>
+		<li> Symantec debuggers
+		<li> Zortech debuggers
+		<li> Microsoft debuggers (Codeview, symdeb, windbg, VC++ debugger)
+		<li> Rational Systems debuggers
+		<li> Multiscope debuggers
+	</ul>
+	Remember to compile with the <b>-g</b> option
+	(generate symbolic debug info)
+	and link with <b>/co/ma</b>.
+</ul>
+
+<a name="#idde">
+<h3>Where's the IDDE?</h3>
+</a>
+<ul>
+	The
+	<a href="shop.html" title="purchase CD">CD</a>
+	version includes the DMC++ Integrated Developing and
+	Debugging Environment (IDDE).
+	Alternatively, the Microemacs editor, included in the free download
+	version, is a fully capable and powerful text editor.
+</ul>
+
+<a name="#console">
+<h3>When I click on it, a window flashes and disappears?</h3>
+</a>
+<ul>
+	This happens when the program is a console program.
+	Console programs are meant to be run from the command prompt.
+	Most of the non-IDDE Digital Mars programs are console programs.
+	A command prompt window can be created on XP by
+	clicking on [Start][Command Prompt].
+</ul>
+
+<a name="#documentation">
+<h3>Can I download the documentation in one zip file?</h3>
+</a>
+<ul>
+	All the documentation comes on the
+	<a href="shop.html" title="purchase CD">CD</a> as html files,
+	as well as the Microsoft API documentation in Windows
+	Help format.
+</ul>
+
+<a name="dosx">
+<h3>Is DOSX still available?</h3>
+</a>
+<ul>
+	DOSX is now re-released as X32 for the Digital Mars compilers,
+	and is now available again! Download the
+	<a href="download/dmcpp.html" title="download patch">patch</a>
+	for X32, and
+	<a href="http://www.dosextender.com/" title="www.dosextender.com">X32</a>
+	itself.
+
+	If you need the old Symantec or Zortech dos extender version,
+	and you have an original licensed copy of the Zortech or Symantec
+	compilers, copy these files:
+
+	<pre>
+	lib\sdx.lod
+	lib\cx.obj
+	src\dos32\cx.asm
+	src\dos32\lib\x386.lib
+	</pre>
+
+	into the same directories and then you can develop for <b>DOSX</b>
+	again.
+</ul>
+
+<a name="wdosx">
+<h3>Does the WDOSX (Wuschel's DOS eXtender) work with DMC?</h3>
+</a>
+<ul>
+
+	I don't know, but I don't see why not. Check it out at
+	<a href="http://www.wuschel.demon.co.uk/">www.wuschel.demon.co.uk</a>.
+</ul>
+
+<a name="zed">
+<h3>Is the Zed editor still available?</h3>
+</a>
+<ul>
+
+	It appears to be
+	<a href="http://www.trumphurst.com/zed.phtml" title="www.trumphurst.com/zed.phtml">
+	here</a>.
+</ul>
+
+<a name="dos16tools">
+<h3>Will the compiler run under DOS?</h3>
+</a>
+<ul>
+
+	No. Although the compiler will build 16 bit <b>DOS</b> programs, the
+	compiler itself will only run under <b>Win32</b>.
+	The dos extended versions of
+	the tool executables are no longer included.
+	Symantec does offer a freely downloadable set of compilers
+	that run under DOS
+	<a href="ftp://ftp.symantec.com/public/english_us_canada/products/c++/win95-nt/technical_notes/sc722.zip">here</a>.
+	(This link appears to be broken.)
+</ul>
+
+<a name="otherflags">
+<h3>How do I specify other compiler flags to the IDDE?</h3>
+</a>
+<ul>
+	To give 'other' flags (newer ones not on the
+	property pages) such as -Ab, use the
+	'defines' edit box and give the flags there. In such a case, you must
+	explicitely use -D for your defines. If you are only defining,
+	then -D is not required.
+	<p>
+	e.g. If you want to define 'NDEBUG' only, specify only 'NDEBUG'. If in
+	addition, you want to specify -Ab, you must write:
+	<pre>
+	-Ab -DNDEBUG
+	</pre>
+</ul>
+
+<a name="fd_set">
+<h3>Redefined type errors when including the socket header files</h3>
+</a>
+<ul>
+	There are some name collisions by default when including the
+	socket header files. It reports about 5 redefined variable types,
+	fd_set being among them.
+	fd_set can also be found in types.h and unistd.h.
+	<p>
+
+	The solution is to #define _WIN32_WINNT=0x0400 in order to
+	force windows.h to include 
+	winsock2.h, not winsock.h.
+</ul>
+
+<a name="sct3d32">
+<h3>I'm getting a message about SCT3D32.DLL not installed</h3>
+</a>
+<ul>
+	This can happen when creating an application using the AppExpress
+	feature of ProjectExpress [Project->New] in the IDDE.
+	Clicking "use AppExpress" followed by "finish", the message
+	in a window titled CTL3DV2 appears:
+
+	<pre>
+	"This application uses SCT3D32.DLL, which has not been correctly
+	installed."
+	</pre>
+
+	This message is generated by SCT3D32.DLL itself (a Microsoft supplied
+	DLL), and is produced when it is not residing in the system directory.
+	SCT3D32.DLL is in the \dm\bin directory. Copy it to your windows
+	system directory (which on NT is \winnt40\system32), and rename
+	the one in \dm\bin to SCT3D32.DLL.OLD.
+	<p>
+
+	This is the only known DLL with this problem.
+</ul>
+
+<hr><a name="codeview"><h3>How do I work with old CodeView?</h3></a>
+
+<ul>
+
+	<h4>The problem:</h4>
+
+	Compiling a test program like this,
+
+	<pre>
+	sc -ms -0 -g -L/co/ma foo.c
+	</pre>
+
+	and proceeding to load CodeView in "real" DOS produces the message:
+
+	<pre>
+	CV0104 Warning:  CodeView information for 'D:\FOO.EXE' is
+	newer than this version of CodeView
+	</pre>
+
+	The version of codeview is 4.01 as supplied in the
+	MASM 6.11 package, dated from 1992.
+	Using /cvversion:4 to the linker produces the same result,
+	as well as using compiler option -g4.
+	Using masm to assemble an example program and linking using Microsoft Link
+	does work with codeview. Linking the same .obj file with optlink/cvversion:4
+	produces the same failure.
+
+	<h4>The solution:</h4>
+
+	Optlink runs cvpack when
+	generating cv4 info. This seems to be the cause of
+	the trouble: cv only gives the "info is newer
+	than this version of codeview" error when cvpack is
+	executed without any options. When optlink is given
+	the /nocvpack option, then run cvpack manually with
+	the minimal option, the debugger (cv) then reports
+	with symbolic names. For example:
+
+	<pre>
+	sc -ms -0 -g -L/co/l/i/nocv foo.exe
+	cvpack /minimal foo.exe
+	</pre>
+
+	and cv will work.
+	<p>
+	<small>(Thanks to Jack Jay for tracking this down.)</small>
+</ul>
+
+
+<hr><a name="sysimport"><h3>I need an import library for a Windows system DLL</h3>
+
+<ul>
+	Consider the following program test.c:
+
+
+	<pre>
+	#include &lt;windows.h&gt;
+
+	void main()
+	{
+	     gethostbyname(0);
+	}
+	</pre>
+
+	The function gethostbyname() is declared in \dm\include\win32\winsock.h,
+	and is exported from the Windows system dLL wsock32.dll. Compiling and
+	linking test.c produces:
+
+	<pre>
+	E:&gt;sc test
+	link test,,,user32+kernel32/noi;
+	OPTLINK (R) for Win32  Release 7.50B1
+	Copyright (C) Digital Mars 1989 - 2001  All Rights Reserved
+
+	test.obj(test)
+	 Error 42: Symbol Undefined _gethostbyname@4
+
+	--- errorlevel 1
+
+	E:&gt;
+	</pre>
+
+	If <a href="ctg/implib.html"><tt>implib</tt></a> is run over wsock32.dll to
+	create wsock32.lib, it still doesn't
+	link because the name in wsock32.dll is gethostbyname, not _gethostbyname@4.
+	The solution is to create a
+	<a href="ctg/ctgDefFiles.html">module definition file</a>
+	wsock32.def with the contents:
+
+	<pre>
+	LIBRARY wsock32
+	EXETYPE NT
+	SUBSYSTEM WINDOWS
+	EXPORTS
+	    _gethostbyname@4  = gethostbyname
+	</pre>
+
+	This establishes a translation from one name to the other.
+	Add each of the exports needed.
+	Then run <tt>implib</tt> over it with:
+
+	<pre>
+	implib wsock32.lib wsock32.def
+	</pre>
+
+	and link with:
+
+	<pre>
+	sc test.obj wsock32.lib
+	</pre>
+
+	and it should then link successfully.
+</ul>
+
+<hr><a name="classexpress"><h3>ClassExpress crashes reading resources created by VC++</h3>
+
+<ul>
+	The problem is in the .rc file.  If the project has numbers (i.e.
+	63552, 10254, ...) in place of menu resource ID's (i.e. IDM_FILE_OPEN,
+	IDM_FILE_SAVE, ...) then ClassExpress will crash when looking at
+	"Control ID's in Class" under "Message Maps".
+	<p>
+
+	Replace the numbers with the correct resource ID defines
+	from "resource.h".
+
+	<p>
+	<small>(Thanks to Andrew Corkan for tracking this down.)</small>
+</ul>
+
+<hr><a name="path"><h3>IDDE sometimes can't find files, shows paths wrong?</h3></a>
+
+<ul>
+	Some parts of the IDDE cannot deal with paths and filenames
+	that have embedded spaces in them, for example if some of the
+	source files are in: <code>\program files\dev\dm</code> (note
+	embedded space between "program" and "files"). The solution is
+	to 1) use paths that don't embed spaces or 2)use the subst
+	command, i.e. <code>subst z: \program files\dev</code> and then
+	refer to the files as being off of z: in the IDDE.
+
+	<p>
+	<small>(Thanks to Chris Widdows and Jan Knepper for tracking this down.)</small>
+</ul>
+
+<hr> <a name="winsdk"><h3>I need winfax.h or some other new Win SDK header file.</h3></a>
+
+<ul>
+	Windows SDK updates can be downloaded from
+	<a href="http://www.microsoft.com/msdownload/platformsdk/sdkupdate/">
+	sdkupdate</a>
+	which includes winfax.h.
+</ul>
+
+<hr> <a name="rs32"><h3>Resource Editor crashes under Windows ME?</h3></a>
+
+<ul>
+	When starting RS32 under WinME, it crashes with "Abnormal
+	program termination", and then a page fault in SFC30.DLL.
+	The fix is to install Microsoft's update for Microsoft Explorer
+	MSIE5.5 SP2. This apparently updates some broken system DLLs.
+
+	<p>
+	<small>(Thanks to Laurentiu Pancescu for tracking this down.)</small>
+</ul>
+
+<hr> <a name="directx"><h3>How do I use DirectX with DMC?</h3></a>
+
+<ul>
+	You can get .lib files from MS DIRECTX SDK and
+	convert them to OMF format with COFF2OMF.
+	Then use the .h files from the same SDK.
+	If using only a limited set of DirectX functions,
+	it is possible to build a .lib from .DLL using the
+	implib.exe utility.
+
+	<p>
+	<small>(Thanks to Nic Tiger.)</small>
+</ul>
+
+<hr> <a name="workspace"><h3>Why can't I create a workspace in the IDDE?</h3></a>
+
+<ul>
+	The menu items Environment->Workspace->New or
+	Environment->Workspace->Clone are always grayed in the installation.
+	The limit is 5 workspaces, and as delivered on the CD there
+	are already 5. To create a new workspace, delete one of the
+	existing ones first.
+
+	<p>
+	<small>(Thanks to Frank Albe.)</small>
+</ul>
+
+<hr> <a name="console"><h3>When I run the compiler, it just flashes on the screen and disappears?</h3></a>
+
+	The free downloadable compiler is a console program. That means
+	it needs to be run from within a console window.
+	To start a console for Windows XP,
+	click on [Command Prompt] from the [start] menu.
+	The GUI version of the compiler comes
+	<a href="http://www.digitalmars.com/shop.html">with the CD</a>.
+
+<hr> <a name="iostream"><h3>Where is the header file &lt;iostream&gt;?</h3></a>
+
+	<tt>iostream</tt> is part of STLport.
+	Do one of the following:
+
+	<ul>
+	<li> Add the following switch:
+<pre>
+	-I\dm\stlport\stlport
+</pre>
+	when compiling.
+
+	<li> Add <tt>\dm\stlport\stlport</tt> to the
+	INCLUDE environment variable search path before <tt>\dm\include</tt>.
+
+	<li> Modify the INCLUDE entry
+	in <tt>\dm\bin\sc.ini</tt> to be:
+<pre>
+	INCLUDE="%@P%\..\stlport\stlport";"%@P%\..\include";"%@P%\..\mfc\include";%INCLUDE%
+</pre>
+	</ul>
+
+	For more information, see <tt>\dm\stlport\readme.txt</tt>.
+
+<hr> <a name="winmain"><h3>I get 'Symbol Undefined _WinMain@16'?</h3></a>
+
+	When linking a program as a GUI application, but having a main()
+	like a console application, results in the error message from
+	the linker:
+
+	<pre>
+	link /NOI /DE /PACKF /XN /NT /ENTRY:WinMainCRTStartup /BAS:4194304 /A:512
+	@tst.LNK
+	Error: c:\dm\lib\SNN.lib(winstart)  : Symbol Undefined _WinMain@16
+	Errors: 1  Warnings: 0
+	Build failed
+	</pre>
+
+	If using the IDDE, this is corrected by selecting [Console]
+	under [Target Type] in the first [Tab] of [Project Settings].
+	<p>
+
+	If using a module definition (.def) file, these lines should
+	appear in it:
+
+	<pre>
+	EXETYPE          NT
+	SUBSYSTEM        CONSOLE
+	</pre>
+
+	Do not use <tt>/ENTRY:WinMainCRTStartup</tt> in a command to the linker,
+	this specifies a Windows application.
+
+<hr> <a name="consolewindow"><h3>How do I stop the console window from appearing?</h3></a>
+
+	Add these lines to the module definition (.def) file:
+
+	<pre>
+	EXETYPE       NT
+	SUBSYSTEM     WINDOWS
+	</pre>
+
+	or add the linker flag <tt>-L/exet:nt/su:windows</tt>.
+
+<hr><small>Copyright (c) 1999-2002 by Digital Mars, All Rights Reserved</small>
+
+</body>
+</html>

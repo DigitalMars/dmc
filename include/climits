@@ -1,0 +1,8 @@
+
+#pragma once
+
+#ifndef __CLIMITS_H
+#include <limits.h>
+#endif
+
+

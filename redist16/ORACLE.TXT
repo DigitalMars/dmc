@@ -1,0 +1,326 @@
+SETTING UP THE ODBC ORACLE DRIVER FOR USE WITH THE SQL*NET FOR WINDOWS DLLs
+
+This file discusses how to set up the ODBC ORACLE driver to run with your 
+ORACLE Server software. To use the ODBC ORACLE driver with any large 
+application, such as Microsoft Access, you must use the SQL*Net for Windows 
+DLLs. Because the ODBC ORACLE driver is designed to use ORACLE Server 
+version 6 and the SQL*Net for Windows DLLs are designed to use ORACLE Server 
+version 7, you must be careful to configure your system correctly.
+
+If you do not have the SQL*Net for Windows DLLs, or, after following the
+instructions in this file, you are still unable to connect to ORACLE Server
+with SQL*Net, you can contact Oracle Corp. at 1-800-345-DBMS.
+
+
+If ORACLE Server version 6 is already installed on your system
+--------------------------------------------------------------
+
+To set up the ODBC ORACLE driver and the SQL*Net for Windows DLLs if you 
+already have ORACLE Server version 6 on your system:
+
+1.  Make sure you have the correct versions of ORACLE products, including at 
+    least one SQL*Net protocol.
+
+    Product                                  Version
+    --------------------------------         -----------
+    ORACLE Installer                         3.0.8.3.7
+    Required Support Files                   7.0.12.1.0
+    SQL*Net Named Pipes for Windows          1.1.1.3
+    SQL*Net SPX for Windows                  1.1.1.5
+    SQL*Net TCP/IP for Windows               1.1.7.6
+
+2.  Test your current SQL*Net connection by using an ORACLE tool such as 
+    SQL*Plus for Windows.
+
+3.  Search for and delete all copies of ORA6WIN.DLL from your system. A new
+    (backwards compatible) version of ORA6WIN.DLL will be installed with the
+    ODBC ORACLE driver.
+
+4.  Run the ORACLE Installer program. When asked for your ORACLE installation
+    directory, use the suggested default directory C:\ORAWIN.
+
+5.  Run the ORACLE Installer in the ORACLE group in the Program Manager:
+
+    a) Install the files from the Required Support Files disk.
+
+    b) Install the SQL*Net protocol you will be using. For more information,
+       see the ORACLE documentation.
+
+6.  If the following line exists, remove it from your AUTOEXEC.BAT file:
+
+      SET CONFIG=<oracle_configuration_file>
+
+    Add the following line to your AUTOEXEC.BAT file:
+
+      SET CONFIG_FILES=C:\WINDOWS\ORACLE.INI
+
+    NOTE: If you are using the MS-DOS 6.0 operating system, add the following 
+    line to the end of your AUTOEXEC.BAT file:
+
+      SET CONFIG=
+
+    ORACLE Server first checks the CONFIG environment variable for the path of
+    the ORACLE configuration file. If the CONFIG variable is not set, ORACLE
+    Server checks the CONFIG_FILES variable. Because MS-DOS 6.0 can use the 
+    CONFIG environment variable during system startup, you must clear this 
+    variable before leaving your AUTOEXEC.BAT file. Otherwise, ORACLE Server 
+    will use its value as the path of the ORACLE configuration file.
+
+7.  Make sure your PATH variable includes the BIN subdirectories of your
+    <oraclehome> directory and the \ORAWIN directory. For example, if your
+    <oraclehome> directory is C:\ORACLE6, add the following line to your
+    AUTOEXEC.BAT file:
+
+      SET PATH=%PATH%;C:\ORACLE6\BIN;C:\ORAWIN\BIN
+
+8.  Paste the contents of your CONFIG.ORA file at the start of your
+    ORACLE.INI file. For example, if your CONFIG.ORA file contains:
+
+      LANGUAGE=American_America.US7ASCII
+      ORACLE_HOME=C:\ORACLE6
+      MACHINE_TYPE=J
+      SQLPATH=C:\ORACLE6
+      WIN_REMOTE_SESSIONS=3
+      LOCAL=p:MyServer
+
+    and your ORACLE.INI file contains:
+
+      [Oracle]
+      ORACLE_HOME=C:\ORAWIN
+      LANGUAGE=American_America.US7ASCII
+      NLS_LANG=ENGLISH
+      WIN_LOCAL_SESSIONS=1
+      TCP_VENDOR=LANMAN
+      TCP_SERVICES_FILE=C:\WINDOWS\SERVICES
+
+    then your modified ORACLE.INI file should contain:
+
+      LANGUAGE=American_America.US7ASCII
+      ORACLE_HOME=C:\ORACLE6
+      MACHINE_TYPE=J
+      SQLPATH=C:\ORACLE6
+      WIN_REMOTE_SESSIONS=3
+      LOCAL=p:MyServer
+      
+      [Oracle]
+      ORACLE_HOME=C:\ORAWIN
+      LANGUAGE=American_America.US7ASCII
+      NLS_LANG=ENGLISH
+      WIN_LOCAL_SESSIONS=1
+      TCP_VENDOR=LANMAN
+      TCP_SERVICES_FILE=C:\WINDOWS\SERVICES
+
+    Note that the ORACLE_HOME variable is set twice, once to point to the
+    version 6 <oraclehome> directory and once to point to C:\ORAWIN.
+
+9.  If it is not already running, start Windows. Insert the ODBC Setup disk 
+    in drive A, choose Run from the Windows Program Manager (or File Manager)
+    File menu, and then type "a:\setup.exe" in the Command Line box. For 
+    information about using the ODBC Setup program, see the online Help.
+
+10. Run the ODBC Control Panel option and add a data source for your ORACLE
+    server. For information about using the ODBC Control Panel option, see
+    the online Help.
+
+You should now be able to run the ODBC ORACLE driver. You should also be 
+able to run ORACLE version 6 and version 7 tools and applications written for 
+Windows. All of these can run over SQL*Net for Windows DLLs.
+
+NOTE:  Due to differences in memory use, this configuration may not allow you 
+to run ORACLE MS-DOS-only tools or applications.
+
+
+If ORACLE Server is not installed on your system
+------------------------------------------------
+
+To set up the ODBC ORACLE driver and the SQL*Net for Windows DLLs if you do not
+have any versions of ORACLE Server on your system:
+
+1.  Make sure that you have the correct versions of ORACLE products, including 
+    at least one SQL*Net protocol.
+
+    Product                                  Version
+    --------------------------------         -----------
+    ORACLE Installer                         3.0.8.3.7
+    Required Support Files                   7.0.12.1.0
+    SQL*Net Named Pipes for Windows          1.1.1.3
+    SQL*Net SPX for Windows                  1.1.1.5
+    SQL*Net TCP/IP for Windows               1.1.7.6
+
+
+2.  Install the network software connecting your client workstation to the
+    server and check that a connection can be made. For example, for the 
+    TCP/IP protocol, type "ping <servername>". This connection must work 
+    before you install the SQL*Net for Windows DLLs.
+
+3.  Run the ORACLE Installer program. When asked for your ORACLE installation
+    directory, use the suggested default directory C:\ORAWIN.
+
+4.  Run the ORACLE Installer in the ORACLE group in the Program Manager:
+
+    a) Install the files from the Required Support Files disk.
+
+    b) Install the SQL*Net protocol you will be using. For more information,
+       see the ORACLE documentation.
+
+5.  Add the following line to your AUTOEXEC.BAT file:
+
+      SET CONFIG_FILES=C:\WINDOWS\ORACLE.INI
+
+    NOTE: If you are using MS-DOS 6.0, add the following line to the end 
+    of your AUTOEXEC.BAT file:
+
+      SET CONFIG=
+
+    ORACLE Server first checks the CONFIG environment variable for the path of
+    the ORACLE configuration file. If the CONFIG variable is not set, ORACLE
+    Server checks the CONFIG_FILES variable. Because MS-DOS 6.0 can use the 
+    CONFIG environment variable during system startup, you must clear this 
+    variable before leaving your AUTOEXEC.BAT file. Otherwise, ORACLE Server 
+    will use its value as the path of the ORACLE configuration file.
+
+6.  Make sure your PATH variable includes the C:\ORAWIN\BIN directory. To do
+    this, add the following line to your AUTOEXEC.BAT file:
+
+      SET PATH=%PATH%;C:\ORAWIN\BIN
+
+7.  So that the ODBC ORACLE driver can use ORACLE version 7 error messages, 
+    copy the version 7 error messages to the directory where the ODBC
+    ORACLE driver searches for error messages:
+
+      COPY C:\ORAWIN\RDBMS70\*.MSB C:\ORAWIN\DBS
+
+8.  Search for and delete all copies of ORA6WIN.DLL from your system. A new
+    (backwards compatible) version of ORA6WIN.DLL will be installed with the
+    ODBC ORACLE driver.
+
+9.  If it is not already running, start Windows. Insert the ODBC Setup disk
+    in drive A, choose Run from the Windows Program Manager (or File Manager)
+    File menu, and then type "a:\setup.exe" in the Command Line box. For 
+    information about using the ODBC setup program, see the online Help.
+
+10. Run the ODBC Control Panel option and add a data source for your ORACLE
+    server. For information about using the ODBC Control Panel option, see
+    the online Help.
+
+You should now be able to run the ODBC ORACLE driver.
+
+
+ORACLE Error Messages
+---------------------
+The following section explains what to do when you encounter various error
+messages from ORACLE Server through the ODBC ORACLE driver.
+
+
+ORA-xxxxx Message not found; product = RDBMS; facility = ORA; language = NULL
+-----------------------------------------------------------------------------
+
+The ODBC ORACLE driver searches for error messages in the subdirectory that
+normally contains the ORACLE version 6 error messages. If you receive this
+error, it means that the ODBC ORACLE driver cannot find the error messages.
+To fix this:
+
+1.  Check that the CONFIG_FILES variable is set in your AUTOEXEC.BAT file and
+    that it points to your ORACLE configuration file (ORACLE.INI). If you are
+    using MS-DOS 6.0, check that the CONFIG environment variable is either not 
+    set or is cleared in the last line of your AUTOEXEC.BAT file.
+
+2.  Check that the ORACLE_HOME variable is set correctly in your
+    C:\WINDOWS\ORACLE.INI file.
+
+    If ORACLE Server version 6 was already installed on your system,
+    ORACLE_HOME should be set twice. The first time, it should be set to your
+    version 6 <oraclehome> directory, usually C:\ORACLE6. The second time, in
+    the [Oracle] section of the file, it should be set to C:\ORAWIN.
+
+    If ORACLE Server was not installed on your system, ORACLE_HOME should be
+    set to C:\ORAWIN.
+
+3.  If you did not have any ORACLE software on your workstation, make sure 
+    that you copied all the .MSB files from C:\ORAWIN\RDBMS70 to C:\ORAWIN\DBS.
+
+The ODBC ORACLE driver should now be able to print the ORACLE Server error
+message, enabling you to fix the problem that generated the error.
+
+
+ORA-03121  No interface driver connected -- function not performed
+------------------------------------------------------------------
+
+The ODBC ORACLE driver cannot find ORA6WIN.DLL or one of the SQL*Net 
+components. Check the following:
+
+1.  Without running the ODBC ORACLE driver, make sure the network connection 
+    is valid. For example, type "ping <servername>" for a TCP/IP connection.
+
+2.  Search for and delete old versions of ORA6WIN.DLL. The correct version of
+    the ORA6WIN.DLL was installed by the ODBC ORACLE driver in the SYSTEM
+    subdirectory of your Windows directory.
+
+3.  Check that the PATH variable contains the BIN subdirectory of the
+    <oraclehome> directory (usually C:\ORACLE6\BIN or C:\ORAWIN\BIN).
+
+4.  Check that the CONFIG_FILES variable is set in your AUTOEXEC.BAT file and
+    that it points to your ORACLE configuration file (ORACLE.INI). If you are
+    using MS-DOS 6.0, check that the CONFIG environment variable is either not 
+    set or is cleared in the last line of your AUTOEXEC.BAT file.
+
+5.  Check that SQLTCP.DLL (for TCP/IP), SQLSPX.DLL (for Novell NetWare 
+    IPX/SPX), or SQLNMP.DLL (for Named Pipes) is in the ORACLE BIN directory 
+    specified in the PATH variable. (If not, SQL*Net was not installed 
+    correctly.)
+
+6.  Check that ORA7WIN.DLL and COREWIN.DLL are in the ORACLE BIN directory
+    specified in the PATH variable. (If not, SQL*Net was not installed
+    correctly.)
+
+
+ORA-06120  NETTCP: network driver not loaded
+--------------------------------------------
+
+This error can occur when ORA6WIN.DLL is loaded but cannot find another
+SQL*Net component, such as SQLTCP.DLL.
+
+1.  Check that the directories containing the SQL*Net components are in your
+    PATH variable.
+
+2.  Check that the ORACLE_HOME variable is set correctly in your
+    C:\WINDOWS\ORACLE.INI file.
+
+    If ORACLE Server version 6 was already installed on your system,
+    ORACLE_HOME should be set twice. The first time, it should be set to your
+    version 6 <oraclehome> directory, usually C:\ORACLE6. The second time, in
+    the [Oracle] section of the file, it should be set to C:\ORAWIN.
+
+    If ORACLE Server was not installed on your system, ORACLE_HOME should be
+    set to C:\ORAWIN.
+
+3.  Search for and delete old versions of ORA6WIN.DLL. The correct version of
+    the ORA6WIN.DLL was installed by the ODBC ORACLE driver in the SYSTEM
+    subdirectory of your Windows directory.
+
+4.  Check that you have followed all the instructions for the SQL*Net driver
+    you are using. For example, for the SQL*Net for TCP/IP driver, make sure
+    that all the TSRs, such as NMTSR and SOCKTSR, are loaded. (If not,
+    SQL*Net was not installed correctly.)
+
+
+ODBC Error Messages
+-------------------
+The following section explains what to do when you encounter various ODBC
+error messages.
+
+
+IM003	Driver specified by data source could not be loaded
+-----------------------------------------------------------
+
+The ODBC Driver Manager is attempting to load the ODBC ORACLE driver
+(SQORA.DLL). SQORA.DLL loads ORA6WIN.DLL to connect to the ORACLE server.
+You can receive this message if it cannot find ORA6WIN.DLL or finds the wrong
+version of ORA6WIN.DLL.
+
+1.  Search for and delete old versions of ORA6WIN.DLL. The correct version of
+    the ORA6WIN.DLL was installed by the ODBC ORACLE driver in the SYSTEM
+    subdirectory of your Windows directory.
+
+2.  Make sure that ORA6WIN.DLL was installed when the ODBC ORACLE driver was
+    installed.

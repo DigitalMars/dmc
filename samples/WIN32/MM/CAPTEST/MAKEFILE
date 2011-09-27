@@ -1,0 +1,31 @@
+# Nmake macros for building Windows 32-Bit apps
+
+!include <ntwin32.mak>
+
+all: captest.exe
+
+OBJS=		captest.obj dialogs.obj
+
+OTHERCLOPTS=-DWIN32_LEAN_AND_MEAN -nologo -I. -I..\include
+OTHERRCOPTS=-DWIN32_LEAN_AND_MEAN -I. -I..\include
+
+
+# Update the resource if necessary
+
+captest.res: captest.rc captest.h captest.dlg captest.rcv captest.ico
+    $(rc) -r -DWIN32 $(OTHERRCOPTS) captest.rc
+
+
+# Update the object file if necessary
+
+dialogs.obj: dialogs.c captest.h
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) dialogs.c
+
+captest.obj: captest.c captest.h
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) captest.c
+
+# Update the executable file if necessary, and if so, add the resource back in.
+
+captest.exe:  $(OBJS) captest.res
+    $(link) $(linkdebug) $(guiflags) -out:captest.exe $(OBJS) captest.res $(guilibs) \
+	vfw32.lib winmm.lib

@@ -1,0 +1,14 @@
+82572
+C:\SC\samples\win32\Q_A\UNIPUT\UNIPUT.PRJ
+UNIPUT.OPN
+novcs
+uniput.def
+16
+812035224
+0 0 0 0 0 "display.c" ""
+0 0 0 0 0 "status.c" ""
+0 0 0 0 0 "uniput.c" ""
+0 0 0 0 0 "uniput.def" ""
+0 0 0 0 0 "uniput.rc" ""
+0 0 0 0 0 "uniput.hpj" ""
+0 0 0 0 0 "comdlg32.lib" ""

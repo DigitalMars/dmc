@@ -1,0 +1,65 @@
+1 DLGINCLUDE "DLGS.H"
+
+OPENTEMP1 DIALOG 27, 22, 284, 152
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Open File Custom Template"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "File &Name:", stc3, 6, 6, 76, 9
+    EDITTEXT        edt1, 6, 16, 90, 12, ES_AUTOHSCROLL | ES_OEMCONVERT
+    LISTBOX         lst1, 6, 32, 90, 68, LBS_SORT | LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "&Directories:", -1, 110, 6, 92, 9
+    LTEXT           "", stc1, 110, 18, 92, 9, SS_NOPREFIX
+    LISTBOX         lst2, 110, 32, 92, 68, LBS_SORT | LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "List Files of &Type:", stc2, 6, 104, 90, 9
+    COMBOBOX        cmb1, 6, 114, 90, 36, CBS_DROPDOWNLIST | CBS_AUTOHSCROLL | 
+                    WS_BORDER | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Dri&ves:", stc4, 110, 104, 92, 9
+    COMBOBOX        cmb2, 110, 114, 92, 68, CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_AUTOHSCROLL | CBS_SORT | 
+                    CBS_HASSTRINGS | WS_BORDER | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 208, 6, 72, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 208, 23, 72, 14, WS_GROUP
+    PUSHBUTTON      "&Help", psh15, 208, 40, 72, 14, WS_GROUP
+    PUSHBUTTON      "Normal Template Network Button", psh14, 110, 132, 169, 
+                    16, WS_GROUP
+    AUTOCHECKBOX    "&Read Only", chx1, 208, 57, 72, 12, WS_GROUP
+    PUSHBUTTON      "File Preview", ID_FILEPREVIEW, 208, 82, 71, 14
+END
+
+OPENTEMP2 DIALOG 15, 30, 278, 149
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Multi Open File Custom Template"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "File &Name:", stc3, 6, 6, 76, 10
+    EDITTEXT        edt1, 6, 16, 90, 12, ES_AUTOHSCROLL | ES_OEMCONVERT
+    LISTBOX         lst1, 6, 32, 90, 68, LBS_SORT | LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_EXTENDEDSEL | LBS_DISABLENOSCROLL | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Directories:", -1, 110, 6, 92, 9
+    LTEXT           "", stc1, 110, 16, 92, 9, SS_NOPREFIX
+    LISTBOX         lst2, 110, 32, 92, 68, LBS_SORT | LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "List Files of &Type:", stc2, 6, 102, 90, 9
+    COMBOBOX        cmb1, 6, 112, 90, 36, CBS_DROPDOWNLIST | CBS_AUTOHSCROLL | 
+                    WS_BORDER | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Dri&ves:", stc4, 110, 102, 92, 9
+    COMBOBOX        cmb2, 110, 112, 92, 68, CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_AUTOHSCROLL | CBS_SORT | 
+                    CBS_HASSTRINGS | WS_BORDER | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 208, 6, 66, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 208, 22, 66, 14, WS_GROUP
+    PUSHBUTTON      "&Help", psh15, 208, 38, 66, 14, WS_GROUP
+    PUSHBUTTON      "Multi Template Network Button", psh14, 109, 129, 166, 
+                    16, WS_GROUP
+    AUTOCHECKBOX    "&Read Only", chx1, 208, 54, 66, 12, WS_GROUP
+    PUSHBUTTON      "File Preview", ID_FILEPREVIEW, 208, 82, 66, 14, WS_GROUP
+END

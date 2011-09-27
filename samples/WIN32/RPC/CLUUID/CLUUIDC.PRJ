@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\RPC\CLUUID\CLUUIDC.PRJ
+CLUUIDC.OPN
+novcs
+cluuidc.DEF
+4
+812035224
+0 0 0 0 0 "cluuid_c.c" ""
+0 0 0 0 0 "cluuidc.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "cluuidc.def" ""

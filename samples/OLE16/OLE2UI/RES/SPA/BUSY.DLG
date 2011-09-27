@@ -1,0 +1,11 @@
+IDD_BUSY DIALOG DISCARDABLE  0, 0, 214, 76
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Servidor ocupado"
+FONT 8, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON   "C&ambiar a...", IDBZ_SWITCHTO, 33, 55, 53, 15
+	PUSHBUTTON      "&Cancelar", IDCANCEL, 152, 55, 53, 15
+	PUSHBUTTON      "&Reintentar", IDBZ_RETRY, 92, 55, 53, 15
+	LTEXT           "No se puede llevar a cabo esta accisn, ya que la otra aplicacisn esta siendo utilizada. Elija ""Cambiar a"" para activar la aplicacisn en uso y asm corregir el problema.", IDBZ_MESSAGE1, 35, 11, 167, 35
+	ICON            "", IDBZ_ICON, 8, 18, 18, 20
+END

@@ -1,0 +1,17 @@
+82572
+C:\SC\samples\ole16\ILCKBYTS\ILBCNTR\ILBCNTR.PRJ
+ILBCNTR.OPN
+novcs
+ilbcntr.def
+0
+812035224
+0 0 0 0 0 "ilbcndoc.cpp" ""
+0 0 0 0 0 "ilbcntr.cpp" ""
+0 0 0 0 0 "ilbcnvw.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "stdafx.cpp" ""
+0 0 0 0 0 "ilbcntr.def" ""
+0 0 0 0 0 "ilbcntr.rc" ""
+0 0 0 0 0 "ilbdll.lib" ""
+0 0 0 0 0 "lafxcwd.lib" ""
+0 0 0 0 0 "..\ilbdll.prj" ""

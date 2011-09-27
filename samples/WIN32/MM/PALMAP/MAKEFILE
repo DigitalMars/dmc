@@ -1,0 +1,38 @@
+# Nmake macros for building Windows 32-Bit apps
+
+!include <win32.mak>
+
+guiflags=-DLL
+TARGETNAME =    palmap32
+OBJS=		palmap.obj dibmap.obj
+LIBS=           $(guilibs) vfw32.lib ole32.lib
+
+
+all: $(TARGETNAME).dll
+
+
+OTHERCLOPTS=-DWIN32_LEAN_AND_MEAN -nologo -I..\include
+OTHERRCOPTS=-DWIN32_LEAN_AND_MEAN -I..\include
+
+
+# Update the resource if necessary
+
+$(TARGETNAME).res: palmap.rc palmap.rcv
+    $(rc) -r -DWIN32 -fo $@ $(OTHERRCOPTS) palmap.rc
+
+
+# Update the object file if necessary
+
+palmap.obj: palmap.c palmap.h dibmap.h palmap.rc
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) palmap.c
+
+dibmap.obj: dibmap.c dibmap.h
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) dibmap.c
+
+
+# Update the executable file if necessary, and if so, add the resource back in.
+
+$(TARGETNAME).dll:  $(OBJS) $(@B).res $(@B).def
+    $(implib) -out:$(@B).lib -def:$(@B).def $(OBJS)
+    $(link) $(linkdebug) $(dlllflags) -out:$(@B).dll $(@B).exp $(OBJS) $(@B).res $(LIBS)
+

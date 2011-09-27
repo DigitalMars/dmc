@@ -1,0 +1,17 @@
+82570
+c:\SamplesMFC32\ADVANCED\CHATSRVR\chatsrvr.prj
+chatsrvr.OPN
+novcs
+chatsrvr.DEF
+16
+834106318
+0 0 0 0 0 "chatsrvr.cpp" ""
+0 0 0 0 0 "clntsock.cpp" ""
+0 0 0 0 0 "dialogs.cpp" ""
+0 0 0 0 0 "lstnsock.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "msg.cpp" ""
+0 0 0 0 0 "srvrdoc.cpp" ""
+0 0 0 0 0 "srvrvw.cpp" ""
+0 0 0 0 0 "chatsrvr.DEF" ""
+0 0 0 0 0 "chatsrvr.rc" ""

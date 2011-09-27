@@ -1,0 +1,23 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1993 - 1995  Microsoft Corporation.  All Rights Reserved.
+ *
+ **************************************************************************/
+
+#ifndef WIN32
+#include <ver.h>
+#endif
+
+#include "verinfo.h"
+
+#define VERSIONNAME		"midim32.exe\0"
+#define VERSIONDESCRIPTION	"MidiMon\0"
+#define VERSIONTYPE		VFT_APP
+#define VERSIONSUBTYPE		VFT2_UNKNOWN
+
+#include "verinfo.ver"

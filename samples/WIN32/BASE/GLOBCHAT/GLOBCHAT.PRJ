@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\BASE\GLOBCHAT\GLOBCHAT.PRJ
+GLOBCHAT.OPN
+novcs
+globchat.DEF
+16
+812035224
+0 0 0 0 0 "server\globchat.prj" ""
+0 0 0 0 0 "client\globcl.prj" ""
+0 0 0 0 0 "globchat.def" ""

@@ -1,0 +1,18 @@
+82572
+C:\SC\samples\win32\BASE\CDTEST\CDTEST.PRJ
+CDTEST.OPN
+novcs
+CDTEST.DEF
+16
+812035224
+0 0 0 0 0 "cdtest.c" ""
+0 0 0 0 0 "colors.c" ""
+0 0 0 0 0 "find.c" ""
+0 0 0 0 0 "font.c" ""
+0 0 0 0 0 "open.c" ""
+0 0 0 0 0 "print.c" ""
+0 0 0 0 0 "replace.c" ""
+0 0 0 0 0 "save.c" ""
+0 0 0 0 0 "title.c" ""
+0 0 0 0 0 "res.rc" ""
+0 0 0 0 0 "comdlg32.lib" ""

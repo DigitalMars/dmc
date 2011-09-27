@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\Q_A\INTEROP\STUB32.PRJ
+STUB32.OPN
+novcs
+stub32.def
+16
+812035224
+0 0 0 0 0 "stub32.c" ""
+0 0 0 0 0 "stub32.def" ""
+0 0 0 0 0 "utdll32.lib" ""
+0 0 0 0 0 "utdll32.prj" ""

@@ -1,0 +1,104 @@
+# This is a part of the Microsoft Foundation Classes C++ library.
+# Copyright (C) 1992-1995 Microsoft Corporation
+# All rights reserved.
+#
+# This source code is only intended as a supplement to the
+# Microsoft Foundation Classes Reference and related
+# electronic documentation provided with the library.
+# See these sources for detailed information regarding the
+# Microsoft Foundation Classes product.
+
+AFXDLL=1
+EXTRA_LIBS=testdll1.lib testdll2.lib
+
+goal: $(EXTRA_LIBS) testdll1.dll testdll2.dll dllhusk.exe
+
+PROJ=DLLHUSK
+OBJS=dllhusk.obj mainfrm.obj
+!if "$(PLATFORM)" == "M68K" || "$(PLATFORM)" == "MPPC"
+MACPROJ=DLLHusk
+MACSIG=DLLH
+!endif
+
+!include <mfcsamps.mak>
+
+clean::
+	if exist *.dll erase *.dll
+
+#############################################################################
+# Common rules and values for building MFC Extension DLLs
+
+DLL_CPPFLAGS=/D_WINDLL /D_AFXEXT  -w -Ae -cpp -a8 -ND
+DLL_LINKFLAGS=-nologo -entry:_DllMainCRTStartup
+!if "$(DEBUG)" == "0"
+DLL_CPPFLAGS=$(DLL_CPPFLAGS) -o+time 
+DLL_LINKFLAGS=$(DLL_LINKFLAGS) 
+!else
+DLL_CPPFLAGS=$(DLL_CPPFLAGS) /D_DEBUG -g 
+DLL_LINKFLAGS=$(DLL_LINKFLAGS) /CO
+!endif
+!if "$(UNICODE)" != "1"
+DLL_CPPFLAGS=$(DLL_CPPFLAGS) /D_MBCS
+!else
+DLL_CPPFLAGS=$(DLL_CPPFLAGS) /D_UNICODE
+!endif
+!if "$(MACOS)" == "1"
+DLL_LINKFLAGS=$(DLL_LINKFLAGS) /mac:init=WlmConnectionInit
+DLL_LINKFLAGS=$(DLL_LINKFLAGS) /mac:type=shlb /mac:creator=cfmg
+DLL_CPPFLAGS=$(DLL_CPPFLAGS) /D_MAC
+DLL_MRCFLAGS=/DARCHITECTURE=$(ARCHITECTURE)
+!endif
+
+RFLAGS=$(RFLAGS) /D_AFXDLL -32
+
+#############################################################################
+# Special rules for building TESTDLL1
+
+!if "$(MACOS)" == "1"
+TESTDLL1_RESOURCES=testdll1.rsc tdll1mac.rsc
+!else
+TESTDLL1_RESOURCES=testdll1.res
+!endif
+
+testdll1.obj: testdll1.cpp testdll1.h
+        sc -mn $(DLL_CPPFLAGS) /c testdll1.cpp
+
+tdll1mac.rsc: testdll.r
+	mrc $(DLL_MRCFLAGS) /DLIBNAME=\"testdll1.dll\" /o tdll1mac.rsc testdll.r
+
+testdll1.dll testdll1.lib: testdll1.obj $(TESTDLL1_RESOURCES)
+        link /IMPL:testdll1.lib $(DLL_LINKFLAGS) @<<
+testdll1.obj
+testdll1.dll
+testdll1.map
+,
+testdll1.def
+$(TESTDLL1_RESOURCES);
+<<
+
+#############################################################################
+# Special rules for building TESTDLL2
+
+!if "$(MACOS)" == "1"
+TESTDLL2_RESOURCES=testdll2.rsc tdll2mac.rsc
+!else
+TESTDLL2_RESOURCES=testdll2.res
+!endif
+
+testdll2.obj: testdll2.cpp testdll2.h
+        sc -mn $(DLL_CPPFLAGS) /c testdll2.cpp
+
+tdll2mac.rsc: testdll.r
+	mrc $(DLL_MRCFLAGS) /DLIBNAME=\"testdll2.dll\" /o tdll2mac.rsc testdll.r
+
+testdll2.dll testdll2.lib: testdll2.obj $(TESTDLL2_RESOURCES)
+        link /IMPL:testdll2.lib $(DLL_LINKFLAGS) @<<
+testdll2.obj
+testdll2.dll
+testdll2.map
+,
+testdll2.def
+$(TESTDLL2_RESOURCES);
+<<
+
+#############################################################################

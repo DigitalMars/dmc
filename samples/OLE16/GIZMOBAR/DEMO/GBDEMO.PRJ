@@ -1,0 +1,14 @@
+82572
+C:\SC\samples\ole16\GIZMOBAR\DEMO\GBDEMO.PRJ
+GBDEMO.OPN
+novcs
+gbdemo.def
+0
+812035224
+0 0 0 0 0 "gbdemo.c" ""
+0 0 0 0 0 "init.c" ""
+0 0 0 0 0 "gbdemo.def" ""
+0 0 0 0 0 "gbdemo.rc" ""
+0 0 0 0 0 "gizmobar.lib" ""
+0 0 0 0 0 "bttncur.lib" ""
+0 0 0 0 0 "..\gizmobar.prj" ""

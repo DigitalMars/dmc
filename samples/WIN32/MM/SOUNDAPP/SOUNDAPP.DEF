@@ -1,0 +1,33 @@
+;-------------------------------------
+; SOUNDAPP.DEF module definition file
+;-------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;   THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+;   KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+;   IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+;   PURPOSE.
+;
+;   Copyright (c) 1994 - 1995  Microsoft Corporation.  All Rights Reserved.
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+NAME		"SOUNDAPP"
+
+DESCRIPTION	'SoundApp Program (c) Microsoft Corporation, 1994 - 1995'
+
+EXETYPE		NT
+
+SUBSYSTEM	WINDOWS
+
+STUB		'WINSTUB.EXE'
+
+VERSION		1.0
+
+CODE		 EXECUTE READ
+
+DATA		 READ WRITE
+
+STACKSIZE	8192
+
+HEAPSIZE	1024

@@ -1,0 +1,7802 @@
+
+
+
+
+
+
+
+
+#line 3 "c:\sc\include\windows.h"
+ #pragma once
+
+
+
+#pragma pack(__DEFALIGN)
+
+
+
+
+
+#line 74 "c:\sc\include\win16\windows.h"
+#pragma pack(1)         /* Assume byte packing throughout */
+
+
+
+
+
+
+
+
+#line 114
+ 
+
+
+
+
+
+
+
+#line 129
+typedef int		    BOOL;
+
+#line 133
+typedef unsigned char	    BYTE;
+typedef unsigned short      WORD;
+typedef unsigned long       DWORD;
+
+typedef unsigned int	    UINT;
+
+
+
+
+
+
+
+
+
+
+
+#line 163
+typedef UINT WPARAM;
+typedef  long LPARAM;
+typedef  long LRESULT;
+
+
+
+
+
+
+#line 176
+typedef char  _near*          PSTR;
+typedef char  _near*          NPSTR;
+
+
+typedef char  _far*           LPSTR;
+typedef const char  _far*     LPCSTR;
+
+typedef BYTE  _near*	    PBYTE;
+typedef BYTE  _far*	    LPBYTE;
+
+typedef int  _near*	    PINT;
+typedef int  _far*	    LPINT;
+
+typedef WORD  _near*          PWORD;
+typedef WORD  _far*           LPWORD;
+
+typedef long  _near*	    PLONG;
+typedef long  _far*	    LPLONG;
+
+typedef DWORD  _near*         PDWORD;
+typedef DWORD  _far*          LPDWORD;
+
+typedef void  _far*           LPVOID;
+
+
+
+
+
+#line 215
+typedef UINT                    HANDLE;
+
+
+#line 220
+typedef HANDLE* 	    PHANDLE;
+typedef HANDLE  _near*	    SPHANDLE;
+typedef HANDLE  _far*	    LPHANDLE;
+
+typedef HANDLE		    HGLOBAL;
+typedef HANDLE		    HLOCAL;
+
+typedef HANDLE		    GLOBALHANDLE;
+typedef HANDLE		    LOCALHANDLE;
+
+typedef UINT                ATOM;
+
+#line 236
+typedef int (_far  _pascal*      FARPROC)();
+typedef int ( _near  _pascal*   NEARPROC)();
+
+
+typedef UINT HSTR ;
+
+
+
+typedef UINT HINSTANCE ;
+typedef HINSTANCE HMODULE;  
+
+
+
+
+
+
+
+#line 257
+DWORD   _far  _pascal GetVersion(void);
+
+DWORD   _far  _pascal GetFreeSpace(UINT);
+UINT    _far  _pascal GetCurrentPDB(void);
+
+UINT    _far  _pascal GetWindowsDirectory(LPSTR, UINT);
+UINT    _far  _pascal GetSystemDirectory(LPSTR, UINT);
+
+
+UINT    _far  _pascal GetFreeSystemResources(UINT);
+
+
+#line 272
+DWORD   _far  _pascal GetWinFlags(void);
+
+
+#line 290
+LPSTR   _far  _pascal GetDOSEnvironment(void);
+
+DWORD   _far  _pascal GetCurrentTime(void);
+DWORD   _far  _pascal GetTickCount(void);
+DWORD   _far  _pascal GetTimerResolution(void);
+
+
+
+#line 300
+ 
+void    _far  _pascal LogError(UINT err, void  _far* lpInfo);
+void    _far  _pascal LogParamError(UINT err, FARPROC lpfn, void  _far* param);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 394
+typedef struct tagWINDEBUGINFO
+{
+    UINT    flags;
+    DWORD   dwOptions;
+    DWORD   dwFilter;
+    char    achAllocModule[8];
+    DWORD   dwAllocBreak;
+    DWORD   dwAllocCount;
+} WINDEBUGINFO;
+
+BOOL    _far  _pascal GetWinDebugInfo(WINDEBUGINFO  _far* lpwdi, UINT flags);
+BOOL    _far  _pascal SetWinDebugInfo(const WINDEBUGINFO  _far* lpwdi);
+
+void     _far _cdecl DebugOutput(UINT flags, LPCSTR lpsz, ...);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 449
+void    _far  _pascal FatalExit(int);
+void    _far  _pascal FatalAppExit(UINT, LPCSTR);
+
+BOOL    _far  _pascal ExitWindows(DWORD dwReturnCode, UINT wReserved);
+
+#line 457
+ 
+BOOL    _far  _pascal ExitWindowsExec(LPCSTR, LPCSTR);
+
+
+void    _far  _pascal DebugBreak(void);
+void    _far  _pascal OutputDebugString(LPCSTR);
+
+
+
+#line 469
+UINT    _far  _pascal SetErrorMode(UINT);
+
+
+
+
+ 
+BOOL    _far  _pascal IsBadReadPtr(const void  _far* lp, UINT cb);
+BOOL    _far  _pascal IsBadWritePtr(void  _far* lp, UINT cb);
+BOOL    _far  _pascal IsBadHugeReadPtr(const void _huge* lp, DWORD cb);
+BOOL    _far  _pascal IsBadHugeWritePtr(void _huge* lp, DWORD cb);
+BOOL    _far  _pascal IsBadCodePtr(FARPROC lpfn);
+BOOL    _far  _pascal IsBadStringPtr(const void  _far* lpsz, UINT cchMax);
+
+
+
+
+
+
+int     _far  _pascal ProfInsChk(void);
+void    _far  _pascal ProfSetup(int,int);
+void    _far  _pascal ProfSampRate(int,int);
+void    _far  _pascal ProfStart(void);
+void    _far  _pascal ProfStop(void);
+void    _far  _pascal ProfClear(void);
+void    _far  _pascal ProfFlush(void);
+void    _far  _pascal ProfFinish(void);
+
+
+
+
+typedef int CATCHBUF[9];
+typedef int  _far* LPCATCHBUF;
+
+int     _far  _pascal Catch(int  _far*);
+void    _far  _pascal Throw(const int  _far*, int);
+
+void    _far  _pascal SwitchStackBack(void);
+void    _far  _pascal SwitchStackTo(UINT, UINT, UINT);
+
+
+
+
+
+
+HINSTANCE   _far  _pascal LoadModule(LPCSTR, LPVOID);
+BOOL        _far  _pascal FreeModule(HINSTANCE);
+
+HINSTANCE   _far  _pascal LoadLibrary(LPCSTR);
+void        _far  _pascal FreeLibrary(HINSTANCE);
+
+UINT    _far  _pascal WinExec(LPCSTR, UINT);
+
+HMODULE _far  _pascal GetModuleHandle(LPCSTR);
+
+int     _far  _pascal GetModuleUsage(HINSTANCE);
+int     _far  _pascal GetModuleFileName(HINSTANCE, LPSTR, int);
+
+FARPROC _far  _pascal GetProcAddress(HINSTANCE, LPCSTR);
+
+int     _far  _pascal GetInstanceData(HINSTANCE, BYTE*, int);
+
+HGLOBAL _far  _pascal GetCodeHandle(FARPROC);
+
+typedef struct tagSEGINFO
+{
+    UINT offSegment;
+    UINT cbSegment;
+    UINT flags;
+    UINT cbAlloc;
+    HGLOBAL h;
+    UINT alignShift;
+    UINT reserved[2];
+} SEGINFO;
+typedef SEGINFO  _far* LPSEGINFO;
+
+void    _far  _pascal GetCodeInfo(FARPROC lpProc, SEGINFO  _far* lpSegInfo);
+
+FARPROC _far  _pascal MakeProcInstance(FARPROC, HINSTANCE);
+void    _far  _pascal FreeProcInstance(FARPROC);
+
+ long    _far  _pascal SetSwapAreaSize(UINT);
+void    _far  _pascal SwapRecording(UINT);
+void    _far  _pascal ValidateCodeSegments(void);
+
+
+
+
+
+
+
+#line 561
+typedef UINT HTASK ;
+
+
+
+UINT    _far  _pascal GetNumTasks(void);
+
+
+BOOL    _far  _pascal IsTask(HTASK);
+
+
+HTASK   _far  _pascal GetCurrentTask(void);
+
+void    _far  _pascal Yield(void);
+void    _far  _pascal DirectedYield(HTASK);
+
+
+
+
+
+
+
+
+
+
+#line 601
+HGLOBAL _far  _pascal GlobalAlloc(UINT, DWORD);
+HGLOBAL _far  _pascal GlobalReAlloc(HGLOBAL, DWORD, UINT);
+HGLOBAL _far  _pascal GlobalFree(HGLOBAL);
+
+DWORD   _far  _pascal GlobalDosAlloc(DWORD);
+UINT    _far  _pascal GlobalDosFree(UINT);
+
+#line 611
+char  _far* _far  _pascal GlobalLock(HGLOBAL);
+
+
+BOOL    _far  _pascal GlobalUnlock(HGLOBAL);
+
+DWORD   _far  _pascal GlobalSize(HGLOBAL);
+DWORD   _far  _pascal GlobalHandle(UINT);
+
+
+#line 622
+UINT    _far  _pascal GlobalFlags(HGLOBAL);
+
+#line 627
+char  _far* _far  _pascal GlobalWire(HGLOBAL);
+
+
+BOOL    _far  _pascal GlobalUnWire(HGLOBAL);
+
+UINT    _far  _pascal GlobalPageLock(HGLOBAL);
+UINT    _far  _pascal GlobalPageUnlock(HGLOBAL);
+
+void    _far  _pascal GlobalFix(HGLOBAL);
+void    _far  _pascal GlobalUnfix(HGLOBAL);
+
+HGLOBAL _far  _pascal GlobalLRUNewest(HGLOBAL);
+HGLOBAL _far  _pascal GlobalLRUOldest(HGLOBAL);
+
+DWORD   _far  _pascal GlobalCompact(DWORD);
+
+#line 646
+typedef FARPROC GNOTIFYPROC;
+
+
+void    _far  _pascal GlobalNotify(GNOTIFYPROC);
+
+HGLOBAL _far  _pascal LockSegment(UINT);
+void    _far  _pascal UnlockSegment(UINT);
+
+
+#line 657
+UINT    _far  _pascal AllocSelector(UINT);
+UINT    _far  _pascal FreeSelector(UINT);
+UINT    _far  _pascal AllocDStoCSAlias(UINT);
+UINT    _far  _pascal PrestoChangoSelector(UINT sourceSel, UINT destSel);
+DWORD   _far  _pascal GetSelectorBase(UINT);
+UINT    _far  _pascal SetSelectorBase(UINT, DWORD);
+DWORD   _far  _pascal GetSelectorLimit(UINT);
+UINT    _far  _pascal SetSelectorLimit(UINT, DWORD);
+
+void    _far  _pascal LimitEmsPages(DWORD);
+
+void    _far  _pascal ValidateFreeSpaces(void);
+
+
+
+
+
+
+
+
+
+
+
+
+#line 694
+HLOCAL  _far  _pascal LocalAlloc(UINT, UINT);
+HLOCAL  _far  _pascal LocalReAlloc(HLOCAL, UINT, UINT);
+HLOCAL  _far  _pascal LocalFree(HLOCAL);
+
+#line 701
+char  _near* _far  _pascal LocalLock(HLOCAL);
+
+
+BOOL    _far  _pascal LocalUnlock(HLOCAL);
+
+UINT    _far  _pascal LocalSize(HLOCAL);
+#line 710
+HLOCAL  _far  _pascal LocalHandle(UINT);
+
+
+
+
+#line 717
+UINT    _far  _pascal LocalFlags(HLOCAL);
+
+BOOL    _far  _pascal LocalInit(UINT, UINT, UINT);
+UINT    _far  _pascal LocalCompact(UINT);
+UINT    _far  _pascal LocalShrink(HLOCAL, UINT);
+
+
+
+
+
+
+
+typedef int HFILE;      
+
+
+
+
+#line 736
+typedef struct tagOFSTRUCT
+{
+    BYTE cBytes;
+    BYTE fFixedDisk;
+    UINT nErrCode;
+    BYTE reserved[4];
+    char szPathName[128];
+} OFSTRUCT;
+typedef OFSTRUCT*       POFSTRUCT;
+typedef OFSTRUCT  _near* NPOFSTRUCT;
+typedef OFSTRUCT  _far*  LPOFSTRUCT;
+
+
+
+#line 767
+HFILE   _far  _pascal OpenFile(LPCSTR, OFSTRUCT  _far*, UINT);
+
+
+
+
+
+#line 776
+HFILE   _far  _pascal _lopen(LPCSTR, int);
+HFILE   _far  _pascal _lcreat(LPCSTR, int);
+
+HFILE   _far  _pascal _lclose(HFILE);
+
+ long    _far  _pascal _llseek(HFILE,  long, int);
+
+
+
+#line 788
+UINT    _far  _pascal _lread(HFILE, void _huge*, UINT);
+UINT    _far  _pascal _lwrite(HFILE, const void _huge*, UINT);
+
+
+long	_far  _pascal _hread(HFILE, void _huge*, long);
+long	_far  _pascal _hwrite(HFILE, const void _huge*, long);
+
+
+
+
+
+
+
+
+int     _far  _pascal GetTempFileName(BYTE, LPCSTR, UINT, LPSTR);
+BYTE    _far  _pascal GetTempDrive(char);
+
+
+#line 809
+UINT    _far  _pascal GetDriveType(int);
+
+UINT    _far  _pascal SetHandleCount(UINT);
+
+
+UINT _far  _pascal WNetAddConnection(LPSTR, LPSTR, LPSTR);
+UINT _far  _pascal WNetGetConnection(LPSTR, LPSTR, UINT  _far*);
+UINT _far  _pascal WNetCancelConnection(LPSTR, BOOL);
+
+
+
+
+
+
+#line 844
+typedef UINT HRSRC ;
+
+HRSRC   _far  _pascal FindResource(HINSTANCE, LPCSTR, LPCSTR);
+HGLOBAL _far  _pascal LoadResource(HINSTANCE, HRSRC);
+BOOL    _far  _pascal FreeResource(HGLOBAL);
+
+#line 853
+char  _far* _far  _pascal LockResource(HGLOBAL);
+
+
+
+
+DWORD   _far  _pascal SizeofResource(HINSTANCE, HRSRC);
+
+int     _far  _pascal AccessResource(HINSTANCE, HRSRC);
+
+HGLOBAL _far  _pascal AllocResource(HINSTANCE, HRSRC, DWORD);
+
+#line 867
+typedef FARPROC RSRCHDLRPROC;
+
+
+RSRCHDLRPROC _far  _pascal SetResourceHandler(HINSTANCE, LPCSTR, RSRCHDLRPROC);
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 962
+BOOL    _far  _pascal InitAtomTable(int);
+ATOM    _far  _pascal AddAtom(LPCSTR);
+ATOM    _far  _pascal DeleteAtom(ATOM);
+ATOM    _far  _pascal FindAtom(LPCSTR);
+UINT    _far  _pascal GetAtomName(ATOM, LPSTR, int);
+ATOM    _far  _pascal GlobalAddAtom(LPCSTR);
+ATOM    _far  _pascal GlobalDeleteAtom(ATOM);
+ATOM    _far  _pascal GlobalFindAtom(LPCSTR);
+UINT    _far  _pascal GlobalGetAtomName(ATOM, LPSTR, int);
+HLOCAL  _far  _pascal GetAtomHandle(ATOM);
+
+
+
+
+
+
+UINT    _far  _pascal GetProfileInt(LPCSTR, LPCSTR, int);
+int     _far  _pascal GetProfileString(LPCSTR, LPCSTR, LPCSTR, LPSTR, int);
+BOOL    _far  _pascal WriteProfileString(LPCSTR, LPCSTR, LPCSTR);
+
+UINT    _far  _pascal GetPrivateProfileInt(LPCSTR, LPCSTR, int, LPCSTR);
+int     _far  _pascal GetPrivateProfileString(LPCSTR, LPCSTR, LPCSTR, LPSTR, int, LPCSTR);
+BOOL    _far  _pascal WritePrivateProfileString(LPCSTR, LPCSTR, LPCSTR, LPCSTR);
+
+
+
+
+
+void    _far  _pascal AnsiToOem(const char _huge*, char _huge*);
+void    _far  _pascal OemToAnsi(const char _huge*, char _huge*);
+
+void    _far  _pascal AnsiToOemBuff(LPCSTR, LPSTR, UINT);
+void    _far  _pascal OemToAnsiBuff(LPCSTR, LPSTR, UINT);
+
+LPSTR   _far  _pascal AnsiNext(LPCSTR);
+LPSTR   _far  _pascal AnsiPrev(LPCSTR, LPCSTR);
+
+LPSTR   _far  _pascal AnsiUpper(LPSTR);
+LPSTR   _far  _pascal AnsiLower(LPSTR);
+
+UINT    _far  _pascal AnsiUpperBuff(LPSTR, UINT);
+UINT    _far  _pascal AnsiLowerBuff(LPSTR, UINT);
+
+
+
+BOOL    _far  _pascal IsCharAlpha(char);
+BOOL    _far  _pascal IsCharAlphaNumeric(char);
+BOOL    _far  _pascal IsCharUpper(char);
+BOOL    _far  _pascal IsCharLower(char);
+
+
+
+int     _far  _pascal lstrcmp(LPCSTR, LPCSTR);
+int     _far  _pascal lstrcmpi(LPCSTR, LPCSTR);
+LPSTR   _far  _pascal lstrcpy(LPSTR, LPCSTR);
+LPSTR   _far  _pascal lstrcat(LPSTR, LPCSTR);
+int     _far  _pascal lstrlen(LPCSTR);
+
+LPSTR   _far  _pascal lstrcpyn(LPSTR, LPCSTR, int);
+void    _far  _pascal hmemcpy(void _huge*, const void _huge*, long);
+
+
+
+#line 1027
+ BOOL    _far  _pascal IsDBCSLeadByte(BYTE);
+
+
+
+int     _far  _pascal LoadString(HINSTANCE, UINT, LPSTR, int);
+
+
+
+
+
+DWORD   _far  _pascal OemKeyScan(UINT);
+UINT    _far  _pascal VkKeyScan(UINT);
+int     _far  _pascal GetKeyboardType(int);
+UINT    _far  _pascal MapVirtualKey(UINT, UINT);
+int     _far  _pascal GetKBCodePage(void);
+int     _far  _pascal GetKeyNameText( long, LPSTR, int);
+int     _far  _pascal ToAscii(UINT wVirtKey, UINT wScanCode, BYTE  _far* lpKeyState, DWORD  _far* lpChar, UINT wFlags);
+
+
+
+
+
+
+
+typedef UINT HDC ;
+
+
+#line 1058
+typedef UINT HGDIOBJ ;
+
+
+
+
+typedef UINT HBITMAP ;
+typedef UINT HPEN ;
+typedef UINT HBRUSH ;
+typedef UINT HRGN ;
+typedef UINT HPALETTE ;
+typedef UINT HFONT ;
+
+typedef struct tagRECT
+{
+    int left;
+    int top;
+    int right;
+    int bottom;
+} RECT;
+typedef RECT*      PRECT;
+typedef RECT  _near* NPRECT;
+typedef RECT  _far*  LPRECT;
+
+typedef struct tagPOINT
+{
+    int x;
+    int y;
+} POINT;
+typedef POINT*       PPOINT;
+typedef POINT  _near* NPPOINT;
+typedef POINT  _far*  LPPOINT;
+
+
+typedef struct tagSIZE
+{
+    int cx;
+    int cy;
+} SIZE;
+typedef SIZE*       PSIZE;
+typedef SIZE  _near* NPSIZE;
+typedef SIZE  _far*  LPSIZE;
+
+
+
+
+
+
+#line 1107
+HDC     _far  _pascal CreateDC(LPCSTR, LPCSTR, LPCSTR, const void  _far*);
+HDC     _far  _pascal CreateIC(LPCSTR, LPCSTR, LPCSTR, const void  _far*);
+HDC     _far  _pascal CreateCompatibleDC(HDC);
+
+BOOL    _far  _pascal DeleteDC(HDC);
+
+DWORD   _far  _pascal GetDCOrg(HDC);
+
+int     _far  _pascal SaveDC(HDC);
+BOOL    _far  _pascal RestoreDC(HDC, int);
+
+int     _far  _pascal SetEnvironment(LPCSTR, const void  _far*, UINT);
+int     _far  _pascal GetEnvironment(LPCSTR, void  _far*, UINT);
+
+int     _far  _pascal MulDiv(int, int, int);
+
+
+ 
+UINT    _far  _pascal SetBoundsRect(HDC hDC, const RECT  _far* lprcBounds, UINT flags);
+UINT    _far  _pascal GetBoundsRect(HDC hDC, RECT  _far* lprcBounds, UINT flags);
+
+
+
+
+
+#line 1138
+int _far  _pascal GetDeviceCaps(HDC, int);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1264
+int     _far  _pascal SetMapMode(HDC, int);
+int     _far  _pascal GetMapMode(HDC);
+
+
+
+#line 1277
+DWORD   _far  _pascal SetWindowOrg(HDC, int, int);
+DWORD   _far  _pascal GetWindowOrg(HDC);
+
+DWORD   _far  _pascal SetWindowExt(HDC, int, int);
+DWORD   _far  _pascal GetWindowExt(HDC);
+
+DWORD   _far  _pascal OffsetWindowOrg(HDC, int, int);
+DWORD   _far  _pascal ScaleWindowExt(HDC, int, int, int, int);
+
+DWORD   _far  _pascal SetViewportOrg(HDC, int, int);
+DWORD   _far  _pascal GetViewportOrg(HDC);
+
+DWORD   _far  _pascal SetViewportExt(HDC, int, int);
+DWORD   _far  _pascal GetViewportExt(HDC);
+
+DWORD   _far  _pascal OffsetViewportOrg(HDC, int, int);
+DWORD   _far  _pascal ScaleViewportExt(HDC, int, int, int, int);
+
+
+BOOL    _far  _pascal SetWindowOrgEx(HDC, int, int, POINT  _far*);
+BOOL    _far  _pascal GetWindowOrgEx(HDC, POINT  _far*);
+
+BOOL    _far  _pascal SetWindowExtEx(HDC, int, int, SIZE  _far*);
+BOOL    _far  _pascal GetWindowExtEx(HDC, SIZE  _far*);
+
+BOOL    _far  _pascal OffsetWindowOrgEx(HDC, int, int, POINT  _far*);
+BOOL    _far  _pascal ScaleWindowExtEx(HDC, int, int, int, int, SIZE  _far*);
+
+BOOL    _far  _pascal SetViewportExtEx(HDC, int, int, SIZE  _far*);
+BOOL    _far  _pascal GetViewportExtEx(HDC, SIZE  _far*);
+
+BOOL    _far  _pascal SetViewportOrgEx(HDC, int, int, POINT  _far*);
+BOOL    _far  _pascal GetViewportOrgEx(HDC, POINT  _far*);
+
+BOOL    _far  _pascal OffsetViewportOrgEx(HDC, int, int, POINT  _far*);
+BOOL    _far  _pascal ScaleViewportExtEx(HDC, int, int, int, int, SIZE  _far*);
+
+
+BOOL    _far  _pascal DPtoLP(HDC, POINT  _far*, int);
+BOOL    _far  _pascal LPtoDP(HDC, POINT  _far*, int);
+
+
+
+
+
+
+#line 1325
+typedef DWORD COLORREF;
+
+
+
+#line 1333
+COLORREF _far  _pascal GetNearestColor(HDC, COLORREF);
+
+
+
+COLORREF _far  _pascal GetSysColor(int);
+void    _far  _pascal SetSysColors(int, const int  _far*, const COLORREF  _far*);
+
+#line 1362
+ 
+
+
+
+
+
+
+
+#line 1372
+HGDIOBJ _far  _pascal GetStockObject(int);
+
+BOOL    _far  _pascal IsGDIObject(HGDIOBJ);
+
+BOOL    _far  _pascal DeleteObject(HGDIOBJ);
+HGDIOBJ _far  _pascal SelectObject(HDC, HGDIOBJ);
+int     _far  _pascal GetObject(HGDIOBJ, int, void  _far*);
+BOOL    _far  _pascal UnrealizeObject(HGDIOBJ);
+
+#line 1384
+typedef FARPROC GOBJENUMPROC;
+
+
+#line 1390
+int     _far  _pascal EnumObjects(HDC, int, GOBJENUMPROC, LPSTR);
+
+
+
+
+
+
+
+#line 1400
+typedef struct tagLOGPEN
+{
+    UINT    lopnStyle;
+    POINT   lopnWidth;
+    COLORREF lopnColor;
+} LOGPEN;
+typedef LOGPEN*       PLOGPEN;
+typedef LOGPEN  _near* NPLOGPEN;
+typedef LOGPEN  _far*  LPLOGPEN;
+
+
+
+#line 1419
+HPEN    _far  _pascal CreatePen(int, int, COLORREF);
+HPEN    _far  _pascal CreatePenIndirect(LOGPEN  _far*);
+
+
+
+
+
+
+
+
+
+
+#line 1447
+typedef struct tagLOGBRUSH
+{
+    UINT     lbStyle;
+    COLORREF lbColor;
+    int      lbHatch;
+} LOGBRUSH;
+typedef LOGBRUSH*       PLOGBRUSH;
+typedef LOGBRUSH  _near* NPLOGBRUSH;
+typedef LOGBRUSH  _far*  LPLOGBRUSH;
+
+typedef LOGBRUSH	    PATTERN;
+typedef PATTERN*       PPATTERN;
+typedef PATTERN  _near* NPPATTERN;
+typedef PATTERN  _far*  LPPATTERN;
+
+HBRUSH  _far  _pascal CreateSolidBrush(COLORREF);
+HBRUSH  _far  _pascal CreateHatchBrush(int, COLORREF);
+HBRUSH  _far  _pascal CreatePatternBrush(HBITMAP);
+HBRUSH  _far  _pascal CreateDIBPatternBrush(HGLOBAL, UINT);
+HBRUSH  _far  _pascal CreateBrushIndirect(LOGBRUSH  _far*);
+
+
+
+#line 1477
+DWORD   _far  _pascal SetBrushOrg(HDC, int, int);
+DWORD   _far  _pascal GetBrushOrg(HDC);
+
+
+BOOL    _far  _pascal GetBrushOrgEx(HDC, POINT  _far*);
+
+
+
+
+
+HRGN    _far  _pascal CreateRectRgn(int, int, int, int);
+HRGN    _far  _pascal CreateRectRgnIndirect(const RECT  _far*);
+HRGN    _far  _pascal CreateEllipticRgnIndirect(const RECT  _far*);
+HRGN    _far  _pascal CreateEllipticRgn(int, int, int, int);
+HRGN    _far  _pascal CreatePolygonRgn(const POINT  _far*, int, int);
+HRGN    _far  _pascal CreatePolyPolygonRgn(const POINT  _far*, const int  _far*, int, int);
+HRGN    _far  _pascal CreateRoundRectRgn(int, int, int, int, int, int);
+
+
+
+#line 1501
+void    _far  _pascal SetRectRgn(HRGN, int, int, int, int);
+
+int     _far  _pascal CombineRgn(HRGN, HRGN, HRGN, int);
+
+
+
+#line 1512
+BOOL    _far  _pascal EqualRgn(HRGN, HRGN);
+int     _far  _pascal OffsetRgn(HRGN, int, int);
+
+int     _far  _pascal GetRgnBox(HRGN, RECT  _far*);
+
+BOOL    _far  _pascal RectInRegion(HRGN, const RECT  _far*);
+BOOL    _far  _pascal PtInRegion(HRGN, int, int);
+
+
+
+
+#line 1525
+typedef struct tagPALETTEENTRY
+{
+    BYTE    peRed;
+    BYTE    peGreen;
+    BYTE    peBlue;
+    BYTE    peFlags;
+} PALETTEENTRY;
+typedef PALETTEENTRY  _far* LPPALETTEENTRY;
+
+
+
+
+#line 1540
+typedef struct tagLOGPALETTE
+{
+    WORD    palVersion;
+    WORD    palNumEntries;
+    PALETTEENTRY palPalEntry[1];
+} LOGPALETTE;
+typedef LOGPALETTE*       PLOGPALETTE;
+typedef LOGPALETTE  _near* NPLOGPALETTE;
+typedef LOGPALETTE  _far*  LPLOGPALETTE;
+
+HPALETTE _far  _pascal CreatePalette(const LOGPALETTE  _far*);
+
+HPALETTE _far  _pascal SelectPalette(HDC, HPALETTE, BOOL);
+
+UINT    _far  _pascal RealizePalette(HDC);
+
+int     _far  _pascal UpdateColors(HDC);
+void    _far  _pascal AnimatePalette(HPALETTE, UINT, UINT, const PALETTEENTRY  _far*);
+
+UINT    _far  _pascal SetPaletteEntries(HPALETTE, UINT, UINT, const PALETTEENTRY  _far*);
+UINT    _far  _pascal GetPaletteEntries(HPALETTE, UINT, UINT, PALETTEENTRY  _far*);
+
+UINT    _far  _pascal GetNearestPaletteIndex(HPALETTE, COLORREF);
+
+BOOL    _far  _pascal ResizePalette(HPALETTE, UINT);
+
+UINT    _far  _pascal GetSystemPaletteEntries(HDC, UINT, UINT, PALETTEENTRY  _far*);
+
+UINT    _far  _pascal GetSystemPaletteUse(HDC);
+UINT    _far  _pascal SetSystemPaletteUse(HDC, UINT);
+
+
+
+
+
+
+
+#line 1582
+int     _far  _pascal SelectClipRgn(HDC, HRGN);
+int     _far  _pascal GetClipBox(HDC, RECT  _far*);
+
+int     _far  _pascal IntersectClipRect(HDC, int, int, int, int);
+int     _far  _pascal OffsetClipRgn(HDC, int, int);
+int     _far  _pascal ExcludeClipRect(HDC, int, int, int, int);
+
+BOOL    _far  _pascal PtVisible(HDC, int, int);
+BOOL    _far  _pascal RectVisible(HDC, const RECT  _far*);
+
+
+
+
+DWORD   _far  _pascal MoveTo(HDC, int, int);
+DWORD   _far  _pascal GetCurrentPosition(HDC);
+
+
+BOOL    _far  _pascal MoveToEx(HDC, int, int, POINT  _far*);
+BOOL    _far  _pascal GetCurrentPositionEx(HDC, POINT  _far*);
+
+
+BOOL    _far  _pascal LineTo(HDC, int, int);
+BOOL    _far  _pascal Polyline(HDC, const POINT  _far*, int);
+
+#line 1609
+typedef FARPROC LINEDDAPROC;
+
+
+void    _far  _pascal LineDDA(int, int, int, int, LINEDDAPROC, LPARAM);
+
+BOOL    _far  _pascal Rectangle(HDC, int, int, int, int);
+BOOL    _far  _pascal RoundRect(HDC, int, int, int, int, int, int);
+
+BOOL    _far  _pascal Ellipse(HDC, int, int, int, int);
+BOOL    _far  _pascal Arc(HDC, int, int, int, int, int, int, int, int);
+BOOL    _far  _pascal Chord(HDC, int, int, int, int, int, int, int, int);
+BOOL    _far  _pascal Pie(HDC, int, int, int, int, int, int, int, int);
+
+BOOL    _far  _pascal Polygon(HDC, const POINT  _far*, int);
+BOOL    _far  _pascal PolyPolygon(HDC, const POINT  _far*, int  _far*, int);
+
+
+
+#line 1629
+int     _far  _pascal SetPolyFillMode(HDC, int);
+int     _far  _pascal GetPolyFillMode(HDC);
+
+BOOL    _far  _pascal FloodFill(HDC, int, int, COLORREF);
+BOOL    _far  _pascal ExtFloodFill(HDC, int, int, COLORREF, UINT);
+
+
+
+#line 1639
+BOOL    _far  _pascal FillRgn(HDC, HRGN, HBRUSH);
+BOOL    _far  _pascal FrameRgn(HDC, HRGN, HBRUSH, int, int);
+BOOL    _far  _pascal InvertRgn(HDC, HRGN);
+BOOL    _far  _pascal PaintRgn(HDC, HRGN);
+
+
+int     _far  _pascal FillRect(HDC, const RECT  _far*, HBRUSH);
+int     _far  _pascal FrameRect(HDC, const RECT  _far*, HBRUSH);
+void    _far  _pascal InvertRect(HDC, const RECT  _far*);
+
+void    _far  _pascal DrawFocusRect(HDC, const RECT  _far*);
+
+
+
+
+BOOL    _far  _pascal TextOut(HDC, int, int, LPCSTR, int);
+ long    _far  _pascal TabbedTextOut(HDC, int, int, LPCSTR, int, int, int  _far*, int);
+BOOL    _far  _pascal ExtTextOut(HDC, int, int, UINT, const RECT  _far*, LPCSTR, UINT, int  _far*);
+
+
+#line 1662
+DWORD   _far  _pascal GetTextExtent(HDC, LPCSTR, int);
+DWORD   _far  _pascal GetTabbedTextExtent(HDC, LPCSTR, int, int, int  _far*);
+
+
+BOOL    _far  _pascal GetTextExtentPoint(HDC, LPCSTR, int, SIZE  _far*);
+
+
+
+
+#line 1687
+int     _far  _pascal DrawText(HDC, LPCSTR, int, RECT  _far*, UINT);
+
+
+#line 1693
+typedef FARPROC GRAYSTRINGPROC;
+
+
+BOOL    _far  _pascal GrayString(HDC, HBRUSH, GRAYSTRINGPROC, LPARAM, int, int, int, int, int);
+
+BOOL    _far  _pascal GetCharWidth(HDC, UINT, UINT, int  _far*);
+
+COLORREF _far  _pascal SetTextColor(HDC, COLORREF);
+COLORREF _far  _pascal GetTextColor(HDC);
+
+COLORREF _far  _pascal SetBkColor(HDC, COLORREF);
+COLORREF _far  _pascal GetBkColor(HDC);
+
+int     _far  _pascal SetBkMode(HDC, int);
+int     _far  _pascal GetBkMode(HDC);
+
+
+
+#line 1713
+UINT    _far  _pascal SetTextAlign(HDC, UINT);
+UINT    _far  _pascal GetTextAlign(HDC);
+
+
+
+#line 1726
+int     _far  _pascal SetTextCharacterExtra(HDC, int);
+int     _far  _pascal GetTextCharacterExtra(HDC);
+
+int     _far  _pascal SetTextJustification(HDC, int, int);
+
+
+
+
+#line 1736
+typedef struct tagLOGFONT
+{
+    int     lfHeight;
+    int     lfWidth;
+    int     lfEscapement;
+    int     lfOrientation;
+    int     lfWeight;
+    BYTE    lfItalic;
+    BYTE    lfUnderline;
+    BYTE    lfStrikeOut;
+    BYTE    lfCharSet;
+    BYTE    lfOutPrecision;
+    BYTE    lfClipPrecision;
+    BYTE    lfQuality;
+    BYTE    lfPitchAndFamily;
+    char    lfFaceName[32 ];
+} LOGFONT;
+typedef LOGFONT*       PLOGFONT;
+typedef LOGFONT  _near* NPLOGFONT;
+typedef LOGFONT  _far*  LPLOGFONT;
+
+
+
+
+
+
+
+#line 1794
+ 
+
+
+#line 1805
+ 
+
+
+
+
+
+
+
+#line 1825
+HFONT   _far  _pascal CreateFont(int, int, int, int, int, BYTE, BYTE, BYTE, BYTE, BYTE, BYTE, BYTE, BYTE, LPCSTR);
+HFONT   _far  _pascal CreateFontIndirect(const LOGFONT  _far*);
+
+
+
+
+#line 1838
+DWORD   _far  _pascal SetMapperFlags(HDC, DWORD);
+
+
+int     _far  _pascal AddFontResource(LPCSTR);
+BOOL    _far  _pascal RemoveFontResource(LPCSTR);
+
+
+
+int     _far  _pascal GetTextFace(HDC, int, LPSTR);
+
+DWORD   _far  _pascal GetAspectRatioFilter(HDC);
+
+BOOL    _far  _pascal GetAspectRatioFilterEx(HDC, SIZE  _far*);
+
+
+
+
+
+
+typedef struct tagTEXTMETRIC
+{
+    int     tmHeight;
+    int     tmAscent;
+    int     tmDescent;
+    int     tmInternalLeading;
+    int     tmExternalLeading;
+    int     tmAveCharWidth;
+    int     tmMaxCharWidth;
+    int     tmWeight;
+    BYTE    tmItalic;
+    BYTE    tmUnderlined;
+    BYTE    tmStruckOut;
+    BYTE    tmFirstChar;
+    BYTE    tmLastChar;
+    BYTE    tmDefaultChar;
+    BYTE    tmBreakChar;
+    BYTE    tmPitchAndFamily;
+    BYTE    tmCharSet;
+    int     tmOverhang;
+    int     tmDigitizedAspectX;
+    int     tmDigitizedAspectY;
+} TEXTMETRIC;
+typedef TEXTMETRIC*       PTEXTMETRIC;
+typedef TEXTMETRIC  _near* NPTEXTMETRIC;
+typedef TEXTMETRIC  _far*  LPTEXTMETRIC;
+
+
+#line 1890
+ 
+
+BOOL    _far  _pascal GetTextMetrics(HDC, TEXTMETRIC  _far*);
+
+#line 1896
+ 
+typedef struct tagPANOSE
+{
+    BYTE    bFamilyType;
+    BYTE    bSerifStyle;
+    BYTE    bWeight;
+    BYTE    bProportion;
+    BYTE    bContrast;
+    BYTE    bStrokeVariation;
+    BYTE    bArmStyle;
+    BYTE    bLetterform;
+    BYTE    bMidline;
+    BYTE    bXHeight;
+} PANOSE,  _far* LPPANOSE;
+
+typedef struct tagOUTLINETEXTMETRIC
+{
+    UINT    otmSize;
+    TEXTMETRIC otmTextMetrics;
+    BYTE    otmFiller;
+    PANOSE  otmPanoseNumber;
+    UINT    otmfsSelection;
+    UINT    otmfsType;
+    int     otmsCharSlopeRise;
+    int     otmsCharSlopeRun;
+    int     otmItalicAngle;
+    UINT    otmEMSquare;
+    int     otmAscent;
+    int     otmDescent;
+    UINT    otmLineGap;
+    UINT    otmsCapEmHeight;
+    UINT    otmsXHeight;
+    RECT    otmrcFontBox;
+    int     otmMacAscent;
+    int     otmMacDescent;
+    UINT    otmMacLineGap;
+    UINT    otmusMinimumPPEM;
+    POINT   otmptSubscriptSize;
+    POINT   otmptSubscriptOffset;
+    POINT   otmptSuperscriptSize;
+    POINT   otmptSuperscriptOffset;
+    UINT    otmsStrikeoutSize;
+    int     otmsStrikeoutPosition;
+    int     otmsUnderscorePosition;
+    int     otmsUnderscoreSize;
+    PSTR    otmpFamilyName;
+    PSTR    otmpFaceName;
+    PSTR    otmpStyleName;
+    PSTR    otmpFullName;
+} OUTLINETEXTMETRIC,  _far* LPOUTLINETEXTMETRIC;
+
+WORD    _far  _pascal GetOutlineTextMetrics(HDC, UINT, OUTLINETEXTMETRIC  _far*);
+
+
+
+
+#line 1954
+ 
+
+
+typedef struct tagNEWTEXTMETRIC
+{
+    int     tmHeight;
+    int     tmAscent;
+    int     tmDescent;
+    int     tmInternalLeading;
+    int     tmExternalLeading;
+    int     tmAveCharWidth;
+    int     tmMaxCharWidth;
+    int     tmWeight;
+    BYTE    tmItalic;
+    BYTE    tmUnderlined;
+    BYTE    tmStruckOut;
+    BYTE    tmFirstChar;
+    BYTE    tmLastChar;
+    BYTE    tmDefaultChar;
+    BYTE    tmBreakChar;
+    BYTE    tmPitchAndFamily;
+    BYTE    tmCharSet;
+    int     tmOverhang;
+    int     tmDigitizedAspectX;
+    int     tmDigitizedAspectY;
+    DWORD   ntmFlags;
+    UINT    ntmSizeEM;
+    UINT    ntmCellHeight;
+    UINT    ntmAvgWidth;
+} NEWTEXTMETRIC;
+typedef NEWTEXTMETRIC*       PNEWTEXTMETRIC;
+typedef NEWTEXTMETRIC  _near* NPNEWTEXTMETRIC;
+typedef NEWTEXTMETRIC  _far*  LPNEWTEXTMETRIC;
+
+
+
+
+
+#line 1996
+typedef struct tagENUMLOGFONT
+{
+    LOGFONT elfLogFont;
+    char    elfFullName[64 ];
+    char    elfStyle[32 ];
+} ENUMLOGFONT,  _far* LPENUMLOGFONT;
+
+
+
+
+
+#line 2025
+typedef FARPROC OLDFONTENUMPROC;
+typedef FARPROC FONTENUMPROC;
+
+int     _far  _pascal EnumFonts(HDC, LPCSTR, OLDFONTENUMPROC, LPSTR);
+
+
+int     _far  _pascal EnumFontFamilies(HDC, LPCSTR, FONTENUMPROC, LPSTR);
+
+
+
+
+
+#line 2041
+ 
+
+
+
+#line 2047
+ 
+DWORD   _far  _pascal GetFontData(HDC, DWORD, DWORD, void  _far*, DWORD);
+BOOL	_far  _pascal CreateScalableFontResource(UINT, LPCSTR, LPCSTR, LPCSTR);
+
+typedef struct tagGLYPHMETRICS
+{
+    UINT    gmBlackBoxX;
+    UINT    gmBlackBoxY;
+    POINT   gmptGlyphOrigin;
+    int     gmCellIncX;
+    int     gmCellIncY;
+} GLYPHMETRICS,  _far* LPGLYPHMETRICS;
+
+typedef struct tagFIXED
+{
+    UINT    fract;
+    int     value;
+} FIXED,  _far* LPFIXED;
+
+typedef struct tagMAT2
+{
+    FIXED  eM11;
+    FIXED  eM12;
+    FIXED  eM21;
+    FIXED  eM22;
+} MAT2,  _far* LPMAT2;
+
+DWORD   _far  _pascal GetGlyphOutline(HDC, UINT, UINT, GLYPHMETRICS  _far*, DWORD, void  _far*, const MAT2  _far*);
+
+
+
+
+
+#line 2086
+typedef struct tagPOINTFX
+{
+    FIXED x;
+    FIXED y;
+} POINTFX,  _far* LPPOINTFX;
+
+typedef struct tagTTPOLYCURVE
+{
+    UINT    wType;
+    UINT    cpfx;
+    POINTFX apfx[1];
+} TTPOLYCURVE,  _far* LPTTPOLYCURVE;
+
+typedef struct tagTTPOLYGONHEADER
+{
+    DWORD   cb;
+    DWORD   dwType;
+    POINTFX pfxStart;
+} TTPOLYGONHEADER,  _far* LPTTPOLYGONHEADER;
+
+typedef struct tagABC
+{
+    int   abcA;
+    UINT  abcB;
+    int   abcC;
+} ABC;
+typedef ABC  _far* LPABC;
+
+BOOL    _far  _pascal GetCharABCWidths(HDC, UINT, UINT, ABC  _far*);
+
+typedef struct tagKERNINGPAIR
+{
+    WORD wFirst;
+    WORD wSecond;
+    int  iKernAmount;
+} KERNINGPAIR,  _far* LPKERNINGPAIR;
+
+int     _far  _pascal GetKerningPairs(HDC, int, KERNINGPAIR  _far*);
+
+typedef struct tagRASTERIZER_STATUS
+{
+    int   nSize;
+    int   wFlags;
+    int   nLanguageID;
+} RASTERIZER_STATUS;
+typedef RASTERIZER_STATUS  _far* LPRASTERIZER_STATUS;
+
+
+
+#line 2137
+BOOL    _far  _pascal GetRasterizerCaps(RASTERIZER_STATUS  _far*, int);
+
+
+
+
+
+
+
+typedef struct tagBITMAP
+{
+    int     bmType;
+    int     bmWidth;
+    int     bmHeight;
+    int     bmWidthBytes;
+    BYTE    bmPlanes;
+    BYTE    bmBitsPixel;
+    void  _far* bmBits;
+} BITMAP;
+typedef BITMAP*       PBITMAP;
+typedef BITMAP  _near* NPBITMAP;
+typedef BITMAP  _far*  LPBITMAP;
+
+
+typedef struct tagRGBTRIPLE
+{
+    BYTE    rgbtBlue;
+    BYTE    rgbtGreen;
+    BYTE    rgbtRed;
+} RGBTRIPLE;
+typedef RGBTRIPLE  _far* LPRGBTRIPLE;
+
+typedef struct tagRGBQUAD
+{
+    BYTE    rgbBlue;
+    BYTE    rgbGreen;
+    BYTE    rgbRed;
+    BYTE    rgbReserved;
+} RGBQUAD;
+typedef RGBQUAD  _far* LPRGBQUAD;
+
+
+typedef struct tagBITMAPCOREHEADER
+{
+    DWORD   bcSize;
+    short   bcWidth;
+    short   bcHeight;
+    WORD    bcPlanes;
+    WORD    bcBitCount;
+} BITMAPCOREHEADER;
+typedef BITMAPCOREHEADER*      PBITMAPCOREHEADER;
+typedef BITMAPCOREHEADER  _far* LPBITMAPCOREHEADER;
+
+typedef struct tagBITMAPINFOHEADER
+{
+    DWORD   biSize;
+     long    biWidth;
+     long    biHeight;
+    WORD    biPlanes;
+    WORD    biBitCount;
+    DWORD   biCompression;
+    DWORD   biSizeImage;
+     long    biXPelsPerMeter;
+     long    biYPelsPerMeter;
+    DWORD   biClrUsed;
+    DWORD   biClrImportant;
+} BITMAPINFOHEADER;
+typedef BITMAPINFOHEADER*      PBITMAPINFOHEADER;
+typedef BITMAPINFOHEADER  _far* LPBITMAPINFOHEADER;
+
+
+
+#line 2211
+typedef struct tagBITMAPINFO
+{
+    BITMAPINFOHEADER bmiHeader;
+    RGBQUAD	     bmiColors[1];
+} BITMAPINFO;
+typedef BITMAPINFO*     PBITMAPINFO;
+typedef BITMAPINFO  _far* LPBITMAPINFO;
+
+typedef struct tagBITMAPCOREINFO
+{
+    BITMAPCOREHEADER bmciHeader;
+    RGBTRIPLE	     bmciColors[1];
+} BITMAPCOREINFO;
+typedef BITMAPCOREINFO*      PBITMAPCOREINFO;
+typedef BITMAPCOREINFO  _far* LPBITMAPCOREINFO;
+
+typedef struct tagBITMAPFILEHEADER
+{
+    UINT    bfType;
+    DWORD   bfSize;
+    UINT    bfReserved1;
+    UINT    bfReserved2;
+    DWORD   bfOffBits;
+} BITMAPFILEHEADER;
+typedef BITMAPFILEHEADER*      PBITMAPFILEHEADER;
+typedef BITMAPFILEHEADER  _far* LPBITMAPFILEHEADER;
+
+
+HBITMAP _far  _pascal CreateBitmap(int, int, UINT, UINT, const void  _far*);
+HBITMAP _far  _pascal CreateBitmapIndirect(BITMAP  _far* );
+HBITMAP _far  _pascal CreateCompatibleBitmap(HDC, int, int);
+HBITMAP _far  _pascal CreateDiscardableBitmap(HDC, int, int);
+HBITMAP _far  _pascal CreateDIBitmap(HDC, BITMAPINFOHEADER  _far*, DWORD, const void  _far*, BITMAPINFO  _far*, UINT);
+
+HBITMAP _far  _pascal LoadBitmap(HINSTANCE, LPCSTR);
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 2295
+BOOL    _far  _pascal BitBlt(HDC, int, int, int, int, HDC, int, int, DWORD);
+
+BOOL    _far  _pascal PatBlt(HDC, int, int, int, int, DWORD);
+
+BOOL    _far  _pascal StretchBlt(HDC, int, int, int, int, HDC, int, int, int, int, DWORD);
+int     _far  _pascal StretchDIBits(HDC, int, int, int, int, int,
+                        int, int, int, const void  _far*, LPBITMAPINFO, UINT, DWORD);
+
+COLORREF _far  _pascal SetPixel(HDC, int, int, COLORREF);
+COLORREF _far  _pascal GetPixel(HDC, int, int);
+
+
+
+
+
+#line 2316
+int     _far  _pascal SetStretchBltMode(HDC, int);
+int     _far  _pascal GetStretchBltMode(HDC);
+
+DWORD   _far  _pascal SetBitmapDimension(HBITMAP, int, int);
+DWORD   _far  _pascal GetBitmapDimension(HBITMAP);
+
+BOOL    _far  _pascal SetBitmapDimensionEx(HBITMAP, int, int, SIZE  _far*);
+BOOL    _far  _pascal GetBitmapDimensionEx(HBITMAP, SIZE  _far*);
+
+int     _far  _pascal SetROP2(HDC, int);
+int     _far  _pascal GetROP2(HDC);
+
+ long    _far  _pascal SetBitmapBits(HBITMAP, DWORD, const void  _far*);
+ long    _far  _pascal GetBitmapBits(HBITMAP,  long, void  _far*);
+
+int     _far  _pascal SetDIBits(HDC, HBITMAP, UINT, UINT, const void  _far*, BITMAPINFO  _far*, UINT);
+int     _far  _pascal GetDIBits(HDC, HBITMAP, UINT, UINT, void  _far*, BITMAPINFO  _far*, UINT);
+
+int     _far  _pascal SetDIBitsToDevice(HDC, int, int, int, int, int, int, UINT, UINT,
+                    void  _far*, BITMAPINFO  _far*, UINT);
+
+
+
+
+
+
+typedef UINT HMETAFILE ;
+
+HDC     _far  _pascal CreateMetaFile(LPCSTR);
+HMETAFILE _far  _pascal CloseMetaFile(HDC);
+
+HMETAFILE _far  _pascal GetMetaFile(LPCSTR);
+BOOL      _far  _pascal DeleteMetaFile(HMETAFILE);
+HMETAFILE _far  _pascal CopyMetaFile(HMETAFILE, LPCSTR);
+
+BOOL    _far  _pascal PlayMetaFile(HDC, HMETAFILE);
+
+HGLOBAL _far  _pascal GetMetaFileBits(HMETAFILE);
+HMETAFILE _far  _pascal SetMetaFileBits(HGLOBAL);
+
+HMETAFILE _far  _pascal SetMetaFileBitsBetter(HGLOBAL);
+
+
+
+typedef struct tagMETAFILEPICT
+{
+    int     mm;
+    int     xExt;
+    int     yExt;
+    HMETAFILE hMF;
+} METAFILEPICT;
+typedef METAFILEPICT  _far* LPMETAFILEPICT;
+
+typedef struct tagMETAHEADER
+{
+    UINT    mtType;
+    UINT    mtHeaderSize;
+    UINT    mtVersion;
+    DWORD   mtSize;
+    UINT    mtNoObjects;
+    DWORD   mtMaxRecord;
+    UINT    mtNoParameters;
+} METAHEADER;
+
+typedef struct tagHANDLETABLE
+{
+    HGDIOBJ objectHandle[1];
+} HANDLETABLE;
+typedef HANDLETABLE*      PHANDLETABLE;
+typedef HANDLETABLE  _far* LPHANDLETABLE;
+
+typedef struct tagMETARECORD
+{
+    DWORD   rdSize;
+    UINT    rdFunction;
+    UINT    rdParm[1];
+} METARECORD;
+typedef METARECORD*      PMETARECORD;
+typedef METARECORD  _far* LPMETARECORD;
+
+
+
+
+
+
+
+
+
+#line 2482
+void    _far  _pascal PlayMetaFileRecord(HDC, HANDLETABLE  _far*, METARECORD  _far*, UINT);
+
+#line 2487
+typedef FARPROC MFENUMPROC;
+
+
+BOOL    _far  _pascal EnumMetaFile(HDC, HMETAFILE, MFENUMPROC, LPARAM);
+
+
+
+
+
+#line 2499
+typedef FARPROC ABORTPROC;
+
+
+
+ 
+typedef struct
+{
+    int     cbSize;
+    LPCSTR  lpszDocName;
+    LPCSTR  lpszOutput;
+}   DOCINFO;
+typedef DOCINFO  _far* LPDOCINFO;
+
+int     _far  _pascal StartDoc(HDC, DOCINFO  _far*);
+int     _far  _pascal StartPage(HDC);
+int     _far  _pascal EndPage(HDC);
+int     _far  _pascal EndDoc(HDC);
+int     _far  _pascal AbortDoc(HDC);
+
+int     _far  _pascal SetAbortProc(HDC, ABORTPROC);
+HANDLE  _far  _pascal SpoolFile(LPSTR, LPSTR, LPSTR, LPSTR);
+
+
+BOOL    _far  _pascal QueryAbort(HDC, int);
+
+
+
+
+
+
+
+
+
+
+
+#line 2543
+int     _far  _pascal Escape(HDC, int, int, LPCSTR, void  _far*);
+
+
+
+
+
+
+
+
+
+
+
+#line 2622
+typedef UINT HWND ;
+
+
+
+typedef UINT HMENU ;
+
+typedef UINT HICON ;
+typedef HICON HCURSOR;	    
+
+
+
+
+
+int _far  _pascal GetSystemMetrics(int);
+
+
+
+#line 2683
+ 
+
+
+
+
+
+UINT    _far  _pascal GetDoubleClickTime(void);
+void    _far  _pascal SetDoubleClickTime(UINT);
+
+
+
+
+#line 2699
+ 
+BOOL    _far  _pascal SystemParametersInfo(UINT, UINT,  void  _far*, UINT);
+
+
+
+
+
+
+
+
+
+#line 2745
+void    _far  _pascal SetRect(RECT  _far*, int, int, int, int);
+void    _far  _pascal SetRectEmpty(RECT  _far*);
+
+void    _far  _pascal CopyRect(RECT  _far*, const RECT  _far*);
+
+BOOL    _far  _pascal IsRectEmpty(const RECT  _far*);
+
+BOOL    _far  _pascal EqualRect(const RECT  _far*, const RECT  _far*);
+
+BOOL    _far  _pascal IntersectRect(RECT  _far*, const RECT  _far*, const RECT  _far*);
+BOOL    _far  _pascal UnionRect(RECT  _far*, const RECT  _far*, const RECT  _far*);
+BOOL    _far  _pascal SubtractRect(RECT  _far*, const RECT  _far*, const RECT  _far*);
+
+void    _far  _pascal OffsetRect(RECT  _far*, int, int);
+void    _far  _pascal InflateRect(RECT  _far*, int, int);
+
+BOOL    _far  _pascal PtInRect(const RECT  _far*, POINT);
+
+
+
+UINT _far  _pascal RegisterWindowMessage(LPCSTR);
+
+
+
+
+
+
+#line 2775
+typedef struct tagMSG
+{
+    HWND	hwnd;
+    UINT        message;
+    WPARAM	wParam;
+    LPARAM	lParam;
+    DWORD       time;
+    POINT	pt;
+} MSG;
+typedef MSG* PMSG;
+typedef MSG  _near* NPMSG;
+typedef MSG  _far* LPMSG;
+
+BOOL    _far  _pascal GetMessage(MSG  _far*, HWND, UINT, UINT);
+BOOL    _far  _pascal PeekMessage(MSG  _far*, HWND, UINT, UINT, UINT);
+
+
+
+#line 2796
+void    _far  _pascal WaitMessage(void);
+
+DWORD   _far  _pascal GetMessagePos(void);
+ long    _far  _pascal GetMessageTime(void);
+
+LPARAM  _far  _pascal GetMessageExtraInfo(void);
+
+
+BOOL    _far  _pascal TranslateMessage(const MSG  _far*);
+ long    _far  _pascal DispatchMessage(const MSG  _far*);
+
+BOOL    _far  _pascal SetMessageQueue(int);
+
+BOOL    _far  _pascal GetInputState(void);
+
+
+DWORD   _far  _pascal GetQueueStatus(UINT flags);
+
+
+
+
+
+
+
+#line 2829
+BOOL    _far  _pascal PostMessage(HWND, UINT, WPARAM, LPARAM);
+LRESULT _far  _pascal SendMessage(HWND, UINT, WPARAM, LPARAM);
+
+
+
+BOOL    _far  _pascal PostAppMessage(HTASK, UINT, WPARAM, LPARAM);
+
+void    _far  _pascal ReplyMessage(LRESULT);
+BOOL    _far  _pascal InSendMessage(void);
+
+
+
+
+BOOL _far  _pascal CallMsgFilter(MSG  _far*, int);
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 2873
+ 
+
+
+
+
+
+
+
+
+#line 2891
+void    _far  _pascal PostQuitMessage(int);
+
+
+
+
+
+typedef LRESULT (_far  _pascal* WNDPROC)(HWND, UINT, WPARAM, LPARAM);
+
+typedef struct tagWNDCLASS
+{
+    UINT        style;
+    WNDPROC	lpfnWndProc;
+    int         cbClsExtra;
+    int         cbWndExtra;
+    HINSTANCE	hInstance;
+    HICON	hIcon;
+    HCURSOR	hCursor;
+    HBRUSH	hbrBackground;
+    LPCSTR	lpszMenuName;
+    LPCSTR	lpszClassName;
+} WNDCLASS;
+typedef WNDCLASS* PWNDCLASS;
+typedef WNDCLASS  _near* NPWNDCLASS;
+typedef WNDCLASS  _far* LPWNDCLASS;
+
+ATOM    _far  _pascal RegisterClass(const WNDCLASS  _far*);
+BOOL    _far  _pascal UnregisterClass(LPCSTR, HINSTANCE);
+
+BOOL    _far  _pascal GetClassInfo(HINSTANCE, LPCSTR, WNDCLASS  _far*);
+int     _far  _pascal GetClassName(HWND, LPSTR, int);
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 2949
+WORD    _far  _pascal GetClassWord(HWND, int);
+WORD    _far  _pascal SetClassWord(HWND, int, WORD);
+ long    _far  _pascal GetClassLong(HWND, int);
+ long    _far  _pascal SetClassLong(HWND, int,  long);
+
+
+
+#line 2967
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 3021
+ 
+
+
+
+
+
+
+
+
+#line 3035
+BOOL    _far  _pascal IsWindow(HWND);
+
+HWND    _far  _pascal CreateWindowEx(DWORD, LPCSTR, LPCSTR, DWORD, int, int, int, int, HWND, HMENU, HINSTANCE, void  _far*);
+HWND    _far  _pascal CreateWindow(LPCSTR, LPCSTR, DWORD, int, int, int, int, HWND, HMENU, HINSTANCE, void  _far*);
+
+
+
+#line 3044
+typedef struct tagCREATESTRUCT
+{
+    void  _far* lpCreateParams;
+    HINSTANCE hInstance;
+    HMENU     hMenu;
+    HWND      hwndParent;
+    int       cy;
+    int       cx;
+    int       y;
+    int       x;
+     long      style;
+    LPCSTR    lpszName;
+    LPCSTR    lpszClass;
+    DWORD     dwExStyle;
+} CREATESTRUCT;
+typedef CREATESTRUCT  _far* LPCREATESTRUCT;
+
+BOOL    _far  _pascal DestroyWindow(HWND);
+
+
+
+
+#line 3068
+HTASK   _far  _pascal GetWindowTask(HWND);
+
+BOOL    _far  _pascal IsChild(HWND, HWND);
+
+HWND    _far  _pascal GetParent(HWND);
+HWND    _far  _pascal SetParent(HWND, HWND);
+
+BOOL    _far  _pascal IsWindowVisible(HWND);
+
+BOOL    _far  _pascal ShowWindow(HWND, int);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 3118
+BOOL    _far  _pascal EnableWindow(HWND,BOOL);
+BOOL    _far  _pascal IsWindowEnabled(HWND);
+
+
+
+
+void    _far  _pascal SetWindowText(HWND, LPCSTR);
+int     _far  _pascal GetWindowText(HWND, LPSTR, int);
+int     _far  _pascal GetWindowTextLength(HWND);
+
+
+
+#line 3133
+WORD    _far  _pascal GetWindowWord(HWND, int);
+WORD    _far  _pascal SetWindowWord(HWND, int, WORD);
+ long    _far  _pascal GetWindowLong(HWND, int);
+ long    _far  _pascal SetWindowLong(HWND, int,  long);
+
+
+
+
+
+
+
+#line 3152
+void    _far  _pascal GetClientRect(HWND, RECT  _far*);
+void    _far  _pascal GetWindowRect(HWND, RECT  _far*);
+
+
+
+typedef struct tagWINDOWPLACEMENT
+{
+    UINT  length;
+    UINT  flags;
+    UINT  showCmd;
+    POINT ptMinPosition;
+    POINT ptMaxPosition;
+    RECT  rcNormalPosition;
+} WINDOWPLACEMENT;
+typedef WINDOWPLACEMENT     *PWINDOWPLACEMENT;
+typedef WINDOWPLACEMENT  _far* LPWINDOWPLACEMENT;
+
+
+#line 3172
+BOOL    _far  _pascal GetWindowPlacement(HWND, WINDOWPLACEMENT  _far*);
+BOOL    _far  _pascal SetWindowPlacement(HWND, const WINDOWPLACEMENT  _far*);
+
+
+BOOL    _far  _pascal SetWindowPos(HWND, HWND, int, int, int, int, UINT);
+
+
+
+
+
+
+
+
+#line 3204
+typedef UINT HDWP ;
+
+HDWP    _far  _pascal BeginDeferWindowPos(int);
+HDWP    _far  _pascal DeferWindowPos(HDWP, HWND, HWND, int, int, int, int, UINT);
+BOOL    _far  _pascal EndDeferWindowPos(HDWP);
+
+
+
+BOOL    _far  _pascal MoveWindow(HWND, int, int, int, int, BOOL);
+BOOL    _far  _pascal BringWindowToTop(HWND);
+
+
+ 
+
+
+#line 3221
+typedef struct tagWINDOWPOS
+{
+    HWND    hwnd;
+    HWND    hwndInsertAfter;
+    int     x;
+    int     y;
+    int     cx;
+    int     cy;
+    UINT    flags;
+} WINDOWPOS;
+typedef WINDOWPOS  _far* LPWINDOWPOS;
+
+
+
+
+
+
+
+
+
+#line 3253
+LRESULT _far  _pascal DefWindowProc(HWND, UINT, WPARAM, LPARAM);
+
+#line 3258
+LRESULT _far  _pascal CallWindowProc(FARPROC, HWND, UINT, WPARAM, LPARAM);
+
+
+
+
+void    _far  _pascal AdjustWindowRect(RECT  _far*, DWORD, BOOL);
+void    _far  _pascal AdjustWindowRectEx(RECT  _far*, DWORD, BOOL, DWORD);
+
+
+
+#line 3270
+typedef struct tagMINMAXINFO
+{
+    POINT ptReserved;
+    POINT ptMaxSize;
+    POINT ptMaxPosition;
+    POINT ptMinTrackSize;
+    POINT ptMaxTrackSize;
+} MINMAXINFO;
+
+
+
+BOOL    _far  _pascal FlashWindow(HWND, BOOL);
+
+void    _far  _pascal ShowOwnedPopups(HWND, BOOL);
+
+
+BOOL    _far  _pascal OpenIcon(HWND);
+void    _far  _pascal CloseWindow(HWND);
+BOOL    _far  _pascal AnyPopup(void);
+BOOL    _far  _pascal IsIconic(HWND);
+BOOL    _far  _pascal IsZoomed(HWND);
+
+
+
+void    _far  _pascal ClientToScreen(HWND, POINT  _far*);
+void    _far  _pascal ScreenToClient(HWND, POINT  _far*);
+
+
+void    _far  _pascal MapWindowPoints(HWND hwndFrom, HWND hwndTo, POINT  _far* lppt, UINT cpt);
+
+
+HWND    _far  _pascal WindowFromPoint(POINT);
+HWND    _far  _pascal ChildWindowFromPoint(HWND, POINT);
+
+
+
+HWND    _far  _pascal GetDesktopWindow(void);
+
+HWND    _far  _pascal FindWindow(LPCSTR, LPCSTR);
+
+#line 3313
+typedef FARPROC WNDENUMPROC;
+
+
+BOOL    _far  _pascal EnumWindows(WNDENUMPROC, LPARAM);
+BOOL    _far  _pascal EnumChildWindows(HWND, WNDENUMPROC, LPARAM);
+BOOL    _far  _pascal EnumTaskWindows(HTASK, WNDENUMPROC, LPARAM);
+
+HWND    _far  _pascal GetTopWindow(HWND);
+
+HWND    _far  _pascal GetWindow(HWND, UINT);
+HWND    _far  _pascal GetNextWindow(HWND, UINT);
+
+
+
+
+
+
+#line 3336
+BOOL    _far  _pascal SetProp(HWND, LPCSTR, HANDLE);
+HANDLE  _far  _pascal GetProp(HWND, LPCSTR);
+HANDLE  _far  _pascal RemoveProp(HWND, LPCSTR);
+
+#line 3343
+typedef FARPROC PROPENUMPROC;
+
+
+int     _far  _pascal EnumProps(HWND, PROPENUMPROC);
+
+
+
+HDC     _far  _pascal GetDC(HWND);
+int     _far  _pascal ReleaseDC(HWND, HDC);
+
+HDC     _far  _pascal GetWindowDC(HWND);
+
+
+HDC     _far  _pascal GetDCEx(register HWND hwnd, HRGN hrgnClip, DWORD flags);
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 3382
+typedef struct tagPAINTSTRUCT
+{
+    HDC 	hdc;
+    BOOL	fErase;
+    RECT	rcPaint;
+    BOOL	fRestore;
+    BOOL	fIncUpdate;
+    BYTE	rgbReserved[16];
+} PAINTSTRUCT;
+typedef PAINTSTRUCT* PPAINTSTRUCT;
+typedef PAINTSTRUCT  _near* NPPAINTSTRUCT;
+typedef PAINTSTRUCT  _far* LPPAINTSTRUCT;
+
+HDC     _far  _pascal BeginPaint(HWND, PAINTSTRUCT  _far*);
+void    _far  _pascal EndPaint(HWND, const PAINTSTRUCT  _far*);
+
+void    _far  _pascal UpdateWindow(HWND);
+
+int     _far  _pascal ExcludeUpdateRgn(HDC, HWND);
+
+
+BOOL    _far  _pascal LockWindowUpdate(HWND hwndLock);
+
+
+BOOL    _far  _pascal GetUpdateRect(HWND, RECT  _far*, BOOL);
+int     _far  _pascal GetUpdateRgn(HWND, HRGN, BOOL);
+
+void    _far  _pascal InvalidateRect(HWND, const RECT  _far*, BOOL);
+void    _far  _pascal ValidateRect(HWND, const RECT  _far*);
+
+void    _far  _pascal InvalidateRgn(HWND, HRGN, BOOL);
+void    _far  _pascal ValidateRgn(HWND, HRGN);
+
+
+BOOL    _far  _pascal RedrawWindow(HWND hwnd, const RECT  _far* lprcUpdate, HRGN hrgnUpdate, UINT flags);
+
+
+
+
+
+
+
+
+
+
+#line 3439
+void    _far  _pascal ScrollWindow(HWND, int, int, const RECT  _far*, const RECT  _far*);
+BOOL    _far  _pascal ScrollDC(HDC, int, int, const RECT  _far*, const RECT  _far*, HRGN, RECT  _far*);
+
+
+ 
+int     _far  _pascal ScrollWindowEx(HWND hwnd, int dx, int dy,
+                const RECT  _far* prcScroll, const RECT  _far* prcClip,
+                HRGN hrgnUpdate, RECT  _far* prcUpdate, UINT flags);
+
+
+
+
+
+
+
+
+
+#line 3462
+ 
+
+
+
+#line 3474
+typedef struct tagNCCALCSIZE_PARAMS
+{
+    RECT	   rgrc[3];
+    WINDOWPOS  _far* lppos;
+} NCCALCSIZE_PARAMS;
+#line 3485
+typedef NCCALCSIZE_PARAMS  _far* LPNCCALCSIZE_PARAMS;
+
+
+
+
+
+
+
+
+
+#line 3522
+HWND    _far  _pascal SetActiveWindow(HWND);
+HWND    _far  _pascal GetActiveWindow(void);
+
+HWND    _far  _pascal GetLastActivePopup(HWND);
+
+
+
+
+
+
+#line 3538
+HWND    _far  _pascal SetFocus(HWND);
+HWND    _far  _pascal GetFocus(void);
+
+int     _far  _pascal GetKeyState(int);
+int     _far  _pascal GetAsyncKeyState(int);
+
+void    _far  _pascal GetKeyboardState(BYTE  _far* );
+void    _far  _pascal SetKeyboardState(BYTE  _far* );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 3661
+HWND    _far  _pascal SetCapture(HWND);
+void    _far  _pascal ReleaseCapture(void);
+HWND    _far  _pascal GetCapture(void);
+
+BOOL    _far  _pascal SwapMouseButton(BOOL);
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 3713
+ 
+
+
+
+#line 3719
+typedef struct tagMOUSEHOOKSTRUCT
+{
+    POINT   pt;
+    HWND    hwnd;
+    UINT    wHitTestCode;
+    DWORD   dwExtraInfo;
+} MOUSEHOOKSTRUCT;
+typedef MOUSEHOOKSTRUCT   _far* LPMOUSEHOOKSTRUCT;
+
+
+
+
+
+
+
+
+HWND    _far  _pascal GetSysModalWindow(void);
+HWND    _far  _pascal SetSysModalWindow(HWND);
+
+
+
+#line 3743
+typedef FARPROC TIMERPROC;
+
+
+UINT    _far  _pascal SetTimer(HWND, UINT, UINT, TIMERPROC);
+
+BOOL    _far  _pascal KillTimer(HWND, UINT);
+
+
+
+
+
+typedef UINT HACCEL ;
+
+HACCEL  _far  _pascal LoadAccelerators(HINSTANCE, LPCSTR);
+
+
+int     _far  _pascal TranslateAccelerator(HWND, HACCEL, MSG  _far*);
+
+
+
+
+
+
+
+typedef struct
+{
+    UINT    versionNumber;
+    UINT    offset;
+} MENUITEMTEMPLATEHEADER;
+
+
+typedef struct
+{
+    UINT    mtOption;
+    UINT    mtID;
+    char    mtString[1];
+} MENUITEMTEMPLATE;
+
+
+BOOL    _far  _pascal IsMenu(HMENU);
+
+
+HMENU   _far  _pascal CreateMenu(void);
+HMENU   _far  _pascal CreatePopupMenu(void);
+HMENU   _far  _pascal LoadMenu(HINSTANCE, LPCSTR);
+HMENU   _far  _pascal LoadMenuIndirect(const void  _far*);
+
+BOOL    _far  _pascal DestroyMenu(HMENU);
+
+HMENU   _far  _pascal GetMenu(HWND);
+BOOL    _far  _pascal SetMenu(HWND, HMENU);
+
+HMENU   _far  _pascal GetSystemMenu(HWND, BOOL);
+
+void    _far  _pascal DrawMenuBar(HWND);
+
+BOOL    _far  _pascal HiliteMenuItem(HWND, HMENU, UINT, UINT);
+
+BOOL    _far  _pascal InsertMenu(HMENU, UINT, UINT, UINT, LPCSTR);
+BOOL    _far  _pascal AppendMenu(HMENU, UINT, UINT, LPCSTR);
+BOOL    _far  _pascal ModifyMenu(HMENU, UINT, UINT, UINT, LPCSTR);
+BOOL    _far  _pascal RemoveMenu(HMENU, UINT, UINT);
+BOOL    _far  _pascal DeleteMenu(HMENU, UINT, UINT);
+
+BOOL    _far  _pascal ChangeMenu(HMENU, UINT, LPCSTR, UINT, UINT);
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 3847
+BOOL    _far  _pascal EnableMenuItem(HMENU, UINT, UINT);
+BOOL    _far  _pascal CheckMenuItem(HMENU, UINT, UINT);
+
+HMENU   _far  _pascal GetSubMenu(HMENU, int);
+
+int     _far  _pascal GetMenuItemCount(HMENU);
+UINT    _far  _pascal GetMenuItemID(HMENU, int);
+
+int     _far  _pascal GetMenuString(HMENU, UINT, LPSTR, int, UINT);
+UINT    _far  _pascal GetMenuState(HMENU, UINT, UINT);
+
+BOOL    _far  _pascal SetMenuItemBitmaps(HMENU, UINT, UINT, HBITMAP, HBITMAP);
+DWORD   _far  _pascal GetMenuCheckMarkDimensions(void);
+
+BOOL    _far  _pascal TrackPopupMenu(HMENU, UINT, int, int, int, HWND, const RECT  _far*);
+
+
+#line 3870
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 3918
+int     _far  _pascal SetScrollPos(HWND, int, int, BOOL);
+int     _far  _pascal GetScrollPos(HWND, int);
+void    _far  _pascal SetScrollRange(HWND, int, int, int, BOOL);
+void    _far  _pascal GetScrollRange(HWND, int, int  _far*, int  _far*);
+void    _far  _pascal ShowScrollBar(HWND, int, BOOL);
+BOOL    _far  _pascal EnableScrollBar(HWND, int, UINT);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 3972
+BOOL    _far  _pascal OpenClipboard(HWND);
+BOOL    _far  _pascal CloseClipboard(void);
+BOOL    _far  _pascal EmptyClipboard(void);
+
+
+HWND    _far  _pascal GetOpenClipboardWindow(void);
+
+
+HWND    _far  _pascal GetClipboardOwner(void);
+
+HWND    _far  _pascal SetClipboardViewer(HWND);
+HWND    _far  _pascal GetClipboardViewer(void);
+
+HANDLE  _far  _pascal SetClipboardData(UINT, HANDLE);
+HANDLE  _far  _pascal GetClipboardData(UINT);
+
+BOOL    _far  _pascal IsClipboardFormatAvailable(UINT);
+int     _far  _pascal GetPriorityClipboardFormat(UINT  _far*, int);
+
+UINT    _far  _pascal RegisterClipboardFormat(LPCSTR);
+int     _far  _pascal CountClipboardFormats(void);
+UINT    _far  _pascal EnumClipboardFormats(UINT);
+int     _far  _pascal GetClipboardFormatName(UINT, LPSTR, int);
+
+BOOL    _far  _pascal ChangeClipboardChain(HWND, HWND);
+
+
+
+
+
+
+
+
+
+
+
+#line 4023
+HCURSOR _far  _pascal LoadCursor(HINSTANCE, LPCSTR);
+HCURSOR _far  _pascal CreateCursor(HINSTANCE, int, int, int, int, const void  _far*, const void  _far*);
+BOOL    _far  _pascal DestroyCursor(HCURSOR);
+
+
+HCURSOR _far  _pascal CopyCursor(HINSTANCE, HCURSOR);
+
+
+int     _far  _pascal ShowCursor(BOOL);
+
+void    _far  _pascal SetCursorPos(int, int);
+void    _far  _pascal GetCursorPos(POINT  _far*);
+
+HCURSOR _far  _pascal SetCursor(HCURSOR);
+
+
+HCURSOR _far  _pascal GetCursor(void);
+
+
+void    _far  _pascal ClipCursor(const RECT  _far*);
+
+void    _far  _pascal GetClipCursor(RECT  _far*);
+
+
+
+
+
+
+
+#line 4064
+HICON   _far  _pascal LoadIcon(HINSTANCE, LPCSTR);
+HICON   _far  _pascal CreateIcon(HINSTANCE, int, int, BYTE, BYTE, const void  _far*, const void  _far*);
+BOOL    _far  _pascal DestroyIcon(HICON);
+
+
+HICON   _far  _pascal CopyIcon(HINSTANCE, HICON);
+
+
+BOOL    _far  _pascal DrawIcon(HDC, int, int, HICON);
+
+
+
+
+
+
+
+
+
+#line 4089
+int     _far  _pascal MessageBox(HWND, LPCSTR, LPCSTR, UINT);
+void    _far  _pascal MessageBeep(UINT);
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 4126
+void    _far  _pascal CreateCaret(HWND, HBITMAP, int, int);
+void    _far  _pascal DestroyCaret(void);
+
+void    _far  _pascal SetCaretPos(int, int);
+void    _far  _pascal GetCaretPos(POINT  _far*);
+
+void    _far  _pascal HideCaret(HWND);
+void    _far  _pascal ShowCaret(HWND);
+
+UINT    _far  _pascal GetCaretBlinkTime(void);
+void    _far  _pascal SetCaretBlinkTime(UINT);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 4174
+typedef struct tagCLIENTCREATESTRUCT
+{
+    HMENU  hWindowMenu;
+    UINT   idFirstChild;
+} CLIENTCREATESTRUCT;
+typedef CLIENTCREATESTRUCT  _far* LPCLIENTCREATESTRUCT;
+
+
+#line 4184
+ 
+
+
+
+
+#line 4200
+typedef struct tagMDICREATESTRUCT
+{
+    LPCSTR  szClass;
+    LPCSTR  szTitle;
+    HINSTANCE hOwner;
+    int     x;
+    int     y;
+    int     cx;
+    int     cy;
+    DWORD   style;
+    LPARAM  lParam;
+} MDICREATESTRUCT;
+typedef MDICREATESTRUCT  _far*  LPMDICREATESTRUCT;
+
+
+ 
+
+
+
+#line 4223
+LRESULT _far  _pascal DefFrameProc(HWND, HWND, UINT, WPARAM, LPARAM);
+LRESULT _far  _pascal DefMDIChildProc(HWND, UINT, WPARAM, LPARAM);
+
+
+BOOL    _far  _pascal TranslateMDISysAccel(HWND, MSG  _far*);
+
+
+UINT    _far  _pascal ArrangeIconicWindows(HWND);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 4275
+typedef FARPROC DLGPROC;
+
+
+
+
+#line 4284
+BOOL    _far  _pascal IsDialogMessage(HWND, MSG  _far*);
+
+
+LRESULT _far  _pascal DefDlgProc(HWND, UINT, WPARAM, LPARAM);
+
+HWND    _far  _pascal CreateDialog(HINSTANCE, LPCSTR, HWND, DLGPROC);
+HWND    _far  _pascal CreateDialogIndirect(HINSTANCE, const void  _far*, HWND, DLGPROC);
+HWND    _far  _pascal CreateDialogParam(HINSTANCE, LPCSTR, HWND, DLGPROC, LPARAM);
+HWND    _far  _pascal CreateDialogIndirectParam(HINSTANCE, const void  _far*, HWND, DLGPROC, LPARAM);
+
+int     _far  _pascal DialogBox(HINSTANCE, LPCSTR, HWND, DLGPROC);
+int     _far  _pascal DialogBoxIndirect(HINSTANCE, HGLOBAL, HWND, DLGPROC);
+int     _far  _pascal DialogBoxParam(HINSTANCE, LPCSTR, HWND, DLGPROC, LPARAM);
+int     _far  _pascal DialogBoxIndirectParam(HINSTANCE, HGLOBAL, HWND, DLGPROC, LPARAM);
+
+void    _far  _pascal EndDialog(HWND, int);
+
+int     _far  _pascal GetDlgCtrlID(HWND);
+HWND    _far  _pascal GetDlgItem(HWND, int);
+LRESULT _far  _pascal SendDlgItemMessage(HWND, int, UINT, WPARAM, LPARAM);
+
+void    _far  _pascal SetDlgItemInt(HWND, int, UINT, BOOL);
+UINT    _far  _pascal GetDlgItemInt(HWND, int, BOOL  _far* , BOOL);
+
+void    _far  _pascal SetDlgItemText(HWND, int, LPCSTR);
+int     _far  _pascal GetDlgItemText(HWND, int, LPSTR, int);
+
+void    _far  _pascal CheckDlgButton(HWND, int, UINT);
+void    _far  _pascal CheckRadioButton(HWND, int, int, int);
+UINT    _far  _pascal IsDlgButtonChecked(HWND, int);
+
+HWND    _far  _pascal GetNextDlgGroupItem(HWND, HWND, BOOL);
+HWND    _far  _pascal GetNextDlgTabItem(HWND, HWND, BOOL);
+
+void    _far  _pascal MapDialogRect(HWND, RECT  _far*);
+DWORD   _far  _pascal GetDialogBaseUnits(void);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 4383
+typedef struct tagDRAWITEMSTRUCT
+{
+    UINT        CtlType;
+    UINT        CtlID;
+    UINT        itemID;
+    UINT        itemAction;
+    UINT        itemState;
+    HWND	hwndItem;
+    HDC		hDC;
+    RECT	rcItem;
+    DWORD       itemData;
+} DRAWITEMSTRUCT;
+typedef DRAWITEMSTRUCT  _near* PDRAWITEMSTRUCT;
+typedef DRAWITEMSTRUCT  _far* LPDRAWITEMSTRUCT;
+
+
+
+typedef struct tagMEASUREITEMSTRUCT
+{
+    UINT        CtlType;
+    UINT        CtlID;
+    UINT        itemID;
+    UINT        itemWidth;
+    UINT        itemHeight;
+    DWORD       itemData;
+} MEASUREITEMSTRUCT;
+typedef MEASUREITEMSTRUCT  _near* PMEASUREITEMSTRUCT;
+typedef MEASUREITEMSTRUCT  _far* LPMEASUREITEMSTRUCT;
+
+
+
+typedef struct tagDELETEITEMSTRUCT
+{
+    UINT       CtlType;
+    UINT       CtlID;
+    UINT       itemID;
+    HWND       hwndItem;
+    DWORD      itemData;
+} DELETEITEMSTRUCT;
+typedef DELETEITEMSTRUCT  _near* PDELETEITEMSTRUCT;
+typedef DELETEITEMSTRUCT  _far* LPDELETEITEMSTRUCT;
+
+
+
+typedef struct tagCOMPAREITEMSTRUCT
+{
+    UINT        CtlType;
+    UINT        CtlID;
+    HWND	hwndItem;
+    UINT        itemID1;
+    DWORD       itemData1;
+    UINT        itemID2;
+    DWORD       itemData2;
+} COMPAREITEMSTRUCT;
+typedef COMPAREITEMSTRUCT  _near* PCOMPAREITEMSTRUCT;
+typedef COMPAREITEMSTRUCT  _far* LPCOMPAREITEMSTRUCT;
+
+
+
+
+
+
+#line 4461
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 4524
+ 
+
+
+
+#line 4560
+ 
+
+
+
+typedef int   (_far  _pascal* EDITWORDBREAKPROC)(LPSTR lpch, int ichCurrent, int cch, int code);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 4626
+ 
+
+
+
+
+#line 4665
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+#line 4690
+int     _far  _pascal DlgDirList(HWND, LPSTR, int, int, UINT);
+BOOL    _far  _pascal DlgDirSelect(HWND, LPSTR, int);
+
+int     _far  _pascal DlgDirListComboBox(HWND, LPSTR, int, int, UINT);
+BOOL    _far  _pascal DlgDirSelectComboBox(HWND, LPSTR, int);
+
+
+BOOL    _far  _pascal DlgDirSelectEx(HWND, LPSTR, int, int);
+BOOL    _far  _pascal DlgDirSelectComboBoxEx(HWND, LPSTR, int, int);
+
+
+
+
+
+
+
+
+
+
+
+
+#line 4734
+ 
+
+
+
+#line 4765
+ 
+
+
+
+
+#line 4782
+ 
+
+
+
+
+
+
+
+
+#line 4795
+typedef DWORD HHOOK ;
+
+#line 4800
+typedef FARPROC HOOKPROC;
+
+
+#line 4807
+HOOKPROC _far  _pascal SetWindowsHook(int, HOOKPROC);
+LRESULT _far  _pascal DefHookProc(int, WPARAM, LPARAM, HOOKPROC  _far*);
+
+BOOL    _far  _pascal UnhookWindowsHook(int, HOOKPROC);
+
+
+ 
+HHOOK   _far  _pascal SetWindowsHookEx(int idHook, HOOKPROC lpfn, HINSTANCE hInstance, HTASK hTask);
+BOOL    _far  _pascal UnhookWindowsHookEx(HHOOK hHook);
+LRESULT _far  _pascal CallNextHookEx(HHOOK hHook, int code, WPARAM wParam, LPARAM lParam);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 4852
+ 
+typedef struct tagCBT_CREATEWND
+{
+    CREATESTRUCT  _far* lpcs;
+    HWND    hwndInsertAfter;
+} CBT_CREATEWND;
+typedef CBT_CREATEWND  _far* LPCBT_CREATEWND;
+
+
+typedef struct tagCBTACTIVATESTRUCT
+{
+    BOOL    fMouse;
+    HWND    hWndActive;
+} CBTACTIVATESTRUCT;
+
+
+
+
+
+
+#line 4875
+ 
+typedef struct tagHARDWAREHOOKSTRUCT
+{
+    HWND    hWnd;
+    UINT    wMessage;
+    WPARAM  wParam;
+    LPARAM  lParam;
+} HARDWAREHOOKSTRUCT;
+
+
+
+
+
+#line 4890
+ 
+
+
+
+
+
+
+
+
+
+
+
+#line 4915
+typedef struct tagEVENTMSG
+{
+    UINT    message;
+    UINT    paramL;
+    UINT    paramH;
+    DWORD   time;
+} EVENTMSG;
+typedef EVENTMSG *PEVENTMSG;
+typedef EVENTMSG  _near* NPEVENTMSG;
+typedef EVENTMSG  _far* LPEVENTMSG;
+
+BOOL    _far  _pascal EnableHardwareInput(BOOL);
+
+
+
+
+
+
+
+ 
+
+
+typedef struct tagDEBUGHOOKINFO
+{
+    HMODULE	hModuleHook;
+    LPARAM	reserved;
+    LPARAM	lParam;
+    WPARAM	wParam;
+    int         code;
+} DEBUGHOOKINFO;
+typedef DEBUGHOOKINFO  _far* LPDEBUGHOOKINFO;
+
+
+BOOL _far  _pascal QuerySendMessage(HANDLE h1, HANDLE h2, HANDLE h3, LPMSG lpmsg);
+
+
+BOOL _far  _pascal LockInput(HANDLE h1, HWND hwndInput, BOOL fLock);
+
+ long _far  _pascal GetSystemDebugState(void);
+
+
+
+
+
+
+#line 4967
+BOOL _far  _pascal WinHelp(HWND hwndMain, LPCSTR lpszHelp, UINT usCommand, DWORD ulData);
+
+
+
+#line 4985
+typedef struct tagMULTIKEYHELP
+{
+    UINT    mkSize;
+    BYTE    mkKeylist;
+    BYTE    szKeyphrase[1];
+} MULTIKEYHELP;
+
+
+typedef struct
+{
+    int  wStructSize;
+    int  x;
+    int  y;
+    int  dx;
+    int  dy;
+    int  wMax;
+    char rgchMember[2];
+} HELPWININFO;
+typedef HELPWININFO  _near* PHELPWININFO;
+typedef HELPWININFO  _far* LPHELPWININFO;
+
+
+
+
+
+
+
+int     _far  _pascal OpenSound(void);
+void    _far  _pascal CloseSound(void);
+
+int     _far  _pascal StartSound(void);
+int     _far  _pascal StopSound(void);
+
+int     _far  _pascal SetVoiceQueueSize(int, int);
+int     _far  _pascal SetVoiceNote(int, int, int, int);
+int     _far  _pascal SetVoiceAccent(int, int, int, int, int);
+int     _far  _pascal SetVoiceEnvelope(int, int, int);
+int     _far  _pascal SetVoiceSound(int, DWORD, int);
+
+int     _far  _pascal SetVoiceThreshold(int, int);
+int  _far* _far  _pascal GetThresholdEvent(void);
+int     _far  _pascal GetThresholdStatus(void);
+
+int     _far  _pascal SetSoundNoise(int, int);
+
+
+
+#line 5040
+int     _far  _pascal WaitSoundState(int);
+
+
+
+#line 5047
+int     _far  _pascal SyncAllVoices(void);
+int     _far  _pascal CountVoiceNotes(int);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 5146
+ 
+
+
+
+
+
+
+
+
+#line 5174
+typedef struct tagDCB
+{
+    BYTE Id;
+    UINT BaudRate;
+    BYTE ByteSize;
+    BYTE Parity;
+    BYTE StopBits;
+    UINT RlsTimeout;
+    UINT CtsTimeout;
+    UINT DsrTimeout;
+
+    UINT fBinary        :1;
+    UINT fRtsDisable    :1;
+    UINT fParity        :1;
+    UINT fOutxCtsFlow   :1;
+    UINT fOutxDsrFlow   :1;
+    UINT fDummy         :2;
+    UINT fDtrDisable    :1;
+
+    UINT fOutX          :1;
+    UINT fInX           :1;
+    UINT fPeChar        :1;
+    UINT fNull          :1;
+    UINT fChEvt         :1;
+    UINT fDtrflow       :1;
+    UINT fRtsflow       :1;
+    UINT fDummy2        :1;
+
+    char XonChar;
+    char XoffChar;
+    UINT XonLim;
+    UINT XoffLim;
+    char PeChar;
+    char EofChar;
+    char EvtChar;
+    UINT TxDelay;
+} DCB;
+typedef DCB  _far* LPDCB;
+
+
+ 
+typedef struct tagCOMSTAT
+{
+    BYTE status;
+    UINT cbInQue;
+    UINT cbOutQue;
+} COMSTAT;
+
+
+
+#line 5248
+int     _far  _pascal BuildCommDCB(LPCSTR, DCB  _far*);
+
+int     _far  _pascal OpenComm(LPCSTR, UINT, UINT);
+int     _far  _pascal CloseComm(int);
+
+int     _far  _pascal ReadComm(int, void  _far*, int);
+int     _far  _pascal WriteComm(int, const void  _far*, int);
+int     _far  _pascal UngetCommChar(int, char);
+int     _far  _pascal FlushComm(int, int);
+int     _far  _pascal TransmitCommChar(int, char);
+
+int     _far  _pascal SetCommState(const DCB  _far*);
+int     _far  _pascal GetCommState(int, DCB  _far*);
+int     _far  _pascal GetCommError(int, COMSTAT  _far* );
+
+int     _far  _pascal SetCommBreak(int);
+int     _far  _pascal ClearCommBreak(int);
+
+UINT  _far* _far  _pascal SetCommEventMask(int, UINT);
+UINT    _far  _pascal GetCommEventMask(int, int);
+
+ long    _far  _pascal EscapeCommFunction(int, int);
+
+
+BOOL    _far  _pascal EnableCommNotification(int, HWND, int, int);
+
+
+
+
+
+
+
+
+int     _far  _pascal wvsprintf(LPSTR lpszOut, LPCSTR lpszFmt, const void  _far* lpParams);
+
+int	 _far  _cdecl wsprintf(LPSTR lpszOut, LPCSTR lpszFmt, ...);
+
+
+
+
+
+ 
+
+
+typedef UINT HDRVR ;
+
+typedef LRESULT (_far  _pascal* DRIVERPROC)(DWORD, HDRVR, UINT, LPARAM, LPARAM);
+
+
+
+
+
+#line 5315
+typedef struct tagDRVCONFIGINFO
+{
+    DWORD   dwDCISize;
+    LPCSTR  lpszDCISectionName;
+    LPCSTR  lpszDCIAliasName;
+} DRVCONFIGINFO;
+typedef DRVCONFIGINFO  _near* PDRVCONFIGINFO;
+typedef DRVCONFIGINFO  _far* LPDRVCONFIGINFO;
+
+
+
+
+
+#line 5333
+LRESULT _far  _pascal DefDriverProc(DWORD dwDriverIdentifier, HDRVR driverID, UINT message, LPARAM lParam1, LPARAM lParam2);
+
+HDRVR   _far  _pascal OpenDriver(LPCSTR szDriverName, LPCSTR szSectionName, LPARAM lParam2);
+LRESULT _far  _pascal CloseDriver(HDRVR hDriver, LPARAM lParam1, LPARAM lParam2);
+
+LRESULT _far  _pascal SendDriverMessage(HDRVR hDriver, UINT message, LPARAM lParam1, LPARAM lParam2);
+
+HINSTANCE _far  _pascal GetDriverModuleHandle(HDRVR hDriver);
+
+HDRVR   _far  _pascal GetNextDriver(HDRVR, DWORD);
+
+
+
+
+#line 5350
+typedef struct tagDRIVERINFOSTRUCT
+{
+    UINT    length;
+    HDRVR   hDriver;
+    HINSTANCE hModule;
+    char    szAliasName[128];
+} DRIVERINFOSTRUCT;
+typedef DRIVERINFOSTRUCT  _far* LPDRIVERINFOSTRUCT;
+
+BOOL    _far  _pascal GetDriverInfo(HDRVR, DRIVERINFOSTRUCT  _far*);
+
+
+
+
+
+
+#pragma pack()          /* Revert to default packing */
+
+
+
+
+
+
+
+#line 18 "c:\sc\include\windows.h"
+#pragma pack()
+
+
+
+
+
+#line 3 "c:\sc\include\windowsx.h"
+ #pragma once
+
+
+
+#pragma pack(__DEFALIGN)
+
+
+
+
+
+#line 15 "c:\sc\include\win16\windowsx.h"
+#pragma pack(1)         /* Assume byte packing throughout */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 105
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 962
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1038
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1090
+ 
+
+
+
+
+#line 1102
+#pragma pack()          /* Revert to default packing */
+
+
+
+
+
+
+
+#line 18 "c:\sc\include\windowsx.h"
+#pragma pack()
+
+
+
+
+#line 3 "c:\sc\include\memory.h"
+ #pragma once
+
+
+
+#line 3 "c:\sc\include\string.h"
+ #pragma once
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 28
+typedef unsigned size_t;
+
+
+typedef unsigned short wchar_t;
+
+
+
+#line 46
+ 
+
+void *	 __cdecl memcpy(void *,const void *,size_t);
+void *   __cdecl _inline_memcpy(void *,const void *,size_t);
+void *	 __cdecl memmove(void *,const void *,size_t);
+char *	 __cdecl strcpy(char *,const char *);
+char *	 __cdecl _inline_strcpy(char *,const char *);
+char *	 __cdecl strncpy(char *,const char *,size_t);
+char *	 __cdecl strcat(char *,const char *);
+char *	 __cdecl strncat(char *,const char *,size_t);
+int	 __cdecl memcmp(const void *,const void *,size_t);
+int      __cdecl _inline_memcmp(const void *,const void *,size_t);
+int	 __cdecl strcmp(const char *,const char *);
+int	 __cdecl _inline_strcmp(const char *,const char *);
+int	 __cdecl strcoll(const char *,const char *);
+int	 __cdecl strncmp(const char *,const char *,size_t);
+size_t	 __cdecl strxfrm(char *,const char *,size_t);
+void *	 __cdecl memchr(const void *,int,size_t);
+char *	 __cdecl strchr(const char *,int);
+size_t	 __cdecl strcspn(const char *,const char *);
+char *	 __cdecl strpbrk(const char *,const char *);
+char *	 __cdecl strrchr(const char *,int);
+size_t	 __cdecl strspn(const char *,const char *);
+char *	 __cdecl strstr(const char *,const char *);
+char *	 __cdecl strtok(char *,const char *);
+void *	 __cdecl memset(void *,int,size_t);
+char *	 __cdecl strerror(int);
+size_t	 __cdecl strlen(const char *);
+size_t	 __cdecl _inline_strlen(const char *);
+
+
+
+size_t  __cdecl wcslen(const wchar_t *);
+wchar_t * __cdecl wcscpy(wchar_t *, const wchar_t *);
+
+
+int  *	 __cdecl _memintset(int *, int, size_t);
+int	 __cdecl memicmp(const void *,const void *,size_t);
+void *   __cdecl memccpy(void *,const void *,int,unsigned int);
+char *	 __cdecl stpcpy(char *,const char *);
+int	 __cdecl stricmp(const char *,const char *);
+int	 __cdecl strcmpl(const char *,const char *); 
+int	 __cdecl strnicmp(const char *, const char *, size_t);
+char *	 __cdecl strdup(const char *);
+char *	 __cdecl strlwr(char *);
+char *	 __cdecl strupr(char *);
+char *	 __cdecl strnset(char *,int,size_t);
+char *	 __cdecl strrev(char *);
+char *	 __cdecl strset(char *,int);
+void	 __cdecl swab(char *,char *,size_t);
+void	 __cdecl movedata(unsigned short srcseg,unsigned srcoff,unsigned short destseg,unsigned destoff,size_t nbytes);
+char *	 __cdecl _strerror(const char *);
+
+
+void __far *  __cdecl __far fmemccpy(void __far *,const void __far *,int,unsigned int);
+void __far *  __cdecl __far fmemchr(const void __far *,int,size_t);
+int           __cdecl __far fmemcmp(const void __far *,const void __far *,size_t);
+int           __cdecl __far _fmemcmp(const void __far *,const void __far *,size_t);
+int           __cdecl       _inline_fmemcmp(const void __far *,const void __far *,size_t);
+void __far *  __cdecl __far fmemcpy(void __far *,const void __far *,size_t);
+void __far *  __cdecl __far _fmemcpy(void __far *,const void __far *,size_t);
+void __far *  __cdecl       _inline_fmemcpy(void __far *,const void __far *,size_t);
+int           __cdecl __far fmemicmp(const void __far *,const void __far *,size_t);
+void __far *  __cdecl __far fmemmove(void __far *,const void __far *,size_t);
+void __far *  __cdecl __far _fmemmove(void __far *,const void __far *,size_t);
+void __far *  __cdecl __far fmemset(void __far *,int,size_t);
+char __far *  __cdecl __far fstrcat(char __far *,const char __far*);
+char __far *  __cdecl __far fstrchr(const char __far *,int);
+char __far *  __cdecl __far _fstrchr(const char __far *,int);
+int	      __cdecl __far fstrcmp(const char __far *,const char __far *);
+int	      __cdecl __far _fstrcmp(const char __far *,const char __far *);
+int	      __cdecl       _inline_fstrcmp(const char __far *,const char __far *);
+char __far *  __cdecl __far fstrcpy(char __far *,const char __far *);
+char __far *  __cdecl __far _fstrcpy(char __far *,const char __far *);
+char __far *  __cdecl       _inline_fstrcpy(char __far *,const char __far *);
+size_t	      __cdecl __far fstrcspn(const char __far *,const char __far *);
+char __far *  __cdecl __far fstrdup(const char __far *);
+char __near *  __cdecl __far _nstrdup(const char __far *);
+int	      __cdecl __far fstricmp(const char __far *,const char __far *);
+size_t	      __cdecl __far fstrlen(const char __far *);
+size_t	      __cdecl       _inline_fstrlen(const char __far *);
+size_t	      __cdecl __far _fstrlen(const char __far *);
+char __far *  __cdecl __far fstrlwr(char __far *);
+char __far *  __cdecl __far fstrncat(char __far *,const char __far *,size_t);
+int	      __cdecl __far fstrncmp(const char __far *,const char __far *,size_t);
+char __far *  __cdecl __far fstrncpy(char __far *,const char __far *,size_t);
+int	      __cdecl __far fstrnicmp(const char __far *, const char __far *, size_t);
+char __far *  __cdecl __far fstrnset(char __far *,int,size_t);
+char __far *  __cdecl __far fstrpbrk(const char __far *,const char __far *);
+char __far *  __cdecl __far fstrrchr(const char __far *,int);
+char __far *  __cdecl __far fstrrev(char __far *);
+char __far *  __cdecl __far fstrset(char __far *,int);
+size_t	      __cdecl __far fstrspn(const char __far *,const char __far *);
+char __far *  __cdecl __far fstrstr(const char __far *,const char __far *);
+char __far *  __cdecl __far fstrtok(char __far *,const char __far *);
+char __far *  __cdecl __far _fstrtok(char __far *,const char __far *);
+char __far *  __cdecl __far fstrupr(char __far *);
+
+
+
+
+#line 158
+int	 __cdecl _memicmp(const void *,const void *,size_t);
+
+char *	 __cdecl _strdup(const char *);
+#line 163
+char *	 __cdecl _strrev(char *);
+
+#line 195
+ 
+#line 204
+ 
+
+
+
+
+extern int  __cdecl sys_nerr;
+extern char *  __cdecl sys_errlist[];
+
+
+
+
+
+
+
+
+
+
+
+#line 3 "c:\sc\include\stdlib.h"
+ #pragma once
+
+
+
+
+
+
+
+
+
+
+
+
+#line 39
+typedef unsigned size_t;
+typedef unsigned short wchar_t;
+
+
+
+
+#line 52
+ 
+
+
+
+
+
+#line 60
+#pragma pack(__DEFALIGN)
+typedef struct _DIV { int  quot,rem; } div_t;
+typedef struct _LDIV { long quot,rem; } ldiv_t;
+#pragma pack()
+
+
+#line 72
+ 
+
+
+
+#line 92
+extern int  __cdecl errno;
+
+extern int  __cdecl _doserrno;
+
+
+
+double  __cdecl atof(const char *);
+
+int     __cdecl atoi(const char *);
+long    __cdecl atol(const char *);
+double  __cdecl strtod(const char *,char **);
+long    __cdecl strtol(const char *,char **,int);
+unsigned long   __cdecl strtoul(const char *,char **,int);
+int     __cdecl rand(void);
+void    __cdecl srand(unsigned);
+int     __cdecl random(int num);
+void     __cdecl randomize(void);
+void *  __cdecl calloc(size_t,size_t);
+void    __cdecl free(void *);
+void *  __cdecl malloc(size_t);
+void *  __cdecl realloc(void *,size_t);
+void    __cdecl abort(void);
+int     __cdecl atexit(void (*)(void));
+void    __cdecl exit(int);
+void    __cdecl _exit(int);
+char *  __cdecl getenv(const char *);
+int     __cdecl system(const char *);
+void *  __cdecl bsearch(const void *,const void *,size_t,size_t,
+       int ( __cdecl *)(const void *,const void *));
+void    __cdecl qsort(void *,size_t,size_t,
+       int ( __cdecl *)(const void *,const void *));
+int     __cdecl abs(int);
+div_t   __cdecl div(int,int);
+long    __cdecl labs(long);
+ldiv_t  __cdecl ldiv(long,long);
+int     __cdecl mblen(const char *,size_t);
+int     __cdecl mbtowc(wchar_t *,const char *,size_t);
+int     __cdecl wctomb(char *,wchar_t);
+size_t  __cdecl mbstowcs(wchar_t *, const char *, size_t);
+size_t  __cdecl wcstombs(char *, const wchar_t *, size_t);
+void    __cdecl perror(const char *);
+
+int     __cdecl toupper(int);
+
+
+int     __cdecl tolower(int);
+
+
+unsigned        __cdecl _rotl(unsigned,int);
+unsigned        __cdecl _rotr(unsigned,int);
+unsigned long   __cdecl _lrotl(unsigned long,int);
+unsigned long   __cdecl _lrotr(unsigned long,int);
+char *  __cdecl _fullpath(char *buf,const char *path,size_t buflen);
+
+
+
+#line 150
+extern int  __cdecl sys_nerr;
+extern char *  __cdecl sys_errlist[];
+
+
+#line 158
+int     __cdecl __far _fmblen(const char __far *,size_t);
+int     __cdecl __far _fmbtowc(wchar_t __far *,const char __far *,size_t);
+int     __cdecl __far _fwctomb(char __far *,wchar_t);
+size_t  __cdecl __far _fmbstowcs(wchar_t __far *, const char __far *, size_t);
+size_t  __cdecl __far _fwcstombs(char __far *, const wchar_t __far *, size_t);
+
+#line 173
+extern char __far *__cdecl _pgmptr;
+
+#line 178
+extern unsigned int __cdecl _osver;
+
+extern unsigned short __cdecl _psp;
+extern unsigned char __cdecl _osmajor;
+extern unsigned char __cdecl _osminor;
+extern int __cdecl __argc;
+extern char __cdecl ** __argv;
+
+
+extern unsigned char __cdecl _winmajor;
+extern unsigned char __cdecl _winminor;
+extern unsigned int __cdecl _winver;
+
+
+
+
+
+#line 202
+extern unsigned char __cdecl _osmode;
+
+
+#line 207
+extern unsigned char __cdecl _cpumode;
+
+extern int __cdecl _fmode;
+
+void __cdecl _splitpath(const char *, char *,char *, char *, char *);
+void __cdecl _makepath(char *, const char *,const char *, const char *, const char *);
+void __cdecl _searchenv(const char *filename, const char *varname, char *pathname);
+
+
+#line 222
+int __cdecl _heapchk(void);
+int __cdecl _heapset(unsigned);
+
+int __cdecl _heapadd(void __far *,size_t);
+#line 229
+int __cdecl _heapmin(void);
+#line 233
+void * __cdecl _expand(void *,size_t);
+
+size_t __cdecl _msize(void *);
+
+
+void * __cdecl _fmalloc(size_t);
+void * __cdecl _fcalloc(size_t,size_t);
+void * __cdecl _frealloc(void *,size_t);
+void __cdecl _ffree(void *);
+size_t __cdecl _fmsize(void *);
+unsigned long __cdecl coreleft(void);
+unsigned long __cdecl farcoreleft(void);
+
+void __near * __cdecl _nmalloc(size_t);
+void __near * __cdecl _ncalloc(size_t,size_t);
+void __near * __cdecl _nrealloc(void __near *,size_t);
+void __cdecl _nfree(void __near *);
+size_t __cdecl _nmsize(void __near *);
+size_t __cdecl _memmax(void);
+size_t __cdecl _memavl(void);
+unsigned int __cdecl _freect(size_t);
+
+
+#line 276
+void __huge *_halloc (long, size_t);
+void _hfree (void __huge *);
+
+
+char *  __cdecl itoa(int,char *,int);
+char *  __cdecl _itoa(int, char *,int);
+char *  __cdecl ltoa(long, char *, int);
+char *  __cdecl _ltoa(long, char *,int);
+char *   __cdecl ultoa(unsigned long, char *, int);
+char *  __cdecl ecvt(double,int,int *,int *);
+char *  __cdecl fcvt(double,int,int *,int *);
+char *  __cdecl _fcvt(double,int,int *,int *);
+char *  __cdecl gcvt(double,int,char *);
+void * __cdecl sbrk(size_t);
+void    __cdecl swab(char *,char *,size_t);
+float   __cdecl strtof(const char *,char **);
+#line 298
+void __ss *     __cdecl alloca(size_t);
+
+size_t  __cdecl stackavail(void);
+size_t  __cdecl _chkstack(void);
+
+#line 309
+int __cdecl __far _fatexit (void (__cdecl __far *func)(void));
+typedef void (__cdecl __far * _fonexit_t)(void);
+_fonexit_t __cdecl __far _fonexit (_fonexit_t func);
+
+
+typedef void (__cdecl * _onexit_t)(void);
+_onexit_t __cdecl _onexit (_onexit_t func);
+
+
+
+#line 322
+void __far * __far  __cdecl __mallocf(size_t);
+void        __far  __cdecl __freef(void __far *);
+
+int             __cdecl putenv(const char *);
+
+
+
+
+
+
+
+
+
+#line 345
+extern int (__far __cdecl *_malloc_handler)(void);
+extern char * __cdecl _envptr;
+extern char ** __cdecl _environ;
+
+
+
+
+
+
+
+
+#line 3 "c:\sc\include\string.h"
+ #pragma once
+
+
+
+
+#line 3 "c:\sc\include\assert.h"
+ #pragma once
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 37
+        extern void
+#line 42
+     	__cdecl
+    
+	    _assert(void *,void *,unsigned);
+    #pragma noreturn(_assert)
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 3 "c:\sc\include\windows.h"
+ #pragma once
+
+
+
+#pragma pack(__DEFALIGN)
+
+
+
+
+
+
+
+#line 18 "c:\sc\include\windows.h"
+#pragma pack()
+
+
+
+
+
+#line 3 "c:\sc\include\TSPI.H"
+ #pragma once
+
+
+
+#pragma pack(__DEFALIGN)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 3 "c:\sc\include\windows.h"
+ #pragma once
+
+
+
+#pragma pack(__DEFALIGN)
+
+
+
+
+
+
+
+#line 18 "c:\sc\include\windows.h"
+#pragma pack()
+
+
+
+
+
+
+#line 3 "c:\sc\include\tapi.h"
+ #pragma once
+
+
+
+#pragma pack(__DEFALIGN)
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 3 "c:\sc\include\windows.h"
+ #pragma once
+
+
+
+#pragma pack(__DEFALIGN)
+
+
+
+
+
+
+
+#line 18 "c:\sc\include\windows.h"
+#pragma pack()
+
+
+
+
+
+#line 15 "c:\sc\include\win16\tapi.h"
+#pragma pack(1)
+
+
+
+
+
+#line 26
+struct HCALL__ { int unused; }; typedef const struct HCALL__  _far* HCALL ;
+typedef HCALL  _far * LPHCALL;
+
+struct HLINE__ { int unused; }; typedef const struct HLINE__  _far* HLINE ;
+typedef HLINE  _far * LPHLINE;
+
+struct HPHONE__ { int unused; }; typedef const struct HPHONE__  _far* HPHONE ;
+typedef HPHONE  _far * LPHPHONE;
+
+struct HLINEAPP__ { int unused; }; typedef const struct HLINEAPP__  _far* HLINEAPP ;
+typedef HLINEAPP  _far * LPHLINEAPP;
+
+struct HPHONEAPP__ { int unused; }; typedef const struct HPHONEAPP__  _far* HPHONEAPP ;
+typedef HPHONEAPP  _far * LPHPHONEAPP;
+
+typedef HICON  _far * LPHICON;
+
+typedef void (_far  _pascal * LINECALLBACK)  (DWORD hDevice,
+                          DWORD dwMessage,
+                          DWORD dwInstance,
+                          DWORD dwParam1,
+                          DWORD dwParam2,
+                          DWORD dwParam3);
+
+
+typedef void (_far  _pascal * PHONECALLBACK)  (DWORD hDevice,
+                           DWORD dwMessage,
+                           DWORD dwInstance,
+                           DWORD dwParam1,
+                           DWORD dwParam2,
+                           DWORD dwParam3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 167
+typedef struct phonebuttoninfo_tag {
+    DWORD    dwTotalSize;
+    DWORD    dwNeededSize;
+    DWORD    dwUsedSize;
+
+    DWORD    dwButtonMode;
+    DWORD    dwButtonFunction;
+
+    DWORD    dwButtonTextSize;
+    DWORD    dwButtonTextOffset;
+
+    DWORD    dwDevSpecificSize;
+    DWORD    dwDevSpecificOffset;
+
+    DWORD    dwButtonState;
+} PHONEBUTTONINFO,  _far *LPPHONEBUTTONINFO;
+
+
+
+#line 196
+typedef struct phoneextensionid_tag {
+    DWORD    dwExtensionID0;
+    DWORD    dwExtensionID1;
+    DWORD    dwExtensionID2;
+    DWORD    dwExtensionID3;
+} PHONEEXTENSIONID,  _far *LPPHONEEXTENSIONID;
+
+
+typedef struct phonecaps_tag {
+    DWORD    dwTotalSize;
+    DWORD    dwNeededSize;
+    DWORD    dwUsedSize;
+
+    DWORD    dwProviderInfoSize;
+    DWORD    dwProviderInfoOffset;
+
+    DWORD    dwPhoneInfoSize;
+    DWORD    dwPhoneInfoOffset;
+
+    DWORD    dwPermanentPhoneID;
+    DWORD    dwPhoneNameSize;
+    DWORD    dwPhoneNameOffset;
+    DWORD    dwStringFormat;    
+
+    DWORD    dwPhoneStates;
+    DWORD    dwHookSwitchDevs;
+    DWORD    dwHandsetHookSwitchModes;
+    DWORD    dwSpeakerHookSwitchModes;
+    DWORD    dwHeadsetHookSwitchModes;
+
+    DWORD    dwVolumeFlags;
+    DWORD    dwGainFlags;
+    DWORD    dwDisplayNumRows;
+    DWORD    dwDisplayNumColumns;
+    DWORD    dwNumRingModes;
+    DWORD    dwNumButtonLamps;
+
+    DWORD    dwButtonModesSize;
+    DWORD    dwButtonModesOffset;
+
+    DWORD    dwButtonFunctionsSize;
+    DWORD    dwButtonFunctionsOffset;
+
+    DWORD    dwLampModesSize;
+    DWORD    dwLampModesOffset;
+
+    DWORD    dwNumSetData;
+    DWORD    dwSetDataSize;
+    DWORD    dwSetDataOffset;
+
+    DWORD    dwNumGetData;
+    DWORD    dwGetDataSize;
+    DWORD    dwGetDataOffset;
+
+    DWORD    dwDevSpecificSize;
+    DWORD    dwDevSpecificOffset;
+
+} PHONECAPS,  _far *LPPHONECAPS;
+
+
+#line 293
+          
+
+
+
+
+
+
+#line 339
+typedef struct phonestatus_tag {
+    DWORD    dwTotalSize;
+    DWORD    dwNeededSize;
+    DWORD    dwUsedSize;
+
+    DWORD    dwStatusFlags; 
+    DWORD    dwNumOwners;
+    DWORD    dwNumMonitors;
+    DWORD    dwRingMode;
+    DWORD    dwRingVolume;
+
+    DWORD    dwHandsetHookSwitchMode;
+    DWORD    dwHandsetVolume;
+    DWORD    dwHandsetGain;
+
+    DWORD    dwSpeakerHookSwitchMode;
+    DWORD    dwSpeakerVolume;
+    DWORD    dwSpeakerGain;
+
+    DWORD    dwHeadsetHookSwitchMode;
+    DWORD    dwHeadsetVolume;
+    DWORD    dwHeadsetGain;
+
+    DWORD    dwDisplaySize;
+    DWORD    dwDisplayOffset;
+
+    DWORD    dwLampModesSize;
+    DWORD    dwLampModesOffset;
+
+    DWORD    dwOwnerNameSize;
+    DWORD    dwOwnerNameOffset;
+
+    DWORD    dwDevSpecificSize;
+    DWORD    dwDevSpecificOffset;
+} PHONESTATUS,  _far *LPPHONESTATUS;
+
+
+
+#line 383
+typedef struct varstring_tag {
+    DWORD    dwTotalSize;
+    DWORD    dwNeededSize;
+    DWORD    dwUsedSize;
+
+    DWORD    dwStringFormat;
+    DWORD    dwStringSize;
+    DWORD    dwStringOffset;
+} VARSTRING,  _far *LPVARSTRING;
+
+
+
+
+
+#line 420
+typedef struct lineaddresscaps_tag {
+    DWORD    dwTotalSize;
+    DWORD    dwNeededSize;
+    DWORD    dwUsedSize;
+
+    DWORD    dwLineDeviceID;
+
+    DWORD    dwAddressSize;
+    DWORD    dwAddressOffset;
+
+    DWORD    dwDevSpecificSize;
+    DWORD    dwDevSpecificOffset;
+
+    DWORD    dwAddressSharing;
+    DWORD    dwAddressStates;
+    DWORD    dwCallInfoStates;
+    DWORD    dwCallerIDFlags;
+    DWORD    dwCalledIDFlags;
+    DWORD    dwConnectedIDFlags;
+    DWORD    dwRedirectionIDFlags;
+    DWORD    dwRedirectingIDFlags;
+    DWORD    dwCallStates;
+    DWORD    dwDialToneModes;
+    DWORD    dwBusyModes;
+    DWORD    dwSpecialInfo;
+    DWORD    dwDisconnectModes;
+
+    DWORD    dwMaxNumActiveCalls;
+    DWORD    dwMaxNumOnHoldCalls;
+    DWORD    dwMaxNumOnHoldPendingCalls;
+    DWORD    dwMaxNumConference;
+    DWORD    dwMaxNumTransConf;
+
+    DWORD    dwAddrCapFlags;
+    DWORD    dwCallFeatures;
+    DWORD    dwRemoveFromConfCaps;
+    DWORD    dwRemoveFromConfState;
+    DWORD    dwTransferModes;
+    DWORD    dwParkModes;
+
+    DWORD    dwForwardModes;
+    DWORD    dwMaxForwardEntries;
+    DWORD    dwMaxSpecificEntries;
+    DWORD    dwMinFwdNumRings;
+    DWORD    dwMaxFwdNumRings;
+
+    DWORD    dwMaxCallCompletions;
+    DWORD    dwCallCompletionConds;
+    DWORD    dwCallCompletionModes;
+    DWORD    dwNumCompletionMessages;
+    DWORD    dwCompletionMsgTextEntrySize;
+    DWORD    dwCompletionMsgTextSize;
+    DWORD    dwCompletionMsgTextOffset;
+    DWORD    dwAddressFeatures;
+} LINEADDRESSCAPS,  _far *LPLINEADDRESSCAPS;
+
+
+
+
+
+#line 496
+typedef struct lineaddressstatus_tag {
+    DWORD    dwTotalSize;
+    DWORD    dwNeededSize;
+    DWORD    dwUsedSize;
+
+    DWORD    dwNumInUse;
+    DWORD    dwNumActiveCalls;
+    DWORD    dwNumOnHoldCalls;
+    DWORD    dwNumOnHoldPendCalls;
+    DWORD    dwAddressFeatures;
+
+    DWORD    dwNumRingsNoAnswer;
+    DWORD    dwForwardNumEntries;
+    DWORD    dwForwardSize;
+    DWORD    dwForwardOffset;
+
+    DWORD    dwTerminalModesSize;
+    DWORD    dwTerminalModesOffset;
+
+    DWORD    dwDevSpecificSize;
+    DWORD    dwDevSpecificOffset;
+} LINEADDRESSSTATUS,  _far *LPLINEADDRESSSTATUS;
+
+
+
+
+
+
+
+
+
+#line 584
+typedef struct linedialparams_tag {
+    DWORD    dwDialPause;
+    DWORD    dwDialSpeed;
+    DWORD    dwDigitDuration;
+    DWORD    dwWaitForDialtone;
+} LINEDIALPARAMS,  _far *LPLINEDIALPARAMS;
+
+typedef struct linecallinfo_tag {
+    DWORD    dwTotalSize;
+    DWORD    dwNeededSize;
+    DWORD    dwUsedSize;
+
+    HLINE    hLine;
+    DWORD    dwLineDeviceID;
+    DWORD    dwAddressID;
+
+    DWORD    dwBearerMode;
+    DWORD    dwRate;
+    DWORD    dwMediaMode;
+
+    DWORD    dwAppSpecific;
+    DWORD    dwCallID;
+    DWORD    dwRelatedCallID;
+    DWORD    dwCallParamFlags;
+    DWORD    dwCallStates;
+
+    DWORD    dwMonitorDigitModes;
+    DWORD    dwMonitorMediaModes;
+    LINEDIALPARAMS    DialParams;
+
+    DWORD    dwOrigin;
+    DWORD    dwReason;
+    DWORD    dwCompletionID;
+    DWORD    dwNumOwners;
+    DWORD    dwNumMonitors;
+
+    DWORD    dwCountryCode;
+    DWORD    dwTrunk;
+
+    DWORD    dwCallerIDFlags;
+    DWORD    dwCallerIDSize;
+    DWORD    dwCallerIDOffset;
+    DWORD    dwCallerIDNameSize;
+    DWORD    dwCallerIDNameOffset;
+
+    DWORD    dwCalledIDFlags;
+    DWORD    dwCalledIDSize;
+    DWORD    dwCalledIDOffset;
+    DWORD    dwCalledIDNameSize;
+    DWORD    dwCalledIDNameOffset;
+
+    DWORD    dwConnectedIDFlags;
+    DWORD    dwConnectedIDSize;
+    DWORD    dwConnectedIDOffset;
+    DWORD    dwConnectedIDNameSize;
+    DWORD    dwConnectedIDNameOffset;
+
+    DWORD    dwRedirectionIDFlags;
+    DWORD    dwRedirectionIDSize;
+    DWORD    dwRedirectionIDOffset;
+    DWORD    dwRedirectionIDNameSize;
+    DWORD    dwRedirectionIDNameOffset;
+
+    DWORD    dwRedirectingIDFlags;
+    DWORD    dwRedirectingIDSize;
+    DWORD    dwRedirectingIDOffset;
+    DWORD    dwRedirectingIDNameSize;
+    DWORD    dwRedirectingIDNameOffset;
+
+    DWORD    dwAppNameSize;
+    DWORD    dwAppNameOffset;
+
+    DWORD    dwDisplayableAddressSize;
+    DWORD    dwDisplayableAddressOffset;
+
+    DWORD    dwCalledPartySize;
+    DWORD    dwCalledPartyOffset;
+
+    DWORD    dwCommentSize;
+    DWORD    dwCommentOffset;
+
+    DWORD    dwDisplaySize;
+    DWORD    dwDisplayOffset;
+
+    DWORD    dwUserUserInfoSize;
+    DWORD    dwUserUserInfoOffset;
+
+    DWORD    dwHighLevelCompSize;
+    DWORD    dwHighLevelCompOffset;
+
+    DWORD    dwLowLevelCompSize;
+    DWORD    dwLowLevelCompOffset;
+
+    DWORD    dwChargingInfoSize;
+    DWORD    dwChargingInfoOffset;
+
+    DWORD    dwTerminalModesSize;
+    DWORD    dwTerminalModesOffset;
+
+    DWORD    dwDevSpecificSize;
+    DWORD    dwDevSpecificOffset;
+} LINECALLINFO,  _far *LPLINECALLINFO;
+
+
+#line 716
+typedef struct linecalllist_tag {
+    DWORD    dwTotalSize;
+    DWORD    dwNeededSize;
+    DWORD    dwUsedSize;
+    
+    DWORD    dwCallsNumEntries;
+    DWORD    dwCallsSize;
+    DWORD    dwCallsOffset;
+} LINECALLLIST,  _far *LPLINECALLLIST;
+
+
+
+#line 740
+typedef struct linecallparams_tag {     
+    DWORD    dwTotalSize;               
+    
+    DWORD    dwBearerMode;              
+    DWORD    dwMinRate;                 
+    DWORD    dwMaxRate;                 
+    DWORD    dwMediaMode;               
+
+    DWORD    dwCallParamFlags;          
+    DWORD    dwAddressMode;             
+    DWORD    dwAddressID;               
+
+    LINEDIALPARAMS  DialParams;         
+    
+    DWORD    dwOrigAddressSize;         
+    DWORD    dwOrigAddressOffset;
+    DWORD    dwDisplayableAddressSize;
+    DWORD    dwDisplayableAddressOffset;
+
+    DWORD    dwCalledPartySize;         
+    DWORD    dwCalledPartyOffset;
+
+    DWORD    dwCommentSize;             
+    DWORD    dwCommentOffset;
+
+    DWORD    dwUserUserInfoSize;        
+    DWORD    dwUserUserInfoOffset;
+
+    DWORD    dwHighLevelCompSize;       
+    DWORD    dwHighLevelCompOffset;
+
+    DWORD    dwLowLevelCompSize;        
+    DWORD    dwLowLevelCompOffset;
+
+    DWORD    dwDevSpecificSize;         
+    DWORD    dwDevSpecificOffset;
+} LINECALLPARAMS,  _far *LPLINECALLPARAMS;
+
+
+
+
+
+
+
+
+
+
+
+#line 835
+typedef struct linecallstatus_tag {
+    DWORD    dwTotalSize;
+    DWORD    dwNeededSize;
+    DWORD    dwUsedSize;
+
+    DWORD    dwCallState;
+    DWORD    dwCallStateMode;
+    DWORD    dwCallPrivilege;
+    DWORD    dwCallFeatures;
+
+    DWORD    dwDevSpecificSize;
+    DWORD    dwDevSpecificOffset;
+} LINECALLSTATUS,  _far *LPLINECALLSTATUS;
+
+
+#line 859
+typedef struct lineextensionid_tag {
+    DWORD    dwExtensionID0;
+    DWORD    dwExtensionID1;
+    DWORD    dwExtensionID2;
+    DWORD    dwExtensionID3;
+} LINEEXTENSIONID,  _far *LPLINEEXTENSIONID;
+
+
+typedef struct linedevcaps_tag {
+    DWORD    dwTotalSize;
+    DWORD    dwNeededSize;
+    DWORD    dwUsedSize;
+
+    DWORD    dwProviderInfoSize;
+    DWORD    dwProviderInfoOffset;
+
+    DWORD    dwSwitchInfoSize;
+    DWORD    dwSwitchInfoOffset;
+
+    DWORD    dwPermanentLineID;
+    DWORD    dwLineNameSize;
+    DWORD    dwLineNameOffset;
+    DWORD    dwStringFormat;
+    
+    DWORD    dwAddressModes;
+    DWORD    dwNumAddresses;
+    DWORD    dwBearerModes;
+    DWORD    dwMaxRate;
+    DWORD    dwMediaModes;
+
+    DWORD    dwGenerateToneModes;
+    DWORD    dwGenerateToneMaxNumFreq;
+    DWORD    dwGenerateDigitModes;
+    DWORD    dwMonitorToneMaxNumFreq;
+    DWORD    dwMonitorToneMaxNumEntries;
+    DWORD    dwMonitorDigitModes;
+    DWORD    dwGatherDigitsMinTimeout;
+    DWORD    dwGatherDigitsMaxTimeout;
+
+    DWORD    dwMedCtlDigitMaxListSize;
+    DWORD    dwMedCtlMediaMaxListSize;
+    DWORD    dwMedCtlToneMaxListSize;
+    DWORD    dwMedCtlCallStateMaxListSize;
+
+    DWORD    dwDevCapFlags;
+    DWORD    dwMaxNumActiveCalls;
+    DWORD    dwAnswerMode;
+    DWORD    dwRingModes;
+    DWORD    dwLineStates;
+
+    DWORD    dwUUIAcceptSize;
+    DWORD    dwUUIAnswerSize;
+    DWORD    dwUUIMakeCallSize;
+    DWORD    dwUUIDropSize;
+    DWORD    dwUUISendUserUserInfoSize;
+    DWORD    dwUUICallInfoSize;
+    
+    LINEDIALPARAMS    MinDialParams;
+    LINEDIALPARAMS    MaxDialParams;
+    LINEDIALPARAMS    DefaultDialParams;
+
+    DWORD    dwNumTerminals;
+    DWORD    dwTerminalCapsSize;
+    DWORD    dwTerminalCapsOffset;
+    DWORD    dwTerminalTextEntrySize;
+    DWORD    dwTerminalTextSize;
+    DWORD    dwTerminalTextOffset;
+
+    DWORD    dwDevSpecificSize;
+    DWORD    dwDevSpecificOffset;
+    DWORD    dwLineFeatures;
+} LINEDEVCAPS,  _far *LPLINEDEVCAPS;
+    
+
+
+#line 959
+typedef struct linedevstatus_tag {
+    DWORD    dwTotalSize;
+    DWORD    dwNeededSize;
+    DWORD    dwUsedSize;
+
+    DWORD    dwNumOpens;
+    DWORD    dwOpenMediaModes;
+    DWORD    dwNumActiveCalls;
+    DWORD    dwNumOnHoldCalls;
+    DWORD    dwNumOnHoldPendCalls;
+    DWORD    dwLineFeatures;
+    DWORD    dwNumCallCompletions;
+    DWORD    dwRingMode;
+    DWORD    dwSignalLevel;
+    DWORD    dwBatteryLevel;
+    DWORD    dwRoamMode;
+    
+    DWORD    dwDevStatusFlags;
+    
+    DWORD    dwTerminalModesSize;
+    DWORD    dwTerminalModesOffset;
+    
+    DWORD    dwDevSpecificSize;
+    DWORD    dwDevSpecificOffset;
+} LINEDEVSTATUS,  _far *LPLINEDEVSTATUS;
+
+
+
+#line 997
+    
+#line 1001
+    
+
+
+
+
+#line 1109
+typedef struct lineforward_tag {
+    DWORD    dwForwardMode;
+
+    DWORD    dwCallerAddressSize;
+    DWORD    dwCallerAddressOffset;
+    
+    DWORD    dwDestCountryCode;
+    DWORD    dwDestAddressSize;
+    DWORD    dwDestAddressOffset;    
+} LINEFORWARD,  _far *LPLINEFORWARD;
+
+typedef struct lineforwardlist_tag {
+    DWORD    dwTotalSize;
+
+    DWORD    dwNumEntries;
+    LINEFORWARD    ForwardList[1];
+} LINEFORWARDLIST,  _far *LPLINEFORWARDLIST;
+
+
+
+
+#line 1155
+typedef struct linegeneratetone_tag {
+    DWORD    dwFrequency;
+    DWORD    dwCadenceOn;
+    DWORD    dwCadenceOff;
+    DWORD    dwVolume;
+} LINEGENERATETONE,  _far *LPLINEGENERATETONE;
+
+
+typedef struct linemediacontrolcallstate_tag {
+    DWORD    dwCallStates;
+    DWORD    dwMediaControl;
+} LINEMEDIACONTROLCALLSTATE, 
+ _far *LPLINEMEDIACONTROLCALLSTATE;
+
+typedef struct linemediacontroldigit_tag {
+    DWORD            dwDigit;
+    DWORD            dwDigitModes;
+    DWORD            dwMediaControl;
+} LINEMEDIACONTROLDIGIT,  _far *LPLINEMEDIACONTROLDIGIT;
+
+typedef struct linemediacontrolmedia_tag {
+    DWORD            dwMediaModes;
+    DWORD            dwDuration;
+    DWORD            dwMediaControl;
+} LINEMEDIACONTROLMEDIA,  _far *LPLINEMEDIACONTROLMEDIA;
+
+typedef struct linemediacontroltone_tag {
+    DWORD    dwAppSpecific;
+    DWORD    dwDuration;
+    DWORD    dwFrequency1;
+    DWORD    dwFrequency2;
+    DWORD    dwFrequency3;
+    DWORD    dwMediaControl;
+} LINEMEDIACONTROLTONE,  _far *LPLINEMEDIACONTROLTONE;
+
+
+
+
+
+#line 1220
+typedef struct linemonitortone_tag {
+    DWORD    dwAppSpecific;
+    DWORD    dwDuration;
+    DWORD    dwFrequency1;
+    DWORD    dwFrequency2;
+    DWORD    dwFrequency3;
+} LINEMONITORTONE,  _far *LPLINEMONITORTONE;
+
+
+
+#line 1235
+typedef struct linereqmakecall_tag {
+    char    szDestAddress[80L ];
+    char    szAppName[40L ];
+    char    szCalledParty[40L ];
+    char    szComment[80L ];
+} LINEREQMAKECALL,  _far *LPLINEREQMAKECALL;
+
+typedef struct linereqmediacall_tag {
+    HWND    hWnd;
+    WPARAM  wRequestID;
+    char    szDeviceClass[40L ];
+    unsigned char    ucDeviceID[40L ];
+    DWORD    dwSize;
+    DWORD    dwSecure;
+    char    szDestAddress[80L ];
+    char    szAppName[40L ];
+    char    szCalledParty[40L ];
+    char    szComment[80L ];
+} LINEREQMEDIACALL,  _far *LPLINEREQMEDIACALL;
+
+
+
+
+
+
+#line 1274
+typedef struct linetermcaps_tag {
+    DWORD    dwTermDev;
+    DWORD    dwTermModes;
+    DWORD    dwTermSharing;
+} LINETERMCAPS,  _far *LPLINETERMCAPS;
+
+
+
+
+
+
+#line 1306
+typedef struct linetranslateoutput_tag {
+    DWORD dwTotalSize;
+    DWORD dwNeededSize;
+    DWORD dwUsedSize;
+
+    DWORD dwDialableStringSize;
+    DWORD dwDialableStringOffset;
+    DWORD dwDisplayableStringSize;
+    DWORD dwDisplayableStringOffset;
+
+    DWORD dwCurrentCountry;
+    DWORD dwDestCountry;
+    DWORD dwTranslateResults;
+} LINETRANSLATEOUTPUT,  _far *LPLINETRANSLATEOUTPUT;
+
+typedef struct linetranslatecaps_tag {
+    DWORD dwTotalSize;
+    DWORD dwNeededSize;
+    DWORD dwUsedSize;
+
+    DWORD dwNumLocations;
+    DWORD dwLocationListSize;
+    DWORD dwLocationListOffset;
+    
+    DWORD dwCurrentLocationID;
+    
+    DWORD dwNumCards;
+    DWORD dwCardListSize;
+    DWORD dwCardListOffset;
+
+    DWORD dwCurrentPreferredCardID;
+} LINETRANSLATECAPS,  _far *LPLINETRANSLATECAPS;
+
+typedef struct linelocationentry_tag {
+    DWORD dwPermanentLocationID;
+    DWORD dwLocationNameSize;
+    DWORD dwLocationNameOffset;
+    DWORD dwCountryCode;
+    DWORD dwCityCodeSize;
+    DWORD dwCityCodeOffset;
+    DWORD dwPreferredCardID;
+    DWORD dwLocalAccessCodeSize;
+    DWORD dwLocalAccessCodeOffset;
+    DWORD dwLongDistanceAccessCodeSize;
+    DWORD dwLongDistanceAccessCodeOffset;
+    DWORD dwTollPrefixListSize;
+    DWORD dwTollPrefixListOffset;
+    DWORD dwCountryID;
+    DWORD dwOptions;
+    DWORD dwCancelCallWaitingSize;
+    DWORD dwCancelCallWaitingOffset;
+} LINELOCATIONENTRY,  _far *LPLINELOCATIONENTRY;
+
+typedef struct linecardentry_tag {
+    DWORD dwPermanentCardID;
+    DWORD dwCardNameSize;
+    DWORD dwCardNameOffset;
+    DWORD dwCardNumberDigits;
+    DWORD dwSameAreaRuleSize;
+    DWORD dwSameAreaRuleOffset;
+    DWORD dwLongDistanceRuleSize;
+    DWORD dwLongDistanceRuleOffset;
+    DWORD dwInternationalRuleSize;
+    DWORD dwInternationalRuleOffset;
+    DWORD dwOptions;
+} LINECARDENTRY,  _far *LPLINECARDENTRY;
+
+typedef struct linecountrylist_tag {
+    DWORD dwTotalSize;
+    DWORD dwNeededSize;
+    DWORD dwUsedSize;
+
+    DWORD dwNumCountries;
+    DWORD dwCountryListSize;
+    DWORD dwCountryListOffset;
+} LINECOUNTRYLIST,  _far *LPLINECOUNTRYLIST;
+
+typedef struct linecountryentry_tag {
+    DWORD dwCountryID;
+    DWORD dwCountryCode;
+    DWORD dwNextCountryID;
+    DWORD dwCountryNameSize;
+    DWORD dwCountryNameOffset;
+    DWORD dwSameAreaRuleSize;
+    DWORD dwSameAreaRuleOffset;
+    DWORD dwLongDistanceRuleSize;
+    DWORD dwLongDistanceRuleOffset;
+    DWORD dwInternationalRuleSize;
+    DWORD dwInternationalRuleOffset;
+} LINECOUNTRYENTRY,  _far *LPLINECOUNTRYENTRY;
+
+typedef struct lineproviderlist_tag {
+    DWORD dwTotalSize;
+    DWORD dwNeededSize;
+    DWORD dwUsedSize;
+    DWORD dwNumProviders;
+    DWORD dwProviderListSize;
+    DWORD dwProviderListOffset;
+} LINEPROVIDERLIST,  _far *LPLINEPROVIDERLIST;
+
+typedef struct lineproviderentry_tag {
+    DWORD dwPermanentProviderID;
+    DWORD dwProviderFilenameSize;
+    DWORD dwProviderFilenameOffset;
+} LINEPROVIDERENTRY,  _far *LPLINEPROVIDERENTRY;
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1443
+ long _far  _pascal tapiRequestMakeCall(
+    LPCSTR lpszDestAddress,
+    LPCSTR lpszAppName,
+    LPCSTR lpszCalledParty,
+    LPCSTR lpszComment);
+
+ long _far  _pascal tapiRequestMediaCall(
+    HWND hWnd,
+    WPARAM wRequestID,
+    LPCSTR lpszDeviceClass,
+    LPCSTR lpDeviceID,
+    DWORD dwSize,
+    DWORD dwSecure,
+    LPCSTR lpszDestAddress,
+    LPCSTR lpszAppName,
+    LPCSTR lpszCalledParty,
+    LPCSTR lpszComment);
+
+ long _far  _pascal tapiRequestDrop(
+    HWND hWnd,
+    WPARAM wRequestID);
+
+ long _far  _pascal lineRegisterRequestRecipient(
+    HLINEAPP hLineApp,
+    DWORD dwRegistrationInstance,
+    DWORD dwRequestMode,
+    DWORD bEnable);
+
+ long _far  _pascal tapiGetLocationInfo(
+    LPSTR lpszCountryCode,
+    LPSTR lpszCityCode);
+    
+
+ long _far  _pascal lineSetCurrentLocation(
+    HLINEAPP hLineApp,
+    DWORD dwLocation);
+
+ long _far  _pascal lineSetTollList(
+    HLINEAPP hLineApp,
+    DWORD dwDeviceID,
+    LPCSTR lpszAddressIn,
+    DWORD dwTollListOption);
+
+ long _far  _pascal lineTranslateAddress(
+    HLINEAPP hLineApp,
+    DWORD dwDeviceID,
+    DWORD dwAPIVersion,
+    LPCSTR lpszAddressIn,
+    DWORD dwCard,
+    DWORD dwTranslateOptions,
+    LPLINETRANSLATEOUTPUT lpTranslateOutput);
+
+ long _far  _pascal lineGetTranslateCaps(
+    HLINEAPP hLineApp,
+    DWORD dwAPIVersion,
+    LPLINETRANSLATECAPS lpTranslateCaps);
+
+
+
+
+ long _far  _pascal lineAccept(
+    HCALL hCall, 
+    LPCSTR lpsUserUserInfo,
+    DWORD dwSize);
+
+ long _far  _pascal lineAddToConference(
+    HCALL hConfCall, 
+    HCALL hConsultCall);
+
+ long _far  _pascal lineAnswer(
+    HCALL hCall,
+    LPCSTR lpsUserUserInfo,
+    DWORD dwSize);
+
+ long _far  _pascal lineBlindTransfer(
+    HCALL hCall, 
+    LPCSTR lpszDestAddress,
+    DWORD dwCountryCode);
+
+ long _far  _pascal lineClose(
+    HLINE hLine);
+
+ long _far  _pascal  lineCompleteCall(
+    HCALL hCall, 
+    LPDWORD lpdwCompletionID, 
+    DWORD dwCompletionMode, 
+    DWORD dwMessageID);
+
+ long _far  _pascal lineCompleteTransfer(
+    HCALL hCall, 
+    HCALL hConsultCall,
+    LPHCALL lphConfCall,
+    DWORD dwTransferMode);
+
+ long _far  _pascal lineConfigDialog(
+    DWORD dwDeviceID,
+    HWND  hwndOwner,
+    LPCSTR lpszDeviceClass);
+
+ long _far  _pascal lineConfigDialogEdit(
+    DWORD   dwDeviceID,
+    HWND    hwndOwner,
+    LPCSTR  lpszDeviceClass,
+    LPVOID  const lpDeviceConfigIn,
+    DWORD   dwSize,
+    LPVARSTRING lpDeviceConfigOut);
+
+ long _far  _pascal lineDeallocateCall(
+    HCALL hCall);
+
+ long _far  _pascal lineDevSpecific(
+    HLINE hLine, 
+    DWORD dwAddressID,
+    HCALL hCall,
+    LPVOID lpParams, 
+    DWORD dwSize);
+
+ long _far  _pascal lineDevSpecificFeature(
+    HLINE hLine, 
+    DWORD dwFeature, 
+    LPVOID lpParams, 
+    DWORD dwSize);
+
+ long _far  _pascal lineDial(
+    HCALL hCall, 
+    LPCSTR lpszDestAddress, 
+    DWORD dwCountryCode);
+
+ long _far  _pascal lineDrop(
+    HCALL hCall, 
+    LPCSTR lpsUserUserInfo, 
+    DWORD dwSize);
+
+ long _far  _pascal lineForward(
+    HLINE hLine, 
+    DWORD bAllAddresses, 
+    DWORD dwAddressID, 
+    LPLINEFORWARDLIST const lpForwardList, 
+    DWORD dwNumRingsNoAnswer,
+    LPHCALL lphConsultCall,
+    LPLINECALLPARAMS const lpCallParams);
+
+ long _far  _pascal lineGatherDigits(
+    HCALL hCall, 
+    DWORD dwDigitModes, 
+    LPSTR lpsDigits, 
+    DWORD dwNumDigits, 
+    LPCSTR lpszTerminationDigits, 
+    DWORD dwFirstDigitTimeout, 
+    DWORD dwInterDigitTimeout);
+
+ long _far  _pascal lineGenerateDigits(
+    HCALL hCall, 
+    DWORD dwDigitMode, 
+    LPCSTR lpszDigits, 
+    DWORD dwDuration);
+
+ long _far  _pascal lineGenerateTone(
+    HCALL hCall, 
+    DWORD dwToneMode,
+    DWORD dwDuration,
+    DWORD dwNumTones,
+    LPLINEGENERATETONE const lpTones);
+
+ long _far  _pascal lineGetAddressCaps(
+    HLINEAPP hLineApp, 
+    DWORD dwDeviceID, 
+    DWORD dwAddressID, 
+    DWORD dwAPIVersion,
+    DWORD dwExtVersion, 
+    LPLINEADDRESSCAPS lpAddressCaps);
+
+ long _far  _pascal lineGetAddressID(
+    HLINE hLine, 
+    LPDWORD lpdwAddressID, 
+    DWORD dwAddressMode, 
+    LPCSTR lpsAddress, 
+    DWORD dwSize);
+
+ long _far  _pascal lineGetAddressStatus(
+    HLINE hLine,
+    DWORD dwAddressID,
+    LPLINEADDRESSSTATUS lpAddressStatus);
+
+ long _far  _pascal lineGetCallInfo(
+    HCALL hCall, 
+    LPLINECALLINFO lpCallInfo);
+
+ long _far  _pascal lineGetCallStatus(
+    HCALL hCall, 
+    LPLINECALLSTATUS lpCallStatus);
+
+ long _far  _pascal lineGetConfRelatedCalls(
+    HCALL hCall,
+    LPLINECALLLIST lpCallList);
+    
+ long _far  _pascal lineGetDevCaps(
+    HLINEAPP hLineApp, 
+    DWORD dwDeviceID, 
+    DWORD dwAPIVersion,
+    DWORD dwExtVersion, 
+    LPLINEDEVCAPS lpLineDevCaps);
+
+ long _far  _pascal lineGetDevConfig(
+    DWORD dwDeviceID,
+    LPVARSTRING lpDeviceConfig,
+    LPCSTR lpszDeviceClass);
+
+ long _far  _pascal lineGetNewCalls(
+    HLINE hLine,
+    DWORD dwAddressID,
+    DWORD dwSelect,
+    LPLINECALLLIST lpCallList);
+
+ long _far  _pascal lineGetIcon(
+    DWORD dwDeviceID,
+    LPCSTR lpszDeviceClass,
+    LPHICON lphIcon);
+    
+ long _far  _pascal lineGetID(
+    HLINE hLine,
+    DWORD dwAddressID, 
+    HCALL hCall,
+    DWORD dwSelect,        
+    LPVARSTRING lpDeviceID, 
+    LPCSTR lpszDeviceClass);
+
+ long _far  _pascal lineGetLineDevStatus(
+    HLINE hLine, 
+    LPLINEDEVSTATUS lpLineDevStatus);
+
+ long _far  _pascal lineGetNumRings(
+    HLINE hLine, 
+    DWORD dwAddressID, 
+    LPDWORD lpdwNumRings);
+
+ long _far  _pascal lineGetRequest(
+    HLINEAPP hLineApp,
+    DWORD dwRequestMode,
+    LPVOID lpRequestBuffer);
+
+ long _far  _pascal lineGetStatusMessages(
+    HLINE hLine, 
+    LPDWORD lpdwLineStates, 
+    LPDWORD lpdwAddressStates);
+
+ long _far  _pascal lineHandoff(
+    HCALL hCall, 
+    LPCSTR lpszFileName,
+    DWORD dwMediaMode);
+
+ long _far  _pascal lineHold(
+    HCALL hCall);
+
+ long _far  _pascal lineInitialize(
+    LPHLINEAPP lphLineApp,
+    HINSTANCE hInstance,
+    LINECALLBACK lpfnCallback,
+    LPCSTR lpszAppName,
+    LPDWORD lpdwNumDevs);
+
+ long _far  _pascal lineMakeCall(
+    HLINE hLine, 
+    LPHCALL lphCall, 
+    LPCSTR lpszDestAddress, 
+    DWORD dwCountryCode, 
+    LPLINECALLPARAMS const lpCallParams);
+
+ long _far  _pascal lineMonitorDigits(
+    HCALL hCall, 
+    DWORD dwDigitModes);
+
+ long _far  _pascal lineMonitorMedia(
+    HCALL hCall, 
+    DWORD dwMediaModes);
+
+ long _far  _pascal lineMonitorTones(
+    HCALL hCall, 
+    LPLINEMONITORTONE const lpToneList, 
+    DWORD dwNumEntries);
+
+ long _far  _pascal lineNegotiateAPIVersion(
+    HLINEAPP hLineApp,
+    DWORD dwDeviceID,
+    DWORD dwAPILowVersion,
+    DWORD dwAPIHighVersion,
+    LPDWORD lpdwAPIVersion,
+    LPLINEEXTENSIONID lpExtensionID);
+
+ long _far  _pascal lineNegotiateExtVersion(
+    HLINEAPP hLineApp,
+    DWORD dwDeviceID,
+    DWORD dwAPIVersion,
+    DWORD dwExtLowVersion,
+    DWORD dwExtHighVersion,
+    LPDWORD lpdwExtVersion);
+
+ long _far  _pascal lineOpen(
+    HLINEAPP hLineApp, 
+    DWORD dwDeviceID,
+    LPHLINE lphLine,
+    DWORD dwAPIVersion,
+    DWORD dwExtVersion,
+    DWORD dwCallbackInstance,
+    DWORD dwPrivileges,
+    DWORD dwMediaModes,
+    LPLINECALLPARAMS const lpCallParams);
+
+ long _far  _pascal linePark(
+    HCALL hCall, 
+    DWORD dwParkMode, 
+    LPCSTR lpszDirAddress,
+    LPVARSTRING lpNonDirAddress);
+
+ long _far  _pascal linePickup(
+    HLINE hLine,
+    DWORD dwAddressID,
+    LPHCALL lphCall, 
+    LPCSTR lpszDestAddress, 
+    LPCSTR lpszGroupID);
+
+ long _far  _pascal linePrepareAddToConference(
+    HCALL            hConfCall,
+    LPHCALL          lphConsultCall,
+    LPLINECALLPARAMS const lpCallParams);
+    
+ long _far  _pascal lineRedirect(
+    HCALL hCall, 
+    LPCSTR lpszDestAddress, 
+    DWORD dwCountryCode);
+
+ long _far  _pascal lineRemoveFromConference(
+    HCALL hCall);
+
+ long _far  _pascal lineSecureCall(
+    HCALL hCall);
+
+ long _far  _pascal lineSendUserUserInfo(
+    HCALL hCall, 
+    LPCSTR lpsUserUserInfo, 
+    DWORD dwSize);
+
+ long _far  _pascal lineSetAppSpecific(
+    HCALL hCall, 
+    DWORD dwAppSpecific);
+
+ long _far  _pascal lineSetCallParams(
+    HCALL hCall, 
+    DWORD dwBearerMode,
+    DWORD dwMinRate,
+    DWORD dwMaxRate,
+    LPLINEDIALPARAMS const lpDialParams);
+
+ long _far  _pascal lineSetCallPrivilege(
+    HCALL hCall,
+    DWORD dwCallPrivilege);
+
+ long _far  _pascal lineSetDevConfig(
+    DWORD dwDeviceID,
+    LPVOID const lpDeviceConfig,
+    DWORD dwSize,
+    LPCSTR lpszDeviceClass);
+
+ long _far  _pascal lineSetMediaControl(
+    HLINE hLine,
+    DWORD dwAddressID,
+    HCALL hCall, 
+    DWORD dwSelect,
+    LPLINEMEDIACONTROLDIGIT const lpDigitList, 
+    DWORD dwDigitNumEntries, 
+    LPLINEMEDIACONTROLMEDIA const lpMediaList, 
+    DWORD dwMediaNumEntries, 
+    LPLINEMEDIACONTROLTONE const lpToneList, 
+    DWORD dwToneNumEntries, 
+    LPLINEMEDIACONTROLCALLSTATE const lpCallStateList, 
+    DWORD dwCallStateNumEntries);
+
+ long _far  _pascal lineSetMediaMode(
+    HCALL hCall,
+    DWORD dwMediaModes);
+
+ long _far  _pascal lineSetNumRings(
+    HLINE hLine, 
+    DWORD dwAddressID, 
+    DWORD dwNumRings);
+
+ long _far  _pascal lineSetStatusMessages(
+    HLINE hLine, 
+    DWORD dwLineStates, 
+    DWORD dwAddressStates);
+
+ long _far  _pascal lineSetTerminal(
+    HLINE hLine, 
+    DWORD dwAddressID,
+    HCALL hCall,
+    DWORD dwSelect,
+    DWORD dwTerminalModes, 
+    DWORD dwTerminalID, 
+    DWORD  bEnable);
+
+ long _far  _pascal lineSetupConference(
+    HCALL hCall,
+    HLINE hLine,
+    LPHCALL lphConfCall, 
+    LPHCALL lphConsultCall, 
+    DWORD dwNumParties,
+    LPLINECALLPARAMS const lpCallParams);
+
+ long _far  _pascal lineSetupTransfer(
+    HCALL hCall, 
+    LPHCALL lphConsultCall,
+    LPLINECALLPARAMS const lpCallParams);
+
+ long _far  _pascal lineShutdown(
+    HLINEAPP hLineApp);
+
+ long _far  _pascal lineSwapHold(
+    HCALL hActiveCall, 
+    HCALL hHeldCall);
+
+ long _far  _pascal lineUncompleteCall(
+    HLINE hLine, 
+    DWORD dwCompletionID);
+
+ long _far  _pascal lineUnhold(
+    HCALL hCall);
+
+ long _far  _pascal lineUnpark(
+    HLINE hLine,
+    DWORD dwAddressID,
+    LPHCALL lphCall, 
+    LPCSTR lpszDestAddress);
+
+ long _far  _pascal lineReleaseUserUserInfo(
+    HCALL  hCall);
+
+
+ long _far  _pascal phoneClose(
+    HPHONE hPhone);
+
+ long _far  _pascal phoneConfigDialog(
+    DWORD dwDeviceID,
+    HWND  hwndOwner,
+    LPCSTR lpszDeviceClass);
+
+ long _far  _pascal phoneDevSpecific(
+    HPHONE hPhone, 
+    LPVOID lpParams, 
+    DWORD dwSize);
+
+ long _far  _pascal phoneGetButtonInfo(
+    HPHONE hPhone, 
+    DWORD dwButtonLampID, 
+    LPPHONEBUTTONINFO lpButtonInfo);
+
+ long _far  _pascal phoneGetData(
+    HPHONE hPhone, 
+    DWORD dwDataID, 
+    LPVOID lpData, 
+    DWORD dwSize);
+
+ long _far  _pascal phoneGetDevCaps(
+    HPHONEAPP hPhoneApp, 
+    DWORD dwDeviceID,
+    DWORD dwAPIVersion, 
+    DWORD dwExtVersion, 
+    LPPHONECAPS lpPhoneCaps);
+
+ long _far  _pascal phoneGetDisplay(
+    HPHONE hPhone, 
+    LPVARSTRING lpDisplay);
+
+ long _far  _pascal phoneGetGain(
+    HPHONE hPhone, 
+    DWORD dwHookSwitchDev, 
+    LPDWORD lpdwGain);
+
+ long _far  _pascal phoneGetHookSwitch(
+    HPHONE hPhone, 
+    LPDWORD lpdwHookSwitchDevs);
+
+ long _far  _pascal phoneGetIcon(
+    DWORD dwDeviceID,
+    LPCSTR lpszDeviceClass,
+    LPHICON lphIcon);
+
+ long _far  _pascal phoneGetID(
+    HPHONE hPhone, 
+    LPVARSTRING lpDeviceID, 
+    LPCSTR lpszDeviceClass);
+
+ long _far  _pascal phoneGetLamp(
+    HPHONE hPhone, 
+    DWORD dwButtonLampID, 
+    LPDWORD lpdwLampMode);
+
+ long _far  _pascal phoneGetRing(
+    HPHONE hPhone, 
+    LPDWORD lpdwRingMode, 
+    LPDWORD lpdwVolume);
+
+ long _far  _pascal phoneGetStatus(
+    HPHONE hPhone, 
+    LPPHONESTATUS lpPhoneStatus);
+
+ long _far  _pascal phoneGetStatusMessages(
+    HPHONE hPhone, 
+    LPDWORD lpdwPhoneStates,
+    LPDWORD lpdwButtonModes,
+    LPDWORD lpdwButtonStates);
+
+ long _far  _pascal phoneGetVolume(
+    HPHONE hPhone, 
+    DWORD dwHookSwitchDev, 
+    LPDWORD lpdwVolume);
+
+ long _far  _pascal phoneInitialize(
+    LPHPHONEAPP   lphPhoneApp,
+    HINSTANCE     hInstance,
+    PHONECALLBACK lpfnCallback,
+    LPCSTR lpszAppName,
+    LPDWORD       lpdwNumDevs);
+
+ long _far  _pascal phoneNegotiateAPIVersion(
+    HPHONEAPP hPhoneApp,
+    DWORD dwDeviceID,
+    DWORD dwAPILowVersion,
+    DWORD dwAPIHighVersion,
+    LPDWORD lpdwAPIVersion,
+    LPPHONEEXTENSIONID lpExtensionID);
+
+ long _far  _pascal phoneNegotiateExtVersion(
+    HPHONEAPP hPhoneApp,
+    DWORD dwDeviceID,
+    DWORD dwAPIVersion,
+    DWORD dwExtLowVersion,
+    DWORD dwExtHighVersion,
+    LPDWORD lpdwExtVersion);
+
+ long _far  _pascal phoneOpen(
+    HPHONEAPP hPhoneApp, 
+    DWORD dwDeviceID,
+    LPHPHONE lphPhone,
+    DWORD dwAPIVersion,
+    DWORD dwExtVersion,
+    DWORD dwCallbackInstance,
+    DWORD dwPrivilege);
+
+ long _far  _pascal phoneSetButtonInfo(
+    HPHONE hPhone, 
+    DWORD dwButtonLampID, 
+    LPPHONEBUTTONINFO const lpButtonInfo);
+
+ long _far  _pascal phoneSetData(
+    HPHONE hPhone, 
+    DWORD dwDataID, 
+    LPVOID const lpData, 
+    DWORD dwSize);
+
+ long _far  _pascal phoneSetDisplay(
+    HPHONE hPhone, 
+    DWORD dwRow, 
+    DWORD dwColumn, 
+    LPCSTR lpsDisplay,
+    DWORD dwSize);
+
+ long _far  _pascal phoneSetGain(
+    HPHONE hPhone, 
+    DWORD  dwHookSwitchDev, 
+    DWORD  dwGain);
+
+ long _far  _pascal phoneSetHookSwitch(
+    HPHONE hPhone, 
+    DWORD  dwHookSwitchDevs, 
+    DWORD  dwHookSwitchMode);
+
+ long _far  _pascal phoneSetLamp(
+    HPHONE hPhone, 
+    DWORD  dwButtonLampID, 
+    DWORD  dwLampMode);
+
+ long _far  _pascal phoneSetRing(
+    HPHONE hPhone, 
+    DWORD  dwRingMode, 
+    DWORD  dwVolume);
+
+ long _far  _pascal phoneSetStatusMessages(
+    HPHONE hPhone, 
+    DWORD  dwPhoneStates,
+    DWORD  dwButtonModes,
+    DWORD  dwButtonStates);
+
+ long _far  _pascal phoneSetVolume(
+    HPHONE hPhone, 
+    DWORD  dwHookSwitchDev, 
+    DWORD  dwVolume);
+
+ long _far  _pascal phoneShutdown(
+    HPHONEAPP hPhoneApp);
+
+
+ long _far  _pascal lineTranslateDialog(
+    HLINEAPP hLineApp,
+    DWORD dwDeviceID,
+    DWORD dwAPIVersion,
+    HWND hwndOwner,
+    LPCSTR lpszAddressIn);
+
+ long _far  _pascal lineGetCountry(
+    DWORD dwCountryID,
+    DWORD dwAPIVersion,
+    LPLINECOUNTRYLIST lpLineCountryList);
+
+ long _far  _pascal lineGetAppPriority(
+    LPCSTR lpszAppFilename,
+    DWORD dwMediaMode,
+    LPLINEEXTENSIONID lpExtensionID,
+    DWORD dwRequestMode,
+    LPVARSTRING lpExtensionName,
+    LPDWORD lpdwPriority);
+
+ long _far  _pascal lineSetAppPriority(
+    LPCSTR lpszAppFilename,
+    DWORD dwMediaMode,
+    LPLINEEXTENSIONID lpExtensionID,
+    DWORD dwRequestMode,
+    LPCSTR lpszExtensionName,
+    DWORD dwPriority);
+
+ long _far  _pascal lineAddProvider(
+    LPCSTR lpszProviderFilename,
+    HWND hwndOwner,
+    LPDWORD lpdwPermanentProviderID);
+
+ long _far  _pascal lineConfigProvider(
+    HWND hwndOwner,
+    DWORD dwPermanentProviderID);
+
+ long _far  _pascal lineRemoveProvider(
+    DWORD dwPermanentProviderID,
+    HWND hwndOwner);
+
+ long _far  _pascal lineGetProviderList(
+    DWORD dwAPIVersion,
+    LPLINEPROVIDERLIST lpProviderList);
+
+
+#line 2093
+#pragma pack()
+
+
+
+
+
+#line 18 "c:\sc\include\tapi.h"
+#pragma pack()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 36 "c:\sc\include\win16\tspi.h"
+struct HDRVCALL__ { int unused; }; typedef const struct HDRVCALL__  _far* HDRVCALL ;
+struct HDRVLINE__ { int unused; }; typedef const struct HDRVLINE__  _far* HDRVLINE ;
+struct HDRVPHONE__ { int unused; }; typedef const struct HDRVPHONE__  _far* HDRVPHONE ;
+
+typedef HDRVCALL  _far * LPHDRVCALL;
+typedef HDRVLINE  _far * LPHDRVLINE;
+typedef HDRVPHONE  _far * LPHDRVPHONE;
+
+struct HTAPICALL__ { int unused; }; typedef const struct HTAPICALL__  _far* HTAPICALL ;
+struct HTAPILINE__ { int unused; }; typedef const struct HTAPILINE__  _far* HTAPILINE ;
+struct HTAPIPHONE__ { int unused; }; typedef const struct HTAPIPHONE__  _far* HTAPIPHONE ;
+
+typedef HTAPICALL  _far * LPHTAPICALL;
+typedef HTAPILINE  _far * LPHTAPILINE;
+typedef HTAPIPHONE  _far * LPHTAPIPHONE;
+
+
+struct HPROVIDER__ { int unused; }; typedef const struct HPROVIDER__  _far* HPROVIDER ;
+typedef HPROVIDER  _far * LPHPROVIDER;
+
+
+
+typedef void (_far  _pascal * LINEEVENT) (
+    HTAPILINE   htLine,
+    HTAPICALL   htCall,
+    DWORD       dwMsg,
+    DWORD       dwParam1,
+    DWORD       dwParam2,
+    DWORD       dwParam3);
+
+typedef void (_far  _pascal * PHONEEVENT) (
+    HTAPIPHONE  htPhone,
+    DWORD       dwMsg,
+    DWORD       dwParam1,
+    DWORD       dwParam2,
+    DWORD       dwParam3);
+
+
+
+    
+
+
+
+
+#line 84
+typedef DWORD DRV_REQUESTID;
+
+typedef void (_far  _pascal * ASYNC_COMPLETION) (
+    DRV_REQUESTID  dwRequestID,
+     long           lResult);
+
+
+
+
+
+    
+ long __export __far  __pascal TSPI_lineAccept(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall,
+    LPCSTR         lpsUserUserInfo,
+    DWORD          dwSize);
+
+ long __export __far  __pascal TSPI_lineAddToConference(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdConfCall,
+    HDRVCALL       hdConsultCall);
+
+ long __export __far  __pascal TSPI_lineAnswer(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall,
+    LPCSTR         lpsUserUserInfo,
+    DWORD          dwSize);
+
+ long __export __far  __pascal TSPI_lineBlindTransfer(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall,
+    LPCSTR         lpszDestAddress,
+    DWORD          dwCountryCode);
+
+ long __export __far  __pascal TSPI_lineClose(
+    HDRVLINE  hdLine);
+
+ long __export __far  __pascal TSPI_lineCloseCall(
+    HDRVCALL  hdCall);
+
+ long __export __far  __pascal TSPI_lineCompleteCall(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall,
+    LPDWORD        lpdwCompletionID,
+    DWORD          dwCompletionMode,
+    DWORD          dwMessageID);
+
+ long __export __far  __pascal TSPI_lineCompleteTransfer(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall,
+    HDRVCALL       hdConsultCall,
+    HTAPICALL      htConfCall,
+    LPHDRVCALL     lphdConfCall,
+    DWORD          dwTransferMode);
+
+ long __export __far  __pascal TSPI_lineConditionalMediaDetection(
+    HDRVLINE          hdLine,
+    DWORD             dwMediaModes,
+    LPLINECALLPARAMS  const lpCallParams);
+
+ long __export __far  __pascal TSPI_lineConfigDialog(
+    DWORD   dwDeviceID,
+    HWND    hwndOwner,
+    LPCSTR  lpszDeviceClass);
+
+ long __export __far  __pascal TSPI_lineConfigDialogEdit(
+    DWORD   dwDeviceID,
+    HWND    hwndOwner,
+    LPCSTR  lpszDeviceClass,
+    LPVOID  const lpDeviceConfigIn,
+    DWORD   dwSize,
+    LPVARSTRING lpDeviceConfigOut);
+
+ long __export __far  __pascal TSPI_lineDevSpecific(
+    DRV_REQUESTID  dwRequestID,
+    HDRVLINE       hdLine,
+    DWORD          dwAddressID,
+    HDRVCALL       hdCall,
+    LPVOID         lpParams,
+    DWORD          dwSize);
+
+ long __export __far  __pascal TSPI_lineDevSpecificFeature(
+    DRV_REQUESTID  dwRequestID,
+    HDRVLINE       hdLine,
+    DWORD          dwFeature,
+    LPVOID         lpParams,
+    DWORD          dwSize);
+
+ long __export __far  __pascal TSPI_lineDial(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall,
+    LPCSTR         lpszDestAddress,
+    DWORD          dwCountryCode);
+
+ long __export __far  __pascal TSPI_lineDrop(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall,
+    LPCSTR         lpsUserUserInfo,
+    DWORD          dwSize);
+
+ long __export __far  __pascal TSPI_lineDropOnClose(
+    HDRVCALL       hdCall);
+
+ long __export __far  __pascal TSPI_lineDropNoOwner(
+    HDRVCALL       hdCall);
+
+ long __export __far  __pascal TSPI_lineForward(
+    DRV_REQUESTID     dwRequestID,
+    HDRVLINE          hdLine,
+    DWORD             bAllAddresses,
+    DWORD             dwAddressID,
+    LPLINEFORWARDLIST const lpForwardList,
+    DWORD             dwNumRingsNoAnswer,
+    HTAPICALL         htConsultCall,
+    LPHDRVCALL        lphdConsultCall,
+    LPLINECALLPARAMS  const lpCallParams);
+
+ long __export __far  __pascal TSPI_lineGatherDigits(
+    HDRVCALL       hdCall,
+    DWORD          dwEndToEndID,
+    DWORD          dwDigitModes,
+    LPSTR          lpsDigits,
+    DWORD          dwNumDigits,
+    LPCSTR         lpszTerminationDigits,
+    DWORD          dwFirstDigitTimeout,
+    DWORD          dwInterDigitTimeout);
+
+ long __export __far  __pascal TSPI_lineGenerateDigits(
+    HDRVCALL       hdCall,
+    DWORD          dwEndToEndID,
+    DWORD          dwDigitMode,
+    LPCSTR         lpszDigits,
+    DWORD          dwDuration);
+
+ long __export __far  __pascal TSPI_lineGenerateTone(
+    HDRVCALL            hdCall,
+    DWORD               dwEndToEndID,
+    DWORD               dwToneMode,
+    DWORD               dwDuration,
+    DWORD               dwNumTones,
+    LPLINEGENERATETONE  const lpTones);
+
+ long __export __far  __pascal TSPI_lineGetAddressCaps(
+    DWORD              dwDeviceID,
+    DWORD              dwAddressID,
+    DWORD              dwTSPIVersion,
+    DWORD              dwExtVersion,
+    LPLINEADDRESSCAPS  lpAddressCaps);
+
+ long __export __far  __pascal TSPI_lineGetAddressID(
+    HDRVLINE       hdLine,
+    LPDWORD        lpdwAddressID,
+    DWORD          dwAddressMode,
+    LPCSTR         lpsAddress,
+    DWORD          dwSize);
+
+ long __export __far  __pascal TSPI_lineGetAddressStatus(
+    HDRVLINE             hdLine,
+    DWORD                dwAddressID,
+    LPLINEADDRESSSTATUS  lpAddressStatus);
+
+ long __export __far  __pascal TSPI_lineGetCallAddressID(
+    HDRVCALL  hdCall,
+    LPDWORD   lpdwAddressID);
+
+ long __export __far  __pascal TSPI_lineGetCallInfo(
+    HDRVCALL        hdCall,
+    LPLINECALLINFO  lpCallInfo);
+
+ long __export __far  __pascal TSPI_lineGetCallStatus(
+    HDRVCALL          hdCall,
+    LPLINECALLSTATUS  lpCallStatus);
+
+ long __export __far  __pascal TSPI_lineGetDevCaps(
+    DWORD          dwDeviceID,
+    DWORD          dwTSPIVersion,
+    DWORD          dwExtVersion,
+    LPLINEDEVCAPS  lpLineDevCaps);
+
+ long __export __far  __pascal TSPI_lineGetDevConfig(
+    DWORD dwDeviceID,
+    LPVARSTRING lpDeviceConfig,
+    LPCSTR lpszDeviceClass);
+
+ long __export __far  __pascal TSPI_lineGetExtensionID(
+    DWORD              dwDeviceID,
+    DWORD              dwTSPIVersion,
+    LPLINEEXTENSIONID  lpExtensionID);
+
+ long __export __far  __pascal TSPI_lineGetIcon(
+    DWORD    dwDeviceID,
+    LPCSTR   lpszDeviceClass,
+    LPHICON  lphIcon);
+
+ long __export __far  __pascal TSPI_lineGetID(
+    HDRVLINE       hdLine,
+    DWORD          dwAddressID,
+    HDRVCALL       hdCall,
+    DWORD          dwSelect,
+    LPVARSTRING    lpDeviceID,
+    LPCSTR         lpszDeviceClass);
+
+ long __export __far  __pascal TSPI_lineGetLineDevStatus(
+    HDRVLINE         hdLine,
+    LPLINEDEVSTATUS  lpLineDevStatus);
+
+ long __export __far  __pascal TSPI_lineGetNumAddressIDs(
+    HDRVLINE    hdLine,
+    LPDWORD     lpdwNumAddressIDs);
+
+ long __export __far  __pascal TSPI_lineHold(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall);
+
+ long __export __far  __pascal TSPI_lineMakeCall(
+    DRV_REQUESTID     dwRequestID,
+    HDRVLINE          hdLine,
+    HTAPICALL         htCall,
+    LPHDRVCALL        lphdCall,
+    LPCSTR            lpszDestAddress,
+    DWORD             dwCountryCode,
+    LPLINECALLPARAMS  const lpCallParams);
+
+ long __export __far  __pascal TSPI_lineMonitorDigits(
+    HDRVCALL       hdCall,
+    DWORD          dwDigitModes);
+
+ long __export __far  __pascal TSPI_lineMonitorMedia(
+    HDRVCALL       hdCall,
+    DWORD          dwMediaModes);
+
+ long __export __far  __pascal TSPI_lineMonitorTones(
+    HDRVCALL           hdCall,
+    DWORD              dwToneListID,
+    LPLINEMONITORTONE  const lpToneList,
+    DWORD              dwNumEntries);
+
+ long __export __far  __pascal TSPI_lineNegotiateExtVersion(
+    DWORD    dwDeviceID,
+    DWORD    dwTSPIVersion,
+    DWORD    dwLowVersion,
+    DWORD    dwHighVersion,
+    LPDWORD  lpdwExtVersion);
+
+ long __export __far  __pascal TSPI_lineNegotiateTSPIVersion(
+    DWORD    dwDeviceID,
+    DWORD    dwLowVersion,
+    DWORD    dwHighVersion,
+    LPDWORD  lpdwTSPIVersion);
+
+ long __export __far  __pascal TSPI_lineOpen(
+    DWORD       dwDeviceID,
+    HTAPILINE   htLine,
+    LPHDRVLINE  lphdLine,
+    DWORD       dwTSPIVersion,
+    LINEEVENT   lpfnEventProc);
+
+ long __export __far  __pascal TSPI_linePark(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall,
+    DWORD          dwParkMode,
+    LPCSTR         lpszDirAddress,
+    LPVARSTRING    lpNonDirAddress);
+
+ long __export __far  __pascal TSPI_linePickup(
+    DRV_REQUESTID  dwRequestID,
+    HDRVLINE       hdLine,
+    DWORD          dwAddressID,
+    HTAPICALL      htCall,
+    LPHDRVCALL     lphdCall,
+    LPCSTR         lpszDestAddress,
+    LPCSTR         lpszGroupID);
+
+ long __export __far  __pascal TSPI_linePrepareAddToConference(
+    DRV_REQUESTID     dwRequestID,
+    HDRVCALL          hdConfCall,
+    HTAPICALL         htConsultCall,
+    LPHDRVCALL        lphdConsultCall,
+    LPLINECALLPARAMS  const lpCallParams);
+
+ long __export __far  __pascal TSPI_lineRedirect(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall,
+    LPCSTR         lpszDestAddress,
+    DWORD          dwCountryCode);
+
+ long __export __far  __pascal TSPI_lineRemoveFromConference(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall);
+
+ long __export __far  __pascal TSPI_lineSecureCall(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall);
+
+ long __export __far  __pascal TSPI_lineSelectExtVersion(
+    HDRVLINE  hdLine,
+    DWORD     dwExtVersion);
+
+ long __export __far  __pascal TSPI_lineSendUserUserInfo(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall,
+    LPCSTR         lpsUserUserInfo,
+    DWORD          dwSize);
+
+ long __export __far  __pascal TSPI_lineSetAppSpecific(
+    HDRVCALL       hdCall,
+    DWORD          dwAppSpecific);
+
+ long __export __far  __pascal TSPI_lineSetCallParams(
+    DRV_REQUESTID     dwRequestID,
+    HDRVCALL          hdCall,
+    DWORD             dwBearerMode,
+    DWORD             dwMinRate,
+    DWORD             dwMaxRate,
+    LPLINEDIALPARAMS  const lpDialParams);
+
+ long __export __far  __pascal TSPI_lineSetCurrentLocation(
+    DWORD    dwLocation);
+
+ long __export __far  __pascal TSPI_lineSetDefaultMediaDetection(
+    HDRVLINE       hdLine,
+    DWORD          dwMediaModes);
+
+ long __export __far  __pascal TSPI_lineSetDevConfig(
+    DWORD                       dwDeviceID,
+    LPVOID                      const lpDeviceConfig,
+    DWORD                       dwSize,
+    LPCSTR                      lpszDeviceClass);
+
+ long __export __far  __pascal TSPI_lineSetMediaControl(
+    HDRVLINE                     hdLine,
+    DWORD                        dwAddressID,
+    HDRVCALL                     hdCall,
+    DWORD                        dwSelect,
+    LPLINEMEDIACONTROLDIGIT      const lpDigitList,
+    DWORD                        dwDigitNumEntries,
+    LPLINEMEDIACONTROLMEDIA      const lpMediaList,
+    DWORD                        dwMediaNumEntries,
+    LPLINEMEDIACONTROLTONE       const lpToneList,
+    DWORD                        dwToneNumEntries,
+    LPLINEMEDIACONTROLCALLSTATE  const lpCallStateList,
+    DWORD                        dwCallStateNumEntries);
+
+ long __export __far  __pascal TSPI_lineSetMediaMode(
+    HDRVCALL       hdCall,
+    DWORD          dwMediaMode);
+
+ long __export __far  __pascal TSPI_lineSetStatusMessages(
+    HDRVLINE       hdLine,
+    DWORD          dwLineStates,
+    DWORD          dwAddressStates);
+
+ long __export __far  __pascal TSPI_lineSetTerminal(
+    DRV_REQUESTID  dwRequestID,
+    HDRVLINE       hdLine,
+    DWORD          dwAddressID,
+    HDRVCALL       hdCall,
+    DWORD          dwSelect,
+    DWORD          dwTerminalModes,
+    DWORD          dwTerminalID,
+    DWORD           bEnable);
+
+ long __export __far  __pascal TSPI_lineSetupConference(
+    DRV_REQUESTID     dwRequestID,
+    HDRVCALL          hdCall,
+    HDRVLINE          hdLine,
+    HTAPICALL         htConfCall,
+    LPHDRVCALL        lphdConfCall,
+    HTAPICALL         htConsultCall,
+    LPHDRVCALL        lphdConsultCall,
+    DWORD             dwNumParties,
+    LPLINECALLPARAMS  const lpCallParams);
+
+ long __export __far  __pascal TSPI_lineSetupTransfer(
+    DRV_REQUESTID     dwRequestID,
+    HDRVCALL          hdCall,
+    HTAPICALL         htConsultCall,
+    LPHDRVCALL        lphdConsultCall,
+    LPLINECALLPARAMS  const lpCallParams);
+
+ long __export __far  __pascal TSPI_lineSwapHold(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdActiveCall,
+    HDRVCALL       hdHeldCall);
+
+ long __export __far  __pascal TSPI_lineUncompleteCall(
+    DRV_REQUESTID  dwRequestID,
+    HDRVLINE       hdLine,
+    DWORD          dwCompletionID);
+
+ long __export __far  __pascal TSPI_lineUnhold(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall);
+
+ long __export __far  __pascal TSPI_lineUnpark(
+    DRV_REQUESTID  dwRequestID,
+    HDRVLINE       hdLine,
+    DWORD          dwAddressID,
+    HTAPICALL      htCall,
+    LPHDRVCALL     lphdCall,
+    LPCSTR         lpszDestAddress);
+
+ long __export __far  __pascal TSPI_lineReleaseUserUserInfo(
+    DRV_REQUESTID  dwRequestID,
+    HDRVCALL       hdCall);
+    
+
+
+
+
+
+ long __export __far  __pascal TSPI_phoneClose(
+    HDRVPHONE  hdPhone);
+
+ long __export __far  __pascal TSPI_phoneConfigDialog(
+    DWORD   dwDeviceID,
+    HWND    hwndOwner,
+    LPCSTR  lpszDeviceClass);
+
+ long __export __far  __pascal TSPI_phoneDevSpecific(
+    DRV_REQUESTID  dwRequestID,
+    HDRVPHONE      hdPhone,
+    LPVOID         lpParams,
+    DWORD          dwSize);
+
+ long __export __far  __pascal TSPI_phoneGetButtonInfo(
+    HDRVPHONE          hdPhone,
+    DWORD              dwButtonLampID,
+    LPPHONEBUTTONINFO  lpButtonInfo);
+
+ long __export __far  __pascal TSPI_phoneGetData(
+    HDRVPHONE      hdPhone,
+    DWORD          dwDataID,
+    LPVOID         lpData,
+    DWORD          dwSize);
+
+ long __export __far  __pascal TSPI_phoneGetDevCaps(
+    DWORD          dwDeviceID,
+    DWORD          dwTSPIVersion,
+    DWORD          dwExtVersion,
+    LPPHONECAPS    lpPhoneCaps);
+
+ long __export __far  __pascal TSPI_phoneGetDisplay(
+    HDRVPHONE      hdPhone,
+    LPVARSTRING    lpDisplay);
+
+ long __export __far  __pascal TSPI_phoneGetExtensionID(
+    DWORD               dwDeviceID,
+    DWORD               dwTSPIVersion,
+    LPPHONEEXTENSIONID  lpExtensionID);
+
+ long __export __far  __pascal TSPI_phoneGetGain(
+    HDRVPHONE      hdPhone,
+    DWORD          dwHookSwitchDev,
+    LPDWORD        lpdwGain);
+
+ long __export __far  __pascal TSPI_phoneGetHookSwitch(
+    HDRVPHONE      hdPhone,
+    LPDWORD        lpdwHookSwitchDevs);
+
+ long __export __far  __pascal TSPI_phoneGetIcon(
+    DWORD    dwDeviceID,
+    LPCSTR   lpszDeviceClass,
+    LPHICON  lphIcon);
+
+ long __export __far  __pascal TSPI_phoneGetID(
+    HDRVPHONE      hdPhone,
+    LPVARSTRING    lpDeviceID,
+    LPCSTR         lpszDeviceClass);
+
+ long __export __far  __pascal TSPI_phoneGetLamp(
+    HDRVPHONE      hdPhone,
+    DWORD          dwButtonLampID,
+    LPDWORD        lpdwLampMode);
+
+ long __export __far  __pascal TSPI_phoneGetRing(
+    HDRVPHONE      hdPhone,
+    LPDWORD        lpdwRingMode,
+    LPDWORD        lpdwVolume);
+
+ long __export __far  __pascal TSPI_phoneGetStatus(
+    HDRVPHONE      hdPhone,
+    LPPHONESTATUS  lpPhoneStatus);
+
+ long __export __far  __pascal TSPI_phoneGetVolume(
+    HDRVPHONE      hdPhone,
+    DWORD          dwHookSwitchDev,
+    LPDWORD        lpdwVolume);
+
+ long __export __far  __pascal TSPI_phoneNegotiateExtVersion(
+    DWORD    dwDeviceID,
+    DWORD    dwTSPIVersion,
+    DWORD    dwLowVersion,
+    DWORD    dwHighVersion,
+    LPDWORD  lpdwExtVersion);
+
+ long __export __far  __pascal TSPI_phoneNegotiateTSPIVersion(
+    DWORD    dwDeviceID,
+    DWORD    dwLowVersion,
+    DWORD    dwHighVersion,
+    LPDWORD  lpdwTSPIVersion);
+
+ long __export __far  __pascal TSPI_phoneOpen(
+    DWORD        dwDeviceID,
+    HTAPIPHONE   htPhone,
+    LPHDRVPHONE  lphdPhone,
+    DWORD        dwTSPIVersion,
+    PHONEEVENT   lpfnEventProc);
+
+ long __export __far  __pascal TSPI_phoneSelectExtVersion(
+    HDRVPHONE  hdPhone,
+    DWORD      dwExtVersion);
+
+ long __export __far  __pascal TSPI_phoneSetButtonInfo(
+    DRV_REQUESTID            dwRequestID,
+    HDRVPHONE                hdPhone,
+    DWORD                    dwButtonLampID,
+    LPPHONEBUTTONINFO  const lpButtonInfo);
+
+ long __export __far  __pascal TSPI_phoneSetData(
+    DRV_REQUESTID  dwRequestID,
+    HDRVPHONE      hdPhone,
+    DWORD          dwDataID,
+    LPVOID         const lpData,
+    DWORD          dwSize);
+
+ long __export __far  __pascal TSPI_phoneSetDisplay(
+    DRV_REQUESTID  dwRequestID,
+    HDRVPHONE      hdPhone,
+    DWORD          dwRow,
+    DWORD          dwColumn,
+    LPCSTR         lpsDisplay,
+    DWORD          dwSize);
+
+ long __export __far  __pascal TSPI_phoneSetGain(
+    DRV_REQUESTID  dwRequestID,
+    HDRVPHONE      hdPhone,
+    DWORD          dwHookSwitchDev,
+    DWORD          dwGain);
+
+ long __export __far  __pascal TSPI_phoneSetHookSwitch(
+    DRV_REQUESTID  dwRequestID,
+    HDRVPHONE      hdPhone,
+    DWORD          dwHookSwitchDevs,
+    DWORD          dwHookSwitchMode);
+
+ long __export __far  __pascal TSPI_phoneSetLamp(
+    DRV_REQUESTID  dwRequestID,
+    HDRVPHONE      hdPhone,
+    DWORD          dwButtonLampID,
+    DWORD          dwLampMode);
+
+ long __export __far  __pascal TSPI_phoneSetRing(
+    DRV_REQUESTID  dwRequestID,
+    HDRVPHONE      hdPhone,
+    DWORD          dwRingMode,
+    DWORD          dwVolume);
+
+ long __export __far  __pascal TSPI_phoneSetStatusMessages(
+    HDRVPHONE      hdPhone,
+    DWORD          dwPhoneStates,
+    DWORD          dwButtonModes,
+    DWORD          dwButtonStates);
+
+ long __export __far  __pascal TSPI_phoneSetVolume(
+    DRV_REQUESTID  dwRequestID,
+    HDRVPHONE      hdPhone,
+    DWORD          dwHookSwitchDev,
+    DWORD          dwVolume);
+
+
+
+
+
+
+ long __export __far  __pascal TSPI_providerConfig(
+    HWND   hwndOwner,
+    DWORD  dwPermanentProviderID);
+
+ long __export __far  __pascal TSPI_providerInit(
+    DWORD             dwTSPIVersion,
+    DWORD             dwPermanentProviderID,
+    DWORD             dwLineDeviceIDBase,
+    DWORD             dwPhoneDeviceIDBase,
+    DWORD             dwNumLines,
+    DWORD             dwNumPhones,
+    ASYNC_COMPLETION  lpfnCompletionProc);
+
+ long __export __far  __pascal TSPI_providerInstall(
+    HWND   hwndOwner,
+    DWORD  dwPermanentProviderID);
+
+ long __export __far  __pascal TSPI_providerRemove(
+    HWND   hwndOwner,
+    DWORD  dwPermanentProviderID);
+
+ long __export __far  __pascal TSPI_providerShutdown(
+    DWORD    dwTSPIVersion);
+
+ long __export __far  __pascal TSPI_providerEnumDevices(
+    DWORD    dwPermanentProviderID,
+    LPDWORD  lpdwNumLines,
+    LPDWORD  lpdwNumPhones,
+    HPROVIDER   hProvider,
+    LINEEVENT   lpfnLineCreateProc,
+    PHONEEVENT  lpfnPhoneCreateProc);
+
+ long __export __far  __pascal TSPI_providerCreateLineDevice(
+    DWORD    dwTempID,
+    DWORD    dwDeviceID);
+
+ long __export __far  __pascal TSPI_providerCreatePhoneDevice(
+    DWORD    dwTempID,
+    DWORD    dwDeviceID);
+
+
+
+
+
+
+
+
+
+
+
+
+#line 18 "c:\sc\include\TSPI.H"
+#pragma pack()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 26 "D:\sc\samples\WIN16\TAPI\ATSP\atsp.h"
+typedef struct lineInfo
+{
+        
+        
+
+        BOOL                                    bLineOpen;
+        DWORD                                   lineID;                                         
+        int                                     hcd;                                                    
+        DWORD                                   dwLineMediaModes;
+        DWORD                                   dwLineStates;
+        DWORD                                   dwAddressStates;
+        DWORD                                   dwppID;                                         
+        HTAPILINE                       htLine;                                         
+        LINEEVENT                       lpfnEventProc;                          
+        ASYNC_COMPLETION        lpfnCompletion;                 
+
+        DWORD                                   callState;                                      
+        HTAPICALL                       htCall;                                         
+        DWORD                                   dwRequestID;                            
+        LINEDIALPARAMS          dpDialParams;
+        DWORD                                   dwMediaMode;
+        DWORD                                   dwAppSpecific;
+        BOOL                                    bInUse;
+        BOOL                                    partial;
+        char                                    DestAddress[80L ];
+
+        int                                     ignore;                                         
+        int                                     pulse;                                          
+        char                                    port[40 ];              
+        char                                    speed[40 ];             
+        char                                    initstr[40 ];   
+        char                                    linename[40 ];  
+        char                                    lineaddr[40 ];  
+
+} ATSPLineData;
+
+
+
+
+
+
+
+#line 16 "D:\sc\samples\WIN16\TAPI\ATSP\atsp.c"
+BOOL _far  _pascal __export ConfigDlgProc(HWND, UINT, WPARAM, LPARAM);
+
+int     doConfigDialog (HWND, ATSPLineData *);
+void    LoadIniStrings (DWORD, ATSPLineData *);
+void    fillDialParams (LPLINEDIALPARAMS, LPLINEDIALPARAMS);
+long    appCall (int msg, ATSPLineData *pline, long dwRequestID);
+
+
+
+
+
+#line 29
+char *lpszCommDevArray[4 ] =
+{ "COM1", "COM2", "COM3", "COM4" };
+char *lpszCommSpeedArray[7 ] =
+{ "300", "1200", "2400", "9600", "19200", "38400", "57600" };
+
+
+
+
+char s_telephon_ini[] = "telephon.ini";
+char s_atspexe_exe[]  = "atspexe.exe";
+
+char s_one[]                    = "1";
+char s_zero[]                   = "0";
+char s_numlines[]               = "NumLines";
+char s_numphones[]      = "NumPhones";
+char s_providerx[]      = "Provider%d";
+
+char s_port[]                   = "Port";
+char s_speed[]                  = "Speed";
+char s_initstr[]                = "InitString";
+char s_ignore[]         = "IgnoreInternalString";
+char s_pulse[]                  = "PulseDial";
+char s_linename[]               = "LineName";
+char s_lineaddr[]               = "LineAddress";
+
+
+
+
+#line 69
+HANDLE  hInst                   = 0 ;
+
+
+ATSPLineData *pline     = 0 ;
+
+
+char gszProviderInfo[255];
+
+
+
+
+
+
+int  _far  _pascal LibMain(HANDLE hInstance, WORD wDataSegment,
+                               WORD wHeapSize, LPSTR lpszCmdLine)
+{
+        if (hInst != 0 )
+                return 0 ;
+
+        hInst = hInstance;
+
+        return 1 ;
+}
+
+ void  _far  _pascal __export WEP (int bSystemExit)
+{
+        hInst = 0 ;
+}
+
+
+
+
+
+
+static BOOL appstartup  = 0 ;
+static BOOL initialised = 0 ;
+static HWND atspexehwnd = 0;
+
+ long __export __far  __pascal TSPI_lineNegotiateTSPIVersion (
+DWORD           dwDeviceID,
+DWORD           dwLowVersion,
+DWORD           dwHighVersion,
+LPDWORD lpdwTSPIVersion)
+{
+         ;
+
+
+#line 120
+        if (dwDeviceID == 0xFFFFFFFFL  ||
+                 pline && dwDeviceID == pline->lineID)                  
+        {
+                *lpdwTSPIVersion = 0x00010003 ;
+
+                if (dwLowVersion  > 0x00010003  ||     
+                         dwHighVersion < 0x00010003 )  
+                        return 0x8000000C ;
+                else
+                        return 0;
+        }
+
+        return 0x80000002 ;             
+}
+
+
+ long __export __far  __pascal TSPI_providerInit (
+DWORD             dwTSPIVersion,
+DWORD             dwPermanentProviderID,
+DWORD             dwLineDeviceIDBase,
+DWORD             dwPhoneDeviceIDBase,
+DWORD             dwNumLines,
+DWORD             dwNumPhones,
+ASYNC_COMPLETION  lpfnCompletionProc)
+{
+        int res;
+
+         ;
+
+        ((void)((dwTSPIVersion == 0x00010003  ) || (_assert("dwTSPIVersion == ATSP_VERSION","D:\\sc\\samples\\WIN16\\TAPI\\ATSP\\atsp.c",149),1))) ;
+        ((void)((dwNumLines == 1) || (_assert("dwNumLines == 1","D:\\sc\\samples\\WIN16\\TAPI\\ATSP\\atsp.c",150),1))) ;
+        ((void)((dwNumPhones == 0) || (_assert("dwNumPhones == 0","D:\\sc\\samples\\WIN16\\TAPI\\ATSP\\atsp.c",151),1))) ;
+
+        if (initialised)
+                return 0x80000056 ;
+
+        
+
+
+        pline = (ATSPLineData *) (GlobalLock(GlobalAlloc((0x2000  | 0x0040  ), (sizeof (ATSPLineData))))) ;
+
+        if (pline == 0)
+        {
+                 ;
+                return 0x80000044 ;
+        }
+
+        pline->lpfnCompletion   = lpfnCompletionProc;
+        pline->lineID                           = dwLineDeviceIDBase;
+        pline->dwMediaMode              = 0x00000004 ;
+
+        pline->callState                                                                = 0;
+        pline->dpDialParams.dwDialPause                 = 2000;
+        pline->dpDialParams.dwDialSpeed                 = 95 ;
+        pline->dpDialParams.dwDigitDuration             = 95 ;
+        pline->dpDialParams.dwWaitForDialtone   = 60000;
+
+        LoadIniStrings (dwPermanentProviderID, pline);
+
+        
+
+        appstartup = 1 ;
+        res = WinExec (s_atspexe_exe, 2 );
+        appstartup = 0 ;
+
+        if (res <= ((HINSTANCE)32) )
+        {
+                 ;
+                (GlobalUnlock(((HGLOBAL)((WORD)(DWORD)(GlobalHandle(((WORD)((((DWORD)(pline)) >> 16) & 0xFFFF))  ))) ) ) , (BOOL)GlobalFree(((HGLOBAL)((WORD)(DWORD)(GlobalHandle(((WORD)((((DWORD)(pline)) >> 16) & 0xFFFF))  ))) ) )) ;
+                pline = 0;
+                return 0x80000043 ;
+        }
+
+        initialised = 1 ;
+
+        return 0;
+}
+
+
+ long __export __far  __pascal TSPI_providerShutdown (DWORD dwTSPIVersion)
+{
+         ;
+
+        
+        
+        if (atspexehwnd)
+        {
+                SendMessage (atspexehwnd, 0x0010 , 0, 0);
+                atspexehwnd = 0;
+        }
+
+        (GlobalUnlock(((HGLOBAL)((WORD)(DWORD)(GlobalHandle(((WORD)((((DWORD)(pline)) >> 16) & 0xFFFF))  ))) ) ) , (BOOL)GlobalFree(((HGLOBAL)((WORD)(DWORD)(GlobalHandle(((WORD)((((DWORD)(pline)) >> 16) & 0xFFFF))  ))) ) )) ;
+        pline = 0;
+
+        initialised = 0 ;
+
+        return 0;
+}
+
+
+int  _far  _pascal __export ATSPAppRegister (HWND hwnd)
+{
+        if (!appstartup)
+                return 1;
+
+        atspexehwnd = hwnd;
+        return 0;
+}
+
+
+
+
+
+
+ long __export __far  __pascal TSPI_lineConfigDialog (
+DWORD    dwDeviceID,
+HWND     hwndOwner,
+LPCSTR lpszDeviceClass)
+{
+         ;
+
+        if (dwDeviceID != pline->lineID)
+                return 0x80000002 ;
+
+        doConfigDialog (hwndOwner, pline);
+
+        return 0;
+}
+
+
+long lineDropCore (ATSPLineData *theLine, DWORD dwRequestID)
+{
+        
+
+        return appCall (3 , pline, dwRequestID);
+}
+
+
+ long __export __far  __pascal TSPI_lineClose (HDRVLINE hdLine)
+{
+         ;
+
+        if (hdLine != (HDRVLINE) pline)
+                return 0x8000002B ;
+
+        
+        lineDropCore (pline, 0);
+
+        pline->callState = 0;
+        return 0;
+}
+
+
+ long __export __far  __pascal TSPI_lineCloseCall (HDRVCALL hdCall)
+{
+         ;
+
+        if (hdCall != (HDRVCALL) pline->htCall)
+                return 0x80000018 ;
+
+        
+        lineDropCore (pline, 0);
+
+        pline->callState = 0;
+        return 0;
+}
+
+
+ long __export __far  __pascal TSPI_lineDrop (
+DRV_REQUESTID   dwRequestID,
+HDRVCALL                        hdCall,
+LPCSTR                  lpsUserUserInfo,
+DWORD                           dwSize)
+{
+        
+
+         ;
+
+        if (hdCall != (HDRVCALL) pline->htCall)
+                return 0x80000018 ;
+
+        return lineDropCore (pline, dwRequestID);       
+}
+
+ long CheckDestAddress (LPCSTR szAddr)
+{
+        char ch;
+        int  i;
+
+        for (i = 1; ch = *szAddr++; i++)
+        {
+                if (ch == '?')
+                        return 0x8000000A ;
+                else if (ch == '$')
+                        return 0x80000008 ;
+        }
+
+        if (i > 80L )
+                return 0x80000010 ;
+
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineDial (
+DRV_REQUESTID   dwRequestID,
+HDRVCALL                        hdCall,
+LPCSTR                  lpszDestAddress,
+DWORD                           dwCountryCode)
+{
+        long res;
+
+         ;
+
+        if (hdCall != (HDRVCALL) pline->htCall)
+                return 0x80000018 ;
+
+        if      (pline->callState != 0x00000008  &&
+                 pline->callState != 0x00000010 )
+                return 0x8000001C ;
+
+        
+        
+
+        if (res = CheckDestAddress (lpszDestAddress))
+                return res;
+
+        _fstrcpy (pline->DestAddress, lpszDestAddress);
+        pline->partial = (lpszDestAddress[lstrlen (lpszDestAddress) - 1] == ';');
+
+        
+
+        return appCall (2 , pline, dwRequestID);
+}
+
+
+ long __export __far  __pascal TSPI_lineGetAddressCaps (
+DWORD                                   dwDeviceID,
+DWORD                                   dwAddressID,
+DWORD                                   dwTSPIVersion,
+DWORD                                   dwExtVersion,
+LPLINEADDRESSCAPS lpAddressCaps)
+
+{
+        int cbLineAddr;
+
+         ;
+
+        
+
+        if (dwDeviceID != pline->lineID)
+                return 0x80000002 ;
+
+        if (dwAddressID != 0)
+                return 0x80000011 ;
+
+        cbLineAddr = _fstrlen (pline->lineaddr) + 1;
+
+        lpAddressCaps->dwNeededSize += cbLineAddr;
+
+        if (lpAddressCaps->dwTotalSize >= lpAddressCaps->dwUsedSize + cbLineAddr)
+        {
+
+                _inline_fmemcpy((char *) lpAddressCaps + lpAddressCaps->dwUsedSize,pline->lineaddr,cbLineAddr) ;
+
+                lpAddressCaps->dwAddressSize     = cbLineAddr;
+                lpAddressCaps->dwAddressOffset = lpAddressCaps->dwUsedSize;
+                lpAddressCaps->dwUsedSize                += cbLineAddr;
+        }
+
+        lpAddressCaps->dwLineDeviceID                   =       pline->lineID;
+
+        lpAddressCaps->dwAddressSharing         =       0x00000001 ;
+        lpAddressCaps->dwAddressStates          =       0x00000004  |
+                                                                                                                0x00000008  |
+                                                                                                                0x00000020  |
+                                                                                                                0x00000100 ;
+        lpAddressCaps->dwCallInfoStates         =       0x00000020 ;
+        lpAddressCaps->dwCallerIDFlags          =       0x00000040 ;
+        lpAddressCaps->dwCalledIDFlags          =       0x00000040 ;
+        lpAddressCaps->dwConnectedIDFlags       =       0x00000040 ;
+        lpAddressCaps->dwRedirectionIDFlags     =       0x00000040 ;
+        lpAddressCaps->dwRedirectingIDFlags     =       0x00000040 ;
+        lpAddressCaps->dwCallStates                     =       0x00000001  |
+                                                                                                                0x00000008  |
+                                                                                                                0x00000010  |
+                                                                                                                0x00000100  |
+                                                                                                                0x00004000  |
+                                                                                                                0x00000200  |
+                                                                                                                0x00008000 ;
+        lpAddressCaps->dwDialToneModes          =       0x00000020 ;
+        lpAddressCaps->dwBusyModes                              =       0x00000008 ;
+        lpAddressCaps->dwSpecialInfo                    =       0x00000010 ;
+        lpAddressCaps->dwDisconnectModes                =       0x00000020 ;
+        lpAddressCaps->dwMaxNumActiveCalls      =       1;
+        lpAddressCaps->dwAddrCapFlags                   =       0x00000020  |
+                                                                                                                0x00010000 ;
+        lpAddressCaps->dwCallFeatures                   =       0x00000040  |
+                                                                                                                0x00000080 ;
+        lpAddressCaps->dwAddressFeatures                =       0x00000002 ;
+
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineGetAddressID (
+HDRVLINE                 hdLine,
+LPDWORD          lpdwAddressID,
+DWORD                    dwAddressMode,
+LPCSTR           lpsAddress,
+DWORD                    dwSize)
+{
+         ;
+
+        if (hdLine != (HDRVLINE) pline)
+                return 0x8000002B ;
+
+        ((void)((dwAddressMode == 0x00000002  ) || (_assert("dwAddressMode == LINEADDRESSMODE_DIALABLEADDR","D:\\sc\\samples\\WIN16\\TAPI\\ATSP\\atsp.c",435),1))) ;
+
+        if (_fstrcmp (pline->lineaddr, lpsAddress))
+                return 0x80000010 ;
+        else
+        {
+                *lpdwAddressID = 0;     
+                return 0;
+        }
+}
+
+ long __export __far  __pascal TSPI_lineGetAddressStatus (
+HDRVLINE                                        hdLine,
+DWORD                                           dwAddressID,
+LPLINEADDRESSSTATUS     lpAddressStatus)
+{
+         ;
+
+        if (dwAddressID)
+                return 0x80000011 ;
+
+        
+
+        if (pline->callState == 0)              
+                lpAddressStatus->dwAddressFeatures = 0x00000002 ;
+        else
+        {
+                lpAddressStatus->dwNumInUse              = 1;
+                lpAddressStatus->dwNumActiveCalls = 1;
+        }
+
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineGetCallAddressID (
+HDRVCALL        hdCall,
+LPDWORD lpdwAddressID)
+{
+         ;
+
+        if (hdCall != (HDRVCALL) pline->htCall)
+                return 0x80000018 ;
+
+        
+        *lpdwAddressID = 0;
+
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineGetCallInfo (
+HDRVCALL                        hdCall,
+LPLINECALLINFO  lpCallInfo)
+{
+        int cbDestAddr = _fstrlen (pline->DestAddress) + 1;
+
+         ;
+
+        if (hdCall != (HDRVCALL) pline->htCall)
+                return 0x80000018 ;
+
+
+        lpCallInfo->dwNeededSize += cbDestAddr;
+
+        if (lpCallInfo->dwTotalSize >= lpCallInfo->dwUsedSize + cbDestAddr)
+        {
+
+                _inline_fmemcpy((char *) lpCallInfo + lpCallInfo->dwUsedSize,pline->DestAddress,cbDestAddr) ;
+
+                lpCallInfo->dwDisplayableAddressSize    = cbDestAddr;
+                lpCallInfo->dwDisplayableAddressOffset  = lpCallInfo->dwUsedSize;
+                lpCallInfo->dwUsedSize                                          += cbDestAddr;
+        }
+
+        lpCallInfo->dwLineDeviceID                                      =       pline->lineID;
+        lpCallInfo->dwBearerMode                                        =       0x00000001 ;
+        lpCallInfo->dwMediaMode                                         =       pline->dwMediaMode;
+        lpCallInfo->dwAppSpecific                                       =       pline->dwAppSpecific;
+        lpCallInfo->dwCallParamFlags                            =       0x00000002 ;
+        lpCallInfo->dwCallStates                                        =       0x00000001  |
+                                                                                                                        0x00000008  |
+                                                                                                                        0x00000010  |
+                                                                                                                        0x00000100  |
+                                                                                                                        0x00004000  |
+                                                                                                                        0x00000200  |
+                                                                                                                        0x00008000 ;
+        lpCallInfo->dwOrigin                                                    =       0x00000001 ;
+        lpCallInfo->dwReason                                                    =       0x00000800 ;
+        lpCallInfo->dwCallerIDFlags                             =       0x00000040 ;
+        lpCallInfo->dwCalledIDFlags                             =       0x00000040 ;
+        lpCallInfo->dwConnectedIDFlags                  =       0x00000040 ;
+        lpCallInfo->dwRedirectionIDFlags                        =       0x00000040 ;
+        lpCallInfo->dwRedirectingIDFlags                        =       0x00000040 ;
+
+        lpCallInfo->DialParams                                          =       pline->dpDialParams;
+
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineGetCallStatus (
+HDRVCALL                          hdCall,
+LPLINECALLSTATUS lpCallStatus)
+{
+         ;
+
+        if (hdCall != (HDRVCALL) pline->htCall)
+                return 0x80000018 ;
+
+        lpCallStatus->dwCallState = pline->callState;
+
+        switch (pline->callState)
+        {
+                case 0x00000001 :
+                case 0x00008000 :
+                        break;
+
+                case 0x00000008 :
+                        lpCallStatus->dwCallStateMode   =       0x00000020 ;
+                        
+
+                case 0x00000010 :
+                        lpCallStatus->dwCallFeatures    =       0x00000040  |
+                                                                                                                0x00000080 ;
+                        break;
+
+                case 0x00004000 :
+                        lpCallStatus->dwCallStateMode   =       0x00000020 ;
+                        lpCallStatus->dwCallFeatures    =       0x00000080 ;
+                        break;
+
+                case 0x00000100 :
+                case 0x00000200 :
+                        lpCallStatus->dwCallFeatures    =       0x00000080 ;
+                        break;
+        }
+
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineGetDevCaps (
+DWORD dwDeviceID,
+DWORD dwTSPIVersion,
+DWORD dwExtVersion,
+LPLINEDEVCAPS lpLineDevCaps)
+{
+        int cbname = _fstrlen (pline->linename) + 1;
+        int cbinfo = _fstrlen (gszProviderInfo) + 1;
+
+         ;
+
+        if (dwDeviceID != pline->lineID)
+                return 0x80000002 ;
+
+
+        lpLineDevCaps->dwNeededSize += cbinfo + cbname;
+
+
+        if (lpLineDevCaps->dwTotalSize >= lpLineDevCaps->dwUsedSize + cbinfo)
+        {
+                
+
+
+                _inline_fmemcpy((char *)lpLineDevCaps + lpLineDevCaps->dwUsedSize,gszProviderInfo,cbinfo) ;
+
+                lpLineDevCaps->dwProviderInfoSize       = cbinfo;
+                lpLineDevCaps->dwProviderInfoOffset     = lpLineDevCaps->dwUsedSize;
+                lpLineDevCaps->dwUsedSize                         += cbinfo;
+        }
+
+        if (lpLineDevCaps->dwTotalSize >= lpLineDevCaps->dwUsedSize + cbname)
+        {
+                
+
+
+                _inline_fmemcpy((char *) lpLineDevCaps + lpLineDevCaps->dwUsedSize,pline->linename,cbname) ;
+
+                lpLineDevCaps->dwLineNameSize           = cbname;
+                lpLineDevCaps->dwLineNameOffset = lpLineDevCaps->dwUsedSize;
+                lpLineDevCaps->dwUsedSize                 += cbname;
+        }
+
+
+        lpLineDevCaps->dwPermanentLineID                = (pline->dwppID << 16) + 0;
+
+        lpLineDevCaps->dwAddressModes                   =       0x00000001 ;
+        lpLineDevCaps->dwNumAddresses                   =       1;
+        lpLineDevCaps->dwMaxNumActiveCalls      =       1;
+        lpLineDevCaps->dwStringFormat                   =       0x00000001 ;
+        lpLineDevCaps->dwBearerModes                    =       0x00000001 ;
+        lpLineDevCaps->dwMediaModes                     =       0x00000004 ;
+        lpLineDevCaps->dwGenerateDigitModes     =       0x00000001  |
+                                                                                                                0x00000002 ;
+        lpLineDevCaps->dwLineStates                     =       0x00000800  |
+                                                                                                                0x00100000 ;
+
+        lpLineDevCaps->MinDialParams.dwDialSpeed                                = 50 ;
+        lpLineDevCaps->DefaultDialParams.dwDialSpeed                    = 95 ;
+        lpLineDevCaps->MaxDialParams.dwDialSpeed                                = 255 ;
+
+        lpLineDevCaps->MinDialParams.dwDigitDuration                    = 50 ;
+        lpLineDevCaps->DefaultDialParams.dwDigitDuration        = 95 ;
+        lpLineDevCaps->MaxDialParams.dwDigitDuration                    = 255 ;
+
+        lpLineDevCaps->MinDialParams.dwWaitForDialtone          = 1000 ;
+        lpLineDevCaps->DefaultDialParams.dwWaitForDialtone      = 60000 ;
+        lpLineDevCaps->MaxDialParams.dwWaitForDialtone          = 255000 ;
+
+        lpLineDevCaps->MinDialParams.dwDialPause                                = 0 ;
+        lpLineDevCaps->DefaultDialParams.dwDialPause                    = 2000 ;
+        lpLineDevCaps->MaxDialParams.dwDialPause                                = 255000 ;
+
+        lpLineDevCaps->dwLineFeatures   = 0x00000008 ;
+
+        
+        
+
+        lpLineDevCaps->dwDevCapFlags    =       0x00000020  |
+                                                                                                0x00000080  |
+                                                                                                0x00000100 ;
+
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineGetID (
+HDRVLINE                        hdLine,
+DWORD                           dwAddressID,
+HDRVCALL                        hdCall,
+DWORD                           dwSelect,
+LPVARSTRING             lpDeviceID,
+LPCSTR                  lpszDeviceClass)
+{
+         ;
+
+        
+        
+
+        if (hdLine != (HDRVLINE) pline)
+                return 0x8000002B ;
+
+        if (_fstrcmp (lpszDeviceClass, "tapi/line") == 0)
+        {
+                lpDeviceID->dwNeededSize += sizeof (DWORD);
+
+                if (lpDeviceID->dwTotalSize >= lpDeviceID->dwUsedSize + sizeof (DWORD))
+                {
+        lpDeviceID->dwStringFormat      = 0x00000004 ;
+        lpDeviceID->dwStringSize        = sizeof (DWORD);
+        lpDeviceID->dwStringOffset      = lpDeviceID->dwUsedSize;
+
+        *((DWORD *) ((char *) lpDeviceID + lpDeviceID->dwUsedSize)) = pline->lineID;
+
+                        lpDeviceID->dwUsedSize          += sizeof (DWORD);
+                }
+
+                return 0;
+        }
+
+
+#line 713
+        return 0x80000042 ;
+}
+
+ long __export __far  __pascal TSPI_lineGetLineDevStatus (
+HDRVLINE                         hdLine,
+LPLINEDEVSTATUS lpLineDevStatus)
+{
+         ;
+
+        if (hdLine != (HDRVLINE) pline)
+                return 0x8000002B ;
+
+        lpLineDevStatus->dwRoamMode              = 0x00000002 ;
+
+        lpLineDevStatus->dwDevStatusFlags = 0x00000001  |
+                                                                                                        0x00000004 ;
+
+        if (pline->callState == 0)
+        {
+                lpLineDevStatus->dwNumActiveCalls = 0;
+                lpLineDevStatus->dwLineFeatures  = 0x00000008 ;
+        }
+        else
+        {
+                lpLineDevStatus->dwNumActiveCalls = 1;
+        }
+
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineGetNumAddressIDs (
+HDRVLINE        hdLine,
+LPDWORD lpNumAddressIDs)
+{
+         ;
+
+        if (hdLine != (HDRVLINE) pline)
+                return 0x8000002B ;
+
+        *lpNumAddressIDs = 1;   
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineMakeCall (
+DRV_REQUESTID                           dwRequestID,
+HDRVLINE                                                hdLine,
+HTAPICALL                                       htCall,
+LPHDRVCALL                                      lphdCall,
+LPCSTR                                          lpszDestAddress,
+DWORD                                                   dwCountryCode,
+LPLINECALLPARAMS const  lpCallParams)
+{
+        long res;
+
+         ;
+
+        
+        if (lpszDestAddress && (res = CheckDestAddress (lpszDestAddress)))
+                return res;
+
+        if (pline->callState != 0)
+                return 0x80000005 ;
+
+        if (lpCallParams)
+        {
+                if (lpCallParams->dwBearerMode != 0x00000001 )
+                        return 0x80000016 ;
+
+                if (lpCallParams->dwMediaMode != 0x00000004 )
+                        return 0x8000002F ;
+
+                if (lpCallParams->dwCallParamFlags & ~(0x00000002 ))
+                        return 0x80000019 ;
+
+                fillDialParams (&lpCallParams->DialParams, &pline->dpDialParams);
+        }
+
+        
+
+        pline->htCall = htCall;                 
+        *lphdCall = (HDRVCALL) htCall;
+
+        pline->dwAppSpecific = 0;
+
+        if (lpszDestAddress)
+        {
+                _fstrcpy (pline->DestAddress, lpszDestAddress);
+                pline->partial = (lpszDestAddress[lstrlen (lpszDestAddress) - 1] == ';');
+        }
+        else
+        {
+                pline->DestAddress[0] = 0;
+                pline->partial = 0 ;
+        }
+
+        
+
+        return appCall (1 , pline, dwRequestID);
+}
+
+long appCall (int msg, ATSPLineData *pline, long dwRequestID)
+{
+        long res;
+
+        if (atspexehwnd == 0)
+        {
+                 ;
+                return 0x80000043 ;
+        }
+
+        if (pline->dwRequestID)
+        {
+                 ;
+                return 0x8000001C ;
+        }
+
+        pline->dwRequestID = dwRequestID;
+
+        if ((res = SendMessage (atspexehwnd, (0x0400  + 97) , msg, (long) pline)) < 0)
+                 ;
+
+        return res;
+}
+
+void fillDialParams (LPLINEDIALPARAMS source, LPLINEDIALPARAMS dest)
+{
+        
+        
+
+        DWORD   pause           = source->dwDialPause;
+        DWORD   speed           = source->dwDialSpeed;
+        DWORD   duration = source->dwDigitDuration;
+        DWORD   dialtone = source->dwWaitForDialtone;
+
+        if (pause == 0)
+                pause = 2000 ;
+        else if (pause < 0 )
+                pause = 0 ;
+        else if (pause > 255000 )
+                pause = 255000 ;
+
+        if (speed == 0)
+                speed = 95 ;
+        else if (speed < 50 )
+                speed = 50 ;
+        else if (speed > 255 )
+                speed = 255 ;
+
+        if (duration == 0)
+                duration = 95 ;
+        else if (duration < 50 )
+                duration = 50 ;
+        else if (duration > 255 )
+                duration = 255 ;
+
+        if (dialtone == 0)
+                dialtone = 60000 ;
+        else if (dialtone < 1000 )
+                dialtone = 1000 ;
+        else if (dialtone > 255000 )
+                dialtone = 255000 ;
+
+        dest->dwDialPause                       = pause;
+        dest->dwDialSpeed                       = speed;
+        dest->dwDigitDuration   = duration;
+        dest->dwWaitForDialtone = dialtone;
+}
+
+ long __export __far  __pascal TSPI_lineOpen (
+DWORD                   dwDeviceID,
+HTAPILINE       htLine,
+LPHDRVLINE      lphdLine,
+DWORD                   dwTSPIVersion,
+LINEEVENT       lpfnEventProc)
+{
+         ;
+
+        if (dwDeviceID != pline->lineID)
+                return 0x80000002 ;
+
+        
+        
+
+        pline->lpfnEventProc = lpfnEventProc;
+        pline->htLine                    = htLine;
+        *lphdLine                        = (HDRVLINE) pline;
+
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineSetAppSpecific (
+HDRVCALL        hdCall,
+DWORD           dwAppSpecific)
+{
+         ;
+
+        if ((hdCall != (HDRVCALL) pline->htCall) ||
+                (pline->callState = 0))
+                return 0x80000018 ;
+
+        pline->dwAppSpecific = dwAppSpecific;
+
+        pline->lpfnEventProc (pline->htLine, pline->htCall, 1L ,
+                                                          0x00000020 , 0, 0);
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineConditionalMediaDetection (
+HDRVLINE          hdLine,
+DWORD             dwMediaModes,
+LPLINECALLPARAMS  const lpCallParams)
+{
+         ;
+
+        if (hdLine != (HDRVLINE) pline)
+                return 0x8000002B ;
+
+        if (dwMediaModes != 0x00000004 )
+                return 0x8000002F ;
+
+        if ((lpCallParams) &&
+                ((lpCallParams->dwBearerMode != 0x00000001 ) ||
+                        (lpCallParams->dwMediaMode != 0x00000004 ) ||
+                        (lpCallParams->dwCallParamFlags & ~(0x00000002 ))))
+                return 0x8000002F ;
+
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineSetDefaultMediaDetection (
+HDRVLINE        hdLine,
+DWORD           dwMediaModes)
+{
+         ;
+
+        if (hdLine != (HDRVLINE) pline)
+                return 0x8000002B ;
+
+        if (dwMediaModes && dwMediaModes != 0x00000004 )
+                return 0x8000002F ;
+
+        pline->dwLineMediaModes = dwMediaModes;
+
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineSetMediaMode (
+HDRVCALL        hdCall,
+DWORD           dwMediaMode)
+{
+         ;
+
+        if (hdCall != (HDRVCALL) pline->htCall)
+                return 0x80000018 ;
+
+        if (dwMediaMode != 0x00000004 )
+                return 0x8000002F ;
+
+        pline->dwMediaMode = dwMediaMode;
+
+        return 0;
+}
+
+ long __export __far  __pascal TSPI_lineSetStatusMessages (
+HDRVLINE        hdLine,
+DWORD           dwLineStates,
+DWORD           dwAddressStates)
+{
+         ;
+
+        if (hdLine != (HDRVLINE) pline)
+                return 0x8000002B ;
+
+        pline->dwLineStates             = dwLineStates;
+        pline->dwAddressStates  = dwAddressStates;
+
+        return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+ long __export __far  __pascal TSPI_providerInstall (HWND hwnd, DWORD dwPermanentProviderId)
+{
+        int res;
+        OFSTRUCT OpenBuff;
+        ATSPLineData tmpline;
+
+         ;
+
+        if (!initialised)
+                LoadIniStrings (dwPermanentProviderId, &tmpline);
+        else if (dwPermanentProviderId != pline->dwppID)
+        {
+                res = 3 ;
+                goto error;
+        }
+
+        
+        if (OpenFile (s_atspexe_exe, &OpenBuff, 0x4000 ) == ((HFILE)-1) )
+        {
+                res = 4 ;
+                goto error;
+        }
+
+        
+        if (!doConfigDialog (hwnd, (initialised ? pline : &tmpline)))
+                return 0;
+        else
+                return 0x80000048 ;
+
+error:
+        {
+                char szerr[255];
+                char title[255];
+
+                LoadString (hInst, res, szerr, sizeof (szerr));
+                LoadString (hInst, 5 , title, sizeof (title));
+
+                MessageBox (hwnd, szerr, title, 0x0000  | 0x0030 );
+
+                return 0x80000048 ;
+        }
+}
+
+
+ long __export __far  __pascal TSPI_providerRemove (HWND hwnd, DWORD dwPermanentProviderId)
+{
+         ;
+
+        
+        
+
+        return 0;
+}
+
+
+ long __export __far  __pascal TSPI_providerConfig (HWND hwnd, DWORD dwPermanentProviderId)
+{
+        ATSPLineData tmpline;
+         ;
+
+        if (!initialised)
+                LoadIniStrings (dwPermanentProviderId, &tmpline);
+        else if (pline && dwPermanentProviderId != pline->dwppID)
+                return 0x80000056 ;
+
+        doConfigDialog (hwnd, (initialised ? pline : &tmpline));
+
+        return 0;
+}
+
+
+ long __export __far  __pascal TSPI_providerEnumDevices(
+    DWORD    dwPermanentProviderID,
+    LPDWORD  lpdwNumLines,
+    LPDWORD  lpdwNumPhones,
+    HPROVIDER   hProvider,
+    LINEEVENT   lpfnLineCreateProc,
+    PHONEEVENT  lpfnPhoneCreateProc)
+{
+         ;
+
+        if (pline && dwPermanentProviderID != pline->dwppID)
+                return 0x80000056 ;
+
+        *lpdwNumLines  = 1;
+        *lpdwNumPhones = 0;
+
+        return 0;
+}
+
+
+
+
+
+
+
+void LoadIniStrings (DWORD ppID, ATSPLineData *plinedata)
+{
+        char section[sizeof (s_providerx) + 5];         
+
+
+#line 1107
+        wsprintf (section, s_providerx, (int) ppID);
+        plinedata->dwppID = ppID;
+
+        
+
+        plinedata->ignore = GetPrivateProfileInt (section, s_ignore,
+                                                                                                                        0, s_telephon_ini);
+        plinedata->pulse  = GetPrivateProfileInt (section, s_pulse,
+                                                                                                                        0, s_telephon_ini);
+
+        GetPrivateProfileString (section, s_port, "COM1", plinedata->port,
+                                                                                        sizeof (plinedata->port), s_telephon_ini);
+        GetPrivateProfileString (section, s_speed, "9600", plinedata->speed,
+                                                                                        sizeof (plinedata->speed), s_telephon_ini);
+        GetPrivateProfileString (section, s_initstr, "", plinedata->initstr,
+                                                                                        sizeof (plinedata->initstr), s_telephon_ini);
+        GetPrivateProfileString (section, s_linename, "", plinedata->linename,
+                                                                                        sizeof (plinedata->linename), s_telephon_ini);
+        GetPrivateProfileString (section, s_lineaddr, "", plinedata->lineaddr,
+                                                                                        sizeof (plinedata->lineaddr), s_telephon_ini);
+
+        
+
+        gszProviderInfo[0] = 0;         
+
+        LoadString (hInst, 2 , gszProviderInfo,
+                                                                                                sizeof (gszProviderInfo));
+}
+
+
+ATSPLineData *cfgdlgline = 0 ;
+
+int doConfigDialog (HWND hwnd, ATSPLineData *pline)
+{
+        cfgdlgline = pline;
+        return DialogBox (hInst, ((LPCSTR)((void  _far*)(( long)(((WORD)(((101 )))) | (((DWORD)((WORD)((0)))) << 16))) ) ) , hwnd, ConfigDlgProc);
+}
+
+
+BOOL _far  _pascal __export
+ConfigDlgProc (HWND hDlg, UINT uiMsg, WPARAM wParam, LPARAM lParam)
+{
+  int CurrSel;
+
+  switch (uiMsg)
+  {
+        case 0x0110 :
+   {
+                for (CurrSel = 0; CurrSel < 4 ; CurrSel++)
+                {
+                        
+                        SendDlgItemMessage (hDlg, 1000 , (0x0400 +3) ,
+                                                                        0, (LPARAM) ((LPSTR) lpszCommDevArray[CurrSel]));
+                }
+
+                for (CurrSel = 0; CurrSel < 7 ; CurrSel++)
+                {
+                        SendDlgItemMessage(hDlg, 1001 , (0x0400 +3) ,
+                                                                0, (LPARAM) ((LPSTR) lpszCommSpeedArray[CurrSel]));
+                }
+
+                CurrSel = (int) SendDlgItemMessage (hDlg, 1000 ,  (0x0400 +12) , 0,
+                                                                                                        (LPARAM) (LPSTR) cfgdlgline->port);
+                SendDlgItemMessage (hDlg, 1000 ,              (0x0400 +14) ,
+                                                                                                        CurrSel, 0);
+                CurrSel = (int) SendDlgItemMessage (hDlg, 1001 , (0x0400 +12) , 0,
+                                                                                                        (LPARAM) (LPSTR) cfgdlgline->speed);
+                SendDlgItemMessage (hDlg, 1001 ,             (0x0400 +14) ,
+                                                                                                        CurrSel, 0);
+                SendDlgItemMessage (hDlg, 1002 , 0x000C , 0,
+                                                                                                        (LPARAM) (LPSTR) cfgdlgline->linename);
+                SendDlgItemMessage (hDlg, 1003 , 0x000C , 0,
+                                                                                                        (LPARAM) (LPSTR) cfgdlgline->lineaddr);
+                SendDlgItemMessage (hDlg, 1004 ,   0x000C , 0,
+                                                                                                        (LPARAM) (LPSTR) cfgdlgline->initstr);
+                SendDlgItemMessage (hDlg, 1006 ,    (0x0400 +1) ,
+                                                                                                        cfgdlgline->ignore, 0);
+                SendDlgItemMessage (hDlg, 1005 ,             (0x0400 +1) ,
+                                                                                                        cfgdlgline->pulse, 0);
+        }
+        break;
+
+        case 0x0111 :
+        {
+          switch (wParam)
+          {
+                case 1 :
+                {
+                        
+                        
+                        
+
+                        char Buffer[20];        
+
+                        char szp[sizeof (s_providerx) + 5];             
+                        wsprintf (szp, s_providerx, (int) cfgdlgline->dwppID);
+
+                        
+
+                        CurrSel = (int) SendDlgItemMessage (hDlg, 1000 ,
+                                                                                                                                (0x0400 +7) , 0, 0);
+                        SendDlgItemMessage (hDlg, 1000 , (0x0400 +8) , CurrSel,
+                                                                                                                                (LPARAM) (LPSTR) cfgdlgline->port);
+                        WritePrivateProfileString (szp, s_port, cfgdlgline->port, s_telephon_ini);
+
+                        
+
+                        CurrSel = (int) SendDlgItemMessage (hDlg, 1001 ,
+                                                                                                                                (0x0400 +7) , 0, 0);
+                        SendDlgItemMessage (hDlg, 1001 , (0x0400 +8) , CurrSel,
+                                                                                                                                (LPARAM) (LPSTR) cfgdlgline->speed);
+                        WritePrivateProfileString (szp, s_speed, cfgdlgline->speed, s_telephon_ini);
+
+                        
+
+                        SendDlgItemMessage (hDlg, 1002 , 0x000D ,
+                                                        sizeof (cfgdlgline->linename), (LPARAM) (LPSTR) cfgdlgline->linename);
+                        WritePrivateProfileString (szp, s_linename, cfgdlgline->linename,
+                                                                                                                                                                s_telephon_ini);
+
+                        
+
+                        SendDlgItemMessage (hDlg, 1003 , 0x000D ,
+                                                        sizeof (cfgdlgline->lineaddr), (LPARAM) (LPSTR) cfgdlgline->lineaddr);
+                        WritePrivateProfileString (szp, s_lineaddr, cfgdlgline->lineaddr,
+                                                                                                                                                                s_telephon_ini);
+
+                        
+
+                        SendDlgItemMessage (hDlg, 1004 , 0x000D ,
+                                                                sizeof (cfgdlgline->initstr), (LPARAM) (LPSTR) cfgdlgline->initstr);
+                        AnsiUpper (cfgdlgline->initstr);
+                        WritePrivateProfileString (szp, s_initstr, cfgdlgline->initstr,
+                                                                                                                                                                s_telephon_ini);
+
+                        
+
+                        cfgdlgline->ignore = (int) SendDlgItemMessage (hDlg, 1006 ,
+                                                                                                                                                (0x0400 +0) , 0, 0);
+                        _itoa(cfgdlgline->ignore, Buffer, 10);
+                        WritePrivateProfileString (szp, s_ignore, Buffer, s_telephon_ini);
+
+                        
+
+                        cfgdlgline->pulse = (int) SendDlgItemMessage(hDlg, 1005 ,
+                                                                                                                                                (0x0400 +0) , 0, 0);
+                        _itoa(cfgdlgline->pulse, Buffer, 10);
+                        WritePrivateProfileString (szp, s_pulse, Buffer, s_telephon_ini);
+
+                        
+
+                        WritePrivateProfileString (0, 0, 0, s_telephon_ini);
+
+                        
+                        if (pline && pline->lpfnEventProc)
+                        {
+                                if (pline->dwAddressStates & 0x00000100 )
+                                        pline->lpfnEventProc (pline->htLine, 0, 0L ,
+                                                                                         0, 0x00000100 , 0);
+                                if (pline->dwLineStates & 0x00100000 )
+                                        pline->lpfnEventProc (pline->htLine, 0, 8L ,
+                                                                                         0x00100000 , 0, 0);
+                        }
+
+                        EndDialog (hDlg, 0);
+                }
+                break;
+
+                case 2 :
+                        EndDialog (hDlg, -1);
+                        break;
+          }
+        }
+        break;
+
+        default:
+                return 0 ;
+  }
+
+  return 1 ;
+}
+
+

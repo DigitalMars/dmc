@@ -1,0 +1,173 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1994 - 1995  Microsoft Corporation.  All Rights Reserved.
+ * 
+ **************************************************************************/
+
+#include "windows.h"
+#include "resource.h"
+
+#define IDC_STATIC              -1      // all static controls
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+FILEVERSION 4,0,0,0
+PRODUCTVERSION 4,0,0,0
+FILEFLAGSMASK 0x1L
+FILEFLAGS 0x0L
+FILEOS 0x1L
+FILETYPE 0x2L
+FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "Microsoft Corporation\0"
+            VALUE "FileDescription", "Microsoft SoundApp Executable\0"
+	    VALUE "FileVersion", "4.00\0"
+            VALUE "InternalName", "SoundApp\0"
+	    VALUE "LegalCopyright", "Copyright \251 1994 - 1995 Microsoft Corporation\0"
+            VALUE "ProductName", "Microsoft SoundApp Executable\0"
+	    VALUE "ProductVersion", "4.00\0"
+        END
+    END
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+SOUNDAPP DIALOG DISCARDABLE  0, 0, 235, 119
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "SoundApp"
+MENU IDR_MENU
+CLASS "SoundApp"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RADIOBUTTON     "S&ynchronous",IDC_SYNC,24,31,57,10,WS_TABSTOP
+    RADIOBUTTON     "&Asynchronous",IDC_ASYNC,24,44,59,10,WS_TABSTOP
+    CHECKBOX        "No &Default",IDC_NODEFAULT,24,60,50,10
+    CHECKBOX        "&Loop",IDC_LOOP,24,73,32,10
+    CHECKBOX        "&No Stop",IDC_NOSTOP,24,87,41,10
+    PUSHBUTTON      "S&elect File...",IDC_BUTTON_OPEN,108,44,51,15
+    PUSHBUTTON      "&Play",IDC_BUTTON_PLAY,108,89,51,15
+    PUSHBUTTON      "&Stop",IDC_BUTTON_STOP,170,89,51,15
+    GROUPBOX        "Options",IDC_OPTIONS,14,10,83,94
+    GROUPBOX        "",IDC_OPTIONS,20,23,71,34
+    EDITTEXT        IDC_EDIT_FILE,108,23,113,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+    LTEXT           "File",IDC_OPTIONS,109,12,24,10
+END
+
+IDD_DIALOG_ABOUT DIALOG DISCARDABLE  0, 0, 185, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "About SoundApp"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,67,68,50,14
+    LTEXT           "sndPlaySound demo application version 1.0",IDC_STATIC,
+                    20,11,144,9
+    LTEXT	    "Copyright \251 1994 - 1995 Microsoft Corporation",IDC_STATIC,
+                    26,48,133,9
+    LTEXT           "for Microsoft Windows version 4.0",IDC_STATIC,33,25,119,
+                    9
+END
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "S&elect File...",             ID_FILE_SELECT
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "S&ynchronous",                ID_OPTIONS_SYNC
+        MENUITEM "&Asynchronous",               ID_OPTIONS_ASYNC
+        MENUITEM "No &Default",                 ID_OPTIONS_NODEFAULT
+        MENUITEM "&Loop",                       ID_OPTIONS_LOOP
+        MENUITEM "&No Stop",                    ID_OPTIONS_NOSTOP
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About SoundApp...",          ID_HELP_ABOUT
+    END
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_SOUNDAPP            ICON    DISCARDABLE     "SOUNDAPP.ICO"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FILTERSTRING        "Sound File (*.wav)|*.WAV|"
+    IDS_SELECT_FILE         "Select File"
+END
+
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

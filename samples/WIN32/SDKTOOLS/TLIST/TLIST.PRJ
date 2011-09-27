@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\SDKTOOLS\TLIST\TLIST.PRJ
+TLIST.OPN
+novcs
+TLIST.DEF
+4
+812035224
+0 0 0 0 0 "common.c" ""
+0 0 0 0 0 "tlist.c" ""
+0 0 0 0 0 "tlist.def" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "kill.prj" ""

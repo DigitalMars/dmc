@@ -1,0 +1,86 @@
+$(O)busy.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h common.h utility.h busy.h
+
+$(O)common.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h common.h utility.h
+
+$(O)convert.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h common.h utility.h geticon.h regdb.h  \
+	convert.h
+
+$(O)dbgutil.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h
+
+$(O)regdb.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h
+
+$(O)drawicon.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h common.h utility.h geticon.h
+
+$(O)hatch.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h
+
+$(O)icon.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h common.h utility.h icon.h geticon.h
+
+$(O)iconbox.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h iconbox.h
+
+$(O)insobj.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h common.h utility.h icon.h insobj.h  \
+	resimage.h iconbox.h geticon.h
+
+$(O)links.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h common.h edlinks.h utility.h
+
+$(O)msgfiltr.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h msgfiltr.h
+
+$(O)enumfetc.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h
+
+$(O)enumstat.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h
+
+$(O)objfdbk.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h
+
+$(O)ole2ui.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h common.h utility.h resimage.h iconbox.h
+
+$(O)olestd.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h regdb.h geticon.h common.h
+
+$(O)targtdev.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h
+
+$(O)oleutl.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h
+
+$(O)pastespl.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h pastespl.h common.h utility.h resimage.h iconbox.h  \
+	geticon.h regdb.h
+
+$(O)resimage.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h resimage.h
+
+$(O)utility.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h common.h utility.h geticon.h
+
+$(O)dllfuncs.obj : $(PRECOMPOBJ) \
+	ole2ui.h olestd.h common.h
+
+$(O)NOPC\geticon.obj : \
+	ole2ui.h olestd.h geticon.h
+
+$(O)NOPC\dballoc.obj : \
+	dballoc.h
+
+$(O)NOPC\suminfo.obj : \
+	suminfo.h wn_dos.h
+
+$(O)NOPC\stdpal.obj : \
+	stdpal.h
+
+$(O)precomp.pch : \
+	ole2ui.h olestd.h

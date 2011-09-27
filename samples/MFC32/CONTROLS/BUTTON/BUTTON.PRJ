@@ -1,0 +1,12 @@
+82570
+c:\SamplesMFC32\CONTROLS\BUTTON\button.prj
+button.OPN
+novcs
+button.DEF
+17
+836972274
+0 0 0 0 0 "btnctl.cpp" ""
+0 0 0 0 0 "btnppg.cpp" ""
+0 0 0 0 0 "button.cpp" ""
+0 0 0 0 0 "button.def" ""
+0 0 0 0 0 "button.rc" ""

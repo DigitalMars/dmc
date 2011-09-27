@@ -1,0 +1,69 @@
+// DaoEdit.odl : type library source for OLE Custom Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (DaoEdit.tlb) that will become a resource in
+// DaoEdit.ocx.
+
+#include <olectl.h>
+
+[ uuid(5FDFC3E0-C360-11CE-A987-00AA006EA4DA), version(1.0),
+  helpstring("DaoEdit OLE Custom Control module"), control ]
+library DAOEDITLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CDaoEditCtrl
+
+	[ uuid(5FDFC3E1-C360-11CE-A987-00AA006EA4DA),
+	  helpstring("Dispatch interface for DaoEdit Control"), hidden ]
+	dispinterface _DDaoEdit
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDaoEditCtrl)
+			[id(DISPID_TEXT), bindable, requestedit, displaybind, defaultbind] BSTR Text;
+			[id(0)] BSTR _Text;
+			[id(DISPID_BORDERSTYLE), bindable, requestedit] short BorderStyle;
+			[id(1)] BSTR FieldName;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDaoEditCtrl)
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CDaoEditCtrl
+
+	[ uuid(5FDFC3E2-C360-11CE-A987-00AA006EA4DA),
+	  helpstring("Event interface for DaoEdit Control") ]
+	dispinterface _DDaoEditEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CDaoEditCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CDaoEditCtrl
+
+	[ uuid(5FDFC3E3-C360-11CE-A987-00AA006EA4DA),
+	  helpstring("DaoEdit Control"), control ]
+	coclass DaoEdit
+	{
+		[default] dispinterface _DDaoEdit;
+		[default, source] dispinterface _DDaoEditEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+};

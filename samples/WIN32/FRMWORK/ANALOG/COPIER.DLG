@@ -1,0 +1,15 @@
+DLG_COPIER DIALOG 28, 28, 225, 87
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "Copier Panel"
+BEGIN
+    LTEXT           "&Number of Copies", IDD_NCOPYTXT, 5, 5, 60, 8
+    EDITTEXT                    IDD_NCOPIES,   75,  5, 25, 12, ES_AUTOHSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "&START",    IDOK,          5, 25, 45, 40, WS_TABSTOP
+    PUSHBUTTON      "&Re-Set",   IDD_RESET,    57, 25, 50, 15, WS_TABSTOP
+    PUSHBUTTON      "&Cancel",   IDD_STOP,     57, 50, 50, 15, WS_TABSTOP
+    LTEXT           "&0%              100%            200%", IDD_ENLARGE, 120, 
+                    6, 97, 8
+    LTEXT           "&Lighter         Auto          Darker", IDD_DARK, 120, 
+                    40, 97, 8
+END
+

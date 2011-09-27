@@ -1,0 +1,12 @@
+82570
+D:\prj\scmfc\mfc\src\32-bit\projects\SFCS42U.PRJ
+SFCS42U.OPN
+novcs
+SFCS42U.DEF
+13
+823551920
+0 0 0 0 0 "..\APPMODUL.CPP" ""
+0 0 0 0 0 "..\DLLMODUL.CPP" ""
+0 0 0 0 0 "..\NOLIB.CPP" ""
+0 0 0 0 0 "..\OLEEXP.CPP" ""
+0 0 0 0 0 "SFCS42U.DEF" ""

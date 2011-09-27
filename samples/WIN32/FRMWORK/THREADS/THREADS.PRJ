@@ -1,0 +1,16 @@
+82572
+C:\SC\samples\win32\FRMWORK\THREADS\THREADS.PRJ
+THREADS.OPN
+novcs
+threads.def
+16
+812035224
+0 0 0 0 0 "about.c" ""
+0 0 0 0 0 "dispatch.c" ""
+0 0 0 0 0 "init.c" ""
+0 0 0 0 0 "misc.c" ""
+0 0 0 0 0 "threads.c" ""
+0 0 0 0 0 "winmain.c" ""
+0 0 0 0 0 "threads.rc" ""
+0 0 0 0 0 "threads.def" ""
+0 0 0 0 0 "version.lib" ""

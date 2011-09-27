@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\BASE\NWLINK\DGSEND\DGSEND.PRJ
+DGSEND.OPN
+novcs
+dgsend.def
+19
+812035224
+0 0 0 0 0 "dgsend.c" ""
+0 0 0 0 0 "dgsend.def" ""
+0 0 0 0 0 "testlib.lib" ""
+0 0 0 0 0 "wsock32.lib" ""
+0 0 0 0 0 "..\testlib\testlib.prj" ""

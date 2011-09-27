@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\RPC\DICT\PLAY.PRJ
+PLAY.OPN
+novcs
+play.DEF
+4
+812035224
+0 0 0 0 0 "dict0.c" ""
+0 0 0 0 0 "play.c" ""
+0 0 0 0 0 "util0.c" ""
+0 0 0 0 0 "play.def" ""

@@ -1,0 +1,60 @@
+#include <windows.h>
+#include "stereo.h"
+
+// icons
+
+AMP_ICON ICON AMP.ICO
+TUNER_ICON ICON TUNER.ICO
+TAPE_ICON ICON TAPE.ICO
+
+
+
+// dialogs
+
+AMP_DLG DIALOG 83, 33, 160, 100
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Amp Applet"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "This is just a test ", 101, 18, 17, 121, 8
+    LTEXT           "I don't do anything - hit OK", 102, 19, 34, 98, 8
+    PUSHBUTTON      "OK", IDOK, 56, 71, 40, 14
+END
+
+
+TUNER_DLG DIALOG 83, 33, 160, 100
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Tuner Applet"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "This is just a test ", 101, 18, 17, 121, 8
+    LTEXT           "I don't do anything - hit OK", 102, 19, 34, 98, 8
+    PUSHBUTTON      "OK", IDOK, 56, 71, 40, 14
+END
+
+TAPE_DLG DIALOG 83, 33, 160, 100
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Tape Applet"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "This is just a test ", 101, 18, 17, 121, 8
+    LTEXT           "I don't do anything - hit OK", 102, 19, 34, 98, 8
+    PUSHBUTTON      "OK", IDOK, 56, 71, 40, 14
+END
+
+
+// strings
+STRINGTABLE
+BEGIN
+	CPCAPTION,  "Control Panel"
+	AMP_NAME,   "Amp Applet"
+        AMP_DESC,   "This applet does nothing."
+        TUNER_NAME, "Tuner Applet"
+        TUNER_DESC, "This applet does nothing."
+        TAPE_NAME,  "Tape Applet"
+        TAPE_DESC,  "This applet does nothing."
+END
+

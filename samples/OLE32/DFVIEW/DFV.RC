@@ -1,0 +1,119 @@
+//+---------------------------------------------------------------------------
+//
+//  Microsoft Windows
+//  Copyright (C) Microsoft Corporation, 1992 - 1995.
+//
+//  File:       DFV.rc
+//
+//  Contents:   resources for Stereo Shop
+//
+//  History:    6-08-94   stevebl   Created
+//
+//----------------------------------------------------------------------------
+
+#include "dfv.h"
+
+#define VER_PRODUCTVERSION_STR      "3.50"
+#define VER_COMPANYNAME_STR         "Microsoft Corporation"
+#define VER_PRODUCTNAME_STR         "Microsoft\256 Windows NT(TM) Operating System"
+#define VER_LEGALCOPYRIGHT_YEARS    "1981-1995"
+#define VER_LEGALCOPYRIGHT_STR "Copyright \251 Microsoft Corp. " VER_LEGALCOPYRIGHT_YEARS
+#define VER_PRODUCTNAME_STR "Microsoft\256 Windows NT(TM) Operating System"
+#define VER_PRODUCTVERSION 3,50,01,001
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION    VER_PRODUCTVERSION
+PRODUCTVERSION VER_PRODUCTVERSION
+FILEFLAGSMASK  VS_FFI_FILEFLAGSMASK
+FILEFLAGS      0
+FILEOS         VOS_NT_WINDOWS32
+FILETYPE       VFT_APP
+FILESUBTYPE    VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"   /* LANG_ENGLISH/SUBLANG_ENGLISH_US, Unicode CP */
+        BEGIN
+            VALUE "CompanyName",     VER_COMPANYNAME_STR
+            VALUE "FileDescription", VER_FILEDESCRIPTION_STR
+            VALUE "FileVersion",     VER_PRODUCTVERSION
+            VALUE "InternalName",    VER_INTERNALNAME_STR
+            VALUE "LegalCopyright",  VER_LEGALCOPYRIGHT_STR
+            VALUE "OriginalFilename",VER_ORIGINALFILENAME_STR
+            VALUE "ProductName",     VER_PRODUCTNAME_STR
+            VALUE "ProductVersion",  VER_PRODUCTVERSION_STR
+        END
+
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 0x04B0
+    END
+END
+
+AppIcon ICON DFV.ico
+StreamIcon ICON stream.ico
+
+BMP_STORAGE     BITMAP  DISCARDABLE "FOLDER.BMP"
+BMP_STREAM      BITMAP  DISCARDABLE "DOCUMENT.BMP"
+
+MAIN_WINDOW_CLASS_MENU MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open DocFile...", IDM_OPEN
+        MENUITEM "&Close", IDM_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",IDM_EXIT
+    END
+    POPUP "&Tree"
+    BEGIN
+        MENUITEM "E&xpand  \a+", IDM_EXPAND
+        MENUITEM "Expand &Branch  \a*", IDM_EXPANDBRANCH
+        MENUITEM "Expand &All  \aCtrl+*", IDM_EXPANDALL
+        MENUITEM "&Collapse Branch  \a-", IDM_COLLAPSE
+        MENUITEM "C&ollapse All \aCtrl+-", IDM_COLLAPSEALL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Index...  \aF1", IDM_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About DocFile Viewer...", IDM_ABOUT
+    END
+END
+
+#include "DFV.dlg"
+
+STRINGTABLE
+BEGIN
+    IDS_ERROR                   "Error"
+    IDS_NOHELPFILE              "Can't find help file."
+    IDS_OLEINCOMPATIBLE         "This program is incompatible with the version of OLE installed on this system.  This program requires at least OLE2 version %i - %i"
+    IDS_OLEINITFAILED           "OLE initizlization failed."
+    IDS_ENUMSTATSTGFAILED       "IStorage::EnumSTATSTG failed with HRESULT: 0x%08X"
+    IDS_OPENSTORAGEFAILED       "IStorage::OpenStorage failed with HRESULT: 0x%08X"
+    IDS_OPENSTREAMFAILED        "IStorage::OpenStream failed with HRESULT: 0x%08X"
+    IDS_ENUMELEMENTSFAILED      "IStorage::EnumElements failed with HRESULT: 0x%08X"
+    IDS_INSERTSTRINGFAILED      "Tree is too large.  Collapse some branches."
+    IDS_LOADBITMAPSFAILED       "Couldn't load folder and document bitmaps."
+    IDS_STGOPENSTORAGEFAILED    "Unable to open %ws as a DocFile."
+    IDS_STMSTATFAILED           "IStream::Stat failed with HRESULT: 0x%08X"
+    IDS_STMSEEKFAILED           "IStream::Seek failed with HRESULT: 0x%08X"
+    IDS_STMREADFAILED           "IStream::Read failed with HRESULT: 0x%08X"
+    IDS_STMTITLETEXT            "Stream:"
+    IDS_OUTOFMEMORY             "DFView ran out of memory.  Free up more resources."
+END
+
+AppAccel ACCELERATORS
+BEGIN
+    VK_F1,          IDM_HELP,           VIRTKEY
+    VK_ADD,         IDM_EXPAND,         VIRTKEY
+    VK_SUBTRACT,    IDM_COLLAPSE,       VIRTKEY
+    VK_SUBTRACT,    IDM_COLLAPSEALL,    CONTROL,    VIRTKEY
+    VK_MULTIPLY,    IDM_EXPANDALL,      CONTROL,    VIRTKEY
+    VK_MULTIPLY,    IDM_EXPANDBRANCH,   VIRTKEY
+    "+",            IDM_EXPAND
+    "-",            IDM_COLLAPSE
+    "*",            IDM_EXPANDBRANCH
+END

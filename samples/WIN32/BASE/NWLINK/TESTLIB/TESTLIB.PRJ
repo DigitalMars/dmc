@@ -1,0 +1,17 @@
+82572
+C:\SC\samples\win32\BASE\NWLINK\TESTLIB\TESTLIB.PRJ
+TESTLIB.OPN
+novcs
+testlib.def
+18
+812035224
+0 0 0 0 0 "cmdline.c" ""
+0 0 0 0 0 "dperror.c" ""
+0 0 0 0 0 "dstrerr.c" ""
+0 0 0 0 0 "errmsg.c" ""
+0 0 0 0 0 "geterror.c" ""
+0 0 0 0 0 "memory.c" ""
+0 0 0 0 0 "netprint.c" ""
+0 0 0 0 0 "wperror.c" ""
+0 0 0 0 0 "testlib.def" ""
+0 0 0 0 0 "wsock32.lib" ""

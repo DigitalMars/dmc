@@ -1,0 +1,77 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1992-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+
+#include <windows.h>
+#include "mdi.h"
+
+MainMenu MENU
+BEGIN
+    POPUP  "&Create"
+    BEGIN
+        MENUITEM  "&MDI Child\t F10",      MM_MDI
+        MENUITEM  SEPARATOR
+        MENUITEM  "&About ...",    MM_ABOUT
+    END
+
+    POPUP "&Window"
+    BEGIN
+        MENUITEM  "&Cascade",       IDM_CASCADE
+        MENUITEM  "&Tile",          IDM_TILE
+        MENUITEM  "Arrange &Icons", IDM_ARRANGE
+    END
+END
+
+
+ChildMenu MENU
+BEGIN
+    POPUP  "&Create"
+    BEGIN
+      MENUITEM  "&MDI Child\t F10",        MM_MDI
+      MENUITEM  SEPARATOR
+      MENUITEM  "&About ...",      MM_ABOUT
+    END
+
+    POPUP  "&Option"
+    BEGIN
+        MENUITEM  "One\t F1",      MM_OPT_1
+        MENUITEM  "Two\t F2",      MM_OPT_2
+        MENUITEM  "Three\t F3",    MM_OPT_3
+        MENUITEM  "Four\t F4",     MM_OPT_4
+    END
+
+    POPUP "&Window"
+    BEGIN
+        MENUITEM  "&Cascade",       IDM_CASCADE
+        MENUITEM  "&Tile",          IDM_TILE
+        MENUITEM  "Arrange &Icons", IDM_ARRANGE
+    END
+END
+
+AboutBox DIALOG 16, 16, 192, 96
+STYLE DS_MODALFRAME | WS_CAPTION | WS_VISIBLE
+CAPTION "About"
+BEGIN
+    CTEXT "Microsoft Windows"     -1,       0,  8, 192,  8
+    CTEXT "MDI Demo"              -1,       0, 24, 192,  8
+    CTEXT "Version 1.00"          -1,       0, 40, 192,  8
+    DEFPUSHBUTTON "OK!",    IDOK,          71, 60,  50, 14
+END
+
+ACCEL_ID ACCELERATORS
+BEGIN
+    VK_F10, MM_MDI,   VIRTKEY
+    VK_F1,  MM_OPT_1, VIRTKEY
+    VK_F2,  MM_OPT_2, VIRTKEY
+    VK_F3,  MM_OPT_3, VIRTKEY
+    VK_F4,  MM_OPT_4, VIRTKEY
+END

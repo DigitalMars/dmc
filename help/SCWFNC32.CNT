@@ -1,0 +1,208 @@
+:Base SCWFNC32.HLP
+:Title DigiMars C++ Run-time Library Contents
+1 About DigiMars C++ Run-time Library
+2 Overview=OVERVIEW_JT
+2 Information about Functions and Variables=RE_FUNCVAR_INFO_JT
+2 Groups of Functions=RE_GROUPS_JT
+2 Synonym Usage=RE_SYN_USE_JT
+2 Math Function Results=RE_MATH_JT
+2 Compatibility with other Platforms=RE_COMPAT_JT
+2 Using Wildcard Expansion=RE_WILD_JT
+1 Functions
+2 Functions Index=FUNCTION_REF_INDEX
+1 Data Types
+2 Data Types Index=DATATYPE_INDEX_T
+1 Constants
+2 Constants Index=CONSTANTS_INDEX_T
+1 Functions by Category
+2 Category Index=CATEGORIES_INDEX
+1 Iostream Library
+2 Iostream Library Overview=IO_STREAM_OVERVIEW_JT
+2 Predefined Iostreams=IO_PREDEF_STREAM_JT
+2 Basic Structure of Iostream Interaction=IO_STRUCTURE_JT
+2 Iostream Terminology=IO_TERMINOLOGY_JT
+2 Using Iostreams
+3 Using Iostreams Overview=IO_USING_JT
+3 Output Using Iostreams
+4 Output Using Iostreams Overview=IO_OUTPUT_JT
+4 Defining Your Own Insertion Operator=IO_INSERTION_JT
+4 Handling Output Errors=IO_OUT_ERROR_JT
+4 Flushing=IO_FLUSHING_JT
+4 Binary Output=IO_BINARY_OUT_JT
+3 Input Using Iostreams
+4 Input Using Iostreams Overview=IO_INPUT_JT
+4 Defining Your Own Extraction Operators=IO_DEFIN_EXTRAC_JT
+4 The char* Extractor=IO_CHAR_EXT_JT
+4 Reading Any Single Character=IO_READ_CHAR_JT
+4 Binary Input=IO_BINARY_INPUT_JT
+4 Peeking at Input=IO_PEEK_IN_JT
+4 Extracting Whitespace=IO_WHITESPACE_JT
+4 Handling Input Errors=IO_INPUT_ERR_JT
+3 Using Iostreams with stdio=IO_WITH_STDIO_JT
+2 Creating Iostreams
+3 Creating Iostreams Overview=IO_CREATING_JT
+3 Dealing with Files Using Class fstream
+4 About Dealing with Files Using Class fstream=IO_CLASS_FSTREAM_JT
+4 Open Mode=IO_OPEN_MODE_JT
+4 Declaring an fstream Without Specifying a File=IO_DECLAR_NOFILE_JT
+4 Opening and Closing Files=IO_OPENCLOSE_JT
+4 Opening a file Using a File Descriptor=IO_OPEN_DESCRIP_JT
+4 Repositioning Within a File=IO_REPO_FILE_JT
+2 Assigning Iostreams
+3 Assigning Iostreams Overview=IO_ASSIGNING_JT
+3 Manipulators
+4 Manipulators Overview=IO_MANIPULATE_JT
+4 Plain Manipulators=IO_PLAIN_MAN_JT
+4 Parameterized Manipulators=IO_PARAM_MAN_JT
+3 Streambufs
+4 Streambufs Overview=IO_STREAMBUFS_JT
+4 How Streambufs Work=IO_STREAM_WORK_JT
+4 Using Streambufs=IO_USE_STREAM_JT
+2 Sample Program=IO_PROGRAM_JT
+2 Iostream Library Class Descriptions
+3 Iostream Library Class Descriptions Overview=IO_CLASS_DESCRIP_JT
+3 Manipulators
+4 About Manipulators=IO_MANIP_DESCRIP_JT
+4 Simple Manipulators=IO_SIMP_MANIP_JT
+4 Parameterized Manipulators=IO_PARAM_MANIP_JT
+3 Class filebuf
+4 Class filebuf Overview=IO_CLASS_FILEBUF_JT
+4 Member Functions of filebuf=IO_MEMB_FILEBUF_JT
+3 Classes fstream, ifstream, and ofstream
+4 Classes fstream, ifstream, and ofstream Overview=IO_F_IF_OF_JT
+4 Member Functions of fstream, ifstream, and ofstream=IO_MEMB_F_IF_OF_JT
+3 Class ifstream=IO_CLASS_IFSTREAM_JT
+3 Class ios
+4 Class ios Overview=IO_CLASS_IOS_JT
+4 Class ios Enumerations=IO_IOS_ENUMERATE_JT
+4 Constructors and Assignment=IO_CONST_ASS_JT
+4 Other Status Testing=IO_STAT_TEST_JT
+4 Format Control
+5 Format Control Overview=IO_FORMAT_CONT_JT
+5 Formatting Flags=IO_FORM_FLAGS_JT
+5 Format Bit Masks=IO_FORM_BIT_JT
+5 Format Control Functions=IO_FORM_CONT_JT
+5 User-defined Format Flags and Variables=IO_USER_FORM_JT
+4 ios Predefined Manipulators=IO_IOS_PREDEF_JT
+4 Member Functions of ios=IO_MEMB_IOS_JT
+3 Class istream
+4 Class istream Overview=IO_CLASS_ISTREAM_JT
+4 Formatted Input (extraction) Functions=IO_FORM_INPUT_JT
+4 Unformatted Input (extraction) Functions=IO_UNFORM_INPUT_JT
+4 Positioning Functions=IO_POS_FUNCT_JT
+4 istream Predefined Manipulators=IO_ISTREAM_PREDEF_JT
+4 Member Functions of istreams=IO_MEMB_ISTREAMS_JT
+3 Class istream_withassign
+4 Class istream_withassign Overview=IO_CLASS_ISWITH_JT
+4 Member Functions of istream_withassign=IO_MEMB_ISWITH_JT
+3 Class istrstream
+4 Class istrstream Overview=IO_CLASS_ISTRSTREAM_JT
+4 Member Functions of istrstream=IO_MEMB_ISTRSTREAM_JT
+3 Class ofstream=IO_CLASS_OFSTREAM_JT
+3 Class ostream
+4 Class ostream Overview=IO_CLASS_OSTREAM_JT
+4 Output Prefix and Suffix Functions=IO_OUTPRESUFF_JT
+4 Formatted Output (insertion) Functions=IO_FORMOUT_JT
+4 Unformatted Output (insertion) Functions=IO_UNFORMOUT_JT
+4 Positioning Functions=IO_POST_FUNC_JT
+4 ostream Predefined Manipulators=IO_OSTREAM_MANIP_JT
+4 Member Functions of ostream=IO_MEMB_OSTREAM_JT
+3 Class ostream_withassign
+4 Class ostream_withassign Overview=IO_OSTREAM_WITH_JT
+4 Member Functions of ostream_withassign=IO_MEMB_OSTREWITH_JT
+3 Class ostrstream
+4 Class ostrstream Overview=IO_CLASS_OSTRSTREAM_JT
+4 Member Functions of ostrstream=IO_MEMB_OSTRSTREAM_JT
+3 Class stdiobuf
+4 Class stdiobuf Overview=IO_CLASS_STDIOBUF_JT
+4 Why Use stdiobuf?=IO_WHY_STDIOBUF_JT
+4 Member Functions of stdiobuf=IO_MEMB_STDIOBUF_JT
+3 Class stdiostream
+4 Class stdiostream Overview=IO_CLASS_STDIOSTREAM_JT
+4 Why Use stdiostream?=IO_WHY_STDIOSTREAM_JT
+4 Member Functions of stdiostream=IO_MEMB_STDIOSTREAM_JT
+3 Class streambuf
+4 Class streambuf Overview=IO_CLASS_STREAMBUF_JT
+4 Using the Protected Interface to streambuf=IO_STREAM_PROTECT_JT
+4 The get, put, and reserve Areas=IO_GETPUT_JT
+4 Non-virtual Functions for Examining Pointers=IO_POINT_EXAM_JT
+4 Non-virtual Functions for Setting Pointers=IO_POINT_SET_JT
+4 Virtual Functions=IO_VIRT_FUNC_JT
+4 Member Functions of streambuf (Protected Interface)=IO_MEMB_STREAMBUF_JT
+3 Class streambuf (Public Interface)
+4 Class streambuf (Public Interface) Overview=IO_CLASS_STREAMBUF_PUB_JT
+4 Buffering Strategies=IO_BUFF_STRAT_JT
+4 Member Functions of streambuf (Public Interface)=IO_MEMB_STREAMBUF_PUB_JT
+3 Class strstream
+4 Class strstream Overview=IO_CLASS_STRSTREAM_JT
+4 Member Functions of strstream=IO_MEMB_STRSTREAM_JT
+3 Class strstreambuf
+4 Class strstreambuf Overview=IO_CLASS_STRSTREAMBUF_JT
+4 strstreambuf Modes=IO_STRSTREAMBUF_MODE_JT
+4 Member Functions of strstreambuf=IO_MEMB_STRSTREAMBUF_JT
+2 Iostream Index=IO_STREAM_INDEX
+1 Complex Class Library
+2 Complex Class Library Overview=COMPLEX_CLASS_OVERVIEW_JT
+2 Using the Complex Class=CC_USING_CLASS_JT
+2 Member Functions
+3 Constructor Functions=CC_CONSTR_JT
+3 Operator Functions=CC_OPERATOR_JT
+3 Complex Functions=CC_COMPLEX_JT
+3 Trigonometric and Hyperbolic Functions=CC_TRIG_JT
+3 Mathematical Functions=CC_MATH_JT
+2 Complex Class Library Index=COMPLEX_CLASS_INDEX
+1 EMM Usage
+2 EMM Usage Overview=RE_EMM_JT
+2 What is Expanded Memory?=RE_EMM_WHAT_JT
+2 How Expanded Memory Works
+3 About How Expanded Memory Works=RE_EMM_HOW_JT
+3 The Page Frame=RE_EMM_PAGE_JT
+3 Using the Page Frame=RE_EMM_USEPG_JT
+3 The Mapping Context=RE_EMM_MAP_JT
+3 Installing Expanded Memory=RE_EMM_INST_JT
+3 Terminating Use of Expanded Memory=RE_EMM_TERM_JT
+2 How an Application Uses Expanded Memory=RE_EMM_APP_JT
+2 Sample Program=RE_EMM_PROG_JT
+1 Mouse Information
+2 Mouse Information Overview=RE_MOUSE_JT
+2 Converting Mouse Coordinates to Display=RE_MOUSE_CONV_JT
+2 Using msm_ Functions
+3 Using msm_ Functions Overview=RE_MOUSE_MSM_JT
+3 Initializing and Terminating the Mouse Driver=RE_MOUSE_INIT_JT
+3 Positioning the Mouse Cursor=RE_MOUSE_POST_JT
+3 Setting Mouse Cursor Shape and Size=RE_MOUSE_SHAPE_JT
+3 Controlling the Display of the Mouse Cursor=RE_MOUSE_DISP_JT
+3 Adjusting the Mouse Response=RE_MOUSE_RESP_JT
+3 Testing for Mouse Events and Movement=RE_MOUSE_EVENT_JT
+3 Emulating a Light Pen=RE_MOUSE_PEN_JT
+2 Sample Program=RE_MOUSE_PROJ_JT
+1 TSR Information
+2 TSR Information Overview=RE_TSR_JT
+2 TSR Introduction=RE_TSR_INTRO_JT
+2 TSR Capabilities=RE_TSR_CAP_JT
+2 Compatible TSRs=RE_TSR_COMP_JT
+2 Files for Building TSRs=RE_TSR_FILES_JT
+2 Writing a TSR Program=RE_TSR_WRITE_JT
+3 Making Your Program Resident=RE_TSR_MAKE_JT
+3 Debugging TSRs=RE_TSR_DEBUG_JT
+3 Removing a TSR from Memory=RE_TSR_REM_JT
+3 Global Variables=RE_TSR_GLOBE_JT
+3 The Special Function: popmain=RE_TSR_POPMAIN_JT
+2 TSR Limitations=RE_TSR_LIMIT_JT
+2 Sample Program=RE_TSR_SAMPLE_JT
+2 TSR Problems=RE_TSR_PROB_JT
+1 WINIO Library
+2 WINIO Library Overview=WI_WIN_OVERVIEW_JT
+2 Compiling and Linking with WINIO=WI_COMPILE_JT
+2 WINIO Resources=WI_RESOURCES_JT
+2 WMHANDLER Functions=WI_WMHANDLER_JT
+2 A Basic WINIO Program=WI_PROGRAM_JT
+2 Accessing WinMain() Parameters=WI_WINMAIN_JT
+2 How the Compiler Generates WINIO Programs
+3 About How the Compiler Generates WINIO Programs=WI_COMPILER_JT
+3 Converting DOS Programs to WINIO=WI_CONVDOS_JT
+3 Converting WINC Programs to WINIO=WI_CONV_WINC_JT
+2 WINIO's Implementation of stdio.h Functions
+3 About WINIO's Implementation of stdio.h Functions=WI_STDIO_JT
+3 How WINIO Impements gets()=WI_GETS_JT
+2 WINIO Functions=WI_FUNCS_JT

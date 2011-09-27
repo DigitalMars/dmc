@@ -1,0 +1,79 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1993 - 1995  Microsoft Corporation.  All Rights Reserved.
+ * 
+ **************************************************************************/
+//Microsoft App Studio generated resource script.
+//
+#include "STRINGS.h"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FAILEDTOOPENFILE    "Failed to open file."
+    IDS_FAILEDTOGETFNAME    "Failed to get Filename."
+    IDS_NOTAWAVEFILE        "This is not a WAVE file."
+    IDS_WAVEFILECORRUPT     "WAVE file is corrupted."
+    IDS_FAILEDREADFMTCHNK   "Failed to read format chunk."
+    IDS_NOTAPCMFILE         "The file is not a PCM file."
+    IDS_CANTPLAYFORMAT      "The waveform device can't play this format."
+    IDS_NODATACHUNK         "WAVE file has no data chunk."
+    IDS_CHUNKHASNODATA      "The data chunk has no data."
+    IDS_FAILEDOPENDEVICE    "Failed to open waveform output device."
+    IDS_FAILEDREADCHUNK     "Failed to read data chunk."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_UNABLEPREPAREHDR    "Unable to prepare wave header."
+    IDS_FAILEDWRITEDEVICE   "Failed to write block to device."
+    IDS_REVERSEWNDTITLE     "Reverse"
+    IDS_PLAYBUTTONTEXT      "Play"
+    IDS_EXITBUTTONTEXT      "Exit"
+    IDS_ABOUTMENUTEXT       "&About Reverse..."
+END
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "STRINGS.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

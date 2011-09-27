@@ -1,0 +1,30 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1992-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include <windows.h>        // standard windows include
+#include "hooktest.h"
+
+HookMenu MENU
+BEGIN
+    POPUP        "&Hook Options"
+    BEGIN
+        MENUITEM "&CallWnd", IDM_CALLWNDPROC
+        MENUITEM "C&BT", IDM_CBT
+        MENUITEM "&Debug", IDM_DEBUG
+        MENUITEM "&GetMessage", IDM_GETMESSAGE
+        MENUITEM "&Keyboard", IDM_KEYBOARD
+        MENUITEM "&Mouse", IDM_MOUSE
+        MENUITEM "M&sgFilter", IDM_MSGFILTER
+        MENUITEM "E&xit", IDM_EXIT
+    END
+END
+

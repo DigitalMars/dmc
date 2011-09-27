@@ -1,0 +1,19 @@
+82572
+C:\sc\samples\win32\opengl\glaux\glaux.prj
+GLAUX.OPN
+novcs
+glaux.def
+13
+853523000
+0 0 0 0 0 "font.c" ""
+0 0 0 0 0 "glaux.c" ""
+0 0 0 0 0 "image.c" ""
+0 0 0 0 0 "shapes.c" ""
+0 0 0 0 0 "teapot.c" ""
+0 0 0 0 0 "tk.c" ""
+0 0 0 0 0 "tkdib.c" ""
+0 0 0 0 0 "tkfont.c" ""
+0 0 0 0 0 "tkimage.c" ""
+0 0 0 0 0 "vect3d.c" ""
+0 0 0 0 0 "xform.c" ""
+0 0 0 0 0 "glaux.def" ""

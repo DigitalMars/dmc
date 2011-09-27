@@ -1,0 +1,100 @@
+/*** 
+*calctype.odl
+*
+*  This is a part of the Microsoft Source Code Samples.
+*
+*  Copyright (C) 1993-1995 Microsoft Corporation. All rights reserved.
+*
+*  This source code is only intended as a supplement to Microsoft Development
+*  Tools and/or WinHelp documentation.  See these sources for detailed
+*  information regarding the Microsoft samples programs.
+*
+*Purpose:
+*  This file contains the definitions of the objects exposed for OLE Automation
+*  by the dspcalc2
+*  example program. MkTypLib uses this file to produce a type library and
+*  a header file. The header file is then used in compiling dspcalc2.
+*
+*Implementation Notes:
+*
+*****************************************************************************/
+
+[
+  uuid(00020470-0000-0000-C000-000000000046), 
+  helpstring("OLE Automation DspCalc2 1.0 Type Library"),
+  lcid(0x0409),
+  version(1.0)
+] 
+library DspCalc2
+{
+  
+#if defined(WIN32)
+    importlib("stdole32.tlb");
+#else
+#if defined(MAC) && !defined(_MSC_VER)
+    importlib("Standard OLE Types");
+#else
+    importlib("stdole.tlb");
+#endif
+#endif
+  
+    typedef enum operators {
+      OP_NONE = 0,
+      OP_PLUS,
+      OP_MINUS,
+      OP_MULT,
+      OP_DIV
+    } OPERATORS;
+
+
+    [
+      uuid(00020441-0000-0000-C000-000000000046), 
+      helpstring("DspCalc2"),
+      odl
+    ]  
+    interface _ICalculator : IUnknown
+    {
+      [propput]
+      void Accum([in] long l);
+      [propget, helpstring("The value stored in the calculator")]
+      long Accum();    
+
+      [propput]
+      void Opnd([in] long l);
+      [propget]
+      long Opnd();    
+    
+      [propput]
+      void Op([in] OPERATORS op);
+      [propget]
+      OPERATORS Op();    
+    
+      boolean Eval(void);
+      void Clear(void);
+      void Display(void);
+      void Quit(void);
+      [vararg] boolean Button([in]SAFEARRAY(VARIANT) psa);
+    }
+
+
+    [
+      uuid(00020442-0000-0000-C000-000000000046), 
+      helpstring("DspCalc2")
+    ]  
+    dispinterface _DCalculator
+    {
+      interface _ICalculator;
+    }
+
+
+    [
+      uuid(00020469-0000-0000-C000-000000000046), 
+      helpstring("DspCalc2"),
+      appobject
+    ]  
+    coclass Calculator
+    {
+      dispinterface _DCalculator;
+      interface _ICalculator;
+    }
+}

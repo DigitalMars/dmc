@@ -1,0 +1,16 @@
+82572
+C:\SC\samples\ole16\DEFO2V\DEFO2V.PRJ
+DEFO2V.OPN
+novcs
+defo2v.def
+1
+812035224
+0 0 0 0 0 "defo2v.cpp" ""
+0 0 0 0 0 "idataobj.cpp" ""
+0 0 0 0 0 "idisp.cpp" ""
+0 0 0 0 0 "precomp.cpp" ""
+0 0 0 0 0 "tofile.cpp" ""
+0 0 0 0 0 "util.cpp" ""
+0 0 0 0 0 "defo2v.def" ""
+0 0 0 0 0 "defo2v.rc" ""
+0 0 0 0 1001 "..\bin\movelib.bat" ""

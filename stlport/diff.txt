@@ -1,0 +1,1232 @@
+diff -ur STLport-4.5.3.orig/src/dm.mak STLport-4.5.3/src/dm.mak
+--- STLport-4.5.3.orig/src/dm.mak	Sun Oct 27 23:39:11 2002
++++ STLport-4.5.3/src/dm.mak	Sun Jan 05 00:39:10 2003
+@@ -0,0 +1,296 @@
++#	-*- Makefile -*-
++.SUFFIXES: .cpp .c .obj .dll .exe .rc .res
++
++
++CXX=dmc
++CC=dmc -cpp
++LIB=lib
++LINK=dmc
++RC=rcc
++
++LIB_BASENAME=stlp45dm
++
++OBJS = build\c_locale.obj build\c_locale_stub.obj build\codecvt.obj \
++	build\collate.obj build\complex.obj build\complex_exp.obj \
++	build\complex_io.obj build\complex_io_w.obj build\complex_trig.obj \
++	build\ctype.obj build\dll_main.obj \
++	build\facets_byname.obj build\fstream.obj build\ios.obj \
++	build\iostream.obj build\istream.obj build\locale.obj \
++	build\locale_catalog.obj build\locale_impl.obj \
++	build\messages.obj build\monetary.obj build\num_get.obj \
++	build\num_get_float.obj build\num_put.obj \
++	build\num_put_float.obj build\numpunct.obj build\ostream.obj \
++	build\sstream.obj build\stdio_streambuf.obj \
++	build\streambuf.obj build\string_w.obj build\strstream.obj \
++	build\time_facets.obj
++
++BUILD_DIRS=..\lib ..\build \
++	..\build\static ..\build\static\release \
++	..\build\static\debug ..\build\static\stldebug \
++	..\build\staticx ..\build\staticx\release \
++	..\build\staticx\debug ..\build\staticx\stldebug \
++	..\build\dynamic ..\build\dynamic\release \
++	..\build\dynamic\debug ..\build\dynamic\stldebug \
++	..\build\sdynamic ..\build\sdynamic\release \
++	..\build\sdynamic\debug ..\build\sdynamic\stldebug
++
++
++CXXFLAGS_COMMON = -Ae -Ar -DSTRICT -D__BUILDING_STLPORT -I../stlport
++CXXFLAGS_dynamic = -WD
++
++# four versions are currently supported:
++#  - static: static STLport library, static RTL
++#  - staticx: static STLport library, dynamic RTL
++#  - dynamic: dynamic STLport library, dynamic RTL
++#  - sdynamic: dynamic STLport library, static RTL
++
++CXXFLAGS_RELEASE_static = $(CXXFLAGS_COMMON) -o+all -Nc -D_MT
++CXXFLAGS_RELEASE_staticx = $(CXXFLAGS_COMMON) -o+all -Nc -ND
++CXXFLAGS_RELEASE_dynamic = $(CXXFLAGS_COMMON) $(CXXFLAGS_dynamic) -o+all -ND
++CXXFLAGS_RELEASE_sdynamic = $(CXXFLAGS_COMMON) $(CXXFLAGS_dynamic) -D_MT -o+all
++
++CXXFLAGS_DEBUG_static = $(CXXFLAGS_COMMON) -g -Nc -D_MT
++CXXFLAGS_DEBUG_staticx = $(CXXFLAGS_COMMON) -g -Nc -ND
++CXXFLAGS_DEBUG_dynamic = $(CXXFLAGS_COMMON) $(CXXFLAGS_dynamic) -g -ND
++CXXFLAGS_DEBUG_sdynamic = $(CXXFLAGS_COMMON) $(CXXFLAGS_dynamic) -g -D_MT
++
++CXXFLAGS_STLDEBUG_static = $(CXXFLAGS_DEBUG_static) -D_STLP_DEBUG -g -Nc -D_MT
++CXXFLAGS_STLDEBUG_staticx = $(CXXFLAGS_DEBUG_static) -D_STLP_DEBUG -g -Nc -ND
++CXXFLAGS_STLDEBUG_dynamic = $(CXXFLAGS_DEBUG_dynamic) $(CXXFLAGS_dynamic) -D_STLP_DEBUG -g -ND
++CXXFLAGS_STLDEBUG_sdynamic = $(CXXFLAGS_DEBUG_dynamic) $(CXXFLAGS_dynamic) -D_STLP_DEBUG -g -D_MT
++
++
++.cpp{..\build\static\release}.obj:
++	$(CXX) -c -o"$@" $(CXXFLAGS_RELEASE_static) "$<"
++
++.cpp{..\build\static\debug}.obj:
++	$(CXX) -c -o"$@" $(CXXFLAGS_DEBUG_static) "$<"
++
++.cpp{..\build\static\stldebug}.obj:
++	$(CXX) -c -o"$@" $(CXXFLAGS_STLDEBUG_static) "$<"
++
++.cpp{..\build\staticx\release}.obj:
++	$(CXX) -c -o"$@" $(CXXFLAGS_RELEASE_staticx) "$<"
++
++.cpp{..\build\staticx\debug}.obj:
++	$(CXX) -c -o"$@" $(CXXFLAGS_DEBUG_staticx) "$<"
++
++.cpp{..\build\staticx\stldebug}.obj:
++	$(CXX) -c -o"$@" $(CXXFLAGS_STLDEBUG_staticx) "$<"
++
++.cpp{..\build\dynamic\release}.obj:
++	$(CXX) -c -o"$@" $(CXXFLAGS_RELEASE_dynamic) "$<"
++
++.cpp{..\build\dynamic\debug}.obj:
++	$(CXX) -c -o"$@" $(CXXFLAGS_DEBUG_dynamic) "$<"
++
++.cpp{..\build\dynamic\stldebug}.obj:
++	$(CXX) -c -o"$@" $(CXXFLAGS_STLDEBUG_dynamic) "$<"
++
++.cpp{..\build\sdynamic\release}.obj:
++	$(CXX) -c -o"$@" $(CXXFLAGS_RELEASE_sdynamic) "$<"
++
++.cpp{..\build\sdynamic\debug}.obj:
++	$(CXX) -c -o"$@" $(CXXFLAGS_DEBUG_sdynamic) "$<"
++
++.cpp{..\build\sdynamic\stldebug}.obj:
++	$(CXX) -c -o"$@" $(CXXFLAGS_STLDEBUG_sdynamic) "$<"
++
++.c{..\build\static\release}.obj:
++	$(CC) -c -o"$@" $(CXXFLAGS_RELEASE_static) "$<"
++
++.c{..\build\static\debug}.obj:
++	$(CC) -c -o"$@" $(CXXFLAGS_DEBUG_static) "$<"
++
++.c{..\build\static\stldebug}.obj:
++	$(CC) -c -o"$@" $(CXXFLAGS_STLDEBUG_static) "$<"
++
++.c{..\build\staticx\release}.obj:
++	$(CC) -c -o"$@" $(CXXFLAGS_RELEASE_staticx) "$<"
++
++.c{..\build\staticx\debug}.obj:
++	$(CC) -c -o"$@" $(CXXFLAGS_DEBUG_staticx) "$<"
++
++.c{..\build\staticx\stldebug}.obj:
++	$(CC) -c -o"$@" $(CXXFLAGS_STLDEBUG_staticx) "$<"
++
++.c{..\build\dynamic\release}.obj:
++	$(CC) -c -o"$@" $(CXXFLAGS_RELEASE_dynamic) "$<"
++
++.c{..\build\dynamic\debug}.obj:
++	$(CC) -c -o"$@" $(CXXFLAGS_DEBUG_dynamic) "$<"
++
++.c{..\build\dynamic\stldebug}.obj:
++	$(CC) -c -o"$@" $(CXXFLAGS_STLDEBUG_dynamic) "$<"
++
++.c{..\build\sdynamic\release}.obj:
++	$(CC) -c -o"$@" $(CXXFLAGS_RELEASE_sdynamic) "$<"
++
++.c{..\build\sdynamic\debug}.obj:
++	$(CC) -c -o"$@" $(CXXFLAGS_DEBUG_sdynamic) "$<"
++
++.c{..\build\sdynamic\stldebug}.obj:
++	$(CC) -c -o"$@" $(CXXFLAGS_STLDEBUG_sdynamic) "$<"
++
++
++.rc{..\build}.res:
++	$(RC) -32 -o"$@" "$<"
++
++
++all:	directories all_static all_staticx all_dynamic all_sdynamic
++
++
++directories:	$(BUILD_DIRS)
++
++$(BUILD_DIRS):
++	mkdir $@
++
++
++all_static:	..\lib\$(LIB_BASENAME)_static.lib ..\lib\$(LIB_BASENAME)_debug_static.lib ..\lib\$(LIB_BASENAME)_stldebug_static.lib
++
++..\lib\$(LIB_BASENAME)_static.lib:	$(OBJS:build\=..\build\static\release\)
++	*$(LIB) -c -n -p64 "$@" "$**"
++
++..\lib\$(LIB_BASENAME)_debug_static.lib:	$(OBJS:build\=..\build\static\debug\)
++	*$(LIB) -c -n -p128 "$@" "$**"
++
++..\lib\$(LIB_BASENAME)_stldebug_static.lib:	$(OBJS:build\=..\build\static\stldebug\)
++	*$(LIB) -c -n -p256 "$@" "$**"
++
++
++all_staticx:	..\lib\$(LIB_BASENAME)_staticx.lib ..\lib\$(LIB_BASENAME)_debug_staticx.lib ..\lib\$(LIB_BASENAME)_stldebug_staticx.lib
++
++..\lib\$(LIB_BASENAME)_staticx.lib:	$(OBJS:build\=..\build\staticx\release\)
++	*$(LIB) -c -n -p64 "$@" "$**"
++
++..\lib\$(LIB_BASENAME)_debug_staticx.lib:	$(OBJS:build\=..\build\staticx\debug\)
++	*$(LIB) -c -n -p128 "$@" "$**"
++
++..\lib\$(LIB_BASENAME)_stldebug_staticx.lib:	$(OBJS:build\=..\build\staticx\stldebug\)
++	*$(LIB) -c -n -p256 "$@" "$**"
++
++
++all_dynamic:	..\lib\$(LIB_BASENAME).dll ..\lib\$(LIB_BASENAME)_debug.dll ..\lib\$(LIB_BASENAME)_stldebug.dll
++
++..\lib\$(LIB_BASENAME).dll:	$(OBJS:build\=..\build\dynamic\release\) ..\build\stlport.res
++	*$(LINK) -WD -ND -L/IMPLIB:$(@R).lib -L/NOMAP -L/NODEBUG -o"$@" "$**" user32.lib kernel32.lib <<$(@R).def
++LIBRARY "$(@F)"
++DESCRIPTION 'STLport DLL for Digital Mars C/C++'
++EXETYPE NT
++SUBSYSTEM WINDOWS
++CODE SHARED EXECUTE
++DATA READWRITE
++
++EXPORTS
++	"?cin@std@@3V?$basic_istream@std@DV?$char_traits@std@D@1@@1@A"
++	"?cout@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?cerr@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?clog@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?wcin@std@@3V?$basic_istream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wcout@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wcerr@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wclog@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++<<
++
++..\lib\$(LIB_BASENAME)_debug.dll:	$(OBJS:build\=..\build\dynamic\debug\) ..\build\stlport.res
++	*$(LINK) -WD -ND -g -L/IMPLIB:$(@R).lib -L/NOMAP -L/DEBUG -o"$@" "$**" user32.lib kernel32.lib <<$(@R).def
++LIBRARY "$(@F)"
++DESCRIPTION 'STLport DLL for Digital Mars C/C++'
++EXETYPE NT
++SUBSYSTEM WINDOWS
++CODE SHARED EXECUTE
++DATA READWRITE
++
++EXPORTS
++	"?cin@std@@3V?$basic_istream@std@DV?$char_traits@std@D@1@@1@A"
++	"?cout@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?cerr@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?clog@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?wcin@std@@3V?$basic_istream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wcout@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wcerr@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wclog@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++<<
++
++..\lib\$(LIB_BASENAME)_stldebug.dll:	$(OBJS:build\=..\build\dynamic\stldebug\) ..\build\stlport.res
++	*$(LINK) -WD -ND -g -L/IMPLIB:$(@R).lib -L/NOMAP -L/DEBUG -o"$@" "$**" user32.lib kernel32.lib <<$(@R).def
++LIBRARY "$(@F)"
++DESCRIPTION 'STLport DLL for Digital Mars C/C++'
++EXETYPE NT
++SUBSYSTEM WINDOWS
++CODE SHARED EXECUTE
++DATA READWRITE
++
++EXPORTS
++	"?cin@std@@3V?$basic_istream@std@DV?$char_traits@std@D@1@@1@A"
++	"?cout@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?cerr@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?clog@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?wcin@std@@3V?$basic_istream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wcout@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wcerr@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wclog@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++<<
++
++
++all_sdynamic:	..\lib\$(LIB_BASENAME)s.dll ..\lib\$(LIB_BASENAME)s_debug.dll ..\lib\$(LIB_BASENAME)s_stldebug.dll
++
++..\lib\$(LIB_BASENAME)s.dll:	$(OBJS:build\=..\build\sdynamic\release\) ..\build\stlport.res
++	*$(LINK) -WD -ND -L/IMPLIB:$(@R).lib -L/NOMAP -L/NODEBUG -o"$@" "$**" user32.lib kernel32.lib <<$(@R).def
++LIBRARY "$(@F)"
++DESCRIPTION 'STLport DLL for Digital Mars C/C++'
++EXETYPE NT
++SUBSYSTEM WINDOWS
++CODE SHARED EXECUTE
++DATA READWRITE
++
++EXPORTS
++	"?cin@std@@3V?$basic_istream@std@DV?$char_traits@std@D@1@@1@A"
++	"?cout@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?cerr@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?clog@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?wcin@std@@3V?$basic_istream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wcout@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wcerr@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wclog@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++<<
++
++..\lib\$(LIB_BASENAME)s_debug.dll:	$(OBJS:build\=..\build\sdynamic\debug\) ..\build\stlport.res
++	*$(LINK) -WD -ND -g -L/IMPLIB:$(@R).lib -L/NOMAP -L/DEBUG -o"$@" "$**" user32.lib kernel32.lib <<$(@R).def
++LIBRARY "$(@F)"
++DESCRIPTION 'STLport DLL for Digital Mars C/C++'
++EXETYPE NT
++SUBSYSTEM WINDOWS
++CODE SHARED EXECUTE
++DATA READWRITE
++
++EXPORTS
++	"?cin@std@@3V?$basic_istream@std@DV?$char_traits@std@D@1@@1@A"
++	"?cout@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?cerr@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?clog@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?wcin@std@@3V?$basic_istream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wcout@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wcerr@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wclog@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++<<
++
++..\lib\$(LIB_BASENAME)s_stldebug.dll:	$(OBJS:build\=..\build\sdynamic\stldebug\) ..\build\stlport.res
++	*$(LINK) -WD -ND -g -L/IMPLIB:$(@R).lib -L/NOMAP -L/DEBUG -o"$@" "$**" user32.lib kernel32.lib <<$(@R).def
++LIBRARY "$(@F)"
++DESCRIPTION 'STLport DLL for Digital Mars C/C++'
++EXETYPE NT
++SUBSYSTEM WINDOWS
++CODE SHARED EXECUTE
++DATA READWRITE
++
++EXPORTS
++	"?cin@std@@3V?$basic_istream@std@DV?$char_traits@std@D@1@@1@A"
++	"?cout@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?cerr@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?clog@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A"
++	"?wcin@std@@3V?$basic_istream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wcout@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wcerr@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++	"?wclog@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A"
++<<
+diff -ur STLport-4.5.3.orig/src/fstream.cpp STLport-4.5.3/src/fstream.cpp
+--- STLport-4.5.3.orig/src/fstream.cpp	Fri Jan 18 22:06:52 2002
++++ STLport-4.5.3/src/fstream.cpp	Sun Dec 22 22:13:46 2002
+@@ -332,6 +332,42 @@
+   return flag_to_openmode(mode);
+ }
+ 
++#elif defined(__DMC__)
++
++#define FHND_APPEND 0x04
++#define FHND_DEVICE 0x08
++#define FHND_TEXT   0x10
++
++extern "C" unsigned char __fhnd_info[_NFILE];
++
++ios_base::openmode _get_osfflags(int fd, HANDLE oshandle) {
++  int mode = 0;
++
++  if (__fhnd_info[fd] & FHND_APPEND)
++    mode |= O_APPEND;
++
++  if (__fhnd_info[fd] & FHND_TEXT == 0)
++    mode |= O_BINARY;
++
++  for (FILE *fp = &_iob[0]; fp < &_iob[_NFILE]; fp++)
++  {
++    if ((fileno(fp) == fd) && (fp->_flag & (_IOREAD | _IOWRT | _IORW)))
++    {
++      const int osflags = fp->_flag;
++
++      if ((osflags & _IOREAD) && !(osflags & _IOWRT) && !(osflags & _IORW))
++	mode |= O_RDONLY;
++      else if ((osflags & _IOWRT) && !(osflags & _IOREAD) && !(osflags & _IORW))
++	mode |= O_WRONLY;
++      else
++	mode |= O_RDWR;
++
++      break;
++    }
++  }
++
++  return flag_to_openmode(mode);
++}
+ #endif // _MSC_VER
+ 
+ __SGI_END_NAMESPACE
+@@ -686,7 +722,7 @@
+     return false;
+   }
+ # elif (defined(_STLP_USE_WIN32_IO) && defined (_MSC_VER) && !defined(_STLP_WINCE)) || \
+-        (defined(__MINGW32__) && defined(__MSVCRT__))
++        (defined(__MINGW32__) && defined(__MSVCRT__)) || defined(__DMC__)
+ 
+   if (_M_is_open || file_no == -1)
+     return false;
+diff -ur STLport-4.5.3.orig/src/iostream.cpp STLport-4.5.3/src/iostream.cpp
+--- STLport-4.5.3.orig/src/iostream.cpp	Sat Feb 02 23:11:58 2002
++++ STLport-4.5.3/src/iostream.cpp	Sun Dec 22 22:13:46 2002
+@@ -93,18 +93,41 @@
+ // Most compilers, however, silently accept this instead of diagnosing
+ // it as an error.
+ 
++#ifndef __DMC__
+ _STLP_DECLSPEC _Stl_aligned_buffer<istream> cin;
+ _STLP_DECLSPEC _Stl_aligned_buffer<ostream> cout;
+ _STLP_DECLSPEC _Stl_aligned_buffer<ostream> cerr;
+ _STLP_DECLSPEC _Stl_aligned_buffer<ostream> clog;
++#else
++_Stl_aligned_buffer<istream> cin;
++_Stl_aligned_buffer<ostream> cout;
++_Stl_aligned_buffer<ostream> cerr;
++_Stl_aligned_buffer<ostream> clog;
++
++#pragma alias("?cin@std@@3V?$basic_istream@std@DV?$char_traits@std@D@1@@1@A", "?cin@std@@3T?$_Stl_aligned_buffer@std@V?$basic_istream@std@DV?$char_traits@std@D@1@@1@@1@A")
++#pragma alias("?cout@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A", "?cout@std@@3T?$_Stl_aligned_buffer@std@V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@@1@A")
++#pragma alias("?cerr@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A", "?cerr@std@@3T?$_Stl_aligned_buffer@std@V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@@1@A")
++#pragma alias("?clog@std@@3V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@A", "?clog@std@@3T?$_Stl_aligned_buffer@std@V?$basic_ostream@std@DV?$char_traits@std@D@1@@1@@1@A")
++#endif
+ 
+ # ifndef _STLP_NO_WCHAR_T
+ 
++#ifndef __DMC__
+ _STLP_DECLSPEC _Stl_aligned_buffer<wistream> wcin;
+ _STLP_DECLSPEC _Stl_aligned_buffer<wostream> wcout;
+ _STLP_DECLSPEC _Stl_aligned_buffer<wostream> wcerr;
+ _STLP_DECLSPEC _Stl_aligned_buffer<wostream> wclog;
++#else
++_Stl_aligned_buffer<wistream> wcin;
++_Stl_aligned_buffer<wostream> wcout;
++_Stl_aligned_buffer<wostream> wcerr;
++_Stl_aligned_buffer<wostream> wclog;
+ 
++#pragma alias("?wcin@std@@3V?$basic_istream@std@_YV?$char_traits@std@_Y@1@@1@A", "?wcin@std@@3T?$_Stl_aligned_buffer@std@V?$basic_istream@std@_YV?$char_traits@std@_Y@1@@1@@1@A")
++#pragma alias("?wcout@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A", "?wcout@std@@3T?$_Stl_aligned_buffer@std@V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@@1@A")
++#pragma alias("?wcerr@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A", "?wcerr@std@@3T?$_Stl_aligned_buffer@std@V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@@1@A")
++#pragma alias("?wclog@std@@3V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@A", "?wclog@std@@3T?$_Stl_aligned_buffer@std@V?$basic_ostream@std@_YV?$char_traits@std@_Y@1@@1@@1@A")
++#endif
+ # endif
+ 
+ #endif /* STL_MSVC || __MWERKS__ */
+diff -ur STLport-4.5.3.orig/src/num_get.cpp STLport-4.5.3/src/num_get.cpp
+--- STLport-4.5.3.orig/src/num_get.cpp	Wed Mar 28 17:27:18 2001
++++ STLport-4.5.3/src/num_get.cpp	Sun Jan 05 01:27:41 2003
+@@ -100,7 +100,7 @@
+ extern const char __narrow_atoms[];
+ 
+ 
+-const unsigned char __digit_val_table[128] = 
++_STLP_DECLSPEC const unsigned char __digit_val_table[128] = 
+ {
+   0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+   0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+@@ -112,7 +112,7 @@
+   0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF
+ };     
+ 
+-const char __narrow_atoms[5] = {'+', '-', '0', 'x', 'X'};
++_STLP_DECLSPEC const char __narrow_atoms[5] = {'+', '-', '0', 'x', 'X'};
+ 
+ // index is actually a char
+ 
+diff -ur STLport-4.5.3.orig/src/num_put.cpp STLport-4.5.3/src/num_put.cpp
+--- STLport-4.5.3.orig/src/num_put.cpp	Sat Aug 04 02:51:42 2001
++++ STLport-4.5.3/src/num_put.cpp	Sun Jan 05 01:25:44 2003
+@@ -27,8 +27,8 @@
+ extern const char __hex_char_table_lo[];
+ extern const char __hex_char_table_hi[];
+ 
+-const char __hex_char_table_lo[18] = "0123456789abcdefx"; 
+-const char __hex_char_table_hi[18] = "0123456789ABCDEFX";
++_STLP_DECLSPEC const char __hex_char_table_lo[18] = "0123456789abcdefx"; 
++_STLP_DECLSPEC const char __hex_char_table_hi[18] = "0123456789ABCDEFX";
+ 
+ char* _STLP_CALL
+ __write_integer(char* buf, ios_base::fmtflags flags, long x)
+diff -ur STLport-4.5.3.orig/src/stlport.rc STLport-4.5.3/src/stlport.rc
+--- STLport-4.5.3.orig/src/stlport.rc	Fri Dec 08 00:54:48 2000
++++ STLport-4.5.3/src/stlport.rc	Sun Dec 22 22:13:46 2002
+@@ -6,14 +6,14 @@
+ #include <windows.h>
+ 
+ #define VER_MAJOR 4
+-#define VER_MINOR 1
+-#define VER_YEAR  2000
+-#define VER_MMDD  1111
++#define VER_MINOR 5
++#define VER_PATCH 3
++#define VER_BUILD 1
+ 
+ #define VERSION_STRING2(x) #x "\0"
+ #define VERSION_STRING(x) VERSION_STRING2(x)
+-#define VERSION_ID VER_MAJOR, VER_MINOR, VER_YEAR, VER_MMDD
+-#define VERSION_STR VERSION_STRING(VER_MAJOR.VER_MINOR.VER_YEAR.VER_MMDD)
++#define VERSION_ID VER_MAJOR, VER_MINOR, VER_PATCH, VER_BUILD
++#define VERSION_STR VERSION_STRING(VER_MAJOR.VER_MINOR.VER_PATCH.VER_BUILD)
+ 
+ #define VERSION_STRING1(x) #x
+ #define DLLNAME_STRING2(compstr,buildstr) \
+diff -ur STLport-4.5.3.orig/stlport/config/stlcomp.h STLport-4.5.3/stlport/config/stlcomp.h
+--- STLport-4.5.3.orig/stlport/config/stlcomp.h	Sat Mar 31 16:56:14 2001
++++ STLport-4.5.3/stlport/config/stlcomp.h	Sun Dec 22 22:13:46 2002
+@@ -70,6 +70,9 @@
+ #  include <config/stl_watcom.h>
+ # elif defined(__COMO__) || defined (__COMO_VERSION_)
+ #  include <config/stl_como.h>
++# elif defined (__DMC__)
++/* Digital Mars C++ */
++#  include <config/stl_dm.h>
+ # elif defined (__SC__) && (__SC__ < 0x800)
+ /* Symantec 7.5 */
+ #  include <config/stl_symantec.h>
+diff -ur STLport-4.5.3.orig/stlport/config/stl_dm.h STLport-4.5.3/stlport/config/stl_dm.h
+--- STLport-4.5.3.orig/stlport/config/stl_dm.h	Sun Oct 27 23:39:21 2002
++++ STLport-4.5.3/stlport/config/stl_dm.h	Sun Jan 05 02:04:21 2003
+@@ -0,0 +1,215 @@
++// STLport configuration file for Digital Mars C++
++
++#ifndef _STLP_DMC_H
++# define _STLP_DMC_H
++
++#if __DMC__ < 0x832
++#error "Digital Mars C++ versions prior to 8.32 are not supported!"
++#endif
++
++
++#ifndef _CPPUNWIND
++# define _STLP_NO_EXCEPTIONS
++#endif
++# undef _STLP_NO_NAMESPACES
++# define _STLP_NO_RELOPS_NAMESPACE
++# define _STLP_VENDOR_GLOBAL_CSTD
++# define _STLP_VENDOR_GLOBAL_STD
++# define _STLP_NO_OWN_NAMESPACE
++
++
++// select threads strategy
++# if defined (_MT) && !defined (_NOTHREADS)
++#  define _REENTRANT
++# else
++#  define _NOTHREADS
++# endif
++
++// select SGI-style alloc instead of allocator<T>
++# define _STLP_USE_SGI_ALLOCATORS
++
++// select allocation method you like
++# undef _STLP_USE_MALLOC
++# define _STLP_USE_NEWALLOC
++
++// this one is not mandatory, just enabled
++# undef _STLP_USE_DEFALLOC
++
++// define _STLP_USE_ABBREVS if your linker has trouble with long 
++// external symbols
++# undef _STLP_USE_ABBREVS
++
++
++// unsigned 32-bit integer type
++#  define _STLP_UINT32_T unsigned
++
++#  ifndef _BOOL_DEFINED
++#   define _STLP_NO_BOOL
++#  else
++#   define _STLP_DONT_USE_BOOL_TYPEDEF
++#  endif
++
++#  undef _STLP_YVALS_H
++#  undef _STLP_LIMITED_DEFAULT_TEMPLATES
++#  define _STLP_DEFAULT_TYPE_PARAM
++#  undef _STLP_NO_STATIC_TEMPLATE_DATA
++#  undef _STLP_RAND48
++#  undef _STLP_LOOP_INLINE_PROBLEMS
++
++#  undef _STLP_HAS_NO_NAMESPACES
++
++#  undef _STLP_NEED_TYPENAME
++#  undef _STLP_NEED_EXPLICIT
++#  undef _STLP_HAS_NO_EXCEPTIONS
++#  undef _STLP_NO_EXCEPTION_SPEC
++#  undef _STLP_WEAK_ATTRIBUTE
++#  undef _STLP_BASE_MATCH_BUG
++#  undef _STLP_NONTEMPL_BASE_MATCH_BUG
++#  undef _STLP_NESTED_TYPE_PARAM_BUG
++#  undef _STLP_NO_ARROW_OPERATOR
++#  undef _STLP_UNINITIALIZABLE_PRIVATE
++#  undef _STLP_BASE_TYPEDEF_BUG
++#  undef _STLP_BASE_TYPEDEF_OUTSIDE_BUG
++#  undef _STLP_CONST_CONSTRUCTOR_BUG
++
++#  undef _STLP_NO_NEW_STYLE_CASTS
++
++#  ifndef _WCHAR_T_DEFINED
++#   define _STLP_NO_WCHAR_T
++#  endif
++#  define _STLP_HAS_NO_UNIX98_WCHAR_EXTENSIONS
++
++#  undef _STLP_WCHAR_T_IS_USHORT
++
++#  if _INTEGRAL_MAX_BITS >= 64
++#   define _STLP_LONG_LONG long long
++#  endif
++
++#  undef _STLP_NO_LONG_DOUBLE
++#  undef _STLP_NEED_MUTABLE
++#  undef _STLP_NO_PARTIAL_SPECIALIZATION_SYNTAX
++#  define _STLP_NO_BAD_ALLOC
++#  undef _STLP_DEBUG_ALLOC
++#  undef _STLP_NO_MEMBER_TEMPLATES
++#  undef _STLP_NO_MEMBER_TEMPLATE_CLASSES
++#  define _STLP_NO_MEMBER_TEMPLATE_KEYWORD
++#  undef _STLP_NO_FRIEND_TEMPLATES
++#  undef _STLP_NO_QUALIFIED_FRIENDS
++#  undef _STLP_NO_CLASS_PARTIAL_SPECIALIZATION
++#  undef _STLP_NO_FUNCTION_TMPL_PARTIAL_ORDER
++#  undef _STLP_AUTOMATIC_TYPE_TRAITS
++#  undef _STLP_MEMBER_POINTER_PARAM_BUG
++#  undef _STLP_NON_TYPE_TMPL_PARAM_BUG
++#  undef _STLP_NO_DEFAULT_NON_TYPE_PARAM
++#  undef _STLP_NO_METHOD_SPECIALIZATION
++#  undef _STLP_STATIC_ARRAY_BUG
++#  undef _STLP_STATIC_CONST_INIT_BUG
++#  undef _STLP_TRIVIAL_CONSTRUCTOR_BUG
++#  undef _STLP_TRIVIAL_DESTRUCTOR_BUG
++#  undef _STLP_BROKEN_USING_DIRECTIVE
++#  undef _STLP_NO_EXPLICIT_FUNCTION_TMPL_ARGS
++#  define _STLP_NO_EXCEPTION_HEADER
++#  undef _STLP_DEFAULT_CONSTRUCTOR_BUG
++
++#  define _STLP_HAS_NO_NEW_IOSTREAMS
++#  define _STLP_HAS_NO_NEW_C_HEADERS
++#  define _STLP_THROW_RETURN_BUG
++#  undef _STLP_LINK_TIME_INSTANTIATION
++#  undef _STLP_PARTIAL_SPEC_NEEDS_TEMPLATE_ARGS
++#  undef _STLP_NO_TEMPLATE_CONVERSIONS
++#  undef _STLP_NEEDS_EXTRA_TEMPLATE_CONSTRUCTORS
++
++
++#  define _STLP_NO_NATIVE_MBSTATE_T
++
++
++#  define _STLP_EXPORT_DECLSPEC __declspec(dllexport)
++#  define _STLP_IMPORT_DECLSPEC __declspec(dllimport)
++
++#  define _STLP_CLASS_EXPORT_DECLSPEC __declspec(dllexport)
++#  define _STLP_CLASS_IMPORT_DECLSPEC __declspec(dllimport)
++
++#  define _STLP_IMPORT_TEMPLATE_KEYWORD __declspec(dllimport)
++#  define _STLP_EXPORT_TEMPLATE_KEYWORD __declspec(dllexport)
++
++#define _STLP_NATIVE_HEADER(header)    <../include/##header>
++#define _STLP_NATIVE_C_HEADER(header)    <../include/##header>
++#define _STLP_NATIVE_CPP_C_HEADER(header)    <../include/##header>
++#define _STLP_NATIVE_OLD_STREAMS_HEADER(header) <../include/##header>
++#define _STLP_NATIVE_CPP_RUNTIME_HEADER(header) <../include/##header>
++
++
++# if defined(__BUILDING_STLPORT) && defined(_WINDLL)
++#  define _STLP_CALL __export
++
++#  undef _STLP_USE_DECLSPEC
++#  define _STLP_USE_DECLSPEC 1
++# endif
++
++# if !defined (__BUILDING_STLPORT) && !defined (_STLP_NO_OWN_IOSTREAMS)
++#  if (defined (_DLL) && !defined (_STLP_DONT_USE_DLL)) || defined (_STLP_USE_DLL)
++#   undef  _STLP_USE_DECLSPEC
++#   define _STLP_USE_DECLSPEC 1
++#  endif
++
++#  if defined (_STLP_DEBUG)
++#   if defined (_DLL)
++#    if !defined (_STLP_DONT_USE_DLL)
++#     pragma comment(lib,"stlp45dm_stldebug.lib")
++#    else
++#     pragma comment(lib,"stlp45dm_stldebug_staticx.lib")
++#    endif
++#   else
++#    if defined (_STLP_USE_DLL)
++#     pragma comment(lib,"stlp45dms_stldebug.lib")
++#    else
++#     pragma comment(lib,"stlp45dm_stldebug_static.lib")
++#    endif
++#   endif
++#  elif defined (DEBUG)
++#   if defined (_DLL)
++#    if !defined (_STLP_DONT_USE_DLL)
++#     pragma comment(lib,"stlp45dm_debug.lib")
++#    else
++#     pragma comment(lib,"stlp45dm_debug_staticx.lib")
++#    endif
++#   else
++#    if defined (_STLP_USE_DLL)
++#     pragma comment(lib,"stlp45dms_debug.lib")
++#    else
++#     pragma comment(lib,"stlp45dm_debug_static.lib")
++#    endif
++#   endif
++#  else
++#   if defined (_DLL)
++#    if !defined (_STLP_DONT_USE_DLL)
++#     pragma comment(lib,"stlp45dm.lib")
++#    else
++#     pragma comment(lib,"stlp45dm_staticx.lib")
++#    endif
++#   else
++#    if defined (_STLP_USE_DLL)
++#     pragma comment(lib,"stlp45dms.lib")
++#    else
++#     pragma comment(lib,"stlp45dm_static.lib")
++#    endif
++#   endif
++#  endif
++# endif
++
++
++#define bad_cast Bad_cast
++
++#ifdef __BUILDING_STLPORT
++// still needed for building STLport itself, but isn't needed for
++// compiling applications anymore
++# undef __SC__
++#endif
++
++#undef __STLP_NO_KEYWORDS_WORKAROUND
++#if !defined (__STLP_NO_KEYWORDS_WORKAROUND)
++# define __in __stl_in
++# define __out __stl_out
++#endif
++
++#endif
+diff -ur STLport-4.5.3.orig/stlport/cstdlib STLport-4.5.3/stlport/cstdlib
+--- STLport-4.5.3.orig/stlport/cstdlib	Thu Aug 23 22:51:54 2001
++++ STLport-4.5.3/stlport/cstdlib	Sun Jan 05 19:34:03 2003
+@@ -84,7 +84,7 @@
+ 
+ _STLP_BEGIN_NAMESPACE
+ 
+-# ifdef _STLP_HAS_NO_NEW_C_HEADERS
++# if defined(_STLP_HAS_NO_NEW_C_HEADERS) && defined(__cplusplus)
+ # if !defined ( _STLP_LABS )
+ inline long   abs(long __x) { return _STLP_VENDOR_CSTD::labs(__x); }
+ # endif
+diff -ur STLport-4.5.3.orig/stlport/cwchar STLport-4.5.3/stlport/cwchar
+--- STLport-4.5.3.orig/stlport/cwchar	Thu Jan 10 18:41:56 2002
++++ STLport-4.5.3/stlport/cwchar	Sun Dec 22 22:13:46 2002
+@@ -33,7 +33,7 @@
+ # if !  defined (_STLP_NO_CWCHAR) && defined  (_STLP_USE_NEW_C_HEADERS)
+ #  include _STLP_NATIVE_CPP_C_HEADER(cwchar)
+ 
+-# elif defined (__MRC__) || defined (__SC__) || defined (__BORLANDC__) || defined(__FreeBSD__) || (defined (__GNUC__) && defined (__APPLE__) || defined( __Lynx__ )) || defined (_STLP_NO_WCHAR_T)
++# elif defined (__MRC__) || (defined (__SC__) && !defined (__DMC__)) || defined (__BORLANDC__) || defined(__FreeBSD__) || (defined (__GNUC__) && defined (__APPLE__) || defined( __Lynx__ )) || defined (_STLP_NO_WCHAR_T)
+ 
+ #  include _STLP_NATIVE_C_HEADER(stddef.h)
+ #  if defined (__FreeBSD__) || defined (__Lynx__)
+@@ -270,8 +270,10 @@
+ 
+ #  if !defined (_STLP_WCHAR_BORLAND_EXCLUDE)
+ 
++#ifndef __DMC__
+ using _STLP_VENDOR_CSTD::wctob;
+ using _STLP_VENDOR_CSTD::wmemcmp;
++#endif
+ using _STLP_VENDOR_CSTD::wmemmove;
+ using _STLP_VENDOR_CSTD::wprintf;
+ using _STLP_VENDOR_CSTD::wscanf;
+diff -ur STLport-4.5.3.orig/stlport/cwctype STLport-4.5.3/stlport/cwctype
+--- STLport-4.5.3.orig/stlport/cwctype	Sat Feb 02 23:11:58 2002
++++ STLport-4.5.3/stlport/cwctype	Wed Jan 01 17:07:51 2003
+@@ -51,7 +51,9 @@
+ using _STLP_VENDOR_CSTD::towctrans;
+ using _STLP_VENDOR_CSTD::wctrans;
+ #   endif
++#   if ! defined ( __DMC__ )
+ using _STLP_VENDOR_CSTD::wctype;
++#   endif
+ using _STLP_VENDOR_CSTD::iswctype;
+ #  endif
+ using _STLP_VENDOR_CSTD::iswalnum;
+diff -ur STLport-4.5.3.orig/stlport/exception STLport-4.5.3/stlport/exception
+--- STLport-4.5.3.orig/stlport/exception	Fri Jul 06 05:16:16 2001
++++ STLport-4.5.3/stlport/exception	Sun Dec 22 22:13:46 2002
+@@ -134,7 +134,7 @@
+ _STLP_BEGIN_NAMESPACE
+ 
+ // section 18.6.1
+-	class exception 
++	class _STLP_CLASS_DECLSPEC exception 
+ 	{
+ 	public:
+ # ifdef _STLP_OWN_IOSTREAMS
+@@ -151,7 +151,7 @@
+ 	
+ 
+ // section 18.6.2.1
+-	class bad_exception : public exception 
++	class _STLP_CLASS_DECLSPEC bad_exception : public exception 
+ 	{
+ 	public:
+ # ifdef _STLP_OWN_IOSTREAMS
+diff -ur STLport-4.5.3.orig/stlport/stl/c_locale.h STLport-4.5.3/stlport/stl/c_locale.h
+--- STLport-4.5.3.orig/stlport/stl/c_locale.h	Fri Jan 18 22:07:00 2002
++++ STLport-4.5.3/stlport/stl/c_locale.h	Sun Dec 22 22:13:47 2002
+@@ -293,6 +293,16 @@
+ #  define _Locale_PRINT  (_ALPHA | _DIGIT | _BLANK | _PUNCT)
+ // is this one has to be so complex ?  
+ #  define _Locale_ALPHA  ( _ALPHA & ~ (_UPPER | _LOWER )) 
++#elif defined (__DMC__)
++#  define _Locale_CNTRL  _CONTROL
++#  define _Locale_UPPER  _UPPER
++#  define _Locale_LOWER  _LOWER
++#  define _Locale_DIGIT  _DIGIT
++#  define _Locale_XDIGIT _HEX
++#  define _Locale_PUNCT  _PUNCT
++#  define _Locale_SPACE  _SPACE
++#  define _Locale_PRINT  (_UPPER | _LOWER | _DIGIT | _PUNCT | _SPACE)
++#  define _Locale_ALPHA  _ALPHA
+ #elif defined(__MRC__) || defined(__SC__)		//*TY 02/24/2000 - added support for MPW
+ #  define _Locale_CNTRL  _CTL
+ #  define _Locale_UPPER  _UPP
+diff -ur STLport-4.5.3.orig/stlport/stl/debug/_string.h STLport-4.5.3/stlport/stl/debug/_string.h
+--- STLport-4.5.3.orig/stlport/stl/debug/_string.h	Sat May 19 04:04:28 2001
++++ STLport-4.5.3/stlport/stl/debug/_string.h	Sun Dec 22 22:13:47 2002
+@@ -89,7 +89,7 @@
+ 		    const allocator_type& __a = allocator_type()):
+     _STLP_DBG_STRING_BASE(__n, __c, __a), _M_iter_list(_Get_base()) {}
+ 
+-#if defined (_STLP_MEMBER_TEMPLATES) && !(defined(__MRC__)||defined(__SC__))
++#if defined (_STLP_MEMBER_TEMPLATES) && !(defined(__MRC__)||(defined(__SC__) && !defined(__DMC__)))
+ # ifdef _STLP_NEEDS_EXTRA_TEMPLATE_CONSTRUCTORS
+   template <class _InputIterator>
+   basic_string(_InputIterator __f, _InputIterator __l):
+diff -ur STLport-4.5.3.orig/stlport/stl/type_traits.h STLport-4.5.3/stlport/stl/type_traits.h
+--- STLport-4.5.3.orig/stlport/stl/type_traits.h	Sat Feb 02 23:12:12 2002
++++ STLport-4.5.3/stlport/stl/type_traits.h	Sun Dec 22 22:13:47 2002
+@@ -375,7 +375,7 @@
+ inline _IsPOD<_Tp>  _Is_POD (_Tp*) { return _IsPOD<_Tp>(); } 
+ 
+ #  ifdef _STLP_CLASS_PARTIAL_SPECIALIZATION
+-#   if defined (__BORLANDC__) || defined (__SUNPRO_CC) || ( defined (__MWERKS__) && (__MWERKS__ <= 0x2303)) || ( defined (__sgi) && defined (_COMPILER_VERSION))
++#   if defined (__BORLANDC__) || defined (__SUNPRO_CC) || ( defined (__MWERKS__) && (__MWERKS__ <= 0x2303)) || ( defined (__sgi) && defined (_COMPILER_VERSION)) || defined (__DMC__)
+ #   define _IS_POD_ITER(_It, _Tp) __type_traits< typename iterator_traits< _Tp >::value_type >::is_POD_type()
+ #   else
+ #   define _IS_POD_ITER(_It, _Tp) typename __type_traits< typename iterator_traits< _Tp >::value_type >::is_POD_type()
+diff -ur STLport-4.5.3.orig/stlport/stl/_alloc.h STLport-4.5.3/stlport/stl/_alloc.h
+--- STLport-4.5.3.orig/stlport/stl/_alloc.h	Sat Feb 02 23:12:02 2002
++++ STLport-4.5.3/stlport/stl/_alloc.h	Sun Dec 22 22:13:46 2002
+@@ -364,7 +364,7 @@
+   size_type max_size() const _STLP_NOTHROW  { return size_t(-1) / sizeof(value_type); }
+   void construct(pointer __p, const _Tp& __val) const { _STLP_STD::_Construct(__p, __val); }
+   void destroy(pointer __p) const { _STLP_STD::_Destroy(__p); }
+-# if defined(__MRC__)||defined(__SC__)
++# if defined(__MRC__)||(defined(__SC__) && !defined(__DMC__))
+   template <class _T2> bool operator==(const allocator<_T2>&) const  { return true; }
+   template <class _T2> bool operator!=(const allocator<_T2>&) const { return false; }
+ # endif
+@@ -385,13 +385,13 @@
+     typedef allocator<_Tp1> other;
+   };
+ # endif
+-# if defined(__MRC__)||defined(__SC__)		//*ty 03/24/2001 - MPW compilers get confused on these operator definitions
++# if defined(__MRC__)||(defined(__SC__)&&!defined(__DMC__))		//*ty 03/24/2001 - MPW compilers get confused on these operator definitions
+   template <class _T2> bool operator==(const allocator<_T2>&) const  { return true; }
+   template <class _T2> bool operator!=(const allocator<_T2>&) const { return false; }
+ # endif
+ };
+ 
+-#if !(defined(__MRC__)||defined(__SC__))		//*ty 03/24/2001 - MPW compilers get confused on these operator definitions
++#if !(defined(__MRC__)||(defined(__SC__)&&!defined(__DMC__)))		//*ty 03/24/2001 - MPW compilers get confused on these operator definitions
+ template <class _T1, class _T2> inline bool  _STLP_CALL operator==(const allocator<_T1>&, const allocator<_T2>&)  { return true; }
+ template <class _T1, class _T2> inline bool  _STLP_CALL operator!=(const allocator<_T1>&, const allocator<_T2>&) { return false; }
+ #endif
+diff -ur STLport-4.5.3.orig/stlport/stl/_bvector.h STLport-4.5.3/stlport/stl/_bvector.h
+--- STLport-4.5.3.orig/stlport/stl/_bvector.h	Sat Feb 02 23:12:04 2002
++++ STLport-4.5.3/stlport/stl/_bvector.h	Sun Dec 22 22:13:46 2002
+@@ -270,7 +270,7 @@
+ # else
+ #  define __BVEC_TMPL_HEADER _STLP_TEMPLATE_NULL
+ # endif
+-# if !(defined(__MRC__)||defined(__SC__))			//*TY 12/17/2000 - 
++# if !(defined(__MRC__)||(defined(__SC__)&&!defined(__DMC__)))			//*TY 12/17/2000 - 
+ #  define _Alloc _STLP_DEFAULT_ALLOCATOR(bool)
+ # else
+ #  define _Alloc allocator<bool>
+diff -ur STLport-4.5.3.orig/stlport/stl/_cmath.h STLport-4.5.3/stlport/stl/_cmath.h
+--- STLport-4.5.3.orig/stlport/stl/_cmath.h	Fri Jan 18 22:06:56 2002
++++ STLport-4.5.3/stlport/stl/_cmath.h	Sun Dec 22 22:13:46 2002
+@@ -110,7 +110,7 @@
+ 
+ _STLP_END_NAMESPACE
+ 
+-# if defined (_STLP_HAS_NO_NEW_C_HEADERS) || defined(_STLP_MSVC) || defined (__ICL)
++# if (defined (_STLP_HAS_NO_NEW_C_HEADERS) || defined(_STLP_MSVC) || defined (__ICL)) && !defined (_STLP_HAS_NO_NAMESPACES)
+ 
+ #if ! defined (_STLP_USE_NEW_C_HEADERS) 
+ 
+diff -ur STLport-4.5.3.orig/stlport/stl/_hashtable.h STLport-4.5.3/stlport/stl/_hashtable.h
+--- STLport-4.5.3.orig/stlport/stl/_hashtable.h	Thu Jan 10 18:42:00 2002
++++ STLport-4.5.3/stlport/stl/_hashtable.h	Sun Dec 22 22:13:46 2002
+@@ -461,7 +461,7 @@
+   reference find_or_insert(const value_type& __obj);
+ 
+ private:
+-# if defined(_STLP_MEMBER_TEMPLATES) && ! defined ( _STLP_NO_EXTENSIONS )  && !(defined(__MRC__)||defined(__SC__))
++# if defined(_STLP_MEMBER_TEMPLATES) && ! defined ( _STLP_NO_EXTENSIONS )  && !(defined(__MRC__)||(defined(__SC__)&&!defined(__DMC_)))
+   template <class _KT> 
+    _Node* _M_find(const _KT& __key) const
+ # else
+@@ -478,7 +478,7 @@
+   } 
+ 
+ public:
+-# if defined(_STLP_MEMBER_TEMPLATES) && ! defined ( _STLP_NO_EXTENSIONS )  && !(defined(__MRC__)||defined(__SC__))
++# if defined(_STLP_MEMBER_TEMPLATES) && ! defined ( _STLP_NO_EXTENSIONS )  && !(defined(__MRC__)||(defined(__SC__)&&!defined(__DMC__)))
+   template <class _KT> 
+   iterator find(const _KT& __key) 
+ # else
+@@ -488,7 +488,7 @@
+     return iterator(_M_find(__key), this);
+   } 
+ 
+-# if defined(_STLP_MEMBER_TEMPLATES) && ! defined ( _STLP_NO_EXTENSIONS )  && !(defined(__MRC__)||defined(__SC__))
++# if defined(_STLP_MEMBER_TEMPLATES) && ! defined ( _STLP_NO_EXTENSIONS )  && !(defined(__MRC__)||(defined(__SC__)&&!defined(__DMC__)))
+   template <class _KT> 
+   const_iterator find(const _KT& __key) const
+ # else
+diff -ur STLport-4.5.3.orig/stlport/stl/_iterator_base.h STLport-4.5.3/stlport/stl/_iterator_base.h
+--- STLport-4.5.3.orig/stlport/stl/_iterator_base.h	Fri Jan 18 22:06:58 2002
++++ STLport-4.5.3/stlport/stl/_iterator_base.h	Sun Dec 22 22:13:46 2002
+@@ -75,7 +75,7 @@
+ #  ifdef _STLP_CLASS_PARTIAL_SPECIALIZATION
+ #   define _STLP_VALUE_TYPE(_It, _Tp)        (typename iterator_traits< _Tp >::value_type*)0
+ #   define _STLP_DISTANCE_TYPE(_It, _Tp)     (typename iterator_traits< _Tp >::difference_type*)0
+-#   if defined (__BORLANDC__) || defined (__SUNPRO_CC) || ( defined (__MWERKS__) && (__MWERKS__ <= 0x2303)) || ( defined (__sgi) && defined (_COMPILER_VERSION)) 
++#   if defined (__BORLANDC__) || defined (__SUNPRO_CC) || ( defined (__MWERKS__) && (__MWERKS__ <= 0x2303)) || ( defined (__sgi) && defined (_COMPILER_VERSION)) || defined (__DMC__)
+ #    define _STLP_ITERATOR_CATEGORY(_It, _Tp) iterator_traits< _Tp >::iterator_category()
+ #   else
+ #    define _STLP_ITERATOR_CATEGORY(_It, _Tp) typename iterator_traits< _Tp >::iterator_category()
+diff -ur STLport-4.5.3.orig/stlport/stl/_iterator_old.h STLport-4.5.3/stlport/stl/_iterator_old.h
+--- STLport-4.5.3.orig/stlport/stl/_iterator_old.h	Thu Jan 10 18:42:00 2002
++++ STLport-4.5.3/stlport/stl/_iterator_old.h	Sun Dec 22 22:13:46 2002
+@@ -159,7 +159,7 @@
+ 
+ template <class _RandomAccessIterator, 
+ # if defined (__MSL__) && (__MSL__ >= 0x2405) \
+-	|| defined(__MRC__) || defined(__SC__)		//*ty 03/22/2001 - give the default to the secont param under MPW. 
++	|| defined(__MRC__) || (defined(__SC__) && !defined(__DMC__))		//*ty 03/22/2001 - give the default to the secont param under MPW. 
+ 												// I believe giving the default will cause any harm even though the 2nd type parameter 
+ 												// still have to be provided for T* type iterators.
+ 	__DFL_TMPL_PARAM(_Tp,iterator_traits<_RandomAccessIterator>::value_type),
+diff -ur STLport-4.5.3.orig/stlport/stl/_list.h STLport-4.5.3/stlport/stl/_list.h
+--- STLport-4.5.3.orig/stlport/stl/_list.h	Sat Feb 02 23:12:06 2002
++++ STLport-4.5.3/stlport/stl/_list.h	Sun Jan 05 19:25:17 2003
+@@ -77,6 +77,12 @@
+ struct _List_node : public _List_node_base {
+   _Tp _M_data;
+   __TRIVIAL_STUFF(_List_node)
++
++#ifdef __DMC__
++  // for some reason, Digital Mars C++ needs a constructor...
++ private:
++  _List_node();
++#endif
+ };
+ 
+ struct _List_iterator_base {
+@@ -251,7 +257,7 @@
+   }
+ 
+ public:
+-# if !(defined(__MRC__)||defined(__SC__))
++# if !(defined(__MRC__)||(defined(__SC__) && !defined(__DMC__)))
+   explicit
+ # endif
+   list(const allocator_type& __a = allocator_type()) :
+diff -ur STLport-4.5.3.orig/stlport/stl/_monetary.c STLport-4.5.3/stlport/stl/_monetary.c
+--- STLport-4.5.3.orig/stlport/stl/_monetary.c	Sat Feb 02 23:12:08 2002
++++ STLport-4.5.3/stlport/stl/_monetary.c	Sun Dec 22 22:13:47 2002
+@@ -228,10 +228,10 @@
+         ++__s;
+       break;
+     case money_base::symbol: {
+-      string_type __cs = __intl ? __punct_intl.curr_symbol()
++      string_type __curs = __intl ? __punct_intl.curr_symbol()
+                                 : __punct.curr_symbol();
+       pair<iter_type, bool>
+-      __result  = __get_string(__s, __end, __cs.begin(), __cs.end());
++      __result  = __get_string(__s, __end, __curs.begin(), __curs.end());
+       if (!__result.second && __symbol_required)
+         __err = ios_base::failbit;
+       __s = __result.first;
+diff -ur STLport-4.5.3.orig/stlport/stl/_pair.h STLport-4.5.3/stlport/stl/_pair.h
+--- STLport-4.5.3.orig/stlport/stl/_pair.h	Sun Sep 30 05:58:58 2001
++++ STLport-4.5.3/stlport/stl/_pair.h	Sun Dec 22 22:13:47 2002
+@@ -94,7 +94,7 @@
+ #endif /* _STLP_USE_SEPARATE_RELOPS_NAMESPACE */
+ 
+ 
+-#if defined(_STLP_FUNCTION_TMPL_PARTIAL_ORDER) && ! defined (_STLP_NO_EXTENSIONS) && ! defined (__BORLANDC__)
++#if defined(_STLP_FUNCTION_TMPL_PARTIAL_ORDER) && ! defined (_STLP_NO_EXTENSIONS) && ! defined (__BORLANDC__) && ! defined (__DMC__)
+ template <class _T1, class _T2, int _Sz>
+ inline pair<_T1, _T2 const*> make_pair(_T1 const& __x,
+                                        _T2 const (&__y)[_Sz])
+diff -ur STLport-4.5.3.orig/stlport/stl/_queue.h STLport-4.5.3/stlport/stl/_queue.h
+--- STLport-4.5.3.orig/stlport/stl/_queue.h	Fri Jan 18 22:07:00 2002
++++ STLport-4.5.3/stlport/stl/_queue.h	Sun Dec 22 22:13:47 2002
+@@ -46,7 +46,7 @@
+ # include <stl/_function.h>
+ #endif
+ 
+-#if defined(__SC__)		//*ty 12/07/2001 - since "comp" is a built-in type and reserved under SCpp
++#if defined(__SC__) && !defined(__DMC__)		//*ty 12/07/2001 - since "comp" is a built-in type and reserved under SCpp
+ #define comp _Comp
+ #endif
+ 
+diff -ur STLport-4.5.3.orig/stlport/stl/_rope.c STLport-4.5.3/stlport/stl/_rope.c
+--- STLport-4.5.3.orig/stlport/stl/_rope.c	Sat Feb 02 23:12:08 2002
++++ STLport-4.5.3/stlport/stl/_rope.c	Sun Dec 22 22:13:47 2002
+@@ -343,10 +343,10 @@
+ 	case _S_substringfn:
+ 	    {
+             typedef _Rope_RopeSubstring<_CharT,_Alloc> _Rope_RopeSubstring_T;
+-              _Rope_RopeSubstring_T* __ss = (_Rope_RopeSubstring_T*)this;
+-              _Destroy(__ss);
++              _Rope_RopeSubstring_T* __subs = (_Rope_RopeSubstring_T*)this;
++              _Destroy(__subs);
+               _STLP_CREATE_ALLOCATOR(allocator_type,(const allocator_type&)_M_size, 
+-                              _Rope_RopeSubstring_T).deallocate(__ss, 1);
++                              _Rope_RopeSubstring_T).deallocate(__subs, 1);
+ 		break;
+ 	    }
+     }
+@@ -794,7 +794,7 @@
+ 	// _CharT* buffer;    // XXX not used
+ 	_Rope_insert_char_consumer(_Insert_ostream& __writer) 
+ 	  : _M_o(__writer) {};
+-#if defined(__MRC__)||defined(__SC__)		//*TY 05/23/2000 - added support for mpw compiler's trigger function approach to generate vtable
++#if defined(__MRC__)||(defined(__SC__) && !defined(__DMC__))		//*TY 05/23/2000 - added support for mpw compiler's trigger function approach to generate vtable
+   ~_Rope_insert_char_consumer();		//*TY 05/23/2000 - 
+ #else		//*TY 05/23/2000 - 
+   ~_Rope_insert_char_consumer() {}
+@@ -805,7 +805,7 @@
+ };
+ 	    
+ # if defined ( _STLP_USE_NEW_IOSTREAMS )
+-#  if defined(__MRC__)||defined(__SC__)		//*TY 05/23/2000 - added support for mpw compiler's trigger function approach to generate vtable
++#  if defined(__MRC__)||(defined(__SC__) && !defined(__DMC__))		//*TY 05/23/2000 - added support for mpw compiler's trigger function approach to generate vtable
+   template<class _CharT, class _Traits>
+   _Rope_insert_char_consumer<_CharT, _Traits>::  ~_Rope_insert_char_consumer() {}
+ #  endif		//*TY 05/23/2000 - 
+@@ -820,7 +820,7 @@
+     return true;
+ }
+ # else
+-#  if defined(__MRC__)||defined(__SC__)		//*TY 05/23/2000 - added support for mpw compiler's trigger function approach to generate vtable
++#  if defined(__MRC__)||(defined(__SC__) && !defined(__DMC__))		//*TY 05/23/2000 - added support for mpw compiler's trigger function approach to generate vtable
+   template<class _CharT>
+   _Rope_insert_char_consumer<_CharT>::  ~_Rope_insert_char_consumer() {}
+ #  endif		//*TY 05/23/2000 - 
+diff -ur STLport-4.5.3.orig/stlport/stl/_stdio_file.h STLport-4.5.3/stlport/stl/_stdio_file.h
+--- STLport-4.5.3.orig/stlport/stl/_stdio_file.h	Fri Jan 18 22:07:00 2002
++++ STLport-4.5.3/stlport/stl/_stdio_file.h	Sun Dec 22 22:13:47 2002
+@@ -411,6 +411,56 @@
+ 
+ # define _STLP_FILE_I_O_IDENTICAL
+ 
++#elif defined(__DMC__)
++
++inline int   _FILE_fd(const FILE *__f) { return __f->_file; }
++
++//       Returns a pointer to the beginning of the buffer.
++inline char* _FILE_I_begin(const FILE *__f) { return __f->_base; }
++
++//       Returns the current read/write position within the buffer.
++inline char* _FILE_I_next(const FILE *__f) { return __f->_ptr; }
++
++//       Returns a pointer immediately past the end of the buffer.
++inline char* _FILE_I_end(const FILE *__f) { return __f->_ptr + __f->_cnt; }
++
++//       Returns the number of characters remaining in the buffer, i.e.
++//       _FILE_[IO]_end(__f) - _FILE_[IO]_next(__f).
++inline ptrdiff_t _FILE_I_avail(const FILE *__f) { return __f->_cnt; }
++
++//       Increments the current read/write position by 1, returning the 
++//       character at the NEW position.
++inline char& _FILE_I_preincr(FILE *__f) { --__f->_cnt; return *(++__f->_ptr); }
++
++
++//       Increments the current read/write position by 1, returning the 
++//       character at the old position.
++inline char& _FILE_I_postincr(FILE *__f) { --__f->_cnt; return *(__f->_ptr++); }
++
++//       Decrements the current read/write position by 1, returning the 
++//       character at the NEW position.
++inline char& _FILE_I_predecr(FILE *__f) { ++__f->_cnt; return *(--__f->_ptr); }
++
++//       Decrements the current read/write position by 1, returning the 
++//       character at the old position.
++inline char& _FILE_I_postdecr(FILE *__f) { ++__f->_cnt; return *(__f->_ptr--); }
++
++//       Increments the current read/write position by __n.
++inline void _FILE_I_bump(FILE *__f, int __n) { __f->_cnt -= __n; __f->_ptr += __n; }
++
++//       Sets the beginning of the bufer to __begin, the current read/write
++//       position to __next, and the buffer's past-the-end pointer to __end.
++//       If any of those pointers is null, then all of them must be null.
++inline void _FILE_I_set(FILE *__f, char* __begin, char* __next, char* __end)
++{
++	__f->_base = __begin;
++	__f->_ptr = __next;
++	__f->_cnt = __end - __next;
++	__f->_bufsiz = __end - __begin;
++}
++
++# define _STLP_FILE_I_O_IDENTICAL
++
+ #elif defined(__MRC__) || defined(__SC__)		//*TY 02/24/2000 - added support for MPW
+ 
+ inline int   _FILE_fd(const FILE *__f) { return __f->_file; }
+diff -ur STLport-4.5.3.orig/stlport/stl/_string.h STLport-4.5.3/stlport/stl/_string.h
+--- STLport-4.5.3.orig/stlport/stl/_string.h	Thu Jan 10 18:42:04 2002
++++ STLport-4.5.3/stlport/stl/_string.h	Sun Dec 22 22:13:47 2002
+@@ -259,7 +259,7 @@
+ 
+   // Check to see if _InputIterator is an integer type.  If so, then
+   // it can't be an iterator.
+-#if defined (_STLP_MEMBER_TEMPLATES) && !(defined(__MRC__)||defined(__SC__))		//*ty 04/30/2001 - mpw compilers choke on this ctor
++#if defined (_STLP_MEMBER_TEMPLATES) && !(defined(__MRC__)||(defined(__SC__) && !defined(__DMC__)))		//*ty 04/30/2001 - mpw compilers choke on this ctor
+ # ifdef _STLP_NEEDS_EXTRA_TEMPLATE_CONSTRUCTORS
+   template <class _InputIterator> basic_string(_InputIterator __f, _InputIterator __l)
+     : _String_base<_CharT,_Alloc>(allocator_type())
+diff -ur STLport-4.5.3.orig/stlport/stl/_threads.h STLport-4.5.3/stlport/stl/_threads.h
+--- STLport-4.5.3.orig/stlport/stl/_threads.h	Fri Jan 18 22:07:00 2002
++++ STLport-4.5.3/stlport/stl/_threads.h	Sun Dec 22 22:13:47 2002
+@@ -89,7 +89,7 @@
+ 
+ # elif defined(_STLP_WIN32)
+ #  if !defined (_STLP_WINDOWS_H_INCLUDED) && ! defined (_WINDOWS_H)
+-#   if ! (defined ( _STLP_MSVC ) || defined (__BORLANDC__) || defined (__ICL) || defined (__WATCOMC__) || defined (__MINGW32__)) 
++#   if ! (defined ( _STLP_MSVC ) || defined (__BORLANDC__) || defined (__ICL) || defined (__WATCOMC__) || defined (__MINGW32__) || defined (__DMC__))
+ #    ifdef _STLP_USE_MFC
+ #     include <afx.h>
+ #    else
+diff -ur STLport-4.5.3.orig/stlport/stl/_tree.h STLport-4.5.3/stlport/stl/_tree.h
+--- STLport-4.5.3.orig/stlport/stl/_tree.h	Sat Feb 02 23:12:12 2002
++++ STLport-4.5.3/stlport/stl/_tree.h	Sun Jan 05 02:02:19 2003
+@@ -454,7 +454,7 @@
+ 
+ public:
+                                 // set operations:
+-# if defined(_STLP_MEMBER_TEMPLATES) && ! defined ( _STLP_NO_EXTENSIONS ) && !defined(__MRC__) && !defined(__SC__)
++# if defined(_STLP_MEMBER_TEMPLATES) && ! defined ( _STLP_NO_EXTENSIONS ) && !defined(__MRC__) && !(defined(__SC__) && !defined(__DMC__))
+   template <class _KT> iterator find(const _KT& __x) { return iterator(_M_find(__x)); }
+   template <class _KT> const_iterator find(const _KT& __x) const { return const_iterator(_M_find(__x)); }
+ private:
+diff -ur STLport-4.5.3.orig/stlport/typeinfo STLport-4.5.3/stlport/typeinfo
+--- STLport-4.5.3.orig/stlport/typeinfo	Thu Jan 10 18:41:56 2002
++++ STLport-4.5.3/stlport/typeinfo	Sun Dec 22 22:13:47 2002
+@@ -23,7 +23,7 @@
+ 
+ # ifndef _STLP_NO_TYPEINFO
+ 
+-# if defined (_STLP_NO_NEW_NEW_HEADER)
++# if defined (_STLP_NO_NEW_NEW_HEADER) || defined (__DMC__)
+ #  include <typeinfo.h>
+ # else
+ #  include _STLP_NATIVE_CPP_RUNTIME_HEADER(typeinfo)
+@@ -47,7 +47,7 @@
+ using _STLP_VENDOR_EXCEPT_STD::type_info;
+ // # endif
+ 
+-#  if !(defined(__MRC__) || defined(__SC__))
++#  if !(defined(__MRC__) || defined(__SC__) || defined(__DMC__))
+ using _STLP_VENDOR_EXCEPT_STD::bad_typeid;
+ #  endif
+ 
+@@ -68,7 +68,9 @@
+ 
+ # include <exception>
+ _STLP_BEGIN_NAMESPACE
++# ifndef __DMC__
+ struct bad_cast : exception {};
++# endif
+ _STLP_END_NAMESPACE
+ #endif  /* NO_TYPEINFO */
+ 
+diff -ur STLport-4.5.3.orig/stlport/typeinfo.h STLport-4.5.3/stlport/typeinfo.h
+--- STLport-4.5.3.orig/stlport/typeinfo.h	Sat May 19 04:04:22 2001
++++ STLport-4.5.3/stlport/typeinfo.h	Sun Dec 22 22:13:47 2002
+@@ -38,7 +38,7 @@
+ _STLP_BEGIN_NAMESPACE
+ 
+ using /*_STLP_VENDOR_EXCEPT_STD */ :: type_info;
+-# if !(defined(__MRC__) || defined(__SC__))
++# if !(defined(__MRC__) || (defined(__SC__) && !defined(__DMC__)))
+ using /* _STLP_VENDOR_EXCEPT_STD */ :: bad_typeid;
+ # endif
+ using /* _STLP_VENDOR_EXCEPT_STD */ :: bad_cast;
+diff -ur STLport-4.5.3.orig/test/regression/dm.mak STLport-4.5.3/test/regression/dm.mak
+--- STLport-4.5.3.orig/test/regression/dm.mak	Sun Oct 27 23:39:29 2002
++++ STLport-4.5.3/test/regression/dm.mak	Sun Dec 22 22:13:47 2002
+@@ -0,0 +1,63 @@
++.SUFFIXES: .cpp .c .o .so .a .exe .obj .output
++
++# bug.cpp fstream1.cpp don't work for some reason
++
++# bvec1.cpp seek.cpp and sstream1.cpp only work with the STLport
++# iostreams library
++
++SRCS = accum1.cpp accum2.cpp adjdiff0.cpp adjdiff1.cpp adjdiff2.cpp \
++	adjfind0.cpp adjfind1.cpp adjfind2.cpp advance.cpp alg1.cpp \
++	alg2.cpp alg3.cpp alg4.cpp alg5.cpp bcompos1.cpp bcompos2.cpp \
++	bind1st1.cpp bind1st2.cpp bind2nd1.cpp bind2nd2.cpp \
++	binsert1.cpp binsert2.cpp binsrch1.cpp binsrch2.cpp \
++	bitset1.cpp bnegate1.cpp bnegate2.cpp \
++	copy1.cpp copy2.cpp copy3.cpp copy4.cpp copyb.cpp copyb0.cpp \
++	count0.cpp count1.cpp countif1.cpp deque1.cpp divides.cpp \
++	eqlrnge0.cpp eqlrnge1.cpp eqlrnge2.cpp equal0.cpp equal1.cpp \
++	equal2.cpp equalto.cpp fill1.cpp filln1.cpp find0.cpp \
++	find1.cpp findif0.cpp findif1.cpp finsert1.cpp finsert2.cpp \
++	foreach0.cpp foreach1.cpp func1.cpp func2.cpp \
++	func3.cpp gener1.cpp gener2.cpp genern1.cpp genern2.cpp \
++	greateq.cpp greater.cpp hmap1.cpp hmmap1.cpp hmset1.cpp \
++	hset2.cpp incl0.cpp incl1.cpp incl2.cpp inplmrg1.cpp \
++	inplmrg2.cpp inrprod0.cpp inrprod1.cpp inrprod2.cpp \
++	insert1.cpp insert2.cpp iota1.cpp istmit1.cpp iter1.cpp \
++	iter2.cpp iter3.cpp iter4.cpp iterswp0.cpp iterswp1.cpp \
++	less.cpp lesseq.cpp lexcmp1.cpp lexcmp2.cpp list1.cpp \
++	list2.cpp list3.cpp list4.cpp logicand.cpp logicnot.cpp \
++	logicor.cpp lwrbnd1.cpp lwrbnd2.cpp map1.cpp max1.cpp max2.cpp \
++	maxelem1.cpp maxelem2.cpp merge0.cpp merge1.cpp merge2.cpp \
++	min1.cpp min2.cpp minelem1.cpp minelem2.cpp minus.cpp \
++	mismtch0.cpp mismtch1.cpp mismtch2.cpp mkheap0.cpp mkheap1.cpp \
++	mmap1.cpp mmap2.cpp modulus.cpp mset1.cpp mset3.cpp mset4.cpp \
++	mset5.cpp negate.cpp nequal.cpp nextprm0.cpp nextprm1.cpp \
++	nextprm2.cpp nthelem0.cpp nthelem1.cpp nthelem2.cpp ostmit.cpp \
++	pair0.cpp pair1.cpp pair2.cpp parsrt0.cpp parsrt1.cpp \
++	parsrt2.cpp parsrtc0.cpp parsrtc1.cpp parsrtc2.cpp \
++	partsrt0.cpp partsum0.cpp partsum1.cpp partsum2.cpp pheap1.cpp \
++	pheap2.cpp plus.cpp pqueue1.cpp prevprm0.cpp prevprm1.cpp \
++	prevprm2.cpp ptition0.cpp ptition1.cpp ptrbinf1.cpp \
++	ptrbinf2.cpp ptrunf1.cpp ptrunf2.cpp queue1.cpp rawiter.cpp \
++	remcopy1.cpp remcpif1.cpp remif1.cpp remove1.cpp repcpif1.cpp \
++	replace0.cpp replace1.cpp replcpy1.cpp replif1.cpp revbit1.cpp \
++	revbit2.cpp revcopy1.cpp reverse1.cpp reviter1.cpp \
++	reviter2.cpp rndshuf0.cpp rndshuf1.cpp rndshuf2.cpp \
++	rotate0.cpp rotate1.cpp rotcopy0.cpp rotcopy1.cpp search0.cpp \
++	search1.cpp search2.cpp set1.cpp set2.cpp \
++	setdiff0.cpp setdiff1.cpp setdiff2.cpp setintr0.cpp \
++	setintr1.cpp setintr2.cpp setsymd0.cpp setsymd1.cpp \
++	setsymd2.cpp setunon0.cpp setunon1.cpp setunon2.cpp \
++	slist1.cpp sort1.cpp sort2.cpp stack1.cpp \
++	stack2.cpp stat.cpp stblptn0.cpp stblptn1.cpp stblsrt1.cpp \
++	stblsrt2.cpp strass1.cpp \
++	string1.cpp swap1.cpp swprnge1.cpp times.cpp trnsfrm1.cpp \
++	trnsfrm2.cpp tstdeq.cpp ucompos1.cpp ucompos2.cpp unegate1.cpp \
++	unegate2.cpp uniqcpy1.cpp uniqcpy2.cpp unique1.cpp unique2.cpp \
++	uprbnd1.cpp uprbnd2.cpp vec1.cpp vec2.cpp vec3.cpp vec4.cpp \
++	vec5.cpp vec6.cpp vec7.cpp vec8.cpp
++
++
++.cpp.exe:
++	dmc -Ae -Ar -DMAIN -I../../stlport $<
++
++all:	$(SRCS:.cpp=.exe)
+
+diff -ur STLport-4.5.3.orig/stlport/stdexcept STLport-4.5.3/stlport/stdexcept
+20a21,24
++ #ifndef _STLP_STRING
++ #include <string>
++ #endif
++ 
+

@@ -1,0 +1,14 @@
+82572
+C:\SC\samples\mfc32\database\dbfetch\dbfetch.prj
+dbfetch.OPN
+novcs
+dbfetch.DEF
+16
+845583970
+0 0 0 0 0 "BULKSET.CPP" ""
+0 0 0 0 0 "DATADLG.CPP" ""
+0 0 0 0 0 "DBFETCH.CPP" ""
+0 0 0 0 0 "FETCHDLG.CPP" ""
+0 0 0 0 0 "STDAFX.CPP" ""
+0 0 0 0 0 "DBFETCH.RC" ""
+0 0 0 0 0 "dbfetch.DEF" ""

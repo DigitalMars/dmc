@@ -1,0 +1,24 @@
+82569
+c:\source\75\RTL\SRC\BUILD\lwindos.prj
+SWL.OPN
+novcs
+lwindos.DEF
+12
+815828212
+0 0 0 0 0 "..\winio\argcargv.c"
+0 0 0 0 0 "..\winio\winio.c"
+0 0 0 0 0 "..\winio\wmhandlr.c"
+0 -1 0 0 0 "..\..\include\windows.h"
+0 -1 0 0 0 "..\..\include\win16\windows.h"
+0 -1 0 0 0 "..\..\include\stdlib.h"
+0 -1 0 0 0 "..\..\include\string.h"
+0 -1 0 0 0 "..\..\include\winio.h"
+0 -1 0 0 0 "..\..\include\winio\winio.h"
+0 -1 0 0 0 "..\..\include\stdarg.h"
+0 -1 0 0 0 "..\..\include\stdio.h"
+0 -1 0 0 0 "..\..\include\malloc.h"
+0 -1 0 0 0 "..\..\include\commdlg.h"
+0 -1 0 0 0 "..\..\include\win16\commdlg.h"
+0 -1 0 0 0 "..\..\include\wmhandlr.h"
+0 -1 0 0 0 "..\..\include\winio\wmhandlr.h"
+0 0 0 0 0 "..\core\scver.c"

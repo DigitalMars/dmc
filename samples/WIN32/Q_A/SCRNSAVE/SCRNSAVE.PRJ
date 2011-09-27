@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\Q_A\SCRNSAVE\SCRNSAVE.PRJ
+SCRNSAVE.OPN
+novcs
+ScrnSave.DEF
+18
+812035224
+0 0 0 0 0 "fractal.c" ""
+0 0 0 0 0 "fractal.rc" ""
+0 0 0 0 0 "readme.txt" ""
+0 0 0 0 0 "scrnsave.def" ""

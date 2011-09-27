@@ -1,0 +1,616 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\HttpSvr.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_HTTPSVTYPE          ICON    DISCARDABLE     "res\\HttpDoc.ico"
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\mainfrm.ico"
+IDI_LOGFILE             ICON    DISCARDABLE     "res\\logfile.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+#if defined(APSTUDIO_INVOKED) || !defined(_MAC)
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&Server"
+    BEGIN
+        MENUITEM "&New",                        ID_FILE_NEW
+        MENUITEM "&Open...",                    ID_FILE_OPEN
+        MENUITEM "&Save",                       ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM "&Restart",                    ID_FILE_RESTART
+        MENUITEM SEPARATOR
+        MENUITEM "&Properties...",              IDM_SVR_OPTIONS
+        MENUITEM SEPARATOR
+        MENUITEM "Recent Config",               ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "Lar&ge Icons",                IDM_VIEW_LARGE
+        MENUITEM "&Small Icons",                IDM_VIEW_SMALL
+        MENUITEM "&List",                       IDM_VIEW_LIST
+        MENUITEM "&Details",                    IDM_VIEW_REPORT
+        MENUITEM SEPARATOR
+        MENUITEM "&Clear View",                 IDM_VIEW_CLEAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About HttpSvr...",           ID_APP_ABOUT
+    END
+END
+#endif
+
+#if defined(APSTUDIO_INVOKED) || defined(_MAC)
+#if defined(APSTUDIO_INVOKED)
+IDR_MAINFRAME$(_MAC) MENU PRELOAD DISCARDABLE 
+#else
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+#endif
+BEGIN
+    POPUP "&Server"
+    BEGIN
+        MENUITEM "&New",                        ID_FILE_NEW
+        MENUITEM "&Open...",                    ID_FILE_OPEN
+        MENUITEM "&Save",                       ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM "&Restart",                    ID_FILE_RESTART
+        MENUITEM SEPARATOR
+        MENUITEM "&Properties...",              IDM_SVR_OPTIONS
+        MENUITEM SEPARATOR
+        MENUITEM "Recent Config",               ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Quit\t\021Q",                 ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "Lar&ge Icons",                IDM_VIEW_LARGE
+        MENUITEM "&Small Icons",                IDM_VIEW_SMALL
+        MENUITEM "&List",                       IDM_VIEW_LIST
+        MENUITEM "&Details",                    IDM_VIEW_REPORT
+        MENUITEM SEPARATOR
+        MENUITEM "&Clear View",                 IDM_VIEW_CLEAR
+    END
+END
+#endif
+
+IDM_POPUPS MENU DISCARDABLE 
+BEGIN
+    POPUP "Documents"
+    BEGIN
+        MENUITEM "&Open",                       IDM_POPUP_OPEN
+        MENUITEM "&Edit",                       IDM_POPUP_EDIT
+        MENUITEM SEPARATOR
+        MENUITEM "&Clear",                      IDM_POPUP_CLEAR
+    END
+    POPUP "Executables"
+    BEGIN
+        MENUITEM "&Clear",                      IDM_POPUP_CLEAR
+    END
+    POPUP "Status"
+    BEGIN
+        MENUITEM "&Clear",                      IDM_POPUP_CLEAR
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+#if defined(APSTUDIO_INVOKED) || !defined(_MAC)
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+END
+#endif
+
+#if defined(APSTUDIO_INVOKED) || defined(_MAC)
+#if defined(APSTUDIO_INVOKED)
+IDR_MAINFRAME$(_MAC) ACCELERATORS PRELOAD MOVEABLE PURE 
+#else
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+#endif
+BEGIN
+    "Q",            ID_APP_EXIT,            VIRTKEY, ALT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+END
+#endif
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About HttpSvr"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,18,20
+    LTEXT           "HttpSvr Version 2.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright © 1996 Microsoft, Inc., All Rights Reserved",
+                    IDC_STATIC,7,56,203,19
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+    LTEXT           "Portable Web HTTP Server \nby Ron Logan",IDC_STATIC,39,
+                    26,133,24
+END
+
+IDD_ROOTPAGE DIALOG DISCARDABLE  0, 0, 222, 68
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Root Dir"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Root Directory:",IDC_STATIC,7,18,64,8
+    EDITTEXT        IDC_ROOTDIR,7,27,208,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Reset",IDC_RESET,165,48,50,13
+END
+
+IDD_NOROOT DIALOG DISCARDABLE  0, 0, 186, 68
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "HTTP Root Folder"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "The specified HTTP Root directory does not exist.\nEnter a new folder or select OK to create it.",
+                    IDC_STATIC,7,7,172,20
+    EDITTEXT        IDC_ROOTDIR,7,29,172,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&OK",IDOK,37,47,50,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,98,47,50,14
+END
+
+IDD_GENPAGE DIALOG DISCARDABLE  0, 0, 208, 71
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "General"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Folder Listings",IDC_STATIC,7,7,96,44
+    CONTROL         "&Allow Folder Listing",IDC_ALLOWLIST,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,20,82,10
+    CONTROL         "Display &Icons",IDC_LISTICONS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,26,34,64,10
+    CONTROL         "&Log hits to file",IDC_LOGGINGON,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,56,73,8
+END
+
+IDD_NAMEPAGE DIALOG DISCARDABLE  0, 0, 222, 74
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Server Name"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Use &Default Server Name",IDC_DEFNAME,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,7,7,181,10
+    CONTROL         "Use &This Server Name:",IDC_USENAME,"Button",
+                    BS_AUTORADIOBUTTON,7,19,184,9
+    EDITTEXT        IDC_SVRNAME,19,33,196,14,ES_AUTOHSCROLL | WS_GROUP
+    RTEXT           "Port:",IDC_STATIC,7,56,69,10
+    EDITTEXT        IDC_PORT,80,53,48,14,ES_AUTOHSCROLL | ES_NUMBER
+END
+
+IDD_BADROOT DIALOG DISCARDABLE  0, 0, 186, 73
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "HTTP Root Folder"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,52,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,103,52,50,14
+    EDITTEXT        IDC_ROOTDIR,7,32,172,14,ES_AUTOHSCROLL
+    CTEXT           "The specified HTTP Root is not a folder. Please enter the full path of the folder you wish to use:",
+                    IDC_STATIC,7,7,172,24
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,1
+ PRODUCTVERSION 2,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Portable Web HTTP Server written by Ron Logan\0"
+            VALUE "CompanyName", "Microsoft, Inc.\0"
+            VALUE "FileDescription", "HTTPSVR MFC Application\0"
+            VALUE "FileVersion", "2, 0, 0, 1\0"
+            VALUE "InternalName", "HTTPSVR\0"
+            VALUE "LegalCopyright", "Copyright © 1996 by Microsoft, Inc., All Rights Reserved\0"
+            VALUE "OriginalFilename", "HTTPSVR.EXE\0"
+            VALUE "ProductName", "HTTPSVR Application\0"
+            VALUE "ProductVersion", "2, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_ROOTPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 61
+    END
+
+    IDD_NOROOT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 61
+    END
+
+    IDD_GENPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_NAMEPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_BADROOT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 66
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_IMAGES              BITMAP  DISCARDABLE     "res\\images.bmp"
+IDB_SMALLIMAGES         BITMAP  DISCARDABLE     "res\\smimages.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Http Server\ndefault\nHttpSvr\nHttpSvr Config Files (*.hsc)\n.hsc\nHttpSvr.Document\nHttpSvr Document\nHTPC\nHttpSvr Config Files"
+    IDR_LOGFILE             "Http Server\ndefault\nHttpSvr\nHttpSvr Log Files (*.hsl)\n.hsl\nHttpSvr.LogFile\nHttpSvr LogFile\nHTPL\nHttpSvr Log Files"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "HTTP Server"
+    AFX_IDS_IDLEMESSAGE     "Waiting for web accesses..."
+    IDS_LONGTIME            "%a, %d %b %Y %H:%M:%S %z"
+    IDS_TIMEFORMAT          "%m/%d/%y %H:%M:%S"
+    IDS_OPTIONS             "Server Options"
+    IDS_FILETIMEFMT         "%m/%d/%y %H:%M"
+    IDS_HTTPTIME            "%a, %d %b %Y %H:%M:%S GMT"
+    IDS_SERVER_NAME         "MS-MFC-HttpSvr/1.0"
+    IDS_LOGFILEFMT          " Log %Y%m%d.hsl"
+    IDS_STATUSFMT           " %03d  \t"
+    IDS_DOCTITLE            "%s (http://%s:%d)"
+    IDS_LOG_HEADER          "Hit Log for %s\n\n"
+    IDS_LONG_DATE           "%A, %B %d, %Y"
+    IDS_DOCTITLE_NOPORT     "%s (http://%s)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_UPTIME     "Uptime: 999d 99h 99m"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the server; no longer provide HTTP service"
+    IDS_ERROR_NOTDIR        "The specified root folder is not a directory."
+    IDS_ERROR_NOTTHERE      "The specified root folder does not exists."
+    IDS_WINSOCK_FAILED      "Failed to load WinSock services!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_DESKACCESSORY   "Opens the selected item"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STATUS_OK           "200 OK"
+    IDS_STATUS_CREATED      "201 Created"
+    IDS_STATUS_ACCEPTED     "202 Accepted"
+    IDS_STATUS_NOCONTENT    "204 No Content"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STATUS_MOVEDPERM    "301 Moved Permanently"
+    IDS_STATUS_MOVEDTEMP    "302 Redirection"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STATUS_NOTMODIFIED  "304 Not Modified"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STATUS_BADREQUEST   "400 Bad Request"
+    IDS_STATUS_UNAUTH       "401 Unauthorized"
+    IDS_STATUS_FORBIDDEN    "403 Forbidden"
+    IDS_STATUS_NOTFOUND     "404 Not Found"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STATUS_SVRERROR     "500 Internal Server Error"
+    IDS_STATUS_NOTIMPL      "501 Not Implemented"
+    IDS_STATUS_BADGATEWAY   "502 Bad Gateway"
+    IDS_STATUS_SVCUNAVAIL   "503 Service Unavailable"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_COLUMN1             "Hit Name"
+    IDS_COLUMN2             "In Folder"
+    IDS_COLUMN3             "#Hits"
+    IDS_COLUMN4             "Time Last Hit"
+    IDS_COLUMN5             "Last Refered By"
+    IDS_COLUMN6             "Last URL"
+    IDS_BAD_ROOT            "The specified root directory either does not exists or is not a directory."
+    IDS_REGISTRY_KEY        "Microsoft"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_VIEW_LARGE          "View hit documents as large icons"
+    IDM_VIEW_SMALL          "View hit documents as small icons"
+    IDM_VIEW_LIST           "View hit documents in a list"
+    IDM_VIEW_REPORT         "View details of hit documents"
+    IDM_VIEW_CLEAR          "Clear view of all hit documents; reset all counts"
+    IDM_SVR_OPTIONS         "Edit the server configuration options"
+    IDM_SVR_EXIT            "Quit the server; no longer provide HTTP service"
+    IDM_POPUP_EDIT          "Edit this document"
+    IDM_POPUP_OPEN          "Open this document"
+    IDM_POPUP_TEMP          "Does nothing yet"
+    IDM_POPUP_CLEAR         "Clear this item from the server's tracking view"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DEFAULTDOC          "default.html\ndefault.htm\nindex.html\nindex.htm"
+    IDS_DIRMASK             "*.*"
+    IDS_DEFAULTAPP          "default.exe\ndefault.bat"
+    IDS_DEF_ROOT            "WebPages"
+    IDS_APP_CGI             "bat\nexe"
+    IDS_APP_ISAPI           "dll"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_POPUP_RESET         "Reset the hit count to zero and clear the last hit information"
+    IDM_VIEW_REFRESH        "Sync the view's contents with the actual web root tree"
+    ID_FILE_RESTART         "Restart the server listen connection"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CANT_LISTEN         "Can't start server!"
+    IDS_INVALID             "%s (Error! Not Listening!)"
+    IDS_LISTEN_INUSE        "Port %d is already in use!\n\nMake sure there is no other applications or instances of HttpSvr running that are already bound to that port."
+    IDS_LISTEN_ERROR        "Can't listen on port %d!\n\nMake sure the TCP/IP transport is set up correctly and that no other applications are already listening on that port."
+    IDS_NOT_LISTENING       "Server not listening"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new server listening on default settings"
+    ID_FILE_OPEN            "Open an existing configuration file"
+    ID_FILE_CLOSE           "Close the current server configuration and stop listening"
+    ID_FILE_SAVE            "Save the current configuration"
+    ID_FILE_SAVE_AS         "Save current configuration under a different name"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this server configuration file"
+    ID_FILE_MRU_FILE2       "Open this server configuration file"
+    ID_FILE_MRU_FILE3       "Open this server configuration file"
+    ID_FILE_MRU_FILE4       "Open this server configuration file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CONTENTS_PRE        "<html><h1>"
+    IDS_CONTENTS_POST       "</h1><p>\n"
+    IDS_CONTENTS_HEADING    "<pre> Last Modified       Size %sName\n<hr>\n"
+    IDS_CONTENTS_FORMAT     " %-15s %s <a href=""%s"">%s%-1s</a>\n"
+    IDS_CONTENTS_DESC       "The URL specified is a folder that does not contain a default document or application. The following is a listing of what documents and subfolders it does have; please select one:<p>\n"
+    IDS_CONTENTS_PARENT     "<hr><h3><a href=""."">%s Parent Folder</a></h3>\n"
+    IDS_CONTENTS_EMPTY      "<strong>empty</strong>\n"
+    IDS_CONTENTS_NOTE       "<hr><em>Do your part to beautify the web! Turn <strong>off</strong> link underlining!</em>\n"
+    IDS_CONTENTS_FOOTER     "</pre>\n"
+    IDS_ICON_BLANK          "<img src=""/SvrAdmin/Blank.gif"" align=bottom alt=""     "" border=0 width=16 height=16>"
+    IDS_ICON_FILE           "<img src=""/SvrAdmin/File.gif"" align=bottom alt=""     "" border=0 width=16 height=16>"
+    IDS_ICON_FOLDER         "<img src=""/SvrAdmin/Folder.gif"" align=bottom alt=""     "" border=0 width=16 height=16>"
+    IDS_ICON_PARENT         "<img src=""/SvrAdmin/Prev.gif"" align=bottom alt=""     "" border=0 width=16 height=16>"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_UPTIME_START        "Uptime: 00h 00m"
+    IDS_UPTIME_DAY          "Uptime: %Hh %Mm"
+    IDS_UPTIME_DAYS         "Uptime: %Dd %Hh %Mm"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\HttpSvr.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

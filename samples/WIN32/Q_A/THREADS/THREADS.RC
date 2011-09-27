@@ -1,0 +1,51 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1992-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include "windows.h"
+#include "threads.h"
+
+Thread_Menu MENU
+    BEGIN 
+    POPUP "Suspend Threads"
+        BEGIN 
+        MENUITEM "Green Thread",  IDM_SUSPENDGREEN
+        MENUITEM "Red Thread",    IDM_SUSPENDRED
+        END 
+    POPUP "Resume Threads"
+        BEGIN 
+        MENUITEM "Green Thread",  IDM_RESUMEGREEN
+        MENUITEM "Red Thread",    IDM_RESUMERED
+        END 
+    POPUP "Set Priorities"
+        BEGIN 
+          POPUP "... of Green Thread"
+              BEGIN
+              MENUITEM "Idle"             IDM_GIDLE
+              MENUITEM "Lowest",          IDM_GLOW
+              MENUITEM "Below Normal",    IDM_GBNORM
+              MENUITEM "Normal",          IDM_GNORM
+              MENUITEM "Above Normal",    IDM_GANORM
+              MENUITEM "Highest",         IDM_GHIGH
+              MENUITEM "Time Critical",   IDM_GTC
+              END
+          POPUP "... of Red Thread"
+              BEGIN
+              MENUITEM "Idle",            IDM_RIDLE
+              MENUITEM "Lowest",          IDM_RLOW
+              MENUITEM "Below Normal",    IDM_RBNORM
+              MENUITEM "Normal",          IDM_RNORM
+              MENUITEM "Above Normal",    IDM_RANORM
+              MENUITEM "Highest",         IDM_RHIGH
+              MENUITEM "Time Critical",   IDM_RTC
+              END
+        END
+    END

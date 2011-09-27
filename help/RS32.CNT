@@ -1,0 +1,60 @@
+:Base rs32.hlp>main
+:Title ResourceStudio Help
+1 Introducing Resource Studio
+2 What Are Resources?=RE_WHAT_ARE_RESOURCES_JT
+2 Resource Types=RE_RESOURCE_TYPES_JT
+2 The Resource Studio Shell=re_shell_jt
+1 Using Resource Studio
+2 Starting Resource Studio=RE_START_RESOURCE_STUDIO_JT
+2 Creating a New Resource File=re_create_new_res_jt
+2 Editing an Existing Resource=re_edit_existing_res_jt
+2 Creating Menu Resources
+3 Creating a New Menu Resource=re_menut_new_jt
+3 Simple Guidelines for Creating Menus=re_guidelines_jt
+3 Adding a Pop-Up Item=re_menut_add_pop_jt
+3 Adding a Menu Item=re_menut_add_item_jt
+3 Adding Separators=re_menut_add_sep_jt
+3 Editing Menu Items=re_menut_edit_items_jt
+3 Creating Menus with Accelerators and Item Help=re_menut_creating_acc_help_jt
+3 Closing the Menu Editor=re_menut_closing_jt
+2 Creating Dialog Resources
+3 Introduction to Creating Dialogs=re_create_dialog_overview_jt
+3 Creating a New Dialog Box Resource=re_creating_new_dialog_jt
+3 Creating Push Buttons=re_using_push_buttons_jt
+3 Working with Custom Controls=re_using_custom_controls_jt
+3 Working with User Controls=re_using_user_controls_jt
+3 Displaying Static Text=re_using_static_text_jt
+3 Aligning Controls=re_create_dialog_aligning_jt
+3 Testing Dialogs=re_create_dialog_testing_jt
+3 Closing the Dialog Box Editor=re_create_dialog_closing_jt
+2 Creating Bitmap Resources
+3 Creating a New Bitmap Resource=re_graphic_starting_jt
+3 Changing Bitmap Size=re_changing_bitmap_size_jt
+3 Selecting Colors and Patterns=re_colors_patterns_jt
+3 Using the Graphic Tools=re_graphic_tools_jt
+3 Zoom and Grid=re_zoom_grid_jt
+3 Closing the Bitmap Editor=re_closing_bitmap_jt
+3 Using the Graphic Tools=re_graphic_tools_jt
+2 Useful Resource Studio Features
+3 Using Toolbars and Pop-Up Menus=re_using_toolbars_jt
+3 Using Undo and Redo=re_using_undo_redo_jt
+3 Using Clipboard and Drag and Drop=re_using_clip_jt
+1 Managing Resource IDs
+2 Introduction to Managing Resource IDs=re_res_id_overview_jt
+2 Textual IDs=re_res_id_texual_jt
+2 Symbolic IDs=re_res_id_symbolic_jt
+2 Numeric IDs=re_res_id_numeric_jt
+2 Specifying Resource IDs=re_prop_id_jt
+2 Automatic Creation of Resource IDs=re_res_id_auto_jt
+2 Resource ID Browsing=re_res_id_browsing_jt
+1 Using the Resource Editors
+2 Accelerator Table Editor=re_accelerator_table_editor_jt
+2 Bitmap Editor=re_bitmap_editor_jt
+2 Cursor Editor=re_cursor_editor_jt
+2 Dialog Editor=re_dialog_editor_jt
+2 Font Editor=re_font_editor_jt
+2 Hex Editor=hidm_newres_other
+2 Icon Editor=re_icon_editor_jt
+2 Menu Editor=re_menu_editor_jt
+2 String Table Editor=re_string_table_editor_jt
+2 Version Editor=re_version_editor_jt

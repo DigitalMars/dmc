@@ -1,0 +1,12 @@
+82572
+c:\SC\SAMPLES\MFC32\ADVANCED\DLLTRACE\dlltrace.prj
+dlltrace.OPN
+novcs
+dlltrace.DEF
+16
+834102734
+0 0 0 0 0 "trace.prj" ""
+0 0 0 0 0 "dlltrace.cpp" ""
+0 0 0 0 0 "dlltrace.DEF" ""
+0 0 0 0 0 "dlltrace.rc" ""
+0 0 0 0 0 "trace.lib" ""

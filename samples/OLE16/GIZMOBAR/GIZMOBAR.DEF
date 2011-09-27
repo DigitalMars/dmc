@@ -1,0 +1,41 @@
+LIBRARY		"GIZMOBAR" INITINSTANCE 
+
+DESCRIPTION	'GizmoBar 1.00, By Kraig Brockschmidt, (c)1993 Microsoft Corporation'
+
+EXETYPE		WINDOWS
+
+PROTMODE
+
+STUB		'WINSTUB.EXE'
+
+CODE		 SHARED LOADONCALL  MOVEABLE IOPL CONFORMING DISCARDABLE EXECUTEONLY
+
+DATA		 SHARED SINGLE  PRELOAD MOVEABLE NOIOPL  NONDISCARDABLE  READWRITE
+
+HEAPSIZE	4096
+
+SEGMENTS
+		 _TEXT PRELOAD MOVEABLE DISCARDABLE
+
+EXPORTS
+		WEP @1 RESIDENTNAME
+		GizmoBarWndProc @2
+		GBHwndAssociateSet @3
+		GBHwndAssociateGet @4
+		GBGizmoAdd @5
+		GBGizmoRemove @6
+		GBGizmoSendMessage @7
+		GBGizmoShow @8
+		GBGizmoEnable @9
+		GBGizmoCheck @10
+		GBGizmoFocusSet @11
+		GBGizmoExist @12
+		GBGizmoTypeGet @13
+		GBGizmoDataSet @14
+		GBGizmoDataGet @15
+		GBGizmoNotifySet @16
+		GBGizmoNotifyGet @17
+		GBGizmoTextGet @18
+		GBGizmoTextSet @19
+		GBGizmoIntGet @20
+		GBGizmoIntSet @21

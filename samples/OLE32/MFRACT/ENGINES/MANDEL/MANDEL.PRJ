@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\ole32\MFRACT\ENGINES\MANDEL\MANDEL.PRJ
+MANDEL.OPN
+novcs
+mandel.def
+3
+812035224
+0 0 0 0 0 "mandel.cxx" ""
+0 0 0 0 0 "mandelob.cxx" ""
+0 0 0 0 0 "mandel.rc" ""
+0 0 0 0 0 "mandel.def" ""
+0 0 0 0 0 "fguids.lib" ""
+0 0 0 0 0 "winhlprs.lib" ""

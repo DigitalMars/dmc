@@ -1,0 +1,14 @@
+82572
+C:\SC\samples\mfc32\ole\INPROC\INPROC.PRJ
+inproc.OPN
+novcs
+inproc.def
+17
+853349840
+0 0 0 0 0 "enumvar.cpp" ""
+0 0 0 0 0 "inproc.cpp" ""
+0 0 0 0 0 "strcoll.cpp" ""
+0 0 0 0 0 "varassoc.cpp" ""
+0 0 0 0 0 "varmap.cpp" ""
+0 0 0 0 0 "inproc.def" ""
+0 0 0 0 0 "inproc.rc" ""

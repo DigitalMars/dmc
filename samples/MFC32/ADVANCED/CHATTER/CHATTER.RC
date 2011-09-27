@@ -1,0 +1,341 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""res\\chatter.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "#include ""afxres.rc""  \011// Standard components\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\chatter.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "&Auto Chat",                  ID_AUTOCHATTER
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About chatter...",           ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  34, 22, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About chatter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,18,20
+    LTEXT           "chatter Version 1.0",IDC_STATIC,40,10,119,8
+    LTEXT           "Copyright © 1994-1995",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,176,6,32,14,WS_GROUP
+END
+
+IDD_SETUP DIALOG DISCARDABLE  0, 0, 185, 72
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Chatter Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Handle",IDC_STATIC,5,12,24,8
+    EDITTEXT        IDC_HANDLE,38,10,80,13,ES_AUTOHSCROLL
+    LTEXT           "Server",IDC_STATIC,5,33,23,8
+    EDITTEXT        IDC_SERVER,38,30,80,13,ES_AUTOHSCROLL
+    LTEXT           "Channel",IDC_STATIC,5,54,28,8
+    EDITTEXT        IDC_CHANNEL,38,50,14,13
+    DEFPUSHBUTTON   "OK",IDOK,129,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,23,50,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "CHATTER MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "CHATTER\0"
+            VALUE "LegalCopyright", "Copyright © 1994-1995\0"
+            VALUE "OriginalFilename", "CHATTER.EXE\0"
+            VALUE "ProductName", "CHATTER Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "chatter\n\nChat\nText Files (*.txt)\n.txt\nChatter.Document\nChat Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "chatter"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CHANGEADDRESS       "Would you like to try a different address?"
+    IDS_DISCONNECT          ": has just left the discussion"
+    IDS_CREATEFAILED        "Failed to create a socket"
+    IDS_RETRYCONNECT        "Failed to connect to server\nTry again?"
+    IDS_CONNECT             "has just joined the discussion"
+    IDS_SERVERRESET         "Server has reset the connection"
+    IDS_CONNECTIONCLOSED    "Closing connection"
+    IDS_STATEMENT01         "Visual C++ is %s"
+    IDS_STATEMENT02         "MFC is %s"
+    IDS_STATEMENT03         "The IDE is %s"
+    IDS_STATEMENT04         "App Wizard is %s"
+    IDS_STATEMENT05         "The Incremental Linker is %s"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_AUTOCHATTER          "Automatically chatter about Visual C++ Trek\nAuto chatter"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STATEMENT06         "Class Wizard is %s"
+    IDS_STATEMENT07         "Visual C++ makes you %s"
+    IDS_STATEMENT08         "MFC makes you %s"
+    IDS_STATEMENT09         "The IDE makes you %s"
+    IDS_STATEMENT10         "App Wizard makes you %s"
+    IDS_STATEMENT11         "The Incremental Linker makes you %s"
+    IDS_STATEMENT12         "Class Wizard makes you %s"
+    IDS_STATEMENT13         "Visual C++ makes programming %s"
+    IDS_STATEMENT14         "MFC makes programming %s"
+    IDS_STATEMENT15         "The IDE makes programming %s"
+    IDS_STATEMENT16         "App Wizard makes programming %s"
+    IDS_STATEMENT17         "The Incremental Linker makes programming %s"
+    IDS_STATEMENT18         "Class Wizard makes programming %s"
+    IDS_STATEMENT19         "Visual C++ makes working %s"
+    IDS_STATEMENT20         "MFC makes working %s"
+    IDS_STATEMENT21         "The IDE makes working %s"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STATEMENT22         "App Wizard makes working %s"
+    IDS_STATEMENT23         "The Incremental Linker makes working %s"
+    IDS_STATEMENT24         "Class Wizard makes working %s"
+    IDS_STATEMENT25         "Visual C++ makes your job %s"
+    IDS_STATEMENT26         "MFC makes your job %s"
+    IDS_STATEMENT27         "The IDE makes your job %s"
+    IDS_STATEMENT28         "App Wizard makes your job %s"
+    IDS_STATEMENT29         "The Incremental Linker makes your job %s"
+    IDS_STATEMENT30         "Class Wizard makes your job %s"
+    IDS_STATEMENT31         "Visual C++ makes life %s"
+    IDS_STATEMENT32         "MFC makes life %s"
+    IDS_STATEMENT33         "The IDE makes life %s"
+    IDS_STATEMENT34         "App Wizard makes life %s"
+    IDS_STATEMENT35         "The Incremental Linker makes life %s"
+    IDS_STATEMENT36         "Class Wizard makes life %s"
+    IDS_ADJECTIVE01         "cool"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ADJECTIVE02         "creative"
+    IDS_ADJECTIVE03         "productive"
+    IDS_ADJECTIVE04         "intelligent"
+    IDS_ADJECTIVE05         "irresistible"
+    IDS_ADJECTIVE06         "fun"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\chatter.rc2"  // non-Microsoft Visual C++ edited resources
+
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#include "afxres.rc"  	// Standard components
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,15 @@
+82572
+C:\SC\samples\ole32\MFRACT\ENGINES\PLASMA\PLASMA.PRJ
+PLASMA.OPN
+novcs
+plasma.def
+3
+812035224
+0 0 0 0 0 "plasma.cxx" ""
+0 0 0 0 0 "plasmaob.cxx" ""
+0 0 0 0 0 "plasma.rc" ""
+0 0 0 0 0 "plasma.def" ""
+0 0 0 0 0 "fguids.lib" ""
+0 0 0 0 0 "quad.lib" ""
+0 0 0 0 0 "winhlprs.lib" ""
+0 0 0 0 0 "..\quad\quad.prj" ""

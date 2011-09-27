@@ -1,0 +1,17 @@
+82572
+C:\SC\samples\ole16\GIZMOBAR\GIZMOBAR.PRJ
+GIZMOBAR.OPN
+novcs
+gizmobar.def
+1
+812035224
+0 0 0 0 0 "api.c" ""
+0 0 0 0 0 "gizmo.c" ""
+0 0 0 0 0 "gizmobar.c" ""
+0 0 0 0 0 "init.c" ""
+0 0 0 0 0 "paint.c" ""
+0 0 0 0 0 "gizmobar.def" ""
+0 0 0 0 0 "gizmobar.rc" ""
+0 0 0 0 0 "bttncur.lib" ""
+0 0 0 0 1001 "..\bin\movelib.bat" ""
+0 0 0 0 0 "..\bttncur\bttncur.prj" ""

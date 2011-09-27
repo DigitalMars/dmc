@@ -1,0 +1,37 @@
+#include "windows.h"
+#include "globals.h"
+
+
+
+APPNAME ICON ICONFILE
+
+
+APPNAME MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&ServerEnumDialog...",          IDM_ENUM
+        MENUITEM "&ServerEnumDialog w/ Help...",  IDM_ENUMHELP
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                         IDM_EXIT
+    END
+END
+
+
+
+; String table
+
+STRINGTABLE
+BEGIN
+    IDS_APPNAME,        SZAPPNAME
+    IDS_DESCRIPTION,    SZDESCRIPTION
+
+END
+
+
+APPNAME ACCELERATORS
+BEGIN
+    "Q", IDM_EXIT, CONTROL, VIRTKEY
+END
+
+; Version stamping information:

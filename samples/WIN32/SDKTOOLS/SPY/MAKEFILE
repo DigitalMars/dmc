@@ -1,0 +1,11 @@
+DIRS =	dll	\
+        app
+
+all: $(DIRS)
+
+$(DIRS):
+	cd $@
+	echo *** $@ *** >>$(MSTOOLS)\samples\spy.tmp
+	nmake -a -i 1>>$(MSTOOLS)\samples\spy.tmp 2>&1
+	cd ..
+	

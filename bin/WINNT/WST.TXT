@@ -1,0 +1,16 @@
+The Working Set Tuner (WST)
+
+
+The working set tuner allows you to reduce the amount of space your program
+takes in RAM. It consists of the following set of files:
+
+   WST.INI
+   WST.DLL
+   WST.LIB
+   WSTDUMP.EXE
+   WSTUNE.EXE
+   WSTCAT.EXE
+
+For more information, see the Win32 SDK documentation. Query on "working set
+tuner" or go to Programming and Tools Guides, open Tools Guide, and open
+Tuning the Working Set of Your Application.

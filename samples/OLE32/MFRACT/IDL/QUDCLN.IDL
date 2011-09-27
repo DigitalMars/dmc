@@ -1,0 +1,45 @@
+//+---------------------------------------------------------------------------
+//
+//  Microsoft Windows
+//  Copyright (C) Microsoft Corporation, 1992 - 1995.
+//
+//  File:       qudcln.idl
+//
+//  Contents:   definition for IQuadrantClient
+//
+//  History:    4-13-94   stevebl   Created
+//
+//----------------------------------------------------------------------------
+
+//+---------------------------------------------------------------------------
+//
+//  Class:      IQuadrantClient (qc)
+//
+//  Purpose:    interface implemented by fractal engines that wish to use the
+//              Quadrant Fractal Engine Helper
+//
+//  Interface:  ComputePoint     -- asks the fractal engine which color should
+//                                  be painted at a given point on the graph
+//              DoneDrawingGraph -- notifies fractal engine that the graph
+//                                  is done
+//
+//  History:    4-13-94   stevebl   Created
+//              7-07-94   stevebl   Modified definition of ComputePoint
+//
+//----------------------------------------------------------------------------
+
+[
+    local,
+    object,
+    uuid(2a0e4fbc-3908-101b-8963-00000b65c75b),
+    pointer_default(unique)
+]
+
+interface IQuadrantClient : IUnknown
+{
+    import "unknwn.idl";
+
+    HRESULT ComputePoint(unsigned * puColor, int x, int y);
+    HRESULT DoneDrawingGraph(void);
+}
+

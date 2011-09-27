@@ -1,0 +1,51 @@
+//
+// DEFO2V.RC2 - resources App Studio does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+	#error this file is not editable by App Studio
+#endif //APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+// Version stamp for this .EXE
+
+#include "ver.h"
+
+VS_VERSION_INFO     VERSIONINFO
+  FILEVERSION       1,5,0,0
+  PRODUCTVERSION    1,5,0,0
+  FILEFLAGSMASK     VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+  FILEFLAGS         VS_FF_DEBUG|VS_FF_PRIVATEBUILD|VS_FF_PRERELEASE
+#else
+  FILEFLAGS         0 // final version
+#endif
+  FILEOS            VOS_DOS_WINDOWS16
+  FILETYPE          VFT_DLL
+  FILESUBTYPE       0   // not used
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904E4" // Lang=US English, CharSet=Windows Multilingual
+		BEGIN
+			VALUE "CompanyName",     "Microsoft Corporation\0"
+			VALUE "FileDescription", "Default Ole2View iface Viewers\0"
+			VALUE "FileVersion",     "1.05.000\0"
+			VALUE "InternalName",    "DEFO2V.DLL\0"
+			VALUE "LegalCopyright",  "Copyright \251 1993 Microsoft Corp. All Rights Reserved.\0"
+			VALUE "LegalTrademarks", "By Charlie Kindel\0"
+			VALUE "OriginalFilename","DEFO2V.DLL\0"
+			VALUE "ProductName",     "OLE 2.0 Object Viewer\0"
+			VALUE "ProductVersion",  "1.05\0"
+		END
+	END
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x409, 1252
+			// English language (0x409) and the Windows ANSI codepage (1252)
+	END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+// Add additional manually edited resources here...
+/////////////////////////////////////////////////////////////////////////////

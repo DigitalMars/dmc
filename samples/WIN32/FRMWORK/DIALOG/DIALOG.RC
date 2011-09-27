@@ -1,0 +1,225 @@
+//Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "globals.h"
+#include "modal.h"
+#include "modeless.h"
+#include "version.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_APPICON             ICON    DISCARDABLE     "Dialog.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ABOUTBOX DIALOG DISCARDABLE  22, 17, 167, 73
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About Dialog"
+FONT 8, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,132,2,32,14,WS_GROUP
+    ICON            IDI_APPICON,-1,3,2,18,20
+    LTEXT           "CompanyName",IDD_VERFIRST,30,2,100,8
+    LTEXT           "FileDescription",101,30,11,100,8
+    LTEXT           "FileVersion",102,30,20,137,8
+    LTEXT           "LegalCopyright",103,30,29,137,8
+    LTEXT           "LegalTrademarks",IDD_VERLAST,30,47,136,27
+    CONTROL         "",501,"Static",SS_BLACKRECT,29,43,138,1
+END
+
+IDD_MODALDIALOG DIALOG DISCARDABLE  6, 18, 171, 107
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Modal Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDD_STUDENTS,7,13,58,77,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Students:",102,7,3,46,8
+    RTEXT           "Name:",103,69,14,35,8
+    EDITTEXT        IDD_NAME,105,13,57,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "Title:",105,69,31,35,8
+    EDITTEXT        IDD_TITLE,105,30,57,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "Phone:",107,69,47,35,8
+    EDITTEXT        IDD_PHONE,105,46,57,12,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "OK",IDOK,122,72,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,122,89,40,14
+    CONTROL         "Include Boys",IDD_INCLUDEBOYS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,95,70,10
+END
+
+IDD_MODELESSDIALOG DIALOG DISCARDABLE  65, 23, 106, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Modeless Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Background Color",101,5,6,89,55,WS_GROUP
+    PUSHBUTTON      "OK",IDOK,29,67,40,14,WS_GROUP
+    CONTROL         "Red",IDD_RED,"Button",BS_AUTORADIOBUTTON | WS_GROUP,14,
+                    20,39,10
+    CONTROL         "Green",IDD_GREEN,"Button",BS_AUTORADIOBUTTON,14,33,39,
+                    10
+    CONTROL         "Blue",IDD_BLUE,"Button",BS_AUTORADIOBUTTON,14,46,39,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Data
+//
+
+DLGINCLUDE RCDATA DISCARDABLE 
+BEGIN
+    "MODELESS.H\0"
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+DIALOG MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Dialogs"
+    BEGIN
+        MENUITEM "&Modal...",                   IDM_MODAL
+        MENUITEM "M&odeless...",                IDM_MODELESS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+DIALOG ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "Q",            IDM_EXIT,               VIRTKEY, CONTROL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x10001L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Microsoft Corporation\0"
+            VALUE "FileDescription", "Dialog Example Application\0"
+            VALUE "FileVersion", "Version 4.0\0"
+            VALUE "InternalName", "Dialog\0"
+            VALUE "LegalCopyright", "Copyright \251 Microsoft Corp. 1990-1995\0"
+            VALUE "LegalTrademarks", "Microsoft\256 is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation\0"
+            VALUE "OriginalFilename", "\0"
+            VALUE "ProductName", "Dialog\0"
+            VALUE "ProductVersion", "\0"
+            VALUE "ProductVersion", "Version 4.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""globals.h""\r\n"
+    "#include ""modal.h""\r\n"
+    "#include ""modeless.h""\r\n"
+    "#include ""version.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APPNAME             "Dialog"
+    IDS_DESCRIPTION         "Dialog Example Application"
+END
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

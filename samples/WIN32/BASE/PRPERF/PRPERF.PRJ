@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\BASE\PRPERF\PRPERF.PRJ
+PRPERF.OPN
+novcs
+prperf.def
+4
+812035224
+0 0 0 0 0 "prperf.c" ""
+0 0 0 0 0 "prperf.def" ""
+0 0 0 0 0 "wsock32.lib" ""

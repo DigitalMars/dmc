@@ -1,0 +1,32 @@
+// DLGINCLUDE RCDATA DISCARDABLE
+// BEGIN
+//     "OLE2UI.H\0"
+// END
+
+IDD_EDITLINKS DIALOG 18, 25, 337, 158
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Verkn|pfungen"
+FONT 8, "MS Sans Serif"
+BEGIN
+	LTEXT           "Verk&n|pfung", ID_EL_COL1, 11, 11, 50, 8
+	LTEXT           "Art", ID_EL_COL2, 137, 12, 20, 8
+	LTEXT           "Aktualisierung", ID_EL_COL3, 201, 12, 46, 8
+	LISTBOX         ID_EL_LINKSLISTBOX, 11, 23, 238, 81, LBS_OWNERDRAWFIXED
+				| LBS_EXTENDEDSEL | WS_VSCROLL | LBS_USETABSTOPS
+			| WS_TABSTOP | LBS_SORT | LBS_NOTIFY
+	DEFPUSHBUTTON   "Abbrechen", IDCANCEL, 254, 12, 80, 14
+	PUSHBUTTON      "A&ktualisieren", ID_EL_UPDATENOW, 254, 36, 80, 14
+	PUSHBUTTON      "Quelle &vffnen", ID_EL_OPENSOURCE, 254, 54, 80, 14,
+				WS_GROUP
+	PUSHBUTTON      "Quelle &dndern...", ID_EL_CHANGESOURCE, 254,72, 80,  14,
+				WS_GROUP
+	PUSHBUTTON      "&Verkn|pfung aufheben", ID_EL_CANCELLINK, 254, 96, 80,  14
+	PUSHBUTTON      "&Hilfe", ID_OLEUIHELP, 254, 138, 80, 14
+	CONTROL         "&Automatisch", ID_EL_AUTOMATIC, "Button",  BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP, 66, 138, 65,  10
+	CONTROL         "&Manuell", ID_EL_MANUAL, "Button", BS_AUTORADIOBUTTON, 136, 138, 39, 10
+	LTEXT           "Quelle:", 219, 9, 113, 42, 8
+	LTEXT           "Dateiformat:", 220, 9, 125, 42, 8
+	LTEXT           "Aktualisierung:", ID_EL_UPDATE, 9, 139, 50, 8
+	LTEXT           "", ID_EL_LINKSOURCE, 57, 113, 183, 8, SS_NOPREFIX
+	LTEXT           "", ID_EL_LINKTYPE, 56, 125, 184, 8, SS_NOPREFIX
+END

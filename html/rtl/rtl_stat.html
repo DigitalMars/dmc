@@ -1,0 +1,142 @@
+<HTML>
+<HEAD>
+	<TITLE>Runtime Library Reference</TITLE>
+</HEAD>
+<BODY>
+<font size=5><b><i>
+19 _stackavail - strxfrm
+</font></b></i>
+<hr>
+
+<font size=4><b>
+_stat
+</font></b><br><br>
+
+<font size=3><b>
+Header
+</b><br><br>
+sys/stat.h<br>
+sys/types.h
+<br><br>
+
+<b>
+Prototype
+</b><br><br>
+int _stat( char *path, struct _stat *buf); 
+<br><br>
+
+<b>
+Description
+</b><br><br>
+The _stat function gets information about a file or directory specified by path and store the information in the structure that buf points to. The structure contains the following fields:<br><br>
+<dl>
+<b>Field/Description</b><br>
+<dt>st_dev
+<dd>The drive number of the drive specified in path, or the default drive, if none is given. 
+<dt>st_mode 
+<dd>Bit map containing mode information on the open file, made up of the values below. 
+<dt>st_nlink 
+<dd>Always 1. 
+<dt>st_rdev 
+<dd>Same as st_dev. 
+<dt>st_size 
+<dd>Size of file in bytes. 
+<dt>st_mtime 
+<dd>Time last modified. 
+<dt>st_atime 
+<dd>For NT, time last accessed; or same as st_mtime. 
+<dt>st_ctime 
+<dd>For NT, time created; otherwise same as st_mtime. 
+<dt>st_ino	
+<dd>Always 0. (stat structure only) 
+<dt>st_uid	
+<dd>Always 0. (stat structure only) 
+<dt>st_gid	
+<dd>Always 0. (stat structure only) 
+</dL><br><br>
+
+Use the following values for st_mode:<br><br>
+<dl>
+<dt>_S_IFREG 
+<dd>Set if path refers to an ordinary file, not a directory. 
+<dt>_S_IREAD 
+<dd>Set if path refers to a readable file or directory. 
+<dt>_S_IWRITE 
+<dd>Set if path refers to a writable file or directory. 
+<dt>_S_IFDIR 
+<dd>Set if path refers to a directory. 
+<dt>_S_IEXEC 
+<dd>Set if path refers to an executable file or a directory. 
+</dl>
+<br><br>
+
+<b>
+Synonym
+</b><br><br>
+Function:  stat<br>
+Values: S_IFREG, S_IREAD, S_IWRITE, S_IFDIR, S_IEXEC 
+<br><br>
+
+<b>
+Return Value
+</b><br><br>
+stat returns 0 if the status information is retrieved. On error the function returns -1 and errno is set. 
+<br><br>
+
+<b>
+Compatibility
+</b><br><br>
+DOS Windows 3.x Phar Lap DOSX Win32 
+<br><br>
+
+<b>
+See Also
+</b><br><br>
+<a href="RTL_fstat.html">_fstat</a>
+<br><br>
+
+<b>
+Example
+</b><br><br>
+<pre>
+	/* 	Example of _stat */ 
+
+	#include &ltstdio.h&gt
+	#include &ltstdlib.h&gt 
+	#include &lttime.h&gt
+	#include &ltstring.h&gt 
+	#include &ltsys\stat.h&gt 
+
+	void main ()
+	{   
+	    char filen[_MAX_PATH];
+	    char *date; 
+	    int res;
+	    struct _stat fstat; 
+
+	    printf (" Enter a filename: ");
+	    gets (filen); 
+	    if (( res = _stat (filen, &fstat)) != 0)
+	    {   
+		perror (" Failure calling _stat");
+		exit (EXIT_FAILURE); 
+	    }
+	    date = asctime (localtime (& fstat. st_ctime)); 
+	    printf ("\ nDate: %s", date); 
+	    printf (" Mode: %d\ n", fstat. st_mode); 
+	    printf (" Size: %ld\ n", fstat. st_size);
+	} 
+</pre><br><br>
+
+<b>
+Output
+</b><br><br>
+Enter a filename: _stat.c<br>
+Date: Thu Jun 23 09: 42: 04 1994<br>
+Mode: -32330<br>
+Size: 585<br>
+
+
+
+</BODY>
+</HTML>

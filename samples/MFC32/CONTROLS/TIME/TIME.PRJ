@@ -1,0 +1,12 @@
+82570
+c:\SamplesMFC32\CONTROLS\TIME\time.prj
+time.OPN
+novcs
+time.def
+17
+837038608
+0 0 0 0 0 "time.cpp" ""
+0 0 0 0 0 "timectl.cpp" ""
+0 0 0 0 0 "timeppg.cpp" ""
+0 0 0 0 0 "time.def" ""
+0 0 0 0 0 "time.rc" ""

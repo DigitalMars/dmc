@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\RPC\INTEROP\SERVER.PRJ
+SERVER.OPN
+novcs
+server.DEF
+4
+812035224
+0 0 0 0 0 "manager.c" ""
+0 0 0 0 0 "midluser.c" ""
+0 0 0 0 0 "msg_s.c" ""
+0 0 0 0 0 "server.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "server.def" ""

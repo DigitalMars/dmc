@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\ole16\BTTNCUR\DEMO\BCDEMO.PRJ
+BCDEMO.OPN
+novcs
+bcdemo.def
+0
+812035224
+0 0 0 0 0 "bcdemo.c" ""
+0 0 0 0 0 "init.c" ""
+0 0 0 0 0 "bcdemo.def" ""
+0 0 0 0 0 "bcdemo.rc" ""
+0 0 0 0 0 "bttncur.lib" ""
+0 0 0 0 0 "..\bttncur.prj" ""

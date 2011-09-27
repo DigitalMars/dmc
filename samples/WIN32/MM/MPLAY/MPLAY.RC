@@ -1,0 +1,23 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1993 - 1995  Microsoft Corporation.  All Rights Reserved.
+ * 
+ **************************************************************************/
+
+#include <windows.h>
+#include "mplay.h"
+#include "mplay.rcv"
+
+AppIcon  ICON   mplay.ico
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DIALOGNAME	"MPlay"
+    IDS_APPERR		"Movie Player Error"
+    IDS_OLDVFW		"Video for Windows version is too old"
+END

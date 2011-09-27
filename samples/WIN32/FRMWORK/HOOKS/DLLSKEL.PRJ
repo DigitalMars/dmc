@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\FRMWORK\HOOKS\DLLSKEL.PRJ
+DLLSKEL.OPN
+novcs
+dllskel.def
+17
+812035224
+0 0 0 0 0 "dllskel.def" ""
+0 0 0 0 0 "dllmain.c" ""
+0 0 0 0 0 "exports.c" ""
+0 0 0 0 0 "dllskel.rc" ""
+0 0 0 0 0 "comctl32.lib" ""
+0 0 0 0 0 "version.lib" ""

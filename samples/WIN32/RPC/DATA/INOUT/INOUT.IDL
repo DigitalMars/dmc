@@ -1,0 +1,14 @@
+[ uuid (6E3B5060-CA46-1067-B31A-00DD010662DA),
+  version(1.0),
+  pointer_default(unique)
+]
+interface inout
+{
+
+void InOutProc([in]      short   s1,
+               [in, out] short * ps2,
+               [out]     float * pf3);
+
+void Shutdown(void);
+
+}

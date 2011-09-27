@@ -1,0 +1,6 @@
+REGEDIT
+; DataView supplement reg file for 1.0 compatibility
+
+HKEY_CLASSES_ROOT\DataView = DataView
+HKEY_CLASSES_ROOT\DataView\protocol\StdFileEditing\server = sclaunch.exe
+HKEY_CLASSES_ROOT\DataView\protocol\StdFileEditing\verb\0 = &Edit

@@ -1,0 +1,115 @@
+<HTML>
+
+<!--
+	Copyright (c) 2001-2004 by Digital Mars
+	All Rights Reserved
+	www.digitalmars.com
+  -->
+
+
+<HEAD>
+	<TITLE>Digital Mars - Installation</TITLE>
+</HEAD>
+
+<body bgcolor="white">
+
+<a href="http://www.digitalmars.com/"><IMG SRC="dmlogo.gif" BORDER=0 WIDTH=270 HEIGHT=53 ALT="www.digitalmars.com"></a>
+
+<a href="http://www.digitalmars.com/" title="www.digitalmars.com">[Home]</a>
+
+<!-- ======================================== -->
+<!-- Atomz Search HTML for Digital Mars -->
+<form method="get" action="http://search.atomz.com/search/">
+<input size=30 name="sp-q">
+<input type=submit value="Search Site">
+<input type=hidden name="sp-a" value="sp1000ce79">
+<a href="advancedsearch.html" title="Search Digital Mars web site">Advanced Search</a>
+</form>
+<!-- ======================================== -->
+
+<hr>
+<h1>Installation</h1>
+
+Digital Mars has a different view of installation than most software products.
+It doesn't need registry entries, environment variable settings, nor does it
+need to install anything in the \windows\system directory.
+<p>
+
+Consequently, the compiler can be run directly off of the CD without any
+need for an install. Just run the programs in \dm\bin. This is most convenient
+for cases where a particular version of the compiler is needed, or to just try
+it out.
+<p>
+
+But of course, running off the CD can be a little slow. The solution is to
+xcopy the entire disk to the hard disk, as in:
+
+<pre>
+	xcopy g:\*.*/s c:
+</pre>
+
+to duplicate it on drive C.
+(Do not install into a subdirectory with spaces, tabs,
++ signs, commas, or # characters in the subdirectory or path names.)
+Then, append:
+
+<pre>
+	c:\dm\bin
+</pre>
+
+to the PATH environment setting.
+<p>
+
+	Copying the files to the hard disk in this manner from the CD
+	can result in them all being marked as read-only. Therefore,
+	in order for the IDDE to be able to change its settings, the
+	following files must have the read-only attribute turned off.
+	The \dm\bin\chmod.exe program will do the trick:
+
+	<pre>
+	\dm\bin\chmod -R \dm\bin\brow32.ini
+	\dm\bin\chmod -R \dm\bin\scw.ini
+	\dm\bin\chmod -R \dm\bin\scw32.cfg
+	</pre>
+
+<h2>Creating a Shortcut</h2>
+
+	To put a shortcut to Digital Mars C++ on the desktop for Windows XP:
+
+	<ol>
+	<li> Right click on the desktop to bring up the menu.
+	<li> Select [New].
+	<li> Select [Shortcut].
+	<li> Enter:
+	<pre>c:\dm\bin\scw32.exe</pre>
+	in the [Type the location of the item:] entry box.
+	<li> Select [Next]
+	<li> Enter:
+	<pre>Digital Mars C++</pre>
+	in the [Type a name for this shortcut:] entry box.
+	<li> Select [Finish]
+	</ol>
+
+	Double-clicking on the shortcut will then bring up the
+	Digital Mars IDDE.
+
+<h2>Backup</h2>
+
+We recommend that your project directories be separate from the \dm directory.
+That way, the project is easilly distinguishable from the compiler, and can
+be backed up separately.
+<p>
+
+We recommend backing up the Digital Mars CD on the hard disk, or duplicating it
+onto another CD with a CDROM burner. This is for backup purposes only, however!
+
+
+<h2>Uninstalling Digital Mars</h2>
+
+Uninstalling is as simple as erasing the \dm directory and all its
+subdirectories. If \dm\bin is in the PATH, edit your setup to remove it.
+
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,10 @@
+// strings common to all screensavers...
+
+STRINGTABLE PRELOAD
+BEGIN
+    idsIniFile      "control.ini"
+    idsScreenSaver  "ScreenSaver"
+    idsHelpFile     "control.hlp"
+    idsNoHelpMemory "Insufficient memory for help application."
+END
+

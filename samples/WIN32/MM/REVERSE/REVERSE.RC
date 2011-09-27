@@ -1,0 +1,39 @@
+//************************************************************************
+//**
+//**  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+//**  ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED
+//**  TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR
+//**  A PARTICULAR PURPOSE.
+//**
+//**  Copyright (C) 1993 - 1995 Microsoft Corporation. All Rights Reserved.
+//**
+//**  reverse.rc
+//**
+//**  DESCRIPTION:
+//**
+//**
+//**  HISTORY:
+//**     06/30/93          created.
+//**
+//************************************************************************
+
+#include <windows.h>
+#include "reverse.rcv"
+#include "strings.h"
+#include "strings.rc"
+
+Reverse     ICON    reverse.ico
+
+ABOUTBOX DIALOG LOADONCALL MOVEABLE DISCARDABLE 30, 50, 160, 75
+STYLE DS_MODALFRAME | WS_SYSMENU | WS_VISIBLE | WS_POPUP | DS_LOCALEDIT
+CAPTION "Reverse"
+FONT 8, "MS Sans Serif"
+BEGIN
+   CONTROL "Microsoft Windows", -1, "static", SS_CENTER | WS_CHILD, 0, 5, 160, 8
+   CONTROL "Version 4.0", -1, "static", SS_CENTER | WS_CHILD, 0, 14, 160, 8
+   CONTROL "Reverse Sample Application", -1, "static", SS_CENTER | WS_CHILD, 0, 29, 160, 8
+   CONTROL "Copyright \251 1985-1995 Microsoft Corp.", -1, "static", SS_CENTER | WS_CHILD, 0, 47, 160, 9
+   CONTROL "OK", 1, "button", BS_DEFPUSHBUTTON | WS_GROUP | WS_TABSTOP | WS_CHILD, 60, 59, 32, 14
+   CONTROL "Reverse", -1, "static", SS_ICON | WS_CHILD, 2, 5, 0, 0
+END
+

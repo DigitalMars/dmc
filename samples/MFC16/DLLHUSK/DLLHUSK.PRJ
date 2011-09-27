@@ -1,0 +1,15 @@
+82569
+D:\SC\SAMPLES\MFC25\DLLHUSK\DLLHUSK.PRJ
+DLLHUSK.OPN
+novcs
+DLLHUSK.DEF
+0
+805039278
+0 0 0 0 0 "dllhusk.cpp"
+0 0 0 0 0 "mainfrm.cpp"
+0 0 0 0 0 "testdll1.prj"
+0 0 0 0 0 "testdll2.prj"
+0 0 0 0 0 "testdll1.lib"
+0 0 0 0 0 "testdll2.lib"
+0 0 0 0 0 "dllhusk.rc"
+0 0 0 0 0 "dllhusk.def"

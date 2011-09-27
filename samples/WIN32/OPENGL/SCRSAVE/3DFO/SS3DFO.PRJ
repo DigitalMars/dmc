@@ -1,0 +1,24 @@
+82572
+C:\sc\samples\win32\opengl\scrsave\3dfo\ss3dfo.prj
+ss3dfo.OPN
+novcs
+ss3dfo.DEF
+16
+853883060
+0 0 0 0 0 "gendrop.c" ""
+0 0 0 0 0 "genexpld.c" ""
+0 0 0 0 0 "genlem.c" ""
+0 0 0 0 0 "genstrip.c" ""
+0 0 0 0 0 "gentex.c" ""
+0 0 0 0 0 "genwin.c" ""
+0 0 0 0 0 "mesh.c" ""
+0 0 0 0 0 "ss3dfo.c" ""
+0 0 0 0 0 "ss3dfo.rc" ""
+0 0 0 0 0 "ss3dfo.DEF" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "sscommon.lib" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "comctl32.lib" ""

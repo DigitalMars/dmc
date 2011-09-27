@@ -1,0 +1,172 @@
+body
+{
+	background: white;
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.contents {
+	margin-top: 0;
+	margin-left: 0.5em;
+	padding-left: 0.5em;
+	font-size: smaller;
+}
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+blockquote
+{
+	font-size: smaller;
+	font-style: italic;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+pre
+{
+	border: 2px solid #cccccc;
+	background: #e7e7e7;
+	padding: 1ex;
+	margin-left: 3em;
+	color: #000066;
+	width: 640px;
+}
+.shrink
+{
+	margin-left: 0em;
+	width: 0px;
+}
+.bnf {
+	background-color: #fefefe;
+	color: #000066;
+}
+
+.ddoccode {
+	background-color: #dedede;
+	color: #000066;
+}
+
+.console {
+	background-color: #f7f7f7;
+	color: #181818;
+}
+
+.moddeffile {
+	background-color: #efeffe;
+	color: #010199;
+}
+
+.scini {
+	background-color: #feeffe;
+	color: #111199;
+}
+
+.dcode {
+	background-color: #e7e7e7;
+	color: #000066;
+}
+
+.ccode {
+	background-color: #eeddee;
+	color: #000066;
+}
+
+body#toc
+{
+	background: #dddddd;
+	font-size: small;
+}
+
+div#tocheading
+{
+	border-bottom: 2px solid gray;
+	font-size: larger;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 1ex;
+	padding-bottom: 1ex;
+}
+div#tocheading b
+{
+	color: red;
+	font-size: 36pt;
+	font-family: serif;
+}
+body#toc ul
+{
+	border-bottom: 2px solid gray;
+	list-style-type: none;
+	margin-left: 0;
+	margin-top: 0;
+	padding-bottom: 1ex;
+	padding-left: 0;
+}
+div#toccopyright
+{
+	font-size: smaller;
+	margin-bottom: 1ex;
+	padding-top: 3px;
+}
+
+div#heading
+{
+	border-bottom: 2px solid black;
+	padding-bottom: 1ex;
+}
+div#lastupdate
+{
+	font-size: smaller;
+	font-style: italic;
+}
+a#dlink
+{
+	color: red;
+	font-weight: bold;
+}
+div#copyright
+{
+	border-top: 2px solid black;
+	font-size: smaller;
+	margin-bottom: 2ex;
+	padding-top: 3px;
+}
+
+/* --- The items below were added to V 0.133 --- */
+
+td.toc {  /* table of contents column <TD> */
+	background-color:#eeeeee;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+td.compred {  /* comparison with D: "NO" */
+  background-color:#ff5555;
+  text-align:center;
+}
+td.compgreen {  /* comparison with D: "YES" */
+  background-color:#55ff55;
+  text-align:center;
+}
+
+table.comp { /* "comparison with D": table */
+  background-color:#f0f0f0;
+}
+
+
+/*
+The following entries are currently disabled, but
+they might be needed (with color values adjusteded)
+if the doc pages' color scheme is changed.
+
+a:link {
+  color:#006666;
+}
+a:visited {
+  color:#660066;
+}
+a:active {
+  color:#660066;
+}
+*/
+
+

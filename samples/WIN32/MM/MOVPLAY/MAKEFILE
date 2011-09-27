@@ -1,0 +1,38 @@
+# Nmake macros for building Windows 32-Bit apps
+
+!include <win32.mak>
+
+all: movplay1.exe movplay2.exe
+
+OBJ1= movplay1.obj
+OBJ2= movplay2.obj
+
+OTHERCLOPTS=-DWIN32_LEAN_AND_MEAN -nologo -I. -I..\include
+OTHERRCOPTS=-DWIN32_LEAN_AND_MEAN -I. -I..\include
+
+
+# Update the resource if necessary
+
+movplay.res: movplay.rc movplay.h movplay.rcv movplay.ico
+    $(rc) -r -DWIN32 $(OTHERRCOPTS) movplay.rc
+
+
+# Update the object file if necessary
+
+movplay1.obj: movplay1.c movplay.h
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) movplay1.c
+
+movplay2.obj: movplay2.c movplay.h
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) movplay2.c
+
+
+# Update the executable file if necessary, and if so, add the resource back in.
+
+movplay1.exe:  $(OBJ1) movplay.res
+    $(link) $(linkdebug) $(guillflags) -out:movplay1.exe $(OBJ1) movplay.res $(guilibs) \
+	 winmm.lib vfw32.lib
+
+movplay2.exe:	$(OBJ2) movplay.res
+    $(link) $(linkdebug) $(guilflags) -out:movplay2.exe $(OBJ2) movplay.res $(guilibs) \
+	 winmm.lib vfw32.lib
+

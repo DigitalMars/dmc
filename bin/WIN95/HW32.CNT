@@ -1,0 +1,10 @@
+:Base hw32.hlp>main
+:Title HeapWatch32
+:Index HW32=hw32.hlp
+1 General Information
+2 About Heap Watch=ABOUT_HEAPWATCH
+2 Using Heap Watch with the kernel debugger=ABOUT_WDEB
+2 Command line options=ABOUT_COMMAND_LINE
+1 Procedures
+2 How to view a given memory object=HOW_TO_VIEW_OBJ>proc4
+2 How to watch for memory leaks=HOW_TO_WATCH>proc4

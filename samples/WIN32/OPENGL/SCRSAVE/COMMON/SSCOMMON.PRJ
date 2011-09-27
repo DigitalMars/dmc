@@ -1,0 +1,28 @@
+82572
+C:\sc\samples\win32\opengl\scrsave\common\sscommon.prj
+sscommon.OPN
+novcs
+sscommon.DEF
+13
+852907800
+0 0 0 0 0 "color.c" ""
+0 0 0 0 0 "dialog.c" ""
+0 0 0 0 0 "fastdib.c" ""
+0 0 0 0 0 "material.c" ""
+0 0 0 0 0 "math.c" ""
+0 0 0 0 0 "ssa8.c" ""
+0 0 0 0 0 "ssdib.c" ""
+0 0 0 0 0 "ssimage.c" ""
+0 0 0 0 0 "texture.c" ""
+0 0 0 0 0 "clear.cxx" ""
+0 0 0 0 0 "dlgdraw.cxx" ""
+0 0 0 0 0 "glscrnsv.cxx" ""
+0 0 0 0 0 "palette.cxx" ""
+0 0 0 0 0 "scrnsave.cxx" ""
+0 0 0 0 0 "ssinit.cxx" ""
+0 0 0 0 0 "ssutil.cxx" ""
+0 0 0 0 0 "sswindow.cxx" ""
+0 0 0 0 0 "sswproc.cxx" ""
+0 0 0 0 0 "util.cxx" ""
+0 0 0 0 0 "sscommon.rc" ""
+0 0 0 0 0 "sscommon.DEF" ""

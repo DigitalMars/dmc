@@ -1,0 +1,41 @@
+#include "windows.h"
+#include "dyndlg.h"
+
+dyndlgIcon ICON dyndlg.ico
+
+
+dyndlgMenu MENU
+BEGIN
+
+    POPUP "&Create"
+    BEGIN
+        MENUITEM "Dialog &1",               IDM_DIALOG1
+        MENUITEM "Dialog &2",               IDM_DIALOG2
+    END
+
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Help &Contents",          IDM_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About",                  IDM_ABOUT
+    END
+END
+
+
+
+
+
+aboutBox DIALOG 30, 14, 136, 90
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About DynDlg"
+BEGIN
+    ICON            "dyndlgIcon", 101, 8, 20, 18, 20
+    LTEXT           "DynDlg Win32 SDK sample ", 103, 40, 25, 95, 8
+    LTEXT           "version 1.1", 106, 40, 35, 95, 8
+    DEFPUSHBUTTON   "OK", IDOK, 95, 6, 40, 14
+    CONTROL         "", 108, "Static", SS_BLACKRECT, 0, 53, 136, 2
+    CTEXT           "Microsoft Developer Support",      105, 0, 62, 136, 8
+    CTEXT           "Copyright (c) 1992, 1993 Microsoft Corp.", 107, 0, 74,
+                    136, 8
+END

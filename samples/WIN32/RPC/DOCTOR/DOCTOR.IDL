@@ -1,0 +1,14 @@
+[ uuid (C2557720-CA46-1067-B31C-00DD010662DA),
+  version(1.0),
+  pointer_default(unique)
+]
+interface doctor
+{
+
+const short STRSIZE = 500;
+
+void Analyze([in, out, string, size_is(STRSIZE)] unsigned char * pszInOut);
+
+void Shutdown(void);
+
+}

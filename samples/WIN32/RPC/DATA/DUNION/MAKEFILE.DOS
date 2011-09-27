@@ -1,0 +1,45 @@
+#*************************************************************#
+#**                                                         **#
+#**                 Microsoft RPC Examples                  **#
+#**                   dunion Application                    **#
+#**         Copyright(c) Microsoft Corp. 1992-1995          **#
+#**                                                         **#
+#*************************************************************#
+
+cc= cl
+cflags= -c -AL -Gsw -Oas -Zpe -Zi -D_CRTAPI1=
+linker= link
+lflags= /CO /NOD
+
+.c.obj:
+   $(cc) $(cflags) $<
+
+all : dunionc
+
+idl : dunion.h
+
+# Make the client side application dunionc
+dunionc : dunionc.exe
+dunionc.exe : dunionc.obj dunion_c.obj
+    $(linker) $(lflags) dunionc dunion_c ,,,\
+    llibce rpc rpcndr;
+
+# Update the object files if necessary
+
+dunionc.obj : dunionc.c dunion.h
+
+dunion_c.obj : dunion_c.c dunion.h
+
+dunion.h dunion_c.c : dunion.idl dunion.acf
+    midl -env dos -oldnames -no_cpp dunion.idl
+
+# Clean up everything
+cleanall : clean
+    -del dunionc.exe
+
+# Clean up everything but the .EXEs
+clean :
+    -del *.obj
+    -del *.map
+    -del dunion_c.c
+    -del dunion.h

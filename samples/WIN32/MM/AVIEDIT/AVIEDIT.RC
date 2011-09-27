@@ -1,0 +1,170 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1992 - 1995  Microsoft Corporation.  All Rights Reserved.
+ *
+ **************************************************************************/
+
+
+#include <windows.h>
+#include "aviedit.h"
+#include "aviedit.rcv"
+
+ID_APP  ICON   aviedit.ico
+AppIcon ICON   aviedit.ico
+
+ID_APP menu
+begin
+    POPUP "&File"
+	begin
+            MENUITEM "&Open..."         , MENU_OPEN
+	    MENUITEM "&Close"		, MENU_CLOSE
+	    MENUITEM "&Merge..."	, MENU_MERGE
+            MENUITEM "Save &As..."      , MENU_SAVEAS
+            MENUITEM SEPARATOR
+	    MENUITEM "Save O&ptions..." , MENU_OPTIONS
+            MENUITEM "E&xit"            , MENU_EXIT
+        end
+    POPUP "&Edit"
+	begin
+            MENUITEM "Cu&t\t^X"		, MENU_CUT
+            MENUITEM "&Copy\t^C"        , MENU_COPY
+            MENUITEM "&Paste\t^V"       , MENU_PASTE
+	    MENUITEM "&Delete\tDel",	, MENU_DELETE
+	    MENUITEM "&Name",		, MENU_NAME
+	    MENUITEM "&Info\t^I",	, MENU_SETINFO
+        end
+    POPUP "&Play"
+	begin
+	    MENUITEM "Play P&review"	, MENU_PREVIEW
+	    MENUITEM "S&top\t^S"	, MENU_STOP
+	end
+    POPUP "&Zoom"
+	begin
+	    MENUITEM "/&4"		, MENU_ZOOMQUARTER
+	    MENUITEM "/&2"		, MENU_ZOOMHALF
+	    MENUITEM "x&1"		, MENU_ZOOM1
+	    MENUITEM "x2"		, MENU_ZOOM2
+	    MENUITEM "x4"		, MENU_ZOOM4
+        end
+    POPUP "&Help"
+        begin
+            MENUITEM "A&bout..."        , MENU_ABOUT
+        end
+    // time menu? !!!!
+end
+
+/*
+ * ACCELERATORS
+ */
+ID_APP ACCELERATORS PRELOAD
+BEGIN
+	/* New Accelerators */
+	"^Z",		MENU_UNDO
+        "^X",           MENU_CUT
+	"^C",		MENU_COPY
+	"^V",		MENU_PASTE
+	"^S",		MENU_STOP
+	"^I",		MENU_SETINFO
+	VK_ESCAPE,	MENU_STOP,	VIRTKEY
+        VK_DELETE,      MENU_DELETE,    VIRTKEY
+END
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_STREAMINFO DIALOG DISCARDABLE  0, 0, 258, 244
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Set Stream Info"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,71,224,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,137,224,50,14
+    COMBOBOX        IDC_STREAMS,7,14,236,77,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    EDITTEXT        IDC_PRIORITY,47,44,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LANGUAGE,47,65,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCALE,47,86,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RATE,47,107,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_START,47,128,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_QUALITY,47,149,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NAME,47,177,196,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FRAMETOP,167,68,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FRAMELEFT,167,89,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FRAMEBOTTOM,167,108,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FRAMERIGHT,167,129,40,12,ES_AUTOHSCROLL
+    LTEXT           "Priority",IDC_STATIC,7,46,28,8
+    LTEXT           "Language",IDC_STATIC,7,67,34,8
+    LTEXT           "Scale",IDC_STATIC,7,88,30,8
+    LTEXT           "Rate",IDC_STATIC,7,109,30,8
+    LTEXT           "Start",IDC_STATIC,7,130,30,8
+    LTEXT           "Quality",IDC_STATIC,7,151,30,8
+    LTEXT           "Name",IDC_STATIC,7,180,20,8
+    LTEXT           "Top",IDC_STATIC,137,70,14,8
+    LTEXT           "Left",IDC_STATIC,137,90,14,8
+    LTEXT           "Bottom",IDC_STATIC,137,110,24,8
+    LTEXT           "Right",IDC_STATIC,137,130,19,8
+    GROUPBOX        "Frame",IDC_STATIC,119,57,122,92
+END
+
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_APPNAME				"AVIEdit"
+    IDS_DEFEXT				"avi"
+    IDS_SAVETITLE			"Save AVI File"
+    IDS_APPERR				"AVIEdit Error"
+    IDS_OLDVFW				"Video for Windows version is too old"
+    IDS_MAXSTREAMS			"Exceeded maximum number of streams"
+    IDS_SAVEFORMAT			"%s - Saving %s: %d%%"
+    IDS_NOOPEN				"Unable to open '%s'"
+    IDS_NOPASTE				"Cannot paste into this stream"
+    IDS_PASTEERROR			"Error pasting a new stream"
+    IDS_NODRAW				"Unable to draw this type of DIB"
+    IDS_SAVEERROR			"Error saving AVI file"
+    IDS_OPENTITLE			"Open AVI"
+    IDS_MERGETITLE			"Merge With"
+    IDS_STRCPYERR			"Error copying stream"
+    IDS_ERROVERWRITE                    "Overwriting an AVI file is not possible"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_STRCUTERR			"Error cutting stream"
+    IDS_NOCLIP				"Couldn't put streams on clipboard"
+    IDS_FORMAT_1			"#%d[%4.4s]  Start: %ld   Length: %ld (%ld Seconds)                                            "
+    IDS_FORMAT_2			"#%d[%4.4s]  Start: %ld   Length: %ld (%ld Seconds)  Selection: %ld to %ld                    "
+    IDS_NAME				"Name"
+    IDS_ABORTNAME			"Abort Name"
+END
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+#ifndef IDC_STATIC
+#define IDC_STATIC                      -1
+#endif
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 187, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL "AVIEdit", IDC_STATIC, "static", SS_CENTER | WS_CHILD, 5, 5, 175, 8
+    CONTROL "Version 4.00", IDC_STATIC, "static", SS_CENTER | WS_CHILD, 5, 20, 175, 8
+    CONTROL "Copyright \251 1985-1995 Microsoft Corp.", IDC_STATIC, "static", SS_CENTER | WS_CHILD, 5, 35, 175, 8
+    CONTROL "OK", IDOK, "button", BS_DEFPUSHBUTTON | WS_GROUP | WS_TABSTOP | WS_CHILD, 77,49,32,14
+END
+
+
+
+

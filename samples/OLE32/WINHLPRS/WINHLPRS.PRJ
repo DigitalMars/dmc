@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\ole32\WINHLPRS\WINHLPRS.PRJ
+WINHLPRS.OPN
+novcs
+winhlprs.def
+13
+812035224
+0 0 0 0 0 "cdialog.cxx" ""
+0 0 0 0 0 "cwindow.cxx" ""
+0 0 0 0 0 "strmhelp.cxx" ""
+0 0 0 0 0 "winhlprs.def" ""

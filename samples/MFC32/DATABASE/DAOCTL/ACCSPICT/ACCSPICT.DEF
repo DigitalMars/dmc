@@ -1,0 +1,23 @@
+; AccsPict.def : Declares the module parameters.
+
+LIBRARY		"ACCSPICT"
+
+DESCRIPTION	'ACCSPICT.OCX Project'
+
+EXETYPE		NT
+
+SUBSYSTEM	WINDOWS
+
+STUB		'WINSTUB.EXE'
+
+CODE		 EXECUTE READ
+
+DATA		 READ WRITE
+
+HEAPSIZE	1048576,4096 
+
+EXPORTS
+		DllCanUnloadNow @1
+		DllGetClassObject @2
+		DllRegisterServer @3
+		DllUnregisterServer @4

@@ -1,0 +1,33 @@
+
+; This is a part of the Microsoft Foundation Classes C++ library.
+; Copyright (C) 1992 Microsoft Corporation
+; All rights reserved.
+;
+; This source code is only intended as a supplement to the
+; Microsoft Foundation Classes Reference and Microsoft
+; QuickHelp and/or WinHelp documentation provided with the library.
+; See these sources for detailed information regarding the
+; Microsoft Foundation Classes product.
+
+LIBRARY TESTDLL1
+DESCRIPTION  'TEST DLL containing 2 different doc/view classes'
+EXETYPE      WINDOWS
+
+CODE         LOADONCALL MOVEABLE DISCARDABLE
+DATA         PRELOAD MOVEABLE SINGLE
+
+SEGMENTS
+	_TEXT   PRELOAD MOVEABLE DISCARDABLE
+	WEP_TEXT PRELOAD MOVEABLE DISCARDABLE
+
+HEAPSIZE     1024
+
+EXPORTS
+	WEP @1 RESIDENTNAME PRIVATE ;; required WEP entry point (uses library WEP)
+
+	; Explicitly exported initialization routine
+	INITTESTDLL1 @2 NONAME
+
+	; other explicit exports can go here
+
+	;

@@ -1,0 +1,306 @@
+# ============================================================================
+# File: MAKEDLL
+#
+# NMAKE description file to build DLL version of OLE2.0 User Interface library
+#
+# Copyright (C) Microsoft Corporation, 1992-1993.  All Rights Reserved.
+# ============================================================================
+#
+# Usage Notes:
+# -----------
+#
+# This makefile is designed to be used in one step.  This makefile does
+# NOT use the file called UIMAKE.INI. This makefile builds the $(LIBNAME).DLL
+# library. The name of the library is controlled by the "LIBNAME" macro.
+#
+# Every application that builds the OLE2UI library as a DLL MUST give the
+# DLL a UNIQUE name by defining the "LIBNAME" macro.
+#
+# The OLE2 OUTLINE sample code application series builds this as a DLL
+# called "OUTLUI.DLL". The "OUTLUI.DLL" is for private use of the OUTLINE
+# sample applications. The "OUTLUI.DLL" MAY NOT be shipped by ANY other
+# application.
+#
+# Sample Usage:
+#
+#       NMAKE -F MAKEDLL
+#       NMAKE -F MAKEDLL DEBUG=0
+#
+#
+# The following lists a few of the settings in this makefile file which
+# you might change, and what effect those changes might have.  For a
+# complete listing of all the available options and how they are used,
+# see the makefile below. These options can be defined as command arguments
+# to the "nmake" command. LANG and the various *_DIR symbols can also be
+# defined as an environment variables.
+#
+#   MODEL=[M|L]             --  The memory model. (Default: M)
+#   DEBUG=[0|1]             --  Enable DEBUG or RETAIL version (Default: 1)
+#   LANG=[USA|FRG|GER|SPA|IUSA|...]
+#                           --  Used for international versions of this
+#                               library.  Specifies which directory the
+#                               resources come from.  (Default: USA)
+#   SAMPBIN_DIR             --  Directory to install built .DLL file
+#                               (Default: \ole2\samp\bin)
+#   SAMPLIB_DIR             --  Directory to install built .LIB file
+#                               (Default: \ole2\samp\bin)
+#   SAMPINC_DIR             --  Directory to install public header files
+#                               (Default: \ole2\samp\include)
+#
+# Building Localized Versions:
+# ---------------------------
+# In order to build a localized version of the DLL it is typically necessary
+# to delete the previously built *.RES file from the corresponding build
+# directory (either in DEBUG or RETAIL). Also, it is necessary to pass
+# LANG=<language dir> on the command line. If LANG is not specified, then
+# the default is to build the USA version.
+#
+#   eg. nmake -f makedll LANG=GER
+#
+# ============================================================================
+
+
+# NOTE: YOU MUST SET "LIBNAME" MACRO TO A UNIQUE NAME FOR YOUR APPLICATION'S
+#       PRIVATE VERSION OF THE OLE2UI DLL. YOU MAY NOT SHIP A DLL CALLED
+#       "OUTLUI.DLL" (OUTLUI.DLL is for private use by OUTLINE sample apps)
+LIBNAME=outlui
+
+MODEL=M
+DEBUG=1
+
+RESOURCE=RES
+CC=cl
+RS=rc
+LK=link
+
+!ifndef LANG
+LANG=USA
+!endif
+
+!ifndef SAMPBIN_DIR
+SAMPBIN_DIR=..\bin
+!endif
+
+!ifndef SAMPINC_DIR
+SAMPINC_DIR=..\include
+!endif
+
+!ifndef SAMPLIB_DIR
+SAMPLIB_DIR=..\lib
+!endif
+
+!if ("$(DEBUG)"=="1")
+#
+#  Build DEBUG UILibrary
+#
+OBJ=DEBUG
+CFLAGS=-c -Od -GDfx -GEd -W3 -Zpei -AMw -D_DEBUG -DDLL_VER -D_WINDLL -DLIBNAME=\"$(LIBNAME)\"
+RFLAGS=-DDLL_VER -D_DEBUG
+LFLAGS=/MAP:FULL /CO /LINE /NOD /NOE /SE:300 /NOPACKCODE
+UILIBS=mdllcew libw ole2 storage shell
+
+!else
+#
+#  Build RETAIL UILibrary
+#
+OBJ=RETAIL
+CFLAGS=-c -O1 -GDfx -GEd -W3 -Zpe -AMw -DOPTIMIZE -DDLL_VER -D_WINDLL -DLIBNAME=\"$(LIBNAME)\"
+RFLAGS=-DDLL_VER
+LFLAGS=/MAP /NOD /NOE /SE:300 /AL:16 /NOPACKCODE
+UILIBS=mdllcew libw ole2 storage shell
+
+!endif
+
+DLLOBJS = $(UI_DLLOBJS)
+LIBOBJS = $(UI_COBJS) $(UI_NOPCOBJS)
+
+GOAL: $(LIBNAME).DLL
+
+# ----------------------------------------------------------------------------
+#                      O B J E C T   F I L E   L I S T
+# ----------------------------------------------------------------------------
+
+UI_COBJS = \
+	$(OBJ)\busy.obj\
+	$(OBJ)\common.obj\
+	$(OBJ)\convert.obj\
+	$(OBJ)\dbgutil.obj\
+	$(OBJ)\drawicon.obj\
+	$(OBJ)\hatch.obj\
+	$(OBJ)\icon.obj\
+	$(OBJ)\iconbox.obj\
+	$(OBJ)\insobj.obj\
+	$(OBJ)\links.obj\
+	$(OBJ)\msgfiltr.obj\
+	$(OBJ)\enumfetc.obj\
+	$(OBJ)\enumstat.obj\
+	$(OBJ)\objfdbk.obj\
+	$(OBJ)\ole2ui.obj\
+	$(OBJ)\olestd.obj\
+	$(OBJ)\targtdev.obj\
+	$(OBJ)\oleutl.obj\
+	$(OBJ)\pastespl.obj\
+	$(OBJ)\regdb.obj\
+	$(OBJ)\resimage.obj\
+	$(OBJ)\utility.obj\
+
+UI_NOPCOBJS = \
+	$(OBJ)\nopc\geticon.obj\
+	$(OBJ)\nopc\dballoc.obj\
+	$(OBJ)\nopc\suminfo.obj\
+	$(OBJ)\nopc\stdpal.obj\
+
+UI_DLLOBJS = \
+	$(OBJ)\dllfuncs.obj\
+
+PRECOMPOBJ= $(O)precomp.obj
+
+# ----------------------------------------------------------------------------
+#                       R E S O U R C E   L I S T
+# ----------------------------------------------------------------------------
+RES =      \
+		   busy.h                           \
+		   common.h                         \
+		   convert.h                        \
+		   edlinks.h                        \
+		   geticon.h                        \
+		   icon.h                           \
+		   iconbox.h                        \
+		   insobj.h                         \
+		   msgfiltr.h                       \
+		   enumfetc.h                       \
+		   ole2ui.h                         \
+		   pastespl.h                       \
+		   resimage.h                       \
+		   dballoc.h                        \
+		   suminfo.h                        \
+		   stdpal.h                         \
+		   $(RESOURCE)\STATIC\default.ico   \
+		   $(RESOURCE)\STATIC\bang.ico   \
+		   $(RESOURCE)\STATIC\egares.bmp    \
+		   $(RESOURCE)\STATIC\hivgares.bmp  \
+		   $(RESOURCE)\STATIC\vgares.bmp    \
+		   $(RESOURCE)\$(LANG)\strings.rc   \
+		   $(RESOURCE)\$(LANG)\busy.dlg     \
+		   $(RESOURCE)\$(LANG)\convert.dlg  \
+		   $(RESOURCE)\$(LANG)\fileopen.dlg \
+		   $(RESOURCE)\$(LANG)\icon.dlg     \
+		   $(RESOURCE)\$(LANG)\insobj.dlg   \
+		   $(RESOURCE)\$(LANG)\links.dlg    \
+		   $(RESOURCE)\$(LANG)\pastespl.dlg \
+		   $(RESOURCE)\$(LANG)\prompt.dlg   \
+		   $(RESOURCE)\ole2ui.rcv   \
+		   $(RESOURCE)\$(LANG)\verlocal.h   \
+
+!if [if not exist $(OBJ)\*. md $(OBJ) >nul]
+!error Object subdirectory $(OBJ)\ could not be created
+!endif
+!if [if not exist $(OBJ)\NOPC\*. md $(OBJ)\NOPC > nul]
+!error non-precompiled header object subdirectory $(OBJ)\NOPC\ could not be created
+!endif
+
+#select language for version resource if localized version
+!if ("$(LANG)"!="USA") && ("$(LANG)"!="usa")
+RFLAGS=$(RFLAGS) -DVER_LOC
+!endif
+
+.SUFFIXES: .c .asm .obj .res .rc .def .bmp .ico .exe .dll .cod .str
+
+O=.\$(OBJ)^\
+
+# ----------------------------------------------------------------------------
+#                     I N F E R E N C E   R U L E S
+# ----------------------------------------------------------------------------
+# compile C file without precompiled headers into object directory\NOPC
+# dont compile c files etc for lcoalized builds.
+{}.c{$(O)NOPC\}.obj:
+	SET CL=$(CFLAGS)
+	$(CC) -Fo$(O)NOPC\$(@B) $(@B).c
+
+# compile C file into object directory
+{}.c{$(O)}.obj:
+	SET CL=$(CFLAGS) -Yuole2ui.h -Fp$(O)precomp.pch
+	$(CC) -Fo$(O)$(@B) $(@B).c
+
+# compile CPP file without precompiled headers into object directory\NOPC
+# dont compile cpp files etc for lcoalized builds.
+{}.cpp{$(O)NOPC\}.obj:
+	SET CL=$(CFLAGS)
+	$(CC) -Fo$(O)NOPC\$(@B) $(@B).cpp
+
+# compile CPP file into object directory
+{}.cpp{$(O)}.obj:
+	SET CL=$(CFLAGS) -Yuole2ui.h -Fp$(O)precomp.pch
+	$(CC) -Fo$(O)$(@B) $(@B).cpp
+
+{}.rc{$(O)}.res:
+	$(RS) -I $(RESOURCE)\$(LANG);$(RESOURCE)\static -FO $(O)$(@B).res -R $(RFLAGS) $(@B).rc
+	if exist $(LIBNAME).dll del $(LIBNAME).dll
+
+{}.c.cod:
+	SET CL=$(CFLAGS) -f -Fc
+	$(CC) $(@B).c
+
+# ----------------------------------------------------------------------------
+#                        G O A L   T A R G E T S
+# ----------------------------------------------------------------------------
+!include "depend"
+
+CLEAN: CleanUp
+CleanUp:
+	-echo y | del .\$(OBJ)\*.*
+	-echo y | del .\$(OBJ)\nopc\*.*
+	if exist $(LIBNAME).dll del $(LIBNAME).dll
+	if exist $(LIBNAME).lib del $(LIBNAME).lib
+
+$(O)precomp.obj: precomp.c
+	SET CL=$(CFLAGS) -Fp$(O)precomp.pch -Ycole2ui.h
+	$(CC) -Fo$(O)$(@B) precomp.c
+
+$(O)ole2ui.res: ole2ui.rc $(RES)
+
+ole2ui.rc : $(RESOURCE)\$(LANG)\strings.rc
+
+#
+# Build .DLL dynamic-link library
+#
+
+$(O)$(LIBNAME).dll: $(PRECOMPOBJ) $(LIBOBJS) $(DLLOBJS) $(O)ole2ui.res ole2ui.def
+   if exist $(LIBNAME).def del $(LIBNAME).def
+   @echo Creating <<$(LIBNAME).def
+LIBRARY         $(LIBNAME) INITINSTANCE
+DESCRIPTION     'OLE 2.0 UI Support Library.'
+<<KEEP
+   type ole2ui.def >> $(LIBNAME).def
+   $(LK) @<<
+$(LFLAGS) +
+$(PRECOMPOBJ: = +^
+)+
+$(DLLOBJS: = +^
+)+
+$(LIBOBJS: = +^
+)
+$@
+$(@B).map
+$(UILIBS)
+$(LIBNAME).def
+<<KEEP
+   $(RS) -31 -K $(RFLAGS) $(O)ole2ui.res $(O)$(LIBNAME).dll
+
+$(LIBNAME).dll: $(O)$(LIBNAME).dll ole2ui.def
+	copy $(O)$(LIBNAME).dll $(LIBNAME).dll
+	mapsym -n -l $(LIBNAME).map
+	implib -NOWEP $(LIBNAME).lib $(LIBNAME).dll
+
+# install built library and public header files to release directories
+install:
+	copy $(LIBNAME).dll $(SAMPBIN_DIR)
+	copy $(LIBNAME).lib $(SAMPLIB_DIR)
+	copy $(LIBNAME).sym $(SAMPBIN_DIR)
+	copy ole2ui.h $(SAMPINC_DIR)
+	copy olestd.h $(SAMPINC_DIR)
+	copy msgfiltr.h $(SAMPINC_DIR)
+	copy enumfetc.h $(SAMPINC_DIR)
+	copy suminfo.h $(SAMPINC_DIR)
+
+# EOF ========================================================================

@@ -1,0 +1,22 @@
+82572
+C:\SC\samples\win32\MM\MIXAPP\MIXAPP32.PRJ
+MIXAPP32.OPN
+novcs
+mixapp32.def
+16
+812035224
+0 0 0 0 0 "debug.c" ""
+0 0 0 0 0 "mactrls.c" ""
+0 0 0 0 0 "mafader.c" ""
+0 0 0 0 0 "mainit.c" ""
+0 0 0 0 0 "malines.c" ""
+0 0 0 0 0 "malist.c" ""
+0 0 0 0 0 "mameter.c" ""
+0 0 0 0 0 "maswitch.c" ""
+0 0 0 0 0 "mixapp.c" ""
+0 0 0 0 0 "tlb.c" ""
+0 0 0 0 0 "mixapp32.def" ""
+0 0 0 0 0 "mixapp.rc" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "winmm.lib" ""

@@ -1,0 +1,34 @@
+#include <windows.h>
+#include <winver.h>
+#include "dllglob.h"
+
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     4,0,0,0
+PRODUCTVERSION  4,0,0,0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       (VS_FF_PRIVATEBUILD|VS_FF_PRERELEASE|VS_FF_DEBUG)
+FILEOS          VOS__WINDOWS32
+FILETYPE        VFT_DLL
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE SZRCOMPANYNAME,   "Microsoft Corporation\0"
+            VALUE SZRDESCRIPTION,   SZDESCRIPTION "\0"
+            VALUE SZRVERSION,       SZVERSION "\0"
+            VALUE SZRAPPNAME,       SZAPPNAME "\0"
+            VALUE SZRCOPYRIGHT,     "Copyright \251 Microsoft Corp. 1990-1995\0"
+            VALUE SZRTRADEMARK,     "Microsoft\256 is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation"
+            VALUE SZRPRODNAME,      SZAPPNAME "\0"
+            VALUE SZRPRODVER,       SZVERSION "\0"
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END

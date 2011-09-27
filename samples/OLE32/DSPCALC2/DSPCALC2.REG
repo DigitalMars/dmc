@@ -1,0 +1,25 @@
+REGEDIT
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info DspCalc2.Application (defaults to DspCalc2.Application.1
+
+HKEY_CLASSES_ROOT\Dspcalc2.Application = OLE Automation Dspcalc2 Application
+HKEY_CLASSES_ROOT\Dspcalc2.Application\Clsid = {00020469-0000-0000-C000-000000000046}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info DspCalc2.Application.1
+
+HKEY_CLASSES_ROOT\Dspcalc2.Application.1 = OLE Automation Dspcalc2 1.0 Application
+HKEY_CLASSES_ROOT\Dspcalc2.Application.1\Clsid = {00020469-0000-0000-C000-000000000046}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info DspCalc2 1.0
+
+HKEY_CLASSES_ROOT\CLSID\{00020469-0000-0000-C000-000000000046} = OLE Automation Dspcalc2 1.0 Application
+HKEY_CLASSES_ROOT\CLSID\{00020469-0000-0000-C000-000000000046}\ProgID = Dspcalc2.Application.1
+HKEY_CLASSES_ROOT\CLSID\{00020469-0000-0000-C000-000000000046}\VersionIndependentProgID = Dspcalc2.Application
+HKEY_CLASSES_ROOT\CLSID\{00020469-0000-0000-C000-000000000046}\LocalServer32 = dspcalc2.exe /Automation
+

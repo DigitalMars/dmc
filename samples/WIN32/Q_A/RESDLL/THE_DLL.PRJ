@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\Q_A\RESDLL\THE_DLL.PRJ
+THE_DLL.OPN
+novcs
+the_dll.def
+3
+812035224
+0 0 0 0 0 "the_dll.def" ""
+0 0 0 0 0 "the_dll.h" ""
+0 0 0 0 0 "the_dll.rc" ""
+0 0 0 0 0 "the_dll.c" ""

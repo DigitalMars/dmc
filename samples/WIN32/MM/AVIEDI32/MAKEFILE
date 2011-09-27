@@ -1,0 +1,32 @@
+# Nmake macros for building Windows 32-Bit apps
+
+!include <ntwin32.mak>
+
+all: aviedi32.exe
+
+OBJS=aviedit.obj audio.obj
+
+OTHERCLOPTS=-DWIN32_LEAN_AND_MEAN -nologo -I.
+OTHERRCOPTS=-DWIN32_LEAN_AND_MEAN -I.
+
+
+# Update the resource if necessary
+
+aviedit.res: aviedit.rc aviedit.h aviedit.rcv aviedit.ico
+    $(rc) -r -DWIN32 $(OTHERRCOPTS) aviedit.rc
+
+
+# Update the object file if necessary
+
+audio.obj: audio.c audio.h
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) audio.c
+
+aviedit.obj: aviedit.c aviedit.h muldiv32.h
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) aviedit.c
+
+# Update the executable file if necessary, and if so, add the resource back in.
+
+aviedi32.exe:  $(OBJS) aviedit.res
+    $(link) $(linkdebug) $(guiflags) -out:aviedi32.exe $(OBJS) aviedit.res $(guilibs) \
+	msacm32.lib vfw32.lib winmm.lib shell32.lib
+

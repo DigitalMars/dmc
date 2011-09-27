@@ -1,0 +1,25 @@
+REGEDIT4
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;
+ ;  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ ;  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ ;  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ ;  PURPOSE.
+ ;
+ ;  Copyright (c) 1992 - 1995  Microsoft Corporation.  All Rights Reserved.
+ ;
+ ;
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;
+; Remember, use GUIDGEN to make your own GUIDs!
+;
+[HKEY_CLASSES_ROOT\AVIFile\Extensions\WAV]
+@="{00020003-0000-0000-C000-000000000046}"
+[HKEY_CLASSES_ROOT\Clsid\{00020003-0000-0000-C000-000000000046}]
+@="Microsoft WAVE files"
+[HKEY_CLASSES_ROOT\Clsid\{00020003-0000-0000-C000-000000000046}\InprocServer32]
+@="wavef32.dll"
+"ThreadingModel"="Apartment"
+[HKEY_CLASSES_ROOT\Clsid\{00020003-0000-0000-C000-000000000046}\AVIFile]
+@="3"

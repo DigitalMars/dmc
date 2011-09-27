@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\Q_A\VIRTMEM\VERTMEM.PRJ
+VERTMEM.OPN
+novcs
+VertMem.DEF
+16
+812035224
+0 0 0 0 0 "virtmem.c" ""
+0 0 0 0 0 "virtmem.rc" ""
+0 0 0 0 0 "vertmem.def" ""

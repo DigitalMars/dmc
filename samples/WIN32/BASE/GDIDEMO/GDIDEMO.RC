@@ -1,0 +1,43 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+
+#include <windows.h>
+#include "gdidemo.h"
+
+
+APPICON ICON gdidemo.ico
+
+rcinclude gdidemo.dlg
+
+
+APPMENU MENU
+BEGIN
+    POPUP "&Demo"
+    BEGIN
+        MENUITEM "&PolyBezier"      , IDM_DEMO_POLYBEZIER
+        MENUITEM "&XForm"           , IDM_DEMO_XFORM
+        MENUITEM "&Maze"            , IDM_DEMO_MAZE
+        MENUITEM "&Random Objects"  , IDM_DEMO_DRAW
+        MENUITEM "&Bouncing Ball"   , IDM_DEMO_BOUNCE
+    END
+    POPUP "&Arrange"
+    BEGIN
+        MENUITEM "&Cascade"         , IDM_WINDOW_CASCADE
+        MENUITEM "&Tile"            , IDM_WINDOW_TILE
+        MENUITEM "&Icons"           , IDM_WINDOW_ICON
+    END
+    POPUP "\a&Help"
+    BEGIN
+        MENUITEM "&About..."        , IDM_HELP_ABOUT
+    END
+END

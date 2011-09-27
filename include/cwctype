@@ -1,0 +1,8 @@
+
+#pragma once
+
+#ifndef __WCTYPE_H
+#include <wctype.h>
+#endif
+
+

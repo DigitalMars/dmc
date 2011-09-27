@@ -1,0 +1,11 @@
+; dynabind.def : Declares the module parameters for the application.
+
+NAME         DYNABIND
+DESCRIPTION  'ENROLL Windows Application (DYNABIND)'
+EXETYPE      WINDOWS
+
+CODE         PRELOAD MOVEABLE DISCARDABLE
+DATA         PRELOAD MOVEABLE MULTIPLE
+
+STACKSIZE    10240
+HEAPSIZE     1024   ; initial heap size

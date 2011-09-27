@@ -1,0 +1,17 @@
+82572
+C:\SC\samples\win32\BASE\DDEML\CLIENT\CLIENT.PRJ
+CLIENT.OPN
+novcs
+client.def
+16
+852911400
+0 0 0 0 0 "clinit.c" ""
+0 0 0 0 0 "dde.c" ""
+0 0 0 0 0 "ddemlcl.c" ""
+0 0 0 0 0 "dialog.c" ""
+0 0 0 0 0 "huge.c" ""
+0 0 0 0 0 "infoctrl.c" ""
+0 0 0 0 0 "mem.c" ""
+0 0 0 0 0 "track.c" ""
+0 0 0 0 0 "client.def" ""
+0 0 0 0 0 "client.rc" ""

@@ -1,0 +1,22 @@
+82572
+C:\SC\samples\ole16\SIMPSVR\SIMPSVR.PRJ
+SIMPSVR.OPN
+novcs
+simpsvr.def
+0
+812035224
+0 0 0 0 0 "app.cpp" ""
+0 0 0 0 0 "doc.cpp" ""
+0 0 0 0 0 "icf.cpp" ""
+0 0 0 0 0 "ido.cpp" ""
+0 0 0 0 0 "iec.cpp" ""
+0 0 0 0 0 "ioipao.cpp" ""
+0 0 0 0 0 "ioipo.cpp" ""
+0 0 0 0 0 "ioo.cpp" ""
+0 0 0 0 0 "ips.cpp" ""
+0 0 0 0 0 "obj.cpp" ""
+0 0 0 0 0 "pre.cpp" ""
+0 0 0 0 0 "simpsvr.cpp" ""
+0 0 0 0 0 "simpsvr.def" ""
+0 0 0 0 0 "simpsvr.rc" ""
+0 0 0 0 0 "loleuic.lib" ""

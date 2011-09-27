@@ -1,0 +1,20 @@
+82572
+C:\SC\samples\ole16\SIMPDND\SIMPDND.PRJ
+SIMPDND.OPN
+novcs
+simpdnd.def
+0
+812035224
+0 0 0 0 0 "app.cpp" ""
+0 0 0 0 0 "doc.cpp" ""
+0 0 0 0 0 "dxferobj.cpp" ""
+0 0 0 0 0 "ias.cpp" ""
+0 0 0 0 0 "ids.cpp" ""
+0 0 0 0 0 "idt.cpp" ""
+0 0 0 0 0 "iocs.cpp" ""
+0 0 0 0 0 "pre.cpp" ""
+0 0 0 0 0 "simpdnd.cpp" ""
+0 0 0 0 0 "site.cpp" ""
+0 0 0 0 0 "simpdnd.def" ""
+0 0 0 0 0 "simpdnd.rc" ""
+0 0 0 0 0 "loleuic.lib" ""

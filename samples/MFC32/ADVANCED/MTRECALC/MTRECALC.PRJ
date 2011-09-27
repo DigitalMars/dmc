@@ -1,0 +1,16 @@
+82570
+c:\SamplesMFC32\ADVANCED\MTRECALC\mtrecalc.prj
+mtrecalc.OPN
+novcs
+mtrecalc.DEF
+16
+834106342
+0 0 0 0 0 "calcthrd.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "mtrecalc.cpp" ""
+0 0 0 0 0 "recalcvw.cpp" ""
+0 0 0 0 0 "recaldoc.cpp" ""
+0 0 0 0 0 "slowcalc.cpp" ""
+0 0 0 0 0 "speeddlg.cpp" ""
+0 0 0 0 0 "mtrecalc.DEF" ""
+0 0 0 0 0 "mtrecalc.rc" ""

@@ -1,0 +1,14 @@
+82572
+C:\SC\Samples\WIN32\opengl\samples\tstretch.PRJ
+tstretch.OPN
+novcs
+tstretch.DEF
+19
+853547512
+0 0 0 0 0 "tstretch.c" ""
+0 0 0 0 0 "tstretch.DEF" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "taccum.def" ""
+0 0 0 0 0 "advapi32.lib" ""

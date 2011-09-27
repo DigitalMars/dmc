@@ -1,0 +1,36 @@
+1 DLGINCLUDE "font.h"
+
+FONTTEMP DIALOG 18, 25, 264, 174
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Font Custom Template"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "&Font:", 1088, 6, 3, 40, 9
+    COMBOBOX        1136, 6, 13, 94, 54, CBS_SIMPLE | CBS_OWNERDRAWFIXED | 
+                    CBS_AUTOHSCROLL | CBS_SORT | CBS_HASSTRINGS | 
+                    CBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Font St&yle:", 1089, 108, 3, 44, 9
+    COMBOBOX        1137, 108, 13, 64, 54, CBS_SIMPLE | CBS_DISABLENOSCROLL | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Size:", 1090, 179, 3, 30, 9
+    COMBOBOX        1138, 179, 13, 32, 54, CBS_SIMPLE | CBS_OWNERDRAWFIXED | 
+                    CBS_SORT | CBS_HASSTRINGS | CBS_DISABLENOSCROLL | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 218, 6, 40, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 218, 23, 40, 14, WS_GROUP
+    PUSHBUTTON      "&Apply", 1026, 218, 40, 40, 14, WS_GROUP
+    PUSHBUTTON      "&Help", 1038, 218, 57, 40, 14, WS_GROUP
+    GROUPBOX        "Effects", 1072, 6, 72, 84, 34, WS_GROUP
+    AUTOCHECKBOX    "Stri&keout", 1040, 10, 82, 49, 10
+    AUTOCHECKBOX    "&Underline", 1041, 10, 94, 51, 10, NOT WS_TABSTOP
+    LTEXT           "&Color:", 1091, 7, 110, 30, 9
+    COMBOBOX        1139, 6, 120, 84, 100, CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_AUTOHSCROLL | CBS_HASSTRINGS | 
+                    WS_BORDER | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Sample", 1073, 98, 72, 160, 61, WS_GROUP
+    CTEXT           "AaBbYyZz", 1092, 104, 86, 149, 42, SS_NOPREFIX | NOT 
+                    WS_VISIBLE
+    PUSHBUTTON      "Tell Parent to Send WM_CHOOSEFONT_GETLOGFONT Message", 
+                    ID_SEND_WM_CF_LF_MSG, 6, 137, 253, 32
+END

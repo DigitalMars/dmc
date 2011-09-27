@@ -1,0 +1,17 @@
+Form=AUTODRIV.FRM
+Reference=*\G{4B115284-32F0-11CF-AC85-444553540000}#1.0#0#G:\ACDUAL\SERVER\DEBUG\AutoClik.TLB#ACDual
+ProjWinSize=250,581,196,128
+ProjWinShow=2
+IconForm="Form1"
+HelpFile=""
+ExeName32="Autodriv.exe"
+Name="Autodriv"
+HelpContextID="0"
+StartMode=0
+VersionCompatible32="0"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+VersionCompanyName="Microsoft Premier ISV Support"

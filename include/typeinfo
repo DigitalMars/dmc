@@ -1,0 +1,85 @@
+/* Copyright (C) 2003 by Digital Mars.
+ * www.digitalmars.com
+ * All Rights Reserved.
+ */
+
+#if __DMC__ || __RCC__
+#pragma once
+#endif
+
+#ifndef __TYPEINFO
+#define __TYPEINFO	1
+
+#ifndef __cplusplus
+#error Use C++ compiler for typeinfo
+#endif
+
+#ifndef __TYPE_INFO__
+#define __TYPE_INFO__ 1
+
+namespace std
+{
+    class type_info
+    {
+      public:
+	void *pdata;
+
+      public:
+	virtual __cdecl ~type_info();
+	bool __cdecl operator==(const type_info& rhs) const;
+	bool __cdecl operator!=(const type_info& rhs) const;
+	bool __cdecl before(const type_info& rhs) const;
+	const char* __cdecl name() const;
+      protected:
+	type_info();
+      private:
+	__cdecl type_info(const type_info& rhs);
+	type_info& __cdecl operator=(const type_info& rhs);
+    };
+}
+
+// Type_info is for link compatibility with old code
+class Type_info : public std::type_info
+{
+    private:
+	__cdecl Type_info(const Type_info&);
+	Type_info& __cdecl operator=(const Type_info&);
+
+    public:
+	virtual __cdecl ~Type_info();
+
+	int __cdecl operator==(const Type_info&) const;
+	int __cdecl operator!=(const Type_info&) const;
+	int __cdecl before(const Type_info&) const;
+	const char * __cdecl name() const;
+};
+
+#endif
+
+#include	<exception>
+
+namespace std
+{
+    class bad_cast : public exception
+    {
+      public:
+	bad_cast() throw() { }
+	bad_cast(const bad_cast&) throw() { }
+	bad_cast& operator=(const bad_cast&) throw() { return *this; }
+	virtual ~bad_cast() throw();
+	virtual const char* what() const throw();
+    };
+
+    class bad_typeid : public exception
+    {
+      public:
+	bad_typeid() throw() { }
+	bad_typeid(const bad_typeid&) throw() { }
+	bad_typeid& operator=(const bad_typeid&) throw() { return *this; }
+	virtual ~bad_typeid() throw();
+	virtual const char* what() const throw();
+    };
+
+}
+
+#endif

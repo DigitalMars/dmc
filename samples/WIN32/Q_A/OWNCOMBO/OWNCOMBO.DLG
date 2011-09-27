@@ -1,0 +1,85 @@
+AboutBox DIALOG  22, 42, 156, 67
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_MODALFRAME
+BEGIN
+  CTEXT "Microsoft® Windows"		  -1, 44, 13,  79, 10
+  CTEXT "OwnerDraw and Combo Box Example" -1,  7, 37, 144,  8
+  ICON	"owncombo"			 -1,  7,  7,  28, 26
+  DEFPUSHBUTTON "OK"		       IDOK, 58, 51,  32, 14, WS_GROUP
+END
+
+ListBoxDialog DIALOG 8, 5, 242, 147
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_MODALFRAME
+BEGIN
+  CTEXT "Ownerdraw Listbox"   -1,  0, 5, 235, 8
+  LISTBOX			 ID_LISTBOX,   4, 17, 232, 65,
+         LBS_NOTIFY|LBS_OWNERDRAWFIXED|WS_BORDER|WS_GROUP|WS_TABSTOP
+
+  LTEXT          "Click on button to add color to the listbox"  
+					  -1,	4,  90, 235, 12
+  PUSHBUTTON	 "Black"	    ID_BLACK,  20, 105,  43, 14, WS_TABSTOP
+  PUSHBUTTON	 "Red"		      ID_RED,  76, 105,  37, 14, WS_TABSTOP
+  PUSHBUTTON	 "Blue" 	     ID_BLUE, 125, 105,  37, 14, WS_TABSTOP
+  PUSHBUTTON	 "Green"	    ID_GREEN, 171, 105,  41, 14, WS_TABSTOP
+
+  DEFPUSHBUTTON  "Done" 		IDOK, 102, 129,  32, 14, WS_TABSTOP
+END
+
+MultiListBoxDialog DIALOG 8, 5, 242, 147
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_MODALFRAME
+BEGIN
+  CTEXT "Ownerdraw Multiple-Selection Listbox"	 -1,  0,   5, 235,  8
+  LISTBOX			 ID_LISTBOX,	      4,  17, 231, 65,
+         LBS_NOTIFY|LBS_OWNERDRAWFIXED|LBS_MULTIPLESEL|WS_BORDER|WS_GROUP|WS_TABSTOP
+
+  LTEXT 	 "Click on button to add the color to the listbox"
+					  -1,	4,  90, 235, 12
+  PUSHBUTTON	 "Black"	    ID_BLACK,  28, 105,  39, 14, WS_TABSTOP
+  PUSHBUTTON	 "Red"		      ID_RED,  76, 105,  36, 14, WS_TABSTOP
+  PUSHBUTTON	 "Blue" 	     ID_BLUE, 120, 105,  34, 14, WS_TABSTOP
+  PUSHBUTTON	 "Green"	    ID_GREEN, 161, 105,  35, 14, WS_TABSTOP
+
+  DEFPUSHBUTTON  "Done" 		IDOK,  99, 126,  32, 14, WS_TABSTOP
+END
+
+
+ComboBoxDialog DIALOG 7, 5, 280, 170
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_MODALFRAME
+BEGIN
+  CTEXT "DropDown Combobox"		 -1,  14,  5, 235,  8
+  EDITTEXT		      ID_SINGLEEDIT,  13, 16, 235, 12, ES_AUTOHSCROLL
+  COMBOBOX		      ID_COMBOBOX  ,  14, 30, 235, 85,
+                                   CBS_DROPDOWN|WS_VSCROLL|WS_GROUP|WS_TABSTOP
+  LTEXT 	 "Text 1"	    ID_TEXT1,  4, 77, 235, 12
+  LTEXT 	 "Text 2"	    ID_TEXT2,  4, 90, 235, 12
+
+  AUTOCHECKBOX	 "Combo Notifications" ID_STEPSBOX,20, 105, 86, 14,
+                                   WS_GROUP|BS_AUTOCHECKBOX
+  PUSHBUTTON	 "Unselect All"    ID_UNSLBUTTON,   5, 125, 52, 14
+  PUSHBUTTON	 "Select No."	  ID_NUMSELBUTTON, 60, 125, 52, 14
+  PUSHBUTTON	 "Select Text"	 ID_TXTSELBUTTON, 115, 125, 52, 14
+  PUSHBUTTON	 "Find Text"   ID_FNDSELBUTTON,   170, 125, 52, 14
+  PUSHBUTTON	 "Append Dir."	 ID_CBDIRBUTTON,  225, 125, 52, 14
+  PUSHBUTTON	 "Clear All"	  ID_CLRBUTTON,     5, 146, 52, 14
+  PUSHBUTTON	 "Add it"	ID_ADDBUTTON,	   60, 146, 52, 14
+  PUSHBUTTON	 "Delete it"	ID_DELETEBUTTON,  115, 146, 52, 14
+  PUSHBUTTON	 "Copy it"	 ID_CPYBUTTON,	  170, 146, 52, 14
+  DEFPUSHBUTTON  "Done" 		IDOK,	  225, 146, 52, 14
+END
+
+
+OwnerComboBoxDialog DIALOG 5, 5, 244, 147
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_MODALFRAME
+BEGIN
+  CTEXT "Drop Down Listbox with OwnerDraw"   -1,  4, 5, 235, 8
+  COMBOBOX			 ID_LISTBOX,   5, 16, 235, 85,
+         CBS_DROPDOWNLIST|CBS_OWNERDRAWFIXED|WS_BORDER|WS_GROUP|WS_TABSTOP
+
+  LTEXT          "Click on button to add color to the combobox"  
+					  -1,  4, 90, 235, 12
+  PUSHBUTTON	 "Black"	    ID_BLACK, 25, 106, 32, 14, WS_TABSTOP
+  PUSHBUTTON	 "Red"		      ID_RED, 72, 106, 32, 14, WS_TABSTOP
+  PUSHBUTTON	 "Blue" 	     ID_BLUE,119, 106, 32, 14, WS_TABSTOP
+  PUSHBUTTON	 "Green"	    ID_GREEN,169, 106, 32, 14, WS_TABSTOP
+
+  DEFPUSHBUTTON  "Done" 		IDOK,100, 127, 32, 14, WS_TABSTOP
+END

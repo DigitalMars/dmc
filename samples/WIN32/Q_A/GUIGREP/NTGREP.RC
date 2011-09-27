@@ -1,0 +1,39 @@
+#include "windows.h"
+#include "ntgrep.h"
+
+GrepMenu MENU
+BEGIN
+    POPUP        "&Help"
+    BEGIN
+	MENUITEM "&About NtGrep", IDM_ABOUT
+    END
+    MENUITEM "&Install", IDM_INSTALL
+    MENUITEM "&Uninstall", IDM_UNINSTALL
+END
+
+
+ExplainBox DIALOG 6, 18, 160, 129
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Grep setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "ok", IDOK, 58, 97, 40, 14
+    LTEXT           "To use NT grep, run the file manager.", 102, 11, 11, 
+		    145, 13
+    LTEXT           "It should now have a new menu item", 103, 12, 23, 139, 
+		    17
+    LTEXT           "labelled ""Search.""", 104, 12, 34, 123, 19
+END
+
+
+
+AboutBox DIALOG 22, 17, 144, 75
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About NtGrep"
+BEGIN
+    CTEXT "Microsoft Windows"     -1,       0,  5, 144,  8
+    CTEXT "File Grepper"   -1,       0, 14, 144,  8
+    CTEXT "By Rudiger Asche"           -1,       0, 34, 144,  8
+    DEFPUSHBUTTON "OK"          IDOK,      53, 59,  32, 14,      WS_GROUP
+END

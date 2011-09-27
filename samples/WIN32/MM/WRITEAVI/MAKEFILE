@@ -1,0 +1,31 @@
+# Nmake macros for building Windows 32-Bit apps
+
+!include <ntwin32.mak>
+
+all: writeavi.exe
+
+OBJS= writeavi.obj
+
+OTHERCLOPTS=-DWIN32_LEAN_AND_MEAN -nologo -I.
+OTHERRCOPTS=-DWIN32_LEAN_AND_MEAN    -I.
+
+
+# Update the resource if necessary
+
+writeavi.res: writeavi.rc writeavi.h writeavi.rcv writeavi.ico
+    $(rc) -r -DWIN32 $(OTHERRCOPTS) writeavi.rc
+
+
+# Update the object file if necessary
+
+writeavi.obj: writeavi.c writeavi.h
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) writeavi.c
+
+
+# Update the executable file if necessary, and if so, add the resource back in.
+
+writeavi.exe:  $(OBJS) writeavi.res
+    $(link) $(linkdebug) -out:writeavi.exe $(OBJS) writeavi.res $(guilibs) \
+	 winmm.lib vfw32.lib
+
+

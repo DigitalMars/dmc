@@ -1,0 +1,9 @@
+LIBRARY   PRGIDMON
+EXETYPE   WINDOWS
+CODE      PRELOAD MOVEABLE DISCARDABLE
+DATA      PRELOAD MOVEABLE SINGLE
+HEAPSIZE  1024
+EXPORTS
+			  DllGetClassObject     @1
+			  DllCanUnloadNow       @2
+			  CreateProgIdMoniker   @3

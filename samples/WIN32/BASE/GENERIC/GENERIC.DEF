@@ -1,0 +1,25 @@
+; Module-Definition file for GENERIC -- used by LINK.EXE
+; ==========================================================================
+; This isn't really needed for an Application, but it's handy to use for
+; setting the 'Description' text
+; application's module name
+
+NAME		"Generic"
+
+DESCRIPTION	'Sample Microsoft Windows Application'
+
+EXETYPE		NT
+
+SUBSYSTEM	WINDOWS
+
+STUB		'WINSTUB.EXE'
+
+VERSION		1.0
+
+CODE		 EXECUTE READ
+
+DATA		 READ WRITE
+
+STACKSIZE	4096         
+
+HEAPSIZE	4096         

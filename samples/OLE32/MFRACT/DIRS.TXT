@@ -1,0 +1,62 @@
+#+---------------------------------------------------------------------------
+#
+#  Microsoft Windows
+#  Copyright (C) Microsoft Corporation, 1992 - 1995.
+#
+#  File:       dirs.txt
+#
+#  Contents:   description of the MFract directories
+#
+#  History:     4-14-94   stevebl   Created
+#
+#----------------------------------------------------------------------------
+
+bin:
+    Target directory for the .EXE, .HLP and .DLLs.
+
+winhlprs:
+    Various helper classes to simplify writing Windows code in C++.
+    Produces a library called winhlprs.lib.
+
+idl:
+    The custom interfaces used by MFract and its fractal engines.
+    Produces a set of .h files and a library called fguids.lib which
+    contains all the IIDs for the interfaces.
+    Run build -nmake clean in this directory to delete midl generated files.
+
+app:
+    Source files for the main application.
+    Produces MFract.exe.
+
+help:
+    Produces the help file.
+
+engines:
+    Sources for the various fractal engine objects.
+
+engines\mandel:
+    Sources for the Mandelbrot Fractal engine.
+    Produces mandel.dll.
+
+engines\julia:
+    Sources for the Julia Set Fractal engine.
+    Produces julia.dll.
+
+engines\quad:
+    Sources for the Quadrant Fractal engine.
+    Produces quad.dll.
+    This component is used by fractal engines such as the Mandelbrot and Julia
+    Set objects to simplify the amount of code that they have to write.
+    Using this component allows the Mandelbrot and Julia Sets to get away with
+    providing only a property dialog implementation, persistence, and a simple
+    point-to-color mapping function.  The Quadrant engine takes care of
+    iterating across the graph, drawing the points, and optimizing areas where
+    possible.
+
+engines\plasma:
+    Sources for the Plasma Fractal engine.
+    Produces plasma.dll.
+
+engines\rgen:
+    Sources for the Recursive Generator engine.
+    Produces rgen.dll.

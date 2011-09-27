@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\Q_A\READWRIT\READWRIT.PRJ
+READWRIT.OPN
+novcs
+readwrit.def
+19
+812035224
+0 0 0 0 0 "readwrit.c" ""
+0 0 0 0 0 "readwrit.def" ""
+0 0 0 0 0 "database.prj" ""
+0 0 0 0 0 "database.lib" ""

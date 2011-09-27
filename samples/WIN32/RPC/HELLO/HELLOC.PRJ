@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\RPC\HELLO\HELLOC.PRJ
+HELLOC.OPN
+novcs
+helloc.DEF
+4
+812035224
+0 0 0 0 0 "hello_c.c" ""
+0 0 0 0 0 "helloc.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "helloc.def" ""

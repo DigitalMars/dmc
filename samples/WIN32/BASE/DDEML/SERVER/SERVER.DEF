@@ -1,0 +1,30 @@
+; recommended minimum for Windows applications
+
+NAME		"Server"
+
+DESCRIPTION	'Sample Microsoft Windows Application'
+
+EXETYPE		NT
+
+SUBSYSTEM	WINDOWS,4.0
+
+STUB		'WINSTUB.EXE'
+
+VERSION		1.0
+
+CODE		 EXECUTE READ
+
+DATA		 READ WRITE
+
+STACKSIZE	1048576,4096
+
+HEAPSIZE	1048576,4096
+
+EXPORTS
+		MainWndProc @1
+		About @2
+		RenderDelayDlgProc @3
+		SetTopicDlgProc @4
+		DdeCallback @5
+		SetServerDlgProc @6
+		ContextDlgProc @7

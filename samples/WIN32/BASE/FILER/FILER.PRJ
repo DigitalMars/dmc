@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\BASE\FILER\FILER.PRJ
+FILER.OPN
+novcs
+FILER.DEF
+2
+812035224
+0 0 0 0 0 "drvproc.c" ""
+0 0 0 0 0 "enumdrv.c" ""
+0 0 0 0 0 "expdir.c" ""
+0 0 0 0 0 "filer.c" ""
+0 0 0 0 0 "filer.rc" ""
+0 0 0 0 0 "version.lib" ""

@@ -1,0 +1,27 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+1 DLGINCLUDE "ddedlg.h"
+
+100 DIALOG 7, 18, 193, 100
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Installer Progress"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Stop", PD_STOPBUTTON, 77, 80, 40, 14
+    RTEXT           "Copying =>", PD_COPYING, 29, 14, 40, 8
+    RTEXT           "To =>", 104, 45, 32, 24, 8
+    LTEXT           "Text", PD_SOURCESTRING, 74, 14, 116, 8
+    LTEXT           "Text", PD_TARGETSTRING, 74, 32, 116, 8
+    CONTROL         "", 102, "Static", SS_BLACKFRAME, 4, 50, 186, 15
+END

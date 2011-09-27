@@ -1,0 +1,26 @@
+# Nmake macros for building Windows 32-Bit apps
+
+!include <ntwin32.mak>
+
+all: plgblt.exe
+
+# Update the resource if necessary
+
+plgblt.res: plgblt.rc plgblt.h
+    rc -r -fo plgblt.res plgblt.rc
+
+# Update the object file if necessary
+
+plgblt.obj: plgblt.c plgblt.h track.h
+    $(cc) $(cdebug) $(cflags) $(cvars) plgblt.c
+
+track.obj: track.c track.h
+    $(cc) $(cdebug) $(cflags) $(cvars) track.c
+
+bitmap.obj: bitmap.c
+    $(cc) $(cdebug) $(cflags) $(cvars) bitmap.c
+
+# Update the executable file if necessary, and if so, add the resource back in.
+
+plgblt.exe: plgblt.obj track.obj bitmap.obj plgblt.res plgblt.def
+    $(link) $(linkdebug) $(guiflags) -out:plgblt.exe plgblt.obj track.obj bitmap.obj plgblt.res $(guilibs)

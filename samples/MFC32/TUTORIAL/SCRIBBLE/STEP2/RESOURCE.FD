@@ -1,0 +1,9 @@
+!MS$FREEFORM
+! Microsoft Developer Studio generated include file.
+! Used by Scribble.rc
+!
+      integer, parameter :: IDD_ABOUTBOX                    = 100
+      integer, parameter :: IDR_MAINFRAME                   = 128
+      integer, parameter :: IDR_SCRIBBTYPE                  = 129
+      integer, parameter :: ID_PEN_THICK_OR_THIN            = 32771
+      integer, parameter :: ID_PEN_WIDTHS                   = 32774

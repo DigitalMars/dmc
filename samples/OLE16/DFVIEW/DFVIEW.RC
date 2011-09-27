@@ -1,0 +1,144 @@
+//Microsoft App Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "dfview.h"
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+SAMPLEMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Open &Docfile...",            ID_FILE_READ
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Create Test Storage File TEST.DFL",ID_FILE_CREATEDOCFILE
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&List"
+    BEGIN
+        MENUITEM "Expand &All",                 ID_LIST_EXPANDALL
+        MENUITEM "&Collapse All",               ID_LIST_COLLAPSEALL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Quick Help",                  ID_HELP_HELP
+        MENUITEM "&About Docfile Viewer...",    ID_FILE_ABOUT
+    END
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ABOUTBOX DIALOG DISCARDABLE  22, 17, 207, 87
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About OLE 2 DFView"
+FONT 8, "System"
+BEGIN
+    LTEXT           "Microsoft Windows",IDC_STATIC,37,6,86,8
+    LTEXT           "OLE 2.0 Docfile Viewer Sample",IDC_STATIC,37,16,101,8
+    DEFPUSHBUTTON   "OK",IDOK,162,6,38,14,WS_GROUP
+    ICON            "DFVIEW",IDC_STATIC,10,8,18,20
+    LTEXT           "Version number",IDC_VERSION,37,26,107,8
+    GROUPBOX        "",IDC_STATIC,38,38,162,43
+    LTEXT           "Demonstrates using the OLE 2.0 compound file APIs, as well as the static-link version of the OLE2UI library.",
+                    IDC_STATIC,47,48,145,28
+END
+
+HELP DIALOG DISCARDABLE  0, 0, 203, 123
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Quick Help on Docfile Viewer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,72,103,50,14
+    ICON            "DFVIEW",IDC_STATIC,9,7,18,20
+    LTEXT           "After opening up a valid OLE 2.0 docfile, you'll see the following types of items displayed on the screen.  Double-clicking on any of the items toggles opening and closing the item.",
+                    IDC_STATIC,33,6,167,35
+    CONTROL         "",IDC_BM1,"Static",SS_BLACKRECT,34,47,12,11
+    CONTROL         "",IDC_BM2,"Static",SS_BLACKRECT,34,60,12,11
+    CONTROL         "",IDC_BM3,"Static",SS_BLACKRECT,34,73,12,11
+    CONTROL         "",IDC_BM4,"Static",SS_BLACKRECT,34,86,12,11
+    LTEXT           "A root storage file",IDC_STATIC,49,48,145,9
+    LTEXT           "A child storage",IDC_STATIC,49,60,139,11
+    LTEXT           "A child stream",IDC_STATIC,50,74,126,11
+    LTEXT           "Data contained in a stream",IDC_STATIC,50,87,145,11
+END
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""..\\ole2ui\\ole2ui.rc""\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+BMP_WINDOWS             BITMAP  MOVEABLE PURE   "WINDOWS.BMP"
+BMP_FOLDERS             BITMAP  MOVEABLE PURE   "FOLDERS.BMP"
+BMP_DOCUMENTS           BITMAP  DISCARDABLE     "BMP_DOCU.BMP"
+BMP_BLANKS              BITMAP  DISCARDABLE     "BMP_BLAN.BMP"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+DFVIEW                  ICON    DISCARDABLE     "DFVIEW.ICO"
+DFVOPEN                 ICON    DISCARDABLE     "DFVOPEN.ICO"
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "..\ole2ui\ole2ui.rc"
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

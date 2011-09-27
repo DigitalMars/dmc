@@ -1,0 +1,8 @@
+
+#pragma once
+
+#ifndef __ERRNO_H
+#include <errno.h>
+#endif
+
+

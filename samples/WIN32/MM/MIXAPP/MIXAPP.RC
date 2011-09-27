@@ -1,0 +1,239 @@
+//==========================================================================;
+//
+//  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+//  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+//  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+//  PURPOSE.
+//
+//  Copyright (c) 1993 - 1995  Microsoft Corporation.  All Rights Reserved.
+//
+//--------------------------------------------------------------------------;
+//
+//  mixapp.rc
+//
+//==========================================================================;
+
+#include <windows.h>
+#include "mixapp.h"
+
+#include "mixapp.rcv"
+
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+//
+//  Misc resources
+//
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+
+ICON_APP        ICON    mixapp.ico
+
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+//
+//  Application menu
+//
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+
+MENU_APP MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Mixer Driver...",                IDM_FILE_MIXER_DEVICE
+        MENUITEM "&Font...\tCtrl+F",                IDM_FILE_FONT
+        MENUITEM SEPARATOR
+        MENUITEM "Enable Debug Log",                IDM_FILE_DEBUG_LOG
+        MENUITEM SEPARATOR
+        MENUITEM "A&bout...",                       IDM_FILE_ABOUT
+        MENUITEM "E&xit\tAlt+F4",                   IDM_FILE_EXIT
+    END
+
+    POPUP "&View"
+    BEGIN
+        MENUITEM "Line &Info...",                   IDM_VIEW_LINE_INFO
+        MENUITEM "Line &Controls...",               IDM_VIEW_LINE_CONTROLS
+    END
+
+    MENUITEM "&Update!",                            IDM_UPDATE
+END
+
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+//
+//  Accelerator table
+//
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+
+ACCEL_APP ACCELERATORS
+BEGIN
+    "^F",       IDM_FILE_FONT
+END
+
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+//
+//  String resources
+//
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+
+STRINGTABLE MOVEABLE DISCARDABLE
+BEGIN
+    IDS_APP_NAME,               "Mixer App (Win 32)"
+END
+
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+//
+//  Application dialogs
+//
+//
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+
+//
+//
+//
+//
+DLG_LINEINFO DIALOG 20, 20, 260, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Line Info"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK", IDOK, 218, 3, 40, 14
+    EDITTEXT        IDD_LINEINFO_EDIT_INFO, 2, 20, 256, 128,
+                    ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL
+END
+
+
+
+
+//
+//
+//
+//
+DLG_CONTROLINFO DIALOG 20, 20, 260, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Control Info"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK", IDOK, 218, 3, 40, 14
+    EDITTEXT        IDD_CONTROLINFO_EDIT_INFO, 2, 20, 256, 128,
+                    ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL
+END
+
+
+//
+//  DLG_LINECONTROLS
+//
+//
+//
+DLG_LINECONTROLS DIALOG LOADONCALL MOVEABLE DISCARDABLE 20, 20, 270, 120
+STYLE DS_MODALFRAME | WS_SYSMENU | WS_VISIBLE | WS_POPUP | DS_LOCALEDIT
+CAPTION "Line Controls"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL "OK", IDOK, "button", BS_DEFPUSHBUTTON | WS_GROUP | WS_TABSTOP | WS_CHILD, 233, 2, 35, 14
+
+    CONTROL "", IDD_LINECONTROLS_STATIC_POSITION, "static", WS_CHILD, 2, 18, 266, 100
+
+    CONTROL "&Info", IDD_LINECONTROLS_BTN_INFO, "button", BS_PUSHBUTTON | WS_GROUP | WS_TABSTOP | WS_CHILD, 2, 2, 35, 14
+    CONTROL "&Settings", IDD_LINECONTROLS_BTN_SETTINGS, "button", BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 40, 2, 35, 14
+END
+
+
+
+
+
+//
+//  DLG_MIXAPP_DEVICE
+//
+//
+//
+DLG_MIXAPP_DEVICE DIALOG DISCARDABLE  0, 0, 235, 158
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Mixer Device"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Device:", -1, 5, 11, 30, 8
+    COMBOBOX        IDD_MADEVICE_COMBO_DEVICE, 41, 8, 140, 68,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+
+    DEFPUSHBUTTON   "OK", IDOK, 187, 6, 43, 15
+
+    LTEXT           "&Capabilities:", -1, 5, 27, 77, 8
+    EDITTEXT        IDD_MADEVICE_EDIT_CAPABILITIES, 5, 38, 225, 114,
+                    ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL
+END
+
+
+
+
+//
+//  DLG_MIXAPP_CONTROL
+//
+//
+//
+DLG_MIXAPP_CONTROL DIALOG DISCARDABLE  0, 0, 241, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK", IDOK, 196, 3, 41, 14
+
+    GROUPBOX        "&Multi-Channel", IDD_MACONTROL_GRP_MULTICHANNEL, 4, 31, 115, 77
+    GROUPBOX        "&Uniform", IDD_MACONTROL_GRP_UNIFORM, 122, 31, 115, 77
+
+    LTEXT           "Short Name:", -1, 4, 7, 46, 8
+    LTEXT           "", IDD_MACONTROL_TXT_SHORT_NAME, 56, 7, 136, 8
+
+    LTEXT           "Long Name:", -1, 4, 21, 46, 8
+    LTEXT           "", IDD_MACONTROL_TXT_LONG_NAME, 56, 21, 177, 8
+
+    LTEXT           "Value:", -1, 4, 112, 46, 8
+    LTEXT           "", IDD_MACONTROL_TXT_VALUE, 56, 112, 177, 8
+
+    LTEXT           "Bounds:", -1, 4, 124, 46, 8
+    LTEXT           "", IDD_MACONTROL_TXT_BOUNDS, 56, 124, 177, 8
+
+    LTEXT           "Metrics:", -1, 4, 137, 46, 8
+    LTEXT           "", IDD_MACONTROL_TXT_METRICS, 56, 137, 177, 8
+
+    LTEXT           "Line Info:", -1, 4, 150, 46, 8
+    LTEXT           "", IDD_MACONTROL_TXT_LINEINFO, 56, 150, 177, 8
+END
+
+
+
+
+
+
+//
+//  DLG_ABOUT
+//
+//
+//
+DLG_ABOUT DIALOG LOADONCALL MOVEABLE DISCARDABLE 20, 20, 200, 130
+STYLE DS_MODALFRAME | WS_SYSMENU | WS_VISIBLE | WS_POPUP | DS_LOCALEDIT
+CAPTION "About Mixer App"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL APP_VERSION_DESCRIPTION_RC, -1, "static", SS_LEFT | WS_CHILD, 30, 5, 165, 8
+    CONTROL APP_VERSION_STRING_RC, -1, "static", SS_LEFT | WS_CHILD, 30, 14, 165, 8
+    CONTROL "for:", -1, "static", SS_LEFT | WS_CHILD, 30, 23, 15, 8
+    CONTROL APP_VERSION_PRODUCTNAME_RC, -1, "static", SS_LEFT | WS_CHILD, 45, 23, 150, 8
+    CONTROL APP_VERSION_COPYRIGHT_RC, -1, "static", SS_LEFT | WS_CHILD, 30, 32, 165, 8
+    CONTROL APP_VERSION_BYLINE_RC, -1, "static", SS_LEFT | WS_CHILD, 30, 42, 165, 8
+
+    CONTROL "", IDD_ABOUT_VERSION_MMSYSTEM, "static", SS_LEFT | WS_CHILD, 30, 55, 165, 8
+
+    CONTROL "", -1, "static", WS_BORDER | WS_CHILD, 0, 71, 200, 1
+    CONTROL "Environment:", -1, "static", SS_LEFT | WS_CHILD, 5, 77, 45, 8
+    CONTROL "", IDD_ABOUT_VERSION_OS, "static", SS_LEFT | WS_CHILD, 50, 77, 145, 20
+    CONTROL "Platform:", -1, "static", SS_LEFT | WS_CHILD, 5, 97, 45, 8
+    CONTROL "", IDD_ABOUT_VERSION_PLATFORM, "static", SS_LEFT | WS_CHILD, 50, 97, 145, 8
+    CONTROL "OK", IDOK, "button", BS_DEFPUSHBUTTON | WS_GROUP | WS_TABSTOP | WS_CHILD, 82, 111, 35, 14
+    CONTROL ICON_APP, -1, "static", SS_ICON | WS_CHILD, 5, 5, 0, 0
+END

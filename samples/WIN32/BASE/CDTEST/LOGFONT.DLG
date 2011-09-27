@@ -1,0 +1,40 @@
+1 DLGINCLUDE "logfont.H"
+
+ID_LOGFONTDIALOG DIALOG 77, 23, 169, 178
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "LogFont"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "lfHeight", 101, 6, 9, 26, 8
+    EDITTEXT        ID_LFHEIGHT, 65, 7, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfWidth", 102, 6, 21, 24, 8
+    EDITTEXT        ID_LFWIDTH, 65, 19, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfEscapement", 103, 6, 33, 44, 8
+    EDITTEXT        ID_LFESCAPEMENT, 65, 31, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfOrientation", 104, 6, 45, 40, 8
+    EDITTEXT        ID_LFORIENTATION, 65, 43, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfWeight", 105, 6, 57, 28, 8
+    EDITTEXT        ID_LFWEIGHT, 65, 55, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfItalic", 106, 6, 69, 21, 8
+    EDITTEXT        ID_LFITALIC, 65, 67, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfUnderline", 107, 6, 81, 36, 8
+    EDITTEXT        ID_LFUNDERLINE, 65, 79, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfStrikeOut", 108, 6, 93, 35, 8
+    EDITTEXT        ID_LFSTRIKEOUT, 65, 91, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfCharSet", 109, 6, 105, 31, 8
+    EDITTEXT        ID_LFCHARSET, 65, 103, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfOutPrecision", 110, 6, 117, 46, 8
+    EDITTEXT        ID_LFOUTP, 65, 115, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfClipPrecision", 111, 6, 129, 47, 8
+    EDITTEXT        ID_LFCLIPP, 65, 127, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfQuality", 112, 6, 141, 27, 8
+    EDITTEXT        ID_LFQUALITY, 65, 139, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfPitchAndFamily", 113, 6, 153, 54, 8
+    EDITTEXT        ID_LFPITCHANDFAM, 65, 151, 51, 11, ES_AUTOHSCROLL
+    LTEXT           "lfFaceName", 114, 6, 165, 39, 8
+    EDITTEXT        ID_LFFACENAME, 65, 163, 51, 11, ES_AUTOHSCROLL
+    PUSHBUTTON      "OK", IDOK, 126, 5, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 126, 20, 40, 14
+    PUSHBUTTON      "Reset", ID_RESETLF, 126, 35, 40, 14
+END

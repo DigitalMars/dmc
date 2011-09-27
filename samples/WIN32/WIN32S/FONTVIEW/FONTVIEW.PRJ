@@ -1,0 +1,14 @@
+82572
+C:\SC\samples\win32\WIN32S\FONTVIEW\FONTVIEW.PRJ
+FONTVIEW.OPN
+novcs
+fontview.def
+20
+812035224
+0 0 0 0 0 "dialogs.c" ""
+0 0 0 0 0 "display.c" ""
+0 0 0 0 0 "fontview.c" ""
+0 0 0 0 0 "status.c" ""
+0 0 0 0 0 "tools.c" ""
+0 0 0 0 0 "fontview.def" ""
+0 0 0 0 0 "fontview.res" ""

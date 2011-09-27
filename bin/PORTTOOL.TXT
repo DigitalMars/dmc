@@ -1,0 +1,16 @@
+PortTool -- Win32 Porting Tool
+
+Summary
+
+The porting tool is used to help identify the places in the 16-bit source 
+code that might need to change to make it 32-bit Win32-compatible. The 
+tool provides a brief description of the problem and a possible solution.
+
+More Information
+
+The porting tool has two operating modes.  It can be run interactively or 
+in the background.  The background mode inserts comments in the locations 
+where issues are found. There is a section of PORT.INI (the file that the 
+porting tool uses to help identify potential issues) available for entering 
+programmer-defined strings. This allows the porting tool to be customized.
+

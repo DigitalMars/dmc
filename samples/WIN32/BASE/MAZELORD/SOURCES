@@ -1,0 +1,28 @@
+# makefile for Maze
+
+
+
+MAJORCOMP=windows
+MINORCOMP=base
+TARGETNAME=Maze
+TARGETTYPE=LIBRARY
+INCLUDES=.
+TARGETPATH=obj
+
+NTDEBUG=ntsd
+NTDEBUGTYPE=windbg
+386_OPTIMIZATION=/Od
+
+SOURCES=bitmap.c draw.c drones.c initmaze.c network.c readsgrd.c \
+	mazewnd.c mazedlg.c scorewnd.c textwnd.c topwnd.c maze.rc
+
+UMTYPE=windows
+UMLIBS=obj\*\Maze.lib \
+       obj\*\maze.res \
+       $(BASEDIR)\public\sdk\lib\*\winmm.lib
+
+UMENTRY=winmain
+UMAPPL=maze
+
+C_DEFINES=-DWIN32 -DNT
+MIPS_FLAGS=-D_cdecl=

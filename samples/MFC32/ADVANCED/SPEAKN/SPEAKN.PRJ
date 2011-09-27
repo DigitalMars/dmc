@@ -1,0 +1,11 @@
+82570
+c:\SamplesMFC32\ADVANCED\SPEAKN\speakn.prj
+speakn.OPN
+novcs
+speakn.DEF
+16
+834106348
+0 0 0 0 0 "speakn.cpp" ""
+0 0 0 0 0 "speakn.DEF" ""
+0 0 0 0 0 "speakn.rc" ""
+0 0 0 0 0 "winmm.lib" ""

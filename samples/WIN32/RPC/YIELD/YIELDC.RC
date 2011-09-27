@@ -1,0 +1,20 @@
+#include "windows.h"
+#include "yieldc.h"
+
+GenericMenu MENU
+BEGIN
+    POPUP	 "&Run"
+    BEGIN
+	MENUITEM "&Call the remote procedure", IDM_WAIT
+	MENUITEM SEPARATOR
+	MENUITEM "E&xit", IDM_EXIT
+	MENUITEM SEPARATOR
+	MENUITEM "&About RPC Yield...", IDM_ABOUT
+    END
+    POPUP	 "&Options"
+    BEGIN
+	MENUITEM "&Bind", IDM_BIND
+	MENUITEM "&Yield", IDM_YIELD
+    END
+END
+#include "yieldc.dlg"

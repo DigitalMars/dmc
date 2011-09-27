@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "property_accessors_test", "property_accessors_test\vc7\property_accessors_test.vcproj", "{1CE20AF7-170C-43BE-8E75-C662AD9DD9FC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string_access_test", "string_access_test\vc7\string_access_test.vcproj", "{178C0D0D-C4DF-4CE8-9661-2ACB183C0863}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{1CE20AF7-170C-43BE-8E75-C662AD9DD9FC}.Debug.ActiveCfg = Debug|Win32
+		{1CE20AF7-170C-43BE-8E75-C662AD9DD9FC}.Debug.Build.0 = Debug|Win32
+		{1CE20AF7-170C-43BE-8E75-C662AD9DD9FC}.Release.ActiveCfg = Release|Win32
+		{1CE20AF7-170C-43BE-8E75-C662AD9DD9FC}.Release.Build.0 = Release|Win32
+		{178C0D0D-C4DF-4CE8-9661-2ACB183C0863}.Debug.ActiveCfg = Debug|Win32
+		{178C0D0D-C4DF-4CE8-9661-2ACB183C0863}.Debug.Build.0 = Debug|Win32
+		{178C0D0D-C4DF-4CE8-9661-2ACB183C0863}.Release.ActiveCfg = Release|Win32
+		{178C0D0D-C4DF-4CE8-9661-2ACB183C0863}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

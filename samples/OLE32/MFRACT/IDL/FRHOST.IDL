@@ -1,0 +1,69 @@
+//+---------------------------------------------------------------------------
+//
+//  Microsoft Windows
+//  Copyright (C) Microsoft Corporation, 1992 - 1995.
+//
+//  File:       frhost.idl
+//
+//  Contents:   definition for the IFractalHost interface
+//
+//  Classes:
+//
+//  Functions:
+//
+//  History:    4-13-94   stevebl   Created
+//
+//----------------------------------------------------------------------------
+
+//+---------------------------------------------------------------------------
+//
+//  Class:      IFractalHost (fh)
+//
+//  Purpose:    interface implemented by host fractal app and used by fractal
+//              engines
+//
+//  Interface:  SetGraphSize     -- asks host to change the graph size
+//              GetGraphSize     -- asks host what its graph size is
+//              GetPoint         -- gets the color at a given point
+//              Rect             -- paints a rectangle
+//              Line             -- draws a line between two points
+//              Point            -- plots a point
+//              DoneDrawingGraph -- notifies host app that the graph is done
+//
+//  History:    4-13-94   stevebl   Created
+//              7-07-94   stevebl   modified definition of GetPoint
+//
+//----------------------------------------------------------------------------
+
+[
+    local,
+    object,
+    uuid(2a0e4ef4-3908-101b-8963-00000b65c75b),
+    pointer_default(unique)
+]
+
+interface IFractalHost : IUnknown
+{
+    import "unknwn.idl";
+
+    HRESULT SetGraphSize(unsigned uWidth, unsigned uHeight);
+    HRESULT GetGraphSize(unsigned * puWidth, unsigned * puHeight);
+    HRESULT GetPoint(unsigned * puColor, int x, int y);
+    HRESULT Rect(
+        int iLeft,
+        int iTop,
+        int iRight,
+        int iBottom,
+        unsigned uColor);
+    HRESULT Line(
+        int x1,
+        int y1,
+        int x2,
+        int y2,
+        unsigned uColor);
+    HRESULT Point(
+        int x,
+        int y,
+        unsigned uColor);
+    HRESULT DoneDrawingGraph(void);
+}

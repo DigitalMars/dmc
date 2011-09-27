@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\Q_A\INTEROP\DISP32.PRJ
+DISP32.OPN
+novcs
+disp32.def
+16
+812035224
+0 0 0 0 0 "disp32.c" ""
+0 0 0 0 0 "disp32.def" ""
+0 0 0 0 0 "dll32.prj" ""
+0 0 0 0 0 "dll32.lib" ""

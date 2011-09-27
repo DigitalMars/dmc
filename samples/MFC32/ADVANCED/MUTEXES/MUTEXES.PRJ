@@ -1,0 +1,12 @@
+82570
+c:\SamplesMFC32\ADVANCED\MUTEXES\mutexes.prj
+mutexes.OPN
+novcs
+mutexes.DEF
+16
+834106344
+0 0 0 0 0 "mutexdlg.cpp" ""
+0 0 0 0 0 "mutexes.cpp" ""
+0 0 0 0 0 "threads.cpp" ""
+0 0 0 0 0 "mutexes.DEF" ""
+0 0 0 0 0 "mutexes.rc" ""

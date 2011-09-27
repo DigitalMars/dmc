@@ -1,0 +1,14 @@
+82572
+C:\SC\samples\win32\BASE\DDEML\SERVER\SERVER.PRJ
+SERVER.OPN
+novcs
+server.DEF
+16
+853272520
+0 0 0 0 0 "dde.c" ""
+0 0 0 0 0 "ddemlsv.c" ""
+0 0 0 0 0 "dialog.c" ""
+0 0 0 0 0 "huge.c" ""
+0 0 0 0 0 "server.def" ""
+0 0 0 0 0 "server.rc" ""
+0 0 0 0 0 "advapi32.lib" ""

@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\ole16\DSPCALC2\DSPCALC2.PRJ
+DSPCALC2.OPN
+novcs
+dspcalc2.def
+0
+812035224
+0 0 0 0 0 "clsid.c" ""
+0 0 0 0 0 "dspcalc2.cpp" ""
+0 0 0 0 0 "main.cpp" ""
+0 0 0 0 0 "dspcalc2.def" ""
+0 0 0 0 0 "dspcalc2.rc" ""
+0 0 0 0 1001 "copytlb.bat" ""

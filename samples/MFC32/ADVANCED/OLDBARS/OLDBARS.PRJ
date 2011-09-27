@@ -1,0 +1,16 @@
+82570
+c:\SamplesMFC32\ADVANCED\OLDBARS\oldbars.prj
+oldbars.OPN
+novcs
+oldbars.DEF
+16
+834106346
+0 0 0 0 0 "globals.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "oldbadoc.cpp" ""
+0 0 0 0 0 "oldbars.cpp" ""
+0 0 0 0 0 "oldbavw.cpp" ""
+0 0 0 0 0 "statbar.cpp" ""
+0 0 0 0 0 "toolbar.cpp" ""
+0 0 0 0 0 "oldbars.DEF" ""
+0 0 0 0 0 "oldbars.rc" ""

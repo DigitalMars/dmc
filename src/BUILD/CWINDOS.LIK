@@ -1,0 +1,7 @@
+cwindos.LIB
+-+SWC\argcargv.OBJ&
+-+SWC\winio.OBJ&
+-+SWC\wmhandlr.OBJ&
+-+SWC\scver.OBJ
+NUL
+cwindos.LIB

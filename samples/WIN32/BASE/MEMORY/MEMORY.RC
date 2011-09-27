@@ -1,0 +1,120 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+
+#define OEMRESOURCE
+
+#include <windows.h>
+#include "memory.h"
+
+MainMenu MENU
+BEGIN
+    POPUP  "&Create"
+    BEGIN
+        MENUITEM  "&Server",       MM_SERVER
+        MENUITEM  "&Client",       MM_CLIENT
+        MENUITEM  SEPARATOR
+        MENUITEM  "&About ...",    MM_ABOUT
+    END
+
+    POPUP "&Window"
+    BEGIN
+        MENUITEM  "&Cascade",       IDM_CASCADE
+        MENUITEM  "&Tile",          IDM_TILE
+        MENUITEM  "Arrange &Icons", IDM_ARRANGE
+    END
+END
+
+
+ServerMenu MENU
+BEGIN
+    POPUP  "&Create"
+    BEGIN
+      MENUITEM  "&Server",         MM_SERVER, GRAYED
+      MENUITEM  "&Client",         MM_CLIENT, GRAYED
+      MENUITEM  SEPARATOR
+      MENUITEM  "&About ...",      MM_ABOUT
+    END
+
+    POPUP  "Server"
+    BEGIN
+        MENUITEM  "Create File...",        MM_OPT_1
+        MENUITEM  "Create File Mapping...",MM_OPT_2 //, GRAYED
+        MENUITEM  "Map View of File",    MM_OPT_3 //, GRAYED
+        MENUITEM  SEPARATOR
+        MENUITEM  "Access",                MM_OPT_4 //, GRAYED
+    END
+
+    POPUP "&Window"
+    BEGIN
+        MENUITEM  "&Cascade",       IDM_CASCADE
+        MENUITEM  "&Tile",          IDM_TILE
+        MENUITEM  "Arrange &Icons", IDM_ARRANGE
+    END
+END
+
+ClientMenu MENU
+BEGIN
+    POPUP  "&Create"
+    BEGIN
+      MENUITEM  "&Server",         MM_SERVER, GRAYED
+      MENUITEM  "&Client",         MM_CLIENT, GRAYED
+      MENUITEM  SEPARATOR
+      MENUITEM  "&About ...",      MM_ABOUT
+    END
+
+    POPUP  "Client"
+    BEGIN
+        MENUITEM  "Open File Mapping...",  MM_OPT_5
+        MENUITEM  "Map View of File",    MM_OPT_6 //, GRAYED
+        MENUITEM  SEPARATOR
+        MENUITEM  "Access",                MM_OPT_7 //, GRAYED
+        MENUITEM  "Refresh Now",           MM_OPT_8, GRAYED
+    END
+
+    POPUP "&Window"
+    BEGIN
+        MENUITEM  "&Cascade",       IDM_CASCADE
+        MENUITEM  "&Tile",          IDM_TILE
+        MENUITEM  "Arrange &Icons", IDM_ARRANGE
+    END
+END
+
+
+AboutBox DIALOG 16, 16, 192, 96
+STYLE DS_MODALFRAME | WS_CAPTION | WS_VISIBLE
+CAPTION "About Memory"
+BEGIN
+    CTEXT "Microsoft Windows"     -1,       0,  8, 192,  8
+    CTEXT "Memory"                -1,       0, 24, 192,  8
+    CTEXT "Version 0.01"          -1,       0, 40, 192,  8
+    DEFPUSHBUTTON "OK!",    IDOK,          71, 60,  50, 14
+END
+
+FileType DIALOG 11, 19, 168, 80
+STYLE DS_MODALFRAME | WS_CAPTION | WS_VISIBLE
+CAPTION "File Type"
+BEGIN
+    CONTROL "Use Page File or Create Map File with the following name", 100, "static", SS_CENTER | WS_CHILD, 22, 6, 119, 20
+    CONTROL "Page File", IDBTN_PAGE, "button", BS_DEFPUSHBUTTON | WS_TABSTOP | WS_CHILD, 22, 52, 38, 14
+    CONTROL "Map File",  IDBTN_MAP, "button", BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 101, 52, 35, 14
+    CONTROL "MapFile.001", IDEDIT_MAPFILE, "edit", ES_LEFT | ES_AUTOHSCROLL | WS_BORDER | WS_TABSTOP | WS_CHILD, 23, 30, 115, 12
+END
+
+MapName DIALOG 62, 53, 152, 64
+STYLE DS_MODALFRAME | WS_CAPTION | WS_VISIBLE
+CAPTION "Map Name"
+BEGIN
+    CONTROL "Enter name for Map File", 100, "static", SS_LEFT | WS_CHILD, 18, 8, 100, 10
+    CONTROL "MapName1", IDEDIT_MAPNAME, "edit", ES_LEFT | ES_AUTOHSCROLL | WS_BORDER | WS_TABSTOP | WS_CHILD, 18, 21, 94, 12
+    CONTROL "OK", IDBTN_OK, "button", BS_DEFPUSHBUTTON | WS_TABSTOP | WS_CHILD, 61, 39, 32, 14
+END

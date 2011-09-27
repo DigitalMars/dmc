@@ -1,0 +1,49 @@
+/*
+ * GBDEMO.RC
+ * GizmoBar Test Version 1.00, March 1993
+ *
+ * Icon, menus, strings, and dialogs.
+ *
+ * Copyright (c)1992 Microsoft Corporation, All Rights Reserved
+ *
+ * Kraig Brockschmidt, Software Design Engineer
+ * Microsoft Systems Developer Relations
+ *
+ * Internet  :  kraigb@microsoft.com
+ * Compuserve:  >INTERNET:kraigb@microsoft.com
+ */
+
+
+#include <windows.h>
+#include "..\..\include\bttncur.h"
+#include "gbdemo.h"
+
+
+Icon            ICON        gbdemo.ico
+IDR_BITMAPS72   BITMAP      image72.bmp
+IDR_BITMAPS96   BITMAP      image96.bmp
+IDR_BITMAPS120  BITMAP      image120.bmp
+
+
+IDR_MENU MENU MOVEABLE DISCARDABLE
+    BEGIN
+     POPUP "&Gizmos"
+      BEGIN
+       MENUITEM "&Create",                  IDM_GIZMOSCREATE
+       MENUITEM "&Disable Individually",    IDM_GIZMOSDISABLEINDIVIDUALLY
+       MENUITEM "&Enable Individually",     IDM_GIZMOSENABLEINDIVIDUALLY
+       MENUITEM "Disable &All",             IDM_GIZMOSDISABLEALL
+       MENUITEM "Enable A&ll",              IDM_GIZMOSENABLEALL
+       MENUITEM SEPARATOR
+       MENUITEM "&Show/Hide Listbox",       IDM_GIZMOSSHOWHIDELISTBOX
+       MENUITEM "Send &Messages",           IDM_GIZMOSSENDMESSAGES
+       MENUITEM "Change &Font",             IDM_GIZMOSCHANGEFONT
+       MENUITEM SEPARATOR
+       MENUITEM "&Notify On",               IDM_GIZMOSNOTIFYON
+       MENUITEM "N&otify Off",              IDM_GIZMOSNOTIFYOFF
+       MENUITEM "Se&t Data",                IDM_GIZMOSDATASET
+       MENUITEM "&Get Data",                IDM_GIZMOSDATAGET
+       MENUITEM "Set/Get Te&xt",            IDM_GIZMOSSETGETTEXT
+       MENUITEM "Set/Get &Int",             IDM_GIZMOSSETGETINT
+      END
+    END

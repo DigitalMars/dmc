@@ -1,0 +1,48 @@
+#*************************************************************#
+#**                                                         **#
+#**                 Microsoft RPC Examples                  **#
+#**               OSF DCE Interop Application               **#
+#**          Copyright(c) Microsoft Corp. 1992-1995         **#
+#**                                                         **#
+#*************************************************************#
+
+cc_ntenv = cl386
+cc= cl
+cflags= -c -AL -Gsw -Oas -Zpe -Zi -D_CRTAPI1=
+linker= link
+lflags= /CO /NOD
+
+.c.obj:
+   $(cc) $(cflags) $<
+
+all : client
+
+idl : msg.h
+
+client : client.exe
+client.exe : client.obj msg_c.obj midluser.obj
+    $(linker) $(lflags) client msg_c midluser,,,\
+    llibce rpc rpcndr;
+
+# Update the object files if necessary
+
+client.obj : client.c msg.h
+
+msg_c.obj : msg_c.c msg.h
+
+midluser.obj : midluser.c
+
+msg.h msg_c.c : msg.idl msg.acf
+    midl -env dos -cpp_cmd $(cc_ntenv) -cpp_opt "-E" msg.idl
+
+# Clean up everything
+cleanall : clean
+    -del *.exe
+
+# Clean up everything but the .EXEs
+clean :
+    -del *.obj
+    -del *.map
+    -del msg_?.c
+    -del msg.h
+

@@ -1,0 +1,10 @@
+#include "sthrash.h"
+
+STHRASH_MENU  MENU LOADONCALL MOVEABLE DISCARDABLE 
+BEGIN
+  POPUP "&Run"
+  BEGIN
+    MenuItem  "&Butterfly Thrash", IDM_BUTTERFLY
+    MenuItem  "&Fractal Landscape", IDM_FRACTAL
+  END
+END

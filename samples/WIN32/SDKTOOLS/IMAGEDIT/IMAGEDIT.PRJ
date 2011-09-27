@@ -1,0 +1,30 @@
+82572
+C:\SC\samples\win32\SDKTOOLS\IMAGEDIT\IMAGEDIT.PRJ
+IMAGEDIT.OPN
+novcs
+imagedit.def
+16
+812035224
+0 0 0 0 0 "colorwp.c" ""
+0 0 0 0 0 "devinfo.c" ""
+0 0 0 0 0 "file.c" ""
+0 0 0 0 0 "globals.c" ""
+0 0 0 0 0 "icclip.c" ""
+0 0 0 0 0 "image.c" ""
+0 0 0 0 0 "imagedc.c" ""
+0 0 0 0 0 "imagedit.c" ""
+0 0 0 0 0 "imagedlg.c" ""
+0 0 0 0 0 "imaglink.c" ""
+0 0 0 0 0 "imagundo.c" ""
+0 0 0 0 0 "menucmd.c" ""
+0 0 0 0 0 "propbar.c" ""
+0 0 0 0 0 "rwbmp.c" ""
+0 0 0 0 0 "rwicocur.c" ""
+0 0 0 0 0 "rwpal.c" ""
+0 0 0 0 0 "toolbox.c" ""
+0 0 0 0 0 "util.c" ""
+0 0 0 0 0 "viewwp.c" ""
+0 0 0 0 0 "workwp.c" ""
+0 0 0 0 0 "imagedit.def" ""
+0 0 0 0 0 "res.rc" ""
+0 0 0 0 0 "comdlg32.lib" ""

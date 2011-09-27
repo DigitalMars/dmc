@@ -1,0 +1,14 @@
+82572
+C:\SC\samples\win32\BASE\DDEML\DDEINST\INSTALL.PRJ
+INSTALL.OPN
+novcs
+install.DEF
+2
+852911400
+0 0 0 0 0 "ddeadd.c" ""
+0 0 0 0 0 "ddedlg.c" ""
+0 0 0 0 0 "ddeinst.c" ""
+0 0 0 0 0 "ddemain.c" ""
+0 0 0 0 0 "ddeprocs.c" ""
+0 0 0 0 0 "install.rc" ""
+0 0 0 0 0 "install.def" ""

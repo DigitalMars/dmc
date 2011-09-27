@@ -1,0 +1,17 @@
+82572
+C:\SC\samples\ole16\HANDLER\DBGHNDLR.PRJ
+DBGHNDLR.OPN
+novcs
+dbghndlr.def
+1
+812035224
+0 0 0 0 0 "cdebug.cpp" ""
+0 0 0 0 0 "classfct.cpp" ""
+0 0 0 0 0 "dbghndlr.cpp" ""
+0 0 0 0 0 "object.cpp" ""
+0 0 0 0 0 "stdafx.cpp" ""
+0 0 0 0 0 "utils.cpp" ""
+0 0 0 0 0 "dbghndlr.def" ""
+0 0 0 0 0 "dbghndlr.rc" ""
+0 0 0 0 0 "installr\installr.prj" ""
+0 0 0 0 1001 "..\bin\movelib.bat" ""

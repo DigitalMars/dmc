@@ -1,0 +1,8 @@
+
+#pragma once
+
+#ifndef __LOCALE_H
+#include <locale.h>
+#endif
+
+

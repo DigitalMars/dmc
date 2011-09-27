@@ -1,0 +1,15 @@
+NAME         TLSCALL
+
+DESCRIPTION  'Sample Microsoft Windows Application'
+
+STUB         'WINSTUB.EXE'
+
+CODE         PRELOAD MOVEABLE DISCARDABLE
+DATA         PRELOAD MOVEABLE MULTIPLE
+
+HEAPSIZE     1024
+STACKSIZE    5120
+
+IMPORTS
+             TlsInit @1
+             TlsRetreive @2

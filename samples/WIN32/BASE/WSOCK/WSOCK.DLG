@@ -1,0 +1,69 @@
+1 DLGINCLUDE "WSOCK.H"
+
+HOSTNAME DIALOG 43, 59, 160, 100
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Enter a host name:"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDD_EDIT, 30, 41, 95, 12, ES_AUTOHSCROLL
+    LTEXT           "Enter in the host name (ASCII String name):", IDD_TEXT, 
+                    32, 15, 93, 25
+    DEFPUSHBUTTON   "Ok", IDOK, 32, 80, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 88, 80, 40, 14
+END
+
+ABOUTBOX DIALOG 22, 17, 144, 75
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About WSock"
+BEGIN
+    CTEXT           "Microsoft Windows", -1, 0, 5, 144, 8
+    CTEXT           "Windows Sockets Sample Application", -1, 0, 14, 144, 8
+    CTEXT           "Version 1.0", -1, 0, 34, 144, 8
+    DEFPUSHBUTTON   "OK", IDOK, 53, 59, 32, 14, WS_GROUP
+END
+
+DISPLAYHOST DIALOG 65, 23, 137, 142
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Host Information"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Registered Host Aliases", 204, 4, 30, 128, 40
+    GROUPBOX        "Official Host Name", 205, 4, 5, 128, 20
+    LTEXT           "HostName", IDD_HOSTNAME, 5, 15, 123, 8
+    LISTBOX         IDD_LBALIAS, 5, 43, 125, 28, LBS_SORT | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "Host Addresses", -1, 5, 80, 127, 40
+    LISTBOX         IDD_LBADDR, 6, 90, 125, 30, LBS_SORT | LBS_HASSTRINGS | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Ok", IDOK, 30, 125, 40, 14
+END
+
+TCPPORTNUM DIALOG 6, 18, 195, 100
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Port Number"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Enter service name (TCP ports only) or port number to listen:", 
+                    204, 0, 7, 195, 17
+    EDITTEXT        IDD_EDIT, 51, 27, 89, 12, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Ok", IDOK, 49, 80, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 105, 80, 40, 14
+    LTEXT           "For a list of well-known services (and their corresponding port numbers) , look in the \\%systemroot%\\system32\\drivers\\etc\\services file.", 
+                    209, 17, 42, 159, 33
+END
+
+GETSTRING DIALOG 6, 18, 160, 75
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Send Message.."
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDD_EDIT, 0, 28, 160, 12, ES_AUTOHSCROLL
+    CTEXT           "Enter a string up to 80 chars:", 205, 0, 15, 160, 8
+    DEFPUSHBUTTON   "Ok", IDOK, 32, 55, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 88, 55, 40, 14
+END

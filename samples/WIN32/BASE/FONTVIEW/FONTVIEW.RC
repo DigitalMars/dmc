@@ -1,0 +1,163 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include <Windows.H>
+#include "FontView.H"
+
+FontView ICON FontView.ICO
+FontView BITMAP FontView.BMP
+ZOOM ICON ZOOM.ICO
+
+#include "FontView.dlg"
+
+FontView MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New",                IDM_NEW,        GRAYED
+        MENUITEM "&Open...",            IDM_OPEN,       GRAYED
+        MENUITEM "&Close",              IDM_CLOSE,      GRAYED
+        MENUITEM "&Save\tF3",           IDM_SAVE,       GRAYED
+        MENUITEM "Save &As...",         IDM_SAVEAS,     GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...",           IDM_PRINT,      GRAYED
+        MENUITEM "P&rint Setup...",     IDM_PRINTSET,   GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",               IDM_EXIT
+    END
+
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo",               IDM_UNDO,       GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t",                IDM_CUT,        GRAYED
+        MENUITEM "&Copy",               IDM_COPY,       GRAYED
+        MENUITEM "&Paste",              IDM_PASTE,      GRAYED
+        MENUITEM "&Delete",             IDM_DELETE,      GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Find..."             IDM_FIND,       GRAYED
+        MENUITEM "&Replace..."          IDM_REPLACE,    GRAYED
+    END
+
+    POPUP "&View"
+    BEGIN
+        MENUITEM "Character Set"        IDM_CHARSET
+        MENUITEM "Glyph Metrics"        IDM_GLYPH
+        MENUITEM SEPARATOR
+        MENUITEM "&ToolBar"             IDM_TOOLBAR,    GRAYED
+        MENUITEM "&Status"              IDM_STATUSBAR,  GRAYED
+    END
+
+    POPUP "&Metrics"
+    BEGIN
+        MENUITEM "&CreateFont...", IDM_CREATEFONT
+        MENUITEM "&TextMetrics...", IDM_TEXTMETRIC
+        MENUITEM "&EnumFonts...", IDM_ENUMFONTS
+        MENUITEM "&OutlineTextMetrics...", IDM_OUTLINEMETRICS, GRAYED
+    END
+
+
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Contents",       IDM_HELP_CONTENTS
+        MENUITEM "&Index",          IDM_HELP_INDEX
+        MENUITEM "&Overview",       IDM_HELP_OVERVIEW
+        MENUITEM "&Glossary",       IDM_HELP_GLOSSARY
+        MENUITEM "&Tutorial",       IDM_HELP_TUTORIAL
+        MENUITEM "&Demo",           IDM_HELP_DEMO
+        MENUITEM "&Help On Help",   IDM_HELP_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About...\tAlt+?",    IDM_ABOUT
+    END
+END
+
+
+
+FontView ACCELERATORS
+BEGIN
+    "?", IDM_ABOUT, ALT
+    "/", IDM_ABOUT, ALT
+END
+
+STRINGTABLE
+BEGIN
+    IDM_SYSMENU "Move, size or close application window"
+    IDM_FILE    "Create, open, save or print files"
+    IDM_NEW     "Create a new file"
+    IDM_OPEN    "Open and existing file"
+    IDM_CLOSE   "Close the active file/window"
+    IDM_SAVE    "Save the active file"
+    IDM_SAVEAS  "Save the active file with a new name"
+    IDM_PRINT   "Print contents of active window"
+    IDM_PRINTSET "Select desired printer configuration"
+    IDM_EXIT    "Exit this application"
+
+    IDM_EDIT    "Undo, cut, copy, paste, clear"
+    IDM_UNDO    "Undo the last edit operation"
+    IDM_CUT     "Move the selected object to the clipboard"
+    IDM_COPY    "Copy the selected object to the clipbpard"
+    IDM_PASTE   "Paste the contents of the clipboard into the current location"
+    IDM_DELETE  "Delete the selected object without altering the clipboard"
+    IDM_FIND    "Search for text pattern"
+    IDM_REPLACE "Search for and replace text pattern"
+
+    IDM_VIEW        "Control View, ToolBar and Status Bar"
+    IDM_CHARSET     "View Entire Character Set"
+    IDM_GLYPH       "View A Single Character"
+    IDM_TOOLBAR     "Toggle visibility of toolbar"
+    IDM_STATUSBAR   "Toggle visibility of statusbar"
+
+    IDM_DIALOG         "Display specific information about the current font"
+
+    IDM_CREATEFONT     "The currently used parameters for 'CreateFont'"
+    IDM_TEXTMETRIC     "The TEXTMETRICS values for the current font"
+    IDM_ENUMFONTS      "Enumerate all available fonts on the system"
+    IDM_OUTLINEMETRICS "The OUTLINETEXTMETRICS for the current font (if TrueType)"
+
+    IDM_HELP    "Get help on using FontView"
+
+    IDM_HELP_CONTENTS "Open the Help table of contents for FontView"
+    IDM_HELP_INDEX    "Open the Help index for FontView"
+    IDM_HELP_OVERVIEW "Open the Help overview for FontView"
+    IDM_HELP_GLOSSARY "Open the Help Glossary for FontView"
+    IDM_HELP_TUTORIAL "Open the Help tutorial for FontView"
+    IDM_HELP_DEMO     "Open the Help demo for FontView"
+    IDM_HELP_HELP     "Get Help on how to use Help"
+    IDM_ABOUT         "And now, a message from your sponser..."
+
+    ID_TOOLBAR  "This is the toolbar"
+    ID_CREATEPARAM  "Select 'CreateFont' Parameter to set"
+    ID_CREATEVALUE  "Select desired value for 'CreateFont' Parameter"
+    ID_ZOOM                     "Switch from 'Glyph' to 'CharSet' mode"
+
+    ID_STATUSBAR    "This is the status bar"
+    ID_MENUFIELD    "This field displays various informational text, like this one"
+    ID_TIMEFIELD    "This is the current time"
+
+// Not all of these will actually be used:
+    SC_SIZE         "Change window size"
+    SC_MOVE         "Change window position"
+    SC_MINIMIZE     "Reduce window to icon"
+    SC_MAXIMIZE     "Enlage window to full size"
+    SC_NEXTWINDOW   "[Switch to next window]"
+    SC_PREVWINDOW   "[Switch to previous window]"
+    SC_CLOSE        "Close window and quit application"
+    SC_VSCROLL      "[Scroll window vertically]"
+    SC_HSCROLL      "[Scroll window horizontally]"
+    SC_MOUSEMENU    "[Mouse was used to select menu item]"
+    SC_KEYMENU      "[Keyboard was used to select menu item]"
+    SC_ARRANGE      "[Arrange window]"
+    SC_RESTORE      "Restore window to normal size"
+    SC_TASKLIST     "Activate Task List"
+
+    1001                        "Just a simple combobox"
+END

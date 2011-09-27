@@ -1,0 +1,96 @@
+#include <windows.h>
+#include <propsht.h>
+
+IDD_OUTPUT DIALOG DISCARDABLE  0, 0, 187, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Window",IDC_WINDOW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,31,37,10
+    CONTROL         "COM1:",IDC_COM1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    78,31,33,10
+    CONTROL         "Disk",IDC_DISK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    140,31,26,10
+    LTEXT           "File:",IDC_STATIC,15,52,20,10
+    EDITTEXT        IDC_FILENAME,47,51,135,11,ES_AUTOHSCROLL
+END
+
+IDD_INPUT DIALOG DISCARDABLE  0, 0, 187, 122
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Single Window",IDC_SINGLE,"Button",BS_AUTORADIOBUTTON,
+                    49,39,68,10
+    CONTROL         "Window plus Children",IDC_PLUSCHILD,"Button",
+                    BS_AUTORADIOBUTTON,49,55,84,10
+;   CONTROL         "All Windows",IDC_ALLWIN,"Button",BS_AUTORADIOBUTTON,49,
+;                    71,87,11
+END
+
+IDD_CATEGORY DIALOG DISCARDABLE  0, 0, 187, 145
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Mouse",IDC_MOUSE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    10,6,33,10
+    CONTROL         "Keyboard",IDC_KEYBOARD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,17,42,10
+    CONTROL         "Menu",IDC_MENU,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    28,29,10
+    CONTROL         "Non Client Area",IDC_NONCLIENT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,39,62,10
+    CONTROL         "Clipboard",IDC_CLIPBOARD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,50,42,10
+    CONTROL         "System",IDC_SYSTEM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,105,34,10
+    CONTROL         "Timer",IDC_TIMER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    10,83,29,10
+    CONTROL         "DDE",IDC_DDE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    61,26,10
+    CONTROL         "MDI",IDC_MDI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    94,25,10
+    CONTROL         "Win 3.1",IDC_WIN31,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,116,37,10
+    CONTROL         "User",IDC_USER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    72,26,10
+    CONTROL         "Other",IDC_OTHER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    113,123,29,10
+    CONTROL         "Use Range",IDC_RANGE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,126,48,10
+    CONTROL         "Win 4.0",IDC_WIN40,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,113,6,37,10
+    CONTROL         "Win 32",IDC_WIN32,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    113,17,34,10
+    CONTROL         "List Box",IDC_LISTBOX,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,113,28,37,10
+    CONTROL         "Combo Box",IDC_COMBOBOX,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,113,39,48,10
+    CONTROL         "Edit Control",IDC_EDITCTL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,113,50,52,13
+    CONTROL         "Button Control",IDC_BUTTONCTL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,113,64,58,11
+    CONTROL         "Static Control",IDC_STATICCTL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,113,76,57,10
+    CONTROL         "Unknown",IDC_UNKNOWN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,113,87,57,9
+    CONTROL         "Control",IDC_CONTROL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,113,97,56,12
+    CONTROL         "Standard",IDC_STANDARD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,113,110,55,12
+END
+
+IDD_RANGE DIALOG DISCARDABLE  0, 0, 187, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Include Message Numbers:",-1,45,15,95,8
+    LTEXT           "Start:",IDC_STATIC,51,42,19,8
+    EDITTEXT        IDC_INCSTART,75,37,62,14,ES_AUTOHSCROLL
+    LTEXT           "End:",IDC_STATIC2,51,69,16,8
+    EDITTEXT        IDC_INCEND,75,64,62,14,ES_AUTOHSCROLL
+END
+

@@ -1,0 +1,78 @@
+Exclamation ICON    bang.ico
+
+
+IDD_LINKSOURCEUNAVAILABLE DIALOG 21, 34, 175, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON        "Esclamazione", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Impossibile completare l'operazione. L'origine del collegamento selezionato non h disponibile al momento.", ID_PU_TEXT, 48, 8, 117, 32
+	DEFPUSHBUTTON   "OK", IDOK, 34, 58, 55, 14
+	PUSHBUTTON      "&Collegamenti...", ID_PU_LINKS, 100, 58, 55, 14
+END
+
+
+IDD_CANNOTUPDATELINK DIALOG 21, 34, 175, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON        "Esclamazione", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Alcuni collegamenti non sono stati aggiornati perchi l'origine non h disponibile al momento.", ID_PU_TEXT, 48, 8, 117, 32
+	DEFPUSHBUTTON   "OK", IDOK, 34, 58, 55, 14
+	PUSHBUTTON      "&Collegamenti...", ID_PU_LINKS, 100, 58, 55, 14
+END
+
+
+IDD_SERVERNOTREG DIALOG 39, 30, 198, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Esclamazione", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "L'applicazione necessaria per attivare %s non h disponibile. H possibile convertirla o attivarla come un altro tipo di oggetto con Converti...", ID_PU_TEXT, 39, 8, 152, 36
+	DEFPUSHBUTTON   "&Converti...", ID_PU_CONVERT, 23, 58, 40, 14
+	PUSHBUTTON      "Annulla", IDCANCEL, 79, 58, 40, 14
+	PUSHBUTTON      "&?", ID_OLEUIHELP, 135, 58, 40, 14
+END
+
+
+IDD_LINKTYPECHANGED DIALOG 39, 30, 198, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Il collegamento non h piy un %s. Scegliere un altro comando offerto dal nuovo tipo.",  ID_PU_TEXT, 39, 8, 152, 36
+	PUSHBUTTON      "OK", IDOK, 79, 58, 40, 14
+END
+
+
+IDD_SERVERNOTFOUND DIALOG 36, 39, 183, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "L'applicazione del server non h stata trovata.\n\nAssicurarsi di averla installata correttamente o di averla inserita nel percorso di DOS oppure controllare che non sia stata cancellata, spostata o rinominata.",  ID_PU_TEXT, 38, 8, 136, 67
+	DEFPUSHBUTTON   "OK", IDOK, 71, 78, 40, 14
+END
+
+
+IDD_UPDATELINKS DIALOG 50, 57, 179, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "", ID_PU_METER, "Static", SS_BLACKFRAME, 5, 40, 122, 9
+	DEFPUSHBUTTON   "&Stop", ID_PU_STOP, 134, 37, 40, 14
+	LTEXT           "Aggiorna collegamenti...", ID_DUMMY, 5, 7, 91, 8
+	LTEXT           "", ID_PU_PERCENT, 56, 26, 20, 8
+END
+
+
+IDD_OUTOFMEMORY DIALOG 36, 39, 107, 73
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Memoria esaurita.", ID_PU_TEXT, 35, 13, 66, 12
+	DEFPUSHBUTTON   "OK", IDOK, 33, 53, 40, 14
+END

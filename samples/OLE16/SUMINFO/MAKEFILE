@@ -1,0 +1,67 @@
+# This is a part of the Microsoft OLE 2.0 sample library.
+# Copyright (C) 1993 Microsoft Corporation
+# All rights reserved.
+#
+
+DEBUG=1
+APPNAME=suminfo
+GOAL: $(APPNAME).exe
+
+SRCS=testsumi.cpp
+
+INCS=$(APPNAME).h
+
+OBJS=$(SRCS:cpp=obj)
+
+#############################################################################
+
+G_LIBS=ole2 compobj storage oldnames libw commdlg shell
+
+G_CPPFLAGS=/AM /G2 /W3 /Zp /GA /GEs
+D_CPPFLAGS=/Zi /Od /f /D_DEBUG
+R_CPPFLAGS=/O1 /Gs
+G_LINKFLAGS=/NOD /ONERROR:NOEXE /NOE /BATCH /STACK:10240
+D_LINKFLAGS=/COD
+R_LINKFLAGS=/FAR /PACKC
+D_LIBS=mlibcewq ..\lib\moleuicd
+R_LIBS=mlibcewq ..\lib\moleuic
+
+!if "$(DEBUG)"=="0"
+CPPFLAGS=$(G_CPPFLAGS) $(R_CPPFLAGS)
+LINKFLAGS=$(G_LINKFLAGS) $(R_LINKFLAGS)
+LIBS=$(R_LIBS) $(G_LIBS)
+!else
+CPPFLAGS=$(G_CPPFLAGS) $(D_CPPFLAGS)
+LINKFLAGS=$(G_LINKFLAGS) $(D_LINKFLAGS)
+LIBS=$(D_LIBS) $(G_LIBS)
+!endif #//DEBUG
+
+#############################################################################
+
+$(APPNAME).exe: $(OBJS) $(APPNAME).def
+	link $(LINKFLAGS)  @<<
+$(OBJS: = +^
+),
+$(APPNAME),
+$(APPNAME),
+$(LIBS: = +^
+),
+$(APPNAME);
+<<
+
+.cpp.obj:
+	$(CPP) @<<
+$(CPPFLAGS) /c $<
+<<
+
+clean:
+	if exist $(APPNAME).exe erase $(APPNAME).exe
+	if exist *.pch erase *.pch
+	if exist *.obj erase *.obj
+	if exist *.sbr erase *.sbr
+	if exist *.pdb erase *.pdb
+	if exist *.map erase *.map
+	if exist *.aps erase *.aps
+	if exist *.bsc erase *.bsc
+	if exist *.wsp erase *.wsp
+	if exist *.vcw erase *.vcw

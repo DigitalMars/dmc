@@ -1,0 +1,146 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1992 - 1995  Microsoft Corporation.  All Rights Reserved.
+ * 
+ **************************************************************************/
+
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "DIALOGS.H\0"
+END
+
+IDD_HelpAboutBox DIALOG DISCARDABLE  6, 18, 202, 92
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sample Capture Application"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,81,66,40,14
+    CTEXT           "Sample Application ",-1,54,13,94,8
+    CTEXT           "Using Video Capture Window Class",-1,33,30,135,8
+    CTEXT           "(Copyright Microsoft Corporation, 1993-1995)",-1,13,48,
+                    176,8
+END
+
+
+IDD_CapSetUp DIALOG 6, 16, 229, 174
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Capture Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Frame Rate:", -1, 11, 8, 41, 8
+    EDITTEXT        IDD_FrameRateData, 54, 8, 32, 12, ES_AUTOHSCROLL
+    CONTROL         "&Enable Capture Time Limit", IDD_TimeLimitFlag, 
+                    "Button", BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP, 11, 
+                    24, 97, 10
+    LTEXT           "&Seconds:", IDD_SecondsText, 21, 34, 32, 8
+    EDITTEXT        IDD_SecondsData, 54, 34, 32, 12, ES_AUTOHSCROLL
+    CONTROL         "&Capture Audio", IDD_CapAudioFlag, "Button", 
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP, 11, 49, 59, 10
+    CONTROL         "&MCI Control of Source Video", IDD_MCIControlFlag, 
+                    "Button", BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP, 11, 
+                    65, 103, 10
+    LTEXT           "MCI De&vice:", IDD_MCIDeviceText, 21, 78, 42, 8
+    EDITTEXT        IDD_MCIDeviceData, 62, 78, 51, 12, ES_AUTOHSCROLL
+    LTEXT           "MCI St&art Time:", IDD_MCIStartText, 21, 92, 51, 8
+    EDITTEXT        IDD_MCIStartData, 73, 92, 32, 12, ES_AUTOHSCROLL
+    LTEXT           "MCI St&op Time:", IDD_MCIStopText, 21, 105, 53, 8
+    EDITTEXT        IDD_MCIStopData, 73, 105, 32, 12, ES_AUTOHSCROLL
+    CONTROL         "S&tep Capture", IDD_MCIStepCapFlag, "Button", 
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP, 21, 118, 55, 10
+    LTEXT           "Video &Buffers:", -1, 11, 138, 47, 8
+    EDITTEXT        IDD_VideoBuffData, 65, 138, 32, 12, ES_AUTOHSCROLL
+    LTEXT           "Max &Drop Rate:", -1, 11, 154, 53, 8
+    EDITTEXT        IDD_MaxDropData, 65, 154, 32, 12, ES_AUTOHSCROLL
+    GROUPBOX        "Key to Abort Capture", -1, 131, 6, 85, 50, WS_GROUP
+    CONTROL         "Es&c Key", IDD_AbortEscFlag, "Button", 
+                    BS_AUTORADIOBUTTON | WS_TABSTOP, 136, 17, 39, 10
+    CONTROL         "S&pace Bar Key", IDD_AbortSpaceFlag, "Button", 
+                    BS_AUTORADIOBUTTON, 136, 29, 60, 10
+    CONTROL         "F&8 Key", IDD_AbortF8Flag, "Button", BS_AUTORADIOBUTTON, 
+                    136, 41, 34, 10
+    GROUPBOX        "Mouse to Abort Capture", -1, 131, 63, 85, 39, WS_GROUP
+    CONTROL         "&Left Mouse Button", IDD_AbortLeftFlag, "Button", 
+                    BS_AUTORADIOBUTTON | WS_TABSTOP, 136, 77, 70, 10
+    CONTROL         "&Right Mouse Button", IDD_AbortRightFlag, "Button", 
+                    BS_AUTORADIOBUTTON, 136, 89, 77, 10
+    CONTROL         "&Hit OK to Capture", IDD_CaptureOKFlag, "Button", 
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP, 136, 117, 70, 
+                    10
+    CONTROL         "&Use DOS Memory", IDD_UseDOSMemFlag, "Button", 
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP, 136, 130, 70, 
+                    10
+    PUSHBUTTON      "O&K", IDOK, 131, 154, 38, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 177, 154, 38, 14, WS_GROUP
+END
+
+IDD_AudioFormat DIALOG 6, 18, 160, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Set Audio Format"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "&8 bit", IDD_Sample8Bit, "Button", BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP, 17, 17, 28, 10
+    CONTROL         "1&6 bit", IDD_Sample16Bit, "Button", BS_AUTORADIOBUTTON, 
+                    17, 28, 39, 10
+    GROUPBOX        "Sample Size", -1, 9, 6, 61, 36, WS_GROUP
+    CONTROL         "&Mono", IDD_ChannelMono, "Button", BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP, 17, 61, 30, 10
+    CONTROL         "&Stereo", IDD_ChannelStereo, "Button", 
+                    BS_AUTORADIOBUTTON, 17, 72, 34, 10
+    GROUPBOX        "Channels", -1, 9, 50, 61, 37, WS_GROUP
+    CONTROL         "&11 kHz", IDD_Freq11kHz, "Button", BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP, 90, 19, 38, 10
+    CONTROL         "&22 kHz", IDD_Freq22kHz, "Button", BS_AUTORADIOBUTTON, 
+                    90, 31, 39, 10
+    CONTROL         "&44 kHz", IDD_Freq44kHz, "Button", BS_AUTORADIOBUTTON, 
+                    90, 43, 39, 10
+    GROUPBOX        "Frequency", -1, 81, 6, 69, 52, WS_GROUP
+    PUSHBUTTON      "OK", IDOK, 81, 73, 30, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 115, 73, 35, 14
+END
+
+IDD_AllocCapFileSpace DIALOG 6, 18, 160, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Set File Size"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Enter the amount of disk space to set ", -1, 5, 9, 130, 
+                    8
+    LTEXT           "aside for the capture file.  Existing video", -1, 5, 19, 
+                    135, 8
+    LTEXT           "data in the file will be lost.", -1, 5, 29, 93, 8
+    LTEXT           "Free Disk Space:", -1, 5, 50, 59, 8
+    LTEXT           "     ", IDD_SetCapFileFree, 73, 50, 20, 8
+    LTEXT           "MBytes", -1, 96, 50, 27, 8
+    LTEXT           "Capture File Size:", -1, 5, 64, 60, 8
+    EDITTEXT        IDD_SetCapFileSize, 65, 64, 28, 12, ES_AUTOHSCROLL
+    LTEXT           "MBytes", -1, 96, 64, 27, 8
+    PUSHBUTTON      "OK", IDOK, 38, 84, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 88, 84, 40, 14
+END
+
+IDD_MakePalette DIALOG 6, 18, 160, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Create New Palette"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Specify the number of colors to be used in ", -1, 11, 
+                    12, 140, 8
+    LTEXT           "the new palette to be created. Also enter", -1, 11, 21, 
+                    139, 8
+    LTEXT           "the number of frames to be used for creating", -1, 11, 
+                    30, 147, 8
+    LTEXT           "the palette.", -1, 11, 39, 42, 8
+    LTEXT           "&Colors:", -1, 12, 56, 27, 8
+    EDITTEXT        IDD_MakePalColors, 40, 56, 32, 12, ES_AUTOHSCROLL
+    LTEXT           "(1 to 236 or 256)", -1, 12, 68, 57, 8
+    LTEXT           "&Frames:", -1, 86, 56, 27, 8
+    EDITTEXT        IDD_MakePalFrames, 116, 56, 32, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "OK", IDOK, 40, 80, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 86, 80, 40, 14
+END

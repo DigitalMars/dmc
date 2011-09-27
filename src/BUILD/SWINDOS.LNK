@@ -1,0 +1,8 @@
+SWS\argcargv.OBJ+
+SWS\winio.OBJ+
+SWS\wmhandlr.OBJ+
+SWS\scver.OBJ
+..\..\LIB\$SCW$.LIB
+NUL
+  
+swindos.DEF

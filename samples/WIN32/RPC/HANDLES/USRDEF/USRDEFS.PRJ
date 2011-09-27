@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\RPC\HANDLES\USRDEF\USRDEFS.PRJ
+USRDEFS.OPN
+novcs
+usrdefs.DEF
+4
+812035224
+0 0 0 0 0 "usrdef_s.c" ""
+0 0 0 0 0 "usrdefp.c" ""
+0 0 0 0 0 "usrdefs.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "usrdefs.def" ""

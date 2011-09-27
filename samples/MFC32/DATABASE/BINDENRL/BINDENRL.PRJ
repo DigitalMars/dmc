@@ -1,0 +1,21 @@
+82572
+c:\sc\SAMPLES\mfc32\DATABASE\BINDENRL\bindenrl.prj
+bindenrl.OPN
+novcs
+bindenrl.DEF
+16
+845586516
+0 0 0 0 0 "BINDENRL.CPP" ""
+0 0 0 0 0 "CBOXCTRL.CPP" ""
+0 0 0 0 0 "COURSDLG.CPP" ""
+0 0 0 0 0 "ENROLDLG.CPP" ""
+0 0 0 0 0 "INSTRDLG.CPP" ""
+0 0 0 0 0 "LBOXCTRL.CPP" ""
+0 0 0 0 0 "MCSDSC.CPP" ""
+0 0 0 0 0 "MSMASK.CPP" ""
+0 0 0 0 0 "PROPSHT.CPP" ""
+0 0 0 0 0 "SECTNDLG.CPP" ""
+0 0 0 0 0 "STDAFX.CPP" ""
+0 0 0 0 0 "STUDDLG.CPP" ""
+0 0 0 0 0 "BINDENRL.RC" ""
+0 0 0 0 0 "bindenrl.DEF" ""

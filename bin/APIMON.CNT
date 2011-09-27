@@ -1,0 +1,22 @@
+:Index (no name) = wininet.hlp
+:Index (no name) = apimon.hlp
+  What Is APIMON = _win32_What_Is_APIMON@apimon.hlp
+1 How To Use APIMON
+  How To Use APIMON = _win32_How_To_Use_APIMON@apimon.hlp
+  Command Line Options = _win32_Command_Line_Options@apimon.hlp
+1 Miscellaneous Options
+  Miscellaneous Options = _win32_Miscellaneous_Options@apimon.hlp
+  Enable Tracing = _win32_Enable_Tracing@apimon.hlp
+  Enable Counters = _win32_Enable_Counters@apimon.hlp
+  Pre-Load Symbols = _win32_Pre_Load_Symbols@apimon.hlp
+  Disable Heap Checking = _win32_Disable_Heap_Checking@apimon.hlp
+  Go Immediately = _win32_Go_Immediately@apimon.hlp
+  Don’t Use Fast Counters = _win32_Dont_Use_Fast_Counters@apimon.hlp
+  Monitor Known DLLs Only = _win32_Monitor_Known_DLLs_Only@apimon.hlp
+  Monitor Page Faults = _win32_Monitor_Page_Faults@apimon.hlp
+  Default Counter Sorting = _win32_Default_Counter_Sorting@apimon.hlp
+  File Names Options = _win32_File_Names_Options@apimon.hlp
+  Log File Name = _win32_Log_File_Name@apimon.hlp
+  Trace File Name = _win32_Trace_File_Name@apimon.hlp
+  Symbol Path = _win32_Symbol_Path@apimon.hlp
+  Known DLLs Options = _win32_Known_DLLs_Options@apimon.hlp

@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\RPC\DOCTOR\DOCTORC.PRJ
+DOCTORC.OPN
+novcs
+doctorc.DEF
+4
+812035224
+0 0 0 0 0 "doctor_c.c" ""
+0 0 0 0 0 "doctorc.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "doctorc.def" ""

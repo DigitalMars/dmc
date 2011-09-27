@@ -1,0 +1,26 @@
+/**********************************************************************
+
+   RC file for PENAPP.C
+
+
+**********************************************************************/
+
+#include <windows.h>
+#include "penapp.h"
+
+iconPenApp ICON penapp.ico
+
+menuPenApp MENU
+BEGIN
+   POPUP "&File"
+   BEGIN
+      MENUITEM "E&xit", miExit
+   END
+
+   POPUP "&Options"
+   BEGIN
+      MENUITEM "&Default Recognizer",  miSystem,   CHECKED
+      MENUITEM "&Sample Recognizer",   miSample
+      MENUITEM "&Mirror Image",  miMirror
+   END
+END

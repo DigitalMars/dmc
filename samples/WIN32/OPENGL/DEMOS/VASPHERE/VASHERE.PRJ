@@ -1,0 +1,15 @@
+82572
+C:\SC\Samples\WIN32\opengl\demos\vasphere\vashere.PRJ
+vashere.OPN
+novcs
+vashere.DEF
+19
+853550896
+0 0 0 0 0 "vasphere.c" ""
+0 0 0 0 0 "vashere.DEF" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "comctl32.lib" ""

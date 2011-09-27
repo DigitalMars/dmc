@@ -1,0 +1,9 @@
+82572
+C:\SC\samples\win32\Q_A\EVENT\EVENT.PRJ
+EVENT.OPN
+novcs
+EVENT.DEF
+4
+812035224
+0 0 0 0 0 "asyn_io.c" ""
+0 0 0 0 0 "event.def" ""

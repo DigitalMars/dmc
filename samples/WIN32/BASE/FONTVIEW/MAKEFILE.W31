@@ -1,0 +1,26 @@
+# This line allows NMAKE to work as well
+
+all: FontView.exe
+
+# Update the resource if necessary
+
+FontView.res: FontView.rc FontView.h
+    rc -r FontView.rc
+
+# Update the object file if necessary
+
+FontView.obj: FontView.c FontView.h
+    cl -c -AS -Gsw -Oas -Zpe FontView.c
+
+# Update the executable file if necessary, and if so, add the resource back in.
+
+FontView.exe: FontView.obj FontView.def
+    link /NOD FontView,,, /NOI /NOD:SLIBCE SLIBCEW libw, FontView.def
+    rc FontView.res
+
+# If the .res file is new and the .exe file is not, update the resource.
+# Note that the .rc file can be updated without having to either 
+# compile or link the file.
+
+FontView.exe: FontView.res
+    rc FontView.res

@@ -1,0 +1,67 @@
+# THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+# ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+# PARTICULAR PURPOSE.
+#
+# Copyright (C) 1993 - 1995  Microsoft Corporation.  All Rights Reserved.
+#
+#
+# Processor independent makefile
+#
+# This file will only build the exe by default.  To build the helpfile, 
+# invoke:
+#
+#       NMAKE MINIHELP.HLP
+#
+#
+
+# Nmake macros for building Windows 32-Bit apps
+
+APPVER=4.0
+TARGETOS=WIN95
+
+!include <win32.mak>
+
+PROJ = MINIHELP
+
+all: $(PROJ).exe
+
+# Define project specific macros
+PROJ_OBJS  = $(PROJ).obj
+BASE_OBJS  = winmain.obj init.obj misc.obj about.obj dispatch.obj
+EXTRA_LIBS = version.lib
+GLOBAL_DEP = win16ext.h globals.h
+RC_DEP     = globals.h
+
+# Dependencies
+$(PROJ).obj:  $(PROJ).c  $(GLOBAL_DEP)
+winmain.obj:  winmain.c  $(GLOBAL_DEP)
+init.obj:     init.c     $(GLOBAL_DEP)
+dispatch.obj: dispatch.c $(GLOBAL_DEP)
+misc.obj:     misc.c     $(GLOBAL_DEP)
+about.obj:    about.c    $(GLOBAL_DEP)
+
+
+
+# Inference rule for updating the object files
+.c.obj:
+  $(cc) $(cdebug) $(cflags) $(cvars) $*.c
+
+# Build rule for resource file
+$(PROJ).res: $(PROJ).rc $(RC_DEP)
+    $(rc) $(rcflags) $(rcvars) /fo $(PROJ).res $(PROJ).rc
+
+# Build rule for EXE
+$(PROJ).EXE: $(BASE_OBJS) $(PROJ_OBJS) $(PROJ).res
+    $(link) $(linkdebug) $(guilflags) \
+    $(BASE_OBJS) $(PROJ_OBJS) $(PROJ).res $(guilibs) $(EXTRA_LIBS) \
+    -out:$(PROJ).exe $(MAPFILE)
+
+# Build rule for help file
+$(PROJ).hlp: $(PROJ).hpj $(PROJ).rtf
+    hcrtf -x $(PROJ).hpj
+
+
+# Rules for cleaning out those old files
+clean:
+    del *.obj *.res *.exp *.map

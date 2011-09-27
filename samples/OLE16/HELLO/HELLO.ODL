@@ -1,0 +1,63 @@
+/* 
+ *	hello.odl
+ *
+ *
+ *
+  IDispatch*	Hello.Application	{D3CE6D43-F1AF-1068-9FBB-08002B32372A}
+  Type library:	hello.tlb		{D3CE6D44-F1AF-1068-9FBB-08002B32372A}
+  Interface:	IHello			{D3CE6D45-F1AF-1068-9FBB-08002B32372A}
+
+ *
+ *
+ *
+ */
+
+[
+  uuid(D3CE6D44-F1AF-1068-9FBB-08002B32372A), 
+  helpstring("OLE Automation Hello 1.0 Type Library"),
+  lcid(0x0409),
+  version(1.0)
+] 
+library Hello
+{
+    importlib("stdole.tlb");
+
+    [
+     // The uuid for the interface IID_IHelloPro.
+     odl,
+     uuid(D3CE6D45-F1AF-1068-9FBB-08002B32372A), 
+     helpstring("Hello")
+    ]
+    interface _IHello : IUnknown
+    {
+	[id(0), propput]
+	void HelloMessage([in] BSTR b);
+      	
+      	[id(0), propget, helpstring("The message that will be displayed.")]
+      	BSTR HelloMessage();
+
+	BSTR SayHello(void);
+    }
+
+
+    [
+     uuid(D3CE6D46-F1AF-1068-9FBB-08002B32372A), 
+     helpstring("Hello DispInterface")
+    ]  
+    dispinterface _DHello
+    {
+      interface _IHello;
+    }
+
+
+    [ // The uuid for the class we expose.  Same as registry
+      // entry for hello.hello
+      uuid(D3CE6D43-F1AF-1068-9FBB-08002B32372A), 
+      helpstring("Hello")
+    ]  
+    coclass Hello
+    {
+      dispinterface _DHello;
+      interface _IHello;
+    }
+};

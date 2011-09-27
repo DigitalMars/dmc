@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\BASE\REVERSI\REVERSI.PRJ
+REVERSI.OPN
+novcs
+reversi.DEF
+16
+812035224
+0 0 0 0 0 "rev.c" ""
+0 0 0 0 0 "reversi.c" ""
+0 0 0 0 0 "reversi.rc" ""
+0 0 0 0 0 "reversi.def" ""

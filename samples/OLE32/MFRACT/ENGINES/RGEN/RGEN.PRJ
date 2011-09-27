@@ -1,0 +1,16 @@
+82572
+C:\SC\samples\ole32\MFRACT\ENGINES\RGEN\RGEN.PRJ
+RGEN.OPN
+novcs
+rgen.def
+3
+812035224
+0 0 0 0 0 "rgen.def" ""
+0 0 0 0 0 "genwin.cxx" ""
+0 0 0 0 0 "polar.cxx" ""
+0 0 0 0 0 "rgen.cxx" ""
+0 0 0 0 0 "rgenob.cxx" ""
+0 0 0 0 0 "rgen.rc" ""
+0 0 0 0 0 "fguids.lib" ""
+0 0 0 0 0 "quad.lib" ""
+0 0 0 0 0 "winhlprs.lib" ""

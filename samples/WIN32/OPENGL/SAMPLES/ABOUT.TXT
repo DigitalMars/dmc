@@ -1,0 +1,410 @@
+OpenGL Samples
+
+
+The OPENGL\SAMPLES directory contains a number of short samples. The following
+are summaries for the operation of each of these samples.
+
+TACCUM - Accumulation test.
+ - RGBA, SB/DB (SB default).
+ - Command line options:
+   -sb Single buffer mode.
+   -db Double buffer mode.
+ - Keys:
+   ESC Quit
+   1   Use filled polygon mode.
+   2   Use outlined polygon mode.
+
+TBITMAP1 - Bitmap test.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb	RGBA mode.
+   -ci  Color index mode.
+   -sb  Single buffer mode.
+   -db  Double buffer mode.
+ - Keys:
+   ESC  Quit.
+
+TBITMAP2 - Bitmap test.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb RGBA mode.
+   -ci  Color index mode.
+   -sb  single buffer mode.
+   -db  Double buffer mode.
+ - Keys:
+   ESC  Quit.
+   1    Toggle display list mode.
+   2    Toggle color animation mode.
+
+TCOPY - Pixel copy test.
+ - RGBA, SB/DB (SB default).
+ - Command line options:
+   -sb  Single buffer mode.
+   -db  Double buffer mode.
+   -f   <file name> RGB image file.
+ - Keys:
+   ESC  Quit.
+   Z    Increase zoom factor.
+   z    Decrease zoom factor.
+ - Mouse input:
+   Left Copy location.
+
+TDEPTH - Z buffer test.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb RGBA mode.
+   -ci  Color index mode.
+   -sb  Single buffer mode.
+   -db  Double buffer mode.
+ - Keys:
+   ESC  Quit.
+   1    Toggle anti-aliased mode.
+   2    Toggle stipple mode.
+
+TEVAL - Evaluator test.
+ - RGBA, SB/DB (SB default).
+ - Command line options:
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+ - Keys:
+   ESC	 Quit.
+   LEFT  Rotate.
+   RIGHT Rotate.
+   UP    Rotate.
+   DOWN  Rotate.
+   1     Toggle dimensions.
+   2     Toggle dimensions.
+   e     Use eval mode.
+   m     Use mesh mode.
+   f     Toggle polygon mode.
+   p     Toggle point mode.
+   c     Toggle color mode.
+   t     Toggle texture mode.
+   l     Toggle lighting mode.
+
+TFOG - Fog test.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb  RGBA mode.
+   -ci   Color index mode.
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+ - Keys:
+   ESC	 Quit.
+   LEFT	 Rotate.
+   RIGHT Rotate.
+   UP    Rotate.
+   DOWN  Rotate.
+   D     Increase fog density.
+   d     Decrease fog density.
+
+TLINE - Line test.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb	RGBA mode.
+   -ci	Color index mode.
+   -sb	Single buffer mode.
+   -db	Double buffer mode.
+ - Keys:
+ESC	Quit.
+   W    Increase line width.
+   w    Decrease line width.
+   1    Toggle stipple mode.
+   2    Toggle anti-aliased mode.
+
+TLOGO - Demo.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb  RGBA mode.
+   -ci   Color index mode.
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+ - Keys:
+   ESC	 Quit.
+   LEFT	 Rotate.
+   RIGHT Rotate
+   UP    Move clipping plane.
+   DOWN  Move clipping plane.
+   Z     Translate.
+   z     Translate.
+   1     Use GL_POINT polygon mode.
+   2     Use GL_LINE polygon mode.
+   3     Use GL_FILL polygon mode.
+   p     Toggle polygon fill modes.
+   4     Use GL_NICEST for GL_POLYGON_SMOOTH_HINT.
+   5     Use anti-aliased polygon mode.
+   6     Use aliased polygon mode.
+   8     Toggle dither mode.
+   9     Toggle stipple polygon mode.
+   0     Toggle flat/smooth shading mode.
+   q     Disable cull mode.
+   w     Use front face cull mode.
+   e     Use back face cull mode.
+   r     Use clockwise front face mode.
+   t     Use counter-clockwise front face mode.
+   y     Use MSB first stipple pattern.
+   u     Use LSB first stipple pattern.
+   a     Use brick texture map.
+   s     Use checker texture map.
+   d     Disable texture map.
+   f     Use decal texture environment mode.
+   g     Use modulate texture environment mode.
+
+TNURB - Nurb test.
+ - RGBA, SB/DB (SB default).
+ - Command line options:
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+ - Keys:
+   ESC   Quit.
+   LEFT  Rotate.
+   RIGHT Rotate.
+   UP    Rotate.
+   DOWN  Rotate.
+
+TOLYMPIC - Olymipic rings demo.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb  RGBA mode.
+   -ci   Color index mode.
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+ - Keys:
+   ESC   Quit.
+   SPACE Restart demo.
+
+TPOINT - Point test.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb  RGBA mode.
+   -ci   Color index mode.
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+ - Keys:
+   ESC   Quit.
+   LEFT  Translate.
+   RIGHT Translate.
+   UP    Translate.
+   DOWN  Translate.
+   W     Increase point width.
+   w     Decrease point width.
+   1     Toggle anti-aliased mode.
+
+TPRIM - Primitive test.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb RGBA mode.
+   -ci  Color index mode.
+   -sb  Single buffer mode.
+   -db  Double buffer mode.
+ - Keys:
+   ESC  Quit.
+   1    Toggle flat/smooth shade mode.
+   2    Toggle outlined/filled polygon mode.
+   3    Toggle color mask mode.
+
+TQUAD - Quadric test.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb  RGBA mode.
+   -ci   Color index mode.
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+   -f    <file name> Texture file.
+ - Keys:
+   ESC   Quit.
+   LEFT  Rotate.
+   RIGHT Rotate.
+   UP    Rotate.
+   DOWN  Rotate.
+   X     Rotate.
+   x     Rotate.
+   1     Use GLU_FILL draw style.
+   2     Use GLU_POINT draw style.
+   3     Use GLU_LINE draw style.
+   4     Use GLU_SILHOUETTE draw style.
+   0     Toggle flat/smooth shade mode.
+   f     Cycle through quadrics.
+   d     Toggle orientation.
+   A     Increase number of stacks.
+   a     Decrease number of stacks.
+   S     Increase number of slices.
+   s     Decrease number of slices.
+   G     Increase radius1.
+   g     Decrease radius1.
+   J     Increase radius2.
+   j     Decrease radius2.
+   H     Increase height.
+   h     Decrease height.
+   K     Increase angle1.
+   k     Decrease angle1.
+   L     Increase angle2.
+   l     Decrease angle2.
+   z     Toggle texture mode.
+   q     Disable cull mode.
+   w     Use front face cull mode.
+   e     Use back face cull mode.
+   r     Use clockwise front face mode.
+   t     Use counter-clockwise front face mode.
+   y     Toggle dither mode.
+
+TSELECT - Selection test.
+ - RGBA, SB.
+ - Keys:
+   ESC    Quit.
+   LEFT   Rotate.
+   RIGHT  Rotate.
+   Z      Increase zoom factor.
+   z      Decrease zoom factor.
+   d      Zoom at current Mouse location.
+   f      Print feedback information.
+   l      Toggle outlined/filled polygon mode.
+ - Mouse:
+   Left   Recolor selected triangle.
+   Center Enlarge selected triangle.
+   Right  Delete selected triangle.
+
+TSPEED - Speed test.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb RGBA mode.
+   -ci  Color index mode.
+   -sb  Single buffer mode.
+   -db  Double buffer mode.
+ - Keys:
+   ESC  Quit.
+   a    Toggle anti-aliased mode.
+   d    Toggle z buffering mode.
+   f    Toggle fog mode.
+   F    Toggle fog hint mode.
+   s    Toggle flat/smooth shading mode.
+   t    Toggle texturing mode.
+
+TSPHERE - Spheremap test.
+ - RGBA, SB/DB (SB default).
+ - Command line options:
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+   -f    <file name> Texture file.
+   -3    Use RGB components.
+   -4    Use RGBA components.
+ - Keys:
+   ESC   Quit.
+   LEFT  Rotate about the y axis.
+   RIGHT Rotate about the y axis.
+   UP    Rotate about the x axis.
+   DOWN  Rotate about the x axis.
+   a     Toggle auto rotate mode.
+   c     Toggle between cylinder or cube object.
+   t     Use torus object.
+   d     Use decal texture mode.
+   m     Use modulate texture mode.
+   l     Toggle lighted mode.
+   f     Toggle fog mode.
+   0     Use nearest magification filter.
+   1     Use linear magification.
+   2     Use nearest minification filter.
+   3     Use linear minification filter.
+   4     Use nearest-mipmap-nearest minification filter.
+   5     Use nearest-mipmap-linear minification filter.
+   6     Use linear-mipmap-nearest minification filter.
+   7     Use linear-mipmap-linear minification filter.
+
+TSTAR - Demo.
+ - RGBA, SB/DB (SB default).
+ - Command line options:
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+ - Keys:
+   ESC   Quit.
+   SPACE Toggle weird movement mode.
+   t     Toggle turbo mode.
+
+TSTENCIL - Stencil test.
+ - RGBA, SB.
+
+TSTRETCH - Texture test.
+ - RGBA, SB.
+ - Command line options:
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+   -f    <file name> Texture file.
+ - Keys:
+   ESC   Quit.
+   SPACE Start animation.
+ - Mouse:
+   Left  Added stretch point.
+
+TTEXTURE - Texture test.
+ - RGBA, SB/DB (SB default).
+ - Command line options:
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+   -f    <file name> Texture file.
+ - Keys:
+   ESC   Quit.
+   LEFT  Rotate.
+   RIGHT Rotate.
+   UP    Rotate.
+   DOWN  Rotate.
+   T     Translate.
+   t     Translate.
+   s     Toggle sphere map mode.
+   0     Use nearest magification filter.
+   1     Use linear magification filter.
+   2     Use nearest minification filter.
+   3     Use linear minification filter.
+   4     Use nearest-mipmap-nearest minification filter.
+   5     Use nearest-mipmap-linear minification filter.
+   6     Use linear-mipmap-nearest minification filter.
+   7     Use linear-mipmap-linear minification filter.
+
+TTRI - Triangle test.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb RGBA mode.
+   -ci   Color index mode.
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+ - Keys:
+   ESC   Quit.
+   LEFT  Translate.
+   RIGHT Translate.
+   Z     Increase zoom factor.
+   z     Decrease zoom factor.
+   1     Use point polygon mode.
+   2     Use line polygon mode.
+   3     Use filled polygon mode.
+   4     Use point primitive.
+   5     Use line-loop primitive.
+   6     Use polygon primitive.
+   7     Toggle cull mode.
+   8     Use clockwise/counter-clockwise front face mode.
+   9     Toggle front/back face cull mode.
+   v     Toggle show verticies mode.
+   s     Toggle flat/smooth shade mode.
+   h     Toggle hide bottom triangle mode.
+   o     Toggle outline mode.
+   m     Toggle dither mode.
+   0     Toggle anti-aliased mode.
+
+TWAVE - Demo.
+ - RGBA/CI (RGBA default), SB/DB (SB default).
+ - Command line options:
+   -rgb  RGBA mode.
+   -ci   Color index mode.
+   -sb   Single buffer mode.
+   -db   Double buffer mode.
+   -grid <x> <y>   Number of grids.
+   -size <number>  Size of grid.
+   -wave <number>  Height of wave (floating point number).
+   -frames <count> Number of frames.
+ - Keys:
+   ESC   Quit.
+   c     Toggle contouring mode.
+   s     Toggle flat/smooth shade mode.
+   l     Toggle lighting mode.
+   d     Toggle depth checking mode.
+   SPACE Toggle step/animation mode.
+   n     Single step in step mode.
+   a     Toggle spin mode.

@@ -1,0 +1,65 @@
+//+---------------------------------------------------------------------------
+//
+//  Microsoft Windows
+//  Copyright (C) Microsoft Corporation, 1992 - 1995.
+//
+//  File:       frcngn.idl
+//
+//  Contents:   definition for IFractalEngine
+//
+//  History:    4-13-94   stevebl   Created
+//
+//----------------------------------------------------------------------------
+
+//+---------------------------------------------------------------------------
+//
+//  Class:      IFractalEngine (fe)
+//
+//  Purpose:    interface implemented by fractal engines
+//
+//  Interface:  Init          -- called first to initialize the engine
+//              SetDefaults   -- tells engine to choose default values for
+//                               all its properties
+//              SetProperties -- invokes the engine's property dialog box
+//              GetExtent     -- asks the engine what the max and min
+//                               values in the graph are
+//              SetExtent     -- asks the engine to change it's extent
+//              SetGraphSize  -- tells the engine how big its graph is
+//              Start         -- starts the graph engine
+//              Stop          -- stops the graph engine
+//
+//  History:    4-13-94   stevebl   Created
+//
+//----------------------------------------------------------------------------
+
+[
+    local,
+    object,
+    uuid(2a0e4f58-3908-101b-8963-00000b65c75b),
+    pointer_default(unique)
+]
+
+interface IFractalEngine : IUnknown
+{
+    import "unknwn.idl";
+    import "frhost.idl";
+
+    HRESULT Init(IFractalHost * pfh);
+    HRESULT SetDefaults(void);
+    HRESULT SetProperties(HWND hwnd);
+    HRESULT GetExtent(
+        double * pdLeft,
+        double * pdTop,
+        double * pdRight,
+        double * pdBottom);
+    HRESULT SetExtent(
+        double dLeft,
+        double dTop,
+        double dRight,
+        double dBottom);
+    HRESULT SetGraphSize(
+        unsigned uWidth,
+        unsigned uHeight);
+    HRESULT Start(void);
+    HRESULT Stop(void);
+}

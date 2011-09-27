@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\Q_A\BOB\BOB.PRJ
+BOB.OPN
+novcs
+BOB.DEF
+16
+812035224
+0 0 0 0 0 "bob.def" ""
+0 0 0 0 0 "bob.c" ""
+0 0 0 0 0 "bob.rc" ""
+0 0 0 0 0 "advapi32.lib" ""

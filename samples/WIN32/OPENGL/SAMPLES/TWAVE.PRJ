@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\OPENGL\SAMPLES\TWAVE.PRJ
+TWAVE.OPN
+novcs
+twave.def
+4
+812035224
+0 0 0 0 0 "twave.c" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "twave.def" ""
+0 0 0 0 0 "advapi32.lib" ""

@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\RPC\DYNEPT\DYNEPTS.PRJ
+DYNEPTS.OPN
+novcs
+dynepts.def
+4
+812035224
+0 0 0 0 0 "dynept_s.c" ""
+0 0 0 0 0 "dyneptp.c" ""
+0 0 0 0 0 "dynepts.c" ""
+0 0 0 0 0 "dynepts.def" ""
+0 0 0 0 0 "rpcrt4.lib" ""

@@ -1,0 +1,240 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1993 - 1995  Microsoft Corporation.  All Rights Reserved.
+ * 
+ **************************************************************************/
+//--------------------------------------------------------------------------;
+//
+//  app.rc
+//
+//  Description:
+//      This is a sample application that demonstrates how to use the 
+//      Media Control Interface (MCI) in Windows. This application is
+//      also useful as an MCI device tester.
+//
+//  History:
+//      11/ 8/92
+//
+//==========================================================================;
+
+#include <windows.h>
+
+#include "app.h"
+#include "mciapp.rcv"
+
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+//
+//  Misc resources
+//
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+
+ICON_APP	ICON	mciapp.ico
+
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+//
+//  Application menu
+//
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+
+MENU_APP MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                IDM_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            IDM_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               IDM_FILE_SAVE
+        MENUITEM "Save &As...\tCtrl+A",         IDM_FILE_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "A&bout...",                   IDM_FILE_ABOUT
+        MENUITEM "E&xit\tAlt+F4",               IDM_FILE_EXIT
+    END
+
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               WM_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                WM_CUT
+        MENUITEM "&Copy\tCtrl+C",               WM_COPY
+        MENUITEM "&Paste\tCtrl+V",              WM_PASTE
+        MENUITEM "De&lete\tDel",                WM_CLEAR
+        MENUITEM SEPARATOR
+        MENUITEM "Select &All",                 IDM_EDIT_SELECTALL
+    END
+
+    POPUP "&Device"
+    BEGIN
+        MENUITEM "<None>",                      IDM_DEVICE_NONE, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Opened &Devices...\tCtrl+D",  IDM_DEVICE_OPENLIST
+        MENUITEM "&Close All Devices",          IDM_DEVICE_CLOSEALL
+    END
+
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&Edit Only\tCtrl+E",          IDM_OPTIONS_EDITONLY
+        MENUITEM "&Yielding Execution\tCtrl+Y", IDM_OPTIONS_YIELDEXEC
+        MENUITEM "Debug &Log\tCtrl+L",          IDM_OPTIONS_DEBUGLOG
+        MENUITEM SEPARATOR
+        MENUITEM "&Font...\tCtrl+F",            IDM_OPTIONS_FONT
+    END
+END
+
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+//
+//  Accelerator table
+//
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+
+ACCEL_APP ACCELERATORS
+BEGIN
+    VK_ESCAPE,  IDD_ACCL_ABORT,         VIRTKEY
+
+    VK_F5,      IDD_APP_BTN_GO,         VIRTKEY
+    VK_F8,      IDD_APP_BTN_STEP,       VIRTKEY
+    VK_F10,     IDD_APP_BTN_STEP,       VIRTKEY
+
+    "^N",       IDM_FILE_NEW
+    "^O",       IDM_FILE_OPEN
+    "^S",       IDM_FILE_SAVE
+    "^A",       IDM_FILE_SAVEAS
+
+    VK_BACK,    WM_UNDO,                VIRTKEY, ALT
+
+    "^D",       IDM_DEVICE_OPENLIST
+
+    "^E",       IDM_OPTIONS_EDITONLY
+    "^Y",       IDM_OPTIONS_YIELDEXEC
+    "^L",       IDM_OPTIONS_DEBUGLOG
+    "^F",       IDM_OPTIONS_FONT
+END
+
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+//
+//  String resources
+//
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+
+STRINGTABLE MOVEABLE DISCARDABLE
+BEGIN
+    IDS_APP_NAME,               "MCI App"
+    IDS_FILE_UNTITLED,          "(Untitled)"
+
+    IDS_OFN_EXT_DEF,            "mci"
+#ifdef UNICODE
+    IDS_OFN_EXT_FILTER,         "MCI Scripts (*.mci;*.mcs)!*.mci;*.mcs!Unicode Files (*.utf)!*.utf!ANSI Files (*.txt)!*.txt!All Files (*.*)!*.*!!"
+#else
+    IDS_OFN_EXT_FILTER,         "MCI Scripts (*.mci;*.mcs)!*.mci;*.mcs!ANSI Files (*.txt)!*.txt!All Files (*.*)!*.*!!"
+#endif
+
+
+    IDS_DROP_CONTINUE,          "Continue?"
+
+    IDS_EXEC_ABORT,             "Abort execution?"
+
+    IDS_MCI_SCRIPT_CREATED,     "Script '%s' created."
+    IDS_MCI_SCRIPT_OPENED,      "Script '%s' opened."
+    IDS_MCI_SCRIPT_SAVED,       "Script '%s' saved."
+    IDS_MCI_SCRIPT_CHANGED,     "The script '%s' has been changed. Do you want to save these changes?"
+
+
+    //
+    //  strings displayed by MciAppHandleNotify when an MM_MCINOTIFY message
+    //
+    IDS_MCI_NOTIFY_SUCCESSFUL,  "Successful"
+    IDS_MCI_NOTIFY_SUPERSEDED,  "Superseded"
+    IDS_MCI_NOTIFY_ABORTED,     "Aborted"
+    IDS_MCI_NOTIFY_FAILURE,     "Failure"
+    IDS_MCI_NOTIFY_UNKNOWN,     "???"
+
+
+    //
+    //
+    //
+    //
+    IDS_WARN_OPEN_DEVICES,      "There are %u open MCI devices! Do you want them closed before exiting?"
+
+    IDS_ERROR_OPEN_FAILED,      "Cannot open '%s' as an MCI script!"
+END
+
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+//
+//  Application dialogs
+//
+//
+//
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
+
+//
+//  DLG_ABOUT
+//
+//
+//
+DLG_ABOUT DIALOG LOADONCALL MOVEABLE DISCARDABLE 20, 20, 200, 115
+STYLE DS_MODALFRAME | WS_SYSMENU | WS_VISIBLE | WS_POPUP | DS_LOCALEDIT
+CAPTION "About MCI App"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL APP_VERSION_DESCRIPTION_RC, -1, "static", SS_LEFT | WS_CHILD, 30, 5, 165, 8
+    CONTROL APP_VERSION_STRING_RC, -1, "static", SS_LEFT | WS_CHILD, 30, 14, 165, 8
+    CONTROL "for:", -1, "static", SS_LEFT | WS_CHILD, 30, 23, 15, 8
+    CONTROL APP_VERSION_PRODUCTNAME_RC, -1, "static", SS_LEFT | WS_CHILD, 45, 23, 150, 8
+    CONTROL APP_VERSION_COPYRIGHT_RC, -1, "static", SS_LEFT | WS_CHILD, 30, 32, 165, 8
+    CONTROL APP_VERSION_BYLINE_RC, -1, "static", SS_LEFT | WS_CHILD, 30, 42, 165, 8
+    CONTROL "", -1, "static", WS_BORDER | WS_CHILD, 0, 56, 200, 1
+    CONTROL "Environment:", -1, "static", SS_LEFT | WS_CHILD, 5, 62, 45, 8
+    CONTROL "", IDD_ABOUT_VERSION_OS, "static", SS_LEFT | WS_CHILD, 50, 62, 145, 20
+    CONTROL "Platform:", -1, "static", SS_LEFT | WS_CHILD, 5, 82, 45, 8
+    CONTROL "", IDD_ABOUT_VERSION_PLATFORM, "static", SS_LEFT | WS_CHILD, 50, 82, 145, 8
+    CONTROL "OK", IDOK, "button", BS_DEFPUSHBUTTON | WS_GROUP | WS_TABSTOP | WS_CHILD, 82, 96, 35, 14
+    CONTROL ICON_APP, -1, "static", SS_ICON | WS_CHILD, 5, 5, 0, 0
+END
+
+
+//
+//  DLG_MCIDEVS
+//
+//
+//
+DLG_MCIDEVS DIALOG LOADONCALL MOVEABLE DISCARDABLE 10, 30, 100, 80
+STYLE WS_BORDER | WS_POPUP | WS_SYSMENU | WS_CAPTION
+CAPTION "Opened Devices"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL "&Done", IDOK, "button", BS_DEFPUSHBUTTON | WS_GROUP | WS_TABSTOP | WS_CHILD, 3, 2, 46, 14
+    CONTROL "&Info...", IDD_MCIDEVS_BTN_INFO, "button", BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 51, 2, 46, 14
+    CONTROL "", IDD_MCIDEVS_LIST_OPEN, "listbox", WS_GROUP | LBS_NOTIFY | WS_BORDER | WS_VSCROLL | WS_CHILD | LBS_NOINTEGRALHEIGHT, 2, 18, 96, 60
+END
+
+
+//
+//  DLG_MCIERR
+//
+//
+//
+DLG_MCIERR DIALOG LOADONCALL MOVEABLE DISCARDABLE 55, 44, 146, 70
+STYLE WS_DLGFRAME | WS_POPUP |  WS_CAPTION | DS_MODALFRAME | WS_SYSMENU
+CAPTION "MCI Script Error"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL "Error sending command.", -1, "static", SS_LEFT | WS_CHILD, 41, 12, 84, 8
+    CONTROL "&Abort", IDABORT, "button", BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 9, 52, 32, 14
+    CONTROL "&Continue", IDOK, "button", BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 53, 52, 40, 14
+    CONTROL "&Ignore", IDIGNORE, "button", BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 105, 52, 32, 14
+    CONTROL "#32515", -1, "static", SS_ICON | WS_CHILD, 15, 7, 16, 16
+    CONTROL "Use Abort to stop, Continue to resume, or Ignore to resume and ignore errors.", -1, "static", SS_CENTER | WS_CHILD, 5, 28, 139,19
+END
+

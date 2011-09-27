@@ -1,0 +1,9 @@
+82572
+C:\SC\samples\win32\BASE\SERVICE\CLIENT.PRJ
+CLIENT.OPN
+novcs
+client.DEF
+4
+812035224
+0 0 0 0 0 "client.c" ""
+0 0 0 0 0 "client.def" ""

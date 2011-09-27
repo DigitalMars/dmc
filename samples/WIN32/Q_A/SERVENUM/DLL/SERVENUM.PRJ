@@ -1,0 +1,22 @@
+82572
+C:\SC\samples\win32\Q_A\SERVENUM\DLL\SERVENUM.PRJ
+SERVENUM.OPN
+novcs
+servenum.def
+3
+812035224
+0 0 0 0 0 "makefile" ""
+0 0 0 0 0 "dlldisp.c" ""
+0 0 0 0 0 "enumdlg.c" ""
+0 0 0 0 0 "enumthrd.c" ""
+0 0 0 0 0 "enumutil.c" ""
+0 0 0 0 0 "mem.c" ""
+0 0 0 0 0 "miscutil.c" ""
+0 0 0 0 0 "servenum.c" ""
+0 0 0 0 0 "thrdutil.c" ""
+0 0 0 0 0 "servenum.def" ""
+0 0 0 0 0 "dlldisp.obj" ""
+0 0 0 0 0 "servenum.rc" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "mpr.lib" ""
+0 0 0 0 0 "netapi32.lib" ""

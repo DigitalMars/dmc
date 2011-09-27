@@ -1,0 +1,5 @@
+#include <windows.h>
+
+dllbitmap BITMAP the_dll.bmp
+dllcursor CURSOR the_dll.cur
+dllicon   ICON   the_dll.ico

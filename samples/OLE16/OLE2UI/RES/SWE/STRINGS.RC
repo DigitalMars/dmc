@@ -1,0 +1,124 @@
+/*
+ * STRINGS.RC
+ *
+ * strings for the OLE 2.0 UI Support Library.
+ *
+ * Copyright (c)1992 Microsoft Corporation, All Right Reserved
+ */
+
+
+#include "ole2ui.h"
+
+
+//Stringtable common for all dialogs.
+STRINGTABLE
+	BEGIN
+	 IDS_FILTERS,               "Alla filer (*.*)|*.*|"
+	 IDS_ICONFILTERS,           "Ikonfiler|*.exe;*.dll;*.ico|Program (*.exe)|*.exe|Kataloger (*.dll)|Ikoner (*.ico)|Alla filer (*.*)|*.*|"
+	END
+
+// browse dialog
+STRINGTABLE
+	BEGIN
+	 IDS_BROWSE         "Bldddra"
+	END
+
+
+//Insert Object stringtable.
+STRINGTABLE
+	BEGIN
+	 IDS_IORESULTNEW,                "Monterar ett nytt %s-objekt i ditt dokument."
+	 IDS_IORESULTNEWICON,            "Monterar ett nytt %s-objekt i ditt dokument. Det kommer att visas som ikon."
+	 IDS_IORESULTFROMFILE1,          "Monterar innehellet i en fil som ett objekt till ditt dokument. Du kan aktivera det med hjdlp av "
+	 IDS_IORESULTFROMFILE2,          "programmet som det skapades i."
+	 IDS_IORESULTFROMFILEICON2,      "programmet som det skapades i. Det kommer att visas som en ikon."
+	 IDS_IORESULTLINKFILE1,          "Monterar en bild av filinnehellet till ditt dokument. Bilden kommer att ldnkas till "
+	 IDS_IORESULTLINKFILE2,          "filen och dndringar i filen kommer att eterskapas i ditt dokument."
+	 IDS_IORESULTLINKFILEICON1,      "Monterar en ikon som representerar filen till ditt dokument. Ikonen kommer att ldnkas till "
+	 IDS_IORESULTLINKFILEICON2,      "filen och dndringar i filen kommer att eterskapas i ditt dokument."
+	END
+
+//Change Icon stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_CINOICONSINFILE,        "Det finns inga ikoner i %s."
+	 IDS_CIINVALIDFILE,          "%s finns inte."
+	 IDS_CIFILEACCESS,           "Det ger inte att vppna filen %s. Etkomst nekad."
+	 IDS_CIFILESHARE,            "Det ger inte att vppna filen %s. Fildelningsfel."
+	 IDS_CIFILEOPENFAIL,         "Det ger inte att vppna filen %s. Allmdnt fel."
+	END
+
+// Convert stringtable.
+STRINGTABLE
+	BEGIN
+	 IDS_CVRESULTCONVERTLINK,     "Ett ldnkat objekt meste konverteras fren kdllan."
+	 IDS_CVRESULTCONVERTTO,       "Dndrar %s-objekt till ett %s-objekt."
+	 IDS_CVRESULTNOCHANGE,        "Markerade %s-objekt kommer inte att konverteras."
+	 IDS_CVRESULTDISPLAYASICON,   "  Det kommer att visas som ikon."
+	 IDS_CVRESULTACTIVATEAS,      "Alla %s-objekt kommer att aktiveras som %s-objekt"
+	 IDS_CVRESULTACTIVATEDIFF,    "men kommer inte att konverteras."
+	END
+
+//Paste Special stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_PSPASTEDATA,         "Monterar innehellet i Urklipp till ditt dokument som %s."
+	 IDS_PSPASTEOBJECT,       "Monterar innehellet i Urklipp till ditt dokument och du kan aktivera det genom att anvdnda %s."
+	 IDS_PSPASTEOBJECTASICON, "Monterar innehellet i Urklipp till ditt dokument och du kan aktivera det genom att anvdnda %s. Innehellet kommer att visas som en ikon."
+	 IDS_PSPASTELINKDATA,     "Monterar innehellet i Urklipp till ditt dokument som %s. Kommandot Klistra in ldnk skapar en ldnk till kdllfilen och dndringar i denna kommer att eterspeglas i ditt dokument."
+	 IDS_PSPASTELINKOBJECT,   "Monterar en bild av innehellet i Urklipp till ditt dokument. Kommandot Klistra in ldnk skapar en ldnk till kdllfilen och dndringar i denna kommer att eterspeglas i ditt dokument."
+	 IDS_PSPASTELINKOBJECTASICON, "Monterar en ikon till ditt dokument som representerar innehellet i Urklipp. Kommandot Klistra in ldnk skapar en ldnk till kdllfilen och dndringar i denna kommer att eterspeglas i ditt dokument."
+	 IDS_PSNONOLE,            "Monterar innehellet i Urklipp till ditt dokument."
+	 IDS_PSUNKNOWNTYPE,       "Okdnd typ"
+	 IDS_PSUNKNOWNSRC,        "Okdnd kdlla"
+	 IDS_PSUNKNOWNAPP,        "programmet som skapade det"
+	END
+
+// Busy/Blocked dialog stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_BZRESULTTEXTBUSY          "Det ger inte att slutfvra operationen eftersom %s programmet (%s) kvrs. Vdlj ""Vdxla till"" fvr att aktivera %s och korrigera felet."
+	 IDS_BZRESULTTEXTNOTRESPONDING "Det ger inte att slutfvra operationen eftersom %s programmet (%s) inte svarar. Vdlj ""Vdxla till"" fvr att aktivera %s och korrigera felet."
+	END
+
+// OLESTD stringtable
+STRINGTABLE
+	BEGIN
+	  IDS_OLESTDNOCREATEFILE, "Det ger inte att skapa filen."
+	  IDS_OLESTDNOOPENFILE,   "Det ger inte att vppna filen."
+	  IDS_OLESTDDISKFULL,     "Disken dr full -- det ger inte att spara filen"
+	END
+
+// OLE2UI stringtable
+STRINGTABLE
+	BEGIN
+	   IDS_OLE2UIEDITNOOBJCMD, "&Objekt"
+	   IDS_OLE2UIEDITLINKCMD_1VERB, "0%s ldnkade %s &objekt"
+	   IDS_OLE2UIEDITOBJECTCMD_1VERB, "0%s %s &objekt"
+	   IDS_OLE2UIEDITLINKCMD_NVERB, "Ldnkade %s &objekt"
+	   IDS_OLE2UIEDITOBJECTCMD_NVERB, "%s &objekt"
+	   IDS_OLE2UIUNKNOWN, "Okdnt"
+	   IDS_OLE2UILINK,    "Ldnka"
+	   IDS_OLE2UIOBJECT,  "Objekt"
+	   IDS_OLE2UIEDIT,    "&Redigera"
+	   IDS_OLE2UICONVERT, "&Konvertera..."
+	   IDS_DEFICONLABEL,  "Dokument"
+	   IDS_OLE2UIPASTELINKEDTYPE, "Ldnkat %s"
+	END
+
+// LINKS stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_LINK_AUTO              "Automatiskt"
+	 IDS_LINK_MANUAL            "Manuellt"
+	 IDS_LINK_UNKNOWN           "Inte tillgdnglig"
+	 IDS_LINKS                  "Ldnkar"
+	 IDS_FAILED                 "Operationen misslyckades."
+	 IDS_CHANGESOURCE           "Dndra kdlla"
+	 IDS_INVALIDSOURCE          "Kdllan dr felaktig. Vill du korrigera felet?"
+	 IDS_CHANGEADDITIONALLINKS  "Markerad ldnk har dndrats.\nDetta dokument inneheller extra ldnkar.\n%s.\n\nVill du dndra de extra ldnkarna?"
+	 IDS_ERR_GETLINKSOURCE      "Det ger inte att hitta kdllan till ldnken."
+	 IDS_ERR_GETLINKUPDATEOPTIONS   "Det ger inte att hitta uppdateringsinformation om ldnken."
+	 IDS_ERR_ADDSTRING          "Det ger inte att ldgga till objekt i en listruta."
+	 IDS_CLOSE              "Stdng"
+	END

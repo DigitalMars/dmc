@@ -1,0 +1,13 @@
+
+; Sample OEMSETUP.INF file for installing redistributable MCI drivers
+; using the Windows 3.1 drivers applet.
+
+[oemdisks]
+    Z =. ,"MCI Drivers Disk",diskz
+
+[Installable.Drivers]
+; key         = filename,       type(s),     description, VxD(s), Default Params
+pioneer       = Z:mcipionr.drv, "Videodisc", "[MCI] Pioneer Videodisc",,
+
+
+

@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win16\PEN\INKPUT\IP.PRJ
+IP.OPN
+novcs
+ip16.def
+0
+812035224
+0 0 0 0 0 "ip.c" ""
+0 0 0 0 0 "ip16.def" ""
+0 0 0 0 0 "penwin.lib" ""
+0 0 0 0 0 "ip.rc" ""

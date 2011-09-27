@@ -1,0 +1,12 @@
+[ uuid(2F5F6520-CA46-1067-B319-00DD010662DA),
+  version(1.0),
+  pointer_default(unique)
+]
+interface whello
+{
+
+void HelloProc([in, string] unsigned char * pszString);
+
+void Shutdown(void);
+
+}

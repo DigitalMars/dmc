@@ -1,0 +1,59 @@
+YieldIcon ICON rpc.ico
+
+BINDBOX DIALOG LOADONCALL MOVEABLE DISCARDABLE 15, 10, 184, 95
+STYLE WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_SYSMENU | DS_MODALFRAME
+CAPTION "RPC Binding Information"
+BEGIN
+    EDITTEXT        IDD_PROT_SEQ, 79, 12, 100, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDD_NET_ADDR, 79, 34, 100, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDD_ENDPOINT, 79, 55, 100, 12, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 62, 75, 30, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 120, 75, 30, 14
+    LTEXT           "Protocol Sequence:", 101, 7, 12, 64, 12
+    LTEXT           "Network Address:", 104, 13, 34, 58, 8
+    LTEXT           "Endpoint:", 105, 39, 55, 32, 8
+END
+
+WAITBOX DIALOG LOADONCALL MOVEABLE DISCARDABLE 68, 39, 102, 49
+STYLE WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_SYSMENU | DS_MODALFRAME
+CAPTION "Wait (in seconds)"
+BEGIN
+    EDITTEXT        IDD_WAITTIME, 4, 7, 95, 12, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 13, 26, 30, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 60, 26, 30, 14
+END
+
+ABOUTBOX DIALOG LOADONCALL MOVEABLE DISCARDABLE 25, 19, 144, 66
+STYLE WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_SYSMENU | DS_MODALFRAME | WS_POPUP
+CAPTION "About RPC Yield"
+BEGIN
+    CTEXT           "Microsoft RPC", -1, 51, 5, 47, 8
+    CTEXT           "Version 1.0", -1, 55, 14, 38, 8
+    CTEXT           "Microsoft Windows 3.x Yield Example", -1, 12, 24, 125, 
+                    8
+    DEFPUSHBUTTON   "OK", IDOK, 57, 50, 32, 14, WS_GROUP
+    ICON	    "YieldIcon", 104, 18, 37, 16, 21
+END
+
+YIELDBOX DIALOG LOADONCALL MOVEABLE DISCARDABLE 35, 18, 115, 76
+STYLE WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_SYSMENU | DS_MODALFRAME
+CAPTION "Yield Information"
+BEGIN
+    PUSHBUTTON      "OK", IDOK, 41, 60, 40, 14
+    CONTROL         "Standard yield; RPC dialog", IDD_STD_RPC, "Button", 
+                    BS_AUTORADIOBUTTON | WS_GROUP, 10, 7, 104, 10
+    CONTROL         "Custom yield", IDD_CUSTOM, "Button", BS_AUTORADIOBUTTON, 
+                    10, 41, 98, 10
+    CONTROL         "Standard yield; user dialog", IDD_STD_USER, "Button", 
+                    BS_AUTORADIOBUTTON, 10, 24, 104, 10
+END
+
+USERYIELDBOX DIALOG LOADONCALL MOVEABLE DISCARDABLE 6, 18, 160, 74
+STYLE WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_SYSMENU | DS_MODALFRAME
+CAPTION "User-Supplied Yield Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT	    "This is a user-supplied dialog that is displayed during the yield period. The RPC run-time library accepts the ""Cancel"" input and terminates the remote call.",
+                    601, 23, 3, 105, 52
+    PUSHBUTTON      "Cancel", IDCANCEL, 57, 56, 40, 14
+END

@@ -1,0 +1,16 @@
+82572
+C:\SC\samples\ole16\DFVIEW\DFVIEW.PRJ
+DFVIEW.OPN
+novcs
+dfview.def
+0
+812035224
+0 0 0 0 0 "dfview.def" ""
+0 0 0 0 0 "dflistb.c" ""
+0 0 0 0 0 "dfview.c" ""
+0 0 0 0 0 "dialogs.c" ""
+0 0 0 0 0 "foldlist.c" ""
+0 0 0 0 0 "precomp.c" ""
+0 0 0 0 0 "dfview.rc" ""
+0 0 0 0 0 "ctl3d.lib" ""
+0 0 0 0 0 "loleuic.lib" ""

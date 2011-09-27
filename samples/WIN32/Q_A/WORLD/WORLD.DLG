@@ -1,0 +1,46 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1992-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+
+1 DLGINCLUDE "world.h"
+
+AboutDlg DIALOG FIXED 6, 21, 198, 99
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About World"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&OK", IDOK, 72, 74, 40, 14
+    ICON            "WorldIcon", -1, 10, 18, 18, 20
+    LTEXT           "World Coordinate Transform Sample", 104, 45, 14, 
+                    128, 8
+    LTEXT           "By Julie Solon", 105, 45, 35, 59, 8
+    LTEXT           "Microsoft Developer Support", 106, 45, 45, 98, 8
+    LTEXT           "Copyright \251 1992-1995 Microsoft Corporation", 107, 45, 
+                    54, 138, 8
+END
+
+ScaleDlg DIALOG 6, 18, 187, 100
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Scale Image"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "O&K", IDOK, 36, 71, 40, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 106, 71, 40, 14
+    LTEXT           "&Horizontal Scaling Factor:", 101, 14, 18, 88, 8
+    LTEXT           "&Vertical Scaling Factor:", 102, 22, 39, 83, 8
+    COMBOBOX        IDC_HORZ, 111, 17, 48, 35, CBS_DROPDOWNLIST |   
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_VERT, 111, 38, 48, 35, CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END

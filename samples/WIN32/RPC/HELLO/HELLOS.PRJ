@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\RPC\HELLO\HELLOS.PRJ
+HELLOS.OPN
+novcs
+hellos.DEF
+4
+812035224
+0 0 0 0 0 "hello_s.c" ""
+0 0 0 0 0 "hellop.c" ""
+0 0 0 0 0 "hellos.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "hellos.def" ""

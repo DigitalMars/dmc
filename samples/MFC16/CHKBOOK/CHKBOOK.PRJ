@@ -1,0 +1,18 @@
+82569
+D:\SC\SAMPLES\MFC25\CHKBOOK\CHKBOOK.PRJ
+CHKBOOK.OPN
+novcs
+CHKBOOK.DEF
+0
+805039278
+0 0 0 0 0 "chkbook.def"
+0 0 0 0 0 "bookvw.cpp"
+0 0 0 0 0 "checkdoc.cpp"
+0 0 0 0 0 "checkvw.cpp"
+0 0 0 0 0 "chkbkfrm.cpp"
+0 0 0 0 0 "chkbook.cpp"
+0 0 0 0 0 "dollcent.cpp"
+0 0 0 0 0 "fxrecdoc.cpp"
+0 0 0 0 0 "mainfrm.cpp"
+0 0 0 0 0 "rowview.cpp"
+0 0 0 0 0 "chkbook.rc"

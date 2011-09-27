@@ -1,0 +1,15 @@
+link:
+		$(LNK) $(LFLAGS) @$(PROJ).LNK;
+		-del $(TARGETDIR)\$(PROJ).$(PROJTYPE)
+		-ren $(TARGETDIR)\$$SCW$$.$(PROJTYPE) $(PROJ).$(PROJTYPE)
+			-del $(TARGETDIR)\$(PROJ).LIB
+			-ren $(TARGETDIR)\$$SCW$$.LIB $(PROJ).LIB
+
+
+
+
+
+!IF EXIST (The_DLL.dpd)
+!INCLUDE The_DLL.dpd
+!ENDIF
+

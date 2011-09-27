@@ -1,0 +1,28 @@
+# Nmake macros for building Windows 32-Bit apps
+
+!include <win32.mak>
+
+all: lowpass.exe
+
+OBJS=		lowpass.obj
+
+OTHERCLOPTS=-DWIN32_LEAN_AND_MEAN -nologo -I. -I..\include
+OTHERRCOPTS=-DWIN32_LEAN_AND_MEAN -I. -I..\include
+
+
+# Update the resource if necessary
+
+lowpass.res: lowpass.rc lowpass.h strings.rc strings.h lowpass.rcv lowpass.ico
+    $(rc) -r -DWIN32 $(OTHERRCOPTS) lowpass.rc
+
+
+# Update the object file if necessary
+
+lowpass.obj: lowpass.c lowpass.h strings.h
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) lowpass.c
+
+# Update the executable file if necessary, and if so, add the resource back in.
+
+lowpass.exe:  $(OBJS) lowpass.res
+    $(link) $(linkdebug) $(guiflags) -out:lowpass.exe $(OBJS) lowpass.res $(guilibs) \
+    winmm.lib

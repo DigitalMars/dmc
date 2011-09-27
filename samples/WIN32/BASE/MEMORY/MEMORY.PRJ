@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\BASE\MEMORY\MEMORY.PRJ
+MEMORY.OPN
+novcs
+MEMORY.DEF
+16
+812035224
+0 0 0 0 0 "memory.c" ""
+0 0 0 0 0 "nmmemcli.c" ""
+0 0 0 0 0 "nmmemsrv.c" ""
+0 0 0 0 0 "memory.def" ""
+0 0 0 0 0 "memory.rc" ""
+0 0 0 0 0 "shell32.lib" ""

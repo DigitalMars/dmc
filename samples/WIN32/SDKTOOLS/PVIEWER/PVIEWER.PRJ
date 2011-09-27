@@ -1,0 +1,17 @@
+82572
+C:\SC\samples\win32\SDKTOOLS\PVIEWER\PVIEWER.PRJ
+PVIEWER.OPN
+novcs
+pviewer.DEF
+2
+812035224
+0 0 0 0 0 "cntrdata.c" ""
+0 0 0 0 0 "instdata.c" ""
+0 0 0 0 0 "objdata.c" ""
+0 0 0 0 0 "perfdata.c" ""
+0 0 0 0 0 "pviewdat.c" ""
+0 0 0 0 0 "pviewer.c" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "winspool.lib" ""
+0 0 0 0 0 "pview.rc" ""
+0 0 0 0 0 "pviewer.def" ""

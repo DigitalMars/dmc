@@ -1,0 +1,19 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+HKEY_CLASSES_ROOT\.ack = AutoClik.Document.1
+HKEY_CLASSES_ROOT\AutoClik.Document.1\shell\open\command = AUTOCLIK.EXE %1
+HKEY_CLASSES_ROOT\AutoClik.Document.1\shell\open\ddeexec = [open("%1")]
+HKEY_CLASSES_ROOT\AutoClik.Document.1\shell\open\ddeexec\application = AUTOCLIK
+	; note: the application is optional
+	;  (it defaults to the app name in "command")
+
+HKEY_CLASSES_ROOT\AutoClik.Document.1 = AutoClik.Document.1
+HKEY_CLASSES_ROOT\AutoClik.Document.1\CLSID = {2106E720-AEF8-101A-9005-00DD0108D651}
+
+HKEY_CLASSES_ROOT\CLSID\{2106E720-AEF8-101A-9005-00DD0108D651} = AutoClik.Document.1
+HKEY_CLASSES_ROOT\CLSID\{2106E720-AEF8-101A-9005-00DD0108D651}\LocalServer = AUTOCLIK.EXE
+HKEY_CLASSES_ROOT\CLSID\{2106E720-AEF8-101A-9005-00DD0108D651}\ProgId = AutoClik.Document.1

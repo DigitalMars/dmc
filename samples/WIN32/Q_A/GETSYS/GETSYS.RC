@@ -1,0 +1,32 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1992-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include "windows.h"
+#include "getsys.h"
+
+
+getsysDlg DIALOG 30, 30, 285, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Get System Information"
+BEGIN
+  PUSHBUTTON  "GetSysColors",            DID_SYSCOLORS, 5,  10, 100, 13, WS_TABSTOP
+  PUSHBUTTON  "GetSystemDirectory",      DID_DIRECTORY, 5,  26, 100, 13, WS_TABSTOP
+  PUSHBUTTON  "GetSystemInfo",           DID_INFO     , 5,  42, 100, 13, WS_TABSTOP
+  PUSHBUTTON  "GetSystemMetrics",        DID_METRICS  , 5,  58, 100, 13, WS_TABSTOP
+  PUSHBUTTON  "GetSystemPaletteEntries", DID_PALETTE  , 5,  74, 100, 13, WS_TABSTOP
+  PUSHBUTTON  "GetLocalTime",            DID_LOCALTIME, 5,  90, 100, 13, WS_TABSTOP
+  PUSHBUTTON  "GetSystemTime",           DID_TIME     , 5, 106, 100, 13, WS_TABSTOP
+  PUSHBUTTON  "GetVersionEx",            DID_VERSIONEX, 5, 122, 100, 13, WS_TABSTOP
+  LISTBOX                                  DID_LISTBOX  , 120, 20, 160, 116,
+                                      WS_VSCROLL | WS_TABSTOP | LBS_USETABSTOPS
+  CTEXT       "Text",                      DID_TEXT     , 120, 8, 160, 8
+END

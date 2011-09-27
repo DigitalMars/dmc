@@ -1,0 +1,489 @@
+================================================================================
+
+File:     release-history.txt
+
+Purpose:  Brief description of the releases of the STLSoft libraries.
+
+Author:   Matthew Wilson, Synesis Software Pty Ltd.
+
+          Copyright (C) 2002-2004, Synesis Software Pty Ltd.
+          All rights reserved.
+
+www:      http://www.synesis.com.au/stlsoft
+          http://www.stlsoft.org/
+
+Created:  31st May 2003
+Updated:  11th September 2004
+
+================================================================================
+================================================================================
+
+
+================================================================================
+11th September 2004 : STLSoft 1.7.1 => 1.8.1
+--------------------------------------------------------------------------------
+
+Sub-project versions
+
+  ATLSTL  1.3.1 -  no changes
+  COMSTL  1.4.1 -  no changes
+  .netSTL 1.1.1 -  no changes
+  InetSTL 1.0.1 => 1.0.2
+  MFCSTL  1.3.5 -  no changes
+  UNIXSTL 1.1.1 => 1.2.1
+  WinSTL  1.4.1 => 1.5.1
+
+Changes:
+
+ The most obvious change is that the licensing for all STLSoft libraries has
+ changed to use the BSD license
+ (see http://www.opensource.org/licenses/bsd-license.html).
+
+ The other significant change is the addition of the STLSoft RangeLib
+ implementation (see http://www.rangelib.org/)
+
+ There are other, minor changes and bug fixes, as follows:
+
+ STLSoft:
+  - addition of value_proxy proxy template class to stlsoft_argument_proxies.h
+  - minor adjustments to auto_buffer
+  - addition of stlsoft_environment_block.h, defining environment_block
+    class
+  - addition of os_exception class to stlsoft_exceptions.h file
+  - fix to fast_string_concatenator to remove assumption of contiguous storage
+    (thanks to Sean Kelly for spotting this)
+  - addition of is_char_type<> discriminator to stlsoft_meta.h
+  - addition of stlsoft_proxy_iterator.h file, defining proxy_iterator class
+  - fix to stlsoft_string_access.h, for GCC 3.3.x (thanks to Peter Kreger for
+    this)
+  - addition of difference_type and const_reference to string_tokeniser
+
+ InetSTL:
+  - addition of difference_type to basic_findfile_sequence
+
+ UNIXSTL:
+  - addition of unixstl_exceptions.h file, defining unix_exception class
+  - addition of swap() method to file_path_buffer class
+  - addition of is_file() and is_directory() methods to filesystem_traits
+  - minor bug fix to unixstl_functionals.h
+  - significant reworking of glob_sequence class, including throwing of
+    glob_sequence_exception on (non-GLOB_NOMATCH) glob() failure, and correct
+	(maintenance of) sorting of	filtered results sets.
+  - addition of unixstl_module.h file, defining module class for loading
+    shared objects (dynamic libraries)
+  - addition of unixstl_path.h file, defining path class
+
+ WinSTL:
+  - fix to winstl_absolute_path.h
+  - addition of winstl_console_ctrl_handler_scope.h file, defining 
+    console_ctrl_handler_scope class
+  - fix to winstl_drophandle_sequence.h
+  - addition of winstl_environment_block.h, defining environment_block
+    class
+  - addition of set() and reset() methods to event class
+  - addition of winstl_exceptions.h file, defining windows_exception class
+  - addition of swap() method to file_path_buffer class
+  - addition of winstl_winstl_filesystem_functions.h file
+  - addition of is_file(), is_directory(), create_directory(), remove_directory().
+    delete_file() and rename_file() methods to filesystem_traits
+  - addition of difference_type to basic_findfile_sequence
+  - minor bug fix to winstl_functionals.h
+  - addition of IsWaitObjectSignalled() and HasOverlappedIoCompleted() functions to
+    winstl_functions.h
+  - addition of winstl_module.h file, defining module class for loading
+    shared objects (dynamic libraries)
+  - minor bug fix to winstl_module_filename.h
+  - addition of winstl_path.h file, defining path class
+  - addition of handle() accessor method to process_mutex
+  - addition of StringFileInfo handling to version_info
+  - addition of winstl_window_icon_scope.h file, defining window_icon_scope
+    class
+
+================================================================================
+11th June 2004 : STLSoft 1.6.5 => 1.7.1
+--------------------------------------------------------------------------------
+
+Sub-project versions
+
+  ATLSTL  1.2.8 => 1.3.1
+  COMSTL  1.2.5 => 1.4.1
+  .netSTL       => 1.1.1
+  InetSTL       => 1.0.1
+  MFCSTL  1.3.4 => 1.3.5
+  UNIXSTL 1.0.3 => 1.1.1
+  WinSTL  1.3.7 => 1.4.1
+
+Changes:
+
+ This has been a wholesale upgrade of STLSoft, and the changes are too 
+ numerous to mention. Please consult the documentation at 
+ http://stlsoft.org/help/
+
+
+================================================================================
+22nd August 2003 : STLSoft 1.6.4 => 1.6.5
+--------------------------------------------------------------------------------
+
+Sub-project versions
+
+  ATLSTL  no change - still 1.2.8
+  COMSTL  no change - still 1.2.5
+  MFCSTL  no change - still 1.3.4
+  UNIXSTL no change - still 1.0.3
+  WinSTL  1.3.6 => 1.3.7
+
+Changes:
+
+ STLSoft:
+  - efficiency fix to auto_buffer, for Borland compiler
+  - several fixes to allow Visual C++ / STLport compatibility with STLSoft
+  - comparison operations for basic_frame_string
+  - compatibility fix to malloc_allocator, new_allocator and null_allocator
+  - compiler compatibility enhancements to NULL_v
+  - addition of for_all_r algorithm
+  - addition of for_each_preinc algorithm
+  - addition of for_each_postinc algorithm
+  - addition of copy() method to basic_simple_string
+  - addition of ZERO_v type
+  - addition of static_constructors.h file
+ 
+ COMSTL:
+
+  - Bug fix to enum_simple_sequence
+  - Addition of post-increment operator to iterator for enum_simple_sequence
+  - compatibility fix to task_allocator
+
+ MFCSTL:
+
+  - fix to post-increment of list_adaptor iterator
+
+ UNIXSTL:
+
+  - addition of member types to readdir_sequence
+  - fix to string access shims
+
+ WinSTL:
+
+  - addition of ws_byte_t type
+  - addition of winstl_char_conversions.h file
+  - control functionals now work correctly whether target window is Unicode or ANSI
+  - minor fix to findfile_sequence post-fix ops
+  - minor fix to findvolume_sequence post-fix ops
+  - compatibility fix to global_allocator, processheap_allocator, shell_allocator
+  - addition of post-increment for heapwalk_sequence
+  - class initialisation for performance_counter and highperformance_counter
+  - bug fixes for reg_key
+  - addition of binary type for reg_value
+
+ Samples:
+  - Greg Peet has donated a rather neat COM Component Categories Viewer
+
+
+================================================================================
+2nd July 2003 : STLSoft 1.6.3 => 1.6.4
+--------------------------------------------------------------------------------
+
+Sub-project versions
+
+  ATLSTL  no change - still 1.2.8
+  COMSTL  1.2.4 => 1.2.5
+  MFCSTL  1.3.3 => 1.3.4
+  UNIXSTL no change - still 1.0.3
+  WinSTL  1.3.5 => 1.3.6
+
+Changes:
+
+ STLSoft:
+  - Now compatible with VC++ 7.1 
+  - minor fix to manage wchar_t better
+  - provision to allow user-supplied asserts
+  - addition of empty() method and is_empty() shim for auto_buffer
+  - addition of stlsoft_char_traits<> and stlsoft_char_traits_safe<> templates
+    and redefinition of char_traits<> and char_traits_safe<> from them when
+    namespaces are supported
+  - minor fix to stlsoft_exceptions
+  - addition of fixed_array_4d<>, and some rather serious bug fixes to 1/2/3d
+  - addition of frame_array_4d<>, and some rather serious bug fixes to 1/2/3d
+  - addition of n x char constructors to basic_frame_string<>
+  - fix to integer_to_string to work correctly with any compiler that does not
+    give -9 % 10 = -9. Though all the currently supported compilers do not need
+    this, it is necessary for future expansion
+  - necessary fixes to stlsoft_iterator to be compatible with VC++ 7.1
+  - addition of copy_all() algorithm
+  - addition of n x char constructors to basic_simple_string<>
+  - minor fix to stlsoft_string_access.h
+
+ COMSTL:
+
+  - Tiny fix to interface traits, to be compatible with VC++ 5.0
+  - Fix to GUID string access shims, to be compatible with Borland
+
+ MFCSTL:
+
+  - Now compatible with VC++ 4.2
+  - minor fix to array_veneer
+  - minor fix to cstring_veneer
+
+ WinSTL:
+
+  - Now compatible with VC++ 4.2
+  - minor fix to winstl_absolute_path.h
+  - minor fix to winstl_combobox_sequence.h
+  - minor fix to winstl_commctrl_functionals.h
+  - minor fix to winstl_current_directory_scope.h
+  - minor fixes to winstl_drophandle_sequence.h
+  - minor fix to winstl_environment_variable.h
+  - minor fix to winstl_file_path_buffer
+  - minor fix to winstl_findfile_sequence.h; addition of get_directory() method
+  - minor fix to winstl_findvolume_sequence.h
+  - minor fix to winstl_listbox_sequence.h
+  - minor fix to winstl_module_filename.h
+  - minor fix to winstl_reg_defs.h
+  - minor fix to winstl_reg_key.h
+  - minor fix to winstl_reg_key_sequence.h
+  - minor fixes to winstl_reg_value_sequence.h
+  - minor fix to winstl_treeview_sequence.h
+
+
+
+================================================================================
+2nd June 2003 : STLSoft 1.6.2 => 1.6.3
+--------------------------------------------------------------------------------
+
+Sub-project versions
+
+  ATLSTL  1.2.7 => 1.2.8
+  COMSTL  1.2.3 => 1.2.4
+  MFCSTL  1.3.2 => 1.3.3
+  UNIXSTL 1.0.2 => 1.0.3
+  WinSTL  1.3.4 => 1.3.5
+
+Changes:
+
+ STLSoft:
+
+    General:
+
+    - Minor corrections to documentation
+
+    stlsoft.h
+
+     - Added support for Open Watcom 1.0 (Watcom 12.0)
+     - Added detection of support for template range methods, 
+        __STLSOFT_CF_MEMBER_TEMPLATE_RANGE_METHOD_SUPPORT (Borland, Comeau,
+                                                          Gnu C++, Intel,
+                                                          Visual C++ 6.0,
+                                                          Metrowerks,
+     - Added recognition of support for Koenig lookup for Digital Mars 8.34+
+
+    stlsoft_auto_buffer.h
+
+     - made the CCH template parameter publicly available as the enumeration
+        member cch
+
+    stlsoft_char_traits.h
+
+     - added length_max(), length_max_null()
+
+    stlsoft_fixed_array.h
+
+     - Changed the exception-throwing to avoid incorrect warnings for VC++
+
+    stlsoft_frame_array.h
+
+     - Changed the exception-throwing to avoid incorrect warnings for VC++
+
+    stlsoft_frame_string.h
+
+     - added range construction/assignment support
+
+    stlsoft_integer_to_string.h
+
+     - benign refactory of pre-processor discrimination
+
+    stlsoft_iterator.h
+
+     - added stlsoft_iterator_query_category() macro
+     - fixes to pointer_iterator, so it can work with
+       Intel/Visual C++/Dinkumware/STLport
+
+    stlsoft_simple_algorithms.h
+
+     - added for_all() algorithm, which saves always having to write
+       for_each(s.begin(), s.end(), F()). Now becomes for_all(s, F())
+
+    stlsoft_simple_string.h
+
+     - bug fixes
+     - added range construction/assignment/appending methods
+
+    stlsoft_string_tokeniser.h
+
+     - Destructive redefinition: Now includes a value type, so that can be
+       different from string type. This has changed the template parameter list,
+       so all previous using code will be broken
+
+    stlsoft_string_traits.h
+
+    - Added empty_string() method
+
+
+ ATLSTL:
+
+    General:
+
+    - Minor corrections to documentation
+
+ COMSTL:
+
+    General:
+
+    - Minor corrections to documentation
+
+    comstl_functionals.h
+
+     - fixed std_mem_fun_t
+     - added std_mem_fun
+     - added std_mem_fun_ref_t
+     - added std_mem_fun_ref
+
+
+ MFCSTL:
+
+    General:
+
+    - Minor corrections to documentation
+
+    mfcstl_array_veneer.h
+
+    - Corrected array_veneer to work with container as const
+
+ UNIXSTL:
+
+    General:
+
+    - Minor corrections to documentation
+
+    unixstl_performance_counter.h
+
+    - added get_period_count() to performance_counter to improve compatibility
+      with WinSTL's performance counters
+
+    unixstl_current_directory_scope.h
+
+    - current_directory_scope renamed to basic_current_directory_scope, and
+      current_directory_scope_a/_w typedefs provided
+
+ WinSTL:
+
+    General:
+
+    - Minor corrections to documentation
+
+    winstl.h
+
+     - Added support for Open Watcom 1.0 (Watcom 12.0)
+
+    winstl_absolute_path.h
+
+    - absolute_path renamed to basic_absolute_path, and absolute_path_a/_w/_t
+      typedefs provided
+
+    winstl_current_directory.h
+
+    - current_directory renamed to basic_current_directory, and
+      current_directory_a/_w typedefs provided
+
+    winstl_current_directory_scope.h
+
+    - current_directory_scope renamed to basic_current_directory_scope, and
+      current_directory_scope_a/_w typedefs provided
+
+    winstl_commctrl_functionals.h
+
+     - listview_front_inserter and listview_back_inserter become
+       parameterisations of listview_inserter<> template
+     - added treeview_inserter
+
+    winstl_drophandle_sequence.h
+
+     - addition of Reverse Iterator semantics.
+     - Oh, and it actually works now, which is a nice change from the previous
+       version!
+
+    winstl_environment_sequence.h
+
+    - environment_sequence renamed to basic_environment_sequence, and
+      environment_sequence_a/_w typedefs provided
+
+    winstl_environment_variable.h
+
+    - environment_variable renamed to basic_environment_variable, and
+      environment_variable_a/_w typedefs provided
+
+    winstl_filesystem_traits.h
+
+    - fix to declarations of FindNextVolumeA/W()
+
+    winstl_module_filename.h
+
+    - module_filename turned into a template & renamed to basic_module_filename, and
+      module_filename_a/_w typedefs provided
+
+    winstl_reg_defs.h
+
+     - The registry APIs now stlsoft::basic_simple_string by default, but string
+       type is user-selectable
+
+    winstl_reg_key.h
+
+     - Added copy-constructor that takes a permissions specification, so can
+       (re-)open read-only keys as writable and vice versa
+
+    winstl_reg_key_sequence.h
+
+     - fixed bug whereby key names could be manged
+
+    winstl_reg_value.h
+
+     - fixed bug whereby key names could be manged
+
+    winstl_reg_value_sequence.h
+
+     - fixed bug whereby value names could be manged
+
+    winstl_searchpath_sequence.h
+
+     - Changed ctor to provide bIncludeApplicationDirectory,
+       bIncludeCurrentDirectory and bApplicationDirectoryFirst which allow
+       better selection of behaviour
+
+    winstl_system_directory.h
+
+    - system_directory renamed to basic_system_directory, and
+      system_directory_a/_w typedefs provided
+
+    winstl_thread_mutex.h
+
+     - Added methods to support spin-counts and try-locks
+
+    winstl_windows_directory.h
+
+    - windows_directory renamed to basic_windows_directory, and
+      windows_directory_a/_w typedefs provided
+
+
+================================================================================
+
+
+================================================================================
+STLSoft 1.6.2 & previous
+--------------------------------------------------------------------------------
+
+Previous release history available on mailing-list mail-outs only. Don't worry
+if you're not on the mailing-list, as there's probably no reason to want to go
+back to previous versions. Most of them were very bad. :)
+
+================================================================================
+
+

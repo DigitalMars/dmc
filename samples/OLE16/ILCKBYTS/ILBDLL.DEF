@@ -1,0 +1,27 @@
+; To implement your own Windows Exit Procedure add the following
+; function to your application (referring to it in the .def file is
+; not required.)  The extern "C" is only required if module is C++.
+; extern "C" int FAR PASCAL _WEP(int)
+; {
+;       /* Your WEP functionality goes here */
+;  return 1;
+; }
+
+LIBRARY		"ILBDLL" INITINSTANCE 
+
+DESCRIPTION	'ILBDLL Project'
+
+EXETYPE		WINDOWS
+
+PROTMODE
+
+STUB		'WINSTUB.EXE'
+
+CODE		 SHARED PRELOAD MOVEABLE IOPL CONFORMING DISCARDABLE EXECUTEONLY
+
+DATA		 SHARED SINGLE  PRELOAD MOVEABLE NOIOPL  NONDISCARDABLE  READWRITE
+
+HEAPSIZE	1024
+
+EXPORTS
+		_WEP PRIVATE

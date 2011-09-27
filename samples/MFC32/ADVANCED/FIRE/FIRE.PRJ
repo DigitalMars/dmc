@@ -1,0 +1,12 @@
+82570
+c:\SamplesMFC32\ADVANCED\FIRE\fire.prj
+fire.OPN
+novcs
+fire.DEF
+16
+834106338
+0 0 0 0 0 "fire.cpp" ""
+0 0 0 0 0 "firedlg.cpp" ""
+0 0 0 0 0 "firewnd.cpp" ""
+0 0 0 0 0 "fire.DEF" ""
+0 0 0 0 0 "fire.rc" ""

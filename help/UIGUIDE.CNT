@@ -1,0 +1,607 @@
+:Base uiguide.hlp
+:Title The Windows Interface Guidelines for Software Design
+:Index Windows Interface Guidelines =uiguide.hlp
+1 Copyright Notice =CP_0_
+1 Introduction
+1 Welcome! =00_INTRO_1_
+1 What’s New =00_INTRO_2_
+1 How to Use This Guide =00_INTRO_3_
+1 How to Apply the Guidelines =00_INTRO_4_
+1 Conventions Used in This Guide =00_INTRO_5_
+1 Basic Concepts
+1 Introduction =02_BACON_1_
+1 Data-Centered Design =02_BACON_2_
+2 Objects as Metaphor
+2 Introduction =02_BACON_4_
+2 Object Characteristics =02_BACON_5_
+2 Relationships =02_BACON_6_
+2 Composition =02_BACON_7_
+2 Persistence =02_BACON_8_
+1 Putting Theory into Practice =02_BACON_9_
+1 The Windows Environment
+1 Introduction =03_ENVIR_1_
+1 The Desktop =03_ENVIR_2_
+2 The Taskbar
+2 Introduction =03_ENVIR_4_
+2 The Start Button =03_ENVIR_5_
+2 Window Buttons =03_ENVIR_6_
+2 The Status Area =03_ENVIR_7_
+1 Icons =03_ENVIR_8_
+1 Windows =03_ENVIR_9_
+1 Design Principles and Methodology
+1 Introduction =01_PRNPL_1_
+2 User-Centered Design Principles
+2 Introduction =01_PRNPL_3_
+2 User in Control =01_PRNPL_4_
+2 Directness =01_PRNPL_5_
+2 Consistency =01_PRNPL_6_
+2 Forgiveness =01_PRNPL_7_
+2 Feedback =01_PRNPL_8_
+2 Aesthetics =01_PRNPL_9_
+2 Simplicity =01_PRNPL_10_
+2 Design Methodology
+2 Introduction =01_PRNPL_12_
+2 A Balanced Design Team =01_PRNPL_13_
+3 The Design Cycle
+3 Introduction =01_PRNPL_15_
+3 Design =01_PRNPL_16_
+3 Prototype =01_PRNPL_17_
+3 Test =01_PRNPL_18_
+3 Iterate =01_PRNPL_19_
+3 Usability Assessment in the Design Process
+3 Introduction =01_PRNPL_21_
+3 Usability Testing Techniques =01_PRNPL_22_
+3 Other Assessment Techniques =01_PRNPL_23_
+1 Understanding Users =01_PRNPL_24_
+1 Design Tradeoffs =01_PRNPL_25_
+1 Input Basics
+1 Introduction =04_INPUT_1_
+2 Mouse Input
+2 Introduction =04_INPUT_3_
+2 Mouse Pointers =04_INPUT_4_
+2 Mouse Actions =04_INPUT_5_
+2 Keyboard Input
+2 Introduction =04_INPUT_7_
+2 Text Keys =04_INPUT_8_
+2 Access Keys =04_INPUT_9_
+2 Mode Keys =04_INPUT_10_
+2 Shortcut Keys =04_INPUT_11_
+2 Pen Input
+2 Introduction =04_INPUT_13_
+2 Pen Pointers =04_INPUT_14_
+2 Pen Gestures =04_INPUT_15_
+2 Pen Recognition =04_INPUT_16_
+2 Ink Input =04_INPUT_17_
+2 Targeting =04_INPUT_18_
+1 General Interaction Techniques
+1 Introduction =05_INACT_1_
+2 Navigation
+2 Introduction =05_INACT_3_
+2 Mouse and Pen Navigation =05_INACT_4_
+3 Keyboard Navigation
+3 Introduction =05_INACT_6_
+3 Basic Navigation Keys =05_INACT_7_
+2 Selection
+2 Introduction =05_INACT_9_
+2 Selection Feedback =05_INACT_10_
+2 Scope of Selection =05_INACT_11_
+2 Hierarchical Selection =05_INACT_12_
+3 Mouse Selection
+3 Introduction =05_INACT_14_
+3 Basic Selection =05_INACT_15_
+3 Selection Adjustment =05_INACT_16_
+3 Region Selection =05_INACT_17_
+2 Pen Selection =05_INACT_18_
+3 Keyboard Selection
+3 Introduction =05_INACT_20_
+3 Contiguous Selection =05_INACT_21_
+3 Disjoint Selection =05_INACT_22_
+2 Selection Shortcuts =05_INACT_23_
+2 Common Conventions for Supporting Operations
+2 Introduction =05_INACT_25_
+2 Operations for a Multiple Selection =05_INACT_26_
+2 Default Operations and Shortcut Techniques =05_INACT_27_
+3 View Operations
+3 Introduction =05_INACT_29_
+3 View Shortcuts =05_INACT_30_
+2 Editing Operations
+2 Introduction =05_INACT_32_
+3 Editing Text
+3 Introduction =05_INACT_34_
+3 Inserting Text =05_INACT_35_
+3 Overtype Mode =05_INACT_36_
+3 Deleting Text =05_INACT_37_
+2 Handles =05_INACT_38_
+2 Transactions =05_INACT_39_
+2 Properties =05_INACT_40_
+3 Pen-Specific Editing Techniques
+3 Introduction =05_INACT_42_
+3 Editing in Pen-Enabled Controls =05_INACT_43_
+3 Pen Editing Gestures =05_INACT_44_
+2 Transfer Operations
+2 Introduction =05_INACT_46_
+2 Command Method =05_INACT_47_
+3 Direct Manipulation Method
+3 Introduction =05_INACT_49_
+3 Default Drag and Drop =05_INACT_50_
+3 Nondefault Drag and Drop =05_INACT_51_
+3 Canceling a Drag and Drop Transfer =05_INACT_52_
+3 Differentiating Transfer and Selection When Dragging =05_INACT_53_
+3 Scrolling When Transferring by Dragging =05_INACT_54_
+3 Transfer Feedback
+3 Introduction =05_INACT_56_
+3 Command Method Transfers =05_INACT_57_
+3 Direct Manipulation Transfers =05_INACT_58_
+2 Specialized Transfer Commands =05_INACT_59_
+2 Shortcut Keys for Transfer Operations =05_INACT_60_
+2 Creation Operations
+2 Introduction =05_INACT_62_
+2 Copy Command =05_INACT_63_
+2 New Command =05_INACT_64_
+2 Insert Command =05_INACT_65_
+2 Using Controls =05_INACT_66_
+2 Using Templates =05_INACT_67_
+1 Operations on Linked Objects =05_INACT_68_
+1 Windows
+1 Introduction =06_WINDO_1_
+1 Common Types of Windows =06_WINDO_2_
+2 Primary Window Components
+2 Introduction =06_WINDO_4_
+2 Window Frames =06_WINDO_5_
+2 Title Bars =06_WINDO_6_
+2 Title Bar Icons =06_WINDO_7_
+2 Title Text =06_WINDO_8_
+2 Title Bar Buttons =06_WINDO_9_
+2 Basic Window Operations
+2 Introduction =06_WINDO_11_
+2 Activating and Deactivating Windows =06_WINDO_12_
+2 Opening and Closing Windows =06_WINDO_13_
+2 Moving Windows =06_WINDO_14_
+3 Resizing Windows
+3 Introduction =06_WINDO_16_
+3 Sizing Borders =06_WINDO_17_
+3 Maximizing Windows =06_WINDO_18_
+3 Minimizing Windows =06_WINDO_19_
+3 Restoring Windows =06_WINDO_20_
+3 Size Grip =06_WINDO_21_
+3 Scrolling Windows
+3 Introduction =06_WINDO_23_
+3 Scroll Arrows =06_WINDO_24_
+3 Scroll Box =06_WINDO_25_
+3 Scroll Bar Shaft =06_WINDO_26_
+3 Automatic Scrolling =06_WINDO_27_
+3 Keyboard Scrolling =06_WINDO_28_
+3 Placing Adjacent Controls =06_WINDO_29_
+2 Splitting Windows =06_WINDO_30_
+1 Menus, Controls, and Toolbars
+1 Introduction =07_MENUS_1_
+2 Menus
+2 Introduction =07_MENUS_3_
+3 The Menu Bar and Drop-down Menus
+3 Introduction =07_MENUS_5_
+3 Drop-down Menu Interaction =07_MENUS_6_
+3 Common Drop-down Menus
+3 Introduction =07_MENUS_8_
+3 The File Menu =07_MENUS_9_
+3 The Edit Menu =07_MENUS_10_
+3 The View Menu =07_MENUS_11_
+3 The Window Menu =07_MENUS_12_
+3 The Help Menu =07_MENUS_13_
+2 Pop-up Menus =07_MENUS_14_
+2 Pop-up Menu Interaction =07_MENUS_15_
+3 Common Pop-up Menus
+3 Introduction =07_MENUS_17_
+3 The Window Pop-up Menu =07_MENUS_18_
+3 Icon Pop-up Menus =07_MENUS_19_
+2 Cascading Menus =07_MENUS_20_
+2 Menu Titles =07_MENUS_21_
+3 Menu Items
+3 Introduction =07_MENUS_23_
+3 Types of Menu Items =07_MENUS_24_
+3 Menu Item Labels =07_MENUS_25_
+3 Shortcut Keys in Menu Items =07_MENUS_26_
+2 Controls
+2 Introduction =07_MENUS_28_
+3 Buttons
+3 Introduction =07_MENUS_30_
+3 Command Buttons =07_MENUS_31_
+3 Option Buttons =07_MENUS_32_
+3 Check Boxes =07_MENUS_33_
+3 List Boxes
+3 Introduction =07_MENUS_35_
+3 Single Selection List Boxes =07_MENUS_36_
+3 Drop-down List Boxes =07_MENUS_37_
+3 Extended and Multiple Selection List Boxes =07_MENUS_38_
+3 List View Controls =07_MENUS_39_
+3 Tree View Controls =07_MENUS_40_
+3 Text Fields
+3 Introduction =07_MENUS_42_
+3 Text Boxes =07_MENUS_43_
+3 Rich-Text Boxes =07_MENUS_44_
+3 Combo Boxes =07_MENUS_45_
+3 Drop-down Combo Boxes =07_MENUS_46_
+3 Spin Boxes =07_MENUS_47_
+3 Static Text Fields =07_MENUS_48_
+3 Shortcut Key Input Controls =07_MENUS_49_
+3 Other General Controls
+3 Introduction =07_MENUS_51_
+3 Group Boxes =07_MENUS_52_
+3 Column Headings =07_MENUS_53_
+3 Tabs =07_MENUS_54_
+3 Property Sheet Controls =07_MENUS_55_
+3 Scroll Bars =07_MENUS_56_
+3 Sliders =07_MENUS_57_
+3 Progress Indicators =07_MENUS_58_
+3 Tooltip Controls =07_MENUS_59_
+3 Wells =07_MENUS_60_
+3 Pen-Specific Controls
+3 Introduction =07_MENUS_62_
+3 Boxed Edit Controls =07_MENUS_63_
+3 Ink Edit Controls =07_MENUS_64_
+2 Toolbars and Status Bars
+2 Introduction =07_MENUS_66_
+2 Interaction with Controls in Toolbars and Status Bars =07_MENUS_67_
+2 Support for User Options =07_MENUS_68_
+2 Toolbar and Status Bar Controls =07_MENUS_69_
+2 Common Toolbar Buttons =07_MENUS_70_
+1 Secondary Windows
+1 Introduction =08_SCWIN_1_
+2 Characteristics of Secondary Windows
+2 Introduction =08_SCWIN_3_
+3 Appearance and Behavior
+3 Introduction =08_SCWIN_5_
+3 Interaction with Other Windows =08_SCWIN_6_
+3 Unfolding Secondary Windows =08_SCWIN_7_
+3 Cascading Secondary Windows =08_SCWIN_8_
+2 Window Placement =08_SCWIN_9_
+2 Modeless vs. Modal =08_SCWIN_10_
+2 Default Buttons =08_SCWIN_11_
+2 Navigation in Secondary Windows =08_SCWIN_12_
+2 Validation of Input =08_SCWIN_13_
+2 Property Sheets and Inspectors
+2 Introduction =08_SCWIN_15_
+2 Property Sheet Interface =08_SCWIN_16_
+2 Property Sheet Commands =08_SCWIN_17_
+2 Closing a Property Sheet =08_SCWIN_18_
+2 Property Inspectors =08_SCWIN_19_
+2 Properties of a Multiple Selection =08_SCWIN_20_
+2 Properties of a Heterogeneous Selection =08_SCWIN_21_
+2 Properties of Grouped Items =08_SCWIN_22_
+2 Dialog Boxes
+2 Introduction =08_SCWIN_24_
+2 Dialog Box Commands =08_SCWIN_25_
+2 Layout =08_SCWIN_26_
+3 Common Dialog Box Interfaces
+3 Introduction =08_SCWIN_28_
+3 Open Dialog Box =08_SCWIN_29_
+3 Save As Dialog Box =08_SCWIN_30_
+3 Find and Replace Dialog Boxes =08_SCWIN_31_
+3 Print Dialog Box =08_SCWIN_32_
+3 Print Setup Dialog Box =08_SCWIN_33_
+3 Page Setup Dialog Box =08_SCWIN_34_
+3 Font Dialog Box =08_SCWIN_35_
+3 Color Dialog Box =08_SCWIN_36_
+1 Palette Windows =08_SCWIN_37_
+2 Message Boxes
+2 Introduction =08_SCWIN_39_
+2 Title Bar Text =08_SCWIN_40_
+2 Message Box Types =08_SCWIN_41_
+2 Command Buttons in Message Boxes =08_SCWIN_42_
+2 Message Box Text =08_SCWIN_43_
+1 Pop-up Windows =08_SCWIN_44_
+1 Window Management
+1 Introduction =09_MNGMT_1_
+1 Single Document Window Interface =09_MNGMT_2_
+2 Multiple Document Interface
+2 Introduction =09_MNGMT_4_
+2 Opening and Closing MDI Windows =09_MNGMT_5_
+2 Moving and Sizing MDI Windows =09_MNGMT_6_
+2 Switching Between MDI Child Windows =09_MNGMT_7_
+2 MDI Alternatives
+2 Introduction =09_MNGMT_9_
+3 Workspaces
+3 Introduction =09_MNGMT_11_
+3 Workspaces as a Container =09_MNGMT_12_
+3 Workspaces for Task Grouping =09_MNGMT_13_
+3 Window Management in a Workspace =09_MNGMT_14_
+2 Workbooks =09_MNGMT_15_
+2 Projects =09_MNGMT_16_
+2 Selecting a Window Model
+2 Introduction =09_MNGMT_18_
+2 Presentation of Object or Task =09_MNGMT_19_
+2 Display Layout =09_MNGMT_20_
+2 Data-Centered Design =09_MNGMT_21_
+2 Combination of Alternatives =09_MNGMT_22_
+1 Integrating with the System
+1 Introduction =10_RGSTR_1_
+2 The Registry
+2 Introduction =10_RGSTR_3_
+2 Registering Application State Information =10_RGSTR_4_
+2 Registering Application Path Information =10_RGSTR_5_
+3 Registering File Extensions
+3 Introduction =10_RGSTR_7_
+3 The Filename Extension Key =10_RGSTR_8_
+3 The Application Identifier Key =10_RGSTR_9_
+2 Supporting Creation =10_RGSTR_10_
+2 Registering Icons =10_RGSTR_11_
+2 Registering Commands =10_RGSTR_12_
+2 Enabling Printing =10_RGSTR_13_
+2 Registering OLE =10_RGSTR_14_
+2 Registering Shell Extensions =10_RGSTR_15_
+2 Supporting the Quick View Command =10_RGSTR_16_
+2 Registering Sound Events =10_RGSTR_17_
+2 Installation
+2 Introduction =10_RGSTR_19_
+2 Copying Files =10_RGSTR_20_
+2 Providing Access to Your Application =10_RGSTR_21_
+2 Designing Your Installation Program =10_RGSTR_22_
+2 Installing Fonts =10_RGSTR_23_
+2 Installing Your Application on a Network =10_RGSTR_24_
+2 Uninstalling Your Application =10_RGSTR_25_
+2 Supporting AutoPlay =10_RGSTR_26_
+1 System Naming Conventions =10_RGSTR_27_
+2 Taskbar Integration
+2 Introduction =10_RGSTR_29_
+2 Taskbar Window Buttons =10_RGSTR_30_
+2 Status Notification =10_RGSTR_31_
+2 Message Notification =10_RGSTR_32_
+1 Application Desktop Toolbars =10_RGSTR_33_
+1 Full-Screen Display =10_RGSTR_34_
+1 Recycle Bin Integration =10_RGSTR_35_
+2 Control Panel Integration
+2 Introduction =10_RGSTR_37_
+2 Adding Control Panel Objects =10_RGSTR_38_
+2 Adding to the Passwords Object =10_RGSTR_39_
+1 Plug and Play Support =10_RGSTR_40_
+1 System Settings and Notification =10_RGSTR_41_
+1 Modeless Interaction =10_RGSTR_42_
+1 Working with OLE Embedded and OLE Linked Objects
+1 Introduction =11_OLE_1_
+1 The Interaction Model =11_OLE_2_
+2 Creating OLE Embedded and OLE Linked Objects
+2 Introduction =11_OLE_4_
+3 Transferring Objects
+3 Introduction =11_OLE_6_
+3 The Paste Command =11_OLE_7_
+3 The Paste Special Command =11_OLE_8_
+3 The Paste Link, Paste Shortcut, and Create Shortcut Commands =11_OLE_9_
+3 Direct Manipulation =11_OLE_10_
+3 Transfer of Data to Desktop =11_OLE_11_
+3 Inserting New Objects
+3 Introduction =11_OLE_13_
+3 The Insert Object Command =11_OLE_14_
+3 Other Techniques for Inserting Objects =11_OLE_15_
+1 Displaying Objects =11_OLE_16_
+2 Selecting Objects
+2 Introduction =11_OLE_18_
+2 Accessing Commands for Selected Objects =11_OLE_19_
+2 Activating Objects
+2 Introduction =11_OLE_21_
+2 Outside-in Activation =11_OLE_22_
+2 Inside-out Activation =11_OLE_23_
+2 Container Control of Activation =11_OLE_24_
+2 OLE Visual Editing of OLE Embedded Objects
+2 Introduction =11_OLE_26_
+2 The Active Hatched Border =11_OLE_27_
+3 Menu Integration
+3 Introduction =11_OLE_29_
+3 Primary Container Menu =11_OLE_30_
+3 Workspace Menu =11_OLE_31_
+3 Active Object Menus =11_OLE_32_
+3 Keyboard Interface Integration
+3 Introduction =11_OLE_34_
+3 Access Keys =11_OLE_35_
+3 Shortcut Keys =11_OLE_36_
+2 Toolbars, Frame Adornments, and Palette Windows =11_OLE_37_
+2 Opening OLE Embedded Objects =11_OLE_38_
+2 Editing an OLE Linked Object
+2 Introduction =11_OLE_40_
+2 Automatic and Manual Updating =11_OLE_41_
+2 Operations and Links =11_OLE_42_
+2 Types and Links =11_OLE_43_
+2 Link Management =11_OLE_44_
+2 Accessing Properties of OLE Objects
+2 Introduction =11_OLE_46_
+2 The Properties Command =11_OLE_47_
+2 The Links Command =11_OLE_48_
+1 Converting Types =11_OLE_49_
+1 Using Handles =11_OLE_50_
+1 Undo Operations for Active and Open Objects =11_OLE_51_
+2 Displaying Messages
+2 Introduction =11_OLE_53_
+3 Object Application Messages
+3 Introduction =11_OLE_55_
+3 Object’s Application Cannot Run Standalone =11_OLE_56_
+3 Object’s Application Busy =11_OLE_57_
+3 Object’s Application Unavailable =11_OLE_58_
+3 OLE Linked Object Messages
+3 Introduction =11_OLE_60_
+3 Link Source Files Unavailable =11_OLE_61_
+3 Link Source Type Changed =11_OLE_62_
+3 Link Updating =11_OLE_63_
+2 Status Line Messages =11_OLE_64_
+1 User Assistance
+1 Introduction =12_ASIST_1_
+2 Contextual User Assistance
+2 Introduction =12_ASIST_3_
+2 Context-Sensitive Help =12_ASIST_4_
+2 Guidelines for Writing Context-Sensitive Help =12_ASIST_5_
+2 Tooltips =12_ASIST_6_
+2 Status Bar Messages =12_ASIST_7_
+2 Guidelines for Writing Status Bar Messages =12_ASIST_8_
+2 The Help Command Button =12_ASIST_9_
+2 Task-Oriented Help
+2 Introduction =12_ASIST_11_
+2 Task Topic Windows =12_ASIST_12_
+2 Guidelines for Writing Task Help Topics =12_ASIST_13_
+2 Shortcut Buttons =12_ASIST_14_
+2 Reference Help
+2 Introduction =12_ASIST_16_
+2 The Reference Help Window =12_ASIST_17_
+3 Guidelines for Writing Reference Help
+3 Adding Menus and Toolbar Buttons =12_ASIST_19_
+3 Topic Titles =12_ASIST_20_
+3 Nonscrolling Regions =12_ASIST_21_
+3 Jumps =12_ASIST_22_
+2 The Help Topics Browser
+2 Introduction =12_ASIST_24_
+3 The Help Topics Tabs
+3 Introduction =12_ASIST_26_
+3 The Contents Page =12_ASIST_27_
+3 Guidelines for Writing Help Contents Entries =12_ASIST_28_
+3 The Index Page =12_ASIST_29_
+3 Guidelines for Writing Help Index Keywords =12_ASIST_30_
+3 The Find Page =12_ASIST_31_
+2 Wizards
+2 Introduction =12_ASIST_33_
+2 Guidelines for Designing Wizards =12_ASIST_34_
+2 Guidelines for Writing Text for Wizard Pages =12_ASIST_35_
+1 Visual Design
+1 Introduction =13_VISUL_1_
+2 Visual Communication
+2 Introduction =13_VISUL_3_
+3 Composition and Organization
+3 Introduction =13_VISUL_5_
+3 Hierarchy of Information =13_VISUL_6_
+3 Focus and Emphasis =13_VISUL_7_
+3 Structure and Balance =13_VISUL_8_
+3 Relationship of Elements =13_VISUL_9_
+3 Readability and Flow =13_VISUL_10_
+3 Unity and Integration =13_VISUL_11_
+3 Color
+3 Introduction =13_VISUL_13_
+3 Color as a Secondary Form of Information =13_VISUL_14_
+3 Use of a Limited Set of Colors =13_VISUL_15_
+3 Options to Change Colors =13_VISUL_16_
+2 Fonts =13_VISUL_17_
+2 Dimensionality =13_VISUL_18_
+2 Design of Visual Elements
+2 Introduction =13_VISUL_20_
+2 Basic Border Styles =13_VISUL_21_
+2 Window Border Style =13_VISUL_22_
+2 Button Border Styles =13_VISUL_23_
+2 Field Border Style =13_VISUL_24_
+2 Status Field Border Style =13_VISUL_25_
+2 Grouping Border Style =13_VISUL_26_
+3 Visual States for Controls
+3 Introduction =13_VISUL_28_
+3 Pressed Appearance =13_VISUL_29_
+3 Option-Set Appearance =13_VISUL_30_
+3 Mixed-Value Appearance =13_VISUL_31_
+3 Unavailable Appearance =13_VISUL_32_
+3 Input Focus Appearance =13_VISUL_33_
+3 Flat Appearance =13_VISUL_34_
+2 Layout
+2 Introduction =13_VISUL_36_
+2 Font and Size =13_VISUL_37_
+2 Capitalization =13_VISUL_38_
+2 Grouping and Spacing =13_VISUL_39_
+2 Alignment =13_VISUL_40_
+2 Placement =13_VISUL_41_
+2 Design of Graphic Images
+2 Introduction =13_VISUL_43_
+3 Icon Design
+3 Introduction =13_VISUL_45_
+3 Sizes and Types =13_VISUL_46_
+3 Icon Style =13_VISUL_47_
+2 Pointer Design =13_VISUL_48_
+2 Selection Appearance
+2 Introduction =13_VISUL_50_
+2 Highlighting =13_VISUL_51_
+2 Handles =13_VISUL_52_
+1 Transfer Appearance =13_VISUL_53_
+1 Open Appearance =13_VISUL_54_
+1 Animation =13_VISUL_55_
+1 Special Design Considerations
+1 Introduction =14_SPECL_1_
+1 Sound =14_SPECL_2_
+2 Accessibility
+2 Introduction =14_SPECL_4_
+3 Types of Disabilities
+3 Introduction =14_SPECL_6_
+3 Visual Disabilities =14_SPECL_7_
+3 Hearing Disabilities =14_SPECL_8_
+3 Physical Movement Disabilities =14_SPECL_9_
+3 Speech or Language Disabilities =14_SPECL_10_
+3 Cognitive Disabilities =14_SPECL_11_
+3 Seizure Disorders =14_SPECL_12_
+3 Types of Accessibility Aids
+3 Introduction =14_SPECL_14_
+3 Screen Enlargement Utilities =14_SPECL_15_
+3 Screen Review Utilities =14_SPECL_16_
+3 Voice Input Systems =14_SPECL_17_
+3 On-Screen Keyboards =14_SPECL_18_
+3 Keyboard Filters =14_SPECL_19_
+3 Compatibility with Screen Review Utilities
+3 Introduction =14_SPECL_21_
+3 Controls =14_SPECL_22_
+3 Text Output =14_SPECL_23_
+3 Graphics Output =14_SPECL_24_
+3 Icons and Windows =14_SPECL_25_
+2 The User’s Point of Focus =14_SPECL_26_
+2 Timing and Navigational Interfaces =14_SPECL_27_
+3 Color
+3 Introduction =14_SPECL_29_
+3 Scalability =14_SPECL_30_
+2 Keyboard and Mouse Interface =14_SPECL_31_
+2 Documentation, Packaging, and Support =14_SPECL_32_
+2 Usability Testing =14_SPECL_33_
+2 Internationalization
+2 Introduction =14_SPECL_35_
+2 Text =14_SPECL_36_
+2 Graphics =14_SPECL_37_
+2 Keyboards =14_SPECL_38_
+2 Character Sets =14_SPECL_39_
+2 Formats =14_SPECL_40_
+2 Layout =14_SPECL_41_
+2 References to Unsupported Features =14_SPECL_42_
+2 Network Computing
+2 Introduction =14_SPECL_44_
+2 Leverage System Support =14_SPECL_45_
+2 Client-Server Applications =14_SPECL_46_
+2 Shared Data Files =14_SPECL_47_
+1 Record Processing =14_SPECL_48_
+1 Telephony =14_SPECL_49_
+2 Microsoft Exchange
+2 Introduction =14_SPECL_51_
+2 Coexisting with Other Information Services =14_SPECL_52_
+2 Adding Menu Items and Toolbar Buttons =14_SPECL_53_
+2 Supporting Connections =14_SPECL_54_
+2 Installing Information Services =14_SPECL_55_
+1 Mouse Interface Summary
+1 Introduction =APA_MOUS_1_
+1 Interaction Guidelines for Common Unmodified Mouse Actions =APA_MOUS_2_
+1 Interaction Guidelines for Using the SHIFT Key to Modify Mouse Actions =APA_MOUS_3_
+1 Interaction Guidelines for Using the CTRL Key to Modify Mouse Actions  =APA_MOUS_4_
+1 Keyboard Interface Summary
+1 Introduction =APB_KEYS_1_
+1 Common Navigation Keys =APB_KEYS_2_
+1 Common Shortcut Keys =APB_KEYS_3_
+1 Windows Keys =APB_KEYS_4_
+1 Accessibility Keys =APB_KEYS_5_
+1 Access Key Assignments =APB_KEYS_6_
+1 Guidelines Summary
+1 Introduction =APC_GUID_1_
+1 General Design =APC_GUID_2_
+1 Design Process =APC_GUID_3_
+1 Input and Interaction =APC_GUID_4_
+1 Windows =APC_GUID_5_
+1 Control Usage =APC_GUID_6_
+1 Integration =APC_GUID_7_
+1 User Assistance =APC_GUID_8_
+1 Visual Design =APC_GUID_9_
+1 Sound =APC_GUID_10_
+1 Accessibility =APC_GUID_11_
+1 International Users =APC_GUID_12_
+1 Network Users =APC_GUID_13_
+1 Supporting Specific Versions of Windows
+1 Introduction =APD_SUPP_1_
+1 Microsoft Windows 3.1 =APD_SUPP_2_
+1 Microsoft Windows NT 3.51 =APD_SUPP_3_
+1 Bibliography
+1 General Design =BIBLIO_1_
+1 Graphic Information Design =BIBLIO_2_
+1 Usability  =BIBLIO_3_
+1 Object-Oriented Design =BIBLIO_4_
+1 Accessibility  =BIBLIO_5_
+1 Organizations =BIBLIO_6_

@@ -1,0 +1,124 @@
+/*
+ * STRINGS.RC
+ *
+ * strings for the OLE 2.0 UI Support Library.
+ *
+ * Copyright (c)1992 Microsoft Corporation, All Right Reserved
+ */
+
+
+#include "ole2ui.h"
+
+
+//Stringtable common for all dialogs.
+STRINGTABLE
+	BEGIN
+	 IDS_FILTERS,               "Alle Dateien (*.*)|*.*|"
+	 IDS_ICONFILTERS,           "Symbole|*.exe;*.dll;*.ico|Programme (*.exe)|*.exe|Bibliotheken (*.dll)|Symbole (*.ico)|Alle Dateien (*.*)|*.*|"
+	END
+
+// browse dialog
+STRINGTABLE
+	BEGIN
+	 IDS_BROWSE         "Durchsuchen"
+	END
+
+
+//Insert Object stringtable.
+STRINGTABLE
+	BEGIN
+	 IDS_IORESULTNEW,                "F|gt ein neues %s-Objekt in Ihr Dokument ein."
+	 IDS_IORESULTNEWICON,            "F|gt ein neues %s-Objekt in Ihr Dokument ein. Das Objekt wird als Symbol angezeigt."
+	 IDS_IORESULTFROMFILE1,          "F|gt die Inhalte der Datei als Objekt in Ihr Dokument ein. Sie kvnnen dann das Anwendungsprogramm verwenden, in dem das Objekt erstellt wurde,  "
+	 IDS_IORESULTFROMFILE2,          "um es zu vffnen."
+	 IDS_IORESULTFROMFILEICON2,      "um es zu vffnen. Das Objekt wird als Symbol angezeigt."
+	 IDS_IORESULTLINKFILE1,          "F|gt eine Abbildung der Inhalte der Datei in Ihr Dokument ein. Sie wird mit der Originaldatei verkn|pft, "
+	 IDS_IORESULTLINKFILE2,          "damit Dnderungen in der Datei direkt in Ihr Dokument |bernommen werden."
+	 IDS_IORESULTLINKFILEICON1,      "F|gt ein Symbol in Ihr Dokument ein, das f|r die Datei steht. Dieses Symbol wird mit der Datei verkn|pft, "
+	 IDS_IORESULTLINKFILEICON2,      "damit Dnderungen in der Datei direkt in Ihr Dokument |bernommen werden."
+	END
+
+//Change Icon stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_CINOICONSINFILE,        "Es sind keine Symbole f|r %s verf|gbar."
+	 IDS_CIINVALIDFILE,          "%s ist keine Symboldatei."
+	 IDS_CIFILEACCESS,           "%s kann nicht gevffnet werden. Zugriff verweigert."
+	 IDS_CIFILESHARE,            "%s kann nicht gevffnet werden. Verletzung der gemeinsamen Benutzerrechte."
+	 IDS_CIFILEOPENFAIL,         "%s kann nicht gevffnet werden. Allgemeiner Fehler."
+	END
+
+// Convert stringtable.
+STRINGTABLE
+	BEGIN
+	 IDS_CVRESULTCONVERTLINK,     "Ein verkn|pftes Objekt mu_ im Quellprogramm umgewandelt werden."
+	 IDS_CVRESULTCONVERTTO,       "Das ausgewdhlte %s-Objekt wird zu einem %s-Objekt umgewandelt."
+	 IDS_CVRESULTNOCHANGE,        "Das %s-Objekt kann nicht umgewandelt werden."
+	 IDS_CVRESULTDISPLAYASICON,   " Es wird als Symbol angezeigt."
+	 IDS_CVRESULTACTIVATEAS,      "Jedes %s-Objekt wird als %s-Objekt gevffnet,"
+	 IDS_CVRESULTACTIVATEDIFF,    " aber nicht umgewandelt."
+	END
+
+//Paste Special stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_PSPASTEDATA,         "F|gt den Inhalt der Zwischenablage als %s-Objekt ein."
+	 IDS_PSPASTEOBJECT,       "F|gt den Inhalt der Zwischenablage in Ihr Dokument ein, damit Sie es in %s vffnen kvnnen."
+	 IDS_PSPASTEOBJECTASICON, "F|gt den Inhalt der Zwischenablage in Ihr Dokument ein, damit Sie es in %s vffnen kvnnen. Es wird als Symbol angezeigt."
+	 IDS_PSPASTELINKDATA,     "F|gt den Inhalt der Zwischenablage als %s-Objekt in Ihr Dokument ein. Der Befehl ""Verkn|pfen und einf|gen"" wird eine Verbindung zu der Ursprungsdatei herstellen, damit Dnderungen in dieser Datei direkt in Ihr Dokument |bernommen werden."
+	 IDS_PSPASTELINKOBJECT,   "F|gt eine Abbildung der Inhalte der Datei in Ihr Dokument ein. Der Befehl ""Verkn|pfen und einf|gen"" wird eine Verbindung zu der Ursprungsdatei herstellen, damit Dnderungen in dieser Datei direkt in Ihr Dokument |bernommen werden."
+	 IDS_PSPASTELINKOBJECTASICON, "F|gt ein Symbol in Ihr Dokument ein, das f|r den Inhalt der Zwischenablage steht. Der Befehl ""Verkn|pfen und einf|gen"" wird eine Verbindung zu der Ursprungsdatei herstellen, damit Dnderungen in dieser Datei direkt in Ihr Dokument |bernommen werden."
+	 IDS_PSNONOLE,            "F|gt den Inhalt der Zwischenablage in Ihr Dokument ein."
+	 IDS_PSUNKNOWNTYPE,       "Unbekanntes Dateiformat"
+	 IDS_PSUNKNOWNSRC,        "Unbekannte Quelle"
+	 IDS_PSUNKNOWNAPP,        "dem Anwendungsprogramm, in dem es erstellt wurde,"
+	END
+
+// Busy/Blocked dialog stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_BZRESULTTEXTBUSY          "Die Aktion konnte nicht erfolgreich beendet werden, da das Anwendungsprogramm %s (%s) beschdftigt ist. Wdhlen Sie die Schaltfldche ""Wechseln zu"", um zu %s zu wechseln und das Problem zu lvsen."
+	 IDS_BZRESULTTEXTNOTRESPONDING "Die Aktion konnte nicht erfolgreich beendet werden, da das Anwendungsprogramm %s (%s) nicht antwortet. Wdhlen Sie die Schaltfldche ""Wechseln zu"", um zu %s zu wechseln und das Problem zu lvsen."
+	END
+
+// OLESTD stringtable
+STRINGTABLE
+	BEGIN
+	  IDS_OLESTDNOCREATEFILE, "Datei konnte nicht erstellt werden!"
+	  IDS_OLESTDNOOPENFILE,   "Datei konnte nicht gevffnet werden!"
+	  IDS_OLESTDDISKFULL,     "Datentrdger voll - Speichern konnte nicht erfolgreich beendet werden!"
+	END
+
+// OLE2UI stringtable
+STRINGTABLE
+	BEGIN
+	   IDS_OLE2UIEDITNOOBJCMD, "&Objekt"
+	   IDS_OLE2UIEDITLINKCMD_1VERB, "1 Verkn|pftes %s-&Objekt %s"
+	   IDS_OLE2UIEDITOBJECTCMD_1VERB, "1%s-&Objekt %s"
+	   IDS_OLE2UIEDITLINKCMD_NVERB, "Verkn|pftes %s-&Objekt"
+	   IDS_OLE2UIEDITOBJECTCMD_NVERB, "%s-&Objekt"
+	   IDS_OLE2UIUNKNOWN, "Unbekannt"
+	   IDS_OLE2UILINK,    "Verkn|pfung"
+	   IDS_OLE2UIOBJECT,  "Objekt"
+	   IDS_OLE2UIEDIT,    "&Bearbeiten"
+	   IDS_OLE2UICONVERT, "&Umwandeln..."
+	   IDS_DEFICONLABEL,  "Dokument"
+	   IDS_OLE2UIPASTELINKEDTYPE, "Verkn|pftes %s"
+	END
+
+// LINKS stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_LINK_AUTO              "Automatisch"
+	 IDS_LINK_MANUAL            "Manuell"
+	 IDS_LINK_UNKNOWN           "Nicht verf|gbar"
+	 IDS_LINKS                  "Verkn|pfungen"
+	 IDS_FAILED                 "Fehler!"
+	 IDS_CHANGESOURCE           "Quelle dndern"
+	 IDS_INVALIDSOURCE          "Ung|ltige Quelle - Wollen Sie sie dndern?"
+	 IDS_CHANGEADDITIONALLINKS  "Die Verkn|pfung ist gedndert worden.\nDieses Dokument enthdlt weitere Verkn|pfungen zu\n%s.\n\nWollen Sie alle Verkn|pfungen dndern?"
+	 IDS_ERR_GETLINKSOURCE      "Verkn|pfte Quelle kann nicht gefunden werden!"
+	 IDS_ERR_GETLINKUPDATEOPTIONS   "Verkn|pfte Quelle kann nicht aktualisiert werden!"
+	 IDS_ERR_ADDSTRING          "Element konnte nicht in das Listenfeld eingetragen werden!"
+	 IDS_CLOSE              "Schlie_en"
+	END

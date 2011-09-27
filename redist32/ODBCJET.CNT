@@ -1,0 +1,156 @@
+:Base odbcjet.hlp
+:Title ODBC Microsoft Desktop Database Drivers Help
+:Index ODBC Desktop Database Drivers Help=odbcjet.hlp
+1 For All Users
+2 Overview=Overview>ref
+2 Hardware and Software Requirements=Requirements>ref
+2 ODBC Component Files=ODBCComponentFiles>ref
+2 Product Support=ProductSupport>ref
+2 Setting Up Drivers=SettingUpDrivers>ref
+2 Adding, Modifying, or Deleting a Data Source
+3 Adding a Data Source=AddingADataSource>howto
+3 Adding a System Data Source=AddingASystemDataSource>howto
+3 Data Source Conversion=DataSourceConversion>ref
+3 Modifying a Data Source=ModifyingADataSource>howto
+3 Deleting a Data Source=DeletingADataSource>howto
+3 Adding, Modifying, or Deleting a Data Source Dynamically=AddingModifyingOrDeletingADataSourceDynamically>howto
+3 SQLConfigDataSource=SQLConfigDataSource
+3 Text Format
+4 Defining Text Format=TextFormat>ref
+4 SCHEMA.INI=SchemaIni>ref
+3 ODBC Setup Dialog Box
+4 Approximate Row Count=ApproximateRowCount>ref
+4 Buffer Size=BufferSize>ref
+4 Collating Sequence=CollatingSequence>ref
+4 Data Source Name=DataSourceName>ref
+4 Database=Database>ref
+4 Define Format=DefineFormat>ref
+4 Description=Description>ref
+4 Directory=Directory>ref
+4 Exclusive=Exclusive>ref
+4 Extensions List=ExtensionsList>ref
+4 Network Directory=NetworkDirectory>ref
+4 Page Timeout=PageTimeout>ref
+4 Read Only=ReadOnly>ref
+4 Rows to Scan=RowsToScan>ref
+4 Select Directory=SelectDirectory>ref
+4 Select Indexes=SelectIndexes>ref
+4 Show Deleted Rows=ShowDeletedRows>ref
+4 Sort Order=SortOrder>ref
+4 System Database=SystemDatabase>ref
+4 Use Current Directory=UseCurrentDirectory>ref
+4 User Name=UserName>ref
+4 Version=Version>ref
+4 Workbook=Workbook>ref
+2 Connecting to a Data Source
+3 Password Entry=PasswordEntry>ref
+3 Heterogeneous Joins/Attached Tables=HeterogeneousJoinsAttachedTables>ref
+3 Opening Microsoft Excel Tables=OpeningMicrosoftExcelTables>ref
+3 Password-Protected Files=PasswordProtectedFiles>ref
+3 Referential Integrity=ReferentialIntegrity>ref
+3 Lotus 123 Data/EMS Data=Lotus123DataEMSData>ref
+3 Visual Basic Support=VisualBasicSupport>ref
+1 For Advanced Users
+2 Connection Strings=ConnectString>ref
+2 Error Messages=Errors>ref
+2 Database Repair=DatabaseRepair>ref
+2 Database Compaction=DatabaseCompaction>ref
+2 SQL Statements
+3 ANSI SQL Compliance (Advanced)=ANSISQLCompliance
+3 Additional Supported ODBC SQL Grammar=Add_Grammar>ref
+3 Driver-Specific SQL Grammar
+4 BETWEEN Predicate=BETWEENPredicate>ref
+4 COUNT (expression)=COUNTExpression>ref
+4 CREATE INDEX Statement=CREATEINDEXStatement>ref
+4 Date Arithmetic=DateArithmetic>ref
+4 Date Literals=DateLiterals>ref
+4 DROP INDEX Statement=DROPINDEXStatement>ref
+4 Fixed-Width Text File=FixedWidthTextFile>ref
+4 GROUP BY expression-list=GROUPBYExpressionList>ref
+4 ORDER BY expression-list=ORDERBYExpressionList>ref
+4 ORDER BY with GROUP BY=ORDERBYWithGROUPBY>ref
+4 Outer Joins=OuterJoins>ref
+4 Scalar Functions=ScalarFunctions>ref
+4 Table Names=TableNames>ref
+3 Limitations to SQL Grammar
+4 Aggregate Functions Limitations=AggregateFunctionsLimitations>ref
+4 ALTER TABLE Statement Limitations=ALTERTABLEStatementLimitations>ref
+4 AND Predicate Limitations=ANDPredicatesLimitations>ref
+4 CALL Statement Limitations=CALLStatementLimitations>ref
+4 Column Name Limitations=ColumnNameLimitations>ref
+4 CONVERT Function Limitations=CONVERTFunctionLimitations>ref
+4 CREATE INDEX Statement Limitations=CREATEINDEXStatementLimitations>ref
+4 CREATE TABLE Statement Limitations=CREATETABLEStatementLimitations>ref
+4 Date Arithmetic Limitations=DateArithmeticLimitations>ref
+4 DELETE Statement Limitations=DELETEStatementLimitations>ref
+4 DISTINCT Keyword Limitations=DISTINCTKeywordLimitations>ref
+4 DROP INDEX Statement Limitations=DROPINDEXStatementLimitations
+4 DROP TABLE Statement Limitations=DROPTABLEStatementLimitations>ref
+4 FROM Clause Limitations=FROMClauseLimitations>ref
+4 HAVING Clause Limitations=HAVINGClauseLimitations>ref
+4 Identifiers Limitations=IdentifiersLimitations>ref
+4 Index Name Limitations=IndexNameLimitations>ref
+4 INSERT Statement Limitations=INSERTStatementLimitations>ref
+4 LIKE Predicate Limitations=LIKEPredicateLimitations>ref
+4 NOT NULL Limitations=NOTNULLLimitations>ref
+4 ORDER BY Clause Limitations=ORDERBYClauseLimitations>ref
+4 Parameterized Query Limitations=ParameterizedQueryLimitations>ref
+4 Reserved Word Limitations=ReservedWordLimitations>ref
+4 Scalar Function Limitations=ScalarFunctionLimitations>ref
+4 SELECT DISTINCT Limitations=SELECTDISTINCTLimitations>ref
+4 SELECT Statement Limitations=SELECTStatementLimitations>ref
+4 Set Functions Limitations=SetFunctionsLimitations>ref
+4 Sorting Limitations=SortingLimitations>ref
+4 String Limitations=StringLimitations>ref
+4 Table Name Limitations=TableNameLimitations>ref
+4 Table References Limitations=TableReferencesLimitations>ref
+4 UPDATE Statement Limitations=UPDATEStatementLimitations>ref
+4 Views Limitations=ViewsLimitations>ref
+4 WHERE Clause Limitations=WHEREClauseLimitations>ref
+4 WHERE CURRENT OF Clause Limitations=WHERECURRENTOFClauseLimitations>ref
+2 Data Types
+3 Microsoft Access=AccessDataTypes>ref
+3 dBASE=dBASEDataTypes>ref
+3 Microsoft Excel=ExcelDataTypes>ref
+3 Microsoft FoxPro=FoxProDataTypes>ref
+3 Paradox=ParadoxDataTypes>ref
+3 Text=TextDataTypes>ref
+3 Data Type Limitations=DataTypeLimit>ref
+1 For Programmers
+2 SQLGetInfo Returned Values=SQLGetInfoReturnValues>ref
+2 ODBC API Functions
+3 Supported ODBC API Functions=SupportedODBCAPIFunctions>ref
+3 SQLBindCol=SQLBindCol>ref
+3 SQLBindParameter=SQLBindParameter>ref
+3 SQLColAttributes=SQLColAttributes>ref
+3 SQLColumns=SQLColumns>ref
+3 SQLConfigDataSource=SQLConfigDataSource>ref
+3 SQLConnect=SQLConnect>ref
+3 SQLDriverConnect=SQLDriverConnect>ref
+3 SQLGetCursorName=SQLGetCursorName>ref
+3 SQLGetData=SQLGetData>ref
+3 SQLGetInfo=SQLGetInfo>ref
+3 SQLGetStmtOption=SQLGetStmtOption>ref
+3 SQLGetTypeInfo=SQLGetTypeInfo>ref
+3 SQLMoreResults=SQLMoreResults>ref
+3 SQLPrepare=SQLPrepare>ref
+3 SQLProcedureColumns=SQLProcedureColumns>ref
+3 SQLProcedures=SQLProcedures>ref
+3 SQLSetConnectOption=SQLSetConnectOption>ref
+3 SQLSetCursorName=SQLSetCursorName>ref
+3 SQLSetPos=SQLSetPos>ref
+3 SQLSetScrollOptions=SQLSetScrollOptions>ref
+3 SQLSetStmtOption=SQLSetStmtOption>ref
+3 SQLSpecialColumns=SQLSpecialColumns>ref
+3 SQLStatistics=SQLStatistics>ref
+3 SQLTables=SQLTables>ref
+3 SQLTransact=SQLTransact>ref
+2 Implementation Issues
+3 Arithmetic Errors=ArithmeticErrors>ref
+3 Base Address of Drivers=BaseAddressOfDrivers>ref
+3 Creating and Opening Tables=CreatingAndOpeningTables>ref
+3 Multiple hstmts=MultipleHstmts>ref
+3 Read-Only Status=ReadOnlyStatus>ref
+3 Setup DLL=SetupDLL>ref
+3 Single-User Mode Versus Multi-User Mode=SingleUserModeVersusMultiUserMode>ref
+3 Translation DLLs=TranslationDLLs>ref

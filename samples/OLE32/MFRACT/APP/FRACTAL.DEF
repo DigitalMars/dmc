@@ -1,0 +1,27 @@
+NAME		"MFract"
+
+DESCRIPTION	'Modular Fractal Generator for Windows NT'
+
+EXETYPE		NT
+
+SUBSYSTEM	WINDOWS
+
+STUB		'WINSTUB.EXE'
+
+VERSION		1.0
+
+CODE		 EXECUTE READ
+
+DATA		 READ WRITE
+
+STACKSIZE	1048576,4096
+
+HEAPSIZE	1048576,4096
+
+EXPORTS
+;		MainWndProc @1
+;		About @2
+;		MandlebrotSettings @3
+;		JuliaSettings @4
+;		ChangeDimensions @5
+;		SelectColors @6

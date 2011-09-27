@@ -1,0 +1,295 @@
+comment #**********************************************************************
+     
+HW386.AH - 80386 Specific Hardware Definitions 
+/* $ID$ */
+/************************************************************************/ 
+/* Copyright (C) 1986-1988 Phar Lap Software, Inc.   */
+/* Unpublished - rights reserved under the Copyright Laws of the */ 
+/* United States.  Use, duplication, or disclosure by the   */
+/* Government is subject to restrictions as set forth in   */
+/* subparagraph (c)(1)(ii) of the Rights in Technical Data and  */ 
+/* Computer Software clause at 252.227-7013.   */
+/* Phar Lap Software, Inc., 60 Aberdeen Ave., Cambridge, MA 02138 */ 
+/************************************************************************/
+     
+REVISION LOG
+     
+Rev. 1.00, JMB, 06-Feb-89 File creation date.
+     
+ FILE DESCRIPTION
+     
+This file contains the assembly language definitions for 80386 specific 
+registers, etc.
+     
+#****************************************************************************** 
+;
+; Bit definitions for 80386 registers.  Note that for registers which have
+; undefined bits, we also include a mask for the defined bits in the register. 
+; For future compatibility, Intel states that programs should mask
+; out all undefined bits when storing registers in memory, and set all 
+; undefined bits to zero when loading registers.
+;
+;****************************************************************************** 
+;
+; EFLAGS register.  Note that the VM and RF flags cannot be changed under
+; program control;  reloading EFLAGS with a new value will not affect these 
+; flags.
+;
+EF_ID equ 00200000h ; ID flag, 586 only
+EF_VIP equ 00100000h ; virtual interrupt pending flag, 586 only 
+EF_VIF equ 00080000h ; virtual interrupt flag, 586 only
+EF_AC equ 00040000h ; alignment check flag, 486 only 
+EF_VM equ 00020000h ; virtual mode flag
+EF_RF equ 00010000h ; resume flag
+EF_NT equ 00004000h ; nested task flag 
+EF_IOPL equ 00003000h ; I/O privilege level 
+EF_OF equ 00000800h ; overflow flag
+EF_DF equ 00000400h ; direction flag
+EF_IF equ 00000200h ; interrupt enable flag 
+EF_TF equ 00000100h ; trap flag
+EF_SF equ 00000080h ; sign flag
+EF_ZF equ 00000040h ; zero flag
+EF_AF equ 00000010h ; auxiliary carry flag 
+EF_PF equ 00000004h ; parity flag
+EF_CF equ 00000001h ; carry flag
+EF_1BITS equ 00000002h ; bits that are always set to 1 
+EF_DEFINED equ 00037FD7h ; mask for all defined bits on 386 
+EF_486DEFINED equ 00077FD7h ; mask for all defined bits on 486 
+EF_586DEFINED equ 003F7FD7h ; mask for all defined bits on 586 
+EF_IFBIT equ 9  ; bit number for IF
+     
+;
+; CR0 register
+;
+CR0_PG equ 80000000h ; page enable bit
+CR0_CD equ 40000000h ; cache disable, 486 only 
+CR0_NW equ 20000000h ; not write-through, 486 only
+CR0_AM equ 00040000h ; alignment check enable, 486 only
+CR0_WP equ 00010000h ; write protect at priv lev 0-2, 486 only 
+CR0_NE equ 00000020h ; numerics exception enable, 486 only 
+CR0_ET equ 00000010h ; processor extension type
+CR0_TS equ 00000008h ; task switched bit 
+CR0_EM equ 00000004h ; emulate coprocessor bit 
+CR0_MP equ 00000002h ; monitor coprocessor bit
+CR0_PE equ 00000001h ; protected mode enable bit
+CR0_DEFINED equ 8000001Fh ; mask for all defined bits on 386 
+CR0_486DEFINED equ 0E005003Fh ; mask for all defined bits on 486 
+CR0_PEBIT equ 0  ; bit number of PE bit
+     
+;
+; CR3 register
+;
+CR3_PCD  equ 00000010h ; page cache disable, 486 only 
+CR3_PWT  equ 00000008h ; page write-thru, 486 only
+CR3_DEFINED equ 0FFFFF000h ; mask for all defined bits on 386 
+CR3_486DEFINED equ 0FFFFF018h ; mask for all defined bits on 486
+     
+;
+; CR4 register (586 only)
+;
+CR4_VME  equ 00000001h ; Virtual Mode Extensions enabled 
+CR4_PVI  equ 00000002h ; Prot Mode Virtual Interrupts enabled 
+CR4_TSD  equ 00000004h ; RTSC instr disabled except at ring 0 
+CR4_DE  equ 00000008h ; Debugging Extensions (I/O bkpts)
+      ; enabled
+CR4_PSE  equ 00000010h ; Page Size Extension enabled 
+CR4_PAE  equ 00000020h ; Physical Address Extension enabled 
+CR4_MCE  equ 00000040h ; Machine Check Exceptions enabled 
+CR4_DEFINED equ 0000007Fh ; mask for all defined bits
+     
+;
+; DR6 register
+;
+DR6_BT equ 00008000h ; task switch bit 
+DR6_BS equ 00004000h ; single step trap
+DR6_BD equ 00002000h ; debug register accessed 
+DR6_B3 equ 00000008h ; breakpoint 3 occurred 
+DR6_B2 equ 00000004h ; breakpoint 2 occurred 
+DR6_B1 equ 00000002h ; breakpoint 1 occurred 
+DR6_B0 equ 00000001h ; breakpoint 0 occurred
+DR6_DEFINED equ 0000E00Fh ; mask for all defined bits
+     
+;
+; DR7 register
+;
+DR7_DEFINED equ 0FFFF23FFh ; mask for all defined bits
+     
+;
+; TR4,TR5 registers -- 486 only
+;
+TR4_DEFINED equ 0FFFFFFF8h ; mask for all defined bits in TR4 
+TR5_DEFINED equ 000007FFh ; mask for all defined bits in TR5
+     
+;
+; TR6 register
+;
+TR6_DEFINED equ 0FFFFFFE3h ; mask for all defined bits
+     
+;
+; TR7 register
+;
+TR7_DEFINED equ 0FFFFF01Ch ; mask for all defined bits on 386 
+TR7_486DEFINED equ 0FFFFFF9Ch ; mask for all defined bits on 486 
+page
+;************************************************************************** 
+; Descriptor tables and segment selectors 
+;**************************************************************************
+     
+;
+; Masks for various fields in segment selector 
+;
+SEL_IDX EQU 0FFF8h ; index into GDT or LDT
+SEL_TI EQU 0004h ; table indicator;  0 ==> GDT, 1 ==> LDT 
+SEL_RPL EQU 0003h ; requested privilege level
+SEL_BTI EQU 2 ; Bit number of table indicator bit
+     
+;
+; Code or data segment descriptor, or system segment descriptor 
+;
+CD_DES struc
+ CD_LLIM DW 0 ; bits 0-15 of limit
+ CD_BASE0 DW 0 ; bits 0-15 of base
+ CD_BASE16 DB 0 ; bits 16-23 of base
+ CD_ACC DB 0 ; access rights byte
+ CD_HLIM DB 0 ; bits 16-19 of limit, granularity, default oper 
+ CD_BASE24 DB 0 ; bits 24-31 of base
+CD_DES ends
+     
+;
+; Bit fields in the access rights byte of code/data/system segment descriptors 
+;
+AR_DTYPE equ 10h ; descriptor type; 0 ==> system, 1 ==> code or data 
+AR_DPL equ 60h ; descriptor privilege level
+AR_DPLSC equ 5 ; shift count for descr priv level 
+AR_PRES equ 80h ; present bit;  1 ==> segment is present
+     
+;
+; If the system bit is zero, the selector is for a code or data segment, and 
+; the rest of the bits in the access rights byte look as follows
+;
+AR_ACCESS equ 01h ; accessed bit -- set by processor when segment accessed 
+AR_CSEG equ 08h ; code segment;  1 ==> code seg, 0 ==> data seg
+AR_ED_CONF equ 04h ; if data seg, 1 ==> expand down, 0 ==> expand up
+   ; if code seg, 1 ==> conforming, 0 ==> not conforming
+AR_RW equ 02h ; if data seg, 1 ==> writeable, 0 ==> not writeable
+   ; if code seg, 1 ==> readable, 0 ==> not readable
+AR_CBIT equ 3 ; code segment bit number
+     
+;
+; If the system bit is zero, the selector is for a system segment, and the 
+; rest 4 LS bits in the access rights byte are a type code which may assume
+; one of the following values.  Note also that for system segment descriptors, 
+; the default operation size bit in byte 6 of the descriptor MUST be 0.
+;
+AR_A2TSS equ 01h ; available 286 TSS 
+AR_LDT equ 02h ; LDT segment
+AR_B2TSS equ 03h ; Busy 286 TSS
+AR_C286 equ 04h ; 286 call gate
+AR_TASK equ 05h ; 286 or 386 task gate 
+AR_I286 equ 06h ; 286 interrupt gate 
+AR_T286 equ 07h ; 286 trap gate
+AR_A3TSS equ 09h ; available 386 TSS 
+AR_B3TSS equ 0Bh ; busy 386 TSS
+AR_C386 equ 0Ch ; 386 call gate
+AR_I386 equ 0Eh ; 386 interrupt gate 
+AR_T386 equ 0Fh ; 386 trap gate
+     
+;
+; Standard access rights byte for code & data segments 
+;
+AR_CODE equ AR_PRES or AR_DTYPE or AR_CSEG or AR_RW ; readable, not conform 
+AR_DATA equ AR_PRES or AR_DTYPE or AR_RW  ; writeable, expand up
+     
+;
+; Bit fields in byte 6 of code/data/system segment descriptors 
+;
+D6_HLIM equ 0Fh ; bits 16-19 of limit
+D6_USE32 equ 40h ; Default operation size; 0 ==> 16 bits, 1 ==> 32 bits
+   ; This is D bit for code segments, B bit for data segs 
+   ; This bit MUST be 0 for system segment descriptors
+SW_AVL equ 10h ; bit available for system software
+D6_GRAN equ 80h ; Limit granularity; 0 ==> byte granular, 1 ==> page
+     
+;
+; Standard byte 6 for code & data segments 
+;
+D6_CODE equ D6_USE32  ; byte granular, USE32 segment 
+D6_DATA equ D6_USE32  ; byte granular, USE32 segment
+     
+;
+; Gate descriptors.  For system segments which are call, task, interrupt, or 
+; trap gates, the descriptor has the following format, where the access byte 
+; bit definitions are the same as those identified above for system segment 
+; descriptors
+;
+IT_DES struc
+ IT_LOFFS DW 0 ; bits 0-15 of offset of handler routine 
+ IT_SEL DW 0 ; selector of code seg handler routine is in
+  DB 0 ; word count field unused for int/trap gates
+ IT_ACC DB 0 ; access byte
+ IT_HOFFS DW 0 ; bits 16-31 of offset of handler routine
+IT_DES ends
+     
+;
+; Standard access bytes for interrupt gates and trap gates.  The required 
+; privilege level to access the descriptor is 0 (most privileged)
+;
+IT_INT equ AR_I386 or AR_PRES
+IT_TRAP equ AR_T386 or AR_PRES
+page
+;************************************************************************** 
+; Other data structures and constants used to interface to protected mode. 
+;************************************************************************** 
+;
+; A FAR pointer, used for both protected mode and real mode (in real mode, 
+; of course, the 16 MS bits of the offset should be zero).
+;
+; Note that this struct is ordered exactly like a 386 FAR pointer, so that, 
+; for example, it could be used with the lds/les/lfs/lgs/lss instruction.
+;
+PTR386 struc
+ SOFFS dd ? ; offset within segment
+ SELECTOR dw ? ; segment selector value
+PTR386 ends
+     
+;
+; Some commonly used numerical constants 
+;
+NUM_1K equ 400h  ; 1K bytes
+SHIFT1K equ 10  ; # bits to shift to convert Ks to bytes 
+NUM_4K equ 1000h  ; 4K bytes
+NUM_64K equ 10000h  ; 64 K bytes
+NUM_1M equ 100000h  ; 1 megabyte
+     
+;************************************************************************** 
+; Page table definitions
+;************************************************************************** 
+;
+; Hardware-defined page table entry bit definitions 
+;
+PE_PFA equ 0FFFFF000h ; page frame physical address 
+PE_DIRTY equ 00000040h ; page dirty
+PE_ACCESSED equ 00000020h ; page accessed
+PE_PCD equ 00000010h ; page cache disable -- 486 only 
+PE_PWT equ 00000008h ; page write through -- 486 only
+PE_USER equ 00000004h ; user (priv. level 3) can access page 
+PE_WRITE equ 00000002h ; page can be written to
+PE_PRESENT equ 00000001h ; page is present in memory
+PE_DEFINED equ 0FFFFFE67h ; defined bits in a page table entry on 386 
+PE_486DEFINED equ 0FFFFFE7Fh ; defined bits in a page table entry on 486
+     
+;
+; Masks and shift counts for fields in a linear address 
+;
+LA_PDE equ 0FFC00000h ; page directory entry index 
+LA_PTE equ 003FF000h ; page table entry index 
+LA_POFFS equ 00000FFFh ; byte offset in page
+PDE_SHIFT equ 22  ; # bits to shift a page directory index 
+PTE_SHIFT equ 12  ; # bits to shift a page table index
+     
+;
+; Some constants used for page tables 
+;
+PAGE_SIZE equ 1000h  ; size of a page, in bytes, is 4K 
+PAGE_SHIFT equ 12  ; # bits to shift a page number to get addr
+  

@@ -1,0 +1,41 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include "windows.h"
+#include "client32.h"
+
+ClientDialog DIALOG 10, 20, 174, 155
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION |
+    WS_SYSMENU | WS_MINIMIZEBOX
+CAPTION "Client Window"
+FONT 8, "Helv"
+BEGIN
+    DEFPUSHBUTTON   "Send", IDB_SEND, 2, 140, 40, 14
+    EDITTEXT        IDD_EDITWRITE, 2, 113, 171, 26, ES_MULTILINE | 
+                    ES_AUTOVSCROLL
+    EDITTEXT        IDD_EDITREAD, 2, 2, 171, 110, ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+END
+
+
+InitDialog DIALOG 6, 18, 160, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Client Initiation"
+FONT 8, "Helv"
+BEGIN
+    EDITTEXT        IDD_SVREDIT, 4, 14, 154, 12, ES_AUTOHSCROLL
+    LTEXT           "Enter Server Name (use '.' if local).",
+                      65535, 5, 4, 135, 8
+    LTEXT           "Enter Your Client Name.", 65535, 5, 36, 136, 8
+    EDITTEXT        IDD_CLNTEDIT, 4, 46, 154, 12, ES_AUTOHSCROLL
+    DEFPUSHBUTTON      "OK", IDB_INITOK, 61, 63, 40, 14
+END

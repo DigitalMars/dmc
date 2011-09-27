@@ -1,0 +1,31 @@
+;;
+;;
+;;    OLE 2.0 Server Sample Code
+;;
+;;    isvrotl.def
+;;
+;;    Definition file for isvrotl.exe
+;;
+;;    (c) Copyright Microsoft Corp. 1992 - 1993 All Rights Reserved
+;;
+;;
+;; NOTE: Do not add exports to this file.  Use __export
+;; in your function prototype and definition instead.
+
+NAME		"ISvrOtl" WINDOWAPI 
+
+DESCRIPTION	'Microsoft OLE 2.0 In-Place Server Sample code'
+
+EXETYPE		WINDOWS
+
+PROTMODE
+
+STUB		'WINSTUB.EXE'
+
+CODE		 PRELOAD MOVEABLE IOPL CONFORMING DISCARDABLE EXECUTEONLY
+
+DATA		 PRELOAD MOVEABLE NOIOPL  READWRITE
+
+STACKSIZE	10240      
+
+HEAPSIZE	4096

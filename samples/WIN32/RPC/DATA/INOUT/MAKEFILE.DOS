@@ -1,0 +1,45 @@
+#*************************************************************#
+#**                                                         **#
+#**                 Microsoft RPC Examples                  **#
+#**                   inout Application                     **#
+#**         Copyright(c) Microsoft Corp. 1992-1995          **#
+#**                                                         **#
+#*************************************************************#
+
+cc= cl
+cflags= -c -AL -Gsw -Oas -Zpe -Zi -D_CRTAPI1=
+linker= link
+lflags= /CO /NOD
+
+.c.obj:
+   $(cc) $(cflags) $<
+
+all : inoutc
+
+idl : inout.h
+
+# Make the client side application inoutc
+inoutc : inoutc.exe
+inoutc.exe : inoutc.obj inout_c.obj
+    $(linker) $(lflags) inoutc inout_c ,,,\
+    llibce rpc rpcndr;
+
+# Update the object files if necessary
+
+inoutc.obj : inoutc.c inout.h
+
+inout_c.obj : inout_c.c inout.h
+
+inout.h inout_c.c : inout.idl inout.acf
+    midl -env dos -oldnames -no_cpp inout.idl
+
+# Clean up everything
+cleanall : clean
+    -del inoutc.exe
+
+# Clean up everything but the .EXEs
+clean :
+    -del *.obj
+    -del *.map
+    -del inout_c.c
+    -del inout.h

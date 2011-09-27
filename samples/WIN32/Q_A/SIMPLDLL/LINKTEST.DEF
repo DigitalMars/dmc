@@ -1,0 +1,24 @@
+NAME		"linktest"
+
+DESCRIPTION	'Sample Microsoft Win32 Application '
+
+EXETYPE		NT
+
+SUBSYSTEM	WINDOWS,4.0
+
+STUB		'WINSTUB.EXE'
+
+VERSION		1.0
+
+CODE		 EXECUTE READ
+
+DATA		 READ WRITE
+
+STACKSIZE	5120
+
+HEAPSIZE	1024
+
+EXPORTS
+		MainWndProc @1
+		ThreadProc @2
+		AboutDlgProc @3

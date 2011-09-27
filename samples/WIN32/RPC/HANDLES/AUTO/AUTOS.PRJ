@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\RPC\HANDLES\AUTO\AUTOS.PRJ
+AUTOS.OPN
+novcs
+autos.DEF
+4
+812035224
+0 0 0 0 0 "auto_s.c" ""
+0 0 0 0 0 "autop.c" ""
+0 0 0 0 0 "autos.c" ""
+0 0 0 0 0 "rpcns4.lib" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "autos.def" ""

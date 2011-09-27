@@ -1,0 +1,27 @@
+;CODE can be moved in memory and discarded/reloaded
+;DATA must be MULTIPLE if program can be invoked more than once
+; name of window processing function
+
+NAME		"subclass"
+
+DESCRIPTION	'Windows Sample'
+
+EXETYPE		NT
+
+SUBSYSTEM	WINDOWS
+
+STUB		'WINSTUB.EXE'
+
+VERSION		1.0
+
+CODE		 EXECUTE READ
+
+DATA		 READ WRITE
+
+STACKSIZE	1048576,4096 
+
+HEAPSIZE	1048576,4096 
+
+EXPORTS
+		MainWndProc @1
+		SubclassWndProc @2

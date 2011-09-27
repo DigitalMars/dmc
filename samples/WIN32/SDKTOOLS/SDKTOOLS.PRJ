@@ -1,0 +1,14 @@
+82572
+C:\SC\samples\win32\SDKTOOLS\SDKTOOLS.PRJ
+SDKTOOLS.OPN
+novcs
+sdktools.DEF
+2
+812035224
+0 0 0 0 0 "tlist\kill.prj" ""
+0 0 0 0 0 "pviewer\pviewer.prj" ""
+0 0 0 0 0 "scrnsave\scrnsave.prj" ""
+0 0 0 0 0 "spy\spy.prj" ""
+0 0 0 0 0 "tlist\tlist.prj" ""
+0 0 0 0 0 "zoomin\zoomin.prj" ""
+0 0 0 0 0 "sdktools.def" ""

@@ -1,0 +1,14 @@
+82570
+E:\cocvs\mfc\src\32-bit\PROJECTS\SFCn42d.prj
+SFCN42D.OPN
+novcs
+SFCN42D.def
+3
+834078890
+0 0 0 0 0 "SFCN42D.def" ""
+0 0 0 0 0 "..\dllnet.cpp" ""
+0 0 0 0 0 "..\sockcore.cpp" ""
+0 0 0 0 0 "..\mfcnet.rc" ""
+0 0 0 0 1001 "movelib.bat" ""
+0 0 0 0 0 "..\..\..\LIB\SFC42D.LIB" ""
+0 0 0 0 0 "SNDD.LIB" ""

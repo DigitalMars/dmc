@@ -1,0 +1,79 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1992-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include <windows.h>
+#include "regions.h"
+
+Menu MENU
+BEGIN
+    POPUP        "&Options"
+      BEGIN
+        MENUITEM    "&Erase",           IDM_ERASE
+        MENUITEM    SEPARATOR
+        MENUITEM    "&OffsetRgn",       IDM_OFFSETRGN
+        MENUITEM    "&InvertRgn",       IDM_INVERTRGN
+        MENUITEM    "&FrameRgn",        IDM_FRAMERGN
+        MENUITEM    "&PtInRgn",         IDM_PTINRGN
+        MENUITEM    "&RectInRgn",       IDM_RECTINRGN
+        MENUITEM    "&SetRectRgn",      IDM_SETRECTRGN
+        MENUITEM    "&GetRgnBox...",    IDM_GETRGNBOX
+        MENUITEM    SEPARATOR
+        MENUITEM    "&About...",        IDM_ABOUT
+      END
+    POPUP        "&Create"
+      BEGIN
+        MENUITEM    "&EllipticRgn",     IDM_ELLIPSE
+        MENUITEM    "&PolyPolygonRgn",  IDM_POLYPOLYGON
+        MENUITEM    "&RectRgn",         IDM_RECT
+      END
+    POPUP        "Co&mbine"
+      BEGIN
+        MENUITEM    "RGN_AND",          IDM_AND
+        MENUITEM    "RGN_COPY",         IDM_COPY
+        MENUITEM    "RGN_DIFF",         IDM_DIFF
+        MENUITEM    "RGN_OR",           IDM_OR
+        MENUITEM    "RGN_XOR",          IDM_XOR
+      END
+END
+
+About DIALOG 30, 14, 136, 90
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About Regions"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Microsoft Developer Support", 104, 0, 63, 136, 8
+    CTEXT           "Copyright \251 1992-1995 Microsoft Corporation", 105, 0, 74,
+                    136, 8
+    LTEXT           "Regions Win32 SDK sample ", 103, 40, 25, 95, 8
+    LTEXT           "version 1.0", 106, 40, 35, 95, 8
+    DEFPUSHBUTTON   "OK", IDOK, 95, 6, 40, 14
+    CONTROL         "", 108, "Static", SS_BLACKRECT, 0, 53, 136, 2
+END
+
+
+RgnBox DIALOG 21, 28, 87, 116
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "GetRgnBox returned:", 101, 10, 6, 77, 8
+    LTEXT           "Text", 102, 10, 21, 68, 8
+    LTEXT           "rect.left:", 103, 10, 37, 40, 8
+    LTEXT           "rect.top:", 104, 10, 53, 42, 8
+    LTEXT           "rect.right:", 105, 10, 69, 41, 8
+    LTEXT           "rect.bottom:", 106, 10, 85, 43, 8
+    LTEXT           "left", 107, 55, 37, 30, 8
+    LTEXT           "top", 108, 55, 53, 30, 8
+    LTEXT           "right", 109, 55, 69, 30, 8
+    LTEXT           "bottom", 110, 55, 85, 30, 8
+    DEFPUSHBUTTON   "OK", IDOK, 10, 101, 68, 14,   WS_GROUP
+END

@@ -1,0 +1,474 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\vcterm.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\vcterm.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_OPENLOG
+    BUTTON      ID_FILE_CLOSELOG
+    BUTTON      ID_FILE_TRANSMIT
+    SEPARATOR
+    BUTTON      ID_COMM_DIAL
+    BUTTON      ID_COMM_HANGUP
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open Log File...",           ID_FILE_OPENLOG
+        MENUITEM "&Close Log File",             ID_FILE_CLOSELOG
+        MENUITEM SEPARATOR
+        MENUITEM "&Transmit Text File...",      ID_FILE_TRANSMIT
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&CommPort"
+    BEGIN
+        MENUITEM "Port &Open",                  ID_COMM_OPEN
+        MENUITEM "&Settings...",                ID_COMM_SETTINGS
+        MENUITEM SEPARATOR
+        MENUITEM "&Dial Phone...",              ID_COMM_DIAL
+        MENUITEM "&Hang Up",                    ID_COMM_HANGUP
+    END
+    POPUP "&Properties"
+    BEGIN
+        MENUITEM "&Input Len...",               ID_PROP_INPUTLEN
+        MENUITEM "&RThreshold...",              ID_PROP_RTHRESHOLD
+        MENUITEM "&SThreshold...",              ID_PROP_STHRESHOLD
+        MENUITEM "P&arity Replace...",          ID_PROP_PARITYREPLACE
+        MENUITEM "&DTR Enable",                 ID_PROP_DTRENABLE
+        MENUITEM SEPARATOR
+        MENUITEM "&CD Holding...",              ID_PROP_CDHOLDING
+        MENUITEM "CTS H&olding...",             ID_PROP_CTSHOLDING
+        MENUITEM "DSR Ho&lding...",             ID_PROP_DSRHOLDING
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About vcterm...",            ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About vcterm"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,7,18,20
+    LTEXT           "VCTERM Version 1.0",IDC_STATIC,39,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright © 1996",IDC_STATIC,39,46,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+    LTEXT           "Simple Terminal Application",IDC_STATIC,39,22,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Created by Ed Dore",IDC_STATIC,39,34,63,8,SS_NOPREFIX
+END
+
+IDD_SETTINGS DIALOG DISCARDABLE  30, 45, 221, 158
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_CAPTION | WS_SYSMENU
+CAPTION "Communication Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "&Baud Rate",IDC_STATIC,11,5,147,40,WS_GROUP
+    CONTROL         "300",IDC_BAUD1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,24,15,33,10
+    CONTROL         "600",IDC_BAUD2,"Button",BS_AUTORADIOBUTTON,67,15,27,10
+    CONTROL         "1200",IDC_BAUD3,"Button",BS_AUTORADIOBUTTON,109,15,33,
+                    10
+    CONTROL         "2400",IDC_BAUD4,"Button",BS_AUTORADIOBUTTON,24,30,33,10
+    CONTROL         "4800",IDC_BAUD5,"Button",BS_AUTORADIOBUTTON,67,30,33,10
+    CONTROL         "9600",IDC_BAUD6,"Button",BS_AUTORADIOBUTTON,109,30,33,
+                    10
+    GROUPBOX        "&Data Bits",IDC_STATIC,11,52,57,25,WS_GROUP
+    CONTROL         "7",IDC_DATABITS1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,19,62,17,10
+    CONTROL         "8",IDC_DATABITS2,"Button",BS_AUTORADIOBUTTON,43,62,19,
+                    10
+    GROUPBOX        "&Stop Bits",IDC_STATIC,77,52,59,25,WS_GROUP
+    CONTROL         "1",IDC_STOPBITS1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,88,62,19,10
+    CONTROL         "2",IDC_STOPBITS2,"Button",BS_AUTORADIOBUTTON,112,62,22,
+                    10
+    GROUPBOX        "&Echo",IDC_STATIC,147,52,65,25,WS_GROUP
+    CONTROL         "Off",IDC_ECHO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,155,64,25,8
+    CONTROL         "On",IDC_ECHO2,"Button",BS_AUTORADIOBUTTON,181,62,27,13
+    GROUPBOX        "&Parity",IDC_STATIC,11,84,57,65,WS_GROUP
+    CONTROL         "None",IDC_PARITY1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,19,96,38,10
+    CONTROL         "Odd",IDC_PARITY2,"Button",BS_AUTORADIOBUTTON,19,108,33,
+                    10
+    CONTROL         "Even",IDC_PARITY3,"Button",BS_AUTORADIOBUTTON,19,121,38,
+                    10
+    GROUPBOX        "&Com Port",IDC_STATIC,77,84,59,65,WS_GROUP
+    CONTROL         "Com1",IDC_COM1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,85,96,38,10
+    CONTROL         "Com2",IDC_COM2,"Button",BS_AUTORADIOBUTTON,85,108,38,10
+    CONTROL         "Com3",IDC_COM3,"Button",BS_AUTORADIOBUTTON,85,121,38,10
+    CONTROL         "Com4",IDC_COM4,"Button",BS_AUTORADIOBUTTON,85,133,38,10
+    GROUPBOX        "&Flow Control",IDC_STATIC,147,84,65,65,WS_GROUP
+    CONTROL         "None",IDC_FLOW1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,155,96,38,10
+    CONTROL         "Xon/Xoff",IDC_FLOW2,"Button",BS_AUTORADIOBUTTON,155,108,
+                    49,10
+    CONTROL         "RTS",IDC_FLOW3,"Button",BS_AUTORADIOBUTTON,155,121,33,
+                    10
+    CONTROL         "Xon/RTS",IDC_FLOW4,"Button",BS_AUTORADIOBUTTON,155,133,
+                    51,10
+    PUSHBUTTON      "OK",IDOK,168,10,43,15,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,168,30,43,15,WS_GROUP
+END
+
+IDD_INPUTDLG DIALOG DISCARDABLE  0, 0, 185, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "VCTerm"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,5,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,23,50,14
+    LTEXT           "Enter Parity Replacement Character:",IDC_STATIC1,8,8,
+                    113,8
+    EDITTEXT        IDC_EDIT1,8,24,113,12,ES_AUTOHSCROLL
+END
+
+IDD_CANCELDLG DIALOG DISCARDABLE  0, 0, 175, 69
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "VCTerm"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,62,37,50,14
+    LTEXT           "Transmitting File...",IDC_STATIC,59,17,58,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "VCTERM MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "VCTERM\0"
+            VALUE "LegalCopyright", "Copyright © 1995\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "VCTERM.EXE\0"
+            VALUE "ProductName", "VCTERM Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_CANCELDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 168
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 62
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "VCTerm\n\nVCTerm\n\n\nVCTerm.Document\nVCTerm Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "vcterm"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_OPENLOG         "Open a communications log file\nOpen Log"
+    ID_FILE_CLOSELOG        "Close communications log file\nClose Log"
+    ID_FILE_TRANSMIT        "Transmit a text file\nTransmit Text"
+    ID_PROP_INPUTLEN        "Set InputLen Property"
+    ID_COMM_OPEN            "Open the serial port\nOpen Port"
+    ID_COMM_SETTINGS        "Set various serial port settings\nSettings"
+    ID_COMM_DIAL            "Dial a phone number\nDial Phone"
+    ID_COMM_HANGUP          "Hang up the phone\nHang Up"
+    ID_PROP_RTHRESHOLD      "Set RThreshold Property"
+    ID_PROP_STHRESHOLD      "Set SThreshold Property"
+    ID_PROP_PARITYREPLACE   "Set ParityReplace Property"
+    ID_PROP_DTRENABLE       "Toggle DTREnable Property"
+    ID_PROP_CDHOLDING       "Carrier Detect "
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PROP_CTSHOLDING      "Clear To Send"
+    ID_PROP_DSRHOLDING      "Data Set Ready"
+    IDS_FILEOPENFAILED      "Failed to open file!"
+    IDS_DATASENDFAILED      "Data could not be sent!"
+    IDS_PHONEPROMPT         "Phone Number:"
+    IDS_DIALCOMMAND         "+++ATDT%s\r\n"
+    IDS_INPUTLENPROMPT      "Enter InputLen value:"
+    IDS_RTHRESHOLDPROMPT    "Enter RThreshold value:"
+    IDS_STHRESHOLDPROMPT    "Enter SThreshold value:"
+    IDS_PARITYREPLACEPROMPT "Enter ParityReplace value:"
+    IDS_CDHOLDINGTRUE       "CDHolding is TRUE"
+    IDS_CDHOLDINGFALSE      "CDHolding is FALSE"
+    IDS_CTSHOLDINGTRUE      "CTSHolding is TRUE"
+    IDS_CTSHOLDINGFALSE     "CTSHolding is FALSE"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DSRHOLDINGTRUE      "DSRHolding is TRUE"
+    IDS_DSRHOLDINGFALSE     "DSRHolding is FALSE"
+    IDS_SENDING             "Sending"
+    IDS_RECEIVING           "Receiving"
+    IDS_CTSCHANGE           "Change in CTS Detected"
+    IDS_DSRCHANGE           "Change in DSR Detected"
+    IDS_CDCHANGE            "Change in CD Detected"
+    IDS_PHONERING           "Phone is Ringing"
+    IDS_EOFDETECTED         "End of File Detected"
+    IDS_BREAKRECEIVED       "Break Received"
+    IDS_CTSTIMEOUT          "CTS Timeout"
+    IDS_DSRTIMEOUT          "DSR Timeout"
+    IDS_FRAMEERROR          "Framing Error"
+    IDS_OVERRUNERROR        "Overrun Error"
+    IDS_CDTIMEOUT           "Carrier Detect Timeout"
+    IDS_RBUFFEROVERFLOW     "Receive Buffer Overflow"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PARITYERROR         "Parity Error"
+    IDS_TBUFFERFULL         "Transmit Buffer Full"
+    IDS_UPDATEDATAFAILED    "UpdateData Failed during dialog termination!"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\vcterm.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

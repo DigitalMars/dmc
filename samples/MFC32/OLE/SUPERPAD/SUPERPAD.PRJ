@@ -1,0 +1,20 @@
+82572
+C:\SC\samples\mfc32\ole\superpad\SUPERPAD.PRJ
+superpad.OPN
+novcs
+superpad.DEF
+16
+836933290
+0 0 0 0 0 "aboutbox.cpp" ""
+0 0 0 0 0 "ipframe.cpp" ""
+0 0 0 0 0 "linkitem.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "paddoc.cpp" ""
+0 0 0 0 0 "padframe.cpp" ""
+0 0 0 0 0 "paditem.cpp" ""
+0 0 0 0 0 "padview.cpp" ""
+0 0 0 0 0 "pageset.cpp" ""
+0 0 0 0 0 "superpad.cpp" ""
+0 0 0 0 0 "tabstop.cpp" ""
+0 0 0 0 0 "superpad.DEF" ""
+0 0 0 0 0 "superpad.rc" ""

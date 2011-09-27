@@ -1,0 +1,20 @@
+; This help project requires hc 3.1
+[OPTIONS]
+errorlog = fontview.err
+title = FontView Help
+contents = Contents
+compress = 0
+warning = 3
+report = 1
+
+ICON = FONTHELP.ICO
+
+[FILES]
+fontview.rtf
+
+[BITMAPS]
+fontview.bmp
+
+[CONFIG]
+BrowseButtons()
+

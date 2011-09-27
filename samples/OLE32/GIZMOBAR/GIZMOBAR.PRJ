@@ -1,0 +1,18 @@
+82572
+C:\SC\samples\ole32\GIZMOBAR\GIZMOBAR.PRJ
+GIZMOBAR.OPN
+novcs
+GIZMOBAR.DEF
+3
+853275890
+0 0 0 0 0 "api.c" ""
+0 0 0 0 0 "gizmo.c" ""
+0 0 0 0 0 "gizmobar.c" ""
+0 0 0 0 0 "init.c" ""
+0 0 0 0 0 "paint.c" ""
+0 0 0 0 0 "gizmobar.def" ""
+0 0 0 0 0 "gizmobar.rc" ""
+0 0 0 0 0 "bttncur.lib" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "..\bttncur\bttncur.prj" ""

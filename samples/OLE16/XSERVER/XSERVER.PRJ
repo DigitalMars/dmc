@@ -1,0 +1,18 @@
+82572
+C:\SC\samples\ole16\XSERVER\XSERVER.PRJ
+XSERVER.OPN
+novcs
+xserver.def
+1
+812035224
+0 0 0 0 0 "cdebug.cpp" ""
+0 0 0 0 0 "classfct.cpp" ""
+0 0 0 0 0 "dispatch.cpp" ""
+0 0 0 0 0 "enumstat.cpp" ""
+0 0 0 0 0 "intrface.cpp" ""
+0 0 0 0 0 "utils.cpp" ""
+0 0 0 0 0 "xobject.cpp" ""
+0 0 0 0 0 "xserver.cpp" ""
+0 0 0 0 0 "xserver.rc" ""
+0 0 0 0 1001 "..\bin\movelib.bat" ""
+0 0 0 0 0 "xserver.def" ""

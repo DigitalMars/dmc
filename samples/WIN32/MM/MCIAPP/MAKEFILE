@@ -1,0 +1,33 @@
+# Nmake macros for building Windows 32-Bit apps
+
+APPVER=4.0
+
+!include <win32.mak>
+
+all: mciapp32.exe
+
+LIBS=msacm32.lib vfw32.lib winmm.lib shell32.lib $(int64lib)
+
+OTHERCLOPTS=-DWIN32_LEAN_AND_MEAN -nologo -I. -I..\include
+OTHERRCOPTS=-DWIN32_LEAN_AND_MEAN -I. -I..\include
+
+
+# Update the resource if necessary
+
+mciapp.res: mciapp.rc mciapp.rcv
+    $(rc) $(rcflags) $(rcvars) $(OTHERRCOPTS) mciapp.rc
+
+
+# Update the object file if necessary
+
+.c.obj:
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) $<
+
+# Update the executable file if necessary, and if so, add the resource back in.
+
+mciapp32.exe:   mciapp.obj \
+                app.obj     \
+                appinit.obj \
+                debug.obj   \
+                mciapp.res
+    $(link) $(linkdebug) $(guiflags) -out:mciapp32.exe $** $(guilibs) $(LIBS)

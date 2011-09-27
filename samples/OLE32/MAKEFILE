@@ -1,0 +1,32 @@
+DIRLIST =   common          \
+            bttncur         \
+            gizmobar        \
+            ole2ui          \
+            oleansi         \
+            wrapui          \
+            dispcalc        \
+            dispdemo        \
+            dspcalc2        \
+            hello           \
+            spoly           \
+            spoly2          \
+            tibrowse        \
+            outline         \
+            simpcntr        \
+            simpdnd         \
+            simpsvr         \
+            winhlprs        \
+            mfract          \
+            dfview          \
+            defo2v          \
+            inole2
+
+
+all: $(DIRLIST)
+
+$(DIRLIST):
+        cd $@
+        @echo *** ole\$@ *** >>$(MSTOOLS)\samples\ole.tmp
+        @nmake -a -i 1>>$(MSTOOLS)\samples\ole.tmp 2>&1
+        cd ..
+

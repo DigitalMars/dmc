@@ -1,0 +1,124 @@
+/*
+ * STRINGS.RC
+ *
+ * strings for the OLE 2.0 UI Support Library.
+ *
+ * Copyright (c)1992 Microsoft Corporation, All Right Reserved
+ */
+
+
+#include "ole2ui.h"
+
+
+//Stringtable common for all dialogs.
+STRINGTABLE
+	BEGIN
+	 IDS_FILTERS,               "Tutti i tipi di file (*.*)|*.*|"
+	 IDS_ICONFILTERS,           "Icone|*.exe;*.dll;*.ico|Programmi (*.exe)|*.exe|Libraries (*.dll)|Icone (*.ico)|Tutti i tipi di file (*.*)|*.*|"
+	END
+
+// browse dialog
+STRINGTABLE
+	BEGIN
+	 IDS_BROWSE         "Sfoglia"
+	END
+
+
+//Insert Object stringtable.
+STRINGTABLE
+	BEGIN
+	 IDS_IORESULTNEW,                "Inserisce un nuovo oggetto %s nel documento."
+	 IDS_IORESULTNEWICON,            "Inserisce un nuovo oggetto %s nel documento.  L'oggetto sar` mostrato come icona"
+	 IDS_IORESULTFROMFILE1,          "Inserisce il contenuto del file come oggetto nel documento in modo da poter essere attivato usando "
+	 IDS_IORESULTFROMFILE2,          "l'applicazione in cui h stato creato."
+	 IDS_IORESULTFROMFILEICON2,      "l'applicazione in cui h stato creato.  L'oggetto sar` mostrato come icona."
+	 IDS_IORESULTLINKFILE1,          "Inserisce un'immagine del contenuto del file nel documento.  L'immagine sar` collegata al "
+	 IDS_IORESULTLINKFILE2,          " file in modo tale che i collegamenti con il file si rifletteranno nel documento."
+	 IDS_IORESULTLINKFILEICON1,      "Inserisce un'icona nel documento che rappresenta il file.  L'icona sar` collegata con "
+	 IDS_IORESULTLINKFILEICON2,      "il file in modo tale che i cambiamenti al file si rifletteranno nel documento."
+	END
+
+//Change Icon stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_CINOICONSINFILE,        "Non ci sono icone in %s."
+	 IDS_CIINVALIDFILE,          "%s non h un file esistente."
+	 IDS_CIFILEACCESS,           "Impossibile aprire il file %s. Accesso rifiutato."
+	 IDS_CIFILESHARE,            "Impossibile aprire il file %s. Violazione di condivisione."
+	 IDS_CIFILEOPENFAIL,         "Impossibile aprire il file %s. Errore generale."
+	END
+
+// Convert stringtable.
+STRINGTABLE
+	BEGIN
+	 IDS_CVRESULTCONVERTLINK,     "Un oggetto collegato deve essere convertito all'origine."
+	 IDS_CVRESULTCONVERTTO,       "Cambia per sempre l'oggetto  %s selezionato in un oggetto %s."
+	 IDS_CVRESULTNOCHANGE,        "L'oggetto %s selezionato non sar` convertito."
+	 IDS_CVRESULTDISPLAYASICON,   " Sar` convertito come icona."
+	 IDS_CVRESULTACTIVATEAS,      "Ogni oggetto %s sar` attivato come oggetto %s"
+	 IDS_CVRESULTACTIVATEDIFF,    ", ma sar` convertito."
+	END
+
+//Paste Special stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_PSPASTEDATA,         "Inserisce il contenuto degli Appunti nel documento come %s."
+	 IDS_PSPASTEOBJECT,       "Inserisce il contenuto degli Appunti nel documento in modo che il contenuto possa essere attivato con %s."
+	 IDS_PSPASTEOBJECTASICON, "Inserisce il contenuto degli Appunti nel documento in modo che il contenuto possa essere attivato con %s.  Il contenuto sar` mostrato come icona."
+	 IDS_PSPASTELINKDATA,     "Inserisce il contenuto degli Appunti nel documento come %s.  Incolla collegamento crea un collegamento con il file di origine in modo che i cambiamenti al file di origine si rifletteranno nel documento."
+	 IDS_PSPASTELINKOBJECT,   "Inserisce un'immagine del contenuto degli Appunti nel documento come %s.  Incolla collegamento crea un collegamento con il file di origine in modo che i cambiamenti al file di origine si rifletteranno nel documento."
+	 IDS_PSPASTELINKOBJECTASICON, "Inserisce un'icona che rappresenta il contenuto degli Appunti nel documento.  Incolla collegamento crea un collegamento con il file di origine in modo che i cambiamenti al file di origine si rifletteranno nel documento."
+	 IDS_PSNONOLE,            "Inserisce il contenuto degli Appunti nel documento."
+	 IDS_PSUNKNOWNTYPE,       "Tipo sconosciuto"
+	 IDS_PSUNKNOWNSRC,        "Origine sconosciuta"
+	 IDS_PSUNKNOWNAPP,        "l'applicazione in cui h stata creata"
+	END
+
+// Busy/Blocked dialog stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_BZRESULTTEXTBUSY          "Impossibile completare l'operazione. L'applicazione %s (%s) h occupata. Scegliere ""Passa a"" per attivare %s e risolvere il problema."
+	 IDS_BZRESULTTEXTNOTRESPONDING "Impossibile completare l'operazione. L'applicazione %s (%s) non risponde. Scegliere ""Passa a"" per attivare %s e risolvere il problema."
+	END
+
+// OLESTD stringtable
+STRINGTABLE
+	BEGIN
+	  IDS_OLESTDNOCREATEFILE, "Impossibile creare il file."
+	  IDS_OLESTDNOOPENFILE,   "Impossibile aprire il file."
+	  IDS_OLESTDDISKFULL,     "Lo spazio nel disco h esaurito. Impossibile completare l'operazione di salvataggio."
+	END
+
+// OLE2UI stringtable
+STRINGTABLE
+	BEGIN
+	   IDS_OLE2UIEDITNOOBJCMD, "&Oggetto"
+	   IDS_OLE2UIEDITLINKCMD_1VERB, "0%s collegato &oggetto %s "
+	   IDS_OLE2UIEDITOBJECTCMD_1VERB, "0%s &oggetto %s"
+	   IDS_OLE2UIEDITLINKCMD_NVERB, "Collegato &oggetto %s "
+	   IDS_OLE2UIEDITOBJECTCMD_NVERB, " &Oggetto %s"
+	   IDS_OLE2UIUNKNOWN, "Sconosciuto"
+	   IDS_OLE2UILINK,    "Collegamento"
+	   IDS_OLE2UIOBJECT,  "Oggetto"
+	   IDS_OLE2UIEDIT,    "&Modifica"
+	   IDS_OLE2UICONVERT, "&Converti..."
+	   IDS_DEFICONLABEL,  "Documento"
+	   IDS_OLE2UIPASTELINKEDTYPE, "Collegato %s"
+	END
+
+// LINKS stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_LINK_AUTO              "Automatico"
+	 IDS_LINK_MANUAL            "Manuale"
+	 IDS_LINK_UNKNOWN           "Annulla"
+	 IDS_LINKS                  "Collegamenti"
+	 IDS_FAILED                 "Operazione fallita."
+	 IDS_CHANGESOURCE           "Cambia origine"
+	 IDS_INVALIDSOURCE          "Origine non valida : si desidera cambiarla?"
+	 IDS_CHANGEADDITIONALLINKS  "Il collegamento selezionato h stato modificato.\nQuesto documento contiene altri collegamenti con\n%s.\n\nSi desidera cambiare gli altri collegamenti?"
+	 IDS_ERR_GETLINKSOURCE      "Impossibile trovare l'origine del collegamento."
+	 IDS_ERR_GETLINKUPDATEOPTIONS   "Impossibile ottenere l'opzione aggiornata del collegamento."
+	 IDS_ERR_ADDSTRING          "Impossibile aggiungere il collegamento all'elenco."
+	 IDS_CLOSE              "Chiudi"
+	END

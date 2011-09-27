@@ -1,0 +1,646 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\OdbcInfo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxdb.rc""\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\OdbcInfo.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Odbc Info"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,22,18,20
+    LTEXT           "Odbc Info Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright © 1995",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+    LTEXT           "Ronald Pihlgren",IDC_STATIC,40,34,119,8
+END
+
+IDD_DRIVERINFO DIALOG DISCARDABLE  0, 0, 375, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Driver Information"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "Data Source Name:",IDC_STATIC,11,11,67,8
+    LTEXT           "",IDC_DSN,84,11,82,8
+    RTEXT           "User Name:",IDC_STATIC,11,23,67,8
+    LTEXT           "",IDC_SQL_USER_NAME,84,23,82,8
+    RTEXT           "Server Name:",IDC_STATIC,11,35,67,8
+    LTEXT           "",IDC_SQL_SERVER_NAME,84,35,82,8
+    RTEXT           "DBMS Name:",IDC_STATIC,11,59,67,8
+    LTEXT           "",IDC_SQL_DBMS_NAME,84,59,82,8
+    RTEXT           "DBMS Version:",IDC_STATIC,11,71,67,8
+    LTEXT           "",IDC_SQL_DBMS_VER,84,71,82,8
+    RTEXT           "Driver Name:",IDC_STATIC,11,95,67,8
+    LTEXT           "",IDC_SQL_DRIVER_NAME,84,95,82,8
+    RTEXT           "Driver Version:",IDC_STATIC,11,107,67,8
+    LTEXT           "",IDC_SQL_DRIVER_VER,84,107,82,8
+    RTEXT           "Driver ODBC Version:",IDC_STATIC,9,119,69,8
+    LTEXT           "",IDC_SQL_DRIVER_ODBC_VER,84,119,82,8
+    RTEXT           "ODBC Version:",IDC_STATIC,11,131,67,8
+    LTEXT           "",IDC_SQL_ODBC_VER,84,131,82,8
+    RTEXT           "ODBC API Conformance:",IDC_STATIC,186,11,84,8
+    LTEXT           "",IDC_SQL_ODBC_API_CONFORMANCE,275,11,88,8
+    RTEXT           "ODBC SQL Conformance:",IDC_STATIC,186,23,84,8
+    LTEXT           "",IDC_SQL_ODBC_SQL_CONFORMANCE,275,23,88,8
+    RTEXT           "SAG Compliant:",IDC_STATIC,186,35,84,8
+    LTEXT           "",IDC_SQL_ODBC_SAG_CLI_CONFORMANCE,275,35,88,8
+    RTEXT           "Optional IEF:",IDC_STATIC,186,47,84,8
+    LTEXT           "",IDC_SQL_ODBC_SQL_OPT_IEF,275,47,88,8
+    RTEXT           "Active Connections:",IDC_STATIC,186,59,84,8
+    LTEXT           "",IDC_SQL_ACTIVE_CONNECTIONS,275,59,88,8
+    RTEXT           "Active Statements:",IDC_STATIC,186,71,84,8
+    LTEXT           "",IDC_SQL_ACTIVE_STATEMENTS,275,71,88,8
+    RTEXT           "Multiple Result Sets:",IDC_STATIC,204,83,66,8
+    LTEXT           "",IDC_SQL_MULT_RESULT_SETS,275,83,88,8
+    RTEXT           "File Usage:",IDC_STATIC,186,95,84,8
+    LTEXT           "",IDC_SQL_FILE_USAGE,275,95,88,8
+    LTEXT           "",IDC_SQL_DATA_SOURCE_READ_ONLY,275,107,88,8
+    RTEXT           "Read-Write Status:",IDC_STATIC,186,107,84,8
+    RTEXT           "Accessible Procedures:",IDC_STATIC,186,119,84,8
+    LTEXT           "",IDC_SQL_ACCESSIBLE_PROCEDURES,275,119,88,8
+    RTEXT           "Accessible Tables:",IDC_STATIC,186,131,84,8
+    LTEXT           "",IDC_SQL_ACCESSIBLE_TABLES,275,131,88,8
+    RTEXT           "Database Name:",IDC_STATIC,11,83,67,8
+    LTEXT           "",IDC_SQL_DATABASE_NAME,84,83,117,8
+END
+
+IDD_FUNCTIONS DIALOG DISCARDABLE  0, 0, 375, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Functions"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_API_FUNCTIONS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SORTASCENDING | LVS_NOCOLUMNHEADER | 
+                    WS_BORDER,27,26,100,117
+    LTEXT           "ODBC API Functions:",IDC_STATIC,27,11,100,8
+    CONTROL         "List2",IDC_SQL_FUNCTIONS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SORTASCENDING | WS_BORDER,175,26,173,
+                    117
+    LTEXT           "SQL Functions:",IDC_STATIC,175,11,173,8
+END
+
+IDD_SUPPORTED_SQL DIALOG DISCARDABLE  0, 0, 375, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Supported SQL"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "ALTER TABLE support:",IDC_STATIC,20,10,136,8
+    CHECKBOX        "ADD Column",IDC_AT_ADD,160,9,59,10,NOT WS_TABSTOP
+    CHECKBOX        "DROP Column",IDC_AT_DROP,221,9,66,10,NOT WS_TABSTOP
+    RTEXT           "Expressions in ORDER BY:",IDC_STATIC,20,43,136,8
+    LTEXT           "",IDC_SQL_EXPRESSIONS_IN_ORDERBY,160,43,132,8
+    RTEXT           "GROUP BY and Non-Aggregated Columns:",IDC_STATIC,20,54,
+                    136,8
+    LTEXT           "",IDC_SQL_GROUP_BY,160,54,132,8
+    RTEXT           "ORDER BY Columns Must Be In SELECT:",IDC_STATIC,20,76,
+                    136,8
+    LTEXT           "",IDC_SQL_ORDER_BY_COLUMNS_IN_SELECT,160,76,132,8
+    RTEXT           "Outer Join Support:",IDC_STATIC,20,87,136,8
+    LTEXT           "",IDC_SQL_OUTER_JOINS,160,87,132,8
+    RTEXT           "Subquery Support:",IDC_STATIC,20,109,136,8
+    CHECKBOX        "Correlated",IDC_SQL_SQ_CORRELATED_SUBQUERIES,160,108,59,
+                    10,NOT WS_TABSTOP
+    CHECKBOX        "Comparison",IDC_SQL_SQ_COMPARISON,221,108,66,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "EXISTS",IDC_SQL_SQ_EXISTS,288,108,67,10,NOT WS_TABSTOP
+    CHECKBOX        "IN",IDC_SQL_SQ_IN,160,119,59,10,NOT WS_TABSTOP
+    CHECKBOX        "Quantified",IDC_SQL_SQ_QUANTIFIED,221,119,66,10,NOT 
+                    WS_TABSTOP
+    RTEXT           "UNION Support:",IDC_STATIC,20,131,136,8
+    CHECKBOX        "UNION",IDC_SQL_U_UNION,160,130,59,10,NOT WS_TABSTOP
+    CHECKBOX        "UNION with ALL",IDC_SQL_U_UNION_ALL,221,130,66,10,NOT 
+                    WS_TABSTOP
+    RTEXT           "Column Aliases:",IDC_STATIC,20,21,136,8
+    LTEXT           "",IDC_SQL_COLUMN_ALIAS,160,21,132,8,NOT WS_GROUP
+    RTEXT           "Correlation Names:",IDC_STATIC,20,32,136,8,NOT WS_GROUP
+    LTEXT           "",IDC_SQL_CORRELATION_NAME,160,32,132,8,NOT WS_GROUP
+    RTEXT           "LIKE Escape Character:",IDC_STATIC,20,65,136,8
+    LTEXT           "",IDC_SQL_LIKE_ESCAPE_CLAUSE,160,65,132,8
+    RTEXT           "Positioned Statements:",IDC_STATIC,20,98,136,8
+    CHECKBOX        "Delete",IDC_SQL_PS_POSITIONED_DELETE,160,97,59,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Update",IDC_SQL_PS_POSITIONED_UPDATE,221,97,66,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Select for Update",IDC_SQL_PS_SELECT_FOR_UPDATE,288,97,
+                    67,10,NOT WS_TABSTOP
+END
+
+IDD_DATA_TYPES DIALOG DISCARDABLE  0, 0, 375, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Data Types"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_DATA_TYPE_LIST,13,26,83,117,LBS_NOINTEGRALHEIGHT | 
+                    LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Data Types:",IDC_STATIC,13,11,83,8
+    RTEXT           "SQL Type:",IDC_STATIC,103,11,64,8
+    LTEXT           "",IDC_SQL_TYPE,173,11,80,8
+    RTEXT           "Precision:",IDC_STATIC,103,22,64,8
+    LTEXT           "",IDC_PRECISION,173,22,80,8
+    RTEXT           "Literal Prefix,Suffix:",IDC_STATIC,103,33,64,8
+    LTEXT           "",IDD_PREFIX_SUFFIX,173,33,80,8
+    RTEXT           "Create Parameters:",IDC_STATIC,103,44,64,8
+    LTEXT           "",IDD_CREATE_PARAMS,173,44,80,8
+    RTEXT           "Nullable:",IDC_STATIC,103,55,64,8
+    LTEXT           "",IDC_NULLABLE,173,55,80,8
+    RTEXT           "Case Sensitive:",IDC_STATIC,103,66,64,8
+    LTEXT           "",IDC_CASE_SENSITIVE,173,66,80,8
+    RTEXT           "Searchable:",IDC_STATIC,103,77,64,8
+    LTEXT           "",IDC_SEARCHABLE,173,77,80,8
+    RTEXT           "Unsigned:",IDC_STATIC,103,88,64,8
+    LTEXT           "",IDC_UNSIGNED,173,88,80,8
+    RTEXT           "Money:",IDC_STATIC,103,99,64,8
+    LTEXT           "",IDC_MONEY,173,99,80,8
+    RTEXT           "Auto Increment:",IDC_STATIC,103,110,64,8
+    LTEXT           "",IDC_AUTO_INCREMENT,173,110,80,8
+    RTEXT           "Minimum Scale:",IDC_STATIC,103,121,64,8
+    LTEXT           "",IDC_MINIMUM_SCALE,173,121,80,8
+    RTEXT           "Maximum Scale:",IDC_STATIC,103,132,64,8
+    LTEXT           "",IDC_MAXIMUM_SCALE,173,132,80,8
+    LISTBOX         IDC_CONVERSIONS,265,26,96,117,LBS_NOINTEGRALHEIGHT | 
+                    LBS_DISABLENOSCROLL | WS_VSCROLL
+    LTEXT           "Convert() conversions:",IDC_STATIC,265,11,96,8
+END
+
+IDD_MISC1 DIALOG DISCARDABLE  0, 0, 375, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Misc. 1"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "Transaction Capabilities:",IDC_STATIC,37,7,109,8
+    LTEXT           "",IDC_SQL_TXN_CAPABLE,151,7,161,8
+    RTEXT           "Cursor Commit Behavior:",IDC_STATIC,37,17,109,8
+    LTEXT           "",IDC_SQL_CURSOR_COMMIT_BEHAVIOR,151,17,161,8
+    RTEXT           "Cursor Rollback Behavior:",IDC_STATIC,37,27,109,8
+    LTEXT           "",IDC_SQL_CURSOR_ROLLBACK_BEHAVIOR,151,27,161,8
+    RTEXT           "Transaction Isolation Levels:",IDC_STATIC,37,37,109,8
+    CHECKBOX        "Read Uncommitted",IDC_SQL_TXN_READ_UNCOMMITTED,157,37,
+                    77,10,NOT WS_TABSTOP
+    CHECKBOX        "Read Committed",IDC_SQL_TXN_READ_COMMITTED,245,37,77,10,
+                    NOT WS_TABSTOP
+    CHECKBOX        "Repeatable Read",IDC_SQL_TXN_REPEATABLE_READ,157,47,77,
+                    10,NOT WS_TABSTOP
+    CHECKBOX        "Serializable",IDC_SQL_TXN_SERIALIZABLE,245,47,77,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Versioning",IDC_SQL_TXN_VERSIONING,157,57,77,10,NOT 
+                    WS_TABSTOP
+    RTEXT           "Default Transaction Isolation Level:",IDC_STATIC,29,67,
+                    117,8
+    LTEXT           "",IDC_SQL_DEFAULT_TXN_ISOLATION,151,67,161,8
+    RTEXT           "Multiple Active Transactions:",IDC_STATIC,29,77,117,8
+    LTEXT           "",IDC_SQL_MULTIPLE_ACTIVE_TXN,151,77,161,8
+    RTEXT           "Bookmark Persistence:",IDC_STATIC,37,87,109,8
+    CHECKBOX        "Close",IDC_SQL_BP_CLOSE,157,87,60,10,NOT WS_TABSTOP
+    CHECKBOX        "Delete",IDC_SQL_BP_DELETE,228,87,60,10,NOT WS_TABSTOP
+    CHECKBOX        "Drop",IDC_SQL_BP_DROP,299,87,60,10,NOT WS_TABSTOP
+    CHECKBOX        "Scroll",IDC_SQL_BP_SCROLL,157,97,60,10,NOT WS_TABSTOP
+    CHECKBOX        "Transaction",IDC_SQL_BP_TRANSACTION,228,97,60,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Update",IDC_SQL_BP_UPDATE,299,97,60,10,NOT WS_TABSTOP
+    CHECKBOX        "Other HSTMT",IDC_SQL_BP_OTHER_HSTMT,157,107,60,10,NOT 
+                    WS_TABSTOP
+    RTEXT           "Lock Types:",IDC_STATIC,37,117,109,8
+    CHECKBOX        "No Change",IDC_SQL_LCK_NO_CHANGE,157,117,60,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Exclusive",IDC_SQL_LCK_EXCLUSIVE,228,117,60,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Unlock",IDC_SQL_LCK_UNLOCK,299,117,60,10,NOT WS_TABSTOP
+    RTEXT           "Static Sensitivity:",IDC_STATIC,37,127,109,8
+    CHECKBOX        "Additions",IDC_SQL_SS_ADDITIONS,157,127,60,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Deletions",IDC_SQL_SS_DELETIONS,228,127,60,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Updates",IDC_SQL_SS_UPDATES,299,127,60,10,NOT 
+                    WS_TABSTOP
+END
+
+IDD_MISC2 DIALOG DISCARDABLE  0, 0, 375, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Misc. 2"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "Need Long Data Length:",IDC_STATIC,6,7,79,8
+    LTEXT           "",IDC_SQL_NEED_LONG_DATA_LEN,93,7,41,8
+    RTEXT           "Non-Nullable Columns:",IDC_STATIC,6,17,79,8
+    LTEXT           "",IDC_SQL_NON_NULLABLE_COLUMNS,93,17,78,8
+    RTEXT           "Procedures:",IDC_STATIC,173,17,79,8
+    LTEXT           "",IDC_SQL_PROCEDURES,259,17,72,8
+    RTEXT           "Null Concatenation:",IDC_STATIC,6,27,79,8
+    LTEXT           "",IDC_SQL_CONCAT_NULL_BEHAVIOR,93,27,107,8
+    RTEXT           "Fetch Direction:",IDC_STATIC,6,42,74,8
+    CHECKBOX        "Next",IDC_SQL_FD_FETCH_NEXT,83,42,28,10,NOT WS_TABSTOP
+    CHECKBOX        "First",IDC_SQL_FD_FETCH_FIRST,140,42,26,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Last",IDC_SQL_FD_FETCH_LAST,209,42,26,10,NOT WS_TABSTOP
+    CHECKBOX        "Prior",IDC_SQL_FD_FETCH_PRIOR,261,42,27,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Absolute",IDC_SQL_FD_FETCH_ABSOLUTE,83,52,40,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Relative",IDC_SQL_FD_FETCH_RELATIVE,140,52,39,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Resume",IDC_SQL_FD_FETCH_RESUME,209,52,39,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Bookmark",IDC_SQL_FD_FETCH_BOOKMARK,261,52,45,10,NOT 
+                    WS_TABSTOP
+    RTEXT           "GetData Extensions:",IDC_STATIC,6,67,74,8
+    CHECKBOX        "Any Column",IDC_SQL_GD_ANY_COLUMN,83,67,51,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Any Order",IDC_SQL_GD_ANY_ORDER,140,67,45,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Block",IDC_SQL_GD_BLOCK,209,67,46,10,NOT WS_TABSTOP
+    CHECKBOX        "Bound",IDC_SQL_GD_BOUND,261,67,45,10,NOT WS_TABSTOP
+    RTEXT           "Null Collation:",IDC_STATIC,173,7,79,8
+    LTEXT           "",IDC_SQL_NULL_COLLATION,259,7,41,8
+    RTEXT           "Owner Usage:",IDC_STATIC,6,123,74,8
+    CHECKBOX        "DML Stmt.",IDC_SQL_OU_DML_STATEMENTS,83,123,46,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Proc. Invocation",IDC_SQL_OU_PROCEDURE_INVOCATION,140,
+                    123,66,10,NOT WS_TABSTOP
+    CHECKBOX        "Table Def.",IDC_SQL_OU_TABLE_DEFINITION,209,123,46,10,
+                    NOT WS_TABSTOP
+    CHECKBOX        "Index Def.",IDC_SQL_OU_INDEX_DEFINITION,261,123,45,10,
+                    NOT WS_TABSTOP
+    CHECKBOX        "Privilege Def.",IDC_SQL_OU_PRIVILEGE_DEFINITION,312,123,
+                    54,10,NOT WS_TABSTOP
+    RTEXT           "Positioned Operations:",IDC_STATIC,6,82,74,8
+    CHECKBOX        "Position",IDC_SQL_POS_POSITION,83,82,55,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Refresh",IDC_SQL_POS_REFRESH,140,82,66,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Update",IDC_SQL_POS_UPDATE,209,82,46,10,NOT WS_TABSTOP
+    CHECKBOX        "Delete",IDC_SQL_POS_DELETE,261,82,45,10,NOT WS_TABSTOP
+    CHECKBOX        "Add",IDC_SQL_POS_ADD,312,82,35,10,NOT WS_TABSTOP
+    RTEXT           "Qualifier Usage:",IDC_STATIC,6,133,74,8
+    CHECKBOX        "DML Stmt.",IDC_SQL_QU_DML_STATEMENTS,83,133,46,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Proc. Invocation",IDC_SQL_QU_PROCEDURE_INVOCATION,140,
+                    133,66,10,NOT WS_TABSTOP
+    CHECKBOX        "Table Def.",IDC_SQL_QU_TABLE_DEFINITION,209,133,46,10,
+                    NOT WS_TABSTOP
+    CHECKBOX        "Index Def.",IDC_SQL_QU_INDEX_DEFINITION,261,133,45,10,
+                    NOT WS_TABSTOP
+    CHECKBOX        "Privilege Def.",IDC_SQL_QU_PRIVILEGE_DEFINITION,312,133,
+                    54,10,NOT WS_TABSTOP
+    RTEXT           "Scroll Concurrency:",IDC_STATIC,6,97,74,8
+    CHECKBOX        "Read Only",IDC_SQL_SCCO_READ_ONLY,83,97,55,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Lock",IDC_SQL_SCCO_LOCK,140,97,45,10,NOT WS_TABSTOP
+    CHECKBOX        "Opt./RowVer",IDC_SQL_SCCO_OPT_ROWVER,209,97,57,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Opt./Values",IDC_SQL_SCCO_OPT_VALUES,287,97,51,10,NOT 
+                    WS_TABSTOP
+    RTEXT           "Scroll Options:",IDC_STATIC,6,107,74,8
+    CHECKBOX        "Forward Only",IDC_SQL_SO_FORWARD_ONLY,83,107,55,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Static",IDC_SQL_SO_STATIC,209,107,45,11,NOT WS_TABSTOP
+    CHECKBOX        "Keyset Driven",IDC_SQL_SO_KEYSET_DRIVEN,140,107,57,10,
+                    NOT WS_TABSTOP
+    CHECKBOX        "Dynamic",IDC_SQL_SO_DYNAMIC,261,107,51,10,NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Mixed",IDC_SQL_SO_MIXED,312,107,35,10,NOT WS_TABSTOP
+    RTEXT           "Row Updates:",IDC_STATIC,173,27,79,8
+    LTEXT           "",IDC_SQL_ROW_UPDATES,259,27,41,8
+END
+
+IDD_IDENTIFIERS DIALOG DISCARDABLE  0, 0, 375, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Identifiers"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_ODBC_KEYWORDS,7,20,81,123,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "ODBC Keywords:",IDC_STATIC,7,7,81,8
+    LISTBOX         IDC_DRIVER_KEYWORDS,98,20,81,123,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Driver-Specific Keywords:",IDC_STATIC,98,7,81,8
+    RTEXT           "Identifier Case:",IDC_STATIC,193,7,89,8,NOT WS_GROUP
+    LTEXT           "",IDC_SQL_IDENTIFIER_CASE,287,7,81,8
+    RTEXT           "Identifier Quote Character:",IDC_STATIC,193,37,89,8,NOT 
+                    WS_GROUP
+    LTEXT           "",IDC_SQL_IDENTIFIER_QUOTE_CHAR,287,37,81,8
+    RTEXT           "Owner Term:",IDC_STATIC,193,67,89,8,NOT WS_GROUP
+    LTEXT           "",IDC_SQL_OWNER_TERM,287,67,81,8
+    RTEXT           "Procedure Term:",IDC_STATIC,193,77,89,8,NOT WS_GROUP
+    LTEXT           "",IDC_SQL_PROCEDURE_TERM,287,77,81,8
+    RTEXT           "Qualifier Location:",IDC_STATIC,193,47,89,8,NOT 
+                    WS_GROUP
+    LTEXT           "",IDC_SQL_QUALIFIER_LOCATION,287,47,81,8
+    RTEXT           "Qualifier Name Separator:",IDC_STATIC,193,57,89,8,NOT 
+                    WS_GROUP
+    LTEXT           "",IDC_SQL_QUALIFIER_NAME_SEPARATOR,287,57,81,8
+    RTEXT           "Qualifier Term:",IDC_STATIC,193,87,89,8,NOT WS_GROUP
+    LTEXT           "",IDC_SQL_QUALIFIER_TERM,287,87,81,8
+    RTEXT           "Special Characters:",IDC_STATIC,193,107,89,8,NOT 
+                    WS_GROUP
+    EDITTEXT        IDC_SQL_SPECIAL_CHARACTERS,188,117,180,26,ES_MULTILINE | 
+                    ES_READONLY | NOT WS_TABSTOP
+    RTEXT           "Table Term:",IDC_STATIC,193,97,89,8,NOT WS_GROUP
+    LTEXT           "",IDC_SQL_TABLE_TERM,287,97,81,8
+    RTEXT           "Search Pattern Escape:",IDC_STATIC,193,27,89,8,NOT 
+                    WS_GROUP
+    LTEXT           "",IDC_SQL_SEARCH_PATTERN_ESCAPE,287,27,81,8
+    RTEXT           "Quoted Identifier Case:",IDC_STATIC,193,17,89,8,NOT 
+                    WS_GROUP
+    LTEXT           "",IDC_SQL_QUOTED_IDENTIFIER_CASE,287,17,81,8
+END
+
+IDD_LIMITS DIALOG DISCARDABLE  0, 0, 375, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Limits"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "Maximum Binary Literal Length:",IDC_STATIC,7,10,128,8
+    LTEXT           "",IDC_SQL_MAX_BINARY_LITERAL_LEN,139,10,38,8
+    RTEXT           "Maximum Character Literal Length:",IDC_STATIC,7,20,128,
+                    8
+    LTEXT           "",IDC_SQL_MAX_CHAR_LITERAL_LEN,139,20,38,8
+    RTEXT           "Maximum Column Name Length:",IDC_STATIC,7,30,128,8
+    LTEXT           "",IDC_SQL_MAX_COLUMN_NAME_LEN,139,30,38,8
+    RTEXT           "Max Number of Columns in GROUP BY:",IDC_STATIC,7,40,128,
+                    8
+    LTEXT           "",IDC_SQL_MAX_COLUMNS_IN_GROUP_BY,139,40,38,8
+    RTEXT           "Max Number of Columns in Index:",IDC_STATIC,7,50,128,8
+    LTEXT           "",IDC_SQL_MAX_COLUMNS_IN_INDEX,139,50,38,8
+    RTEXT           "Max Number of Columns in ORDER BY:",IDC_STATIC,7,60,128,
+                    8
+    LTEXT           "",IDC_SQL_MAX_COLUMNS_IN_ORDER_BY,139,60,38,8
+    RTEXT           "Max Number of Columns in SELECT:",IDC_STATIC,7,70,128,8
+    LTEXT           "",IDC_SQL_MAX_COLUMNS_IN_SELECT,139,70,38,8
+    RTEXT           "Max Number of Columns in Table:",IDC_STATIC,7,80,128,8
+    LTEXT           "",IDC_SQL_MAX_COLUMNS_IN_TABLE,139,80,38,8
+    RTEXT           "Maximum Cursor Name Length:",IDC_STATIC,7,90,128,8
+    LTEXT           "",IDC_SQL_MAX_CURS0R_NAME_LEN,139,90,38,8
+    RTEXT           "Maximum Index Size:",IDC_STATIC,7,100,128,8
+    LTEXT           "",IDC_SQL_MAX_INDEX_SIZE,139,100,38,8
+    RTEXT           "Maximum Owner Name Length:",IDC_STATIC,7,110,128,8
+    LTEXT           "",IDC_SQL_MAX_OWNER_NAME_LEN,139,110,38,8
+    RTEXT           "Maximum Procedure Name Length:",IDC_STATIC,7,120,128,8
+    LTEXT           "",IDC_SQL_MAX_PROCEDURE_NAME_LEN,139,120,38,8
+    RTEXT           "Maximum Qualifier Name Length:",IDC_STATIC,7,130,128,8
+    LTEXT           "",IDC_SQL_MAX_QUALIFIER_NAME_LEN,139,130,38,8
+    RTEXT           "Maximum Row Size:",IDC_STATIC,187,10,110,8
+    LTEXT           "",IDC_SQL_MAX_ROW_SIZE,301,10,38,8
+    RTEXT           "Max Row Size Includes Long:",IDC_STATIC,187,20,110,8
+    LTEXT           "",IDC_SQL_MAX_ROW_SIZE_INCLUDES_LONG,301,20,38,8
+    RTEXT           "Maximum Statement Length:",IDC_STATIC,187,30,110,8
+    LTEXT           "",IDC_SQL_MAX_STATEMENT_LEN,301,30,38,8
+    RTEXT           "Maximum Table Name Length:",IDC_STATIC,187,40,110,8
+    LTEXT           "",IDC_SQL_MAX_TABLE_NAME_LEN,301,40,38,8
+    RTEXT           "Max Number of Tables in SELECT:",IDC_STATIC,187,50,110,
+                    8
+    LTEXT           "",IDC_SQL_MAX_TABLES_IN_SELECT,301,50,38,8
+    RTEXT           "Maximum User Name Length:",IDC_STATIC,187,60,110,8
+    LTEXT           "",IDC_SQL_MAX_USER_NAME_LEN,301,60,38,8
+    LTEXT           "Timestamp Add Intervals:",IDC_STATIC,187,75,81,8
+    LTEXT           "Timestamp Diff. Intervals:",IDC_STATIC,285,75,80,8
+    CONTROL         "List3",IDC_SQL_TIMEDATE_ADD_INTERVALS,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHAREIMAGELISTS | 
+                    LVS_NOCOLUMNHEADER | WS_BORDER,187,86,81,53
+    CONTROL         "List4",IDC_SQL_TIMEDATE_DIFF_INTERVALS,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHAREIMAGELISTS | 
+                    LVS_NOCOLUMNHEADER | WS_BORDER,285,86,80,53
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "ODBCINFO MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "ODBCINFO\0"
+            VALUE "LegalCopyright", "Copyright © 1995\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ODBCINFO.EXE\0"
+            VALUE "ProductName", "ODBCINFO Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DRIVERINFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 368
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_FUNCTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 368
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_SUPPORTED_SQL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 368
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_DATA_TYPES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 368
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_MISC1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 368
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_MISC2, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 368
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_IDENTIFIERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 368
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_LIMITS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 368
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_IMAGELIST           BITMAP  DISCARDABLE     "res\\bmp00002.bmp"
+IDB_BITMAP1             BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About OdbcInfo..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\OdbcInfo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxdb.rc"
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

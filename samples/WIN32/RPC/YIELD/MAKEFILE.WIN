@@ -1,0 +1,54 @@
+#*************************************************************#
+#**                                                         **#
+#**                 Microsoft RPC Examples                  **#
+#**                    yeild Application                    **#
+#**            Copyright(c) Microsoft Corp. 1992-1995       **#
+#**                                                         **#
+#*************************************************************#
+
+cc= cl
+cflags= -c -AL -Gsw -Oas -Zpe -Zi
+linker= link
+lflags= /CO /NOD
+
+.c.obj:
+   $(cc) $(cflags) $<
+
+!if defined(BUILD_IDL)
+all: yield.h yield_c.c
+!else
+all: yieldc.exe
+idl: yield.h
+!endif
+
+# Update the resource if necessary
+yieldc.res: yieldc.rc yieldc.h
+    rc -r yieldc.rc
+
+# Update the executable file if necessary, and if so, add the resource back in.
+yieldc.exe: yieldc.obj yieldc.def yield_c.obj yieldc.res
+    $(linker) $(lflags) yieldc yield_c ,,,\
+    libw llibcew rpcw rpcndrw, yieldc.def
+    rc yieldc.res yieldc.exe
+
+# Update the object files if necessary
+
+yieldc.obj: yieldc.c yieldc.h yield.h
+   $(cc) $(cflags) $(cvars) -DWIN16 yieldc.c
+
+yield_c.obj : yield_c.c yieldc.h
+
+yield.h yield_c.c : yield.idl yield.acf
+   midl -oldnames -env win16 yield.idl -no_cpp
+
+# Clean up everything
+cleanall : clean
+    -del *.exe
+
+# Clean up everything but the .EXEs
+clean :
+    -del *.obj
+    -del *.map
+    -del yieldc.res
+    -del yield_c.c
+    -del yield.h

@@ -1,0 +1,124 @@
+/*
+ * STRINGS.RC
+ *
+ * strings for the OLE 2.0 UI Support Library.
+ *
+ * Copyright (c)1992 Microsoft Corporation, All Right Reserved
+ */
+
+
+#include "ole2ui.h"
+
+
+//Stringtable common for all dialogs.
+STRINGTABLE
+	BEGIN
+	 IDS_FILTERS,               "Tous fichiers (*.*)|*.*|"
+	 IDS_ICONFILTERS,           "Fichiers ictnes|*.exe;*.dll;*.ico|Programmes (*.exe)|*.exe|Bibliothhques (*.dll)|Ictnes (*.ico)|Tous fichiers (*.*)|*.*|"
+	END
+
+// browse dialog
+STRINGTABLE
+	BEGIN
+	 IDS_BROWSE         "Parcourir"
+	END
+
+
+//Insert Object stringtable.
+STRINGTABLE
+	BEGIN
+	 IDS_IORESULTNEW,                "Inshre un nouvel objet %s dans votre document."
+	 IDS_IORESULTNEWICON,            "Inshre un nouvel objet %s dans votre document.  Il sera affichi en tant qu'ictne."
+	 IDS_IORESULTFROMFILE1,          "Inshre le contenu du fichier en tant qu'objet dans votre document afin de pouvoir l'activer en utilisant  "
+	 IDS_IORESULTFROMFILE2,          "l'application qui l'a crii."
+	 IDS_IORESULTFROMFILEICON2,      "l'application qui l'a crii.  Il sera affichi en tant qu'ictne."
+	 IDS_IORESULTLINKFILE1,          "Inshre une image du contenu du fichier dans votre document.  L'image sera liie au "
+	 IDS_IORESULTLINKFILE2,          "fichier de fagon ` ce que les modifications apporties au fichier soient reflities dans votre document."
+	 IDS_IORESULTLINKFILEICON1,      "Inshre une ictne reprisentant le fichier dans votre document.  L'ictne sera liie au "
+	 IDS_IORESULTLINKFILEICON2,      "fichier de fagon ` ce que les modifications apporties au fichier soient reflities dans votre document."
+	END
+
+//Change Icon stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_CINOICONSINFILE,        "Il n'y a pas d'ictne dans %s."
+	 IDS_CIINVALIDFILE,          "%s n'existe pas."
+	 IDS_CIFILEACCESS,           "Impossible d'ouvrir le fichier %s. Acchs refusi."
+	 IDS_CIFILESHARE,            "Impossible d'ouvrir le fichier %s. Partage interdit."
+	 IDS_CIFILEOPENFAIL,         "Impossible d'ouvrir le fichier %s. Faute ginirale."
+	END
+
+// Convert stringtable.
+STRINGTABLE
+	BEGIN
+	 IDS_CVRESULTCONVERTLINK,     "Un objet lii doit jtre converti ` la source."
+	 IDS_CVRESULTCONVERTTO,       "Change l'objet %s silectionni en objet  %s de fagon permanente."
+	 IDS_CVRESULTNOCHANGE,        "L'objet %s silectionni ne sera pas converti."
+	 IDS_CVRESULTDISPLAYASICON,   "Il sera affichi en tant qu'ictne."
+	 IDS_CVRESULTACTIVATEAS,      "Tout objet %s sera activi en tant qu'objet %s"
+	 IDS_CVRESULTACTIVATEDIFF,    ", mais ne sera pas converti."
+	END
+
+//Paste Special stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_PSPASTEDATA,         "Inshre le contenu du Presse-papiers dans votre document en tant qu'objet %s."
+	 IDS_PSPASTEOBJECT,       "Inshre le contenu du Presse-papiers dans votre document afin de pouvoir l'activer en utilisant  %s."
+	 IDS_PSPASTEOBJECTASICON, "Inshre le contenu du Presse-papiers dans votre document afin de pouvoir l'activer en utilisant %s.  Il sera affichi en tant qu'ictne."
+	 IDS_PSPASTELINKDATA,     "Inshre le contenu du Presse-papiers dans votre document en tant que %s.  Coller le lien crie une liaison avec le fichier source de fagon ` ce que les modifications apporties au fichier source soient reflities dans votre document."
+	 IDS_PSPASTELINKOBJECT,   "Inshre une image du contenu du Presse-papiers dans votre document. Coller le lien crie une liaison avec le fichier source de fagon ` ce que les modifications apporties au fichier source soient reflities dans votre document."
+	 IDS_PSPASTELINKOBJECTASICON, "Inshre une ictne dans votre document qui reprisente le contenu du Presse-papiers. Coller le lien crie une liaison avec le fichier source de fagon ` ce que les modifications apporties au fichier source soient reflities dans votre document."
+	 IDS_PSNONOLE,            "Inshre le contenu du Presse-papiers dans votre document."
+	 IDS_PSUNKNOWNTYPE,       "Type inconnu"
+	 IDS_PSUNKNOWNSRC,        "Source inconnue"
+	 IDS_PSUNKNOWNAPP,        "l'application qui l'a crii"
+	END
+
+// Busy/Blocked dialog stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_BZRESULTTEXTBUSY          "Cette action ne peut pas jtre complitie parce que l'application %s est occupie. Choisissez ""Basculer vers"" pour activer  %s et corriger le problhme."
+	 IDS_BZRESULTTEXTNOTRESPONDING "Cette action ne peut pas jtre complitie parce que l'application %s ne ripond pas. Choisissez ""Basculer vers"" pour activer  %s et corriger le problhme."
+	END
+
+// OLESTD stringtable
+STRINGTABLE
+	BEGIN
+	  IDS_OLESTDNOCREATEFILE, "Impossible de crier le fichier !"
+	  IDS_OLESTDNOOPENFILE,   "Impossible d'ouvrir le fichier !"
+	  IDS_OLESTDDISKFULL,     "Disque plein -- impossible de terminer l'action d'enregistrement"
+	END
+
+// OLE2UI stringtable
+STRINGTABLE
+	BEGIN
+	   IDS_OLE2UIEDITNOOBJCMD, "&Objet"
+	   IDS_OLE2UIEDITLINKCMD_1VERB, "0%s l'&objet %s lii"
+	   IDS_OLE2UIEDITOBJECTCMD_1VERB, "0%s l'&objet %s "
+	   IDS_OLE2UIEDITLINKCMD_NVERB, "&Objet %s lii"
+	   IDS_OLE2UIEDITOBJECTCMD_NVERB, "&Objet %s "
+	   IDS_OLE2UIUNKNOWN, "Inconnu"
+	   IDS_OLE2UILINK,    "Lier"
+	   IDS_OLE2UIOBJECT,  "Objet"
+	   IDS_OLE2UIEDIT,    "&Modifier"
+	   IDS_OLE2UICONVERT, "&Convertir..."
+	   IDS_DEFICONLABEL,  "Document"
+	   IDS_OLE2UIPASTELINKEDTYPE, "%s lii"
+	END
+
+// LINKS stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_LINK_AUTO              "Automatique"
+	 IDS_LINK_MANUAL            "Manuelle"
+	 IDS_LINK_UNKNOWN           "Non disponible"
+	 IDS_LINKS                  "Liaisons"
+	 IDS_FAILED                 "L'opiration a ichoui !"
+	 IDS_CHANGESOURCE           "Modifier la source"
+	 IDS_INVALIDSOURCE          "Source non valide : Voulez-vous la corriger ?"
+	 IDS_CHANGEADDITIONALLINKS  "La liaison silectionnie a iti modifiie.\nCe document contient des liaisons supplimentaires\n%s.\n\nVoulez-vous modifier les autres liaisons ?"
+	 IDS_ERR_GETLINKSOURCE      "N'a pas riussi ` obtenir le source de la liaison !"
+	 IDS_ERR_GETLINKUPDATEOPTIONS   "N'a pas riussi ` obtenir l'option de mise ` jour de la liaison !"
+	 IDS_ERR_ADDSTRING          "N'a pas riussi ` ajouter l'iliment dans la liste !"
+	 IDS_CLOSE              "Fermer"
+	END

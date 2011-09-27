@@ -1,0 +1,9 @@
+82572
+C:\SC\samples\win32\Q_A\INTEROP\DLL32.PRJ
+DLL32.OPN
+novcs
+dll32.def
+3
+812035224
+0 0 0 0 0 "dll32.c" ""
+0 0 0 0 0 "dll32.def" ""

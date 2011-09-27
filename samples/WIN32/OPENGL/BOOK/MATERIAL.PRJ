@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\OPENGL\BOOK\MATERIAL.PRJ
+MATERIAL.OPN
+novcs
+material.def
+4
+812035224
+0 0 0 0 0 "material.c" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "material.def" ""
+0 0 0 0 0 "advapi32.lib" ""

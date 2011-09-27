@@ -1,0 +1,4 @@
+/* Copyright (C) 1986-2001 by Digital Mars */
+
+#include <winio\windos.rc>
+

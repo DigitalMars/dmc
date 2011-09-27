@@ -1,0 +1,17 @@
+82572
+C:\SC\samples\mfc32\tutorial\scribble\step7\SCRIBBLE.PRJ
+scribble.OPN
+novcs
+scribble.DEF
+16
+852911400
+0 0 0 0 0 "childfrm.cpp" ""
+0 0 0 0 0 "ipframe.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "pendlg.cpp" ""
+0 0 0 0 0 "scribble.cpp" ""
+0 0 0 0 0 "scribdoc.cpp" ""
+0 0 0 0 0 "scribitm.cpp" ""
+0 0 0 0 0 "scribvw.cpp" ""
+0 0 0 0 0 "scribble.DEF" ""
+0 0 0 0 0 "scribble.rc" ""

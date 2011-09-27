@@ -1,0 +1,13 @@
+82572
+C:\SC\Samples\WIN32\opengl\book\accnot.prj
+ACCNOT.OPN
+novcs
+accnot.def
+4
+852911400
+0 0 0 0 0 "accnot.c" ""
+0 0 0 0 0 "accnot.def" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "advapi32.lib" ""

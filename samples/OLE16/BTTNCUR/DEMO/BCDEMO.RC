@@ -1,0 +1,63 @@
+/*
+ * BCDEMO.RC
+ *
+ * Icon, menus, strings, and dialogs.
+ *
+ * Copyright (c)1992-1993 Microsoft Corporation, All Right Reserved,
+ * as applied to redistribution of this source code in source form
+ * License is granted to use of compiled code in shipped binaries.
+ */
+
+
+#include <windows.h>
+#include "..\bttncur.h"
+#include "bcdemo.h"
+
+
+Icon            ICON        bcdemo.ico
+IDB_BUTTONS72   BITMAP      appim72.bmp
+IDB_BUTTONS96   BITMAP      appim96.bmp
+IDB_BUTTONS120  BITMAP      appim120.bmp
+
+IDR_MENU MENU MOVEABLE DISCARDABLE
+	BEGIN
+	 /*
+	  * We're going to cheat with this menu and make the IDs the
+	  * exact resource ID we want when we use the menu.
+	  */
+	 POPUP "&Cursors"
+	  BEGIN
+	   MENUITEM "&Normal",                           IDM_NORMALCURSOR
+
+	   POPUP    "&Split Bars"
+		BEGIN
+		 MENUITEM "&Horizontal",                     IDC_HSPLITBAR
+		 MENUITEM "&Vertical",                       IDC_VSPLITBAR
+		END
+
+	   POPUP    "S&ize Bars"
+		BEGIN
+		 MENUITEM "&Horizontal",                     IDC_HSIZEBAR
+		 MENUITEM "&Vertical",                       IDC_VSIZEBAR
+		END
+
+	   POPUP    "&Move and Size Arrows"
+		BEGIN
+		 MENUITEM "&Horizontal 2-way",               IDC_HARROWS
+		 MENUITEM "&Vertical 2-way",                 IDC_VARROWS
+		 MENUITEM "N&E-SW 2-way",                    IDC_NESWARROWS
+		 MENUITEM "N&W-SE 2-way",                    IDC_NWSEARROWS
+		 MENUITEM "&Small 4-way",                    IDC_SMALLARROWS
+		 MENUITEM "&Large 4-way",                    IDC_LARGEARROWS
+		END
+
+	   POPUP    "M&iscellaneous"
+		BEGIN
+		 MENUITEM "&Right Arrow",                    IDC_RIGHTARROW
+		 MENUITEM "&Context-Sensitive Help",         IDC_CONTEXTHELP
+		 MENUITEM "&Magnifying Glass",               IDC_MAGNIFY
+		 MENUITEM "&No-Drop",                        IDC_NODROP
+		 MENUITEM "&Top of Table",                   IDC_TABLETOP
+		END
+	  END
+	END

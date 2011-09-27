@@ -1,0 +1,102 @@
+################################################################################
+# File:        makefile.dmc
+#
+# Purpose:     makefile for Borland C/C++ compiler, STLSoft v1.6.3 samples.
+#
+# Created:     30th May 2003
+# Updated:     11th June 2003
+#
+# Author:      Matthew Wilson, Synesis Software (c) 2003. All rights reserved.
+#
+# Copyright:   .
+#
+# Home:        http://www.stlsoft.org/
+#
+################################################################################
+
+################################################################################
+# Commands
+
+CC		=	bcc32
+LD		=	bcc32
+INC		=	.. # stlsoft libraries directory
+LIB		=	-L$(LIB)
+
+CPPCARGS	=	-c -I$(INCLUDE) -I$(INC)
+
+################################################################################
+# Objects
+
+OBJS		=	\
+				\
+				hardlink\bc56\hardlink.obj \
+				pathchk\bc56\pathchk.obj \
+				whereis\bc56\whereis.obj
+
+################################################################################
+# Suffix rules
+
+.cpp.obj:
+	$(CPPC) $(CPPCARGS) -o$@ $?
+
+################################################################################
+# Targets
+
+usage:
+	-@echo "make [all | usage | clean]"
+
+all: target
+
+target:	hardlink\bc56\hardlink.exe \
+		pathchk\bc56\pathchk.exe \
+		whereis\bc56\whereis.exe
+
+clean_cpp:
+	@del $(OBJS) 2>NUL
+
+clean_target:
+  @if exist hardlink\bc56\hardlink.exe del hardlink\bc56\hardlink.exe
+  @if exist pathchk\bc56\pathchk.exe del pathchk\bc56\pathchk.exe
+  @if exist whereis\bc56\whereis.exe del whereis\bc56\whereis.exe
+  @if exist hardlink\bc56\hardlink.tds del hardlink\bc56\hardlink.tds
+  @if exist pathchk\bc56\pathchk.tds del pathchk\bc56\pathchk.tds
+  @if exist whereis\bc56\whereis.tds del whereis\bc56\whereis.tds
+	@del $(OBJS) 2>NUL
+
+clean:	clean_target
+	@if exist *.exe del *.exe
+	@if exist *.map del *.map
+	@if exist *.tds del *.tds
+	@if exist *.obj del *.obj
+	@if exist *.err del *.err
+
+# directories
+
+directories:
+  @if not exist hardlink\bc56 md hardlink\bc56
+  @if not exist pathchk\bc56 md pathchk\bc56
+  @if not exist whereis\bc56 md whereis\bc56
+
+# objects - hard-coded, since object files are in separate directory to .cpp
+
+hardlink\bc56\hardlink.obj:	directories hardlink\hardlink.cpp
+	$(CC) $(CPPCARGS) -o$@ hardlink\hardlink.cpp
+
+pathchk\bc56\pathchk.obj:		directories pathchk\pathchk.cpp
+	$(CC) $(CPPCARGS) -o$@ pathchk\pathchk.cpp
+
+whereis\bc56\whereis.obj:		directories whereis\whereis.cpp
+	$(CC) $(CPPCARGS) -o$@ whereis\whereis.cpp
+
+# executables
+
+hardlink\bc56\hardlink.exe:	hardlink\bc56\hardlink.obj
+	$(CC) -e$@ $?
+
+pathchk\bc56\pathchk.exe:		pathchk\bc56\pathchk.obj
+	$(CC) -e$@ $?
+
+whereis\bc56\whereis.exe:		whereis\bc56\whereis.obj
+	$(CC) -e$@ $?
+
+################################################################################

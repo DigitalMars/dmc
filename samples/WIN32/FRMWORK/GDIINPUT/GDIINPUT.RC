@@ -1,0 +1,364 @@
+//Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "winver.h"
+#include "globals.h"
+#include "toolbar.h"
+#include "statbar.h"
+#include "pendlg.h"
+#include "brushdlg.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_APPICON             ICON    DISCARDABLE     "GDIInput.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BMP                 BITMAP  MOVEABLE PURE   "TOOLBAR.BMP"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ABOUTBOX DIALOG DISCARDABLE  22, 17, 167, 73
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About GDI Input"
+FONT 8, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,132,2,32,14,WS_GROUP
+    ICON            IDI_APPICON,-1,3,2,18,20
+    LTEXT           "CompanyName",IDD_VERFIRST,30,2,100,8
+    LTEXT           "FileDescription",101,30,11,100,8
+    LTEXT           "FileVersion",102,30,20,137,8
+    LTEXT           "LegalCopyright",103,30,29,137,8
+    LTEXT           "LegalTrademarks",IDD_VERLAST,30,47,136,27
+    CONTROL         "",501,"Static",SS_BLACKRECT,29,43,138,1
+END
+
+PENDLG DIALOG DISCARDABLE  6, 18, 170, 84
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "Pen Style"
+BEGIN
+    RTEXT           "&Width:",-1,5,10,30,8
+    EDITTEXT        IDD_PENWIDTH,40,8,24,12,ES_AUTOHSCROLL
+    RTEXT           "&Style:",307,5,28,30,8
+    COMBOBOX        IDD_PENSTYLE,40,28,48,35,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "",IDD_PENEXAMPLE,"Static",SS_BLACKFRAME,95,8,70,34
+    CTEXT           "Example",-1,95,46,70,8
+    PUSHBUTTON      "Set &Color...",IDD_PENCOLOR,10,62,60,14
+    DEFPUSHBUTTON   "OK",IDOK,75,62,40,14,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,120,62,40,14
+END
+
+BRUSHDLG DIALOG DISCARDABLE  6, 18, 210, 91
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "Create Brush"
+BEGIN
+    GROUPBOX        "Brush &Style",-1,5,6,120,55
+    CONTROL         "Solid",IDD_SOLIDBRUSH,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,10,18,32,10
+    CONTROL         "Null (Hollow)",IDD_NULLBRUSH,"Button",
+                    BS_AUTORADIOBUTTON,53,18,70,10
+    CONTROL         "Hatched",IDD_HATCHBRUSH,"Button",BS_AUTORADIOBUTTON,10,
+                    32,43,10
+    RTEXT           "Hatch Style:",-1,13,44,50,8
+    COMBOBOX        IDD_HATCHSTYLE,68,42,48,35,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "",IDD_BRUSHEXAMPLE,"Static",SS_BLACKFRAME,130,10,75,41
+    CTEXT           "Example",-1,130,54,75,8
+    PUSHBUTTON      "Set &Color...",IDD_BRUSHCOLOR,20,69,60,14
+    DEFPUSHBUTTON   "OK",IDOK,95,69,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,150,69,40,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+GDIINPUT MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New",                        IDM_FILENEW
+        MENUITEM "&Open...",                    IDM_FILEOPEN, GRAYED
+        MENUITEM "&Save",                       IDM_FILESAVE, GRAYED
+        MENUITEM "Save &As...",                 IDM_FILESAVEAS, GRAYED
+        MENUITEM "&Close",                      IDM_FILECLOSE, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Print",                      IDM_FILEPRINT, GRAYED
+        MENUITEM "Page Se&tup...",              IDM_FILEPAGESU, GRAYED
+        MENUITEM "P&rint Setup...",             IDM_FILEPRINTSU, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Draw"
+    BEGIN
+        MENUITEM "Pi&xel",                      IDM_PIXEL
+        MENUITEM "&Line",                       IDM_LINE
+        MENUITEM "&Rect",                       IDM_RECT
+        MENUITEM "&Ellipse",                    IDM_ELLIPSE
+        MENUITEM "Be&zier",                     IDM_BEZIER
+        MENUITEM SEPARATOR
+        MENUITEM "&Fill Objects",               IDM_FILL
+        MENUITEM SEPARATOR
+        MENUITEM "&Pen Style...",               IDM_CREATEPEN
+        MENUITEM "&Brush Style...",             IDM_CREATEBRUSH
+        MENUITEM SEPARATOR
+        MENUITEM "Refresh &Screen",             IDM_REFRESH
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+GDIINPUT ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "Q",            IDM_EXIT,               VIRTKEY, CONTROL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x10001L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "Microsoft Corporation\0"
+            VALUE "FileDescription", "GDI Input Example Application\0"
+            VALUE "FileVersion", "Version 4.0\0"
+            VALUE "InternalName", "GDIInput\0"
+            VALUE "LegalCopyright", "Copyright \251 Microsoft Corp. 1990-1995\0"
+            VALUE "LegalTrademarks", "Microsoft\256 is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation\0"
+            VALUE "ProductName", "GDIInput\0"
+            VALUE "ProductVersion", "Version 4.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""winver.h""\r\n"
+    "#include ""globals.h""\r\n"
+    "#include ""toolbar.h""\r\n"
+    "#include ""statbar.h""\r\n"
+    "#include ""pendlg.h""\r\n"
+    "#include ""brushdlg.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APPNAME             "GDIInput"
+    IDS_DESCRIPTION         "GDI Input Example Application"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SYSMENU             "Move, size, or close application window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SCRESTORE           "Restores the window to normal size"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SCMOVE              "Changes the position of the window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SCSIZE              "Changes the size of the window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SCMINIMIZE          "Minimizes the window to an icon"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SCMAXIMIZE          "Enlarges the window to full size"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SCCLOSE             "Closes the window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SCTASKLIST          "Switches to another application through the Windows Task Manager"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_FILEMENU            "Create, open, save, or print documents"
+    IDM_FILENEW             "Creates a new document"
+    IDM_FILEOPEN            "Opens an existing document"
+    IDM_FILESAVE            "Saves the active document"
+    IDM_FILESAVEAS          "Saves the active document under a different name"
+    IDM_FILECLOSE           "Closes the active document"
+    IDM_FILEPRINT           "Prints the active document"
+    IDM_FILEPAGESU          "Changes the page setup"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_FILEPRINTSU         "Changes the printer selection or configuration"
+    IDM_EXIT                "Quits this application"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_EDITMENU            "Undo, delete, copy, and insert"
+    IDM_EDITUNDO            "Reverses the last action"
+    IDM_EDITCUT             "Cuts the selection and puts it on the clipboard"
+    IDM_EDITCOPY            "Copies the selection and puts it on the clipboard"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_EDITPASTE           "Inserts the clipboard contents at the insertion point"
+    IDM_EDITCLEAR           "Removes the selection without putting it on the clipboard"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_DRAWMENU            "Drawing Options"
+    IDM_PIXEL               "Draw individual pixels"
+    IDM_LINE                "Draw lines"
+    IDM_RECT                "Draw rectangles"
+    IDM_ELLIPSE             "Draw ellipses"
+    IDM_BEZIER              "Draw bezier curves"
+    IDM_FILL                "Use brush to fill closed objects"
+    IDM_NOFILL              "Don't fill closed objects"
+    IDM_CREATEPEN           "Set pen style"
+    IDM_CREATEBRUSH         "Set brush style"
+    IDM_REFRESH             "Refresh the screen"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_HELPMENU            "Get help"
+    IDM_ABOUT               "Displays information about this application"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDD_HORIZONTAL          "-- Horizontal"
+    IDD_VERTICAL            "|| Vertical"
+    IDD_FDIAGONAL           "\\ Diagonal"
+    IDD_BDIAGONAL           "// Diagonal"
+    IDD_CROSS               "++ Cross"
+    IDD_DIAGCROSS           "XX Cross"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDD_SOLIDPEN            "Solid"
+    IDD_DASH                "Dashed"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDD_DOT                 "Dotted"
+    IDD_DASHDOT             "Dash-Dot"
+    IDD_DASHDOTDOT          "Dash-Dot-Dot"
+    IDD_NULLPEN             "Null"
+    IDD_INSIDEFRAME         "Inside Frame"
+END
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

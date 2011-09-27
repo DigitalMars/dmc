@@ -1,0 +1,78 @@
+Exclamation ICON    bang.ico
+
+
+IDD_LINKSOURCEUNAVAILABLE DIALOG 21, 34, 175, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON        "Exclamacisn", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "No se puede llevar a cabo esta accisn porque el origen del vmnculo seleccionado no esta disponible en estos momentos.", ID_PU_TEXT, 48, 8, 117, 38
+	DEFPUSHBUTTON   "Aceptar", IDOK, 48, 58, 40, 14
+	PUSHBUTTON      "&Vmnculos...", ID_PU_LINKS, 105, 58, 40, 14
+END
+
+
+IDD_CANNOTUPDATELINK DIALOG 21, 34, 175, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON        "Exclamacisn", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Algunos vmnculos no pudieron ser actualizados debido a que sus ormgenes no estan disponibles en estos momentos.", ID_PU_TEXT, 48, 8, 115, 37
+	DEFPUSHBUTTON   "Aceptar", IDOK, 48, 58, 40, 14
+	PUSHBUTTON      "&Vmnculos...", ID_PU_LINKS, 104, 58, 42, 14
+END
+
+
+IDD_SERVERNOTREG DIALOG 39, 30, 205, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamacisn", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "La aplicacisn requerida para activar este objeto %s no esta disponible. Podra convertir dicho objeto o activarlo como otro tipo de objeto usando el botsn ""Convertir...""", ID_PU_TEXT, 39, 8, 152, 48
+	DEFPUSHBUTTON   "&Convertir...", ID_PU_CONVERT, 28, 73, 43, 14
+	PUSHBUTTON      "Cancelar", IDCANCEL, 84, 73, 42, 14
+	PUSHBUTTON      "&Ayuda", ID_OLEUIHELP, 140, 73, 40, 14
+END
+
+
+IDD_LINKTYPECHANGED DIALOG 39, 30, 198, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamacisn", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "El vmnculo ya no es un vmnculo %s. Elija un comando diferente disponible con el nuevo tipo de vmnculo.",  ID_PU_TEXT, 39, 8, 152, 36
+	PUSHBUTTON      "Aceptar", IDOK, 79, 58, 40, 14
+END
+
+
+IDD_SERVERNOTFOUND DIALOG 36, 39, 195, 104
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamacisn", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "No se encuentra la aplicacisn en la red.\n\nVerifique si la aplicacisn esta debidamente instalada. Verifique tambiin si la aplicacisn aparece en la ruta de acceso de DOS y si ista no ha sido eliminada, movida o se le ha cambiado el nombre.",  ID_PU_TEXT, 38, 8, 147, 62
+	DEFPUSHBUTTON   "Aceptar", IDOK, 90, 84, 40, 14
+END
+
+
+IDD_UPDATELINKS DIALOG 55, 72, 194, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "", ID_PU_METER, "Static", SS_BLACKFRAME, 5, 40, 122, 9
+	DEFPUSHBUTTON   "&Interrumpir", ID_PU_STOP, 136, 37, 53, 14
+	LTEXT           "Actualizar vmnculos...", ID_DUMMY, 5, 7, 56, 8
+	LTEXT           "", ID_PU_PERCENT, 61, 26, 31, 8
+END
+
+
+IDD_OUTOFMEMORY DIALOG 48, 39, 142, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamacisn", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "!No hay memoria suficiente!", ID_PU_TEXT, 41, 13, 96,  12
+	DEFPUSHBUTTON   "Aceptar", IDOK, 63, 48, 40, 14
+END

@@ -1,0 +1,20 @@
+REGEDIT
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info SPoly2.Application (defaults to SPoly2.Application.1)
+
+HKEY_CLASSES_ROOT\SPoly2.Application = OLE Automation SPoly2 Application
+HKEY_CLASSES_ROOT\spoly2.Application\Clsid = {00020464-0000-0000-C000-000000000046}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; registration info SPoly2 1.0
+
+; (Application Object)
+HKEY_CLASSES_ROOT\SPoly2.Application.1 = OLE Automation SPoly2 1.0 Application
+HKEY_CLASSES_ROOT\SPoly2.Application.1\Clsid = {00020464-0000-0000-C000-000000000046}
+
+HKEY_CLASSES_ROOT\CLSID\{00020464-0000-0000-C000-000000000046} = OLE Automation Spoly2 1.0 Application
+HKEY_CLASSES_ROOT\CLSID\{00020464-0000-0000-C000-000000000046}\ProgID = SPoly2.Application
+HKEY_CLASSES_ROOT\CLSID\{00020464-0000-0000-C000-000000000046}\VersionIndependentProgID = SPoly2.Application
+HKEY_CLASSES_ROOT\CLSID\{00020464-0000-0000-C000-000000000046}\LocalServer = spoly2.exe /Automation

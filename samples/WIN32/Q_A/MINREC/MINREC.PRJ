@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\Q_A\MINREC\MINREC.PRJ
+MINREC.OPN
+novcs
+minrec.def
+16
+812035224
+0 0 0 0 0 "minrec.c" ""
+0 0 0 0 0 "minrec.def" ""
+0 0 0 0 0 "rechook.lib" ""
+0 0 0 0 0 "minrec.rc" ""
+0 0 0 0 0 "rechook.prj" ""

@@ -1,0 +1,47 @@
+#*************************************************************#
+#**                                                         **#
+#**                 Microsoft RPC Examples                  **#
+#**                    rpcssm Application                   **#
+#**            Copyright(c) Microsoft Corp. 1992            **#
+#**                                                         **#
+#*************************************************************#
+
+cc_ntenv = cl386
+cc = cl
+cflags= -c -AL -Gsw -Oas -Zpe -Zi -D_CRTAPI1=
+linker= link
+lflags= /CO /NOD
+
+.c.obj:
+   $(cc) $(cflags) $<
+
+all : rpcssmc
+
+idl : rpcssm.h
+
+# Make the client side application rpcssmc
+rpcssmc : rpcssmc.exe
+rpcssmc.exe : rpcssmc.obj rpcssm_c.obj
+    $(linker) $(lflags) rpcssmc rpcssm_c,,,\
+    llibce rpc;
+
+# Update the object files if necessary
+
+rpcssmc.obj : rpcssmc.c rpcssm.h
+
+rpcssm_c.obj : rpcssm_c.c rpcssm.h
+
+rpcssm.h rpcssm_c.c : rpcssm.idl rpcssm.acf
+   midl -env dos -oldnames -no_cpp rpcssm.idl
+
+# Clean up everything
+cleanall : clean
+    -del rpcssmc.exe
+
+# Clean up everything but the .EXEs
+clean :
+    -del *.obj
+    -del *.map
+    -del rpcssm_c.c
+    -del rpcssm.h
+

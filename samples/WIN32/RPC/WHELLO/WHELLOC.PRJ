@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\RPC\WHELLO\WHELLOC.PRJ
+WHELLOC.OPN
+novcs
+whello.def
+2
+812035224
+0 0 0 0 0 "whello_c.c" ""
+0 0 0 0 0 "whelloc.c" ""
+0 0 0 0 0 "whello.def" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "whello.rc" ""

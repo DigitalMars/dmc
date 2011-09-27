@@ -1,0 +1,11 @@
+82572
+G:\TMP\regsvr\regsvr32.PRJ
+regsvr32.OPN
+novcs
+regsvr32.DEF
+16
+845955144
+0 0 0 0 0 "REGSVR.CPP" ""
+0 0 0 0 0 "REGSVR.RC" ""
+0 0 0 0 0 "regsvr32.DEF" ""
+0 0 0 0 0 "ole32.lib" ""

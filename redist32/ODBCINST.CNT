@@ -1,0 +1,12 @@
+:Base odbcinst.hlp
+:Title ODBC Help
+:Index ODBC Help=odbcinst.hlp
+1 Add Data Source Dialog Box=add_data_source>procard
+1 Advanced Installation Options Dialog Box=Advanced_Options>concard
+1 Data Sources Dialog Box=Data_sources>concard
+1 Drivers Dialog Box=Drivers>concard
+1 Install Drivers Dialog Box=Install_drivers
+1 Installed Drivers Dialog Box=Installed_driver>concard
+1 ODBC Options Dialog Box=Options>concard
+1 Select Translator Dialog Box=Select_translator>concard
+1 System Data Sources Dialog Box=System_Data_Sources>concard

@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\Q_A\REBOOT\REBOOT.PRJ
+REBOOT.OPN
+novcs
+REBOOT.DEF
+4
+812035224
+0 0 0 0 0 "reboot.c" ""
+0 0 0 0 0 "reboot.def" ""
+0 0 0 0 0 "advapi32.lib" ""

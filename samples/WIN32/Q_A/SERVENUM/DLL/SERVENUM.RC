@@ -1,0 +1,10 @@
+#include "windows.h"
+
+#include  "enumdlg.h"
+RCINCLUDE ENUMDLG.DLG
+
+SERVER_BMP     BITMAP server.bmp
+DOMAIN_BMP     BITMAP dom.bmp
+DOMAINEX_BMP   BITMAP domex.bmp
+PROVIDER_BMP   BITMAP prov.bmp
+PROVIDEREX_BMP BITMAP provex.bmp

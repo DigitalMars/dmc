@@ -1,0 +1,12 @@
+82570
+c:\SamplesMFC32\CONTROLS\SPINDIAL\spindial.prj
+spindial.OPN
+novcs
+spindial.def
+17
+837038382
+0 0 0 0 0 "spinctl.cpp" ""
+0 0 0 0 0 "spindial.cpp" ""
+0 0 0 0 0 "spinppg.cpp" ""
+0 0 0 0 0 "spindial.def" ""
+0 0 0 0 0 "spindial.rc" ""

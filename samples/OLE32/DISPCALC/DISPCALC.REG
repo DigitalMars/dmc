@@ -1,0 +1,21 @@
+REGEDIT
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info DispCalc.Application (defaults to DispCalc.Application.1
+
+HKEY_CLASSES_ROOT\Dispcalc.Application = OLE Automation Dispcalc Application
+HKEY_CLASSES_ROOT\Dispcalc.Application\Clsid = {00020467-0000-0000-C000-000000000046}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info DispCalc 1.0
+
+HKEY_CLASSES_ROOT\Dispcalc.Application.1 = OLE Automation Dispcalc 1.0 Application
+HKEY_CLASSES_ROOT\Dispcalc.Application.1\Clsid = {00020467-0000-0000-C000-000000000046}
+
+
+HKEY_CLASSES_ROOT\CLSID\{00020467-0000-0000-C000-000000000046} = OLE Automation Dispcalc 1.0 Application
+HKEY_CLASSES_ROOT\CLSID\{00020467-0000-0000-C000-000000000046}\ProgID = Dispcalc.Application.1
+HKEY_CLASSES_ROOT\CLSID\{00020467-0000-0000-C000-000000000046}\VersionIndependentProgID = Dispcalc.Application
+HKEY_CLASSES_ROOT\CLSID\{00020467-0000-0000-C000-000000000046}\LocalServer32 = dispcalc.exe /Automation

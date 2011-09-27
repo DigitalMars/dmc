@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\Q_A\TLS\TLSCALL.PRJ
+TLSCALL.OPN
+novcs
+TLSCALL.DEF
+19
+812035224
+0 0 0 0 0 "tlscall.c" ""
+0 0 0 0 0 "tlsdll.lib" ""
+0 0 0 0 0 "tlsdll.prj" ""

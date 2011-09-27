@@ -1,0 +1,21 @@
+; ilbsvr.def : Declares the module parameters for the application.
+; initial heap size
+; Stack size is passed as argument to linker's /STACK option
+
+NAME		"ILBSVR" WINDOWAPI 
+
+DESCRIPTION	'ILBSVR Windows Application'
+
+EXETYPE		WINDOWS
+
+PROTMODE
+
+STUB		'WINSTUB.EXE'
+
+CODE		 PRELOAD MOVEABLE IOPL CONFORMING DISCARDABLE EXECUTEONLY
+
+DATA		 PRELOAD MOVEABLE NOIOPL  READWRITE
+
+STACKSIZE	10240        
+
+HEAPSIZE	1024

@@ -1,0 +1,14 @@
+82569
+D:\SC\SAMPLES\MFC25\TRACKER\TRACKER.PRJ
+TRACKER.OPN
+novcs
+TRACKER.DEF
+0
+805039278
+0 0 0 0 0 "dialogs.cpp"
+0 0 0 0 0 "mainfrm.cpp"
+0 0 0 0 0 "trackapp.cpp"
+0 0 0 0 0 "trackdoc.cpp"
+0 0 0 0 0 "trackvw.cpp"
+0 0 0 0 0 "tracker.def"
+0 0 0 0 0 "tracker.rc"

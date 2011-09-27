@@ -1,0 +1,56 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include "windows.h"
+#include "showdib.h"
+#include "showdib.dlg"
+
+SHOWICON ICON showdib.ico
+
+showdib MENU
+     BEGIN
+          POPUP "&File"
+               BEGIN
+                    MENUITEM "&Open...",             IDM_OPEN
+                    MENUITEM "&Save...",             IDM_SAVE
+                    MENUITEM "&Print",               IDM_PRINT
+                    MENUITEM SEPARATOR
+                    MENUITEM "E&xit",                IDM_EXIT
+                    MENUITEM SEPARATOR
+                    MENUITEM "&About ShowDIB ...",   IDM_ABOUT
+               END
+          POPUP "&Options"
+               BEGIN
+                    MENUITEM "&Update Colors",        IDM_UPDATECOL
+                    MENUITEM "&Hide Changes",         IDM_NOUGLY
+                    MENUITEM "&DIB to Screen",        IDM_DIBSCREEN
+                    MENUITEM "&Memory DIBs",          IDM_MEMORYDIB
+                    MENUITEM "&Transparent",          IDM_TRANSPARENT
+
+                    MENUITEM SEPARATOR
+                    MENUITEM "&Paste DIB",            IDM_PASTEDIB
+                    MENUITEM "&Paste DDB",            IDM_PASTEDDB
+                    MENUITEM "&Paste Palette",        IDM_PASTEPAL
+                    MENUITEM "&Copy",                 IDM_COPY
+               END
+
+          POPUP "&Animate"
+               BEGIN
+                    MENUITEM "Steal Colors",    IDM_STEALCOL
+                    MENUITEM "Off",             IDM_ANIMATE0
+                    MENUITEM "5",               IDM_ANIMATE5
+                    MENUITEM "50",              IDM_ANIMATE50
+                    MENUITEM "100",             IDM_ANIMATE100
+                    MENUITEM "200",             IDM_ANIMATE200
+                    MENUITEM "LongTime",        IDM_ANIMATE201
+               END
+     END

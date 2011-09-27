@@ -1,0 +1,65 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1992 - 1995  Microsoft Corporation.  All Rights Reserved.
+ *
+ **************************************************************************/
+
+#include <windows.h>
+#include "mcipuzzl.h"
+#include "mcipuzzl.rcv"
+
+AppIcon     ICON   "mcipuzzl.ico"
+DocIcon     ICON   "mcipuzzl.ico"
+
+ABOUTBOX DIALOG LOADONCALL MOVEABLE DISCARDABLE 23, 17, 171, 76
+STYLE WS_DLGFRAME | WS_POPUP
+BEGIN
+	   CONTROL "Microsoft Windows Version 4.0", -1, "static", SS_CENTER | WS_GROUP | WS_CHILD, 0, 5, 170, 8
+	   CONTROL "MCI Puzzle", -1, "static", SS_CENTER | WS_GROUP | WS_CHILD, 0, 14, 170, 8
+	   CONTROL "Copyright \251 1985-1995 Microsoft Corp.", -1, "static", SS_CENTER | WS_GROUP | WS_CHILD, 0, 47, 170, 9
+           CONTROL "OK", IDOK, "button", BS_DEFPUSHBUTTON | WS_GROUP | WS_TABSTOP | WS_CHILD, 74, 58, 32, 14
+           CONTROL "AppIcon",    -1, "static", SS_ICON | WS_CHILD, 3, 5, 16, 16
+           CONTROL "DocIcon",   -1, "static", SS_ICON | WS_CHILD, 150, 5, 16, 16
+END
+
+AppMenu menu
+begin
+    POPUP "&File"
+	begin
+	    MENUITEM "&Open..." 	   ,MENU_OPEN
+	    MENUITEM SEPARATOR
+	    MENUITEM "E&xit"		   ,MENU_EXIT
+	    MENUITEM "A&bout..."	   ,MENU_ABOUT
+	end
+    POPUP "&Puzzle"
+	begin
+	    MENUITEM "&Scramble"	,IDM_SCRAMBLE
+	    MENUITEM "S&olve"		,IDM_SOLVE
+	end
+end
+
+AppAccel ACCELERATORS PRELOAD
+BEGIN
+//	VK_HOME,	IDM_HOME,	VIRTKEY		// !!! done by MCIWnd
+//	VK_END,		IDM_END,	VIRTKEY
+//	VK_RIGHT,	IDM_STEP,	VIRTKEY
+//	VK_LEFT,	IDM_RSTEP,	VIRTKEY
+	VK_SPACE,	IDM_PLAY, 	VIRTKEY
+	VK_SPACE,	IDM_RPLAY,	VIRTKEY, SHIFT
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_APPNAME		"MCI Movie Puzzle"
+    IDS_APPERR		"MCI Movie Puzzle Error"
+    IDS_VFWTOOOLD	"Video for Windows version is too old"
+    IDS_MCIERROR	"The currently installed MCIAVI does not support the MCI_AVI_SETVIDEO_DRAW_PROCEDURE command during play."
+    IDS_NOOPEN		"Unable to open Movie"
+    IDS_FILTERSTRING	"Video Files|*.avi|"
+END
+

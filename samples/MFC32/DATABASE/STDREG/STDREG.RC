@@ -1,0 +1,215 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""res\\stdreg.rc2""  // non-App Studio edited resources\r\n"
+    "\r\n"
+    "#include ""afxres.rc""  // Standard components\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDR_MAINFRAME           ICON    DISCARDABLE     "RES\\STDREG.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  34, 22, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Student Registration Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,18,20
+    LTEXT           "Student Registration Setup Version 1.0",IDC_STATIC,40,
+                    10,119,8
+    LTEXT           "Copyright © 1994-1995",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,176,6,32,14,WS_GROUP
+END
+
+IDD_STDREG_DIALOG DIALOG DISCARDABLE  0, 0, 209, 86
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Student Registration Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "&Exit",IDOK,121,60,76,14
+    PUSHBUTTON      "&Add Data Source...",IDC_ADD_DATA_SOURCE,121,12,76,14
+    DEFPUSHBUTTON   "&Initialize Data...",IDC_INITIALIZE_DATA,121,36,76,14
+    LTEXT           "",IDC_PROGRESS,10,38,104,14
+END
+
+IDD_COLUMN_SYNTAX_DLG DIALOG DISCARDABLE  0, 0, 326, 217
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Enter SQL Column Syntax"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,263,14,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,263,33,50,14
+    LTEXT           "Enter column-element syntax:",IDC_STATIC,12,113,96,8
+    EDITTEXT        IDC_SYNTAX,120,111,193,13,ES_AUTOHSCROLL
+    LTEXT           "",IDC_LIST_BOX_INSTRUCTION,11,137,101,44
+    LISTBOX         IDC_TYPE_INFO_LIST,120,135,194,50,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Static",IDC_COL_TYPE_INSTRUCTION,10,10,233,84
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "STDREG MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "STDREG\0"
+            VALUE "LegalCopyright", "Copyright © 1994-1995\0"
+            VALUE "OriginalFilename", "STDREG.EXE\0"
+            VALUE "ProductName", "STDREG Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+    IDS_CANNOT_OPEN_DATA_SOURCE 
+                            "Cannot open Student Registration data source.\n\nMake sure you have created the database and registered (added)  it as an ODBC data source."
+    IDS_DATA_SOURCE_NOT_INITIALIZED 
+                            "Initialization of the  Student Registration data source was incomplete."
+    IDS_EXECUTE_SQL_FAILED  "The following SQL statement failed to execute:\n\n"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About Student Registration Setup..."
+    IDS_CONFIRM_DB_ADDED_ALREADY 
+                            "Choose the Add Data Source option after you have created a new database in a format supported by an ODBC 2.0 driver.  The Add Data Source option will register the new database as an ODBC data source.\n\nHave you already already created the new database?"
+    IDS_DEFAULT_DATA_SOURCE_NAME "Student Registration"
+    IDS_DATA_SOURCE_ADDED   "The Student Registration data source has been added.\n\nNow choose Initialize Data to create tables in the Student Registration data source and  to populate the tables with data used in the Enroll database tutorial."
+    IDS_DATA_SOURCE_NOT_ADDED 
+                            "Student Registration data source not added.\n\nIf you have already registered Student Registration data source in a different format, then use the Control Panel ODBC tool to remove the old data source."
+    IDS_VARCHAR_INSTRUCTION "Please enter the column-element syntax for a VARCHAR with a maximum length of 50 characters."
+    IDS_VARCHAR_EXAMPLE     "For example, the SQL Server syntax is:  varchar(50)"
+    IDS_INTEGER_INSTRUCTION "Please enter the column-element syntax for an INTEGER."
+    IDS_INTEGER_EXAMPLE     "For example, the SQL Server syntax is:  int"
+    IDS_INTEGER             "SQL_INTEGER"
+    IDS_SMALLINT_INSTRUCTION 
+                            "Please enter the column-element syntax for a SMALLINT."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SMALLINT_EXAMPLE    "For example, the SQL Server syntax is:  smallint"
+    IDS_SMALLINT            "SQL_SMALLINT"
+    IDS_VARCHAR             "SQL_VARCHAR"
+    IDS_NEXT                "Next"
+    IDS_OK                  "OK"
+    IDS_TYPE_INFO_LISTBOX_INSTRUCTION 
+                            "The following SQLGetTypeInfo information for data type %s will help you determine the syntax: "
+    IDS_INITIALIZATION_COMPLETE "Initialization complete"
+    IDS_COL_TYPE_INSTRUCTION 
+                            "The STDREG tool sends ""CREATE TABLE"" SQL statements to create new tables in the Student Registration database.  The syntax of the ""column-element"" portion of the ""CREATE TABLE"" statement is database-dependent."
+    IDS_PROGRESS            "Creating table %i out of %i ..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\stdreg.rc2"  // non-App Studio edited resources
+
+#include "afxres.rc"  // Standard components
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

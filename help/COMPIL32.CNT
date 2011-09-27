@@ -1,0 +1,589 @@
+:Base Compil32.hlp
+1 The Compiler
+2 Alphabetical List of Compiler Options=CS_ALPHA_COMPILER_OPTIONS_JT
+2 Using the Compiler
+3 Startup Code=CR_STARTUP_CODE_JT
+3 Specifying Compiler Output=CR_SPEC_COMP_OUT_JT
+3 Support For New C++ Language Features=CR_SUPPORT_FOR_NEW_JT
+3 Suppressing Warnings And Errors=CR_SUPPRESSING_WARNINGS_JT
+3 Dynamic Profiling=CR_DYNAMIC_PROFILING_JT
+3 Using Precompiled Header=CR_USING_PRECOMP_HEAD_JT
+3 Precompiled Header Options=CR_PRECOMP_HEAD_OPTS_JT
+3 Choosing A Memory Model=CR_CHOOS_MEM_MODEL_JT
+3 The Program Stack=CR_PROGRAM_STACK_JT
+3 Stack Options=CR_STACK_OPTIONS_JT
+3 Aligning Data Objects=CR_ALIGN_DATA_OBJ_JT
+3 Compiling For Debugging=CR_COMPILING_FOR_DEBUGGING_JT
+3 Debugging Options=CR_DEBUGGING_OPTIONS_JT
+3 Specifying Linker And Assembler Options=CR_SPEC_LINK_ASSEMB_OPS_JT
+3 Controlling Segmentation=CR_CONTROL_SEG_JT
+3 Segmentation Options=CR_SEG_OPS_JT
+3 Code Generation Options=CR_CODE_GEN_OPS_JT
+3 Source Restriction Options=CR_SOURCE_RESTRIC_OPS_JT
+3 Compiling For Floating-Point Emulation And Math Coprocessors
+2 Using SC and SPP
+3 How DigiMars C and C++ Compile Your Code=US_HOW_SC_JT
+3 Overview Of The Compilation Process=US_OVERVIEW_COMPILATION_JT
+3 Compiling with SC=US_COMPIL_WITH_SCT_JT
+3 What Is SC?=US_WHAT_IS_SC_JT
+3 Using SC=US_US_SC_JT
+3 Naming Files=US_NAM_FILES_JT
+3 Choosing the Name of the Output File=US_CHOOSING_NAME_JT
+3 Using Environment Variables=US_US_ENVIRONMENT_VARIABLES_JT
+3 How SC Searches For Other Programs=US_HOW_SC_SEARCHES_FOR_PROGRAMS_JT
+3 Using Command Line Options=US_US_COMM_LINE_OPS_JT
+3 Examples of SC Commands=US_EXAMPLES_SC_COMMS_JT
+3 The DigiMars Preprocessor=US_SYMANTEC_PREPROCESS_JT
+4 Coprocessors=CR_COMPIL_FPEM_MATH_CO_JT
+1 C/C++ Implementation
+2 DigiMars C++ Language Implementation
+3 Language Implementation Summary=LI_SUMMARY_JT
+3 How DigiMars C++ Implements C
+4 How DigiMars C++ Looks For Header Files=LI_HOW_SYMANTEC_C_LOOKS_HEADER_FILES_JT
+4 File Naming Conventions=LI_FILE_NAM_CONVENS_JT
+4 Program Start And Termination=LI_PROGRAM_START_TERMINA_JT
+4 Alignment=LI_ALIGNMENT_JT
+4 Anonymous Unions=LI_ANONYMOUS_UNIONS_JT
+4 Conditional Compilation=LI_CONDIAL_COMPILA_JT
+4 Predefined Names=LI_PREDEFINED_NAMES_JT
+4 C++-Style Inline Functions=LI_C_STYLE_INLINE_FUNCS_JT
+3 How DigiMars C++ Implements C++
+4 The _New_Handler Variable=LI_NEW_HLER_VARIABLE_JT
+4 Static Constructors And Destructors=LI_STATIC_CONSTRUCTS_DESTRUCTS_JT
+4 Exception Handling=LI_EXCEP_HL_JT
+4 Run Time Type Identification=LI_RUN_TIME_TYPE_IDENTIFICA_JT
+4 Internal Limits Of DigiMars C++=LI_INTERNAL_LIMITS_SYMANTEC_C_JT
+3 Constants
+4 Constants=LI_CONSTANTS_SUMMARY_JT
+4 Binary Integer Constants=LI_BINARY_INTEGER_CONSTANTS_JT
+4 Hexadecimal Floating-Point Constants=LI_HEXADECIMAL_FLOAT_POINT_CONSTANTS_JT
+4 Character Constants=LI_CHARACTER_CONSTANTS_JT
+4 String Literals=LI_STR_LITERALS_JT
+3 Variables
+4 Integer Variables=LI_INTEGER_VARIABLES_JT
+4 Floating-Point Variables=LI_FLOAT_POINT_VARIABLES_JT
+4 Character Variables=LI_CHARACTER_VARIABLES_JT
+4 Character Strings=LI_CHARACTER_STRS_JT
+3 Standard Conversions
+4 Static Constructors And Destructors=LI_STATIC_CONSTRUCTS_DESTRUCTS_JT
+4 Exception Handling=LI_EXCEP_HL_JT
+4 Run Time Type Identification=LI_RUN_TIME_TYPE_IDENTIFICA_JT
+4 Internal Limits Of DigiMars
+3 Extended Type Modifiers
+4 Extended Type Modifiers Overview=LI_ETM_OVERVIEW_JT
+4 __Cdecl, __Fortran, And __Pascal=LI_CDECL_TRAN_PASCAL_JT
+4 __Export And __Loadds=LI_EXPT_LOADDS_JT
+4 __Handle=LI_HLE_JT
+4 __Huge=LI_HUGE_JT
+4 _Cs=LI_CS_JT
+4 __Far, __Near, __Ss, And __Cs=LI_FAR_NEAR_SS_CS_JT
+4 Using __Near And __Far With Pointers=LI_US_NEAR_FAR_WITH_POINTERS_JT
+4 Converting Between Near And Far Pointers=LI_CONVERT_BETWEEN_NEAR_FAR_POINTERS_JT
+3 Interrupt Functions
+4 Interrupt Functions=LI_INTERRUPT_FUNCS_JT
+3 Const and Volatile Keywords
+4 Using Extended Keywords With Const And Volatile=LI_US_EXTENDED_KEYWDS_WITH_CONST_VOLATILE_JT
+3 Miscellaneous Declarations
+4 Enumeration Declaration=LI_ENUMERA_DECLARA_JT
+4 Emit Declaration=LI_EMIT_DECLARA_JT
+4 Class Members=LI_CLASS_MEMBERS_JT
+4 Bit-Fields=LI_BIT_FIELDS_JT
+3 Porting Extended Keywords
+4 Portability Of Extended Keywords=LI_PTABILITY_EXTENDED_KEYWDS_JT
+3 Sizes And Addressability Of Pointers
+4 Pointers Summary=LI_POINTERS_SUMMARY_JT
+4 __Near Pointers=LI_NEAR_POINTERS_JT
+4 __Far Pointers=LI_FAR_POINTERS_JT
+4 __Ss Pointers=LI_SS_POINTERS_JT
+4 __Handle Pointers=LI_HLE_POINTERS_JT
+4 Pointer Examples=LI_POINTER_EXAMPLES_JT
+3 Functions
+4 Pointers To Functions=LI_POINTERS_TO_FUNCS_JT
+4 Functions With Variable Numbers Of Arguments=LI_FUNCS_WITH_VARIABLE_NUMBERS_ARGUMENTS_JT
+4 Function Prototyping=LI_FUNC_PROTOTYP_JT
+3 Predefined Macros
+4 Predefined Macro for C++=LI_PREDEFINED_MACROS_C_JT
+4 Predefined Macros for ANSI C=LI_PREDEFINED_MACROS_ANSI_C_JT
+4 Predefined Macros for DigiMars C++=LI_PREDEFINED_MACROS_SYMANTEC_C_JT
+4 __INTSIZE=LI_INTSIZE_JT
+4 __DEFALIGN=LI_DEFALIGN_JT
+3 Templates
+4 Templates=LI_TEMPLATES_OVERVIEW_JT
+4 Template Definitions And Examples=LI_TEMPLATE_DEFINIS_EXAMPLES_JT
+4 Generating Code For Templates=LI_GENERAT_CODE_TEMPLATES_JT
+3 #Pragma Directives
+4 #Pragma Directives Overview=LI_PRAGMA_OVERVIEW_JT
+4 #Pragma Alias=LI_PRAGMA_ALIAS_JT
+4 #Pragma Align=LI_PRAGMA_ALIGN_JT
+4 #Pragma Code_Seg=LI_PRAGMA_CODE_SEG_JT
+4 #Pragma Comment=LI_PRAGMA_COMMENT_JT
+4 #Pragma Cseg=LI_PRAGMA_CSEG_JT
+4 #Pragma Dbcs=LI_PRAGMA_DBCS_JT
+4 #Pragma DOSSEG=LI_PRAGMA_DOSSEG_JT
+4 #Pragma Ident=LI_PRAGMA_IDENT_JT
+4 #Pragma Include_Alias=LI_PRAGMA_INCLUDE_ALIAS_JT
+4 #Pragma Includelib=LI_PRAGMA_INCLUDELIB_JT
+4 #Pragma Init_Seg=LI_PRAGMA_INIT_SEG_JT
+4 #Pragma Linkage=LI_PRAGMA_LINKAGE_JT
+4 #Pragma Message=LI_PRAGMA_MESSAGE_JT
+4 #Pragma Noreturn=LI_PRAGMA_NETURN_JT
+4 #Pragma Once=LI_PRAGMA_ONCE_JT
+4 #Pragma Pack=LI_PRAGMA_PACK_JT
+4 #Pragma Startaddress=LI_PRAGMA_STARTADDRESS_JT
+3 _with
+4 The __With Statement=LI_WITH_STATEMENT_JT
+2 Mixing Languages
+3 Type-Safe Linkage
+4 Problems with traditional (unsafe) C linkage=MX_PROBLEMS_WITH_TRADIAL_UNSAFE_C_LINKAGE_JT
+4 Advantages of type-safe linkage=MX_ADVANTAGES_TYPE_SAFE_LINKAGE_JT
+3 C++ Linkage
+4 Function naming=MX_FUNC_NAM_JT
+4 Overloading=MX_OVERLOAD_JT
+4 How the compiler treats functions with C++ linkage=MX_HOW_COMPILER_TREATS_FUNCS_CPP_LINKAGE_JT
+4 Mixing C++ linkage with other linkage types=MX_MIX_C_LINKAGE_WITH_LINKAGE_TYPES_JT
+3 FORTRAN and Pascal Linkage
+4 Compilation of functions with FORTRAN/Pascal linkage=MX_COMPILA_FUNCS_WITH_TRANPASCAL_JT
+4 Specifying FORTRAN/Pascal linkage in C code=MX_SPECIFY_TRANPASCAL_LINKAGE_C_CODE_JT
+4 Specifying FORTRAN/Pascal linkage in C++ code=MX_SPECIFY_TRANPASCAL_LINKAGE_CPP_CODE_JT
+3 C Linkage
+4 How the compiler treats functions with C linkage=MX_HOW_COMPILER_TREATS_FUNCS_C_LINKAGE_JT
+4 Specifying C linkage in C++ code=MX_SPECIFY_C_LINKAGE_IN_C_CODE_JT
+3 Mixing C and C++ Modules
+4 Compatibility with existing source code=MX_COMPATIBILITY_WITH_EXIST_SOURCE_CODE_JT
+4 Compatibility with earlier versions of DigiMars C++=MX_COMPATIBILITY_WITH_EARLIER_VERSIONS_JT
+4 Recompiling C code as C++ code=MX_RECOMPIL_C_CODE_AS_C_CODE_JT
+4 Using existing C libraries=MX_US_EXIST_C_LIBRARIES_JT
+4 Changing the header files=MX_CHANG_HEADER_FILES_JT
+4 Prototyping the functions in a library=MX_PROTOTYP_FUNCS_IN_A_LIBRARY_JT
+3 Name Mangling in DigiMars C++
+3 Name Mangling in DigiMars C++=MX_NAME_MANGL_IN_SYMANTEC_C_JT
+2 Using Assembly Language Functions
+3 Using Assembly Language Functions Overview=AB_US_ASSEMBLY_LANGUAGE_FUNCS_OVERVIEW_JT
+3 How To Call Assembly Language Code From C
+4 Implications of Type-Safe Linkage=AB_IMPLICAS_TYPE_SAFE_LINKAGE_JT
+4 The Easy Way to Call Assembly Code from C++=AB_EASY_WAY_TO_CALL_ASSEMBLY_CODE_FROM_CPP_JT
+4 Using Existing Assembly Language Modules=AB_US_EXIST_ASSEMBLY_LANGUAGE_MODULES_JT
+3 How DigiMars C++ Object Files Are Organized
+4 Organization of Object Files=AB_ORGANIZA_OBJECT_FILES_JT
+4 Layout of Assembly Language Modules=AB_LAYOUT_ASSEMBLY_LANGUAGE_MODULES_JT
+3 Function Return Values and Register Usage
+4 Function Return Values for 16-Bit Models=AB_FUNC_RETURN_VALUES_16_BIT_MODELS_JT
+4 Function Return Values for 32-Bit Models=AB_FUNC_RETURN_VALUES_32_BIT_MODELS_JT
+4 Register Usage and Data Alignment For 16-Bit Models=AB_REGISTER_USAGE_DATA_ALIGNMENT_16_BIT_JT
+4 Register Usage and Data Alignment For 32-Bit Models=AB_REGISTER_USAGE_DATA_ALIGNMENT_32_BIT_JT
+4 Macros In Macros.Asm=AB_MACROS_IN_MACROSASM_JT
+3 How To Create Assembly Language Routines
+4 Creating Routines with C Linkage
+5 Subroutine Linkage=AB_SUBROUTINE_LINKAGE_JT
+5 Organization of The Stack Frame=AB_ORGANIZA_STACK_FRAME_JT
+5 Small Model Example=AB_SMALL_MODEL_EXAMPLE_JT
+5 Model-Independent Example=AB_MODEL_INDEPENDENT_EXAMPLE_JT
+4 Creating Routines with C++ Linkage
+5 Creating Routines with C++ Linkage=AB_CREAT_ROUTINESCPP_LINKAGE_JT
+4 MASM
+5 Running MASM=AB_RUNN_MASM_JT
+4 Register Variables
+5 Using Register Variables=AB_US_REGISTER_VARIABLES_JT
+4 The __emit__Function
+5 Using the __emit__ Function=AB_US_EMIT_FUNC_JT
+2 Using the Inline Assembler
+3 Basic Features of the DigiMars C++ Inline Assembler
+4 Using the Inline Assembler Overview=IL_US_INLINE_ASSEMBLER_OVERVIEW_JT
+4 About the Inline Assembler=IL_ABOUT_INLINE_ASSEMBLER_JT
+4 Advantages of Writing Inline Assembly Language Functions=IL_ADVANTAGES_WRIT_INLINE_ASSEMBLY_LANGUAGE_JT
+3 The ASM Statement and the ASM Block
+4 The asm Statement=IL_ASM_STATEMENT_JT
+4 The ASM Block=IL_ASM_BLOCK_JT
+4 Restrictions on Using C and C++ in an ASM Block=IL_RESTRICS_US_C_CPP_ASM_BLOCK_JT
+4 MASM-Style Hexadecimal Constants=IL_MASM_STYLE_HEXADECIMAL_CONSTANTS_JT
+4 C and C++ Operators in an ASM Block=IL_C_CPP_OPERATORS_ASM_JT
+4 Assembly Language in an asm Statement=IL_ASSEMBLY_LANGUAGE_ASM_STATEMENT_JT
+4 Other Restrictions on C and C++ Symbols=ILRESTRICS_C_CPP_SYMBOLS_JT
+4 Accessing C Or C++ Data in an asm Statement=IL_ACCESS_CCPP_DATA_ASM_STATEMENT_JT
+4 Functions in Inline Assembly Language=IL_FUNCS_INLINE_ASSEMBLY_LANGUAGE_JT
+4 Making Anonymous References to Structure Members=IL_MAK_ANONYMOUS_REFERENCES_TO_STRUCTURE_JT
+4 Using Register Variables=IL_US_REGISTER_VARIABLES_JT
+4 Using the __LOCAL_SIZE Symbol=IL_US_LOCAL_SIZE_SYMBOL_JT
+3 How to Use ASM Registers
+4 Using ASM Registers=IL_US_ASM_REGISTERS_JT
+4 Function Return Values=IL_FUNC_RETURN_VALUES_JT
+4 Interfacing to a Member Function=IL_INTERFAC_TO_MEMBER_FUNC_JT
+3 Calling C and C++ from Assembly Language
+4 Calling C Functions from an ASM Block=IL_CALL_C_FUNCS_FROM_ASM_BLOCK_JT
+4 Calling C++ Functions=IL_CALL_CPP_FUNCS_JT
+4 Defining ASM Blocks as C Macros=IL_DEFIN_ASM_BLOCKS_AS_C_MACROS_JT
+2 Numerics Programming
+3 Numerics Programming Overview=NP_NUMERICS_PROGRAMM_OVERVIEW_JT
+3 Numeric Data Types
+4 About Numeric Data Types=NP_ABOUT_NUMERIC_DATA_TYPES_JT
+4 Integers=NP_INTEGERS_JT
+4 Integral Data Types=NP_INTEGRAL_DATA_TYPES_JT
+4 Literal Integral Constants=NP_LITERAL_INTEGRAL_CONSTANTS_JT
+4 Floating Point Types=NP_FLOAT_POINT_TYPES_JT
+4 Floating Point Data Types=NP_FLOAT_POINT_DATA_TYPES_JT
+4 Literal Floating Point Constants=NP_LITERAL_FLOAT_POINT_CONSTANTS_JT
+4 Unusual Floating Point Values=NP_UNUSUAL_FLOAT_POINT_VALUES_JT
+4 Infinities=NP_INFINITIES_JT
+4 Zero=NP_ZERO_JT
+4 NaNs=NP_NANS_JT
+4 Subnormals=NP_SUBNORMALS_JT
+3 Using Mathematics with DigiMars C++
+4 Using Mathematics Introduction=NP_US_MAMATICS_JT
+4 Conversions=NP_CONVERSIONS_JT
+4 Integral Conversions=NP_INTEGRAL_CONVERSIONS_JT
+4 Floating Point Conversions=NP_FLOAT_POINT_CONVERSIONS_JT
+4 Conversions Between Integer and Floating Point=NP_CONVERSIONS_BETWEEN_INTEGER_FLOAT_POINT_JT
+4 Implicit Conversions=NP_IMPLICIT_CONVERSIONS_JT
+4 Significant Digits=NP_SIGNIFICANT_DIGITS_JT
+4 Floating Point Comparisons=NP_FLOAT_POINT_COMPARISONS_JT
+4 Arithmetic Considerations=NP_ARITHMETIC_CONSIDERAS_JT
+3 The Floating Point Environment and Floating Point Library
+4 The Floating Point Environment=NP_FLOAT_POINT_ENVIRONMENT_JT
+4 Coprocessors and Emulators=NP_COPROCESSORS_EMULATORS_JT
+4 Rounding=NP_ROUND_JT
+4 Changing the Precision of Calculations=NP_CHANG_PRECISION_CALCULAS_JT
+4 Exceptions=NP_EXCEPS_JT
+4 errno=NP_ERRNO_JT
+4 Error Trapping=NP_ERROR_TRAPP_JT
+4 Protecting the Floating Point Environment=NP_PROTECT_FLOAT_POINT_ENVIRONMENT_JT
+4 The Floating Point Library
+5 The Floating Point Library Overview=NP_FLOAT_POINT_LIBRARY_JT
+5 Header Files=NP_HEADER_FILES_JT
+5 Predefined Macros=NP_PREDEFINED_MACROS_JT
+5 General Floating Point Type=NP_GENERAL_FLOAT_POINT_TYPES_JT
+5 Floating Point Characteristic Constants=NP_FLOAT_POINT_CHARACTERISTIC_CONSTANTS_JT
+5 Environment Types and Constants=NP_ENVIRONMENT_TYPES_CONSTANTS_JT
+5 Macros
+6 Exception Macros=NP_EXCEP_MACROS_JT
+6 Rounding Macros=NP_ROUND_MACROS_JT
+6 Precision Macros=NP_PRECISION_MACROS_JT
+6 Classification Macros=NP_CLASSIFICA_MACROS_JT
+6 Nans and Infinities Macros=NP_NANS_INFINITIES_JT
+6 Type Determination Macros=NP_TYPE_DETERMINA_MACROS_JT
+5 Functions
+6 Exception Control Functions=NP_EXCEP_CONTROL_FUNCS_JT
+6 Rounding Functions=NP_ROUND_FUNCS_JT
+6 Precision Functions=NP_PRECISION_FUNCS_JT
+6 Trigonometric Functions=NP_TRIGONOMETRIC_FUNCS_JT
+6 Logarithmic Functions=NP_LOGARITHMIC_FUNCS_JT
+6 Conversion Functions=NP_CONVERSION_FUNCS_JT
+6 Environment Functions=NP_ENVIRONMENT_FUNCS_JT
+6 Sign Functions=NP_SIGN_FUNCS_JT
+6 Special Division Functions=NP_SPECIAL_DIVISION_FUNCS_JT
+6 Miscellaneous Functions=NP_MISCELLANEOUS_FUNCS_JT
+3 Math Coprocessor
+4 Working with the 80387 Math Coprocessor=NP_WORK_80387_JT
+1 The Linker
+2 Introducing OPTLINK
+3 OPTLINK Overview=OI_OPTLINK_OVERVIEW_JT
+3 OPTLINK Features=OI_OPTLINK_FEATURES_JT
+3 Setup of the OPTLINK Linker=OI_SETUP_OPTLINK_LINKER_JT
+3 DLL Version of OPTLINK=OI_DLL_VERSION_OPTLINK_JT
+3 Optimizing Linker Performance=OI_OPTIMIZ_LINKER_PERMANCE_JT
+2 Using OPTLINK
+3 Operational Modes=OU_OPERAAL_MODES_JT
+3 Command Line and Interactive Operation=OU_COMM_LINE_INTERACTIVE_OPERA_JT
+3 Examples of Command Line Operation=OU_EXAMPLES_COMM_LINE_OPERA_JT
+3 Examples of Interactive Operation=OU_EXAMPLES_INTERACTIVE_OPERA_JT
+3 Indirect File Operation=OU_INDIRECT_FILE_OPERA_JT
+3 Example of Indirect File Operation=OU_EXAMPLE_INDIRECT_FILE_OPERA_JT
+3 Command Formats and File Names=OU_COMM_MATS_FILE_NAMES_JT
+2 OPTLINK Switches
+3 Number Representation=OO_NUMBER_REPRESENTA_JT
+3 OPTLINK Option Switch Overview=OO_OPTLINK_OP_SWITCH_OVERVIEW_JT
+3 Unsupported Microsoft LINK Switches=OO_UNSUPPORTED_MICROST_LINK_SWITCHES_JT
+3 Using OPTLINK Option Switches=OO_US_OPTLINK_OP_SWITCHES_JT
+2 Definition File Directives
+3 Definition File=OD_DEFINI_FILE_JT
+3 Directive Overview and List=OD_DIRECTIVE_OVERVIEW_JT
+3 Using Definition File Directives=OD_US_DEFINI_FILE_DIRECTIVES_JT
+2 OPTLINK Operation and Design
+3 Linker Operation=OG_LINKER_OPERA_JT
+3 Modularly Designed Programs=OG_MODULARLY_DESIGNED_PROGRAMS_JT
+3 Source File Design=OG_SOURCE_FILE_DESIGN_JT
+3 Object Module Library Design=OG_OBJECT_MODULE_LIBRARY_DESIGN_JT
+3 Library Searching=OG_LIBRARY_SEARCH_JT
+3 OPTLINK Functionality
+3 Reading Object Modules=OG_READ_OBJECT_MODULES_JT
+3 Search Library Link=OG_SEARCH_LIBRARY_LINK_JT
+3 Segment Addresses
+3 Assigning Segment Addresses=OG_ASSIGN_SEGMENT_ADDRESSES_JT
+4 Segment Re-Ordering=OG_SEGMENT_RE_ORDER_JT
+4 Collecting Relocation Information=OG_COLLECT_RELOCA_INMA_JT
+4 Assigning Public Addresses=OG_ASSIGN_PUBLIC_ADDRESSES_JT
+4 Reconciling Address References=OG_RECONCIL_ADDRESS_REFERENCES_JT
+4 Writing Output Files=OG_WRIT_OUTPUT_FILES_JT
+1 Tools Reference
+2 Managing Code with SMAKE
+3 SMAKE Overview=SK_SMAKE_OVERVIEW_JT
+3 The Components of Makefiles
+4 Writing Makefiles=SK_WRIT_MAKEFILES_JT
+4 Example of a Simple Makefile=SK_EXAMPLE_SIMPLE_MAKEFILE_JT
+4 Makefile Syntax=SK_MAKEFILE_SYNTAX_JT
+4 Dependence Line Syntax=SK_DEPENDENCE_LINE_SYNTAX_JT
+4 Special Characters in Makefiles=SK_SPECIAL_CHARACTERS_MAKEFILES_JT
+4 Running SMAKE=SK_RUNN_SMAKE_JT
+3 Syntax, Options, and Targets
+4 SMAKE Command Line Syntax and Command Options=SK_SMAKE_COMM_LINE_SYNTAX_COMM_OPS_JT
+4 Specifying What Targets to Build=SK_SPECIFY_WHAT_TARGETS_TO_BUILD_JT
+3 Rules For How SMAKE Chooses Dependency Files
+4 Choosing Dependency Files=SK_CHOOS_DEPENDENCY_FILES_JT
+4 Producing Dependency Lists with MAKEDEP=SK_PRODUC_DEPENDENCY_LISTSMAKEDEP_JT
+4 Including Files=SK_INCLUD_FILES_JT
+3 Using Macros in Makefiles
+4 Defining Macros=SK_DEFIN_MACROS_JT
+4 Examples of When to Use Macros=SK_EXAMPLES_WHEN_TO_USE_MACROS_JT
+4 Comments in Macros=SK_COMMENTS_MACROS_JT
+4 Specifying Text to Be Substituted=SK_SPECIFY_TEXT_TO_BE_SUBSTITUTED_JT
+4 Overriding Macros on the Command Line=SK_OVERRID_MACROS_COMM_LINE_JT
+4 Recursively Defined Macros=SK_RECURSIVELY_DEFINED_MACROS_JT
+4 Predefined Macros=SK_PREDEFINED_MACROS_JT
+4 Macro Precedence=SK_MACRO_PRECEDENCE_JT
+3 System Commands
+4 Using Operating System Commands=SK_US_OPERAT_SYSTEM_COMMS_JT
+3 SMAKE Preprocessing Directives
+4 About Preprocessing Directives=SK_PREPROCESS_DIRECTIVES_JT
+4 ! Preprocessing Directives=SK_EXCLAIM_PREPROCESS_DIRECTIVES_JT
+4 . Preprocessing Directives=SK_PERIOD_PREPROCESS_DIRECTIVES_JT
+4 Expressions in Preprocessing Directives=SK_EXPRESSIONS_PREPROCESS_DIRECTIVES_JT
+4 Operators in Makefiles=SK_OPERATORS_MAKEFILES_JT
+4 Running Programs with Preprocessing Directives=SK_RUNN_PROGRAMSPREPROCESS_DIRECTIVES_JT
+3 SMAKE Inference Rules
+4 Inference Rules Overview=SK_INFERENCE_RULES_OVERVIEW_JT
+4 When SMAKE Applies Inference Rules=SK_WHEN_SMAKE_APPLIES_INFERENCE_RULES_JT
+4 Inference Rule Syntax=SK_INFERENCE_RULE_SYNTAX_JT
+4 How Inference Rules Work=SK_HOW_INFERENCE_RULES_WORK_JT
+4 Predefined Inference Rules=SK_PREDEFINED_INFERENCE_RULES_JT
+3 Customizing SMAKE Sessions
+4 Customizing SMAKE Sessions with tools.ini=SK_CUSTOMIZ_SMAKE_SESSIONSTOOLSINI_JT
+4 Creating Response Files=SK_CREAT_RESPONSE_FILES_JT
+4 Changing Dates with TOUCH=SK_CHANG_DATESTOUCH_JT
+2 Using DigiMars C++ Utilities
+3 Managing Libraries: LIB
+4 LIB Overview=UL_LIB_OVERVIEW_JT
+4 LIB Command Syntax=UL_LIB_COMM_SYNTAX_JT
+4 Concatenating Libraries=UL_CONCATENAT_LIBRARIES_JT
+4 Using LIB Interactively=UL_US_LIB_INTERACTIVELY_JT
+4 Using Response Files=UL_US_RESPONSE_FILES_JT
+2 Build an Import Library: IMPLIB=UL_BUILD_IMPORT_LIBRARY_IMPLIB_JT
+2 Analyze Library and Object Files: LIBUNRES=UL_ANALYZE_LIBRARY_OBJECT_FILES_LIBUNRES_JT
+2 Disassembling Object Files: OBJ2ASM=UL_DISASSEMBL_OBJECT_FILES_OBJ2ASM_JT
+2 Patching Object Files: PATCHOBJ=UL_PATCH_OBJECT_FILES_PATCHOBJ_JT
+2 Maintaining Files: CHMOD and WC=UL_MAINTAIN_FILES_CHMOD_WC_JT
+2 Viewing Files: DUMP, DUMPOBJ, and SMORE=UL_VIEW_FILES_DUMP_DUMPOBJ_SMORE_JT
+2 Unmangling Identifier Names: UNMANGLE=UL_UNMANGL_IDENTIFIER_NAMES_UNMANGLE_JT
+2 Compiling Resources: RCC=UL_COMPIL_RESOURCES_RCC_JT
+2 Converting Compiler Commands: CL and BCC=UL_CONVERT_COMPILER_COMMS_CL_BCC_JT
+2 Compiling Resources with RC
+3 About RC=RC_ABOUT_RC_JT
+3 Including Resources in an Application=RC_INCLUD_RESOURCES_APPLICA_JT
+3 Creating a Resource Script File=RC_CREAT_RESOURCE_SCRIPT_FILE_JT
+3 Using RC=RC_US_RC_JT
+3 RC Command Syntax=RC_RC_COMM_SYNTAX_JT
+3 Different Ways to Use the RC Command=RC_DIFFERENT_WAYS_TO_USE_RC_COMM_JT
+3 RC Options
+4 Defining Names For the Preprocessor=RC_DEFIN_NAMES_PREPROCESSOR_JT
+4 Naming Files=RC_NAM_FILES_JT
+4 Choosing the Directories that RC Searches=RC_CHOOS_DIRECTORIES_THAT_RC_SEARCHES_JT
+4 Memory Utilization=RC_MEMORY_UTILIZA_JT
+4 Optimizing=RC_OPTIMIZ_JT
+4 Compiling Resources Separately=RC_COMPIL_RESOURCES_SEPARATELY_JT
+4 Displaying Progress Messages=RC_DISPLAY_PROGRESS_MESSAGES_JT
+4 On-line Help=RC_ON_LINE_HELP_JT
+2 Creating Help Tools
+3 Planning a Help system
+4 Creating a Help System: The Development Cycle=HP_CREAT_HELP_SYSTEM_DEVELOPMENT_CYCLE_JT
+4 How Help Appears to the User=HP_HOW_HELP_APPEARS_TO_USER_JT
+4 How Help Appears to the Help Writer=HP_HOW_HELP_APPEARS_TO_HELP_WRITER_JT
+4 How Help Appears to the Help Programmer=HP_HOW_HELP_APPEARS_TO_HELP_PROGRAMMER_JT
+4 Developing a Plan=HP_DEVELOP_PLAN_JT
+4 Defining the Audience=HP_DEFIN_AUDIENCE_JT
+4 Designing the Content of the Help System=HP_PLANN_HELP_SYSTEM_JT
+3 Structuring Topic Files
+4 Planning the Structure of Help Topics=HP_DESIGN_STRUCTURHELP_TOPICS_JT
+4 Displaying Context-Sensitive Help Topics=HP_DISPLAY_CONTEXT_SENSITIVE_HELP_TOPICS_JT
+4 Determining the Topic File Structure=HP_DETERMIN_TOPIC_FILE_STRUCTURE_JT
+3 Designing and Structuring Help Topics
+4 Designing the Appearance of Help Topics=HP_DESIGN_APPEARANCE_HELP_TOPICS_JT
+4 Layout of the Help text=HP_LAYOUT_HELP_TEXT_JT
+4 Graphics and Icons=HP_GRAPHICS_ICONS_JT
+4 Design Consistency=HP_DESIGN_CONSISTENCY_JT
+4 Type Fonts and Sizes=HP_TYPE_FONTS_SIZES_JT
+4 Graphic Images=HP_DEALGRAPHIC_IMAGES_JT
+4 Additional Resources=HP_ADDIAL_RESOURCES_JT
+4 Creating Help Topic Files=HP_CREAT_HELP_TOPIC_FILES_JT
+4 Choosing an Authoring Tool=HP_CHOOS_AUTHOR_TOOL_JT
+4 Structuring Help Topic Files=HP_STRUCTUR_TOPIC_FILES_JT
+3 Coding Help Topics
+4 Coding Help Topic Files=HP_COD_HELP_TOPICS_JT
+4 Assigning Build Tags=HP_ASSIGN_BUILD_TAGS_JT
+4 Assigning Context Strings=HP_ASSIGN_CONTEXT_STRS_JT
+4 Assigning Titles=HP_ASSIGN_TITLES_JT
+4 Assigning Keywords=HP_ASSIGN_KEYWORDS_JT
+4 Assigning Build Tags=HP_ASSIGN_BUILD_TAGS_JT
+4 Creating Multiple Keyword Tables=HP_CREAT_MULTIPLE_KEYWORD_TABLES_JT
+4 Assigning Browse Sequence Numbers=HP_ASSIGN_BROWSE_SEQUENCE_NUMBERS_JT
+4 Organizing Browse Sequences=HP_ORGANIZ_BROWSE_SEQUENCES_JT
+4 Coding Browse Sequences=HP_COD_BROWSE_SEQUENCES_JT
+4 Creating Cross-References Between Topics=HP_CREAT_CROSS_REFERENCES_BETWEEN_TOPICS_JT
+4 Defining Terms=HP_DEFIN_TERMS_JT
+3 Dealing With Graphic Images
+4 Inserting Graphic Images=HP_INSERT_GRAPHIC_IMAGES_JT
+4 Creating and Capturing Bitmaps=HP_CREAT_CAPTUR_BITMAPS_JT
+4 Placing Bitmaps Using a Graphical Word Processor=HP_PLAC_BITMAPS_US_GRAPHICAL_WORD_PROCESSOR_JT
+4 Placing Bitmaps by Reference=HP_PLAC_BITMAPS_BY_REFERENCE_JT
+3 Creating the Help Project File
+4 Managing Topic Files=HP_MANAG_TOPIC_FILES_JT
+4 Building the Help File=HP_BUILD_HELP_FILE_JT
+4 Creating the Help Project File=HP_CREAT_HELP_PROJECT_FILE_JT
+4 Specifying Topic Files: the FILES Section=HP_SPECIFY_TOPIC_FILES_FILES_SEC_JT
+4 Specifying Build Tags: the BuildTags Section=HP_SPECIFY_BUILD_TAGS_BUILDTAGS_SEC_JT
+4 Specifying Options: the Options Section=HP_SPECIFY_OPS_OPS_SEC_JT
+4 Specifying Error Reporting: the Warning Option=HP_SPECIFY_ERROR_REPORT_WARN_OP_JT
+4 Specifying Build Topics: the Build Option=HP_SPECIFY_BUILD_TOPICS_BUILD_OP_JT
+4 Specifying the Root Directory: the Root Option=HP_SPECIFY_ROOT_DIRECTORY_ROOT_OP_JT
+4 Specifying the Index: the Index Option=HP_SPECIFY_INDEX_INDEX_OP_JT
+4 Assigning a Title to the Help System: the Title Option=HP_ASSIGN_TITLE_TO_HELP_SYSTEM_TITLE_OP_JT
+4 Converting fonts: the FORCEFONT option=HP_CONVERT_FONTS_CEFONT_OP_JT
+4 Changing Font Sizes: the MAPFONTSIZE Option=HP_CHANG_FONT_SIZES_MAPFONTSIZE_OP_JT
+4 Multiple Keyword Tables: the MULTIKEY Option=HP_MULTIPLE_KEYWORD_TABLES_MULTIKEY_OP_JT
+4 Compressing the File: the Compress Option=HP_COMPRESS_FILE_COMPRESS_OP_JT
+4 Specifying Alternate Context Strings: the Alias Section=HP_SPECIFY_ALTERNATE_CONTEXT_STRS_ALIAS_SEC_JT
+4 Mapping Context-Sensitive Topics: the Map Section=HP_MAPP_CONTEXT_SENSITIVE_TOPICS_MAP_SEC_JT
+3 Compiling Help Files For Win16 Applications
+4 Compiling Help Files=HP_COMPIL_HELP_FILES_WIN16_APPLICAS_JT
+4 Using the Help Compiler=HP_US_HELP_COMPILER_JT
+4 Programming the Application to Access Help=HP_PROGRAMM_APPLICA_TO_ACCESS_HELP_JT
+4 Calling Winhelp from an Application=HP_CALL_WINHELP_FROM_APPLICA_JT
+4 Getting Context-Sensitive Help=HP_GETT_CONTEXT_SENSITIVE_HELP_JT
+4 Shift+F1 Support=HP_SHIFTPF1_SUPPORT_JT
+4 F1 Support=HP_F1_SUPPORT_JT
+4 Getting Help on an Item Listed on the Help Menu=HP_GETT_HELP_ITEM_LISTED_HELP_MENU_JT
+4 Accessing Additional Keyword Tables=HP_ACCESS_ADDIAL_KEYWORD_TABLES_JT
+4 Canceling Help=HP_CANCEL_HELP_JT
+4 Help Compiler Error Messages=HP_HELP_COMPILER_ERROR_MESSAGES_JT
+4 Errors During Processing of Project File=HP_ERRORS_DUR_PROCESS_PROJECT_FILE_JT
+4 Errors During Processing of RTF Topic Files=HP_ERRORS_DUR_PROCESS_PROJECT_FILE_JT
+1 Windows Programming
+2 Win32 Programming
+3 Some Basic Information=WZ_SOME_BASIC_INMA_JT
+3 Building Win32 and Win32s Applications=WZ_BUILD_WIN32_WIN32S_APPLICAS_JT
+3 Compiling with MFC 3.1=WZ_COMPILMFC_31_JT
+3 Compiling Win32 DLLs=WZ_COMPIL_WIN32_DLLS_JT
+3 Building Console Applications=WZ_BUILD_CONSOLE_APPLICAS_JT
+3 Compiling Win32s Executables=WZ_COMPIL_WIN32S_EXECUTABLES_JT
+3 Compiling Win32s DLLs=WZ_COMPIL_WIN32S_DLLS_JT
+3 Win33 Definition File Directives=WZ_WIN32_DEFINI_FILE_DIRECTIVES_JT
+3 Recompiling Win16 Applications for Win32=WZ_RECOMPIL_WIN16_APPLICAS_WIN32_JT
+3 Converting Non-DigiMars Win16 Applications to Win33 Applications=WZ_CONVERT_NON_SYMANTEC_WIN16_WIN32_APPLICAS_JT
+2 Win16 Programming Guidelines
+3 Choosing a Memory Model=WS_CHOOS_MEMORY_MODEL_JT
+3 Compatibility with Microsoft=WS_COMPATIBILITYMICROST_JT
+3 Recompiling MFC 2.5 Code for DigiMars C++=WS_RECOMPIL_MFC_25_CODE_SYMANTEC_CPP_JT
+3 Win16 Definition File Directives=WS_WIN16_DEFINI_FILE_DIRECTIVES_JT
+3 Choosing Entry and Exit (prolog/epilog) code
+4 About Choosing entry and exit (prolog/epilog) code=WS_ABOUT_CHOOS_ENTRY_EXIT_PROLOGEPILOG_CODE_JT
+4 Recommendations for using the prolog/epilog options=WS_RECOMMENDAS_US_PROLOGEPILOG_OPS_JT
+4 Using the -Wb option=WS_US_WB_OP_JT
+2 Building and Using Windows DLLs
+3 About Building and Using Windows DLLs=WD_ABOUT_BUILD_US_WINDOWS_DLLS_JT
+3 Writing a DLL
+4 Initializing the DLL=WD_INITIALIZ_DLL_JT
+4 Using WEP when the DLL is terminated=WD_US_WEP_WHEN_DLL_IS_TERMINATED_JT
+4 Declaring functions to export=WD_DECLAR_FUNCS_TO_EXPORT_JT
+4 The DS and SS registers=WD_DS_SS_REGISTERS_JT
+3 Compiling a DLL
+4 Writing the definition file=WD_WRIT_DEFINI_FILE_JT
+4 Alternative export method=WD_ALTERNATIVE_EXPORT_METHOD_JT
+4 Exporting C++ functions=WD_EXPORT_CPP_FUNCS_JT
+4 Building the DLL=WD_BUILD_DLL_JT
+4 Prolog and epilog=WD_PROLOG_EPILOG_JT
+3 Using DLLs in an Application
+4 Explicitly with an IMPORTS statement=WD_EXPLICITLYAN_IMPORTS_STATEMENT_JT
+4 Implicitly with an import library=WD_IMPLICITLYAN_IMPORT_LIBRARY_JT
+4 Dynamically with LoadLibrary()=WD_DYNAMICALLYLOADLIBRARY_JT
+3 C++ DLLs and C Programs
+4 Using a C++ DLL with a C program=WD_US_CPP_DLLA_C_PROGRAM_JT
+2 Switching to DigiMars C++
+3 Switching to DigiMars C++ Overview=SW_SWITCH_TO_SYMANTEC_CPP_OVERVIEW_JT
+3 Useful Programming Practices=SW_USEFUL_PROGRAMM_PRACTICES_JT
+3 Object Level Compatibility=SW_OBJECT_LEVEL_COMPATIBILITY_JT
+3 Using Third-Party Libraries=SW_US_THIRD_PARTY_LIBRARIES_JT
+3 Recompiling for DigiMars C++=SW_RECOMPIL_SYMANTEC_CPP_JT
+3 General Tips on Porting to DigiMars C++=PR_GENERAL_TIPS_PORT_TO_SYMANTEC_CPP_JT
+3 Tips on Porting from Previous DigiMars Releases=PR_TIPS_PORT_PREVIOUS_SYMANTEC_RELEASES_JT
+3 Tips on Porting Win16 Code to Win32=PR_TIPS_PORT_WIN16_CODE_TO_WIN32_JT
+2 Converting from Microsoft
+3 Keywords=CM_KEYWORDS_JT
+3 Predefined Macros=CM_PREDEFINED_MACROS_JT
+3 Header Files=CM_HEADER_FILES_JT
+3 Library Functions=CM_LIBRARY_FUNCS_JT
+3 Microsoft Foundation Classes=CM_MICROST_FOUNDA_CLASSES_JT
+3 Assembly Language Interface=CM_ASSEMBLY_LANGUAGE_INTERFACE_JT
+3 Compiler Options=CM_COMPILER_OPS_JT
+3 Tips on Porting from Microsoft Visual C++=PR_TIPS_PORT_FROM_MICROST_VISUAL_CPP_JT
+3 Memory Models
+4 About Memory Models=CM_ABOUT_MEMORY_MODELS_JT
+4 Huge memory model support=CM_HUGE_MEMORY_MODEL_SUPPORT_JT
+4 Support for based pointers=CM_SUPPORT_BASED_POINTERS_JT
+2 Converting from Borland
+3 Keywords=CB_KEYWORDS_JT
+3 Predefined Macros=CB_PREDEFINED_MACROS_JT
+3 Header Files=CB_HEADER_FILES_JT
+3 Library Functions=CB_LIBRARY_FUNCS_JT
+3 Borland Graphics Interface=CB_BORL_GRAPHICS_INTERFACE_JT
+3 Assembly Language Interface=CB_ASSEMBLY_LANGUAGE_INTERFACE_JT
+3 Compiler Options=CB_COMPILER_OPS_JT
+3 Tips on Porting from Borland C++=PR_TIPS_PORT_FROM_BORL_CPP_JT
+3 Memory Models
+4 About Memory Models=CB_ABOUT_MEMORY_MODELS_JT
+4 Huge Memory Model Support=CB_HUGE_MEMORY_MODEL_SUPPORT_JT
+2 Optimizing Code
+3 Global Optimization
+4 About Global Optimization=OC_ABOUT_GLOBAL_OPTIMIZA_JT
+5 Advantages of Using the Global Optimization Feature=OC_ADVANTAGES_US_GLOBAL_OPTIMIZA_FEATURE_JT
+5 When to Use the Global Optimization Feature=OC_WHEN_TO_USE_GLOBAL_OPTIMIZA_FEATURE_JT
+5 Effects of Optimization on Performance=OC_EFFECTS_OPTIMIZA_PERMANCE_JT
+5 Optimization Versus Assembly Language Code=OC_OPTIMIZA_VERSUS_ASSEMBLY_LANGUAGE_CODE_JT
+5 What Global Optimization Does Not Do=OC_WHAT_GLOBAL_OPTIMIZA_DOES_NOT_DO_JT
+5 Optimizing For Windows=OC_OPTIMIZ_WINDOWS_JT
+3 Using the Global Optimization Feature=OC_US_GLOBAL_OPTIMIZA_FEATURE_JT
+3 Using Optimization Flags=OC_US_OPTIMIZA_FLAGS_JT
+3 Optimizing For Speed Vs. Space=OC_OPTIMIZ_SPEED_VS_SPACE_JT
+3 Turning Off All Optimization Methods=OC_TURN_F_ALL_OPTIMIZA_METHODS_JT
+3 Turning Off Specific Optimization Methods=OC_TURN_F_SPECIFIC_OPTIMIZA_METHODS_JT
+3 List of Global Optimization Flags=OC_LIST_GLOBAL_OPTIMIZA_FLAGS_JT
+3 Optimization Tips
+4 Use of Const and Volatile Keywords=OC_USE_CONST_VOLATILE_KEYWORDS_JT
+4 If a Working Program Fails When Optimized=OC_IF_WORK_PROGRAM_FAILS_WHEN_OPTIMIZED_JT
+1 DOS Programming
+2 Overview of Memory Models Programs=DOS_OVERVIEW_MEMORY_MODELS_JT
+2 If Your Program is Under 640KB=DOS_IF_YOUR_PROGRAM_IS_UNDER_640KB_JT
+2 If Your Program is Over 640KB=DOS_IF_YOUR_PROGRAM_IS_OVER_640KB_JT
+2 Running on 8086/8088 Machines=DOS_RUNN_8086_8088_MACHINES_LATER_JT
+2 Running Under DOS on 80386 Machines and Later=DOS_RUNN_UNDER_DOS_80386_MACHINES_LATER_JT
+2 How Data is Stored=DOS_HOW_DATA_IS_STORED_JT
+2 Fine-Tuning with Mixed Model Programming=DOS_FINE_TUNMIXED_MODEL_PROGRAMM_JT
+2 Creating Large Data Structures with Far Data in 16-bit Programs=DOS_CREAT_LARGE_DATA_STRUCTURESFAR_DATA_16_BIT_JT
+2 Declaring Class Objects as Far Data=DOS_DECLAR_CLASS_OBJECTS_AS_FAR_DATA_JT
+2 Using __near and __far Functions=DOS_US_NEAR__FAR_JT
+2 Using Huge Pointers=DOS_US_HUGE_POINTERS_JT
+2 Using Handle Pointers=DOS_US_HLE_POINTERS_JT
+2 Using __ss Pointers=DOS_US_SS_POINTERS_JT
+2 Storing Data in the Code Segment=DOS_STOR_DATA_CODE_SEGMENT_JT
+2 Advantages to Storing Data in the Code Segment=DOS_ADVANTAGES_TO_STOR_DATA_CODE_SEGMENT_JT
+2 Potential Problems=DOS_POTENTIAL_PROBLEMS_JT
+1 Error Messages
+2 Compiler Error Messages
+3 Alphabetic Compiler Error Message List=CS_ERROR_MESSAGE_LIST_JT
+3 Error Message Types=CS_MESSAGE_TYPES_JT
+3 How to Report an Internal Error=CS_REPORT_INTERNAL_ERROR_JT
+3 Recognizing Compiler Error Messages=CS_RECOGNIZING_ERROR_JT
+2 Optlink Error Messages
+3 About OPTLINK Error Messages=LE_OPTLINK_ERROR_JT
+3 How OPTLINK Errors are Displayed=LE_ERRORS_ARE_DISPLAYED_JT
+3 Warning Messages=LE_WARNING_MESSAGES_JT
+3 Non-Fatal Error Messages=LE_NONFATAL_ERROR_MESSAGES_JT
+3 Fatal Error Messages=LE_FATAL_ERROR_MESSAGES_JT
+1 Run-Time Error Messages=RE_RUN_TIME_ERROR_JT
+1 SMAKE Error Messages=SE_SMAKE_ERROR_JT

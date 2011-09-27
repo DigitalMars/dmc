@@ -1,0 +1,98 @@
+:base wdeb386.hlp 
+:title Windows System Debugger 
+:index Windows System Debugger = wdeb386.hlp 
+1 Windows System Debugger
+2 About Windows System Debugger
+2 Introduction = wdeb386_2_
+2 Preparing to Start = wdeb386_3_
+2 Connecting a Serial Cable = wdeb386_4_
+2 Creating Symbol Files = wdeb386_5_
+2 Installing Debug Environment = wdeb386_6_
+2 Starting from the Command Line = wdeb386_7_
+2 Starting as a VxD = wdeb386_8_
+2 Using the System Debugger
+2 Introduction = wdeb386_10_
+2 Breaking into the Debugger = wdeb386_11_
+2 Determining the State of the Processor = wdeb386_12_
+2 Setting Breakpoints = wdeb386_13_
+2 Setting the Default Command = wdeb386_14_
+2 Reference
+2 Command Groups = wdeb386_16_
+3 Command Syntax
+3 Parameters = wdeb386_18_
+3 Binary and Unary Operators = wdeb386_19_
+3 Regular Expressions = wdeb386_20_
+3 Commands
+3 ? (Help) = wdeb386_22_
+3 ? (Evaluate Expression) = wdeb386_23_
+3 bc (Breakpoint Clear) = wdeb386_24_
+3 bd (Breakpoint Disable) = wdeb386_25_
+3 be (Breakpoint Enable) = wdeb386_26_
+3 bl (Breakpoint List) = wdeb386_27_
+3 bp (Breakpoint) = wdeb386_28_
+3 br (Breakpoint Register) = wdeb386_29_
+3 c (Compare) = wdeb386_30_
+3 d (Display) = wdeb386_31_
+3 da (Display ASCII) = wdeb386_32_
+3 db (Display Bytes) = wdeb386_33_
+3 dd (Display Doublewords) = wdeb386_34_
+3 dg (Display GDT) = wdeb386_35_
+3 di (Display IDT) = wdeb386_36_
+3 dl (Display LDT) = wdeb386_37_
+3 dp (Display Page Directory and Tables) = wdeb386_38_
+3 dt (Display Task State Segment) = wdeb386_39_
+3 dw (Display Words) = wdeb386_40_
+3 dx (Display Loadall Buffer) = wdeb386_41_
+3 e (Enter) = wdeb386_42_
+3 f (Fill) = wdeb386_43_
+3 g (Go) = wdeb386_44_
+3 h (Hex) = wdeb386_45_
+3 i (Input) = wdeb386_46_
+3 j (Conditional) = wdeb386_47_
+3 k (Stack Trace) = wdeb386_48_
+3 ka (Stack Trace Arguments) = wdeb386_49_
+3 kt (Stack Trace for Task) = wdeb386_50_
+3 la (List Absolute Symbols) = wdeb386_51_
+3 lg (List Groups) = wdeb386_52_
+3 lm (List Maps) = wdeb386_53_
+3 ln (List Nearest Symbol) = wdeb386_54_
+3 ls (List Symbols) = wdeb386_55_
+3 lse (List Symbols by Regular Expression) = wdeb386_56_
+3 m (Move) = wdeb386_57_
+3 o (Output) = wdeb386_58_
+3 p (Program Trace) = wdeb386_59_
+3 r (Register) = wdeb386_60_
+3 s (Search) = wdeb386_61_
+3 t (Trace) = wdeb386_62_
+3 u (Disassemble) = wdeb386_63_
+3 v (Version Number) = wdeb386_64_
+3 vc (Vector Clear) = wdeb386_65_
+3 vl (Vector List) = wdeb386_66_
+3 vo (Vector List New) = wdeb386_67_
+3 vs (Vector Trap Non-Supervisor) = wdeb386_68_
+3 vt (Vector Trap) = wdeb386_69_
+3 w (Change Map) = wdeb386_70_
+3 wa (Activate Map) = wdeb386_71_
+3 wr (Deactivate Map) = wdeb386_72_
+3 x (Dump Debug Report) = wdeb386_73_
+3 y (Debugger Options) = wdeb386_74_
+3 z (Zap) = wdeb386_75_
+3 zd (Execute Default) = wdeb386_76_
+3 zl (Display Default) = wdeb386_77_
+3 zs (Set Default) = wdeb386_78_
+3 Dot Commands
+3 .<dev_name> (Dot Device) = wdeb386_80_
+3 .? (Help) = wdeb386_81_
+3 .b (Baud Rate) = wdeb386_82_
+3 .df (Display Free Memory) = wdeb386_83_
+3 .dg (Display Global Memory) = wdeb386_84_
+3 .dh (Display Local Heap) = wdeb386_85_
+3 .dm (Display Modules) = wdeb386_86_
+3 .dq (Display Task Queues) = wdeb386_87_
+3 .ds (Dump Stack) = wdeb386_88_
+3 .du (Display Least Recently Used) = wdeb386_89_
+3 .m (Memory) = wdeb386_90_
+3 .reboot (System Restart) = wdeb386_91_
+3 .v (Virtual Machine Commands) = wdeb386_92_
+3 .vmm (Display VMM Commands) = wdeb386_93_
+3 .w (Display Win32 Object) = wdeb386_94_

@@ -1,0 +1,159 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples.
+// Copyright (C) 1993-1995 Microsoft Corporation.
+// All rights reserved.
+//
+// This source code is only intended as a supplement to
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+
+#include <windows.h>
+#include "globals.h"
+
+#include <winver.h>
+
+//
+// Dialog Boxes and Windows
+//
+#include "filer.dlg"
+
+//
+// Icons
+//
+UI_FILERICON ICON filer.ico
+
+//
+// Bitmaps
+//
+UB_FLOPPY1  BITMAP  FLOPPY.BMP
+UB_FLOPPY2  BITMAP  FLOPPY2.BMP
+UB_REMOTE1  BITMAP  REMOTE.BMP
+UB_REMOTE2  BITMAP  REMOTE2.BMP
+UB_CD1      BITMAP  CD.BMP
+UB_CD2      BITMAP  CD2.BMP
+UB_FIXED1   BITMAP  FIXED.BMP
+UB_FIXED2   BITMAP  FIXED2.BMP
+
+//
+// Menus
+//
+FilerMenu MENU
+{
+    POPUP  "&File"
+    {
+        MENUITEM "&Open\t Enter",                   MM_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Copy\t Ctrl-C",                  MM_COPY
+        MENUITEM "&Delete\t Ctrl-X",                MM_DELETE
+        MENUITEM "&Move\t Ctrl-M",                  MM_MOVE
+        MENUITEM "&Rename\t Ctrl-R",                MM_RENAME
+        MENUITEM "File &Version Info\t Alt-Enter",  MM_VERSION
+        MENUITEM SEPARATOR
+        MENUITEM "Ma&ke Dir\t Ctrl-K",              MM_MKDIR
+        MENUITEM "De&lete Dir\t Ctrl-L",            MM_DELDIR, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit\t   Alt-F4",                MM_EXIT
+    }
+    POPUP  "&View"
+    {
+        MENUITEM "Toggle &Active Drive\t F2",       MM_ACTIVEDRV
+        MENUITEM "&Refresh\t F3",                   MM_REFRESH
+        MENUITEM SEPARATOR
+        MENUITEM "&Expand Tree\t F5",               MM_EXPAND
+        MENUITEM "&Keep Command Windows\t F6",      MM_KEEPCMD
+        MENUITEM SEPARATOR
+        MENUITEM "&Swap Sides\t F7",                MM_SWAP
+        MENUITEM "Window &Orientation\t F8",        MM_ORIENT
+        MENUITEM SEPARATOR
+        MENUITEM "&Focus Tree/File/Command\t Tab",  MM_TAB
+        MENUITEM "&Clear Selection/Abort\t Esc"           MM_ESCAPE
+    }
+    POPUP  "&Drives"                        // see DRIVE_MENU_NUM in filer.h
+    {
+        MENUITEM SEPARATOR
+    }
+    POPUP  "&Help"
+    {
+        MENUITEM "&About Filer...",                 MM_ABOUT
+    }
+}
+
+//
+// Accelerators
+//
+ACCEL_ID ACCELERATORS
+{
+    VK_TAB,     MM_TAB,         VIRTKEY
+    VK_ESCAPE,  MM_ESCAPE,      VIRTKEY
+    VK_RETURN,  MM_OPEN,        VIRTKEY
+    VK_RETURN,  MM_VERSION,     VIRTKEY, ALT
+    VK_F4,      MM_EXIT,        VIRTKEY, ALT
+    VK_F2,      MM_ACTIVEDRV,   VIRTKEY
+    VK_F3,      MM_REFRESH,     VIRTKEY
+    VK_F5,      MM_EXPAND,      VIRTKEY
+    VK_F6,      MM_KEEPCMD,     VIRTKEY
+    VK_F7,      MM_SWAP,        VIRTKEY
+    VK_F8,      MM_ORIENT,      VIRTKEY
+
+    VK_INSERT,  MM_COPY,        VIRTKEY, CONTROL
+    "^C",       MM_COPY
+    "^M",       MM_MOVE
+    VK_DELETE,  MM_DELETE,      VIRTKEY, CONTROL
+    "^X",       MM_DELETE
+    "^R",       MM_RENAME
+    "^K",       MM_MKDIR
+    "^L",       MM_DELDIR
+}
+
+
+//
+// String Table
+//
+
+STRINGTABLE
+{
+STR_EXE ".EXE"                      // file extensions for spawnable files
+STR_COM ".COM"                      //   NUM_EXTENSION_STRINGS contains the
+STR_CMD ".CMD"                      //   number of these strings.
+STR_BAT ".BAT"
+
+STR_DEF_EDITOR  "notepad.exe"
+}
+
+
+//
+// Version Information
+//
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 0,9,0,0
+PRODUCTVERSION  3,1,0,0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       (VS_FF_PRERELEASE|VS_FF_DEBUG)
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK VERSION_INFO_LANG_ID
+        BEGIN
+            VALUE "CompanyName",     "Microsoft Corporation\0"
+            VALUE "FileDescription", "File Management Sample Application\0"
+            VALUE "FileVersion",     "1.0\0"
+            VALUE "InternalName",    "Filer\0"
+            VALUE "LegalCopyright",  "Copyright \251 Microsoft Corp. 1992-1995\0"
+            VALUE "LegalTrademarks", "Microsoft\256 is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation\0"
+            VALUE "ProductName",     "Filer\0"
+            VALUE "ProductVersion",  "1.0\0"
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200           // English, Unicode
+    END
+END

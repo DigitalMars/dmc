@@ -1,0 +1,233 @@
+:Base scw32.hlp
+1 Introducing the IDDE
+2 IDDE Screen=TM_SCREEN_JT
+2 IDDE Views=IV_VIEWS_JT
+2 Drag and Drop Editing=TQ_DRAGDROP_JT
+2 Customizing the Environment
+3 Assigning Macros to Keys=TQ_KEYTECH_JT
+3 Changing Your Windows Appearance=GB_OPWORKSPACE_JT
+3 Creating a Workspace=TQ_CREATE_WORK_JT
+3 Docking and Undocking a Toolbox=TQ_PROC_DOCKING_JT
+1 C Language Reference Bibliography=TM_BIBLIO_JT
+1 Starting a Project and Defining Workspaces
+2 What are Projects and Workspaces=ST_WHAT_ARE_PROJECTS_JT
+2 Starting a Project
+3 Purpose of a Project=ST_PURPOSE_OF_PROJECT_JT
+3 Contents of a Project=ST_CONTENTS_OFA_PROJECT_JT
+3 Creating a New Project=ST_CREATING_A_NEW_PROJECT_JT
+3 Closing a Project=ST_CLOSING_JT
+2 Working with a Project
+3 Opening an Existing Project=ST_OPEN_EXISTING_PROJECT_JT
+3 Adding and Deleting Project Files=ST_ADDING_PROJECT_FILE_JT
+3 The Project Window=ST_PROJECT_WINDOW_JT
+3 Closing a Project=ST_CLOSING_JT
+3 Importing a Microsoft or Borland Project=ST_IMPORT_JT
+2 Workspaces
+3 The Purpose of Workspaces=ST_DEFINE_WORKSPACE_JT
+3 Creating a Workspace=ST_CREATING_JT
+3 Selecting a Workspace=ST_SELECTING_JT
+1 Building Projects=TM_BUILD_JT
+1 Rebuilding Projects=TM_REBUILDALL_JT
+1 Linking the Project=GB_LINK_JT
+1 Choosing which MAKE to Use=GB_OPMAKE_JT
+1 Setting the Directories=GB_DIRECTORIES_JT
+1 Setting the Project Options=GB_OPTIONSET_JT
+1 Generating an Application Framework
+2 Selecting an Application Type=TQ_AX_APPLICATION_TYPE_JT
+2 Selecting a Directory for Your Source Files=TQ_AX_SELECT_DIRECTORY_JT
+2 Providing Company and Product Information=TQ_AX_MISCELLANEOUS_JT
+2 Editing Classnames and Names of Files=TQ_AX_CLASS_NAMES_JT
+2 Naming Your Files=TQ_AX_FILE_NAMES_JT
+2 Selecting Help Options=TQ_AX_HELP_OPTIONS_JT
+2 Generating the Framework=TQ_AX_GENERATE_JT
+2 Binding Resources to Classes with ClassExpress
+3 Launching ClassExpress=TQ_CX_LAUNCHING_JT
+3 Writing a Message Map=CX_MESSAGE_MAP_JT
+3 Adding New Classes to Your Application=TQ_CX_ADDING_NEW_CLASSES_JT
+3 Deriving a Class to Handle User Interface Events=TQ_CX_DERIVING_A_CLASS_JT
+2 Working with Dialog Data Exchange (DDX) and Dialog Data Validation (DDV)=TQ_CX_WORKING_DDX_DDV_JT
+2 Making Your Application an OLE2 Automation Server
+3 What is an OLE Automation Server?=TQ_CX_WHAT_IS_JT
+3 OLE Automation Server vs. OLE Server=TQ_CX_DIFFERENCE_JT
+3 Enabling Your Application to be an OLE Automation Server=TQ_CX_CREATING_JT
+3 OLE Automation Server Source Code=TQ_CX_SOURCE_CODE_JT
+3 Adding Exposed Functions to an Automation Server Class=TQ_CX_EXPOSED_JT
+3 Adding Properties to an Automation Server Class=TQ_CX_PROPERTIES_JT
+1 Making Your Application an OLE2 Automation Client=TQ_CX_AUTOMATION_CLIENT_JT
+1 Creating a C++ Class That Maps to an Existing Visual Basic Custom Control (VBX)=TQ_CX_VBX_JT
+1 Defining Classes and Their Hierarchies
+2 Parsing and Browsing=TM_PARSE_AND_BROWSE_JT
+2 Defining Classes and Their Hierarchies: Class Editor
+3 Creating a Top-Level Class=TQ_CE_TOPLVL_JT
+3 Creating a Derived Class=TQ_CE_DERIVED_JT
+3 Creating a Sibling Class=TQ_CE_SIBLING_JT
+3 Connecting to a Base Class=TQ_CE_CONBASE_JT
+3 Deleting a Connection=TQ_CE_DELCON_JT
+3 Editing Inheritance Attributes=TQ_CE_EDITINHER_JT
+3 Adding a Class Member=TQ_CE_ADDMEM_JT
+3 Deleting a Class Member=TQ_CE_DELMEM_JT
+3 Changing Member Attributes=TQ_CE_CHANGATT_JT
+3 Viewing and Editing Member Source=TQ_CE_MEMSRC_JT
+3 Viewing and Editing Source Files=TQ_CE_VESRC_JT
+2 Defining Classes and Their Hierarchies: Hierarchy Editor
+3 Enabling the Hierarchy Editor Child Windows=TQ_HE_CHILD_JT
+3 Creating a Top-Level Class=TQ_HE_TOPLVL_JT
+3 Creating a Sibling Class=TQ_HE_SIBLING_JT
+3 Connecting to a Base Class=TQ_HE_CONBASE_JT
+3 Deleting a Connection=TQ_HE_DELCON_JT
+3 Changing a Base Class=TQ_HE_CHANGBASE_JT
+3 Editing Inheritance Attributes=TQ_CE_EDITINHER_JT
+3 Adding a Class Member=TQ_HE_ADDMEM_JT
+3 Deleting a Class Member=TQ_HE_DELMEM_JT
+3 Changing Member Attributes=TQ_HE_CHANGATT_JT
+3 Viewing and Editing Member Source=TQ_HE_MEMSRC_JT
+3 Viewing and Editing Source Files=TQ_HE_VESRC_JT
+1 Editing Program Code
+2 Editing Program Code=PC_EDITING_PROGRAM_CODE_JT
+2 Role of the Text Editor=PC_ROLE_TEXT_EDITOR_JT
+2 The Source Window=PC_SOURCE_WINDOW_JT
+2 File Manipulation
+3 Creating Files=PC_CREATING_FILES_JT
+3 Opening Files=PC_OPENING_FILES_JT
+3 Saving Files=PC_SAVING_FILES_JT
+3 Writing Blocks of Text to Files=PC_WRITING_BLOCKS_OF_TEXT_JT
+3 Printing Files=PC_PRINTING_FILES_JT
+3 Closing Files=PC_CLOSING_FILES_JT
+2 Text Editing
+3 Typing Mode=PC_TYPING_MODE_JT
+3 Word Wrap=PC_WORD_WRAP_JT
+3 Indentation=PC_INDENTATION_JT
+3 Moving Around in a File=PC_MOVING_AROUND_JT
+3 Selecting Text=PC_SELECTING_TEXT_JT
+3 Searching and Replacing=PC_SEARCHING_AND_REPLACING_JT
+3 Finding a String=PC_FINDING_A_STRING_JT
+3 Replacing a String=PC_REPLACING_A_STRING_JT
+3 Searching Through Multiple Files=PC_SEARCHING_THROUGH_FILES_JT
+3 Undoing Edits=PC_UNDOING_EDITS_JT
+2 Using the Text Editor
+3 Text Editor Options=PC_TEXT_EDITOR_OPTIONS_JT
+3 Macros=PC_MACROS_JT
+1 Compiling Files and Checking Errors=PC_COMPILING_FILES_CHECKING_ERRORS_JT
+1 Testing an Application
+2 Testing an Application=TS_TESTING_AN_APPLICATION_JT
+2 Debugger Highlights=TS_DEBUGGER_HIGHLIGHTS_JT
+2 The Building Process
+3 Building a Project=TS_BUILDING_A_PROJECT
+3 Selecting the Project Type=TS_SELECTING_THE_PROJECT_TYPE_JT
+3 Setting Compiler and Linker Options for Debugging=TS_SETTING_COMPILER_OPTIONS_JT
+3 Building Executable Files=TS_BUILDING_EXECUTABLE_FILES_JT
+3 Other Project Options=TS_OTHER_PROJECT_OPTIONS_JT
+1 Running a Project=TS_RUNNING_A_PROJECT_JT
+2 Quick Start
+3 Debugging an Application=TS_QUICK_START_JT
+3 Stepping Through Code=TS_STEPPING_THROUGH_CODE_JT
+3 Setting and Clearing Breakpoints=TS_SETTING_CLEARING_BREAKPOINTS_JT
+3 Executing Up to a Statement=TS_EXECUTING_UP_STATEMENT_JT
+3 Viewing a List of Functions=TS_VIEWING_FUNCTIONS_JT
+3 Examining the Values of Variables=TS_EXAMINING_VARIABLES_JT
+3 Examining the Call Chain=TS_EXAMINING_CALL_CHAIN_JT
+3 Setting Watchpoints=TS_SETTING_WATCHPOINTS_JT
+3 Letting Your Program Run Until the Next Breakpoint=TS_RUN_UNTIL_BREAKPOINT_JT
+3 Letting Your Program Run Until it Terminates=TS_RUN_UNTIL_TERMINATES_JT
+3 Interrupting Execution of the Debugged Application=TS_INTERRUPT_JT
+1 Automating Tasks with the DigiMars Basic Macro Editor
+2 Macro Editor=ME_SCRIPTMAKER_JT
+2 Dialog Editor=ME_SM_USING_DIALOGS_JT
+2 Recording and Editing DigiMars Basic Macros
+3 Using the Macro Recorder=ME_MACRO_RECORDER_JT
+3 Creating a New Macro=ME_NEW_MACRO_JT
+3 Creating a New Macro from an Existing One=ME_NEW_FROM_EXISTING_JT
+3 Editing a Macro=ME_EDITING_MACRO_JT
+3 Testing and Debugging a Macro=ME_TESTING_MACRO_JT
+2 Working with Macro Dialog Boxes
+3 Using a Dialog Box in a Macro=ME_DIALOG_IN_MACRO_JT
+3 Creating a New Dialog Box for a Macro=ME_NEW_DIALOG_JT
+3 Adding Buttons and Boxes=ME_ADDING_BUTTONS_BOXES_JT
+3 Editing Buttons and Boxes=ME_EDITING_BUTTONS_BOXES_JT
+3 Setting Dialog Box Attributes=ME_SETTING_DB_ATTRIBUTES_JT
+3 Incorportating a Dialog Box into a Macro=ME_INCORPORATING_DB_JT
+3 Testing Your Macro Dialog Box=ME_TESTING_DB_JT
+1 Expression Evaluation
+2 IDDE Expressions=TQ_MULTIEXPR_JT
+2 Symbols and Scope=TQ_SYMBOL_JT
+2 Scope Override=TQ_OVERRIDE_JT
+2 Register Symbols=TQ_REGSYMBOL_JT
+2 C/C ++ Operators=TQ_COPS_JT
+2 Function and Procedure Calls=TQ_FUNCSNPROCS_JT
+2 C/C++ Type Casting=TQ_CPPTYPE_JT
+2 Expression Evaluation Errors=TQ_EVALERROR_JT
+2 Working with the Expression Evaluator
+3 Access to Class Members=TQ_ACCESS_CLASS_MEMBER_JT
+3 Amigous References=TQ_AMBIGUOUS_JT
+3 Constructors and Destructors=TQ_CONSTRUCTORS_DESTRUCTORS_JT
+3 Overloaded Functions=TQ_OVERLOADED_JT
+3 Overloaded Operators=TQ_OVERLOADED_OPERATORS_JT
+1 Distributing a Build Over a Network with NetBuild
+2 Configuring the Build Client=TQ_CON_BUILD_CLIENT_JT
+2 Starting a Distributed Build=TQ_START_BUILD_JT
+2 Monitoring a Distributed Build=TQ_MON_BUILD_JT
+2 Stopping a Distributed Build=TQ_STOP_BUILD_JT
+2 Configuring a Build Server=TQ_CON_BUILD_JT
+2 Stopping a Build Server=TQ_STOP_BUILD_SERVER_JT
+2 Troubleshooting=TQ_NETBUILD_TROUBLE_JT
+1 Working With ResourceStudio
+2 Introducing ResourceStudio
+2 What Are Resources?=RE_WHAT_ARE_RESOURCES_JT
+2 Resource Types=RE_RESOURCE_TYPES_JT
+2 The ResourceStudio Shell=RE_SHELL_JT
+2 Using ResourceStudio
+3 Starting ResourceStudio=RE_START_RESOURCE_STUDIO_JT
+3 Creating a New Resource File=RE_CREATE_NEW_RES_JT
+3 Editing an Existing Resource=RE_EDIT_EXISTING_RES_JT
+3 Creating Menu Resources
+3 Creating a New Menu Resource=RE_MENUT_NEW_JT
+3 Simple Guidelines for Creating Menus=RE_GUIDELINES_JT
+3 Adding a Pop-Up Item=RE_MENUT_ADD_POP_JT
+3 Adding a Menu Item=RE_MENUT_ADD_ITEM_JT
+3 Adding Separators=RE_MENUT_ADD_SEP_JT
+3 Editing Menu Items=RE_MENUT_EDIT_ITEMS_JT
+3 Creating Menus with Accelerators and Item Help=RE_MENUT_CREATING_ACC_HELP_JT
+3 Closing the Menu Editor=RE_MENUT_CLOSING_JT
+3 Creating Dialog Resources
+3 Introduction to Creating Dialogs=RE_CREATE_DIALOG_OVERVIEW_JT
+3 Creating a New Dialog Box Resource=RE_CREATING_NEW_DIALOG_JT
+3 Creating Push Buttons=RE_USING_PUSH_BUTTONS_JT
+3 Working with Custom Controls=RE_USING_CUSTOM_CONTROLS_JT
+3 Working with User Controls=RE_USING_USER_CONTROLS_JT
+3 Displaying Static Text=RE_USING_STATIC_TEXT_JT
+3 Aligning Controls=RE_CREATE_DIALOG_ALIGNING_JT
+3 Testing Dialogs=RE_CREATE_DIALOG_TESTING_JT
+3 Closing the Dialog Box Editor=RE_CREATE_DIALOG_CLOSING_JT
+3 Creating Bitmap Resources
+Creating a New Bitmap Resource=RE_GRAPHIC_STARTING_JT
+Changing Bitmap Size=RE_CHANGING_BITMAP_SIZE_JT
+Selecting Colors and Patterns=RE_COLORS_PATTERNS_JT
+Using the Graphic Tools=RE_GRAPHIC_TOOLS_JT
+Zoom and Grid=RE_ZOOM_GRID_JT
+Closing the Bitmap Editor=RE_CLOSING_BITMAP_JT
+3 Useful ResourceStudio Features
+3 Using Toolbars and Pop-Up Menus=RE_USING_TOOLBARS_JT
+3 Using Undo and Redo=RE_USING_UNDO_REDO_JT
+3 Using Clipboard and Drag and Drop=RE_USING_CLIP_JT
+2 Managing Resource Ids
+3 Introduction to Managing Resource IDs=RE_RES_ID_OVERVIEW_JT
+3 Textual IDs=RE_RES_ID_TEXUAL_JT
+3 Symbolic IDs=RE_RES_ID_SYMBOLIC_JT
+3 Numeric IDs=RE_RES_ID_NUMERIC_JT
+3 Specifying Resource IDs=RE_PROP_ID_JT
+3 Automatic Creation of Resource IDs=RE_RES_ID_AUTO_JT
+3 Resource ID Browsing=RE_RES_ID_BROWSING_JT
+2 Using the Resource Editors
+3 Accelerator Table Editor=RE_ACCELERATOR_TABLE_EDITOR_JT
+3 Bitmap Editor=RE_BITMAP_EDITOR_JT
+3 Cursor Editor=RE_CURSOR_EDITOR_JT
+3 Dialog Editor=RE_DIALOG_EDITOR_JT
+3 Font Editor=RE_FONT_EDITOR_JT
+3 Hex Editor=HIDM_NEWRES_OTHER
+3 Icon Editor=RE_ICON_EDITOR_JT
+3 Menu Editor=RE_MENU_EDITOR_JT
+3 String Table Editor=RE_STRING_TABLE_EDITOR_JT
+3 Version Editor=RE_VERSION_EDITOR_JT
+1 IDDE Menus and Commands
+2 Global Menus and Commands=GB_FILEMENU_JT
+2 IDDE Views=IV_VIEWS_JT

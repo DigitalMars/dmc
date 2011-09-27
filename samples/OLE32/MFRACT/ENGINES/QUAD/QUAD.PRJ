@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\ole32\MFRACT\ENGINES\QUAD\QUAD.PRJ
+QUAD.OPN
+novcs
+quad.def
+3
+812035224
+0 0 0 0 0 "quad.cxx" ""
+0 0 0 0 0 "quadobj.cxx" ""
+0 0 0 0 0 "quad.def" ""
+0 0 0 0 0 "fguids.lib" ""
+0 0 0 0 0 "winhlprs.lib" ""

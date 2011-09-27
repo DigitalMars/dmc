@@ -1,0 +1,45 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1992-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include <windows.h>
+#include "linktest.h"
+
+Menu MENU
+BEGIN
+    POPUP        "&Options"
+      BEGIN
+        MENUITEM    "&CreateThread",   IDM_CREATETHREAD
+        MENUITEM    "DLLFunction&1",   IDM_DLLFUNCTION1
+        MENUITEM    "DLLFunction&2",   IDM_DLLFUNCTION2
+        MENUITEM    "DLLFunction&3",   IDM_DLLFUNCTION3
+        MENUITEM    "DLLFunction&4",   IDM_DLLFUNCTION4
+        MENUITEM    "DLL&DialogBox",   IDM_DLLDIALOGBOX
+        MENUITEM    SEPARATOR
+        MENUITEM    "&About..."        IDM_ABOUT
+      END
+END
+
+
+About DIALOG 30, 14, 136, 90
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About LinkTest"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Microsoft Developer Support", 104, 0, 63, 136, 8
+    CTEXT           "Copyright \251 1992-1995 Microsoft Corporation", 105, 0, 74,
+                    136, 8
+    LTEXT           "LinkTest Win32 SDK sample ", 103, 40, 25, 95, 8
+    LTEXT           "version 1.0", 106, 40, 35, 95, 8
+    DEFPUSHBUTTON   "OK", IDOK, 95, 6, 40, 14
+    CONTROL         "", 108, "Static", SS_BLACKRECT, 0, 53, 136, 2
+END

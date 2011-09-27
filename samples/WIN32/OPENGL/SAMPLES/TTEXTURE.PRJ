@@ -1,0 +1,14 @@
+82572
+C:\SC\Samples\WIN32\opengl\samples\ttexture.prj
+ttexture.OPN
+novcs
+ttexture.DEF
+19
+853547626
+0 0 0 0 0 "ttexture.c" ""
+0 0 0 0 0 "ttexture.DEF" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "taccum.def" ""
+0 0 0 0 0 "advapi32.lib" ""

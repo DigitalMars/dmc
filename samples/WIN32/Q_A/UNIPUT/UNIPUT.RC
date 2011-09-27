@@ -1,0 +1,82 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1992-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+
+#include "windows.h"
+#include "uniput.h"
+
+uniputIcon  ICON        uniput.ico
+
+
+uniputMenu MENU
+BEGIN
+
+//    POPUP "&File"
+//    BEGIN
+//        MENUITEM "&Open New File ...",             IDM_NEWFILE
+//        MENUITEM "&Close File",                IDM_CLOSEFILE
+//    END
+
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "Show hex codepoint value.",  IDM_SHOWHEX
+        MENUITEM "Show display range names.",  IDM_SHOWNAMES
+        POPUP "Font Height"
+        BEGIN
+            MENUITEM "18",                IDM_FONT18
+            MENUITEM "36",                IDM_FONT36, CHECKED
+            MENUITEM "72",                IDM_FONT72
+        END
+        POPUP    "Characters per row"
+        BEGIN
+            MENUITEM "10",                IDM_CHAR10
+            MENUITEM "16",                IDM_CHAR16, CHECKED
+            MENUITEM "20",                IDM_CHAR20
+            MENUITEM "32",                IDM_CHAR32
+            MENUITEM "40",                IDM_CHAR40
+            MENUITEM "64",                IDM_CHAR64
+        END
+    END
+
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                 IDM_MDICASCADE
+        MENUITEM "&Tile",                    IDM_MDITILE
+        MENUITEM SEPARATOR
+        MENUITEM "&New",                     IDM_NEWWINDOW
+    END
+
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Help &Contents",             IDM_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About",                  IDM_ABOUT
+    END
+END
+
+
+
+
+aboutBox DIALOG 30, 14, 136, 90
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About uniput"
+BEGIN
+    ICON            "uniputIcon", -1, 8, 20, 18, 20
+    LTEXT           "Uniput-- input Unicode chars", -1, 40, 25, 95, 8
+    LTEXT           "version 1.1", -1, 40, 35, 95, 8
+    DEFPUSHBUTTON   "OK", IDOK, 95, 6, 40, 14
+    CONTROL         "", -1, "Static", SS_BLACKRECT, 0, 53, 136, 2
+    CTEXT           "Microsoft Developer Support", -1, 0, 62, 136, 8
+    CTEXT           "Copyright \251 1992-1995 Microsoft Corporation",
+                    -1, 0, 74, 136, 8
+END

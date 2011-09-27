@@ -1,0 +1,8 @@
+AboutBox DIALOG 52, 57, 144, 45
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+BEGIN
+  CTEXT "Microsoft® Windows"	 -1, 0, 5, 144, 8
+  CTEXT "Menu Example"		  -1, 0, 14,144, 8
+  ICON	"menu"			  -1 , 10, 10, 40, 40
+  DEFPUSHBUTTON "OK"	      IDOK, 53, 25, 32, 14, WS_GROUP
+END

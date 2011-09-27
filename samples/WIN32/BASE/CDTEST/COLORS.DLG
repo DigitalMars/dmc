@@ -1,0 +1,42 @@
+1 DLGINCLUDE "COLORS.H"
+
+ID_COLORSDIALOG DIALOG 75, 35, 207, 158
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "ChooseColor()"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "lStructSize", 101, 6, 7, 36, 8
+    EDITTEXT        ID_STRUCTSIZEC, 57, 4, 54, 12, ES_AUTOHSCROLL
+    LTEXT           "hwndOwner", 102, 6, 20, 39, 8
+    EDITTEXT        ID_HWNDOWNERC, 57, 18, 54, 12, ES_AUTOHSCROLL
+    LTEXT           "hInstance", 103, 6, 33, 33, 8
+    EDITTEXT        ID_HINSTANCEC, 57, 32, 54, 12, ES_AUTOHSCROLL
+    LTEXT           "rgbResult", 109, 6, 47, 32, 8
+    EDITTEXT        ID_RGBRESULTC, 57, 46, 54, 12, ES_AUTOHSCROLL
+    LTEXT           "lpCustColors", 104, 6, 63, 41, 8
+    COMBOBOX        ID_CUSTCOLORSC, 57, 61, 54, 51, CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Flags", 105, 6, 79, 20, 8
+    EDITTEXT        ID_FLAGSC, 57, 76, 54, 12, ES_AUTOHSCROLL
+    LTEXT           "lCustData", 106, 6, 92, 32, 8
+    EDITTEXT        ID_CUSTDATAC, 57, 90, 54, 12, ES_AUTOHSCROLL
+    LTEXT           "lpfnHook", 107, 6, 105, 30, 8
+    EDITTEXT        ID_HOOKC, 57, 104, 54, 12, ES_AUTOHSCROLL
+    LTEXT           "lpTemplate", 108, 6, 118, 36, 8
+    EDITTEXT        ID_TEMPLATEC, 57, 118, 54, 12, ES_AUTOHSCROLL
+    LTEXT           "Error:", 113, 127, 77, 74, 8
+    EDITTEXT        ID_ERRORC, 127, 88, 74, 12, ES_AUTOHSCROLL
+    LTEXT           "Return:", 118, 127, 104, 40, 8
+    EDITTEXT        ID_RETURNC, 127, 114, 74, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "Add", ID_ADD1C, 127, 60, 35, 13
+    PUSHBUTTON      "Clear", ID_CLEAR1C, 166, 60, 35, 13
+    PUSHBUTTON      "OK", IDOK, 127, 4, 74, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 127, 19, 74, 14
+    PUSHBUTTON      "&Reset", ID_RESETC, 127, 35, 74, 14
+    AUTOCHECKBOX    "NULL Structure", ID_NULLSTRUCTCOLOR, 127, 130, 74, 10
+    AUTOCHECKBOX    "Preloaded Template", ID_PRELOADEDCOLORS, 127, 143, 78, 
+                    10
+    PUSHBUTTON      "&MultiThread", ID_MULTITHREADCOLORS, 6, 138, 105, 14
+    CONTROL         "", 607, "Static", SS_BLACKRECT, 113, 66, 12, 2
+END

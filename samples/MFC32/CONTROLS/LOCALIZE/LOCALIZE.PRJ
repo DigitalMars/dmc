@@ -1,0 +1,12 @@
+82570
+c:\SamplesMFC32\CONTROLS\LOCALIZE\localize.prj
+localize.OPN
+novcs
+localize.DEF
+17
+834106364
+0 0 0 0 0 "localctl.cpp" ""
+0 0 0 0 0 "localize.cpp" ""
+0 0 0 0 0 "localppg.cpp" ""
+0 0 0 0 0 "localize.def" ""
+0 0 0 0 0 "localize.rc" ""

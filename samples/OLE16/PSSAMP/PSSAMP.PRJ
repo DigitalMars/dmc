@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\ole16\PSSAMP\PSSAMP.PRJ
+PSSAMP.OPN
+novcs
+pssamp.def
+1
+812035224
+0 0 0 0 0 "pssamp.cpp" ""
+0 0 0 0 0 "pssamp.def" ""
+0 0 0 0 0 "..\bin\movelib.bat" ""

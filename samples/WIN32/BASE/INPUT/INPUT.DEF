@@ -1,0 +1,23 @@
+NAME            "Input"
+
+DESCRIPTION     'Sample Microsoft Windows Application'
+
+EXETYPE         NT
+
+SUBSYSTEM       WINDOWS
+
+STUB            'WINSTUB.EXE'
+
+VERSION         1.0
+
+CODE             EXECUTE
+
+DATA             READ WRITE
+
+STACKSIZE       4096 
+
+HEAPSIZE        4096 
+
+EXPORTS
+		_MainWndProc@16 @2
+		_About@16 @1

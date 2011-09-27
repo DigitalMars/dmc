@@ -1,0 +1,31 @@
+;;
+;;
+;;    OLE 2.0 Sample Code
+;;
+;;    outline.def
+;;
+;;    Definition file for outline.exe
+;;
+;;    (c) Copyright Microsoft Corp. 1992 - 1993 All Rights Reserved
+;;
+;;
+;; NOTE: Do not add exports to this file.  Use __export
+;; in your function prototype and definition instead.
+
+NAME		"Outline" WINDOWAPI 
+
+DESCRIPTION	'Microsoft OLE 2.0 Sample code--base version'
+
+EXETYPE		WINDOWS
+
+PROTMODE
+
+STUB		'WINSTUB.EXE'
+
+CODE		 PRELOAD MOVEABLE IOPL CONFORMING DISCARDABLE EXECUTEONLY
+
+DATA		 PRELOAD MOVEABLE NOIOPL  READWRITE
+
+STACKSIZE	10240        
+
+HEAPSIZE	8192

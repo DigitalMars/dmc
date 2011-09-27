@@ -1,0 +1,92 @@
+# 
+# THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+# KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR 
+# PURPOSE.
+# 
+# Copyright 1993-1995 Microsoft Corporation, all rights reserved.
+#
+# Windows Telephony AT Modem Service Provider sample makefile
+# usage: nmake [DEBUG=0|1]
+#
+
+CC      = cl
+RC      = rc
+MAKE    = smake
+
+!if "$(DEBUG)" == "1"
+CFLAGS = /nologo /G2 /W3 /Zi /ALw /Od /DDEBUG /FR /GD /NT $(@B)_TEXT
+APPCFLAGS = /nologo /G2 /W3 /Zi /Zp1 /AL /Od /DDEBUG /GA /NT $(@B)_TEXT
+LFLAGS = /nologo /ONERROR:NOEXE /NOD /CO /NOE /ALIGN:4 /MAP:FULL
+RESFLAGS =  /DDEBUG 
+!else
+CFLAGS = /nologo /G3 /W3 /Zp1 /ALw /O1 /Ox /DNDEBUG /GD /NT $(@B)_TEXT
+APPCFLAGS = /nologo /G3 /W3 /Zp1 /AL /O1 /Ox /DNDEBUG /GA /NT $(@B)_TEXT
+LFLAGS = /nologo /ONERROR:NOEXE /NOD /NOE /ALIGN:4 /NONULLS /PACKD /PACKF /MAP:FULL
+RESFLAGS =  /K
+!endif
+
+
+LIBS = libw ldllcew toolhelp ver commdlg
+APPLIBS = libw llibcew
+
+
+all:    clean release 
+
+clean:  
+	del *.obj 
+	del *.dll 
+	del *.map 
+	del *.sym 
+	del *.cpl
+	del *.res
+	del *.exe
+	del *.lib
+	del *.sbr
+	del *.bsc
+	del *.hlp
+	del *.tsp
+	del *.asm
+
+DLLOBJ = atsp.obj
+APPOBJ = serial.obj atspexe.obj
+
+release: atsp.tsp atspexe.exe
+
+
+atsp.tsp:: $(DLLOBJ) $(@B).def $(@B).rc
+	echo >NUL @<<$(@B).CRF
+$(DLLOBJ)
+$@
+$(@B).map
+$(LIBS)
+$(@B).def;
+<<
+	link $(LFLAGS) /NOPACKC @$(@B).CRF
+	$(RC) $(RESFLAGS) $(@B).rc $@
+	implib /nologo /nowep $(@B).LIB $@
+
+
+# stuff for atsp executable
+
+!ifndef DEBUG
+APPLIBS = lnocrtw libw
+!endif
+
+
+atspexe.obj: 
+  cl $(APPCFLAGS) /c atspexe.c
+
+serial.obj:
+  cl $(APPCFLAGS) /c serial.c
+
+atspexe.exe:: $(APPOBJ) $(@B).def $(@B).rc
+	echo >NUL @<<$(@B).CRF
+$(APPOBJ)
+$@
+$(@B).MAP
+$(APPLIBS)
+$(@B).def;
+<<
+	link $(LFLAGS) @$(@B).CRF
+	$(RC) $(RESFLAGS) $(@B).rc $@

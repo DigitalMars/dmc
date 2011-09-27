@@ -1,0 +1,24 @@
+82572
+C:\SC\samples\win32\MM\MIDIPLYR\MIDIPL32.PRJ
+MIDIPL32.OPN
+novcs
+midipl32.def
+16
+812035224
+0 0 0 0 0 "debug.c" ""
+0 0 0 0 0 "mainwnd.c" ""
+0 0 0 0 0 "midiplyr.c" ""
+0 0 0 0 0 "sequence.c" ""
+0 0 0 0 0 "smf.c" ""
+0 0 0 0 0 "smfread.c" ""
+0 0 0 0 0 "timewnd.c" ""
+0 0 0 0 0 "uiutils.c" ""
+0 0 0 0 0 "comctl32.lib" ""
+0 0 0 0 0 "msacm32.lib" ""
+0 0 0 0 0 "shell32.lib" ""
+0 0 0 0 0 "vfw32.lib" ""
+0 0 0 0 0 "winmm.lib" ""
+0 0 0 0 0 "midiplyr.rc" ""
+0 0 0 0 0 "midiplyr.rcv" ""
+0 0 0 0 0 "midipl32.def" ""
+0 0 0 0 0 "comdlg32.lib" ""

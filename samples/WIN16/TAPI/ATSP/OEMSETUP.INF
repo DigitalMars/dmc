@@ -1,0 +1,45 @@
+;  This is an example oemsetup.inf file that will correctly install the atsp
+;  service provider from the control panel.  To perform a service provider
+;  installation, place this file in a directory along with the service
+;  provider and its necessary components.  The format of this file is very
+;  similar to the format used by Multimedia (see Multimedia SDK documentation
+;  for details on their format).
+;
+;  [disks] is a required section, listing all disks and their label names.
+;  The format of [disks] is as follows:
+;
+;    disk#=relativePath,"Disk description"
+;
+;    For example, if installing from a floppy:
+;    2=.,"Floppy Disk One"
+;    2=.,"Floppy Disk Two"
+;
+;    If installing from a network share:
+;    2=.,"Floppy Disk One"
+;    2=..\disk2,"Floppy Disk Two"
+;
+;
+;  [Installable.Drivers] is also required, listing all installable service
+;  providers.  The format of [Installable.drivers] in oemsetup.inf is:
+;
+;    key=disk#:driverfile,,"SP Description","vxd1.386,vxd2.386",,"relatedDrv1,relatedDrv2..."
+;
+;    for example:
+;    bogus=6:bogus.tsp,,"Bogus Service Provider","mach.386,dosxnt.386",,"atsp,pdi"
+;
+;
+;  Any additional sections specify dependent files to be copied along with the 
+;  service provider, and must be named after the key specified for that
+;  provider in the [installable.drivers] section.  All files are copied into
+;  the system subdirectory of the user's windows directory.
+
+[disks]
+1=.,"Microsoft Service Provider Library Diskette"
+ 
+[Installable.Drivers]
+atsp     = 1:atsp.tsp,,"AT Command Set Modem Telephony SP",,
+
+[atsp]
+1:atsp.hlp
+1:atsp.sym
+1:atspexe.exe

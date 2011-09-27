@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\MM\PALMAP\PALMAP32.PRJ
+PALMAP32.OPN
+novcs
+PALMAP32.DEF
+17
+812035224
+0 0 0 0 0 "palmap32.def" ""
+0 0 0 0 0 "dibmap.c" ""
+0 0 0 0 0 "palmap.c" ""
+0 0 0 0 0 "ole32.lib" ""
+0 0 0 0 0 "vfw32.lib" ""

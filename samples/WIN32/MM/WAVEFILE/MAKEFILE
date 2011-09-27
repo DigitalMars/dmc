@@ -1,0 +1,41 @@
+# Nmake macros for building Windows 32-Bit apps
+
+!include <win32.mak>
+
+TARGETNAME =    wavef32
+
+all: $(TARGETNAME).dll
+
+OBJS=		wavefile.obj factory1.obj extra.obj
+
+OTHERCLOPTS=-DWIN32_LEAN_AND_MEAN -nologo -I. -I..\include
+OTHERRCOPTS=-DWIN32_LEAN_AND_MEAN -I. -I..\include
+
+
+# Update the resource if necessary
+
+wavefile.res: wavefile.rc wavefile.rcv
+    $(rc) -r -DWIN32 $(OTHERRCOPTS) wavefile.rc
+
+
+# Update the object files if necessary
+
+factory1.obj: factory1.c wavefile.h
+    $(cc) $(cdebug) $(cflags) $(cvarsdll) $(OTHERCLOPTS) factory1.c
+
+extra.obj: extra.c extra.h
+    $(cc) $(cdebug) $(cflags) $(cvarsdll) $(OTHERCLOPTS) extra.c
+
+wavefile.obj: wavefile.c wavefile.h muldiv32.h
+    $(cc) $(cdebug) $(cflags) $(cvarsdll) $(OTHERCLOPTS) wavefile.c
+
+
+# Update the executable file if necessary, and if so, add the resource back in.
+
+$(TARGETNAME).dll:  $(OBJS) wavefile.res
+    $(implib) -out:$(@B).lib -def:$(TARGETNAME).def $(OBJS)
+    $(link) $(linkdebug) $(dlllflags) -out:$@  \
+!IF "$(CPU)"=="PPC"
+           INT64.LIB \
+!ENDIF
+           $(@B).exp $(OBJS) wavefile.res $(olelibsdll) vfw32.lib winmm.lib

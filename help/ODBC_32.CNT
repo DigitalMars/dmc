@@ -1,0 +1,536 @@
+:Index ODBC 2.0 SDK =odbc_32.hlp
+1 ODBC
+1 ODBC 2.0 SDK
+2 Part 1  Introduction to ODBC
+3 About this Manual
+4 About this Manual =_ODBCSDK_INTRODUCTION@odbc_32.hlp
+4 Organization of this Manual =_odbcsdk_Organization_of_this_Manual@odbc_32.hlp
+4 Audience =_odbcsdk_Audience@odbc_32.hlp
+4 Where to Find Additional Information =_odbcsdk_Where_to_Find_Additional_Information@odbc_32.hlp
+3 Chapter 1  ODBC Theory of Operation
+4 Chapter 1  ODBC Theory of Operation =_odbcsdk_ODBC_Theory_of_Operation@odbc_32.hlp
+4 ODBC History =_odbcsdk_ODBC_History@odbc_32.hlp
+4 ODBC Interface =_odbcsdk_ODBC_Interface@odbc_32.hlp
+4 ODBC Components
+5 ODBC Components =_odbcsdk_ODBC_Components@odbc_32.hlp
+5 Application =_odbcsdk_Application@odbc_32.hlp
+5 Driver Manager =_odbcsdk_Driver_Manager_1@odbc_32.hlp
+5 Driver =_odbcsdk_Driver@odbc_32.hlp
+5 Data Source =_odbcsdk_Data_Source@odbc_32.hlp
+4 Types of Drivers
+5 Types of Drivers =_odbcsdk_Types_of_Drivers@odbc_32.hlp
+5 Single-Tier Configuration =_odbcsdk_Single_Tier_Configuration@odbc_32.hlp
+5 Multiple-Tier Configuration =_odbcsdk_Multiple_Tier_Configuration@odbc_32.hlp
+5 Network Example =_odbcsdk_Network_Example@odbc_32.hlp
+4 Matching an Application to a Driver
+5 Matching an Application to a Driver =_odbcsdk_Matching_an_Application_to_a_Driver@odbc_32.hlp
+5 ODBC Conformance Levels
+6 ODBC Conformance Levels =_odbcsdk_ODBC_Conformance_Levels@odbc_32.hlp
+6 API Conformance Levels =_odbcsdk_API_Conformance_Levels@odbc_32.hlp
+6 SQL Conformance Levels =_odbcsdk_SQL_Conformance_Levels@odbc_32.hlp
+6 How to Select a Set of Functionality =_odbcsdk_How_to_Select_a_Set_of_Functionality@odbc_32.hlp
+6 Connections and Transactions =_odbcsdk_Connections_and_Transactions@odbc_32.hlp
+3 Chapter 2  A Short History of SQL
+4 Chapter 2  A Short History of SQL =_odbcsdk_A_Short_History_of_SQL@odbc_32.hlp
+4 SQL Background Information =_odbcsdk_SQL_Background_Information@odbc_32.hlp
+4 ANSI 1989 Standard
+5 ANSI 1989 Standard =_odbcsdk_ANSI_1989_Standard@odbc_32.hlp
+5 Embedded SQL =_odbcsdk_Embedded_SQL@odbc_32.hlp
+5 Current ANSI Specification =_odbcsdk_Current_ANSI_Specification@odbc_32.hlp
+5 Dynamic SQL =_odbcsdk_Dynamic_SQL@odbc_32.hlp
+5 Call Level Interface =_odbcsdk_Call_Level_Interface@odbc_32.hlp
+5 Interoperability =_odbcsdk_Interoperability@odbc_32.hlp
+2 Part 2  Developing Guidelines
+3 Chapter 3  Guidelines for Calling ODBC Functions
+4 Chapter 3  Guidelines for Calling ODBC Functions =_odbcsdk_Guidelines_for_Calling_ODBC_Functions@odbc_32.hlp
+4 General Information =_odbcsdk_General_Information_1@odbc_32.hlp
+4 Determining Driver Conformance Levels
+5 Determining Driver Conformance Levels =_odbcsdk_Determining_Driver_Conformance_Levels@odbc_32.hlp
+5 Determining API Conformance Levels =_odbcsdk_Determining_API_Conformance_Levels@odbc_32.hlp
+5 Determining SQL Conformance Levels =_odbcsdk_Determining_SQL_Conformance_Levels@odbc_32.hlp
+5 Using the Driver Manager =_odbcsdk_Using_the_Driver_Manager@odbc_32.hlp
+4 Calling ODBC Functions
+5 Calling ODBC Functions =_odbcsdk_Calling_ODBC_Functions@odbc_32.hlp
+5 Buffers
+6 Buffers =_odbcsdk_Buffers_1@odbc_32.hlp
+6 Input Buffers =_odbcsdk_Input_Buffers_1@odbc_32.hlp
+6 Output Buffers =_odbcsdk_Output_Buffers_1@odbc_32.hlp
+6 Environment, Connection, and Statement Handles =_odbcsdk_Environment_Connection_and_Statement_Handles_1@odbc_32.hlp
+6 Using Data Types =_odbcsdk_Using_Data_Types@odbc_32.hlp
+6 ODBC Function Return Codes =_odbcsdk_ODBC_Function_Return_Codes_1@odbc_32.hlp
+3 Chapter 4 Basic Application Steps
+4 Chapter 4  Basic Application Steps =_odbcsdk_Basic_Application_Steps@odbc_32.hlp
+3 Chapter 5  Connecting to a Data Source
+4 Chapter 5  Connecting to a Data Source =_odbcsdk_Connecting_to_a_Data_Source_1@odbc_32.hlp
+4 About Data Sources =_odbcsdk_About_Data_Sources_1@odbc_32.hlp
+4 Initializing the ODBC Environment =_odbcsdk_Initializing_the_ODBC_Environment@odbc_32.hlp
+4 Allocating a Connection Handle =_odbcsdk_Allocating_a_Connection_Handle@odbc_32.hlp
+4 Connecting to a Data Source =_odbcsdk_Connecting_to_a_Data_Source_2@odbc_32.hlp
+4 ODBC Extensions for Connections
+5 ODBC Extensions for Connections =_odbcsdk_ODBC_Extensions_for_Connections_1@odbc_32.hlp
+5 Connecting to a Data Source With SQLDriverConnect =_odbcsdk_Connecting_to_a_Data_Source_With_SQLDriverConnect_1@odbc_32.hlp
+5 Connection Browsing With SQLBrowseConnect
+6 Connection Browsing With SQLBrowseConnect =_odbcsdk_Connection_Browsing_With_SQLBrowseConnect_1@odbc_32.hlp
+6 Connection Browsing Example for SQL Server =_odbcsdk_Connection_Browsing_Example_for_SQL_Server_1@odbc_32.hlp
+6 Connection Browsing Example for DAL =_odbcsdk_Connection_Browsing_Example_for_DAL_1@odbc_32.hlp
+6 Translating Data =_odbcsdk_Translating_Data_1@odbc_32.hlp
+6 Additional Extension Functions =_odbcsdk_Additional_Extension_Functions_1@odbc_32.hlp
+3 Chapter 6  Executing SQL Statements
+4 Chapter 6  Executing SQL Statements =_odbcsdk_Executing_SQL_Statements@odbc_32.hlp
+4 Allocating a Statement Handle =_odbcsdk_Allocating_a_Statement_Handle_1@odbc_32.hlp
+4 Executing an SQL Statement
+5 Executing an SQL Statement =_odbcsdk_Executing_an_SQL_Statement_1@odbc_32.hlp
+5 Prepared Execution =_odbcsdk_Prepared_Execution_1@odbc_32.hlp
+5 Direct Execution =_odbcsdk_Direct_Execution_1@odbc_32.hlp
+5 Setting Parameter Values =_odbcsdk_Setting_Parameter_Values@odbc_32.hlp
+5 Performing Transactions =_odbcsdk_Performing_Transactions@odbc_32.hlp
+4 ODBC Extensions for SQL Statements
+5 ODBC Extensions for SQL Statements =_odbcsdk_ODBC_Extensions_for_SQL_Statements_1@odbc_32.hlp
+5 Retrieving Information About the Data Source's Catalog =_odbcsdk_Retrieving_Information_About_the_Data_Source_Hn2_Hns_Catalog@odbc_32.hlp
+5 Sending Parameter Data at Execution Time =_odbcsdk_Sending_Parameter_Data_at_Execution_Time@odbc_32.hlp
+5 Specifying Arrays of Parameter Values =_odbcsdk_Specifying_Arrays_of_Parameter_Values@odbc_32.hlp
+5 Executing Functions Asynchronously =_odbcsdk_Executing_Functions_Asynchronously@odbc_32.hlp
+5 Using ODBC Extensions to SQL
+6 Using ODBC Extensions to SQL =_odbcsdk_Using_ODBC_Extensions_to_SQL@odbc_32.hlp
+6 Date, Time, and Timestamp Data =_odbcsdk_Date_Time_and_Timestamp_Data_1@odbc_32.hlp
+6 Scalar Functions =_odbcsdk_Scalar_Functions_1@odbc_32.hlp
+6 LIKE Predicate Escape Characters =_odbcsdk_LIKE_Predicate_Escape_Characters_1@odbc_32.hlp
+6 Outer Joins =_odbcsdk_Outer_Joins_1@odbc_32.hlp
+6 Procedures =_odbcsdk_Procedures_1@odbc_32.hlp
+6 Additional Extension Functions =_odbcsdk_Additional_Extension_Functions_2@odbc_32.hlp
+3 Chapter 7  Retrieving Results
+4 Chapter 7  Retrieving Results =_odbcsdk_Retrieving_Results@odbc_32.hlp
+4 Assigning Storage for Results (Binding) =_odbcsdk_Assigning_Storage_for_Results_diBinding1@odbc_32.hlp
+4 Determining the Characteristics of a Result Set =_odbcsdk_Determining_the_Characteristics_of_a_Result_Set@odbc_32.hlp
+4 Fetching Result Data =_odbcsdk_Fetching_Result_Data@odbc_32.hlp
+4 Using Cursors =_odbcsdk_Using_Cursors@odbc_32.hlp
+4 ODBC Extensions for Results
+5 ODBC Extensions for Results =_odbcsdk_ODBC_Extensions_for_Results@odbc_32.hlp
+5 Retrieving Data from Unbound Columns =_odbcsdk_Retrieving_Data_from_Unbound_Columns@odbc_32.hlp
+5 Assigning Storage for Rowsets (Binding)
+6 Assigning Storage for Rowsets (Binding) =_ODBCSDK_Assigning_Storage_for_Rowsets_LPBindingRP_1@odbc_32.hlp
+6 Column-Wise Binding =_odbcsdk_Column_Wise_Binding@odbc_32.hlp
+6 Row-Wise Binding =_odbcsdk_Row_Wise_Binding@odbc_32.hlp
+6 Retrieving Rowset Data =_odbcsdk_Retrieving_Rowset_Data@odbc_32.hlp
+5 Using Block and Scrollable Cursors
+6 Using Block and Scrollable Cursors =_odbcsdk_Using_Block_and_Scrollable_Cursors@odbc_32.hlp
+6 Block Cursors =_odbcsdk_Block_Cursors@odbc_32.hlp
+6 Scrollable Cursors =_odbcsdk_Scrollable_Cursors@odbc_32.hlp
+6 Static Cursors =_odbcsdk_Static_Cursors@odbc_32.hlp
+6 Dynamic Cursors =_odbcsdk_Dynamic_Cursors@odbc_32.hlp
+6 Keyset-Driven Cursors =_odbcsdk_KeysetcDriven_Cursors@odbc_32.hlp
+6 Mixed (Keyset/Dynamic) Cursors =_ODBCSDK_Mixed_LPKeysetSlDynamicRP_Cursors_1@odbc_32.hlp
+6 Specifying the Cursor Type =_odbcsdk_Specifying_the_Cursor_Type@odbc_32.hlp
+6 Specifying Cursor Concurrency =_odbcsdk_Specifying_Cursor_Concurrency@odbc_32.hlp
+6 Using Bookmarks =_odbcsdk_Using_Bookmarks@odbc_32.hlp
+5 Modifying Result Set Data
+6 Modifying Result Set Data =_odbcsdk_Modifying_Result_Set_Data@odbc_32.hlp
+6 Executing Positioned Update and Delete Statements =_odbcsdk_Executing_Positioned_Update_and_Delete_Statements_1@odbc_32.hlp
+6 Modifying Data with SQLSetPos =_odbcsdk_Modifying_Data_with_SQLSetPos@odbc_32.hlp
+6 Processing Multiple Results =_odbcsdk_Processing_Multiple_Results@odbc_32.hlp
+3 Chapter 8  Retrieving Status
+4 and Error Information
+4 Chapter 8  Retrieving Status
+4 and Error Information =_odbcsdk_Retrieving_Status_and_Error_Information@odbc_32.hlp
+4 Function Return Codes =_odbcsdk_Function_Return_Codes@odbc_32.hlp
+4 Retrieving Error Messages =_odbcsdk_Retrieving_Error_Messages@odbc_32.hlp
+4 ODBC Error Messages
+5 ODBC Error Messages =_odbcsdk_ODBC_Error_Messages@odbc_32.hlp
+5 Error Text Format =_odbcsdk_Error_Text_Format_1@odbc_32.hlp
+5 Sample Error Messages
+6 Sample Error Messages =_odbcsdk_Sample_Error_Messages_1@odbc_32.hlp
+6 Single-Tier Driver =_odbcsdk_Single_Tier_Driver_1@odbc_32.hlp
+6 Multiple-Tier Driver =_odbcsdk_Multiple_Tier_Driver_1@odbc_32.hlp
+6 Gateways =_odbcsdk_Gateways_1@odbc_32.hlp
+6 Driver Manager =_odbcsdk_Driver_Manager_2@odbc_32.hlp
+6 Processing Error Messages =_odbcsdk_Processing_Error_Messages@odbc_32.hlp
+3 Chapter 9 Terminating Transactions and Connections
+4 Chapter 9  Terminating Transactions and Connections =_odbcsdk_Terminating_Transactions_and_Connections_1@odbc_32.hlp
+3 Chapter 10  Constructing an ODBC Application
+4 Chapter 10  Constructing an ODBC Application =_odbcsdk_Constructing_an_ODBC_Application@odbc_32.hlp
+4 Static SQL Example =_odbcsdk_Static_SQL_Example@odbc_32.hlp
+4 Interactive Ad Hoc Query Example =_odbcsdk_Interactive_Ad_Hoc_Query_Example@odbc_32.hlp
+4 Testing and Debugging an Application =_odbcsdk_Testing_and_Debugging_an_Application@odbc_32.hlp
+4 Installing and Configuring ODBC Software =_odbcsdk_Installing_and_Configuring_ODBC_Software_1@odbc_32.hlp
+2 Part 3  Developing Drivers
+3 Chapter 11  Guidelines for Implementing ODBC Functions
+4 Chapter 11  Guidelines for Implementing ODBC Functions =_odbcsdk_Guidelines_for_Implementing_ODBC_Functions@odbc_32.hlp
+4 Role of the Driver Manager
+5 Role of the Driver Manager =_odbcsdk_Role_of_the_Driver_Manager@odbc_32.hlp
+5 Validating Arguments =_odbcsdk_Validating_Arguments@odbc_32.hlp
+5 Checking State Transitions =_odbcsdk_Checking_State_Transitions@odbc_32.hlp
+5 Checking for General Errors =_odbcsdk_Checking_for_General_Errors@odbc_32.hlp
+4 Elements of ODBC Functions
+5 Elements of ODBC Functions =_odbcsdk_Elements_of_ODBC_Functions@odbc_32.hlp
+5 Supporting ODBC Conformance Levels
+6 Supporting ODBC Conformance Levels =_odbcsdk_Supporting_ODBC_Conformance_Levels@odbc_32.hlp
+6 Supporting API Conformance Levels =_odbcsdk_Supporting_API_Conformance_Levels@odbc_32.hlp
+6 Supporting SQL Conformance Levels =_odbcsdk_Supporting_SQL_Conformance_Levels@odbc_32.hlp
+5 Buffers
+6 Buffers =_odbcsdk_Buffers_2@odbc_32.hlp
+6 Input Buffers =_odbcsdk_Input_Buffers_2@odbc_32.hlp
+6 Output Buffers =_odbcsdk_Output_Buffers_2@odbc_32.hlp
+6 Environment, Connection, and Statement Handles =_odbcsdk_Environment_Connection_and_Statement_Handles_2@odbc_32.hlp
+6 Data Type Support =_odbcsdk_Data_Type_Support@odbc_32.hlp
+6 ODBC Function Return Codes =_odbcsdk_ODBC_Function_Return_Codes_2@odbc_32.hlp
+6 Driver-Specific Data Types, Descriptor Types, Information Types, and Options =_odbcsdk_Driver_Specific_Data_Types_Descriptor_Types_Information_Types_and_Options@odbc_32.hlp
+6 Yielding Control to Windows =_odbcsdk_Yielding_Control_to_Windows@odbc_32.hlp
+3 Chapter 12 Application Use of the ODBC Interface
+4 Chapter 12  Application Use of the ODBC Interface =_odbcsdk_Application_Use_of_the_ODBC_Interface@odbc_32.hlp
+3 Chapter 13  Establishing Connections
+4 Chapter 13  Establishing Connections =_odbcsdk_Establishing_Connections@odbc_32.hlp
+4 About Data Sources =_odbcsdk_About_Data_Sources_2@odbc_32.hlp
+4 Establishing a Connection to a Data Source =_odbcsdk_Establishing_a_Connection_to_a_Data_Source@odbc_32.hlp
+4 ODBC Extensions for Connections
+5 ODBC Extensions for Connections =_odbcsdk_ODBC_Extensions_for_Connections_2@odbc_32.hlp
+5 Connecting to a Data Source With SQLDriverConnect =_odbcsdk_Connecting_to_a_Data_Source_With_SQLDriverConnect_2@odbc_32.hlp
+5 Connection Browsing With SQLBrowseConnect
+6 Connection Browsing With SQLBrowseConnect =_odbcsdk_Connection_Browsing_With_SQLBrowseConnect_2@odbc_32.hlp
+6 Connection Browsing Example for SQL Server =_odbcsdk_Connection_Browsing_Example_for_SQL_Server_2@odbc_32.hlp
+6 Connection Browsing Example for DAL =_odbcsdk_Connection_Browsing_Example_for_DAL_2@odbc_32.hlp
+6 Translating Data =_odbcsdk_Translating_Data_2@odbc_32.hlp
+6 Additional Extension Functions =_odbcsdk_Additional_Extension_Functions_3@odbc_32.hlp
+3 Chapter 14  Processing an SQL Statement
+4 Chapter 14  Processing an SQL Statement =_odbcsdk_Processing_an_SQL_Statement@odbc_32.hlp
+4 Allocating a Statement Handle =_odbcsdk_Allocating_a_Statement_Handle_2@odbc_32.hlp
+4 Executing an SQL Statement
+5 Executing an SQL Statement =_odbcsdk_Executing_an_SQL_Statement_2@odbc_32.hlp
+5 Prepared Execution =_odbcsdk_Prepared_Execution_2@odbc_32.hlp
+5 Direct Execution =_odbcsdk_Direct_Execution_2@odbc_32.hlp
+5 Supporting Parameters =_odbcsdk_Supporting_Parameters@odbc_32.hlp
+5 Supporting Transactions =_odbcsdk_Supporting_Transactions@odbc_32.hlp
+4 ODBC Extensions for SQL Statements
+5 ODBC Extensions for SQL Statements =_odbcsdk_ODBC_Extensions_for_SQL_Statements_2@odbc_32.hlp
+5 Returning Information About the Data Source's Catalog =_odbcsdk_Returning_Information_About_the_Data_Source1_Hn2_Hs_Catalog@odbc_32.hlp
+5 Accepting Parameter Data at Execution Time =_odbcsdk_Accepting_Parameter_Data_at_Execution_Time@odbc_32.hlp
+5 Accepting Arrays of Parameter Values =_odbcsdk_Accepting_Arrays_of_Parameter_Values@odbc_32.hlp
+5 Supporting Asynchronous Execution =_odbcsdk_Supporting_Asynchronous_Execution@odbc_32.hlp
+5 Supporting ODBC Extensions to SQL
+6 Supporting ODBC Extensions to SQL =_odbcsdk_Supporting_ODBC_Extensions_to_SQL@odbc_32.hlp
+6 Date, Time, and Timestamp Data =_odbcsdk_Date_Time_and_Timestamp_Data_2@odbc_32.hlp
+6 Scalar Functions =_odbcsdk_Scalar_Functions_2@odbc_32.hlp
+6 LIKE Predicate Escape Characters =_odbcsdk_LIKE_Predicate_Escape_Characters_2@odbc_32.hlp
+6 Outer Joins =_odbcsdk_Outer_Joins_2@odbc_32.hlp
+6 Procedures =_odbcsdk_Procedures_2@odbc_32.hlp
+6 Additional Extension Functions =_odbcsdk_Additional_Extension_Functions_4@odbc_32.hlp
+3 Chapter 15  Returning Results
+4 Chapter 15  Returning Results =_ODBCSDK_Returning_Results@odbc_32.hlp
+4 Assigning Storage for Results (Binding) =_ODBCSDK_Assigning_Storage_for_Results_LPBindingRP@odbc_32.hlp
+4 Returning Information About a Result Set =_ODBCSDK_Returning_Information_About_a_Result_Set@odbc_32.hlp
+4 Returning Result Data =_ODBCSDK_Returning_Result_Data@odbc_32.hlp
+4 Supporting Cursors =_ODBCSDK_Supporting_Cursors@odbc_32.hlp
+4 ODBC Extensions for Results
+5 ODBC Extensions for Results =_ODBCSDK_ODBC_Extensions_for_Results_1@odbc_32.hlp
+5 Returning Data from Unbound Columns =_ODBCSDK_Returning_Data_from_Unbound_Columns@odbc_32.hlp
+5 Assigning Storage for Rowsets (Binding)
+6 Assigning Storage for Rowsets (Binding) =_ODBCSDK_Assigning_Storage_for_Rowsets_LPBindingRP_2@odbc_32.hlp
+6 Column-Wise Binding =_ODBCSDK_Column_Wise_Binding_0@odbc_32.hlp
+6 Row-Wise Binding =_ODBCSDK_Row_Wise_Binding_1@odbc_32.hlp
+6 Returning Rowset Data =_ODBCSDK_Returning_Rowset_Data@odbc_32.hlp
+5 Supporting Block and Scrollable Cursors
+6 Supporting Block and Scrollable Cursors =_ODBCSDK_Supporting_Block_and_Scrollable_Cursors@odbc_32.hlp
+6 Block Cursors =_ODBCSDK_Block_Cursors_0@odbc_32.hlp
+6 Scrollable Cursors =_ODBCSDK_Scrollable_Cursors_1@odbc_32.hlp
+6 Static Cursors =_ODBCSDK_Static_Cursors_1@odbc_32.hlp
+6 Dynamic Cursors =_ODBCSDK_Dynamic_Cursors_1@odbc_32.hlp
+6 Keyset-Driven Cursors =_ODBCSDK_Keyset_Driven_Cursors@odbc_32.hlp
+6 Mixed (Keyset/Dynamic) Cursors =_ODBCSDK_Mixed_LPKeysetSlDynamicRP_Cursors_2@odbc_32.hlp
+6 Supporting the Cursor Types =_ODBCSDK_Supporting_the_Cursor_Types@odbc_32.hlp
+6 Supporting Cursor Concurrency =_ODBCSDK_Supporting_Cursor_Concurrency@odbc_32.hlp
+6 Using Bookmarks =_ODBCSDK_Using_Bookmarks_1@odbc_32.hlp
+5 Modifying Result Set Data
+6 Modifying Result Set Data =_ODBCSDK_Modifying_Result_Set_Data_1@odbc_32.hlp
+6 Processing Positioned Update and Delete Statements =_ODBCSDK_Processing_Positioned_Update_and_Delete_Statements@odbc_32.hlp
+6 Modifying Data with SQLSetPos =_ODBCSDK_Modifying_Data_with_SQLSetPos_1@odbc_32.hlp
+6 Returning Multiple Results =_ODBCSDK_Returning_Multiple_Results@odbc_32.hlp
+3 Chapter 16  Returning Status and Error Information
+4 Chapter 16  Returning Status and Error Information =_odbcsdk_Returning_Status_and_Error_Information@odbc_32.hlp
+4 Returning Return Codes =_odbcsdk_Returning_Return_Codes@odbc_32.hlp
+4 Returning Error Messages =_odbcsdk_Returning_Error_Messages@odbc_32.hlp
+4 Constructing ODBC Error Messages
+5 Constructing ODBC Error Messages =_odbcsdk_Constructing_ODBC_Error_Messages@odbc_32.hlp
+5 Error Text Format =_odbcsdk_Error_Text_Format_2@odbc_32.hlp
+5 Error Handling Rules =_odbcsdk_Error_Handling_Rules@odbc_32.hlp
+5 Documenting Error Mappings =_odbcsdk_Documenting_Error_Mappings@odbc_32.hlp
+5 Sample Error Messages
+6 Sample Error Messages =_odbcsdk_Sample_Error_Messages_2@odbc_32.hlp
+6 Single-Tier Driver =_odbcsdk_Single_Tier_Driver_2@odbc_32.hlp
+6 Multiple-Tier Driver =_ODBCSDK_Multiple_Tier_Driver_2@odbc_32.hlp
+6 Gateways =_odbcsdk_Gateways_2@odbc_32.hlp
+6 Driver Manager =_odbcsdk_Driver_Manager_3@odbc_32.hlp
+3 Chapter 17  Terminating Transactions and Connections
+4 Chapter 17  Terminating Transactions and Connections =_odbcsdk_Terminating_Transactions_and_Connections_2@odbc_32.hlp
+4 Terminating Statement Processing =_odbcsdk_Terminating_Statement_Processing_2@odbc_32.hlp
+4 Terminating Transactions =_odbcsdk_Terminating_Transactions_2@odbc_32.hlp
+4 Terminating Connections =_odbcsdk_Terminating_Connections_2@odbc_32.hlp
+3 Chapter 18  Constructing an ODBC Driver
+4 Chapter 18  Constructing an ODBC Driver =_odbcsdk_Constructing_an_ODBC_Driver@odbc_32.hlp
+4 Testing and Debugging a Driver =_odbcsdk_Testing_and_Debugging_a_Driver@odbc_32.hlp
+4 Installing and Configuring ODBC Software =_odbcsdk_Installing_and_Configuring_ODBC_Software_2@odbc_32.hlp
+2 Part 4  Installing and Configuring ODBC Software
+3 Chapter 19  Installing ODBC Software
+4 Chapter 19  Installing ODBC Software =_ODBCSDK_Installing_ODBC_Software@odbc_32.hlp
+4 Redistributing ODBC Files =_ODBCSDK_Redistributing_ODBC_Files@odbc_32.hlp
+4 Creating Your Own Setup Program
+5 Creating Your Own Setup Program =_ODBCSDK_Creating_Your_Own_Setup_Program@odbc_32.hlp
+5 Installing the Software Interactively =_ODBCSDK_Installing_the_Software_Interactively@odbc_32.hlp
+5 Installing the Software Silently =_ODBCSDK_Installing_the_Software_Silently@odbc_32.hlp
+5 Installing Individual ODBC Components =_ODBCSDK_Installing_Individual_ODBC_Components@odbc_32.hlp
+5 Constructing the ODBC.INF File =_ODBCSDK_Constructing_the_ODBC.INF_File@odbc_32.hlp
+4 Structure of the ODBC.INF File
+5 Structure of the ODBC.INF File =_ODBCSDK_Structure_of_the_ODBC.INF_File@odbc_32.hlp
+5 [Source Media Descriptions] Section =_ODBCSDK_LkSource_Media_DescriptionsRk_Section@odbc_32.hlp
+5 [ODBC Drivers] Section =_ODBCSDK_LkODBC_DriversRk_Section_1@odbc_32.hlp
+5 Driver Specification Sections =_ODBCSDK_Driver_Specification_Sections_1@odbc_32.hlp
+5 Driver Keyword Sections =_ODBCSDK_Driver_Keyword_Sections@odbc_32.hlp
+5 [ODBC Translators] Section =_ODBCSDK_LkODBC_TranslatorsRk_Section_1@odbc_32.hlp
+5 Translator Specification Sections =_ODBCSDK_Translator_Specification_Sections_1@odbc_32.hlp
+5 Installation Properties =_ODBCSDK_Installation_Properties@odbc_32.hlp
+4 Structure of the ODBCINST.INI File
+5 Structure of the ODBCINST.INI File =_ODBCSDK_Structure_of_the_ODBCINST.INI_File@odbc_32.hlp
+5 [ODBC Drivers] Section =_ODBCSDK_LkODBC_DriversRk_Section_2@odbc_32.hlp
+5 Driver Specification Sections =_ODBCSDK_Driver_Specification_Sections_2@odbc_32.hlp
+5 Default Driver Specification Section =_ODBCSDK_Default_Driver_Specification_Section@odbc_32.hlp
+5 [ODBC Translators] Section =_ODBCSDK_LkODBC_TranslatorsRk_Section_2@odbc_32.hlp
+5 Translator Specification Sections =_ODBCSDK_Translator_Specification_Sections_2@odbc_32.hlp
+3 Chapter 20  Configuring Data Sources
+4 Chapter 20  Configuring Data Sources =_odbcsdk_Configuring_Data_Sources@odbc_32.hlp
+4 Creating Your Own Data Source - Management Program
+5 Creating Your Own Data Source - Management Program =_odbcsdk_Creating_Your_Own_Data_Source_ding3_Management_Program@odbc_32.hlp
+5 Adding, Modifying, and Deleting Data Sources =_odbcsdk_Adding_Modifying_and_Deleting_Data_Sources@odbc_32.hlp
+5 Specifying a Default Data Source =_odbcsdk_Specifying_a_Default_Data_Source@odbc_32.hlp
+5 Specifying a Default Translator =_odbcsdk_Specifying_a_Default_Translator@odbc_32.hlp
+4 Structure of the ODBC.INI File
+5 Structure of the ODBC.INI File =_odbcsdk_Structure_of_the_ODBC.INI_File@odbc_32.hlp
+5 [ODBC Data Sources] Section =_odbcsdk_SpODBC_Data_Sourcest__Section@odbc_32.hlp
+5 Data Source Specification Sections =_odbcsdk_Data_Source_Specification_Sections@odbc_32.hlp
+5 Default Data Source Specification Section =_odbcsdk_Default_Data_Source_Specification_Section@odbc_32.hlp
+5 ODBC Options Section =_odbcsdk_ODBC_Options_Section@odbc_32.hlp
+2 Part 5  API Reference
+3 Chapter 21  Function Summary
+4 Chapter 21  Function Summary =_ODBCSDK_Function_Summary@odbc_32.hlp
+4 ODBC Function Summary =_ODBCSDK_ODBC_Function_Summary@odbc_32.hlp
+4 Setup DLL Function Summary =_ODBCSDK_Setup_DLL_Function_Summary@odbc_32.hlp
+4 Installer DLL Function Summary =_ODBCSDK_Installer_DLL_Function_Summary@odbc_32.hlp
+4 Translation DLL Function Summary =_ODBCSDK_Translation_DLL_Function_Summary@odbc_32.hlp
+3 Chapter 22  ODBC Function Reference
+4 Chapter 22  ODBC Function Reference =_ODBCSDK_ODBC_Function_Reference@odbc_32.hlp
+4 Arguments =_ODBCSDK_Arguments@odbc_32.hlp
+4 ODBC Include Files =_ODBCSDK_ODBC_Include_Files@odbc_32.hlp
+4 Diagnostics =_ODBCSDK_Diagnostics@odbc_32.hlp
+4 Tables and Views =_ODBCSDK_Tables_and_Views@odbc_32.hlp
+4 Catalog Functions =_ODBCSDK_Catalog_Functions@odbc_32.hlp
+4 Search Pattern Arguments =_ODBCSDK_Search_Pattern_Arguments@odbc_32.hlp
+4 ODBC Functions
+5 SQLAllocConnect =_ODBCSDK_SQLAllocConnect@odbc_32.hlp
+5 SQLAllocEnv =_ODBCSDK_SQLAllocEnv@odbc_32.hlp
+5 SQLAllocStmt =_ODBCSDK_SQLAllocStmt@odbc_32.hlp
+5 SQLBindCol =_ODBCSDK_SQLBindCol_1@odbc_32.hlp
+5 SQLBindParameter
+6 SQLBindParameter =_ODBCSDK_SQLBindParameter@odbc_32.hlp
+6 fParamType Argument =_ODBCSDK_fParamType_Argument@odbc_32.hlp
+6 fCType Argument =_ODBCSDK_fCType_Argument@odbc_32.hlp
+6 fSqlType Argument =_ODBCSDK_fSqlType_Argument@odbc_32.hlp
+6 cbColDef Argument =_ODBCSDK_cbColDef_Argument@odbc_32.hlp
+6 rgbValue Argument =_ODBCSDK_rgbValue_Argument@odbc_32.hlp
+6 cbValueMax Argument =_ODBCSDK_cbValueMax_Argument@odbc_32.hlp
+6 pcbValue Argument =_ODBCSDK_pcbValue_Argument@odbc_32.hlp
+6 Passing Parameter Values =_ODBCSDK_Passing_Parameter_Values@odbc_32.hlp
+6 Conversion of Calls to and from SQLSetParam =_ODBCSDK_Conversion_of_Calls_to_and_from_SQLSetParam@odbc_32.hlp
+5 SQLBrowseConnect
+6 SQLBrowseConnect =_ODBCSDK_SQLBrowseConnect@odbc_32.hlp
+6 szConnStrIn Argument =_ODBCSDK_szConnStrIn_Argument@odbc_32.hlp
+6 szConnStrOut Argument =_ODBCSDK_szConnStrOut_Argument@odbc_32.hlp
+6 Using SQLBrowseConnect =_ODBCSDK_Using_SQLBrowseConnect@odbc_32.hlp
+5 SQLCancel
+6 SQLCancel =_ODBCSDK_SQLCancel@odbc_32.hlp
+6 Canceling Asynchronous Processing =_ODBCSDK_Canceling_Asynchronous_Processing@odbc_32.hlp
+6 Canceling Functions that Need Data =_ODBCSDK_Canceling_Functions_that_Need_Data@odbc_32.hlp
+6 Canceling Functions in Multithreaded Applications =_ODBCSDK_Canceling_Functions_in_Multithreaded_Applications@odbc_32.hlp
+6 SQLColAttributes =_ODBCSDK_SQLColAttributes@odbc_32.hlp
+6 SQLColumnPrivileges =_ODBCSDK_SQLColumnPrivileges@odbc_32.hlp
+6 SQLColumns =_ODBCSDK_SQLColumns@odbc_32.hlp
+5 SQLConnect
+6 SQLConnect =_ODBCSDK_SQLConnect@odbc_32.hlp
+6 Driver Manager Guidelines =_ODBCSDK_Driver_Manager_Guidelines_0@odbc_32.hlp
+6 SQLDataSources =_ODBCSDK_SQLDataSources@odbc_32.hlp
+6 SQLDescribeCol =_ODBCSDK_SQLDescribeCol@odbc_32.hlp
+6 SQLDescribeParam =_ODBCSDK_SQLDescribeParam@odbc_32.hlp
+6 SQLDisconnect =_ODBCSDK_SQLDisconnect@odbc_32.hlp
+6 SQLDriverConnect =_ODBCSDK_SQLDriverConnect@odbc_32.hlp
+6 SQLDrivers =_ODBCSDK_SQLDrivers@odbc_32.hlp
+6 SQLError =_ODBCSDK_SQLError@odbc_32.hlp
+6 SQLExecDirect =_ODBCSDK_SQLExecDirect@odbc_32.hlp
+6 SQLExecute =_ODBCSDK_SQLExecute@odbc_32.hlp
+6 SQLExtendedFetch =_ODBCSDK_SQLExtendedFetch_1@odbc_32.hlp
+6 SQLFetch =_ODBCSDK_SQLFetch@odbc_32.hlp
+6 SQLForeignKeys =_ODBCSDK_SQLForeignKeys@odbc_32.hlp
+6 SQLFreeConnect =_ODBCSDK_SQLFreeConnect@odbc_32.hlp
+6 SQLFreeEnv =_ODBCSDK_SQLFreeEnv@odbc_32.hlp
+6 SQLFreeStmt =_ODBCSDK_SQLFreeStmt_1@odbc_32.hlp
+6 SQLGetConnectOption =_ODBCSDK_SQLGetConnectOption@odbc_32.hlp
+6 SQLGetCursorName =_ODBCSDK_SQLGetCursorName@odbc_32.hlp
+6 SQLGetData =_ODBCSDK_SQLGetData_1@odbc_32.hlp
+6 SQLGetFunctions =_ODBCSDK_SQLGetFunctions_1@odbc_32.hlp
+6 SQLGetInfo =_ODBCSDK_SQLGetInfo_1@odbc_32.hlp
+6 SQLGetStmtOption =_ODBCSDK_SQLGetStmtOption_1@odbc_32.hlp
+6 SQLGetTypeInfo =_ODBCSDK_SQLGetTypeInfo@odbc_32.hlp
+6 SQLMoreResults =_ODBCSDK_SQLMoreResults@odbc_32.hlp
+6 SQLNativeSql =_ODBCSDK_SQLNativeSql_1@odbc_32.hlp
+6 SQLNumParams =_ODBCSDK_SQLNumParams@odbc_32.hlp
+6 SQLNumResultCols =_ODBCSDK_SQLNumResultCols@odbc_32.hlp
+6 SQLParamData =_ODBCSDK_SQLParamData@odbc_32.hlp
+6 SQLParamOptions =_ODBCSDK_SQLParamOptions@odbc_32.hlp
+6 SQLPrepare =_ODBCSDK_SQLPrepare@odbc_32.hlp
+6 SQLPrimaryKeys =_ODBCSDK_SQLPrimaryKeys@odbc_32.hlp
+6 SQLProcedureColumns =_ODBCSDK_SQLProcedureColumns@odbc_32.hlp
+6 SQLProcedures =_ODBCSDK_SQLProcedures@odbc_32.hlp
+6 SQLPutData =_ODBCSDK_SQLPutData@odbc_32.hlp
+6 SQLRowCount =_ODBCSDK_SQLRowCount_1@odbc_32.hlp
+6 SQLSetConnectOption =_ODBCSDK_SQLSetConnectOption_1@odbc_32.hlp
+6 SQLSetCursorName =_ODBCSDK_SQLSetCursorName@odbc_32.hlp
+6 SQLSetParam =_ODBCSDK_SQLSetParam@odbc_32.hlp
+6 SQLSetPos =_ODBCSDK_SQLSetPos_1@odbc_32.hlp
+6 SQLSetScrollOptions =_ODBCSDK_SQLSetScrollOptions_1@odbc_32.hlp
+6 SQLSetStmtOption =_ODBCSDK_SQLSetStmtOption_1@odbc_32.hlp
+6 SQLSpecialColumns =_ODBCSDK_SQLSpecialColumns@odbc_32.hlp
+6 SQLStatistics =_ODBCSDK_SQLStatistics@odbc_32.hlp
+6 SQLTablePrivileges =_ODBCSDK_SQLTablePrivileges@odbc_32.hlp
+6 SQLTables =_ODBCSDK_SQLTables@odbc_32.hlp
+6 SQLTransact =_ODBCSDK_SQLTransact_1@odbc_32.hlp
+3 Chapter 23  Setup DLL Function Reference
+4 Chapter 23  Setup DLL Function Reference =_ODBCSDK_Setup_DLL_Function_Reference@odbc_32.hlp
+4 ConfigDSN =_ODBCSDK_ConfigDSN@odbc_32.hlp
+4 ConfigTranslator =_ODBCSDK_ConfigTranslator@odbc_32.hlp
+3 Chapter 24  Installer DLL Function Reference
+4 Chapter 24  Installer DLL Function Reference =_ODBCSDK_Installer_DLL_Function_Reference@odbc_32.hlp
+4 SQLConfigDataSource =_ODBCSDK_SQLConfigDataSource@odbc_32.hlp
+4 SQLCreateDataSource =_ODBCSDK_SQLCreateDataSource@odbc_32.hlp
+4 SQLGetAvailableDrivers =_ODBCSDK_SQLGetAvailableDrivers@odbc_32.hlp
+4 SQLGetInstalledDrivers =_ODBCSDK_SQLGetInstalledDrivers@odbc_32.hlp
+4 SQLGetPrivateProfileString =_ODBCSDK_SQLGetPrivateProfileString@odbc_32.hlp
+4 SQLGetTranslator =_ODBCSDK_SQLGetTranslator@odbc_32.hlp
+4 SQLInstallDriver =_ODBCSDK_SQLInstallDriver@odbc_32.hlp
+4 SQLInstallDriverManager =_ODBCSDK_SQLInstallDriverManager@odbc_32.hlp
+4 SQLInstallODBC =_ODBCSDK_SQLInstallODBC@odbc_32.hlp
+4 SQLManageDataSources =_ODBCSDK_SQLManageDataSources@odbc_32.hlp
+4 SQLRemoveDefaultDataSource =_ODBCSDK_SQLRemoveDefaultDataSource@odbc_32.hlp
+4 SQLRemoveDSNFromIni =_ODBCSDK_SQLRemoveDSNFromIni@odbc_32.hlp
+4 SQLWriteDSNToIni =_ODBCSDK_SQLWriteDSNToIni@odbc_32.hlp
+4 SQLWritePrivateProfileString =_ODBCSDK_SQLWritePrivateProfileString@odbc_32.hlp
+3 Chapter 25  Translation DLL Function Reference
+4 Chapter 25  Translation DLL Function Reference =_ODBCSDK_Translation_DLL_Function_Reference@odbc_32.hlp
+4 SQLDataSourceToDriver =_ODBCSDK_SQLDataSourceToDriver@odbc_32.hlp
+4 SQLDriverToDataSource =_ODBCSDK_SQLDriverToDataSource@odbc_32.hlp
+2 Part 6  Appendixes
+3 Appendix A ODBC Error Codes
+4 Appendix A  ODBC Error Codes =_odbcsdk_ODBC_Error_Codes@odbc_32.hlp
+3 Appendix B  ODBC State Transition Tables
+4 Appendix B  ODBC State Transition Tables =_ODBCSDK_ODBC_State_Transition_Tables@odbc_32.hlp
+4 Environment Transitions =_ODBCSDK_Environment_Transitions@odbc_32.hlp
+4 Connection Transitions =_ODBCSDK_Connection_Transitions@odbc_32.hlp
+4 Statement Transitions =_ODBCSDK_Statement_Transitions@odbc_32.hlp
+3 Appendix C  SQL Grammar
+4 Appendix C  SQL Grammar =_odbcsdk_SQL_Grammar@odbc_32.hlp
+4 Parameter Data Types =_odbcsdk_Parameter_Data_Types@odbc_32.hlp
+4 Parameter Markers =_odbcsdk_Parameter_Markers@odbc_32.hlp
+4 SQL Statements =_odbcsdk_SQL_Statements_1@odbc_32.hlp
+4 Elements Used in SQL Statements
+5 Elements Used in SQL Statements =_odbcsdk_Elements_Used_in_SQL_Statements@odbc_32.hlp
+5 List of Reserved Keywords =_odbcsdk_List_of_Reserved_Keywords@odbc_32.hlp
+3 Appendix D  Data Types
+4 Appendix D  Data Types =_ODBCSDK_Data_Types@odbc_32.hlp
+4 SQL Data Types
+5 SQL Data Types =_ODBCSDK_SQL_Data_Types@odbc_32.hlp
+5 Minimum SQL Data Types =_ODBCSDK_Minimum_SQL_Data_Types@odbc_32.hlp
+5 Core SQL Data Types =_ODBCSDK_Core_SQL_Data_Types@odbc_32.hlp
+5 Extended SQL Data Types =_ODBCSDK_Extended_SQL_Data_Types@odbc_32.hlp
+4 C Data Types
+5 C Data Types =_ODBCSDK_C_Data_Types@odbc_32.hlp
+5 Core C Data Types =_ODBCSDK_Core_C_Data_Types@odbc_32.hlp
+5 Extended C Data Types =_ODBCSDK_Extended_C_Data_Types@odbc_32.hlp
+5 Bookmark C Data Type =_ODBCSDK_Bookmark_C_Data_Type@odbc_32.hlp
+5 ODBC 1.0 C Data Types =_ODBCSDK_ODBC_1.0_C_Data_Types@odbc_32.hlp
+5 Default C Data Types =_ODBCSDK_Default_C_Data_Types@odbc_32.hlp
+5 Transferring Data in Its Binary Form =_ODBCSDK_Transferring_Data_in_its_Binary_Form@odbc_32.hlp
+4 Precision, Scale, Length, and Display Size
+5 Precision, Scale, Length, and Display Size =_ODBCSDK_Precision_Scale_Length_and_Display_Size@odbc_32.hlp
+5 Precision =_ODBCSDK_Precision@odbc_32.hlp
+5 Scale =_ODBCSDK_Scale@odbc_32.hlp
+5 Length =_ODBCSDK_Length@odbc_32.hlp
+5 Display Size =_ODBCSDK_Display_Size@odbc_32.hlp
+4 Converting Data from SQL to C Data Types
+5 Converting Data from SQL to C Data Types =_ODBCSDK_Converting_Data_from_SQL_to_C_Data_Types@odbc_32.hlp
+5 SQL to C: Character =_ODBCSDK_SQL_to_Cc_Character@odbc_32.hlp
+5 SQL to C: Numeric =_ODBCSDK_SQL_to_Cc_Numeric@odbc_32.hlp
+5 SQL to C: Bit =_ODBCSDK_SQL_to_Cc_Bit@odbc_32.hlp
+5 SQL to C: Binary =_ODBCSDK_SQL_to_Cc_Binary@odbc_32.hlp
+5 SQL to C: Date =_ODBCSDK_SQL_to_Cc_Date@odbc_32.hlp
+5 SQL to C: Time =_ODBCSDK_SQL_to_Cc_Time@odbc_32.hlp
+5 SQL to C: Timestamp =_ODBCSDK_SQL_to_Cc_Timestamp@odbc_32.hlp
+5 SQL to C Data Conversion Examples =_ODBCSDK_SQL_to_C_Data_Conversion_Examples@odbc_32.hlp
+4 Converting Data from C to SQL Data Types
+5 Converting Data from C to SQL Data Types =_ODBCSDK_Converting_Data_from_C_to_SQL_Data_Types@odbc_32.hlp
+5 C to SQL: Character =_ODBCSDK_C_to_SQLc_Character@odbc_32.hlp
+5 C to SQL: Numeric =_ODBCSDK_C_to_SQLc_Numeric@odbc_32.hlp
+5 C to SQL: Bit =_ODBCSDK_C_to_SQLc_Bit@odbc_32.hlp
+5 C to SQL: Binary =_ODBCSDK_C_to_SQLc_Binary@odbc_32.hlp
+5 C to SQL: Date =_ODBCSDK_C_to_SQLc_Date@odbc_32.hlp
+5 C to SQL: Time =_ODBCSDK_C_to_SQLc_Time@odbc_32.hlp
+5 C to SQL: Timestamp =_ODBCSDK_C_to_SQLc_Timestamp@odbc_32.hlp
+5 C to SQL Data Conversion Examples =_ODBCSDK_C_to_SQL_Data_Conversion_Examples@odbc_32.hlp
+3 Appendix E  Comparison Between Embedded SQL and ODBC
+4 Appendix E  Comparison Between Embedded SQL and ODBC =_odbcsdk_Comparison_Between_Embedded_SQL_and_ODBC@odbc_32.hlp
+4 ODBC to Embedded SQL =_odbcsdk_ODBC_to_Embedded_SQL@odbc_32.hlp
+4 Embedded SQL to ODBC
+5 Embedded SQL to ODBC =_odbcsdk_Embedded_SQL_to_ODBC@odbc_32.hlp
+5 Declarative Statements =_odbcsdk_Declarative_Statements@odbc_32.hlp
+5 Data Definition Statements =_odbcsdk_Data_Definition_Statements@odbc_32.hlp
+5 Data Manipulation Statements =_odbcsdk_Data_Manipulation_Statements@odbc_32.hlp
+5 Dynamic SQL Statements =_odbcsdk_Dynamic_SQL_Statements@odbc_32.hlp
+5 Transaction Control Statements =_odbcsdk_Transaction_Control_Statements@odbc_32.hlp
+5 Association Management Statements =_odbcsdk_Association_Management_Statements@odbc_32.hlp
+5 Diagnostic Statement =_odbcsdk_Diagnostic_Statement@odbc_32.hlp
+3 Appendix F  Scalar Functions
+4 Appendix F  Scalar Functions =_odbcsdk_Scalar_Functions_3@odbc_32.hlp
+4 String Functions =_odbcsdk_String_Functions@odbc_32.hlp
+4 Numeric Functions =_odbcsdk_Numeric_Functions@odbc_32.hlp
+4 Time and Date Functions =_odbcsdk_Time_and_Date_Functions@odbc_32.hlp
+4 System Functions =_odbcsdk_System_Functions@odbc_32.hlp
+4 Explicit Data Type Conversion =_odbcsdk_Explicit_Data_Type_Conversion@odbc_32.hlp
+3 Appendix G  ODBC Cursor Library
+4 Appendix G  ODBC Cursor Library =_odbcsdk_ODBC_Cursor_Library@odbc_32.hlp
+4 Using the ODBC Cursor Library =_odbcsdk_Using_the_ODBC_Cursor_Library@odbc_32.hlp
+4 Executing Positioned Update and Delete Statements =_odbcsdk_Executing_Positioned_Update_and_Delete_Statements_2@odbc_32.hlp
+4 Code Example =_odbcsdk_Code_Example@odbc_32.hlp
+4 Implementation Notes
+5 Implementation Notes =_odbcsdk_Implementation_Notes@odbc_32.hlp
+5 Cursor Library Cache
+6 Cursor Library Cache =_odbcsdk_Cursor_Library_Cache@odbc_32.hlp
+6 Column Data =_odbcsdk_Column_Data@odbc_32.hlp
+6 Length of Column Data =_odbcsdk_Length_of_Column_Data@odbc_32.hlp
+6 Row Status =_odbcsdk_Row_Status@odbc_32.hlp
+6 Location of Cache =_odbcsdk_Location_of_Cache@odbc_32.hlp
+5 SQL Statements
+6 SQL Statements =_odbcsdk_SQL_Statements_2@odbc_32.hlp
+6 Positioned Update and Delete Statements =_odbcsdk_Positioned_Update_and_Delete_Statements@odbc_32.hlp
+6 SELECT FOR UPDATE Statements =_odbcsdk_SELECT_FOR_UPDATE_Statements@odbc_32.hlp
+6 Batched SQL Statements =_odbcsdk_Batched_SQL_Statements@odbc_32.hlp
+6 Constructing Searched Statements =_odbcsdk_Constructing_Searched_Statements@odbc_32.hlp
+5 ODBC Functions
+6 ODBC Functions =_odbcsdk_ODBC_Functions@odbc_32.hlp
+6 SQLBindCol =_odbcsdk_SQLBindCol@odbc_32.hlp
+6 SQLExtendedFetch =_odbcsdk_SQLExtendedFetch@odbc_32.hlp
+6 SQLFreeStmt =_odbcsdk_SQLFreeStmt@odbc_32.hlp
+6 SQLGetData =_odbcsdk_SQLGetData@odbc_32.hlp
+6 SQLGetFunctions =_odbcsdk_SQLGetFunctions@odbc_32.hlp
+6 SQLGetInfo =_odbcsdk_SQLGetInfo@odbc_32.hlp
+6 SQLGetStmtOption =_odbcsdk_SQLGetStmtOption@odbc_32.hlp
+6 SQLNativeSql =_odbcsdk_SQLNativeSql@odbc_32.hlp
+6 SQLRowCount =_odbcsdk_SQLRowCount@odbc_32.hlp
+6 SQLSetConnectOption =_odbcsdk_SQLSetConnectOption@odbc_32.hlp
+6 SQLSetPos =_odbcsdk_SQLSetPos@odbc_32.hlp
+6 SQLSetScrollOptions =_odbcsdk_SQLSetScrollOptions@odbc_32.hlp
+6 SQLSetStmtOption =_odbcsdk_SQLSetStmtOption@odbc_32.hlp
+6 SQLTransact =_odbcsdk_SQLTransact@odbc_32.hlp
+6 ODBC Cursor Library Error Codes =_odbcsdk_ODBC_Cursor_Library_Error_Codes@odbc_32.hlp

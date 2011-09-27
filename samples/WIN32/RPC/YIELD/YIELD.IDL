@@ -1,0 +1,12 @@
+[ uuid (87A118A0-11DB-1068-94B2-00DD010662DA),
+  version (1.0),
+  pointer_default(unique)
+]
+interface yield
+{
+
+void YieldProc([in] short cSeconds);
+
+void Shutdown(void);
+
+}

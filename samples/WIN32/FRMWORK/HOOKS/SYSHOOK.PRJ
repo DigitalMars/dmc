@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\FRMWORK\HOOKS\SYSHOOK.PRJ
+SYSHOOK.OPN
+novcs
+SYSHOOK.DEF
+17
+812035224
+0 0 0 0 0 "syshook.c" ""
+0 0 0 0 0 "syshook2.c" ""
+0 0 0 0 0 "syshook.rc" ""
+0 0 0 0 0 "comctl32.lib" ""
+0 0 0 0 0 "version.lib" ""

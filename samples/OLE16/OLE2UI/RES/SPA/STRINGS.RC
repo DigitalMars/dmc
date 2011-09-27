@@ -1,0 +1,124 @@
+/*
+ * STRINGS.RC
+ *
+ * strings for the OLE 2.0 UI Support Library.
+ *
+ * Copyright (c)1992 Microsoft Corporation, All Right Reserved
+ */
+
+
+#include "ole2ui.h"
+
+
+//Stringtable common for all dialogs.
+STRINGTABLE
+	BEGIN
+	 IDS_FILTERS,               "Todos los archivos (*.*)|*.*|"
+	 IDS_ICONFILTERS,           "Archivos de icono|*.exe;*.dll;*.ico|Programas (*.exe)|*.exe|Bibliotecas (*.dll)|Iconos (*.ico)|Todos los archivos (*.*)|*.*|"
+	END
+
+// browse dialog
+STRINGTABLE
+	BEGIN
+	 IDS_BROWSE         "Examinar"
+	END
+
+
+//Insert Object stringtable.
+STRINGTABLE
+	BEGIN
+	 IDS_IORESULTNEW,                "Inserta un objeto nuevo de %s en el documento."
+	 IDS_IORESULTNEWICON,            "Inserta un objeto nuevo de %s en el documento. Iste se presentara como un icono."
+	 IDS_IORESULTFROMFILE1,          "Inserta el contenido del archivo como un objeto en el documento, para asm poder activarlo usando la "
+	 IDS_IORESULTFROMFILE2,          "aplicacisn en donde fue creado."
+	 IDS_IORESULTFROMFILEICON2,      "aplicacisn en donde fue creado. Iste se presentara como un icono."
+	 IDS_IORESULTLINKFILE1,          "Inserta una imagen del contenido del archivo en el documento. La imagen sera vinculada al "
+	 IDS_IORESULTLINKFILE2,          "archivo para que los cambios realizados en el archivo se reflejen en el documento."
+	 IDS_IORESULTLINKFILEICON1,      "Inserta un icono en el documento, el cual representa al archivo. El icono puede ser vinculado al "
+	 IDS_IORESULTLINKFILEICON2,      "archivo para que los cambios realizados en el archivo se reflejen en el documento."
+	END
+
+//Change Icon stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_CINOICONSINFILE,        "No existen iconos en %s."
+	 IDS_CIINVALIDFILE,          "%s no es un archivo existente."
+	 IDS_CIFILEACCESS,           "Imposible abrir el archivo %s. Acceso denegado."
+	 IDS_CIFILESHARE,            "Imposible abrir el archivo %s. Sharing violation."
+	 IDS_CIFILEOPENFAIL,         "Imposible abrir el archivo %s. Error general."
+	END
+
+// Convert stringtable.
+STRINGTABLE
+	BEGIN
+	 IDS_CVRESULTCONVERTLINK,     "Un objeto vinculado debe ser convertido en el origen."
+	 IDS_CVRESULTCONVERTTO,       "Cambia permanentemente el objeto %s seleccionado a un objeto %s."
+	 IDS_CVRESULTNOCHANGE,        "El objeto %s seleccionado no sera convertido."
+	 IDS_CVRESULTDISPLAYASICON,   "  Se mostrara como un icono."
+	 IDS_CVRESULTACTIVATEAS,      "Cada objeto %s sera activado como un objeto %"
+	 IDS_CVRESULTACTIVATEDIFF,    ", pero no sera convertido."
+	END
+
+//Paste Special stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_PSPASTEDATA,         "Inserta el contenido del Portapapeles en el documento como un objeto %s."
+	 IDS_PSPASTEOBJECT,       "Inserta el contenido del Portapapeles en el documento para poder activarlo utilizando %s."
+	 IDS_PSPASTEOBJECTASICON, "Inserta el contenido del Portapapeles en el documento para poder activarlo utilizando %s.  Sera mostrado como icono."
+	 IDS_PSPASTELINKDATA,     "Inserta el contenido del Portapapeles en el documento como un objeto %s.  ""Pegar vmnculo"" crea un vmnculo con el archivo de origen para que los cambios realizados en iste se reflejen en el documento."
+	 IDS_PSPASTELINKOBJECT,   "Inserta el contenido del Portapapeles en el documento como un objeto %s.  ""Pegar vmnculo"" crea un vmnculo con el archivo de origen para que los cambios realizados en iste se reflejen en el documento."
+	 IDS_PSPASTELINKOBJECTASICON, "Inserta un icono en el documento, el cual representa el contenido del Portapapeles. ""Pegar vmnculo"" crea un vmnculo con el archivo de origen para que los cambios realizados en iste se reflejen en el documento."
+	 IDS_PSNONOLE,            "Inserta el contenido del Portapapeles en el documento."
+	 IDS_PSUNKNOWNTYPE,       "Tipo desconocido"
+	 IDS_PSUNKNOWNSRC,        "Origen desconocido"
+	 IDS_PSUNKNOWNAPP,        "la aplicacisn en la que fue creado"
+	END
+
+// Busy/Blocked dialog stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_BZRESULTTEXTBUSY          "No se puede llevar a cabo esta accisn porque la aplicacisn %s (%s) esta siendo utilizada. Elija ""Cambiar a"" para activar %s y corregir el problema."
+	 IDS_BZRESULTTEXTNOTRESPONDING "No se puede llevar a cabo esta accisn porque la aplicacisn %s (%s) no responde. Elija ""Cambiar a"" para activar %s y corregir el problema."
+	END
+
+// OLESTD stringtable
+STRINGTABLE
+	BEGIN
+	  IDS_OLESTDNOCREATEFILE, "!No se pudo crear el archivo!"
+	  IDS_OLESTDNOOPENFILE,   "!No se pudo abrir el archivo!"
+	  IDS_OLESTDDISKFULL,     "Disco lleno--no se puede llevar a cabo la operacisn de guardar"
+	END
+
+// OLE2UI stringtable
+STRINGTABLE
+	BEGIN
+	   IDS_OLE2UIEDITNOOBJCMD, "&Objeto"
+	   IDS_OLE2UIEDITLINKCMD_1VERB, "0%s %objeto de %s vinculado"
+	   IDS_OLE2UIEDITOBJECTCMD_1VERB, "0%s &objeto de %s"
+	   IDS_OLE2UIEDITLINKCMD_NVERB, "&Objeto vinculado de %s"
+	   IDS_OLE2UIEDITOBJECTCMD_NVERB, "&Objeto de %s"
+	   IDS_OLE2UIUNKNOWN, "Desconocido"
+	   IDS_OLE2UILINK,    "Vmnculo"
+	   IDS_OLE2UIOBJECT,  "Objeto"
+	   IDS_OLE2UIEDIT,    "&Editar"
+	   IDS_OLE2UICONVERT, "&Convertir..."
+	   IDS_DEFICONLABEL,  "Documento"
+	   IDS_OLE2UIPASTELINKEDTYPE, "vinculado de %s"
+	END
+
+// LINKS stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_LINK_AUTO              "Automatica"
+	 IDS_LINK_MANUAL            "Manual"
+	 IDS_LINK_UNKNOWN           "No disponible"
+	 IDS_LINKS                  "Vmnculos"
+	 IDS_FAILED                 "!Error al realizar la operacisn!"
+	 IDS_CHANGESOURCE           "Cambiar origen"
+	 IDS_INVALIDSOURCE          "Origen no valido: ?Desea corregirlo?"
+	 IDS_CHANGEADDITIONALLINKS  "El vmnculo seleccionado ha sido modificado.\nEste documento contiene vmnculos adicionales en\n%s.\n\n?Desea cambiar otros vmnculos?"
+	 IDS_ERR_GETLINKSOURCE      "!Error al buscar origen del vmnculo!"
+	 IDS_ERR_GETLINKUPDATEOPTIONS   "!Error al buscar la opcisn de actualizacisn del vmnculo!"
+	 IDS_ERR_ADDSTRING          "!Error al agregar el elemento a la lista!"
+	 IDS_CLOSE              "Cerrar"
+	END

@@ -1,0 +1,27 @@
+#include "windows.h"
+#include "guigrep.h"
+
+
+GrepIcon  ICON guigrep.ico
+IDM_STARTGREP BITMAP grepbmp.bmp
+
+FileManMenu     MENU
+BEGIN
+    MENUITEM     "&String", IDM_DEFGREP-100
+    MENUITEM     "&Grep!", IDM_STARTGREP-100
+END
+
+AboutBox DIALOG 22, 17, 144, 75
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About NtGrep"
+BEGIN
+    CTEXT "Microsoft Windows"     -1,       0,  5, 144,  8
+    CTEXT "Source file browser"   -1,       0, 14, 144,  8
+    CTEXT "1992-95 Microsoft Corp."  -1,       0, 34, 144,  8
+    DEFPUSHBUTTON "OK"          IDOK,      53, 59,  32, 14,      WS_GROUP
+END
+
+
+
+rcinclude guigrep.dlg
+

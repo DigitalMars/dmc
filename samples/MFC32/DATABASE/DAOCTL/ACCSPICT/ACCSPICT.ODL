@@ -1,0 +1,73 @@
+// AccessPict.odl : type library source for OLE Custom Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (AccessPict.tlb) that will become a resource in
+// AccessPict.ocx.
+
+#include <olectl.h>
+
+[ uuid(1F4E7C20-C38F-11CE-9611-00AA004A75CF), version(1.0),
+  helpstring("AccessPict OLE Custom Control module"), control ]
+library ACCESSPICTLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CAccessPictCtrl
+
+	[ uuid(1F4E7C21-C38F-11CE-9611-00AA004A75CF),
+	  helpstring("Dispatch interface for AccessPict Control"), hidden ]
+	dispinterface _DAccessPict
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CAccessPictCtrl)
+			[id(3)] boolean IsAccessObject;
+			[id(1)] boolean StretchToFit;
+			[id(2)] boolean PreserveRatio;
+			[id(4)] IPictureDisp* Picture;
+			[id(DISPID_BORDERSTYLE), bindable, requestedit] short BorderStyle;
+			[id(DISPID_CAPTION), bindable, requestedit] BSTR Caption;
+			[id(DISPID_FONT), bindable] IFontDisp* Font;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CAccessPictCtrl)
+			[id(5)] boolean SetData(VARIANT* pvarData);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CAccessPictCtrl
+
+	[ uuid(1F4E7C22-C38F-11CE-9611-00AA004A75CF),
+	  helpstring("Event interface for AccessPict Control") ]
+	dispinterface _DAccessPictEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CAccessPictCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CAccessPictCtrl
+
+	[ uuid(1F4E7C23-C38F-11CE-9611-00AA004A75CF),
+	  helpstring("AccessPict Control"), control ]
+	coclass AccessPict
+	{
+		[default] dispinterface _DAccessPict;
+		[default, source] dispinterface _DAccessPictEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+};

@@ -1,0 +1,52 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1993 - 1995	Microsoft Corporation.	All Rights Reserved.
+ * 
+ **************************************************************************/
+
+//Microsoft App Studio generated resource script.
+//
+#include "strings.h"
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "strings.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MUSTBEPCMWAVE       "Input file must be an 8-bit mono PCM WAVE file."
+    IDS_CANTREADINPUTWAV    "Cannot read input WAVE file."
+    IDS_CANTWRITEOUTPUT     "Cannot write output WAVE file."
+    IDS_UNKOWNERROR         "Unknown error."
+    IDS_ABOUTMENUCAPTION    "&About LowPass..."
+END

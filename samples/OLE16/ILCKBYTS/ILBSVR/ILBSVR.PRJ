@@ -1,0 +1,16 @@
+82572
+C:\SC\samples\ole16\ILCKBYTS\ILBSVR\ILBSVR.PRJ
+ILBSVR.OPN
+novcs
+ilbsvr.def
+0
+812035224
+0 0 0 0 0 "ilbsvdoc.cpp" ""
+0 0 0 0 0 "ilbsvr.cpp" ""
+0 0 0 0 0 "ilbsvvw.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "stdafx.cpp" ""
+0 0 0 0 0 "test.cpp" ""
+0 0 0 0 0 "ilbsvr.def" ""
+0 0 0 0 0 "ilbsvr.rc" ""
+0 0 0 0 0 "lafxcwd.lib" ""

@@ -1,0 +1,65 @@
+#*************************************************************#
+#**                                                         **#
+#**                 Microsoft RPC Examples                  **#
+#**                   dict  Application                     **#
+#**            Copyright(c) Microsoft Corp. 1992-1995       **#
+#**                                                         **#
+#*************************************************************#
+
+cc_ntenv = cl386
+cc= cl
+cflags= -c -AL -Gsw -Oas -Zpe -Zi -D_CRTAPI1=
+linker= link
+lflags= /CO /NOD
+
+.c.obj:
+   $(cc) $(cflags) $<
+
+all : client play
+
+idl : replay.h
+
+client : client.exe
+client.exe : client.obj util0.obj replay_c.obj
+    $(linker) $(lflags) client util0 replay_c ,,,\
+    llibce rpc rpcndr;
+
+play : play.exe
+play.exe : play.obj lutil0.obj dict0.obj
+    $(linker) $(lflags) play lutil0 dict0,,,\
+    llibce;
+
+# Update the object files if necessary
+
+client.obj : client.c util0.h replay.h
+
+replay.obj : replay.c util0.h replay.h
+
+util0.obj : util0.c util0.h
+
+dict0.obj : dict0.c dict0.h
+
+play.obj : play.c util0.h dict0.h
+
+replay_c.obj : replay_c.c replay.h
+
+lutil0.obj : util0.c util0.h
+   copy util0.c lutil0.c
+   $(cc) $(cflags) -D_LOCAL lutil0.c
+   del lutil0.c
+
+replay.h replay_c.c : replay.idl replay.acf
+    midl -env dos -ms_ext -oldnames -no_cpp replay.idl
+
+
+# Clean up everything
+cleanall : clean
+    -del *.exe
+
+# Clean up everything but the .EXEs
+clean :
+    -del *.obj
+    -del *.map
+    -del replay_?.c
+    -del replay.h
+

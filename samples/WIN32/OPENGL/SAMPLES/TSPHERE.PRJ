@@ -1,0 +1,14 @@
+82572
+C:\SC\Samples\WIN32\opengl\samples\tsphere.prj
+tsphere.OPN
+novcs
+tsphere.DEF
+19
+853547424
+0 0 0 0 0 "tsphere.c" ""
+0 0 0 0 0 "tsphere.DEF" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "taccum.def" ""
+0 0 0 0 0 "advapi32.lib" ""

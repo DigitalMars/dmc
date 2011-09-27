@@ -1,0 +1,15 @@
+82569
+D:\SC\SAMPLES\MFC25\ENROLL\STEP1\ENROLL.PRJ
+ENROLL.OPN
+novcs
+enroll.def
+0
+805039278
+0 0 0 0 0 "enroll.def"
+0 0 0 0 0 "enroldoc.cpp"
+0 0 0 0 0 "enroll.cpp"
+0 0 0 0 0 "mainfrm.cpp"
+0 0 0 0 0 "sectform.cpp"
+0 0 0 0 0 "sectset.cpp"
+0 0 0 0 0 "enroll.rc"
+0 0 0 0 0 "odbc.lib"

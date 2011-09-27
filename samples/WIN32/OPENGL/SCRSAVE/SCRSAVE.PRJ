@@ -1,0 +1,13 @@
+82572
+C:\sc\samples\win32\opengl\scrsave\scrsave.PRJ
+scrsave.OPN
+novcs
+scrsave.DEF
+2
+853883964
+0 0 0 0 0 "3dfo\ss3dfo.prj" ""
+0 0 0 0 1 "common\sscommon.prj" ""
+0 0 0 0 0 "flwbox\ssflwbox.prj" ""
+0 0 0 0 0 "maze\ssmaze.prj" ""
+0 0 0 0 0 "pipes\sspipes.prj" ""
+0 0 0 0 0 "text3d\sstext3d.prj" ""

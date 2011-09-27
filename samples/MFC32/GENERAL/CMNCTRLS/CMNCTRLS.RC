@@ -1,0 +1,630 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#include ""res\\ctrldemo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ctrldemo.ico"
+IDI_ICONLIST1           ICON    DISCARDABLE     "res\\icon1.ico"
+IDI_ICONLIST2           ICON    DISCARDABLE     "res\\icon2.ico"
+IDI_ICONLIST3           ICON    DISCARDABLE     "res\\icon3.ico"
+IDI_ICONLIST4           ICON    DISCARDABLE     "res\\icon4.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_LISTCTRL DIALOG DISCARDABLE  0, 0, 300, 172
+STYLE WS_POPUP | WS_DISABLED | WS_CAPTION
+CAPTION "CListCtrl"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Listview1",IDC_LISTVIEW1,"SysListView32",LVS_REPORT | 
+                    LVS_SHAREIMAGELISTS | WS_BORDER | WS_TABSTOP,15,13,184,
+                    81
+    CONTROL         "LVS_AUTOARRANGE",IDC_AUTOARRANGE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,99,87,10
+    CONTROL         "LVS_SINGLESEL",IDC_SINGLESEL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,109,91,10
+    CONTROL         "LVS_NOLABELWRAP",IDC_NOLABELWRAP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,129,96,10
+    CONTROL         "LVS_EDITLABELS",IDC_EDITLABELS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,119,93,10
+    CONTROL         "LVS_NOCOLUMNHEADER",IDC_NOCOLUMNHEADER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,139,104,10
+    CONTROL         "LVS_NOSORTHEADER",IDC_NOSORTHEADER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,149,102,10
+    LTEXT           "View Mode",IDC_STATIC,142,103,46,10
+    COMBOBOX        IDC_VIEWMODE,196,101,90,67,CBS_DROPDOWNLIST | CBS_SORT | 
+                    CBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Alignment",IDC_STATIC,149,119,36,11
+    COMBOBOX        IDC_ALIGN,196,117,90,53,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Sort",IDC_STATIC,165,135,23,9
+    COMBOBOX        IDC_SORT,196,133,90,53,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_LISTSTATUS,209,13,77,74,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+END
+
+IDD_TREECTRL DIALOG DISCARDABLE  0, 0, 300, 172
+STYLE WS_POPUP | WS_DISABLED | WS_CAPTION
+CAPTION "CTreeCtrl"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Treeview1",IDC_TREEVIEW1,"SysTreeView32",WS_TABSTOP,17,
+                    15,158,138
+    CONTROL         "TVS_EDITLABELS",IDC_TVEDITLABELS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,186,17,74,10
+    CONTROL         "TVS_HASBUTTONS",IDC_TVHASBUTTONS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,186,28,80,10
+    CONTROL         "TVS_HASLINES",IDC_TVHASLINES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,186,39,77,10
+    CONTROL         "TVS_LINESATROOT",IDC_TVLINESATROOT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,186,50,81,10
+    CONTROL         "TVS_DISABLEDRAGDROP",IDC_TVDISABLEDDRAGDROP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,186,61,109,10
+    CONTROL         "TVS_SHOWSELALWAYS",IDC_TVSHOWSELALWAYS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,186,72,101,10
+    EDITTEXT        IDC_TREESTATUS,180,89,105,63,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+END
+
+IDD_TOOLBARCTRL DIALOG DISCARDABLE  0, 0, 300, 172
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "CToolBarCtrl"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "TBSTYLE_ALTDRAG",IDC_ALTDRAG,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,26,87,109,8
+    GROUPBOX        "Standard Toolbar",IDC_STATIC,5,29,139,98
+    LTEXT           "Toolbar Styles : ",ID_TOOLBARSTYLE,10,40,50,8
+    LTEXT           "Button Styles : ",ID_BUTTONSTYLE,14,101,44,8
+    LTEXT           "TBSTYLE_BUTTON",ID_TBSTYLEBUTTON,26,112,84,8
+    GROUPBOX        "PaletteToolbar",IDC_STATIC,153,29,140,98
+    LTEXT           "Toolbar Styles : ",ID_TOOLBARSTYLE2,163,43,50,8
+    LTEXT           "Button Styles : ",ID_BUTTONSTYLE2,160,102,44,8
+    LTEXT           "TBSTYLE_CHECKGROUP",ID_TBSTYLECHECKGROUP,181,112,104,8
+    LTEXT           "CCS_BOTTOM",ID_CCSBOTTOM,181,59,98,8
+    LTEXT           "CCS_TOP",ID_CCSTOP,26,51,109,8
+    LTEXT           "CCS_ADJUSTABLE",ID_CCSADJUSTABLE,26,63,109,8
+    LTEXT           "TBSTYLE_TOOLTIPS",ID_TBSTYLETOOLTIPS,26,75,109,8
+    LTEXT           "TBSTYLE_WRAPABLE",ID_TBSTYLEWRAPABLE,181,70,90,8
+    LTEXT           "TBSTYLE_TOOLTIPS",ID_TBSTYLETOOLTIPS2,181,81,94,8
+END
+
+IDD_PROGCTRL DIALOG DISCARDABLE  0, 0, 300, 172
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "CProgressCtrl"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Range",IDC_STATIC,19,7,122,47
+    LTEXT           "Set Range",IDC_STATIC,26,17,35,8
+    EDITTEXT        IDC_PROGRESS_FROM,26,29,40,14,ES_AUTOHSCROLL
+    LTEXT           "To",IDC_STATIC,70,32,10,8
+    EDITTEXT        IDC_PROGRESS_TO,84,29,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "Current Position",IDC_STATIC,157,11,110,89
+    LTEXT           "Position",IDC_STATIC,162,21,26,8
+    EDITTEXT        IDC_PROGRESS_POS,162,33,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Set Position",IDC_SETPOS,213,33,42,14
+    LTEXT           "Offset",IDC_STATIC,162,48,20,8
+    EDITTEXT        IDC_PROGRESS_DELTA,162,59,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Set Delta",IDC_PROGRESS_SETDELTA,213,59,42,14
+    GROUPBOX        "Step",IDC_STATIC,19,60,122,41
+    LTEXT           "Set Step",IDC_STATIC,25,70,28,8
+    EDITTEXT        IDC_PROGRESS_STEP,25,82,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Step",IDC_PROGRESS_STEPIT,85,80,40,14
+    CONTROL         "Progress2",IDC_PROGRESS,"msctls_progress32",WS_BORDER,
+                    33,125,236,16
+    GROUPBOX        "Progress Control",IDC_STATIC,19,110,266,42
+END
+
+IDD_SLIDERCTRL DIALOG DISCARDABLE  0, 0, 300, 172
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "CSliderCtrl"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Orientation",IDC_STATIC,7,7,35,8
+    COMBOBOX        IDC_SLIDER_ORIENTATION,7,19,112,36,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Tick Mark Position",IDC_STATIC,7,35,60,8
+    COMBOBOX        IDC_SLIDER_POINT,7,47,112,49,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "No Tick Marks (TBS_NOTICKS)",IDC_SLIDER_NOTICKS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,66,118,10
+    CONTROL         "Autoticks (TBS_AUTOTICKS)",IDC_SLIDER_AUTOTICKS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,77,110,10
+    LTEXT           "Tick Frequency",IDC_STATIC,7,90,50,8
+    EDITTEXT        IDC_SLIDER_TICKFREQ,7,101,40,14,ES_AUTOHSCROLL
+    LTEXT           "Range",IDC_STATIC,175,6,22,8
+    EDITTEXT        IDC_SLIDER_RANGEFROM,175,16,40,14,ES_AUTOHSCROLL
+    LTEXT           "To",IDC_STATIC,221,19,10,8
+    EDITTEXT        IDC_SLIDER_RANGETO,237,16,40,14,ES_AUTOHSCROLL
+    CONTROL         "TBS_ENABLESELRANGE",IDC_SLIDER_ENABLESEL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,32,114,10
+    EDITTEXT        IDC_SLIDER_SELRANGEFROM,175,44,40,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "To",IDC_STATIC,221,47,10,8
+    EDITTEXT        IDC_SLIDER_SELRANGETO,237,44,40,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    CONTROL         "TBS_FIXEDLENGTH",IDC_SLIDER_FIXED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,63,102,10
+    CONTROL         "No Slider (TBS_NOTHUMB)",IDC_SLIDER_NOTHUMB,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,74,116,10
+    LTEXT           "Page Step Size",IDC_STATIC,237,89,56,8
+    EDITTEXT        IDC_SLIDER_PAGE,237,100,40,14,ES_AUTOHSCROLL
+    LTEXT           "Line Step Size",IDC_STATIC,175,89,46,8
+    EDITTEXT        IDC_SLIDER_LINE,175,100,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SLIDER_VERTPOS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,129,19,34,132
+    CONTROL         "",IDC_SLIDER_HORZPOS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,83,122,171,29
+    CTEXT           "",IDC_NOTIFICATIONS,81,156,204,8
+END
+
+IDD_SPINCTRL DIALOG DISCARDABLE  0, 0, 300, 172
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "CSpinButtonCtrl"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Orientation",IDC_STATIC,11,9,35,8
+    COMBOBOX        IDC_SPIN_ORIENTATION,11,22,113,45,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Alignment",IDC_STATIC,11,38,32,8
+    COMBOBOX        IDC_SPIN_ALIGNMENT,11,50,114,44,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Range",IDC_STATIC,11,67,22,8
+    EDITTEXT        IDC_SPIN_FROM,11,79,40,14,ES_AUTOHSCROLL
+    LTEXT           "To",IDC_STATIC,61,81,18,8
+    EDITTEXT        IDC_SPIN_TO,85,79,40,14,ES_AUTOHSCROLL
+    CONTROL         "UDS_&NOTHOUSANDS",IDC_SPIN_NOTHOUSANDS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,156,22,103,10
+    CONTROL         "UDS_WRAP",IDC_SPIN_WRAP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,156,35,81,10
+    CONTROL         "UDS_ARROWKEYS",IDC_SPIN_ARROWKEYS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,156,48,123,10
+    CONTROL         "UDS_AUTOBUDDY",IDC_SPIN_AUTOBUDDY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,156,74,123,10
+    CONTROL         "UDS_SETBUDDYINT",IDC_SPIN_SETBUDDYINT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,156,61,119,10
+    GROUPBOX        "Spin Control",IDC_STATIC,77,110,133,34
+    CONTROL         "",IDC_SPIN_POS,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,
+                    159,121,12,13
+    EDITTEXT        IDC_SPIN_EDIT,112,121,40,13,ES_AUTOHSCROLL
+    GROUPBOX        "Styles",IDC_STATIC,146,12,134,81
+END
+
+IDD_ANIMCTRL DIALOG DISCARDABLE  0, 0, 300, 172
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "CAnimateCtrl"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Animation File:",IDC_STATIC,185,7,76,8
+    EDITTEXT        IDC_EDIT1,185,19,102,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse...",IDC_BROWSE,185,37,50,14
+    GROUPBOX        "St&yles",1032,185,59,103,58,WS_GROUP
+    CONTROL         "ACS_CENTER",IDC_CENTER,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,197,73,63,10
+    CONTROL         "ACS_TRANSPARENT",IDC_TRANSPARENT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,197,88,85,10
+    CONTROL         "ACS_AUTOPLAY",IDC_AUTOPLAY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,197,103,72,10
+    PUSHBUTTON      "&Play",IDC_PLAY,31,126,50,14
+    PUSHBUTTON      "&Stop",IDC_STOP,97,126,50,14
+    LTEXT           "",IDC_ANIMFRAME,21,19,142,100
+    LTEXT           "",IDC_ANIMSTATUS,25,150,259,11
+    GROUPBOX        "",IDC_STATIC,13,142,275,23
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "CTRLDEMO MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "CTRLDEMO\0"
+            VALUE "LegalCopyright", "Copyright © 1995\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "CTRLDEMO.EXE\0"
+            VALUE "ProductName", "CTRLDEMO Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_LISTCTRL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 165
+    END
+
+    IDD_TREECTRL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 165
+    END
+
+    IDD_TOOLBARCTRL, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 137
+    END
+
+    IDD_SPINCTRL, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 293
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_ANIMCTRL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 165
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_LISTCTRL DLGINIT
+BEGIN
+    IDC_VIEWMODE, 0x403, 11, 0
+0x4d53, 0x4c41, 0x204c, 0x4349, 0x4e4f, "\000" 
+    IDC_VIEWMODE, 0x403, 5, 0
+0x4349, 0x4e4f, "\000" 
+    IDC_VIEWMODE, 0x403, 5, 0
+0x494c, 0x5453, "\000" 
+    IDC_VIEWMODE, 0x403, 7, 0
+0x4552, 0x4f50, 0x5452, "\000" 
+    IDC_ALIGN, 0x403, 9, 0
+0x4c41, 0x4749, 0x544e, 0x504f, "\000" 
+    IDC_ALIGN, 0x403, 10, 0
+0x4c41, 0x4749, 0x4c4e, 0x4645, 0x0054, 
+    IDC_SORT, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_SORT, 0x403, 10, 0
+0x5341, 0x4543, 0x444e, 0x4e49, 0x0047, 
+    IDC_SORT, 0x403, 11, 0
+0x4544, 0x4353, 0x4e45, 0x4944, 0x474e, "\000" 
+    0
+END
+
+IDD_SLIDERCTRL DLGINIT
+BEGIN
+    IDC_SLIDER_ORIENTATION, 0x403, 22, 0
+0x6f48, 0x6972, 0x6f7a, 0x746e, 0x6c61, 0x2820, 0x4254, 0x5f53, 0x4f48, 
+0x5a52, 0x0029, 
+    IDC_SLIDER_ORIENTATION, 0x403, 20, 0
+0x6556, 0x7472, 0x6369, 0x6c61, 0x2820, 0x4254, 0x5f53, 0x4556, 0x5452, 
+0x0029, 
+    IDC_SLIDER_POINT, 0x403, 16, 0
+0x6f42, 0x6874, 0x2820, 0x4254, 0x5f53, 0x4f42, 0x4854, 0x0029, 
+    IDC_SLIDER_POINT, 0x403, 31, 0
+0x6f54, 0x2f70, 0x654c, 0x7466, 0x2820, 0x4254, 0x5f53, 0x4f54, 0x2050, 
+0x726f, 0x5420, 0x5342, 0x4c5f, 0x4645, 0x2954, "\000" 
+    IDC_SLIDER_POINT, 0x403, 39, 0
+0x6f42, 0x7474, 0x6d6f, 0x522f, 0x6769, 0x7468, 0x2820, 0x4254, 0x5f53, 
+0x4f42, 0x5454, 0x4d4f, 0x6f20, 0x2072, 0x4254, 0x5f53, 0x4952, 0x4847, 
+0x2954, "\000" 
+    0
+END
+
+IDD_SPINCTRL DLGINIT
+BEGIN
+    IDC_SPIN_ORIENTATION, 0x403, 9, 0
+0x6556, 0x7472, 0x6369, 0x6c61, "\000" 
+    IDC_SPIN_ORIENTATION, 0x403, 22, 0
+0x6f48, 0x6972, 0x6f7a, 0x746e, 0x6c61, 0x2820, 0x4455, 0x5f53, 0x4f48, 
+0x5a52, 0x0029, 
+    IDC_SPIN_ALIGNMENT, 0x403, 11, 0
+0x6e55, 0x7461, 0x6174, 0x6863, 0x6465, "\000" 
+    IDC_SPIN_ALIGNMENT, 0x403, 21, 0
+0x654c, 0x7466, 0x2820, 0x4455, 0x5f53, 0x4c41, 0x4749, 0x4c4e, 0x4645, 
+0x2954, "\000" 
+    IDC_SPIN_ALIGNMENT, 0x403, 23, 0
+0x6952, 0x6867, 0x2074, 0x5528, 0x5344, 0x415f, 0x494c, 0x4e47, 0x4952, 
+0x4847, 0x2954, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BMTREEFISHSELECTED  BITMAP  DISCARDABLE     "res\\bmp00001.bmp"
+IDB_BMTREEBIRD          BITMAP  DISCARDABLE     "res\\bmtreebi.bmp"
+IDB_BMTREEBIRDSELECTED  BITMAP  DISCARDABLE     "res\\bmtreedo.bmp"
+IDB_BMTREEDOGSELECTED   BITMAP  DISCARDABLE     "res\\bmp00002.bmp"
+IDB_BMTREEFISH          BITMAP  DISCARDABLE     "res\\bmtreefi.bmp"
+IDB_BMTREEDOG           BITMAP  DISCARDABLE     "res\\bmp00003.bmp"
+IDR_MAINFRAME           BITMAP  DISCARDABLE     "res\\toolbar.bmp"
+IDR_PALETTEBAR          BITMAP  DISCARDABLE     "RES\\cpalette.bmp"
+IDR_STANDARDBAR         BITMAP  DISCARDABLE     "res\\standard.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "ctrldemo"
+    IDR_CTRLDETYPE          "\nCtrlde\nCtrlde\n\n\nCtrldemo.Document\nCtrlde Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "ctrldemo"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEW                  "New"
+    ID_OPEN                 "Open"
+    ID_SAVE                 "Save"
+    ID_CUT                  "Cut"
+    ID_COPY                 "Copy"
+    ID_PASTE                "Paste"
+    ID_PRINT                "Print"
+    ID_ABOUT                "About"
+    ID_CONTEXTHELP          "Help"
+    ID_ERASE                "Erase"
+    ID_PENCIL               "Pencil"
+    ID_SELECT               "Select"
+    ID_BRUSH                "Brush"
+    ID_AIRBRUSH             "Airbrush"
+    ID_FILL                 "Fill"
+    ID_LINE                 "Line"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SELECTCOLOR          "Select Color"
+    ID_MAGNIFY              "Magnify"
+    ID_RECTANGLE            "Rectangle"
+    ID_ROUNDRECTANGLE       "Round Rect"
+    ID_ELLIPSE              "Ellipse"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TOOLBARSTYLE         "Toolbar Styles"
+    ID_CCSTOP               "Ccontrol positions itself at the top of the parent window's client area."
+    ID_CCSBOTTOM            "Control positions itself at the bottom of the parent window's client area."
+    ID_CCSADJUSTABLE        "Enables a toolbar's built-in customization features."
+    ID_TBSTYLETOOLTIPS      "Creates a tooltip control that  can display descriptive text for the buttons."
+    ID_TBSTYLEWRAPABLE      "Creates a toolbar that can have multiple lines of buttons."
+    ID_BUTTONSTYLE          "Styles for buttons on a Toolbar."
+    ID_TBSTYLEBUTTON        "Standard Push Button."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TBSTYLECHECKGROUP    "Check button that stays pressed until another button in the group is pressed."
+    ID_BUTTONSTYLE2         "Styles for buttons on a Toolbar."
+    ID_TOOLBARSTYLE2        "Toolbar Styles"
+    ID_TBSTYLETOOLTIPS2     "Creates a tooltip control that  can display descriptive text for the buttons."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#include "res\ctrldemo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

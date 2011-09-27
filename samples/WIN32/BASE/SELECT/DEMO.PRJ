@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\BASE\SELECT\DEMO.PRJ
+DEMO.OPN
+novcs
+demo.def
+16
+812035224
+0 0 0 0 0 "demo.c" ""
+0 0 0 0 0 "demo.def" ""
+0 0 0 0 0 "demo.rc" ""
+0 0 0 0 0 "select.prj" ""
+0 0 0 0 0 "select.lib" ""

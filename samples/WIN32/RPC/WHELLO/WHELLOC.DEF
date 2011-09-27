@@ -1,0 +1,40 @@
+; module-definition file for generic -- used by LINK.EXE
+; application's module name
+; required for all Windows applications
+; Generates error message if application
+; is run without Windows
+;CODE can be moved in memory and discarded/reloaded
+;DATA must be MULTIPLE if program can be invoked more than once
+; recommended minimum for Windows applications
+; All functions that will be called by any Windows routine
+; MUST be exported.
+; name of window processing function
+; name of "About" processing function
+; name of "Server" processing function
+; name of "Endpoint" processing function
+; name of "Send" processing function
+
+NAME		"Client" WINDOWAPI 
+
+DESCRIPTION	'Sample Microsoft Windows RPC Application'
+
+EXETYPE		WINDOWS
+
+PROTMODE
+
+STUB		'WINSTUB.EXE'
+
+CODE		 PRELOAD MOVEABLE NOIOPL  NONCONFORMING  DISCARDABLE EXECUTEREAD
+
+DATA		 MULTIPLE  PRELOAD MOVEABLE NOIOPL  NONDISCARDABLE  READWRITE
+
+STACKSIZE	5120
+
+HEAPSIZE	1024
+
+EXPORTS
+		MainWndProc @1
+		About @2
+		Server @3
+		Endpoint @4
+		Send @5

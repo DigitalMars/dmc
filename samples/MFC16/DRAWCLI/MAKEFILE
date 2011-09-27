@@ -1,0 +1,23 @@
+# This is a part of the Microsoft Foundation Classes C++ library.
+# Copyright (C) 1992 Microsoft Corporation
+# All rights reserved.
+#
+# This source code is only intended as a supplement to the
+# Microsoft Foundation Classes Reference and Microsoft
+# QuickHelp and/or WinHelp documentation provided with the library.
+# See these sources for detailed information regarding the
+# Microsoft Foundation Classes product.
+
+PROJ=DRAWCLI
+OBJS=drawcli.obj cntritem.obj drawdoc.obj drawobj.obj drawtool.obj drawvw.obj \
+	mainfrm.obj rectdlg.obj splitfrm.obj
+USES_OLE=1
+EXTRA_FLAGS=-HD- -HD.
+
+GOAL: stdafx.sym DRAWCLI.EXE
+
+!include ..\sample_.mak
+
+stdafx.sym: stdafx.h
+	$(CPP) $(CPPMAIN_FLAGS) -c -cpp -w -HFstdafx.sym -ostdafx.obj stdafx.h
+

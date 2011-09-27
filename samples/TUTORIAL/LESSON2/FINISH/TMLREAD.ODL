@@ -1,0 +1,44 @@
+/*
+ *TMLREAD.odl
+*/
+
+[
+	uuid(BCFEAFC1-1408-101C-AE57-444553540000),
+	version(1.0)
+]
+
+library CTMLReadDocLibrary
+{
+	importlib("stdole.tlb");
+
+	//{{AFX_ODL_CLASS
+
+	[
+		uuid(BCFEAFC2-1408-101C-AE57-444553540000),
+	]
+	dispinterface CTMLReadDoc
+	{
+		properties:
+		//	NOTE -  ClassExpress will overwrite property information here.
+		//			Do not edit this section.
+		//{{AFX_ODL_PROP(CTMLReadDoc)
+		//}}AFX_ODL_PROP
+
+		methods:
+		//	NOTE -  ClassExpress will maintain method information here.
+		//			Do not edit this section.
+		//{{AFX_ODL_METHOD(CTMLReadDoc)
+		//}}AFX_ODL_METHOD
+
+	}
+
+	//}}AFX_ODL_CLASS
+
+	[
+		uuid(BCFEAFC3-1408-101C-AE57-444553540000),
+	]
+	coclass _CTMLReadDoc
+	{
+		dispinterface CTMLReadDoc;
+	}
+}

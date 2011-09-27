@@ -1,0 +1,32 @@
+1 DLGINCLUDE "MinRec.H"
+
+MAINDLGBOX DIALOG 0, 0, 98, 18
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE WS_MINIMIZEBOX | WS_CAPTION | WS_SYSMENU
+CAPTION "Minimum Recorder"
+FONT 10, "System"
+CLASS "MinRecClass"
+MENU "MinRecMenu"
+BEGIN
+    PUSHBUTTON      "&Play", IDM_MACRO_PLAYBACK, 1, 2, 38, 14
+    PUSHBUTTON      "&Record", IDM_MACRO_RECORD, 40, 2, 28, 14
+    PUSHBUTTON      "&Stop", IDM_MACRO_STOP, 69, 2, 28, 14
+END
+
+ABOUTDLGBOX DIALOG 4, 4, 167, 65
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About Minimum Recorder"
+FONT 10, "System"
+BEGIN
+    ICON            "MinRecIcon", -1, 5, 3, 16, 16
+    LTEXT           "Microsoft Win32 SDK Sample", -1, 24, 1, 100, 8, NOT 
+                    WS_GROUP
+    LTEXT           "Minimum Recorder", -1, 24, 9, 100, 8, NOT WS_GROUP
+    LTEXT           "Version 1.1", -1, 24, 17, 100, 8
+    DEFPUSHBUTTON   "&OK", IDOK, 131, 3, 32, 12, WS_GROUP
+    LTEXT           "Microsoft Developer Support", -1, 24, 31, 133, 8
+    LTEXT           "Copyright © 1992-1995 Microsoft Corp.", -1, 24, 39, 133, 8
+    CONTROL         "", -1, "Static", SS_BLACKFRAME, 24, 50, 138, 1
+    LTEXT           "Developed by Paul Tissue", -1, 24, 54, 133, 8
+END

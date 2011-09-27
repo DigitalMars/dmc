@@ -1,0 +1,15 @@
+82570
+c:\SamplesMFC32\ADVANCED\CUBE\cube.prj
+cube.OPN
+novcs
+cube.DEF
+2
+834106326
+0 0 0 0 0 "cube.cpp" ""
+0 0 0 0 0 "cubedoc.cpp" ""
+0 0 0 0 0 "cubeview.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "cube.DEF" ""
+0 0 0 0 0 "cube.rc" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""

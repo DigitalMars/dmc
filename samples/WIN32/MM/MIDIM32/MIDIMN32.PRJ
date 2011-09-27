@@ -1,0 +1,22 @@
+82572
+C:\SC\samples\win32\MM\MIDIM32\MIDIMN32.PRJ
+MIDIMN32.OPN
+novcs
+midimn32.def
+16
+812035224
+0 0 0 0 0 "about.c" ""
+0 0 0 0 0 "callback.c" ""
+0 0 0 0 0 "circbuf.c" ""
+0 0 0 0 0 "display.c" ""
+0 0 0 0 0 "filter.c" ""
+0 0 0 0 0 "instdata.c" ""
+0 0 0 0 0 "midimon.c" ""
+0 0 0 0 0 "prefer.c" ""
+0 0 0 0 0 "midimn32.def" ""
+0 0 0 0 0 "midimon.rc" ""
+0 0 0 0 0 "msacm32.lib" ""
+0 0 0 0 0 "shell32.lib" ""
+0 0 0 0 0 "uuid.lib" ""
+0 0 0 0 0 "vfw32.lib" ""
+0 0 0 0 0 "winmm.lib" ""

@@ -1,0 +1,14 @@
+82572
+C:\SC\samples\win32\OPENGL\DEMOS\GENGL\GENGL.PRJ
+GENGL.OPN
+novcs
+gengl.def
+2
+812035224
+0 0 0 0 0 "gengl.c" ""
+0 0 0 0 0 "render.c" ""
+0 0 0 0 0 "gengl.def" ""
+0 0 0 0 0 "gengl.rc" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""

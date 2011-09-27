@@ -1,0 +1,23 @@
+NAME		"TLSCALL" WINDOWAPI 
+
+DESCRIPTION	'Sample Microsoft Windows Application'
+
+EXETYPE		NT
+
+SUBSYSTEM	CONSOLE,4.0
+
+STUB		'WINSTUB.EXE'
+
+VERSION		1.0
+
+CODE		 EXECUTE READ
+
+DATA		 READ WRITE
+
+STACKSIZE	5120
+
+HEAPSIZE	1024
+
+IMPORTS
+		TlsInit=tlsdll.1
+		TlsRetreive=tlsdll.2

@@ -1,0 +1,10 @@
+/* copyright 1993  - Symantec Corporation */
+/* wrapper for the two different MFC header files*/
+
+
+#if defined(_WIN32)
+#include <32-bit\afxolecl.rc>
+#else
+#include <16-bit\afxolecl.rc>
+#endif
+

@@ -1,0 +1,11 @@
+IDD_BUSY DIALOG DISCARDABLE  25, 37, 234, 76
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Brontoepassing is in gebruik"
+FONT 8, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON   "Taak&overzicht...", IDBZ_SWITCHTO, 33, 55, 60, 15
+	PUSHBUTTON      "&Annuleren", IDCANCEL, 163, 55, 60, 15
+	PUSHBUTTON      "&Nogmaals", IDBZ_RETRY, 98, 55, 60, 15
+	LTEXT           "Deze bewerking kan niet worden voltooid omdat de brontoepassing in gebruik is. Kies Taakoverzicht om de brontoepassing te activeren en het probleem op te lossen.", IDBZ_MESSAGE1, 35, 14, 191, 35
+	ICON            "", IDBZ_ICON, 8, 18, 18, 20
+END

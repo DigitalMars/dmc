@@ -1,0 +1,11 @@
+IDD_BUSY DIALOG DISCARDABLE  0, 0, 214, 76
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Il server h occupato"
+FONT 8, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON   "&Passa a...", IDBZ_SWITCHTO, 33, 55, 53, 15
+	PUSHBUTTON      "&Annulla", IDCANCEL, 152, 55, 53, 15
+	PUSHBUTTON      "&Riprova", IDBZ_RETRY, 92, 55, 53, 15
+	LTEXT           "Impossibile completare l'operazione. L'altra applicazione h occupata. Scegliere 'Passa a' per attivare tale applicazione e risolvere il problema.", IDBZ_MESSAGE1, 35, 11, 167, 35
+	ICON            "", IDBZ_ICON, 8, 18, 18, 20
+END

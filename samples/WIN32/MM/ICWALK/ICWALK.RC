@@ -1,0 +1,56 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1992 - 1995  Microsoft Corporation.  All Rights Reserved.
+ * 
+ **************************************************************************/
+
+#include <windows.h>
+
+#include "icwalk.h"
+#include "icwalk.rcv"
+
+ICWalkDialog DIALOG 35, 25, 400, 163
+
+STYLE DS_NOIDLEMSG | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "ICWalk"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX ID_LISTBOX, 5, 5, 390, 150, LBS_NOINTEGRALHEIGHT | LBS_USETABSTOPS| LBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+
+AppIcon  ICON   icwalk.ico
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DIALOGNAME	"ICWalkDialog"
+    IDS_CANTLOAD	"<Can't Load>"
+    IDS_FORMAT_1	"%4.4hs.%4.4hs"
+    IDS_FORMAT_2	"%4.4hs.%04d"
+    IDS_FORMAT_3	" %ls\t%ls\t%ls"
+    IDS_ABOUT           "&About..."
+END
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// About Dialog
+//
+#ifndef IDC_STATIC
+#define IDC_STATIC                      -1
+#endif
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 187, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL "ICWalk", IDC_STATIC, "static", SS_CENTER | WS_CHILD, 5, 5, 175, 8
+    CONTROL "Version 4.00", IDC_STATIC, "static", SS_CENTER | WS_CHILD, 5, 20, 175, 8
+    CONTROL "Copyright \251 1985-1995 Microsoft Corp.", IDC_STATIC, "static", SS_CENTER | WS_CHILD, 5, 35, 175, 8
+    CONTROL "OK", IDOK, "button", BS_DEFPUSHBUTTON | WS_GROUP | WS_TABSTOP | WS_CHILD, 77,49,32,14
+END

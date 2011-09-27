@@ -1,0 +1,34 @@
+// RC file for IP.C
+
+#include <windows.h>
+#include "ip.h"
+
+iconInkput ICON IP.ico
+
+menuMain MENU
+BEGIN
+   POPUP "&File"
+   BEGIN
+      MENUITEM "&Clear All", miClearAll
+      MENUITEM "E&xit", miExit
+   END
+   POPUP "&Options"
+   BEGIN
+      MENUITEM "New Apis"        ,miNewApi
+      MENUITEM "DoDefault"       ,miDoDefault
+#ifdef WIN32
+      MENUITEM "Old Apis"        ,miOldApi, GRAYED
+#else
+      MENUITEM "Old Apis"        ,miOldApi
+#endif // !WIN32
+      MENUITEM SEPARATOR
+      MENUITEM "App Releases"    ,miAppReleases
+      MENUITEM "App Inks"        ,miAppInks
+      MENUITEM "Polling"         ,miDoPolling
+      MENUITEM SEPARATOR
+      MENUITEM "Recognize"       ,miRecognize
+      MENUITEM "ProcessWriting"  ,miProcessWriting
+      MENUITEM "NullRecog"       ,miNullRecog
+      MENUITEM "RecognizeData"   ,miRecognizeData
+      END
+END

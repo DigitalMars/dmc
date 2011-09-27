@@ -1,0 +1,56 @@
+
+
+NOTES ON SNMP DEVELOPMENT FOR WINDOWS/NT 
+========================================================
+
+The SNMP service for Windows NT requires that the TCPIP service
+be running.  Use the network control panel application to install and 
+configure the TCPIP service.  You can then also use the network control
+panel application to install and configure the SNMP service.
+
+When you install the SNMP service it adds the following files to your
+<windir>\system32 directory
+
+snmp.exe     -- The SNMP agent service
+snmptrap.exe -- Receives SNMP traps and forwards them to mgmtapi.dll
+mgmtapi.dll  -- DLL for generating SNMP management requests and
+                receiving information
+inetmib2.dll -- MIB II extension agent DLL
+lmmib2.dll   -- LAN Manager MIB 2 extension agent DLL
+
+If you are developing an extension agent DLL, you must configure
+the registry so that the SNMP agent will load the extension agent
+DLL.  You can use the regedt32.exe program that comes with Windows NT
+to add this information.  SNMP configuration is found in
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SNMP\Parameters.
+You will need to add another entry under the ExtensionAgents Key.  Simply
+follow the same format that you see for the existing extension agent DLLs--
+that is provide a pointer to another registry entry that contains the 
+physical path where the DLL can be found.  NOTE: the key name and values
+are case sensitive.  Make sure that they match.  If you have problmes
+look in the system log.  Also type "Net Help Start SNMP" to see how to
+configure error logging of the SNMP agent.
+
+
+You must stop and restart the SNMP service for it to load the new
+extension agent DLLs.
+
+The files in the SNMPUTIL directory contain the source to the 
+SNMPUTIL.EXE utility.  The usage of this utility is:
+
+usage:  snmputil [get|getnext|walk] agent community oid [oid ...] 
+        snmputil trap                                             
+
+This utility will allow you to retrieve data from any SNMP agent
+
+In the MSTOOLS directory, you will find the MIB compiler.
+The SNMP Programmer's Reference describes the usage of the MIB compiler
+that creates the file MIB.BIN that the SNMPUTIL.EXE program uses.  
+You can use the MIB compiler, MIBCC.EXE, to compile your own private
+MIBs as well.  The file MIB.BIN must be placed in the path for the SNMP 
+Manager APIs to be able to function properly.  MIBCC.EXE by default places
+the file MIB.BIN in the <windir>\system32 directory.
+
+The files in the TESTDLL directory are the sources for the TESTDLL.DLL.
+This DLL impliments the toaster MIB.  See the note above about installing
+this DLL.

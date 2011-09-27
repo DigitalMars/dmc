@@ -1,0 +1,300 @@
+//Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "icmtest.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+ICMTEST MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...",                    IDM_FILE_OPEN, GRAYED
+        MENUITEM "&Save As...",                 IDM_FILE_SAVE, GRAYED
+	POPUP "&Print",
+	BEGIN
+	    POPUP "TestDIBs"
+	    BEGIN
+		POPUP "BIHEADERS",
+		BEGIN
+		    MENUITEM "Up",		IDM_FILE_PRINT_BI_UP
+		    MENUITEM "Down",		IDM_FILE_PRINT_BI_DOWN
+		END
+		POPUP "BV4HEADERS",
+		BEGIN
+		    MENUITEM "Up",		IDM_FILE_PRINT_BV4_UP
+		    MENUITEM "Down",		IDM_FILE_PRINT_BV4_DOWN, GRAYED
+		END
+		MENUITEM "CMYK",		IDM_FILE_PRINT_CMYK
+		MENUITEM "All TestDIBs",	IDM_FILE_PRINT_TESTDIBS_ALL
+	    END
+	    POPUP "Natural Images"
+	    BEGIN
+		MENUITEM "Faces",		IDM_FILE_PRINT_FACES
+		MENUITEM "Sunset",		IDM_FILE_PRINT_SUNSET
+		MENUITEM "Church",		IDM_FILE_PRINT_CHURCH
+		MENUITEM "Red Bush",		IDM_FILE_PRINT_REDBUSH
+		MENUITEM "All Images",		IDM_FILE_PRINT_NAT_IMAGES_ALL
+	    END
+	    POPUP "Calibration Images"
+	    BEGIN
+	      MENUITEM "TRC Gradients 1",	IDM_FILE_PRINT_TRC_1_GRADIENTS
+	      MENUITEM "TRC Gradients 2",	IDM_FILE_PRINT_TRC_2_GRADIENTS
+	      MENUITEM "Edge Gradients",	IDM_FILE_PRINT_EDGE_GRADIENTS
+	      MENUITEM "Diagonal Gradients",	IDM_FILE_PRINT_DIAG_GRADIENTS
+	    END
+	END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       IDM_FILE_EXIT
+    END
+    POPUP "&API's"
+    BEGIN
+        MENUITEM "ICM Enabled",                 IDM_ENABLEICM
+        MENUITEM SEPARATOR
+        MENUITEM "De&fine ColorSpace",          IDM_APIS_DEFINECOLORSPACE
+        MENUITEM "GetColorSpace",               IDM_GETCOLORSPACE
+        MENUITEM "GetLogColorSpace",            IDM_GETLOGCOLORSPACE
+        MENUITEM SEPARATOR
+        MENUITEM "CheckColors",                 IDM_CHECKCOLORS
+        MENUITEM SEPARATOR
+        MENUITEM "ColorMatchToTarget",          IDM_MATCHTOTARGET
+        MENUITEM SEPARATOR
+        POPUP "SetColorProfile"
+        BEGIN
+	    MENUITEM "&Screen", 		IDM_SETCOLORPROFILE_SCREEN
+	    MENUITEM "&Printer",		IDM_SETCOLORPROFILE_PRINTER
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "GetDevGammaRamp",             IDM_GETGAMMARAMP
+        MENUITEM "SetDevGammaRamp",             IDM_SETGAMMARAMP
+    END
+    POPUP "&Modifiers"
+    BEGIN
+        MENUITEM "&Test ICM",                   IDM_TEST
+        MENUITEM SEPARATOR
+        MENUITEM "&RGBs",                       IDM_RGBS
+        MENUITEM "&PALETTERGBs",                IDM_PALETTERGBS
+        MENUITEM SEPARATOR
+	MENUITEM "E&xistence Checking", 	IDM_OPTIONS_EXISTENCE, CHECKED
+    END
+    POPUP "&Dib Formats"
+    BEGIN
+	MENUITEM "&1 Bit DIB",			IDM_1BITDIB
+	MENUITEM "&4 Bit DIB",			IDM_4BITDIB
+        MENUITEM "&8 Bit DIB",                  IDM_8BITDIB
+        MENUITEM "&16 Bit DIB",                 IDM_16BITDIB
+        MENUITEM "&555 Bit DIB",                IDM_555BITDIB
+        MENUITEM "5&65 Bit DIB",                IDM_565BITDIB
+        MENUITEM "&24 Bit DIB",                 IDM_24BITDIB
+        MENUITEM "&32 Bit DIB",                 IDM_32BITDIB
+        MENUITEM "888 &Bit DIB",                IDM_888BITDIB
+        MENUITEM SEPARATOR
+	MENUITEM "8 Bit Down DIB",		IDM_8BITDOWNDIB
+        MENUITEM SEPARATOR
+	MENUITEM "1 Bit ICM DIB",		IDM_1BITICMDIB
+	MENUITEM "4 Bit ICM DIB",		IDM_4BITICMDIB
+	MENUITEM "8 Bit ICM DIB",		IDM_8BITICMDIB
+        MENUITEM "16 Bit ICM DIB",              IDM_16BITICMDIB
+        MENUITEM "555 Bit ICM DIB",             IDM_555BITICMDIB
+        MENUITEM "565 Bit ICM DIB",             IDM_565BITICMDIB
+        MENUITEM "24 Bit ICM DIB",              IDM_24BITICMDIB
+        MENUITEM "32 Bit ICM DIB",              IDM_32BITICMDIB
+        MENUITEM "888 Bit ICM DIB",             IDM_888BITICMDIB
+        MENUITEM SEPARATOR
+	MENUITEM "CMYK ICM DIB",		IDM_CMYKICMDIB
+    END
+    MENUITEM "&Redraw!",			IDM_TEST
+    POPUP "&Performance"
+    BEGIN
+        MENUITEM "&Pixels, 500",                IDM_PERF_PIXELS
+        MENUITEM "&Bitmap, 16K",                IDM_PERF_BITMAP
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ICMTest...",           IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+DLG_ABOUT DIALOG DISCARDABLE  22, 17, 144, 75
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About Generic"
+FONT 8, "System"
+BEGIN
+    CTEXT           "Microsoft Windows",-1,0,5,144,8
+    CTEXT           "ICMTest Application",-1,0,14,144,8
+    CTEXT           "Version 1.0",-1,0,34,144,8
+    DEFPUSHBUTTON   "OK",IDOK,53,59,32,14,WS_GROUP
+END
+
+DLG_PRINT DIALOG DISCARDABLE  40, 40, 120, 40
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Printing"
+FONT 8, "System"
+BEGIN
+    CTEXT           "Cancel Printing",-1,4,6,120,12
+    DEFPUSHBUTTON   "Cancel",2,44,22,32,14,WS_GROUP
+END
+
+DLG_FILE_OPTIONS DIALOG DISCARDABLE  20, 40, 187, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "ICM Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,75,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,101,75,50,14
+    CONTROL         "&Use only available color spaces",
+                    IDC_AVAILABLE_COLORSPACES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,9,137,10
+END
+
+DLG_DEFINE_LOGICAL_COLORSPACE DIALOG DISCARDABLE  20, 40, 402, 151
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Color Space"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Reference Name",IDC_STATIC,10,20,56,8
+    COMBOBOX        IDC_DEFINE_CS_REFERENCE_NAME,69,16,112,70,
+                    CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Define New CS",IDC_DEFINE_CS_ADD_LCS,26,34,62,14
+    PUSHBUTTON      "Remo&ve CS",IDC_DEFINE_CS_REMOVE_LCS,94,34,62,14
+    PUSHBUTTON      "&Create",IDC_DEFINE_CS_CREATE_CS,9,68,51,14
+    PUSHBUTTON      "&Set as Current",IDC_DEFINE_CS_SET_CURRENT,69,68,51,14
+    PUSHBUTTON      "&Delete",IDC_DEFINE_CS_DELETE_CS,127,68,51,14
+    LTEXT           "&Profile",IDC_STATIC,12,106,33,8
+    LTEXT           "&Version",IDC_STATIC,9,121,26,8
+    EDITTEXT        IDC_DEFINE_CS_VERSION,45,118,50,13,ES_AUTOHSCROLL
+    LTEXT           "Si&ze",IDC_STATIC,105,121,15,8
+    EDITTEXT        IDC_DEFINE_CS_SIZE,130,118,50,13,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "&Identity",IDC_STATIC,9,134,26,8
+    EDITTEXT        IDC_DEFINE_CS_IDENTITY,45,131,50,13,ES_AUTOHSCROLL
+    LTEXT           "&Gamut",IDC_STATIC,105,134,22,8
+    EDITTEXT        IDC_DEFINE_CS_GAMUT,130,131,50,13,ES_AUTOHSCROLL
+    CTEXT           "&R",IDC_STATIC,196,29,7,8
+    EDITTEXT        IDC_DEFINE_CS_RED_X,211,26,50,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEFINE_CS_RED_Y,274,26,50,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEFINE_CS_RED_Z,339,26,50,13,ES_AUTOHSCROLL
+    CTEXT           "&G",IDC_STATIC,196,43,7,8
+    EDITTEXT        IDC_DEFINE_CS_GREEN_X,211,41,50,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEFINE_CS_GREEN_Y,274,41,50,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEFINE_CS_GREEN_Z,339,41,50,13,ES_AUTOHSCROLL
+    CTEXT           "&B",IDC_STATIC,196,59,6,8
+    EDITTEXT        IDC_DEFINE_CS_BLUE_X,211,56,50,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEFINE_CS_BLUE_Y,274,56,50,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEFINE_CS_BLUE_Z,339,56,50,13,ES_AUTOHSCROLL
+    CTEXT           "Re&d",IDC_STATIC,201,81,50,8
+    EDITTEXT        IDC_DEFINE_CS_GAMMA_RED,201,91,50,13,ES_AUTOHSCROLL
+    CTEXT           "Gree&n",IDC_STATIC,269,81,50,8
+    EDITTEXT        IDC_DEFINE_CS_GAMMA_GREEN,269,91,50,13,ES_AUTOHSCROLL
+    CTEXT           "B&lue",IDC_STATIC,337,81,50,8
+    EDITTEXT        IDC_DEFINE_CS_GAMMA_BLUE,337,91,50,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&OK",IDOK,230,126,50,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,298,126,50,14
+    GROUPBOX        "Color Space Transformation",IDC_STATIC,188,7,210,66
+    CTEXT           "X",IDC_STATIC,211,17,50,8
+    CTEXT           "Y",IDC_STATIC,274,17,50,8
+    CTEXT           "Z",IDC_STATIC,339,17,50,8
+    GROUPBOX        "General Properties",IDC_STATIC,2,91,184,56
+    GROUPBOX        "Gamma Values",IDC_STATIC,188,73,210,35
+    GROUPBOX        "Name",IDC_STATIC,2,7,184,49
+    GROUPBOX        "Handle Operations",IDC_STATIC,2,57,184,32
+    EDITTEXT        IDC_DEFINE_CS_PROFILE,45,103,135,13,ES_AUTOHSCROLL
+END
+
+DLG_CREATE_LCS DIALOG DISCARDABLE  20, 40, 171, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Create New Logical Color Space"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "Name:",IDC_STATIC,11,11,22,8
+    EDITTEXT        IDC_CREATE_LCS_NAME,39,9,120,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,35,71,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,101,71,50,14
+    CTEXT           "Provide a name for the new logical color space to be created (32 character max).",
+                    IDC_STATIC,22,28,143,22
+    CTEXT           "This new logical color space will inherit the values of the color space currently shown.",
+                    IDC_STATIC,22,50,143,19
+END
+
+SETDEVICEPROFILE DIALOG DISCARDABLE  0, 0, 159, 70
+STYLE DS_SYSMODAL | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Set Device Profile"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Set",IDOK,21,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,87,45,50,14
+    LTEXT           "Available Profiles",IDC_STATIC,16,8,60,11
+    COMBOBOX        IDC_AVAIL_PROFILES,16,19,122,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""icmtest.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_ICON1               ICON    DISCARDABLE     "ICON1.ICO"
+IDI_ICON2               ICON    DISCARDABLE     "ICON2.ICO"
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

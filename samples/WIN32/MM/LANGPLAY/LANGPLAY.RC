@@ -1,0 +1,66 @@
+
+/*---------------------------------------------------------------------
+|
+| LangPlay.rc - movie player resources
+|
++-------------------------------------------------------------------*/
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1993 - 1995	Microsoft Corporation.	All Rights Reserved.
+ *
+ **************************************************************************/
+
+#include <windows.h>
+#include "langplay.h"
+#include "langplay.rcv"
+
+AppIcon     ICON   "langplay.ico"
+
+/* menu bar */
+LANGPLAY MENU
+  {
+  POPUP "&File"
+    {
+    MENUITEM "&Open...", IDM_OPEN
+    MENUITEM "&Close",   IDM_CLOSE
+    MENUITEM SEPARATOR
+    MENUITEM "E&xit", 	 IDM_EXIT
+    }
+  POPUP "&Audio Stream"
+    {
+       	MENUITEM "&None", IDM_NONE
+    }
+  POPUP "&Help"
+    {
+        MENUITEM "&About", IDM_ABOUT
+    }
+
+  }
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+#ifndef IDC_STATIC
+#define IDC_STATIC                      -1
+#endif
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 187, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL "LANGPLAY", IDC_STATIC, "static", SS_CENTER | WS_CHILD, 5, 5, 175, 8
+    CONTROL "Version 4.00", IDC_STATIC, "static", SS_CENTER | WS_CHILD, 5, 20, 175, 8
+    CONTROL "Copyright \251 1985-1995 Microsoft Corp.", IDC_STATIC, "static", SS_CENTER | WS_CHILD, 5, 35, 175, 8
+    CONTROL "OK", IDOK, "button", BS_DEFPUSHBUTTON | WS_GROUP | WS_TABSTOP | WS_CHILD, 77,49,32,14
+END
+
+
+
+

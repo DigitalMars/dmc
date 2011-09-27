@@ -1,0 +1,17 @@
+82570
+c:\SamplesMFC32\ADVANCED\CHATTER\chatter.prj
+chatter.OPN
+novcs
+chatter.DEF
+16
+834106320
+0 0 0 0 0 "chatdoc.cpp" ""
+0 0 0 0 0 "chatsock.cpp" ""
+0 0 0 0 0 "chatter.cpp" ""
+0 0 0 0 0 "chatvw.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "msg.cpp" ""
+0 0 0 0 0 "sendvw.cpp" ""
+0 0 0 0 0 "setupdlg.cpp" ""
+0 0 0 0 0 "chatter.DEF" ""
+0 0 0 0 0 "chatter.rc" ""

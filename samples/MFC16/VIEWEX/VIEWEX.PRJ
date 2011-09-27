@@ -1,0 +1,15 @@
+82569
+D:\SC\SAMPLES\MFC25\VIEWEX\VIEWEX.PRJ
+VIEWEX.OPN
+novcs
+VIEWEX.DEF
+0
+805039278
+0 0 0 0 0 "enterdlg.cpp"
+0 0 0 0 0 "inputvw.cpp"
+0 0 0 0 0 "maindoc.cpp"
+0 0 0 0 0 "simpvw.cpp"
+0 0 0 0 0 "splitter.cpp"
+0 0 0 0 0 "viewex.cpp"
+0 0 0 0 0 "viewex.def"
+0 0 0 0 0 "viewex.rc"

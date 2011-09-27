@@ -1,0 +1,16 @@
+82570
+D:\75\rtl\src\build\dlluni.PRJ
+dlluni.opn
+novcs
+dlluni.DEF
+13
+833975826
+0 0 0 0 0 "..\win32\wgetenv.c" ""
+0 0 0 0 0 "..\core\wputenv.c" ""
+0 0 0 0 0 "..\core\wcschr.c" ""
+0 0 0 0 0 "..\core\wcsdup.c" ""
+0 0 0 0 0 "..\core\wcsnicmp.c" ""
+0 0 0 0 0 "..\core\wcscpy.c" ""
+0 0 -1 0 0 "..\include\semlock.h" ""
+0 0 -1 0 0 "..\include\ehsup.h" ""
+0 0 -1 0 0 "..\include\mt.h" ""

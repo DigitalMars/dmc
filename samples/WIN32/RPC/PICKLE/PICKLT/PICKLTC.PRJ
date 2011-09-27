@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\RPC\PICKLE\PICKLT\PICKLTC.PRJ
+PICKLTC.OPN
+novcs
+pickltc.DEF
+4
+812035224
+0 0 0 0 0 "picklt_c.c" ""
+0 0 0 0 0 "pickltc.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "pickltc.def" ""

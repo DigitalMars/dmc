@@ -1,0 +1,39 @@
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "DEMO.H\0"
+END
+
+
+FILESYSTEM DIALOG 17, 22, 286, 143
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "File System Information"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDM_LOGDRIVES, 221, 4, 61, 67, CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Logical &Drives:", 108, 153, 4, 59, 17
+    GROUPBOX        "VOLUME INFORMATION", 110, 8, 4, 134, 98
+    LTEXT           "DRIVE TYPE:", 111, 153, 45, 120, 17
+    LTEXT           "Volume Name:", IDM_VOLNAME, 13, 20, 127, 12
+    LTEXT           "Serial Number:", IDM_SERIALNUM, 13, 35, 124, 11
+    LTEXT           "Comp Length:", IDM_COMPLENGTH, 13, 50, 127, 11
+    GROUPBOX        "DISK INFORMATION:", 115, 148, 67, 136, 70
+    LTEXT           "System Flag:", IDM_SYSFLAGS, 13, 63, 128, 10
+    LTEXT           "File System:", IDM_FILESYSTEM, 13, 78, 128, 10
+    PUSHBUTTON      "&Ok", IDOK, 52, 116, 40, 14
+    LTEXT           "Sectors/Cluster:", IDM_SECTORSINCLUSTER, 160, 83, 122, 
+                    11
+    LTEXT           "Bytes/Sector:", IDM_BYTESINSECTOR, 160, 96, 122, 10
+    LTEXT           "Free Clusters:", IDM_FREECLUSTERS, 160, 110, 122, 8
+    LTEXT           "Clusters:", IDM_CLUSTERS, 160, 123, 116, 8
+END
+
+
+
+
+
+
+
+
+
+

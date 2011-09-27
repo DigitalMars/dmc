@@ -1,0 +1,389 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\DAOTable.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\DAOTable.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About DAOTable"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,18,20
+    LTEXT           "DAOTable Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright © 1996 Microsoft Corp.",IDC_STATIC,40,30,119,
+                    8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+    LTEXT           "Written by Joe Magura",IDC_STATIC,40,20,76,8
+END
+
+IDD_DAOTABLE_DIALOG DIALOGEX 0, 0, 237, 135
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION |
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "DAO Table & Query Creator"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_DATABASE_NAME,13,18,162,14,ES_AUTOHSCROLL,0, HIDC_EDIT_DATABASE_NAME
+    DEFPUSHBUTTON   "Connect",IDC_BUTTON_CONNECT,185,18,37,14,0,0,HIDC_BUTTON_CONNECT
+    COMBOBOX        IDC_COMBO_TABLE_NAME,15,50,75,50,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP,0,HIDC_COMBO_TABLE_NAME
+    PUSHBUTTON      "Fields",IDC_BUTTON_TABLE_FIELDS,103,49,30,14, WS_DISABLED,0,HIDC_BUTTON_TABLE_FIELDS
+    PUSHBUTTON      "Indexes",IDC_BUTTON_TABLE_INDEXES,143,49,35,14, WS_DISABLED,0,HIDC_BUTTON_TABLE_INDEXES
+    PUSHBUTTON      "Delete",IDC_BUTTON_DELETE_TABLE,188,49,32,14, WS_DISABLED,0,HIDC_BUTTON_DELETE_TABLE
+    COMBOBOX        IDC_COMBO_QUERY_NAME,16,86,75,49,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP,0,HIDC_COMBO_QUERY_NAME
+    PUSHBUTTON      "Definition",IDC_BUTTON_QUERY_DEFINITION,99,86,46,14, WS_DISABLED,0,HIDC_BUTTON_QUERY_DEFINITION
+    PUSHBUTTON      "&Help",ID_HELP,48,114,50,14
+    PUSHBUTTON      "Done",IDOK,138,114,50,14,0,0,HIDOK
+    GROUPBOX        "Database",IDC_STATIC,7,7,223,30
+    GROUPBOX        "Table",IDC_STATIC,7,37,223,36
+    GROUPBOX        "Query",IDC_STATIC,7,73,223,36
+END
+
+IDD_ADD_TABLE_DLG DIALOGEX 0, 0, 296, 210
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Table Definition"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_TABLE_NAME,119,7,58,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_POSITION,19,50,27,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_ORDINAL_POSITION,"msctls_updown32",
+                    UDS_WRAP | UDS_SETBUDDYINT | UDS_ALIGNRIGHT |
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,45,50,10,12
+    EDITTEXT        IDC_NAME,55,50,53,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_TYPE,117,50,59,80,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_THE_SIZE,185,50,22,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEFAULT_VALUE,215,50,52,12,ES_AUTOHSCROLL
+    CONTROL         "Required",IDC_REQUIRED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,125,70,45,10
+    CONTROL         "dbFixedField",IDC_FIXED_FIELD,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,79,95,55,10
+    CONTROL         "dbVariableField",IDC_VARIABLE_FIELD,"Button",
+                    BS_AUTORADIOBUTTON,79,106,64,10
+    CONTROL         "dbAutoIncrField",IDC_AUTO_INCR_FIELD,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,157,99,65,10
+    EDITTEXT        IDC_VALIDATION_RULE,21,156,117,14,ES_AUTOHSCROLL,0, HIDC_VALIDATION_RULE
+    EDITTEXT        IDC_VALIDATION_TEXT,148,156,117,14,ES_AUTOHSCROLL,0, HIDC_VALIDATION_TEXT
+    PUSHBUTTON      "<< Previous",IDC_PREVIOUS_FIELD,7,189,45,14,0,0, HIDC_PREVIOUS_FIELD
+    PUSHBUTTON      "Add",IDC_ADD_FIELD,57,189,29,14,0,0,HIDC_ADD_FIELD
+    PUSHBUTTON      "Next >>",IDC_NEXT_FIELD,91,189,33,14,0,0, HIDC_NEXT_FIELD
+    PUSHBUTTON      "Delete",IDC_DELETE_FIELD,137,189,40,14,0,0, HIDC_DELETE_FIELD
+    DEFPUSHBUTTON   "Done",IDOK,239,189,41,14
+    LTEXT           "Table Name:",IDC_STATIC,77,9,42,8
+    LTEXT           "Position:",IDC_STATIC,19,39,28,9
+    LTEXT           "Name:",IDC_STATIC,55,39,22,8
+    LTEXT           "Type:",IDC_STATIC,116,39,19,8
+    LTEXT           "Size:",IDC_STATIC,185,39,16,8
+    LTEXT           "Default Value:",IDC_STATIC,215,39,46,8
+    GROUPBOX        "Attributes",IDC_STATIC,65,82,168,38
+    GROUPBOX        "Field Information",IDC_STATIC,14,26,260,100
+    GROUPBOX        "Validation",IDC_STATIC,14,132,259,45
+    LTEXT           "Validation Rule:",IDC_STATIC,22,147,50,8
+    LTEXT           "Validation Text:",IDC_STATIC,148,147,50,8
+    PUSHBUTTON      "Help",ID_HELP,193,189,32,14
+END
+
+IDD_ADD_INDEX_DLG DIALOGEX 0, 0, 275, 209
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Indexes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_TABLE_NAME,104,15,66,14,ES_AUTOHSCROLL | ES_READONLY, 0,HIDC_TABLE_NAME
+    EDITTEXT        IDC_INDEX_NAME,77,52,149,14,ES_AUTOHSCROLL,0, HIDC_INDEX_NAME
+    CONTROL         "Primary",IDC_PRIMARY,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,45,78,39,10,0,HIDC_PRIMARY
+    CONTROL         "Ignore Nulls",IDC_IGNORE_NULLS,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,89,78,53,10,0,HIDC_IGNORE_NULLS
+    CONTROL         "Required",IDC_REQUIRED,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,147,78,45,10,0,HIDC_REQUIRED
+    CONTROL         "Unique",IDC_UNIQUE,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,197,78,39,10,0,HIDC_UNIQUE
+    PUSHBUTTON      "<< Previous",IDC_PREVIOUS_INDEX,7,189,41,14,0,0, HIDC_PREVIOUS_INDEX
+    PUSHBUTTON      "Add",IDC_ADD_INDEX,53,189,23,14,0,0,HIDC_ADD_INDEX
+    PUSHBUTTON      "Next >>",IDC_NEXT_INDEX,81,189,32,14,0,0, HIDC_NEXT_INDEX
+    PUSHBUTTON      "Delete",IDC_DELETE_INDEX,125,189,35,14,0,0, HIDC_DELETE_INDEX
+    DEFPUSHBUTTON   "Done",IDOK,217,189,50,14,0,0,HIDOK
+    GROUPBOX        "Index",IDC_STATIC,7,36,260,59
+    GROUPBOX        "Fields in Index",IDC_STATIC,7,99,260,81
+    LTEXT           "Table Name:",IDC_STATIC,60,17,42,8
+    LTEXT           "Index Name:",IDC_STATIC,35,54,41,8,0,0,HIDC_STATIC
+    PUSHBUTTON      "Help",ID_HELP,172,189,33,14
+    CONTROL         "List1",IDC_FIELD_LIST,"SysListView32",LVS_REPORT | LVS_SORTASCENDING | WS_BORDER | WS_TABSTOP,23,112,227,60, 0,HIDC_FIELD_LIST
+END
+
+IDD_ADD_QUERYDEF_DLG DIALOGEX 0, 0, 275, 183
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Query Definition"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_TABLE_NAME,104,15,66,14,ES_AUTOHSCROLL,0,HIDC_TABLE_NAME
+    EDITTEXT        IDC_SQL,40,85,212,68,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL,0,HIDC_SQL
+    PUSHBUTTON      "Add",IDC_ADD_QUERY_DEF,7,163,23,14,0,0,HIDC_ADD_QUERY_DEF
+    PUSHBUTTON      "Modify",IDC_MODIFY_QUERY_DEF,40,163,50,14,0,0,HIDC_MODIFY_QUERY_DEF
+    PUSHBUTTON      "Delete",IDC_DELETE_QUERYDEF,101,163,50,14,0,0,HIDC_DELETE_QUERYDEF
+    PUSHBUTTON      "Done",IDOK,217,163,50,14,0,0,HIDOK
+    LTEXT           "Query Name:",IDC_STATIC,60,17,42,8
+    CONTROL         "Updatable",IDC_UPDATABLE,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,106,51,53,10
+    LTEXT           "SQL Statement:",IDC_STATIC,12,74,55,8
+    PUSHBUTTON      "Help",ID_HELP,166,163,36,14
+END
+
+IDD_ADD_DATABASE_DLG DIALOGEX 0, 0, 186, 124
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Database Definition"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_DATABASE_NAME,69,18,98,14,ES_AUTOHSCROLL | ES_READONLY,0,HIDC_EDIT_DATABASE_NAME
+    CONTROL         "Encrypt",IDC_CHECK_ENCRYPT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,31,57,40,10,0,HIDC_CHECK_ENCRYPT
+    CONTROL         "Version 1.0",IDC_RADIO_V10,"Button",BS_AUTORADIOBUTTON | WS_GROUP,101,44,51,10,0,HIDC_RADIO_V10
+    CONTROL         "Version 1.1",IDC_RADIO_V11,"Button",BS_AUTORADIOBUTTON, 101,56,51,10,0,HIDC_RADIO_V11
+    CONTROL         "Version 2.0",IDC_RADIO_V20,"Button",BS_AUTORADIOBUTTON, 101,68,51,10,0,HIDC_RADIO_V20
+    CONTROL         "Version 3.0",IDC_RADIO_V30,"Button",BS_AUTORADIOBUTTON, 101,80,51,10,0,HIDC_RADIO_V30
+    LTEXT           "Database Name:",IDC_STATIC,14,19,53,8
+    PUSHBUTTON      "Help",ID_HELP,27,103,50,14,0,0,HID_HELP
+    DEFPUSHBUTTON   "Done",IDOK,108,103,50,14,0,0,HIDOK
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "DAOTABLE MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "DAOTABLE\0"
+            VALUE "LegalCopyright", "Copyright © 1996\0"
+            VALUE "OriginalFilename", "DAOTABLE.EXE\0"
+            VALUE "ProductName", "DAOTABLE Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DAOTABLE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_ADD_TABLE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_ADD_INDEX_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_ADD_QUERYDEF_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 177
+    END
+
+    IDD_ADD_DATABASE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 117
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_ADD_TABLE_DLG DLGINIT
+BEGIN
+    IDC_TYPE, 0x403, 8, 0
+0x6f42, 0x6c6f, 0x6165, 0x006e,
+    IDC_TYPE, 0x403, 5, 0
+0x7942, 0x6574, "\000"
+    IDC_TYPE, 0x403, 9, 0
+0x7543, 0x7272, 0x6e65, 0x7963, "\000"
+    IDC_TYPE, 0x403, 5, 0
+0x6144, 0x6574, "\000"
+    IDC_TYPE, 0x403, 7, 0
+0x6f44, 0x6275, 0x656c, "\000"
+    IDC_TYPE, 0x403, 5, 0
+0x6f4c, 0x676e, "\000"
+    IDC_TYPE, 0x403, 11, 0
+0x6f4c, 0x676e, 0x6942, 0x616e, 0x7972, "\000"
+    IDC_TYPE, 0x403, 5, 0
+0x654d, 0x6f6d, "\000"
+    IDC_TYPE, 0x403, 6, 0
+0x6853, 0x726f, 0x0074,
+    IDC_TYPE, 0x403, 7, 0
+0x6953, 0x676e, 0x656c, "\000"
+    IDC_TYPE, 0x403, 5, 0
+0x6554, 0x7478, "\000"
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_ABOUTBOX            "&About DAOTable..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\DAOTable.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\BASE\DDEML\DDEPROG\PHTEST.PRJ
+PHTEST.OPN
+novcs
+phtest.def
+2
+852911400
+0 0 0 0 0 "phtest.c" ""
+0 0 0 0 0 "proghelp.lib" ""
+0 0 0 0 1 "proghelp.prj" ""
+0 0 0 0 0 "phtest.rc" ""
+0 0 0 0 0 "phtest.def" ""
+0 0 0 0 0 "proghelp.c" ""

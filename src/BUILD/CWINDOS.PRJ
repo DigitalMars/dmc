@@ -1,0 +1,11 @@
+82569
+c:\source\75\RTL\SRC\BUILD\cwindos.prj
+SWC.OPN
+novcs
+cwindos.DEF
+12
+815828210
+0 0 0 0 0 "..\winio\argcargv.c"
+0 0 0 0 0 "..\winio\winio.c"
+0 0 0 0 0 "..\winio\wmhandlr.c"
+0 0 0 0 0 "..\core\scver.c"

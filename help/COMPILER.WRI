@@ -1,0 +1,1969 @@
+DigiMars C/C++ Compiler Documentation by Walter Bright
+Copyright (c) 1997 by DigiMars Corporation. All Rights Reserved.
+
+Contents:
+	*  WHAT'S NEW FOR C/C++ 7.5
+	*  PREDEFINED MACROS
+	*  PRAGMAS SUPPORTED BY SC/SC++
+	*  DEFINITIVE LIST OF SC SWITCHES
+	*  WINDOWS PROLOG/EPILOG CODE GENERATION
+	*  TIPS FOR PRECOMPILED HEADERS
+	*  ACRTUSED
+	*  TRACE DYNAMIC PROFILING
+	*  WARNINGS AND ASSOCIATED WARNING NUMBERS
+	*  BIBLIOGRAPHY FOR SYMANTEC C++
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+WHAT'S NEW FOR C/C++ 7.5
+-----------------------------
+
+Added MMX Extensions
+
+	New Intel MMX instructions now supported by the inline assembler.
+
+Added Support for Alternative Names
+
+	With -A and the C++ compiler, the alternative representations
+	in the standard 2.9 are now supported. In the future, they will
+	become the default, so don't use the following names otherwise:
+	and and_eq bitand bitor compl not
+	not_eq or or_eq xor xor_eq
+
+Added -B[e|f|g|j] switches
+
+	See "Definitive list of SC switches" for how they work. 
+	The SCMSGS environment variable and SC.INI setting is no 
+	longer supported.
+
+Added #elseif directive, with same semantics as #elif.
+
+Changed overload resolution rules to reflect ANSI C++ standard changes
+regarding integral promotions vs integral conversions.
+
+Added namespaces
+
+Added -g5 switch
+	See "Definitive list of SC switches".
+
+Added #pragma setlocale("locale")
+	See "Pragmas supported by SC/SC++".
+
+Added _CPPRTTI and _CPPUNWIND predefined macros
+	See "Predefined macros".
+
+Added New Keywords
+	explicit, mutable, typename - but the semantics of them aren't
+	implemented.
+
+Added __unaligned Keyword
+	For unaligned pointer support for PowerPC. Ignored for Intel
+	compiler.
+
+Added Pentium Pro Instructions to Inline Assembler and OBJ2ASM.
+	Added new P6 instructions:
+		CMOVcc
+		FCMOVcc
+		FCOMI
+		FCOMIP
+		FUCOMI
+		FUCOMIP
+		RDMPC
+
+Added -ND switch
+	See "DEFINITIVE LIST OF SC SWITCHES", 
+	and _MT and _DLL in "PREDEFINED MACROS".
+
+-NLlibfile
+	Added this switch. See "DEFINITIVE LIST OF SC SWITCHES".
+
+__wacrtused
+__wacrtused_con
+	Added these for use in Win32 UNICODE apps. See "ACRTUSED".
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+PREDEFINED MACROS
+-----------------------------
+
+	Names without a leading _ will not be defined if the -A switch
+	is used. New code should use the leading _ version.
+
+	By "defined", a macro is defined and set to 1.
+
+_MSDOS, MSDOS		MSDOS target. Defined for all cases where __OS2__ or
+			_WIN32 are not defined.
+__OS2__			OS/2 target. Defined for -mf.
+__NT__			Windows NT or WIN32S target. Defined for -mn.
+			Obsolete - use _WIN32.
+WIN32,_WIN32		WIN32 target (NT, Windows 95 or Win32s). 
+			Defined for -mn.
+DOS386			32 bit extended DOS target. Defined for -mx or -mp.
+DOS16RM			16 bit extended DOS target. Defined for -mr or -mz.
+M_I86, _M_I86		Always defined.
+
+_M_I86TM, M_I86TM	Tiny memory model. Defined for -mt.
+_M_I86SM, M_I86SM	Small memory model. Defined for -ms, -mx,
+			-mp, -mf or -mn.
+_M_I86MM, M_I86MM	Medium memory model. Defined for -mm.
+_M_I86CM, M_I86CM	Compact memory model. Defined for -mc.
+_M_I86LM, M_I86LM	Large memory model. Defined for -ml, -mr or -mz.
+_M_I86VM, M_I86VM	VCM memory model. Defined for -mv.
+
+_M_I8086, M_I8086	8088 is target. Defined for -0 or default 
+			for -mt, -ms, -mm, -mc, -ml, or -mv.
+_M_I286, M_I286		80286 or better is target. Defined for -2, -3,
+			-4, -5. Default for -mr, -mz, -mx, -mp, 
+			-mf, -mo.
+
+_M_IX86			Defined for 32 bit targets. Set to:
+				300 for 386 targets,
+				400 for 486
+				500 for Pentium
+				600 for P6
+
+__SC__			Always defined. Set to version number.
+				0x700 for version 7.0
+				0x720 for 7.2
+				0x750 for 7.5
+__ZTC__			Always defined. Set to same value as __SC__.
+			Obsolete - use __SC__ instead.
+_CHAR_UNSIGNED		Chars are unsigned. Defined for -J.
+_CHAR_EQ_UCHAR		Chars and unsigned chars are same type. 
+			Defined for -Ju.
+_DEBUG_TRACE		Set to 1 when -gt is set.
+_DLL			Set to 1 when -ND is set. Means that the DLL RTL 
+			will be used rather than the statically 
+			linked in RTL.
+_ENABLE_ARRAYNEW	Set to 1 when -Aa is set.
+_BOOL_DEFINED		Set to one for -Ab (enable bool keyword)
+_WCHAR_T_DEFINED	Set to one for -Aw (enable wchar_t keyword)
+_CPPRTTI		Set to one for -Ar (enable RTTI).
+_CPPUNWIND		Set to one for -Ae (enable C++ exception handling).
+_MD			Set to 1 when -ND is set. Means that the app
+			will be multi-thread aware.
+_PUSHPOP_SUPPORTED	Set to 1. Used to indicate #pragma pack(push) and
+			#pragma pack(pop) are supported.
+_STDCALL_SUPPORTED	Set to 1. Used to indicate that the __stdcall and
+			__cdecl keywords are supported.
+__INTSIZE		Always defined. Set to size of int (2 for 16 bit 
+			models, 4 for 32 bit models).
+__DEFALIGN		Always defined. Set to default struct member 
+			alignment for memory model. Not affected by 
+			-a switch.
+_INTEGRAL_MAX_BITS	Set to 32 for 16 bit memory models, 64 for 32 bit
+			memory models. It specifies the maximum 
+			number of bits in the largest integral type. 
+			(32 bit memory models support the long long
+			64 bit integral type.)
+_WINDOWS		Generating Windows program. Defined for -W[123AD].
+_WINDLL			Generating Windows DLL. Defined for -WD.
+__INLINE_8087		Defined if generating inline math coprocessor code.
+__I86__			Always defined. Set to target CPU (0 == 8088, 
+			2 == 286, 3 == 386, 4 == 486, 5 == P5, 
+			6 == P6).
+__SMALL__		Defined if -mt, -ms, -mx, -mp, -mf, -mn.
+__MEDIUM__		Defined if -mm.
+__COMPACT__		Defined if -mc.
+__LARGE__		Defined if -ml, -mz, -mr.
+__VCM__			Defined if -mv.
+__FPCE__		Always defined. Indicates NCEG conformance.
+__FPCE__IEEE__		Indicates IEEE 754 conformance. Defined by default, 
+			not defined for -ff.
+DEBUG			Defined for -D. Not affected by -A.
+__cplusplus		Always defined if compiling a C++ program. 
+			Defined for -cpp.
+__STDC__		ANSI C/C++ conformance. Defined for -A.
+__DATE__		Always defined. Set to compilation date in the 
+			form "Mmm dd yyyy".
+__FILE__		Always defined. Set to name of file being compiled 
+			enclosed in "".
+__FUNC__		Always defined. Expands to the name of the function 
+			the macro appears in enclosed in "".
+			Expands to "" outside of a function.
+__LINE__		Always defined. Set to current line of source file.
+__TIME__		Always defined. Set to compilation time in the 
+			form "hh:mm:ss".
+__TIMESTAMP__		Always defined. Set to compilation time in the 
+			form "Ddd Mmm dd hh:mm:ss yyyy"
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+PRAGMAS SUPPORTED BY SC/SC++
+-----------------------------
+
+#ident "string"
+
+	Embed string in executable file.
+
+#pragma alias("name1","name2")
+
+	Inserts an alias record in the .OBJ file, where the linker will
+	substitute references to name1 with references to name2. The 
+	strings are inserted into the .OBJ file verbatim.
+
+#pragma alias(identifier,"name2")
+
+	Inserts an alias record in the .OBJ file, where the linker will
+	substitute references to the global symbol identifier with 
+	references to name2. "name2" is inserted into the .OBJ file 
+	verbatim.  The identifier must have already been declared.
+
+#pragma align [1|2|4|8|16]
+
+	Obsolete. Use #pragma pack().
+
+#pragma code_seg("csname")
+
+	Causes subsequent code to be placed in the segment
+	csname. When used with -NS, the -NS switch overrides the
+	pragma for global far functions.
+	   
+	The -NT, -NS and #pragma cseg can all be used independently
+	or in any combination.
+
+#pragma comment(compiler)
+
+	Embed compiler version string in object file.
+
+#pragma comment(lib,"filespec")
+
+	This embeds a reference to the library filespec into the
+	.OBJ file, so that the linker will search that library to
+	resolve any undefined externals. This works the same as the
+	INCLUDELIB directive in MASM.
+
+	It is most useful when placed in the .H file that references
+	a special library, for instance, in STREAM.H which references
+	the OLDSTRx.LIB library.
+
+#pragma comment(exestr,"string")
+
+	Embed string in executable file. Same as #ident "string".
+
+#pragma comment(user,"string")
+
+	Embed string in object file.
+
+#pragma cseg csname
+
+	Obsolete. Use #pragma code_seg().
+
+#pragma DOSSEG
+
+	Marks the generated .OBJ file with the DOSSEG switch. At least
+	one .OBJ file in a program needs the DOSSEG switch (or the DOSSEG
+	switch can be thrown on the linker) in order for the segments to
+	be sorted in the right order. DOSSEG is normally in the startup
+	code, this pragma is handy when not linking in the usual startup
+	code from the runtime library.
+
+#pragma include_alias( <filename>,<aliasname>)
+#pragma include_alias( "filename","aliasname")
+
+	This pragma is used when an include file has an alias. Whenever
+	a #include "filename" is encountered, the "aliasname" is 
+	substituted.  The same holds for <> names.
+
+	The alias pragmas must lexically precede the #include directives 
+	they affect.
+
+	For example:
+
+		#pragma include_alias(<stdio.h>,<mystudio.h>)
+		#include <stdio.h>
+
+	is equivalent to:
+
+		#include <mystudio.h>
+
+#pragma includelib "filespec"
+
+	Obsolete. Use #pragma comment(lib,"filespec")
+
+#pragma init_seg(compiler|lib|user)
+
+	Sets the segment into which static constructors go. All the static
+	constructors in the 'compiler' segment get executed first, followed
+	by the static constructors in the 'lib' segment, followed by the
+	ones in the 'user' seg. The user seg is the default.
+
+#pragma linkage( name, _cdecl | _pascal | cdecl | far16 | pascal | system )
+
+	name refers to a function, followed by an identifier giving the type
+	of linkage for that function. The pragma can precede or follow the
+	declaration of name. name cannot be overloaded. This pragma is for
+	compatibility with IBM's C compiler.
+
+#pragma message "text"
+
+	Causes the compiler to print "text" as an informational
+	message while compiling.
+
+#pragma noreturn(identifier)
+
+	Where identifier is the name of a previously declared function.
+	This pragma informs the compiler that the function does not
+	return, enabling the compiler to generate improved code. The
+	pragma is useful for marking functions like exit(), _exit(),
+	abort(), longjmp() and especially _assert() (For those of us
+	who use assert() macros a lot, this can be a significant win).
+
+#pragma once
+
+	Use in an include file that should only be parsed once, regardless
+	of the number of times it is #include'd. This can replace the
+	clumsy (but portable) method of putting wrappers around the text:
+
+		In FILE.C:
+			#ifndef __TEST_H
+			#include "test.h"
+			#endif
+		In TEST.H:
+			#ifndef __TEST_H
+			#define __TEST_H 1
+			... contents of file ...
+			#endif
+
+	The simpler scheme is:
+		In FILE.C:
+			#include "test.h"
+		In TEST.H:
+			#pragma once
+
+#pragma pack(n)
+
+	Set the alignment for struct members to n. If n is blank,
+	then the alignment is set to the default (affected by the -a
+	command line switch).
+	Example:
+		#pragma pack(__DEFALIGN)        // to default alignment
+		struct ABC { ... };             // lay out structure
+		#pragma pack()                  // back to previous alignment
+
+#pragma pack(push,n)
+
+	Push the previous value of the struct member alignment. Set the
+	new value to n.
+
+#pragma pack(pop)
+
+	Pop the value most recently pushed by #pragma(push,n), and set the
+	current struct member alignment to that value. We recommend always
+	using push and pop pack pragmas in corresponding pairs.
+
+#pragma setlocale("locale")
+
+	Sets the current locale to "locale". The specified locale must be
+	supported by the operating system. The locale controls how multibyte
+	characters are handled in strings, and how multibyte strings are
+	converted to Unicode. This is a better solution than the old -j
+	switches. The default locale is "C".
+
+#pragma startaddress(name)
+	Puts a startaddress record into the .OBJ file. name must be a
+	symbol that was previously declared, e.g.:
+		void startup();
+		#pragma startaddress(startup)
+	Overloading of name is not supported.
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+DEFINITIVE LIST OF SC SWITCHES
+-----------------------------
+(not complete yet, but I'm working on it!)
+
+SC is a one-step program to compile and link C++, C and ASM files.
+
+Arguments to SC can be presented in any order, if any arguments conflict,
+the rightmost argument takes precedence.
+The command line to SC takes this form:
+
+	SC { { @file } { file } { switches } }
+
+where the { } means "repeated 0 or more times".
+SC with no arguments prints a short help file to stdout.
+
+SC.INI
+	SC looks in the directory where SC.EXE resides for the
+	file SC.INI. SC.INI is a text file, containing environment variable
+	settings in a similar manner as they might be set in AUTOEXEC.BAT:
+
+		;Comments are lines where the first non-blank character
+		; is a ';'
+		[Environment]
+		INCLUDE=C:\SC\BIN
+		LIB=C:\SC\LIB
+		CFLAGS=-v -w
+
+		;Note that %PATH% gets replaced by the previous value of
+		; the environment variable PATH.
+		PATH=C:\SC\BIN;%PATH%
+
+	The special environment variable @P gets replaced with the path to
+	where the SC.INI file resides. For instance, the above can be
+	replaced with (if SC.INI is in C:\SC\BIN):
+
+		[Environment]
+		INCLUDE=%@P%..\BIN
+		LIB=%@P%..\LIB
+		CFLAGS=-v -w
+		PATH=%@P%..\BIN;%PATH%
+
+	which makes the settings in SC.INI independent of where the SC
+	directory tree is installed.
+
+	If SC.INI is not there, no error results. This feature is useful
+	for avoiding cluttering up AUTOEXEC.BAT with environment variable
+	settings. Not only that, it will make running SC independent of
+	any existing environment variables set for other tools.
+
+	The environment settings in SC.INI do not prefix, augment, or 
+	append any existing settings in the environment. They replace the 
+	environment settings for the duration of running the IDDE or the 
+	compiler. If you wish, for example, to use SC.INI to append an
+	INCLUDE path to the existing INCLUDE path, it can be written as:
+
+		[Environment]
+		INCLUDE=%INCLUDE%;C:\SC\INCLUDE
+
+How SC.EXE Searches For Programs
+
+	SC first searches in the directory from where SC.EXE was found. 
+	If the programs are not found there, then the PATH is searched.
+
+Environment Variables
+
+    SC uses the following environment variables, either set at the
+    console command line prompt or in the file SC.INI:
+
+    CFLAGS
+
+	If it is set, it behaves as if the first argument to SC is @CFLAGS.
+	CFLAGS is a convenient way to temporarily set switches to the 
+	compiler without modifying batch files or makefiles.
+
+    INCLUDE
+
+	Path to search for #include'd files.
+
+    LIB
+
+	Search path for library files.
+
+    PATH
+
+	Search path for executable files if they are not found in the same
+	directory where SC resides.
+
+@file
+
+	'file' is searched for as an environment variable name, and if not
+	found, as a file name. If it is found, the text of the environment
+	variable or file name is inserted in the command line as if it were
+	part of the command line. In this way, the command line length limit
+	of many operating systems can be circumvented.
+	If 'file' is not found, no text is inserted.
+
+file
+
+	A file name. If no extension is given, the following extensions are
+	tried in the order given to see if there is a match:
+
+	.c
+	.cpp
+	.cxx
+	.cc
+	.c++
+	.asm
+	.s
+	.rc
+
+	The extension of the file determines what is done with the file.
+
+	no extension
+	any other extension
+	.c	Run C compiler
+
+	.cpp
+	.cxx
+	.cc
+	.c++	Run C++ compiler
+
+	.asm
+	.s	Run assembler
+
+	.lib
+	.a	Include file as a library to the linker
+
+	.obj
+	.o	Include file as an object file to the linker
+
+	.exe
+	.com
+	.sys
+	.dll	Include file as the output file to the linker
+
+	.def	Include file as the module definition file to the
+		linker
+
+	.rc	Run resource compiler
+
+	.res	Include file as the resource file to linker
+
+
+-a[-|1|2|4|8] alignment of struct members
+
+	-a
+	-a1     turn off alignment of struct members
+
+	-a-     (default) use alignment indicated by selection of memory 
+		model
+
+	-a2     align on 2 byte boundaries
+
+	-a4     align on 4 byte boundaries
+
+	-a8     align on 8 byte boundaries
+
+	Alignment can also be controlled within a source file by using
+	#pragma pack().
+
+
+-A  strict ANSI C/C++
+-A- turn off -A
+
+	Disables all non-ANSI extensions. This is useful for compiling
+	ANSI test suites, and for verifying that code will compile in
+	a strict ANSI environment.
+
+	While the ANSI C standard is fixed, the ANSI C++ standard is a
+	moving target, so bear that in mind when using -A on C++ files.
+
+	Effects on C and C++:
+
+	o       The macro __STDC__ is defined and set to 1.
+	o       Trigraphs are enabled.
+	o       Floating point comparison operators
+		<>=, !<>=, <>, !>, !>=, !< !<= !<>
+		are disabled.
+	o       Binary integer constants are disabled.
+	o       Keywords beginning with a single _ are disabled.
+	o       asm, cdecl, far, huge, near, pascal keywords are disabled.
+	o       '$' is not allowed as an identifier character.
+	o       /p (pascal strings) are disabled.
+	o       At least one hex number must follow a \x escape.
+	o       Hex numbers specified with a trailing h are disabled.
+	o       Hex floating point constants are disabled.
+	o       64 bit long long's are disabled.
+	o       Blank macro arguments not allowed.
+	o       "unrecognized pragma" errors aren't flagged
+	o       #defines that redefine macros must be preceded by #undefs
+	o       Arithmetic operations on function pointers are invalid
+	o       Text at the end of a preprocessor directive is an error
+	o       Empty member lists are syntax errors
+	o       casts and sizeof() are invalid in preprocessor expressions
+	o       #ident is invalid
+
+	Effects on C:
+
+	o       // comments are disabled.
+	o       Type checking on default integral promotions is more strict.
+	o       Source files end with \n.
+
+	Effects on C++:
+
+	o       RTTI support is enabled.
+	o       Exception handling support is enabled.
+	o       overload keyword is disabled
+	o       implicit conversion of void* is invalid
+	o       char abc[4] = "1234"; is invalid
+	o       Anonymous unions with file scope must be static
+	o       member functions can't be static outside a class definition
+	o       static class data members must be defined somewhere
+	o       Overloading of operator new[] and operator delete[] is 
+		enabled.
+	o       Floating types for non-type template-parameters are 
+		disallowed.
+
+-Aa enable new[] and delete[] overloading
+
+	Enable overloading of operator new[] and operator delete[]. 
+	This also predefines the macro _ENABLE_ARRAYNEW. Currently, few 
+	compilers support this new ANSI C++ feature, and existing code can 
+	be broken by adding it, thus you must throw this switch to enable it.
+	This will eventually become the default. Compiling with -A will also
+	enable this.
+
+-Ab enable bool as a built-in type, with values true and false
+
+-Ae enable exception handling
+
+	Because code generated for EH is not quite as good ('this'
+	pointers are not placed in registers, tables are generated),
+	the default is that EH is not enabled. To enable EH, compile
+	with the -EH switch. Compiling for ANSI C++ (-A) will also enable
+	exception handling support. 
+
+	To compile C code that is to be mixed into C++ code that
+	handles exceptions, compile the C code with -EH also.
+
+	Objects compiled with -EH may be linked with objects compiled without
+	-EH, provided that no exceptions are thrown in the resulting program
+	that are not handled entirely within objects compiled with -EH.
+
+	The tables are generated in the same segment using the same rules
+	as the virtual function pointer tables. Using -NV will place the
+	tables in far segments.
+
+-Ar enable RTTI
+
+	Enable RTTI (Run Time Type Identification) support. RTTI is off
+	by default because RTTI adds space and time to executables.
+	RTTI works by adding a new member to the vtbl[], a pointer
+	to the type info for that struct. This means that classes
+	can no longer share vtbl[]s (an optimization done by default).
+	The type info pointer is at a negative offset to the start
+	of the vtbl[], this is to retain object model compatibility
+	with the Microsoft Object Model (which does not support RTTI).
+
+	If you need link compatibility with Microsoft C++ compiled
+	DLLs, but still use RTTI, you need to compile with -ER:
+	o       All modules that use typeid()
+	o       All modules that use dynamic_cast
+	o       All modules that compile the bodies of constructors
+		for classes that need to support RTTI
+	The reason for this is that the vptr member of the class needs
+	to be set to a vtbl[] that has the RTTI type info pointer in it.
+	A vtbl[] with RTTI type info has a different mangled name than
+	one without, this helps to get everything linked up right.
+
+	Virtual function call compatibility is not affected by RTTI.
+
+	It is best to avoid using RTTI on classes that are pulled in
+	from a .LIB, .OBJ or .DLL where they were compiled with a
+	different compiler.
+
+-Aw enable wchar_t as a built-in type
+
+-bx run X versions of compiler passes
+-bn run NT console app versions of compiler passes
+
+	-bx causes SC from the NT command line to run the X versions
+	of the compiler passes rather than the default NT console app
+	versions. This is provided for testing purposes.
+	-b switches are ignored in other circumstances.
+
+-B      English messages
+-Be     English messages
+-Bf     French messages
+-Bg     German messages
+-Bj     Japanese messages
+
+	This switch causes compiler error messages to be printed in the
+	various languages. This switch would be most conveniently be set
+	in the CFLAGS environment variable or SC.INI file.
+
+-c  skip the link, do compile only
+
+-cpp  assume source files are C++
+
+	Causes SC to run the C++ compiler rather than the C compiler on
+	source files with a .C extension or an unrecognized extension.
+	If you wish to separately precompile a .h file for C++, use the
+	-cpp switch.
+
+-C  disable inline expansion
+-C- (default) enable inline expansion
+
+	-C prevents the inline expansion of functions with the inline
+	storage class. This can be useful in sorting out a complex tangle
+	if inlined functions when debugging. It can also result in smaller
+	(but slower) generated executables.
+
+	-C has no effect on compiler intrinsic functions like strcmp()
+	and memcpy(). If these functions should not be inlined, use the
+	portable method:
+
+		#undef strcmp   /* use runtime library version of strcmp */
+
+-cod  Generate .cod (assembler output) file
+
+	This causes OBJ2ASM to be run on the .obj file output from the
+	compiler to generate a .cod file showing the assembly code generated
+	by the compiler. Using this along with the -gl switch will generate
+	a mixed source/assembly .cod file.
+
+-d[macro[=text]]
+-D[macro[=text]]  define macro
+
+    -D                  Equivalent to #define DEBUG 1
+    -Dmacro             Equivalent to #define macro 1
+    -Dmacro=            Equivalent to #define macro
+    -Dmacro=text        Equivalent to #define macro text
+
+    The '#' character can be used instead of '='.
+
+-e  show results of preprocessor
+
+-EC do not elide comments
+
+	For SPP, -EC means leave comments in preprocessed output.
+
+-EH obsolete - use -Ae
+
+-EL #line directives not output
+
+	For SPP, -EL means that #line directives are not output.
+
+-ER obsolete - use -Ar
+
+-f  generate IEEE 754 inline 8087 code
+
+	For 16 bit code and the DOSX memory model, the compiler by default
+	generates code assuming a numeric coprocessor does not exist. 
+	This code is less efficient than if numeric coprocessor code is 
+	generated directly. -f will cause numeric coprocessor code to be 
+	generated directly, but the code will not run on machines without 
+	a coprocessor.
+
+	Win32 implementations have an emulator for the numeric coprocessor,
+	so -f is the default for the -mn memory model.
+
+-fd generate IEEE 754 inline 8087 code with workaround for FDIV bug
+
+	Some old Pentium CPU chips have a bug when executing FDIV instructions.
+	If you are not generating inline 8087 code, the floating point
+	emulator in the runtime library automatically accounts and corrects
+	for the errors. If you are generating inline 8087 code,
+	the -fd switch will call a runtime library function for FDIV
+	instead of generating an FDIV instruction directly. This results in
+	code that is a little larger and slower than -f code, but it won't
+	be subject to FDIV bugs. Do not use -fd if your code will never be
+	run on a Pentium.
+
+	No Pentium Pro or Pentium MMX chips have this bug.
+
+-ff fast inline 8087 code
+
+	The difference between -f and -ff is that with -ff floating
+	point comparisons with NaN (Not a Number) are not done exactly
+	according to IEEE 754. Normally, this does not matter, so -ff
+	will yield faster code. Other compilers for Intel CPUs do not
+	correctly generate code for NaN comparisons, so to compare DigiMars
+	floating point code performance with that of other compilers,
+	use the -ff switch.
+
+	Use -ff -fd in combination to get fast inline code with the FDIV
+	bug workaround.
+
+-g{-345dfghlpst}  generate debug info
+
+	The compiler has several ways of generating debug info for
+	a compiled file. If the compiler always generated debug info
+	for all types, the .OBJ files would be huge and the linker
+	would have a lot of work to do to remove all the redundant
+	information. Ideally, debug info is generated only once for
+	each type across all compilation units.
+
+	The default, -g, only generates debug info for types of
+	variables that are actually used by a module. This greatly
+	cuts down on the amount generated. In addition, since C++
+	class hierarchies tend to be very complex, -g tries to minimize
+	putting out class info in a similar manner as redundant vtbl[]s
+	are minimized.
+
+	-g is the right choice for programs that do not reference
+	libraries or DLL's for which type info is needed.
+
+	Sometimes, though, if part of a class implementation lies inside
+	a DLL, the debug info for that class may never get generated.
+	Thus, the -gf flag exists to cause full debug info to be
+	generated for each class that is reference by generated code.
+
+	Even -gf can get a bit problematic, though, since it can cause
+	large quantities of debug info to be generated. It also never
+	generates debug info for classes that only may be referenced
+	in a linked-in library or DLL which were compiled separately
+	without debug info.
+
+	-gh causes debug info to be generated for all global
+	structs and typedefs, regardless of if they are referenced or
+	not. One could just use -gh for all compilations, and it will
+	work, but it will be a bit slow.
+
+	A better solution is to use -g for all the modules in the
+	program. Then, create a special file TOTAL.C, which has
+	a #include statement in it for each header that references
+	a library or DLL. Compile TOTAL.C with -gh (and the other
+	memory model, etc. switches), and TOTAL.OBJ will contain all
+	the debug info you need for those DLLs and libraries.
+	This will minimize compile/link times, which is important
+	for fast development turnaround.
+
+	OBJ2ASM can be run on any .OBJ file, and it will format
+	and pretty-print any debug info found in the file. This is
+	handy if you're curious as to what the compiler is doing.
+
+    -   turn off debug output
+
+    3   Generate Codeview 3 format debug info. This is useful to support
+	old debuggers, but is now obsolete. It is no longer supported.
+
+    4   Generate Codeview 4 format debug info. This is the default.
+
+    5   Generate DigiMars format.
+
+    d   Dynamic C++ type info (obsolete)
+
+    f   Generate debug info for full class hierarchy for any referenced
+	classes.
+
+    g   Make static functions global. This is useful when tools that read
+	.MAP files are needed, since only global function names will appear
+	in the .MAP file.
+
+    h   Generate debug info for all global structs, enums, and typedefs.
+	This is done automatically if -g is thrown with -HF.
+
+    l   Generate line number debug info only. This is useful when a .cod
+	file output is desired, as then the source code will be intermixed
+	in with the compiled output. It is also useful when working with
+	debuggers that derive all their debug info from .MAP files.
+
+    p   generate pointer validations
+
+	Generates code to call the function __ptrchk(void *p)
+	for each pointer dereference. p is always a far pointer for
+	16 bit memory models, and always a near pointer for 32
+	bit memory models.
+
+	__ptrchk must preserve all registers, and must pop its
+	parameter prior to returning (pascal calling sequence). These
+	measures minimize the code expansion resulting from using -gp.
+	Thus, __ptrchk must be written in assembler or inline assembler.
+
+	__ptrchk is intended for use by a memory debugger. The idea
+	is that __ptrchk validates the pointer. If the pointer is not
+	valid, it notifies the user at the source of the problem.
+
+	There is a default version of __ptrchk in the runtime library.
+
+    s   symbol info only (do not generate line number info)
+
+    t   Generate trace prolog/epilog for use with the DigiMars Trace package.
+
+-GTnnnn set data threshold to nnnn
+
+	In large data models
+	arrays and structs that are larger than nnnn are allocated in far
+	data segments rather than DGROUP.
+
+	-GTnnnn Allocate arrays and structs larger than nnnn to far
+		data segments.
+	-GT     Default (all static data is placed in DGROUP).
+
+	The -GTnnnn switch is ignored for near data models (t,s,m)
+	and for all 32 bit memory models.
+
+	If you use -GT, you should use the same value for all modules.
+	If you have .ASM modules, you will need to be careful when 
+	referencing global data whether it is in DGROUP or in a far data 
+	segment. The symptoms of getting this wrong are frame errors from 
+	the linker.
+
+	Note that if -GT is used, arrays declared with empty [] like:
+		extern int array[];
+	are assumed to be far. If they actually are near, declare them
+	using the dimension, or mark them explicitly as __near.
+
+-H  use precompiled headers (ph)
+
+-HC     Do not cache precompiled headers in memory.
+-HC-    Cache precompiled headers in memory (default).
+
+	In the IDDE, by default, when precompiled headers are read in
+	from disk, they are cached in memory so when subsequent files
+	are compiled, the precompiled header is read from memory rather
+	than from disk. When there is not a lot of physical memory, however,
+	this can cause a lot of page swapping, resulting in decreased
+	compile speeds. Thus, the -HC switch will turn off caching them.
+
+	The -HC switch does not apply to -HX precompiled headers, which are
+	always cached in memory for IDDE compiles. The -HC switch is ignored
+	for the command line compiler, which always reads precompiled headers
+	from disk.
+
+-HDdirectory  Directory to read and write precompiled headers to.
+
+	If the precompiled header directory for use with the -H, -HF
+	and -HX switches is not the current directory, use -HD to set
+	the directory to use. This is useful when the precompiled headers
+	go to a fast ram disk.
+
+-HF[filename]  generate precompiled header to filename.sym.
+
+	-HF is used to generate a precompiled header, -H is used to
+	compile files that will be using that precompiled header. The
+	default output file name is the name of the source file with
+	a .sym extension.
+
+	The filename.obj file that is also generated should be linked in
+	as well, as contains code and data generated when building the
+	precompiled header. If -g is thrown, the .OBJ file will contain
+	all the debug info for the header file(s).
+
+-HIfilename   #include filename
+
+	Behave as if:
+
+		#include "filename"
+
+	was the first line of the source file being compiled.
+
+-HMaddress
+
+	Set address to use for memory mapped files. Address is in hex.
+
+-HO include files only once
+-HO- (default) turn off -HO
+
+	Normally, include files are read and parsed each time they
+	are encountered. With -HO, include files are read and parsed
+	only the first time they are encountered, and #include directives
+	for that file are ignored if they appear again. This can result
+	in faster compiling.
+
+	An alternative is to include the directive
+
+		#pragma once
+
+	in each include file that will never need to be parsed more than
+	once.
+
+-HS only search -I directories
+
+	Causes the compiler to search for source files 
+	only in the directories specified with the -I switch.
+
+-HX automatic precompiled headers
+
+-ipath
+-Ipath  #include file search path
+
+-j[0|1|2]  Asian language characters
+
+	Asian language character sets include double byte characters, where
+	certain prefix bytes mean that the following byte forms part of the
+	character. Asian language characters can appear in "" strings, in
+	'' character literals, and in comments.
+
+    -j
+    -j0 Japanese
+
+    -j1 Taiwanese and Chinese
+
+    -j2 Korean
+
+    -j- no Asian language characters
+
+	When the compiler is run under Win32, the switches correspond to the
+	following operating system locale code pages:
+	-j0     .932
+	-j1     .936
+	-j2     .949
+	These locales determine which bytes are the initial bytes of a
+	multibyte sequence, and control how strings are converted to
+	Unicode strings. If those locales are not supported by the operating
+	system installed on your machine, or the DOS native version of the
+	compiler is running, the lead byte of a multibyte character sequence
+	is:
+	-j0     Japanese, prefix bytes are 0x81..0x9F and 0xE0..0xFC
+	-j1     Taiwanese and Chinese, prefix bytes are 0x81..0xFC
+	-j2     Korean, prefix bytes are 0x81..0xFD
+	and the conversion to Unicode is done simply by 0 extending a regular
+	character and stuffing a multibyte sequence into 16 bits.
+
+	The -j switch is obsolete. The #pragma setlocale() directive is
+	a superior solution.
+
+-Jm relaxed type checking
+-Jm- strict type checking (default)
+
+	There is a lot of legacy C code around which relied on the loose
+	type checking of older C compilers. The -Jm switch enables such
+	legacy C code to be compiled with DigiMars C. We strongly recommend
+	against using -Jm for new code development.
+
+	-Jm is ignored for C++ compilations, since C++ is heavily dependent
+	on strong type checking.
+
+-Ju char and unsigned char are the same type (unsigned char)
+-Ju- (default) char and unsigned char are different types
+
+	This is useful in compiling some old legacy C code where the author
+	willy-nilly mixed up using char and unsigned char types. -Ju should
+	not be used in developing any new C code.
+
+	-Ju does not affect the behavior of runtime library functions like
+	strcmp(), which always behave as if chars are signed.
+
+	Using -Ju causes all sorts of problems in C++ code, primarily goofing
+	up overloading based on char types. Using -Ju for C++ is not
+	recommended.
+
+-J  char promotions are unsigned
+-J- char promotions are signed (default)
+
+	This affects whether objects of type char are sign-extended or zero-
+	extended when being promoted from char to a larger type. It does not
+	affect the signed char or unsigned char types. char is still a type
+	distinct from unsigned char and signed char.
+
+	If code is sensitive to -J or -J-, then it is non-portable, and 
+	should be carefully checked to replace the sensitive types with 
+	signed char or unsigned char as needed. For instance:
+
+		char c;
+		int i = c;
+
+	Should be replace with (if it matters):
+
+		signed char c;
+		int i = c;
+
+	or:
+		unsigned char c;
+		int i = c;
+
+	or:
+		char c;
+		int i = (signed char) c;
+		int i = (unsigned char) c;
+		int i = c & 0xFF;
+
+	-J does not affect the behavior of runtime library functions like
+	strcmp(), which always behave as if chars are signed.
+
+-l[listfile]  generate list file
+
+-L  using non-DigiMars linker
+
+	DigiMars linkers have some extra features in them (like support
+	for long command lines), -L means a non-DigiMars linker will be
+	run so those features cannot be used.
+
+-Llink  specify linker to use
+
+	This is useful if a special linker is being used, or if the linker
+	is not on the PATH or in the directory where SC resides.
+
+-L/switch  pass /switch to linker
+
+-Masm   specify assembler to use
+
+	MASM is normally the assembler called by SC when an assembler 
+	source file needs to be assembled. Use -M to specify an 
+	alternate assembler.
+
+-M/switch  pass /switch to assembler
+
+-m[tsmclvfnrpxz][do][w][u] memory model
+
+    16 Bit Models
+    t	tiny .COM file
+    s	small code and data (default)
+    m	large code, small data
+    c	small code, large data
+    l	large code and data
+    v	VCM (Virtual Code Manager) (obsolete)
+    r	Rational Systems 16 bit DOS Extender
+    z	Zortech ZPM 16 bit DOS Extender (obsolete)
+
+    32 Bit Models
+    f	OS/2 2.0 32 bit flat model (not supported)
+    n	Win32 32 bit flat model
+    p	Pharlap 32 bit DOS Extender
+    x	DOSX 32 bit DOS Extender
+
+    Memory Model Modifiers
+
+    d   DOS 16 bit (default)
+
+    o   OS2 16 bit (obsolete)
+
+	Indicates code will be targeted towards an OS/2 16 bit executable.
+
+    w   assume SS != DS
+
+    u   reload DS
+
+	If you are compiling 16 bit Windows code, use the -W switches 
+	instead of the w or u modifiers to the -m flag. This will prevent 
+	order dependencies, since a -W switch appearing after a -m switch 
+	will override the w or u modifiers on the -m switch, and vice versa.
+
+-Nc function level linking
+
+	This causes each global or static function to be placed into
+	its own COMDAT record. This will enable function level linking.
+	Function level linking means that only functions actually referenced
+	by other code will be pulled in and placed in the final executable.
+
+-NC don't generate COMDATs (obsolete)
+
+	Avoid using this switch. It is now obsolete, since current linkers
+	now all support COMDAT records.
+
+-ND compile and link with DLL version of runtime library
+
+	Defines and sets _MT and _DLL to one. Changes the embedded RTL 
+	name from SNN.LIB to SND.LIB. This must be used only with the 
+	Win32 memory model (-mn).
+
+-NF ignore extended keywords
+
+	The keywords __far, __huge, __loadds, __interrupt, __handle
+	are ignored. (This is the default for N and F memory models.)
+	-NF can be useful for compiling old 16 bit code for the x or
+	p memory models.
+
+-NL no default library
+
+	The compiler normally embeds in the object file a record indicating
+	the default runtime library to be linked in. -NL suppresses this
+	embedding. This is useful when:
+	o       Compiling code that will go into a library, getting rid of
+		all those records can result in a substantial reduction in
+		library size.
+	o       Compiling code that will be linked with code generated by
+		other compilers.
+
+-NLlibfile
+
+	Embed the filename "libfile.lib" into the .OBJ instead of the 
+	default.
+
+-Ns place expression strings in code seg
+
+	Places strings that appear in
+	expressions into the code segment rather than the data
+	segment. Expression strings are always placed anyway in the
+	code segment if the type of the expression is __cs*. The
+	-Ns switch will place expression strings into the code segment
+	that are typed as far pointers (the default in large data models).
+
+	-Ns is ignored for FLAT memory models (-mn, -mf).
+
+	-Ns is useful for Windows programs in that space in DGROUP is
+	freed up. Note that you cannot write into strings placed in
+	the code segment. If you need to write into a string, and wish
+	to use -Ns, make the particular writable string a static array.
+
+	-Ns does not place strings in statically initialized data
+	structures into the code segment.
+
+-NS new code seg for each function
+
+-Nt     use old template name mangling scheme (obsolete)
+
+	By default, the compiler generates VC compatible name mangling.
+	For compatibility with object code with pre-version 7.2 compilers,
+	the -Nt switch enables the old template mangling scheme.
+
+-NTname  set code segment name
+
+-NV vtables in far data
+
+-o[-+flag]  run optimizer with flag
+
+    -o-         No optimization (default)
+    -o          Optimize for program speed
+    -o+space    Optimize for program size
+
+-ooutput  output filename (dot extension optional)
+
+-p  turn off autoprototyping
+-p- turn on autoprototyping (default)
+
+	Autoprototyping is a DigiMars C feature where if a function call
+	is made and there is no prototype for the function, the compiler
+	will create a prototype for that function based on the number and
+	types of the arguments to it. Subsequent calls to that function will
+	be checked against that prototype.
+
+	This obviously can cause trouble if functions that accept a variable
+	number of arguments (like printf()) are called without a prototype
+	for that function in scope.
+
+	Autoprototyping is irrelevant in C++ or if -r is used, because
+	prototypes are then required.
+
+-P  default to pascal linkage
+
+-P- default to cdecl linkage
+
+-Pz default to stdcall linkage
+
+-r  strict prototyping
+-r- turn off -r (default)
+
+	Strict prototyping means that all functions must be prototyped
+	before they are used. This highly useful feature of C++ can
+	be used in C with this switch. Strict prototyping is always on
+	in C++. We strongly recommend using -r for all new C development.
+
+-R  put switch tables in code seg
+
+	Switch tables are normally placed in the data segment (DGROUP).
+	Sometimes, DGROUP space can be very limited, so the -R switch can 
+	be used to place switch tables into the code segment. Generated code 
+	will be slightly bigger and slower for switch statements with -R.
+
+	-R is ignored for flat model programs.
+
+-s  stack overflow checking
+
+-S  always generate stack frame
+
+-u  suppress predefined macros
+
+-v[0|1|2] verbose compile
+
+-w[-|n|x]   warning messages
+
+	-w   suppress all warning messages
+
+	-wn  suppress warning message n
+	See "Warnings and associated warning numbers" for messages.
+
+	-w-  enable all warning messages (default)
+
+	-wx  treat warnings as errors
+
+	     Warning messages tend to quickly scroll off the screen and
+	     go unnoticed, especially during building projects with lots of
+	     source files. -wx will treat warnings as errors, so they cannot
+	     be accidentally overlooked.
+
+-W{0123ADadefmrstuvwx-+}  Windows prolog/epilog
+
+    1: Full 2: Reduced 3: Smart callback A: EXE D: DLL
+
+    See "32 BIT WINDOWS PROLOG/EPILOG CODE GENERATION".
+
+-x  turn off error maximum
+
+	Since many reported errors in a source file tend to be cascaded
+	from the first error, the compiler normally aborts compiling a
+	file after a certain number of errors are reported. Using -x will
+	cause the compiler to valiantly proceed and try to compile the rest
+	of the file.
+
+-XD  instantiate template for any functions declared but not defined
+-XD- turn off -XD (default)
+
+    Consider the following:
+
+	template<T> int func(T) { return T; }
+	int func(double);
+
+    By default, since the specific declaration of func(double) exists,
+    the compiler will not generate an instance of the template func(double),
+    even if func(double) is called later in the source file. The
+    programmer must provide an explicit definition of func(double) with a
+    body at some point in the source code to the program.
+
+    If -XD is specified, the two lines above tell the compiler to generate
+    an instance of func(double) from the template of func(T) as long as no
+    explicit function body for func(double) appears in that same source file.
+
+    With -XD, the generated instance is placed into a COMDAT record, which
+    means that if an explicit body is provided in another source file, that
+    explicit definition will override the generated COMDAT definition. If
+    the source file with the explicit body is compiled with -Nc (generate
+    COMDATs for functions), then a linker error will result because there 
+    will be two different definitions for func(double).
+
+    -XD is the waPy the DigiMars compiler versions previous to 7.0 worked by
+    default, and is so provided for compatibility with previous versions.
+
+-XIspec  instantiate template
+
+    This tells the P compiler to generate specific instances of templates 
+    that appear in the source file being compiled. For instance, if the 
+    source file contains:
+
+	template<T> int func(T) { return T; }
+
+    then the command line switch -XIfunc<char> will cause the compiler to
+    generate an instance of func(char) from the template for func().
+
+    Since the < and > characters I/O cause redirection when used from the
+    command prompt, it is frequently necessary to quote the -XI switch, 
+    as in:
+
+	"-XIfunc<char>"
+
+-XN     no template function instantiation
+
+	Do not automatically expand any template function bodies.
+
+=nnnn  set stack size for compiler passes (obsolete)
+
+-[0|2|3|4|5|6]  88/286/386/486/P5/Pro code
+
+	Select CPU instruction type.
+
+	-0      Generate code for 8088 and later CPUs
+	-2      Generate code for 286 and later CPUs
+	-3      Generate code for 386, 486, Pentium and Pentium Pro,
+		and select instruction sequences that favor the 386
+	-4      Generate code for 386, 486, Pentium and Pentium Pro,
+		and select instruction sequences that favor the 486
+	-5      Generate code for 386, 486, Pentium and Pentium Pro,
+		and select instruction sequences that favor the Pentium
+	-6      Generate code for 386, 486, Pentium and Pentium Pro,
+		and select instruction sequences that favor the Pentium Pro
+
+
+	This chart shows which CPUs each switch is compatible
+	with:
+
+		 -0 -2 -3 -4 -5 -6
+		+-----------------
+	8088    | Y
+	286     | Y  Y
+	386     | Y  Y  Y  Y  Y  Y
+	486     | Y  Y  Y  Y  Y  Y
+	Pentium | Y  Y  Y  Y  Y  Y
+	Pro     | Y  Y  Y  Y  Y  Y
+
+	Selecting a CPU type does not affect the memory model chosen,
+	but -0 and -2 are invalid for 32 bit memory models.
+	Since running Windows programs on an 8088 or a 286 is completely
+	impractical, use -3, -4 or -5 even when generating 16 bit
+	Windows code.
+
+	-5 is the default for 32 bit memory models.
+
+	The compiler supports the MMX instruction set in the inline
+	assembler. MMX support is not affected by the CPU instruction
+	type selection.
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+32 Bit Windows Prolog/Epilog Code Generation
+-----------------------------
+
+	-WA             Win32 EXE
+	-WD             Win32 DLL
+	no -W switch    Win32 console EXE app
+
+-------------------------------------
+16 Bit Windows Prolog/Epilog Code Generation
+
+	-W{0123ADabdefmrsuvwx-+}
+
+	-W      Same as -W1 if no modifier switches
+	-W-     Not a windows compile (default)
+	-W1     Real mode Windows app/DLL
+	-W2     Real mode Windows app/DLL with exported and
+		callback functions marked with __export
+	-W3     Real mode Windows app with smart callbacks
+	-WA     Protected mode Windows EXE, with callback functions
+		all marked as __export.
+	-WD     Protected mode Windows DLL, with callback and exported
+		functions all marked as __export.
+
+	Modifiers:
+
+	a       Reload DS from DS for far functions
+	b       Assume DS != DGROUP
+	d       Reload DS from DGROUP for far functions
+	e       Generate EXPDEF records in .OBJ file for __export functions
+	f       Mark all far functions as __export
+	m       Generate INC BP / DEC BP to mark far stack frames
+	r       Generate reload of DS only if __export or __loadds functions
+	s       Reload DS from SS for far functions (smart callbacks)
+	t       Use fixups instead of CS. This is needed for real mode,
+		where selector values can change as code moves around.
+	u       Reload DS from DGROUP for near and far functions
+		(same as -mu) (same as marking all functions as __loadds)
+	v       Save/restore caller's DS in far functions
+	w       Assume SS != DS (same as -mw)
+	x       Program will be run under Windows
+	-       Turn off subsequent modifiers
+	+       Turn on subsequent modifiers
+
+		Modifers a,d,s,v are mutually exclusive.
+
+	Equivalents:
+
+	-W1     -Wtxema -D_WINDOWS
+	-W2     -Wtxemar -D_WINDOWS
+	-W3     -Wtxems -D_WINDOWS
+	-WA     -Wtxrs -D_WINDOWS
+	-WD     -Wtxerdw -D_WINDOWS -D_WINDLL
+	-WD-r   -Wtxedw -D_WINDOWS -D_WINDLL
+
+-----------------------------------
+We Recommend:
+
+	o       For "I don't care, just make it work", simply use -W.
+		This will produce the most inefficient code.
+	o       For maximum program speed and compactness, use the
+		-WA or -WD switches.
+	o       Use the L memory model for DLLs.
+	o       Use the L memory model for most application programming.
+		Many anachronistic Windows programming books insist
+		on the S or M model, but the reasons for that have
+		gone away with the obsolescence of real mode.
+	o       Abandon real mode (Windows 3.1 has abandoned it).
+	o       Normally use -4 (486 code) or -5 (Pentium code), unless
+		you expect your code to be used on an 8088 or a 286.
+		Marking your app as only running in enhanced mode will
+		ensure that it won't be accidentally run on an 8088 or
+		a 286.
+	o       If you are using -WA or -WD and you need to run a
+		debugger on the result, use the m modifier. This
+		enables many debuggers to distinguish between a
+		near call frame and a far call frame.
+	o       Declare all exported and callback functions with __export.
+
+-----------------------------------
+Don't Do This:
+
+	DON'T   use -W3 or -WA for code to be used in a DLL.
+	DON'T   use smart callbacks (-Ws) for code to be used in a DLL.
+	DON'T   use -W2, -WA or -WD and then fail to mark as __export
+		those functions to be used as callbacks or exports.
+	DON'T   use -WA or -WD for code that might be used in Windows
+		real mode.
+	DON'T   use other companies' compilers.
+
+-----------------------------------
+Microsoft C6 switch compatibility for Windows compiling:
+
+	MSC     SC/C++
+	---------------
+	-Gw     -W      Full Windows prolog/epilog for far functions
+	-GW     -W2     Reduced prolog/epilog, Note 1
+	-Au     -mwu    assume SS != DS and load DS on each function
+	-Aw     -mw     assume SS != DS
+
+Note 1: SC/C++ will still generate the full prolog/epilog
+	for __far __export functions, MSC6 will not.
+
+-----------------------------------
+Microsoft C7/VC switch compatibility for Windows compiling:
+
+	MSC     SC/C++
+	---------------
+	-Gw     -W	Full Windows prolog/epilog for far functions
+	-Au     -mwu	assume SS != DS and load DS on each function
+	-Aw     -mw	assume SS != DS
+	-GA     -WA	optimized protected mode Windows apps
+	-GD     -WD	optimized protected mode Windows DLLs
+	-GEa    -Wa	load DS from AX
+	-GEd    -Wd	load DS from DGROUP
+	-GEe    -We	emit EXPDEF records for all exported 
+			functions
+	-GEf    -W-r	create prolog/epilog code for all 
+			far functions
+	-GEm    -Wm	add inc BP / dec BP to prolog / 
+			epilog of far functions
+	-GEr    -W2v	real mode, reduced prolog for 
+			non-exported functions
+	-GEs    -Ws	load DS from SS
+	-Gq     -Wtxme	compatibility with MSC6 -GW
+	-GW     -Wtxmev -D_WINDOWS     reduced prolog for real mode 
+			Windows functions
+
+-----------------------------------
+Special Feature
+
+	The new -Wb switch (assume DS != DGROUP) causes the compiler to
+	issue a warning whenever a segment fixup is done to DGROUP. If
+	your program is using an alternate data segment, this could
+	mean that a DGROUP fixup is a program bug.
+
+	A DGROUP fixup can be triggered (in large data model) by
+	things like:
+
+		static int x;
+		static int *px = &x;    /* DGROUP fixup generated       */
+		static char *p = "abc"; /* DGROUP fixup generated       */
+
+	To get rid of the fixup, the pointers can be made near:
+
+		static int __near *px = (int __near *)&x;
+		static char __near *p = "abc";
+
+	these will generate DGROUP relative fixups, not DGROUP segment
+	fixups. Alternatively, the pointers can be initialized at
+	runtime (the compiler generates code that uses DS to initialize
+	segment values).
+
+	Eliminating DGROUP segment fixups is useful for:
+
+	o       special purpose code where the data segment
+		needs to be moved around.
+
+	o       embedded systems where the data segment will be
+		initialized from an image in ROM.
+
+	o       16 bit Windows DLLs where the DLL was made to be multi-
+		instanced by creating multiple copies of DGROUP
+		at runtime.
+
+	The -Wb switch can be highly useful in finding difficult to
+	track down bugs in such code. -Wb does not affect code generation
+	at all, it only reports when a DGROUP segment fixup is generated.
+
+	Note that -Wb will issue errors if you are using __loadds (because
+	DS is reloaded from DGROUP) or if you are using -Wd (load DS
+	from DGROUP Windows prologs).
+
+-----------------------------------
+References For More Information on Windows Prolog/Epilogs:
+
+	Chapter 21
+	"Programmer's Reference, Volume 1"
+	Microsoft Windows SDK 3.1
+
+	Chapters 7 and 19
+	"Programming Windows 3.1" 3rd Edition
+	by Charles Petzold
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+TIPS FOR PRECOMPILED HEADERS
+-----------------------------
+
+1. Header files should contain complete definitions, i.e. starting a
+declaration in one file and finishing it in another should be avoided.
+
+2. Design headers so they only need to be #include'd once. Then, wrap the
+header in:
+	#ifndef _HEADER_H
+	#define _HEADER_H 1
+		... declarations ...
+	#endif // _HEADER_H
+so that if it is #include'd multiple times, it is parsed only once. 
+In addition, add:
+	#pragma once
+to it so the compiler doesn't need to rescan it.
+
+3. Design headers so they can be #include'd in any order. The best way to do
+this is to have each header #include the ones it depends on. By following
+rule (2), this will not have a compile time penalty.
+
+4. Avoid defining data in the headers.
+
+5. Avoid #undef'ing macros and redefining them to something else.
+
+6. If you set the struct packing to something other than the default, set it
+back to the default before the end of the file.
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+ACRTUSED
+-----------------------------
+
+Programmers occasionally run into various problems with _acrtused names
+being multiply defined or being undefined. What is _acrtused? Basically,
+_acrtused is an external reference generated by the compiler in order
+to bring in the startup code appropriate to a console app, a windows app,
+a dll app, etc. Different acrtused names are referenced to bring in
+different startup code. The variations are:
+
+__acrtused      If WinMain()
+			-or-
+		If 16 or 32 bit DOS compile and main()
+
+__acrtused_winc If 16 bit Windows compile and main()
+
+__acrtused_dll  If 16 bit Windows compile and LibMain()
+			-or-
+		If -mn and LibMain()
+			-or-
+		If -mn and DllMain()
+
+__acrtused_con  If -mn and main()
+
+__wacrtused_con If -mn and wmain()
+
+__wacrtused     If -mn and wWinMain()
+
+Notes:
+
+o       Detection of main() and DllMain() are done in a case-
+	sensitive manner, WinMain() and LibMain() are done in
+	a case-insensitive manner.
+
+o       By "16 bit Windows compile", that means compiling with
+	a 16 bit memory model, and the -W switch or -W[123ADx].
+
+o       -mn means a Win32 program.
+
+Troubleshooting:
+
+o Message about "__acrtused_??? undefined" from the linker:
+
+	The most likely thing is that you are not linking with the standard
+	runtime library (RTL) for the memory model specified.
+
+	Check that /NOD (no default library search) is not specified for the
+	linker.
+
+	Check that the environment variable LIB (or the LIB in SC.INI) is
+	set to point to the directory where the standard libraries are.
+
+	Check that you did not specify -NL (no default library) to the
+	compiler.
+
+	Check that you are using only one of main(), WinMain(), LibMain()
+	and DllMain(), and that you are using the right one.
+
+	Check that the module being compiled with main(), etc., is compiled
+	with DigiMars C/C++ and not some other compiler.
+
+	Check that you are not linking with the RTL from another compiler.
+
+	OBJ2ASM your .OBJ files, and search them to see who is referencing
+	__acrtused_???.
+
+o Message about "IDENTIFIER previous definition different", or "multiply
+  defined" from the linker, and IDENTIFIER is an internal name to the
+  RTL:
+
+	The most likely thing is that more than one of main(), WinMain(),
+	LibMain() and DllMain() is being defined, so that more than one
+	startup code module is pulled in, resulting in the name collisions.
+
+	Try linking with /NOD and note the unresolved externals and which
+	modules refer to them. If things are really desperate, try pulling
+	the startup code out of the standard RTL (making a backup of the
+	original first!) and check to see what symbols are left unresolved.
+	This will tell you who is trying to pull in the extra set of startup
+	code.
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+TRACE DYNAMIC PROFILING
+-----------------------------
+
+	Page swapping can cripple an otherwise fast program. Normally,
+	code is written in such a manner as to group together functions
+	that are conceptually related, not those that call each other.
+	To minimize page swapping, functions must be grouped together that
+	call each other a lot at runtime.
+
+	But grouping together functions that call each other has other
+	benefits, even on machines which have sufficient memory to run the
+	application without swapping. The first benefit is that the called
+	functions will be more likely to be already in the memory cache. The
+	second is that when WIN32 loads a program or dll, it doesn't actually
+	read it into memory. It simply maps an address range onto the file,
+	and then when the program executes, pages of the program are swapped
+	in as they are referenced. Grouping functions together that call each
+	other will minimize the amount of the program that actually has to
+	be read in from disk, thus minimizing program load time.
+
+	A compiler can determine the static calling relationships between
+	functions in a program, but this has severe limitations. The compiler
+	has no way to determine at compile time which connections are called
+	relatively often. There is also no way to determine function calling
+	relationships via virtual function dispatch, or other dispatch via
+	function pointers.
+
+	What is necessary is to gather this information at runtime, 
+	preferably while running a typical application of the program. 
+	Such dynamic profiling information can then be processed to yield 
+	an order in which functions should be placed by the linker.
+
+DYNAMIC PROFILING WITH SC++
+
+	This capability is now built in to DigiMars C++ 7.01. It is currently
+	only implemented for WIN32 systems, but the results should be 
+	directly applicable to a 16 bit version of your program.
+
+    Setting Up
+
+	It's enabled by
+	two switches working together: -gt and -Nc.
+
+	-gt by itself inserts profiling code into every function, and when
+	the program terminates, it prints out a log showing, for each 
+	function, who calls it (and how many times) called the fan in, and 
+	who it calls (and how many times) called the fan out.
+	Throwing -gt will also predefine the macro
+		#define _DEBUG_TRACE 1
+
+	If -Nc (make all functions COMDATs) is thrown as well, profiling
+	code is only inserted into global COMDAT functions, since it is
+	only global COMDAT functions that the linker can adjust the link 
+	order on.
+
+	If there are many static functions, and those are to be profiled
+	and grouped as well, throw the -gg (make static functions global)
+	also. This assumes, of course, that all static function names in
+	the -gg modules are distinct from one another and all global names.
+
+	The program is linked normally.
+
+    Gathering the Data
+
+	Run the program in the manner it is typically used. The trace code
+	will accumulate the information, and when the program is terminated,
+	the information will be written to file 'trace.log' and 'trace.def'.
+	The .log file is a readable text file with a list of all the traced
+	functions, along with who calls them (fan in) and who they call (fan
+	out), and each time this occurs.
+
+	Following this is listed timing data. The data are:
+
+	Num Calls:      Number of times the function was called.
+	Tree Time:      Time used by function plus the tree times of all the
+			functions it calls.
+	Func Time:      Time used by a function excluding the time
+			used by the functions it calls (times for functions 
+			it calls that are not compiled with -gt, like
+			RTL functions, are included in Func Time).
+	Per Call:       (Func Time) / (Num Calls)
+
+	If multiple runs are done with the program, the profiling data is
+	merged and summed with any previously existing trace.log file.
+
+	The final output is the 'trace.def' file, which is meant to be 
+	included in the linker module definition file. It contains the list 
+	of the functions in the order the linker should link them.
+
+    Modifying Trace Behavior
+
+	The behavior of the trace package can be modified with several
+	functions that can be explicitly called in the program. They are
+	prototyped in trace.h. The functions are macros that expand to 
+	nothing if -gt is not thrown.
+
+    void trace_term()
+
+	Normally, this function is called when the program exits as part of
+	the static destructor list. If this list is not called, or you wish
+	to stop gathering data before the end of the program (for instance, 
+	to optimize for fast load), then insert a call to trace_term() at 
+	the point where it is to stop.
+
+    int trace_setdeffilename(const char *name)
+
+	Set file name to use for .def file instead of trace.def.
+	Returns: 0 = success, !=0 = failure
+
+    int trace_setlogfilename(const char *name)
+
+	Set file name to use for .def file instead of trace.log.
+	Returns: 0 = success, !=0 = failure
+
+    Fast Loading
+
+	To optimize the program for fast loading, rather than fast running,
+	gather the profile data only as far as the program is loaded. Then,
+	call trace_term() to terminate the data gathering and write the
+	output files.
+
+CAVEATS
+
+	The library does not have profiling instrumentation in it, so the
+	library functions are not grouped by the linker, nor is any profiling
+	information collected for library functions. The extra code linked in
+	to do the profiling makes use of the library functions, so if the
+	library functions are instrumented, some infinite loops can occur.
+	So don't recompile the library with -gt.
+
+	Functions declared with __declspec(naked) never get profiling
+	instrumentation added to them.
+
+	The profile data gathering code will get confused if non-local jumps
+	occur when things like setjmp/longjmp, Windows NT structured 
+	exceptions, or C++ exceptions are used. If this profiling tool is 
+	well used by customers, we'll address these shortcomings.
+
+	The timing is based on the Win32 performance timing API, which is
+	accurate to about one microsecond. Unfortunately, any paging or any
+	other tasks running can erratically change the timings. There is no
+	real way around this besides just running the tests several times
+	and averaging the results.
+
+	The overhead of the instrumentation code can distort the 
+	measurements when the function times are very short. The profiler 
+	tries to compensate for this, but the overhead times are not always 
+	consistent.
+
+	Profiling of multithreaded apps is not supported.
+
+TRACING MULTIPLE EXEs AND DLLs
+
+	Multiple EXEs and DLLs can be traced simultaneously, but the log 
+	files and def files must all be set to different names, or else 
+	they will step on each other.
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Warnings and associated warning numbers
+-----------------------------
+
+1       function '%s' is too complicated to inline
+2       possible unintended assignment
+3       comments do not nest
+4       assignment to 'this' is obsolete, use X::operator new/delete
+5       no tag name for struct or enum
+6       value of expression is not used
+7       possible extraneous ';'
+8       very large automatic
+9       use delete[] rather than delete[expr], expr ignored
+10      using operator++() (or --) instead of missing operator++(int)
+11      non-const reference initialized to temporary
+12      variable '%s' used before set
+13      Illegal type/size of operands for the %s instruction
+14      Reference to '%s' caused a 386 instruction to be generated
+15      returning address of automatic '%s'
+16      DS is not equal to DGROUP
+17      unrecognized pragma
+18      implied return at closing '}' does not return value
+19      %d actual arguments expected for %s, had %d
+20      symbols or macros defined before #include of precompiled header
+21      precompiled header must be first #include when -H is used
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+BIBLIOGRAPHY FOR SYMANTEC C++
+-----------------------------
+
+C and C++
+---------
+
+"Working Paper for Draft Proposed International Standard for 
+Information Systems - Programming Language C++", Doc No: X3J16
+American National Standards Institute (ANSI)
+Standards Secretariat: CBEMA
+1250 Eye Street NW
+Suite 200
+Washington, DC 20005
+
+"American National Standard for Information
+Systems - Programming Language C", Doc No: X3J11/90-013
+American National Standards Institute (ANSI)
+Standards Secretariat: CBEMA
+1250 Eye Street NW
+Suite 200
+Washington, DC 20005
+
+"The C++ Programming Language", Second Edition
+Bjarne Stroustrup, Addison-Wesley. ISBN 0-201-53992-6
+
+"The Draft Standard C++ Library"
+P. J. Plauger, Prentice-Hall, ISBN 0-13-117003-1
+
+
+Floating Point
+--------------
+
+"IEEE Standard for Binary Floating-Point Arithmetic"
+ANSI/IEEE Std 754-1985
+The Institute of Electrical and Electronics Engineers, Inc.
+345 East 47th Street, New York, NY 10017, USA
+
+"Floating Point C Extensions", NCEG 91-015
+
+"8087/80287/80387 for the IBM PC & Compatibles, 3rd Edition"
+Richard Startz, Brady Books, ISBN 0-13-246604-X
+
+
+File Formats
+------------
+
+"CV4 Symbolic Debug Information Specification"
+Languages Business Unit, Microsoft
+
+"Microsoft Object Mapping Specification"
+Languages Business Unit, Microsoft
+
+"The Microsoft Object Module Format (OMF)"
+Languages Utilities Group, Microsoft
+
+
+Graphics
+--------
+
+"ZEN of Graphics Programming"
+Michael Abrash
+Coriolis Group Books
+ISBN 1-883577-08-X
+
+
+Assembly Language
+-----------------
+
+"ZEN of Code Optimization"
+Michael Abrash
+Coriolis Group Books
+ISBN 1-883577-03-9
+
+"Pentium Processor User's Manual, 
+Volume 3: Architecture and Programming Manual"
+Intel Literature Sales
+PO Box 7641
+Mt. Prospect, IL 60056-7641
+1-800-548-4725
+
+
+32 Bit Windows Programming
+--------------------------
+
+"Advanced Windows"
+Jeffrey Richter
+Microsoft Press
+ISBN 1-55615-677-4
+
+
+16 Bit Windows Programming
+--------------------------
+
+"Programming Windows 3.1, Third Edition"
+Charles Petzold
+Microsoft Press
+ISBN 1-55615-395-3
+
+"Undocumented Windows"
+Andrew Schulman
+Addison-Wesley
+ISBN 0-201-60834-0
+
+"Writing Windows Device Drivers"
+Daniel A. Norton
+Addison-Wesley
+ISBN 0-201-57795-X
+
+
+Incomprehensible
+----------------
+
+"Program Data Flow Analysis"
+Michael Stone
+
+
+Compiler Writing
+----------------
+
+Haha, think I'd give away any secrets?

@@ -1,0 +1,30 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "GENERIC.H\0"
+END
+
+ABOUTBOX DIALOG 22, 17, 167, 64
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About Generic"
+BEGIN
+    DEFPUSHBUTTON   "OK", IDOK, 132, 2, 32, 14, WS_GROUP
+    ICON            "Generic", -1, 3, 2, 16, 16
+    LTEXT           "CompanyName", DLG_VERFIRST, 30, 2, 100, 8
+    LTEXT           "FileDescription", 401, 30, 10, 82, 8
+    LTEXT           "ProductVersion", 402, 114, 10, 16, 8
+    LTEXT	    "LegalCopyright", 403, 30, 18, 137, 8
+    LTEXT           "LegalTrademarks", DLG_VERLAST, 30, 34, 136, 27
+    CONTROL         "", 501, "Static", SS_BLACKRECT, 28, 31, 138, 1
+END

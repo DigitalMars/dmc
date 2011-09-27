@@ -1,0 +1,39 @@
+REGEDIT
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info DspCalc2.Application (defaults to DspCalc2.Application.1
+
+HKEY_CLASSES_ROOT\Dspcalc2.Application = OLE Automation Dspcalc2 Application
+HKEY_CLASSES_ROOT\Dspcalc2.Application\Clsid = {00020469-0000-0000-C000-000000000046}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info DspCalc2.Application.1
+
+HKEY_CLASSES_ROOT\Dspcalc2.Application.1 = OLE Automation Dspcalc2 1.0 Application
+HKEY_CLASSES_ROOT\Dspcalc2.Application.1\Clsid = {00020469-0000-0000-C000-000000000046}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info DspCalc2 1.0
+
+HKEY_CLASSES_ROOT\CLSID\{00020469-0000-0000-C000-000000000046} = OLE Automation Dspcalc2 1.0 Application
+HKEY_CLASSES_ROOT\CLSID\{00020469-0000-0000-C000-000000000046}\ProgID = Dspcalc2.Application.1
+HKEY_CLASSES_ROOT\CLSID\{00020469-0000-0000-C000-000000000046}\VersionIndependentProgID = Dspcalc2.Application
+HKEY_CLASSES_ROOT\CLSID\{00020469-0000-0000-C000-000000000046}\LocalServer = dspcalc2.exe /Automation
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; registration info DspCalc2 TypeLib
+
+HKEY_CLASSES_ROOT\TypeLib\{00020470-0000-0000-C000-000000000046}
+HKEY_CLASSES_ROOT\TypeLib\{00020470-0000-0000-C000-000000000046}\1.0 = OLE Automation DspCalc2 1.0 Type Library
+HKEY_CLASSES_ROOT\TypeLib\{00020470-0000-0000-C000-000000000046}\1.0\HELPDIR =
+;Localized language is US english
+HKEY_CLASSES_ROOT\TypeLib\{00020470-0000-0000-C000-000000000046}\1.0\409\win16 = DSPCALC2.TLB
+
+HKEY_CLASSES_ROOT\Interface\{00020442-0000-0000-C000-000000000046} = _DCalculator
+HKEY_CLASSES_ROOT\Interface\{00020442-0000-0000-C000-000000000046}\ProxyStubClsid = {00020420-0000-0000-C000-000000000046}
+HKEY_CLASSES_ROOT\Interface\{00020442-0000-0000-C000-000000000046}\NumMethod = 7
+HKEY_CLASSES_ROOT\Interface\{00020442-0000-0000-C000-000000000046}\BaseInterface = {00020400-0000-0000-C000-000000000046}

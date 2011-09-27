@@ -1,0 +1,72 @@
+"Extra Information".txt
+
+Here is some extra information on security.  Although these issues
+  have come up in the past in discussion with developers of Win32
+  apps, this isn't really a FAQ (Frequently Asked Questions) list,
+  in that some of the issues below haven't come up that often.
+  It's just extra information made available to you on this CD
+
+From time to time when we answer questions that pertain to any of
+  the issues below, we may refer to particular ranges of line
+  numbers in this file as part of the discussion.  We may also
+  upload to a Compuserve library (for example GO MSWIN32) updated
+  versions of this file that would contain additional and/or more
+  recent extra information
+
+--- Getting started with security as a developer
+
+  Among the first places to look would be:
+
+    - "Inside Windows NT", by Custer, from MS Press, 1993, ISBN
+      1-55615-481-X.  See pages 72-81
+
+    - "Windows NT - Answer Book", by Groves, from MS Press, 1993,
+      ISBN 1-55615-562-X.  See pages 44-141 and 187-190.  Much of
+      this information is actually more tuned towards
+      administrators and end-users, however developers may also
+      find this information useful
+
+    - The Windows NT Resource Guide (see on this CD the
+      \doc\enduser\resource directory), chapter 3, which is pages
+      51-92
+
+    - The two-article "Inside Windows NT Security" series by Rob
+      Reichel that appeared in Windows/DOS Developer's Journal.
+      The first of the series appeared in the April 1993 issue
+      beginning on page 6, the second appeared in the May 1993
+      issue, pages 44-50
+
+    - The Win32 .hlp file.  Click on "Functions and Overviews",
+      choose Security, click the "Overview" button.  The first
+      nine subtopics ("Terms" through "SIDs") need to be
+      understood before moving on.  In particular see the diagram
+      in the "Security Model" subtopic, that shows the
+      relationship between Access Token and ACL.  Pages 84-92 of
+      the Windows NT Resource Guide chapter 3 have examples
+      showing how this relationship works
+
+    - This sample, check_sd, is also useful in understanding
+      Access Tokens and ACLs.  It shows what some actual examples
+      of the data structures on your machine look like, how the
+      different defines for building up Access Mask values may
+      have been used, etc
+
+--- Information on C2 security
+
+  In the Windows NT Resource Guide (see on this CD the
+    \doc\enduser\resource directory) on pages 52-54 is a summary
+    of the C2 criteria.  This is a good place to start
+    understanding the C2 criteria, as is "Inside Windows NT", by
+    Custer, from MS Press, 1993, ISBN 1-55615-481-X.  See pages
+    3-4, 74-76, 196, 330 and 370
+
+  If more info is needed, the Government Printing Office
+    (202)783-3238 provides copies of the Orange Book, GPO Stock
+    Number 008-000-00461-7 at nominal charges.  Another reference
+    is the book "Computer Security Basics", by Russel and Gangemi,
+    from O'Reilly & Assoc, 1992, ISBN 0-937175-71-4.  This book
+    has a 59 page chapter 6 (called "Inside the Orange Book")
+    along with other information that may be useful to those
+    working their way through each of the 121 pages in the Orange
+    Book
+

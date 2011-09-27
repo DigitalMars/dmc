@@ -1,0 +1,21 @@
+82572
+C:\SC\samples\win32\SDKTOOLS\WINDIFF\WINDIFF.PRJ
+windiff.OPN
+novcs
+WINDIFF.DEF
+16
+812035224
+0 0 0 0 0 "bar.c" ""
+0 0 0 0 0 "compitem.c" ""
+0 0 0 0 0 "complist.c" ""
+0 0 0 0 0 "file.c" ""
+0 0 0 0 0 "line.c" ""
+0 0 0 0 0 "scandir.c" ""
+0 0 0 0 0 "section.c" ""
+0 0 0 0 0 "view.c" ""
+0 0 0 0 0 "windiff.c" ""
+0 0 0 0 0 "windiff.rc" ""
+0 0 0 0 0 "windiff.def" ""
+0 0 0 0 0 "gutils.lib" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "Dll\gutils.prj" ""

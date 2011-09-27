@@ -1,0 +1,121 @@
+//
+// DEFO2V.RC2 - resources App Studio does not edit directly
+//
+#include "resource.h"
+#include "windows.h"
+#define IDC_STATIC -1
+#ifdef APSTUDIO_INVOKED
+    #error this file is not editable by App Studio
+#endif //APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+// Version stamp for this .EXE
+
+#ifndef WIN32
+#include "ver.h"
+#else
+#include "winver.h"
+#endif
+
+VS_VERSION_INFO     VERSIONINFO
+  FILEVERSION       1,33,33,0
+  PRODUCTVERSION    1,33,33,0
+  FILEFLAGSMASK     VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+  FILEFLAGS         VS_FF_DEBUG|VS_FF_PRIVATEBUILD|VS_FF_PRERELEASE
+#else
+  FILEFLAGS         0 // final version
+#endif
+  FILEOS            VOS_DOS_WINDOWS16
+  FILETYPE          VFT_DLL
+  FILESUBTYPE       0   // not used
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4" // Lang=US English, CharSet=Windows Multilingual
+        BEGIN
+            VALUE "CompanyName",     "Microsoft Corporation\0"
+            VALUE "FileDescription", "Default Ole2View iface Viewers\0"
+            VALUE "FileVersion",     "1.33.000\0"
+            VALUE "InternalName",    "DEFO2V.DLL\0"
+            VALUE "LegalCopyright",  "Copyright \251 1993-1995 Microsoft Corp. All Rights Reserved.\0"
+            VALUE "LegalTrademarks", "By Charlie Kindel\0"
+            VALUE "OriginalFilename","DEFO2V.DLL\0"
+            VALUE "ProductName",     "OLE 2.0 Object Viewer\0"
+            VALUE "ProductVersion",  "1.33\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+            // English language (0x409) and the Windows ANSI codepage (1252)
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+// Add additional manually edited resources here...
+/////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_IDISPDLG DIALOG DISCARDABLE  0, 0, 341, 260
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "IDispatch/ITypeInfo Viewer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&TypeInfo:",IDC_STATIC,5,30,32,8
+    COMBOBOX        IDC_TYPEINFO,5,41,110,79,CBS_DROPDOWNLIST | CBS_SORT |
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Number of TypeInfos:",IDC_STATIC,5,20,71,8
+    LTEXT           "%d",IDC_TYPEINFOCOUNT,80,20,15,8
+    LISTBOX         IDC_TYPEATTR,120,4,215,49,LBS_NOINTEGRALHEIGHT |
+                    LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "&Functions",IDC_FUNCTIONS_LBL,5,55,130,202
+    LISTBOX         IDC_FUNCTIONS,10,68,120,72,LBS_SORT | LBS_USETABSTOPS |
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "F&unction Prototype:",IDC_FUNCPROTO_LBL,10,142,65,8
+    EDITTEXT        IDC_FUNCPROTO,10,152,120,101,ES_MULTILINE |
+                    ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+    GROUPBOX        "&Variables/Data Members:",IDC_VARIABLES_LBL,140,55,150,
+                    85
+    LISTBOX         IDC_VARIABLES,145,68,140,68,LBS_USETABSTOPS |
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&FUNCDESC/VARDESC:",IDC_FUNCVARDESC_LBL,140,142,185,8
+    LISTBOX         IDC_FUNCVARDESC,140,152,195,104,LBS_USETABSTOPS |
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Close",IDCANCEL,295,60,38,14
+    LTEXT           "Does it use a TypeLib",IDC_TYPEINFOINFO,5,3,110,16
+    PUSHBUTTON      "To F&ile...",IDC_TOFILE,295,80,38,15
+END
+
+IDD_IDATAOBJDLG DIALOG DISCARDABLE  0, 0, 299, 236
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION |
+    WS_SYSMENU | WS_THICKFRAME
+CAPTION "WOSA/XRT IDataObject Viewer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&FORMATETC:",IDC_STATIC,5,4,47,8
+    LTEXT           "GetData and OnDataChange &results:",IDC_STATIC,5,130,
+                    120,8
+    CONTROL         "&Update Display on change",IDC_UPDATEDISPLAY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,62,4,97,10
+    EDITTEXT        IDC_ADVISEDATA,1,142,299,94,ES_MULTILINE |
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY |
+                    WS_VSCROLL
+    LTEXT           "&Misc info and errors:",IDC_STATIC,5,76,73,9
+    LISTBOX         IDD_IDATAOBJDLG,5,88,238,40,LBS_NOINTEGRALHEIGHT |
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&GetData",IDC_DOGETDATA,252,22,43,14
+    PUSHBUTTON      "&DAdvise",IDC_SETUPADVISE,252,39,43,14
+    CONTROL         "&ADVF_PRIMEFRIST",IDC_PRIMEFIRST,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,165,4,77,10
+    DEFPUSHBUTTON   "Close",IDCANCEL,252,6,43,14
+    PUSHBUTTON      "&Clear",IDC_CLEAROUTPUT,252,124,43,14
+    LISTBOX         IDC_FORMATETC,5,16,238,57,LBS_OWNERDRAWFIXED |
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT |
+                    LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+END
+

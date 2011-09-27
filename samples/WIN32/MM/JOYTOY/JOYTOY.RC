@@ -1,0 +1,18 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1992 - 1995	Microsoft Corporation.	All Rights Reserved.
+ * 
+ **************************************************************************/
+
+#include    <windows.h>
+#include "joytoy.rcv"
+
+AppIcon     ICON    joytoy.ico
+HoleIcon    ICON    hole.ico
+SOUND1      WAVE    btnsnd1.wav
+SOUND2      WAVE    btnsnd2.wav

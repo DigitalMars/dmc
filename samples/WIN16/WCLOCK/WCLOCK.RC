@@ -1,0 +1,38 @@
+/*  Symantec C++  Demonstration Program
+ *  Copyright (C) 1993  Symantec Corp.
+ */
+
+#include <windows.h>
+#include "wclock.h"
+
+
+CLKICON	ICON	WCLOCK.ICO
+
+
+CLKMENU MENU 
+BEGIN
+	POPUP "&Commands"
+	BEGIN
+		MENUITEM "Select &New Colors", IDM_NEWCOLORS
+		MENUITEM "&Shapes", IDM_SHAPE, CHECKED
+		MENUITEM SEPARATOR
+		MENUITEM "&Infinite Loop", IDM_INFINITE
+		MENUITEM "&Memory Overwrite", IDM_OVERWRITE
+		MENUITEM "&Crash Clock", IDM_CRASH
+		MENUITEM SEPARATOR
+		MENUITEM "&About...", IDM_ABOUT
+	END
+
+END
+
+
+CLKABOUT DIALOG LOADONCALL MOVEABLE DISCARDABLE 37, 52, 190, 56
+CAPTION "About Symantec Weird Clock"
+STYLE WS_BORDER | WS_CAPTION | WS_DLGFRAME | DS_MODALFRAME | WS_POPUP
+BEGIN
+  CONTROL "Symantec Weird Clock Program", 100, "static", SS_CENTER | WS_CHILD, 0, 8, 190, 10
+  CONTROL "Copyright (C) 1993 Symantec Corp.", 101, "static", SS_CENTER | WS_CHILD, 0, 16, 190, 8
+  CONTROL "All Rights Reserved.", 102, "static", SS_CENTER | WS_CHILD, 0, 24, 190, 8
+  CONTROL "Ok", IDM_ABOUTOK, "button", BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 80, 39, 34, 12
+END
+

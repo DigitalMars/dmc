@@ -1,0 +1,9 @@
+82572
+C:\SC\samples\win16\DLLPROJ\THEDLL.PRJ
+THEDLL.OPN
+novcs
+THEDLL.DEF
+1
+812035224
+0 0 0 0 0 "thedll.cpp" ""
+0 0 0 0 0 "thedll.def" ""

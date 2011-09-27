@@ -1,0 +1,307 @@
+Exit Windows to DOS
+Restart the Windows session
+Start debugging the program - Set the environment in debugging mode
+Stop debugging the program - Set the environment back in editing mode
+Display environment version information
+Open the Assembly view
+Open the Breakpoint view
+Open the Call view
+Open the Data/Object view
+Open the Graphic data view
+Open the Log view
+Open the Memory view
+Open the Module view
+Display the application being debugged
+Open the Register view
+Open the Source view
+Open the Function view
+Open the Watch view
+Open the Class Browser view
+Open the Spy view
+Pop-up the Command Line view
+Pop-up the Error view
+Close the current view
+List all views of the environment
+Display or tear-off the environment views palette
+Display or tear-off the debugger commands palette
+Display or tear-off the editing/building palette
+Display text in active view in tiny size fonts
+Display text in active view in small size fonts
+Display text in active view in medium size fonts
+Display text in active view in large size fonts
+Display text in active view in huge size fonts
+Create a new workspace
+Create a new workspace by cloning the current one
+Save the screen configuration for all workspaces
+Delete the current workspace
+Set workspace options
+Rename the current workspace
+Reset the current workspace to original screen configuration
+Step over the next assembly instruction
+Step into the next assembly instruction
+Execute until the next breakpoint or watchpoint
+Ignore all breakpoints and execute the program to its end
+Step over the next source line statement
+Execute until the currently selected assembly instruction
+Execute until the entry of the next procedure call
+Execute until the return from the current procedure
+Execute until the currently selected source line
+Step into the next source line statement
+Animate the program execution
+Stop animating the program execution
+Pop-up the debugger remote control Dialog
+Evaluate an expression
+Convert a hexadecimal value to decimal
+Convert a decimal value to hexadecimal
+Display the help contents
+Search for a help topic
+Display Function Reference help
+Display Windows 3.1 SDK Reference help
+Display Win32s Reference help
+Display Microsoft Foundation Classes 2.5x Reference help
+Display Wicrosoft Foundation Classes 3.x Reference help
+Display Win32 Reference help
+Display Symantec Cafe Tutorial help
+Display Intro to Java Programming help
+Display Java API Reference help
+Display Java Language Reference help
+Toggle screen flipping to the application window at each go command
+Set the delay for the go animate command
+Set the width in spaces for tabs
+Enable the display of C++ class names
+Display the C++ class names with member name first
+Specify the user interface used (Windows/character mode) when debugging
+Specify remote debugging options
+Specify DLL or other EXE debugging options
+Specify the search path used by the debugger to find source files
+Enable the debugging of application startup code
+Create a new source file
+Load an existing file into the current view
+Open an existing file into a new source view
+Save current source file to disk
+Save current source file to a different name
+Save all source files
+Close the current source view
+Close the current source view and save the file
+Change the file attribute of the current source file to Read Only
+Change the file attribute of the current source file to Read Write
+Change the date/time stamp of the current file to current date/time
+Print the contents of the current file
+Exit the environment
+Exit the environment and save all changed files and options
+Exit the environment and discard all changes
+Undo the last edit change made
+Undo multiple edit changes made
+Redo the last edit change made
+Move the selection to the scrap
+Move the current line to the scrap
+Move from the insertion point to the end of the line to the scrap
+Copy the selection to the scrap
+Paste the contents of the scrap to the insertion point
+Delete the selection without disturbing the scrap
+Insert an ASCII character
+Toggle between overtype and insertion modes
+Search for a string
+Search for the next occurrence of the selection string
+Search for the previous occurrence of the selection string
+Execute the SuperFind tool for multiple file search
+Search for and replace strings
+Locate the matching bracket of the selected bracket
+Position at a specified line number
+Position at the current selection position
+Position at the last selection position
+Locate the next error in the file
+Create a new project
+Open an existing project
+Edit an existing project
+Add the current source file to the project
+Close the project
+Preprocess the current source file
+Precompile the current source header file
+Compile the current source file
+Disassemble the object file corresponding to the current source file
+Link the project
+Build the project
+Rebuild the entire project
+Run the program
+Specify the command-line arguments for the program
+Specify the compiler options
+Specify the compiler source code options
+Specify the compiler header file options
+Specify the compiler memory model options
+Specify the compiler code optimization
+Specify the compiler Windows prolog and epilog options
+Specify other compiler code generation options
+Specify the compiler output options
+Specify the compiler debug information generation options
+Specify the linker options
+Specify the resource compiler options
+Specify the import librarian options
+Specify the build options
+Specify the editor options
+Specify the tools directories (includes, libraries, output)
+Specify the application type and application build options
+Specify the version control system options
+Manage project option sets
+Set Version Control System configuration file
+Get files from the Version Control System archives
+Merge changed files with the Version Control System archives
+Put files back into the Version Control System archives
+Manage the Version Control System archives
+Launch the Symantec Resource Environment
+Launch the Symantec Visual Programmer
+Enter context-sensitive help mode
+Open a file into the Source window
+Find a procedure/function in the current source file (wildcards allowed)
+Find a line number in the current source file
+Find a character string in the current source file
+Repeat the last find command
+Update the Assembly window to the location of the selected source line
+Show the decode address of the selected source line
+Toggle breakpoint on the selected source line
+Set a conditional breakpoint on the selected source line
+Clear all the breakpoints in the program
+Change the instruction pointer (CS:IP) to the address of the selected line
+Find a variable in the current Data window scope (wildcards allowed)
+Find a global variable in the entire program (wildcards allowed)
+Repeat the last find command
+Display the contents of the current selection (same as double-click)
+Display the parent of the current scope (same as double-click right)
+Display the next element of this array (same scope)
+Display the previous element of this array (previous scope)
+Display a specific index of the current selection
+Display the variable declaration level scope
+Toggle between local and global data display
+Toggle on/off the option of displaying methods in C++ objects
+Display a graphical representation of the selection in the Graphic Data window
+Update the Memory window at the address of the current selection
+Update the Source window at the location of the selected method
+Show the address of the current selection
+Toggle breakpoint on the selected method
+Set a conditional breakpoint on the selected method
+Clear all breakpoints in the program
+Set a 386/486 memory watchpoint on the current selection
+Clear the watchpoint set on the current selection
+Clear all watchpoints in the program
+Browse the selected pointer as array of the same element
+Display the value of the current selection in hexadecimal
+Browse the current selection as if it was of another type
+Browse the current selection as its original type
+Show character string pointed to by the selected pointer
+Set/Clear the option of displaying pointers to char as array of char
+Modify the value of the current selection
+Update the Source window at the location of the selected call
+Update the Data window with the parameters and local data of the selected call
+Update the Assembly window at the location of the selected call
+Update all windows according to the current call (same as double-click)
+Show the code address of the selected call
+Find a file in the program (wildcards allowed)
+Find a procedure/function in the program (wildcards allowed)
+Repeat the last find command
+Set/Clear the option of updating the Source window on a find module
+Set/Clear the option of updating the Source window on a find procedure
+Set/Clear the option of activating the Source window after a find command
+Update the Source window to display the sources of the selected file
+Update the Data window with the global data of the selected file
+Update the Assembly window at the location of the selected file
+Update all windows according to the current file (same as double-click)
+Show the address of the beginning code address of the selected file
+Set the Data window language for the selected file to Assembly
+Set the Data window language for the selected file to Basic
+Set the Data window language for the selected file to C/C++
+Set the Data window language for the selected file to Fortran
+Set the Data window language for the selected file to Modula-2
+Set the Data window language for the selected file to Pascal
+Enable stepping into the selected file
+Disable stepping into the selected file
+Enable stepping into all files in the Module window
+Disable stepping into all files in the Module window
+Set/Clear the option of displaying symbols (this may slow down the debugger)
+Set/Clear the option of displaying source lines
+Set/Clear the option of displaying opcodes
+Toggle breakpoint on the selection instruction
+Set a conditional breakpoint on the selected instruction
+Clear all the breakpoints in the program
+Set the decode address of the Assembly window
+Change the instruction pointer (CS:IP) to the address of the selected line
+Open a message file where the Spy window will send all window messages
+Close the currently open message file
+Pause the output of window messages to the message file
+Update the Source window to the window proc of the selected message
+Update the Memory window to display memory at the address indicated by lParam
+Set a message breakpoint on the selected message
+Set a message breakpoint on a specific message to a specific window
+Clear all the breakpoints in the program
+Enable the spying of messages
+Clear the Spy window
+Specify the windows whose messages you want to spy
+Specify the messages that you want to spy
+Post a message to a window
+Set the Memory window display mode to character
+Set the Memory window display mode to text
+Set the Memory window display mode to byte
+Set the Memory window display mode to word
+Set the Memory window display mode to unsigned
+Set the Memory window display mode to integer
+Set the Memory window display mode to long integer
+Set the Memory window display mode to short real
+Set the Memory window display mode to long real
+Set the Memory window display mode to extended real
+Set the Memory window display mode to addres
+Set a 386/486 memory watchpoint on the current selection
+Clear the watchpoint set on the current selection
+Clear all the watchpoints in the program
+Modify the value of the current selection
+Set the view address of the Memory window
+Set the live view address of the Memory window (updated at each go)
+Display memory at the address pointed to by the current selection
+Show information about the selected box
+Show the subgraph represented by the selected box
+Show the parent of the current subgraph
+Zoom in around the selected box (same as double-click)
+Zoom out around the selected box (same as double-click right)
+Reset the zoom to the original zoom factor
+Clear the current graph from memory
+View the Register window in hexadecimal
+View the Register window in decimal
+Toggle the Register window display between horizontal and vertical modes
+Modify the value of the selected register
+Output a byte to an I/O port
+Output a word to an I/O port
+Input a byte from an I/O port
+Input a word from an I/O port
+Find a class name
+Display the class hierarchy for the selected class name
+Display C++ classes in another DLL or EXE file
+Update the Source window to the selected breakpoint (same as double-click)
+Update the Assembly window to the address of the selected breakpoint
+Set a breakpoint anywhere in the program
+Set a conditional breakpoint anywhere in the program
+Clear the selected breakpoint
+Clear all the breakpoints in the program
+Enable the selected breakpoint
+Disable the selected breakpoint (without clearing it)
+Update the Memory window to the location of the selected watchpoint
+Clear the selected watchpoint
+Clear all the watchpoints in the program
+Set the software watchpoint granularity to assembly stepping (286 only)
+Set the software watchpoint granularity to source stepping (286 only)
+Set the software watchpoint granularity to procedure stepping (286 only)
+Open a log file where the Log window will send all debugger commands
+Close the currently open log file
+Pause the output of the Log window to the log file
+Find a procedure/function in the Procedure window (wildcards allowed)
+Find a module in the Procedure window (wildcards allowed)
+Repeat the last find command
+Update the Source window to the entry point of the selected procedure
+Update the Data window to the parameters and local data of the selected proc.
+Update the Data window to the global data of the file containing the procedure
+Update the Assembly window to the address of the selected procedure
+Update all windows according to the selected procedure (same as double-click)
+Toggle breakpoint on the selected procedure entry point
+Set a conditional breakpoint at the entry point of the selected procedure
+Clear all the breakpoints in the program
+Set a breakpoint at the entry points of all of the procedures of the window
+Clear all the breakpoints set at the entry points of all the procedures
+View the procedures of the current file in the Source window
+View all the procedures of the program

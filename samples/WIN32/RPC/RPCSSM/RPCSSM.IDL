@@ -1,0 +1,29 @@
+[ uuid (A4F1DB00-CA47-1067-B31F-00DD010662DA),
+  version(1.0),
+  pointer_default(unique)
+]
+interface rpcssm
+{
+
+/* =======================================================================
+                       data types
+======================================================================= */
+
+const short LIST_SIZE = 4;
+
+typedef struct _lbox {
+    long               data;
+    struct _lbox *     next;
+} LBOX, * PBOX;
+
+/* =======================================================================
+                      remote procedures
+======================================================================= */
+
+void 
+InOutList( [in,out] PBOX  *  ppBox );
+
+void Shutdown(void);
+
+}
+

@@ -1,0 +1,58 @@
+1 DLGINCLUDE "DLGS.H"
+
+PRTEMP1 DIALOG 51, 35, 225, 148
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "Print Print Custom Template"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "Printer:  System Default", stc1, 4, 4, 152, 8
+    GROUPBOX        "Print Range", grp1, 4, 27, 132, 62
+    RADIOBUTTON     "&All", rad1, 10, 39, 76, 12, WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "S&election", rad2, 10, 50, 76, 12
+    RADIOBUTTON     "&Pages", rad3, 10, 61, 76, 12
+    RTEXT           "&From:", stc2, 24, 75, 24, 9
+    EDITTEXT        edt1, 52, 73, 26, 12, ES_RIGHT
+    RTEXT           "&To:", stc3, 82, 75, 16, 9
+    EDITTEXT        edt2, 102, 73, 26, 12, ES_RIGHT
+    LTEXT           "Print &Quality:", stc4, 4, 96, 56, 9
+    COMBOBOX        cmb1, 55, 94, 81, 36, CBS_DROPDOWNLIST | WS_BORDER | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Copies:", stc5, 153, 88, 29, 9
+    EDITTEXT        edt3, 184, 86, 22, 12, ES_RIGHT
+    AUTOCHECKBOX    "Print to Fi&le", chx1, 4, 111, 48, 12, WS_GROUP
+    AUTOCHECKBOX    "Collate Cop&ies", chx2, 153, 103, 67, 12, WS_GROUP
+    DEFPUSHBUTTON   "OK", IDOK, 144, 4, 78, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 144, 20, 78, 14, WS_GROUP
+    PUSHBUTTON      "&Setup...", ctlFirst, 144, 36, 78, 14, WS_GROUP
+    PUSHBUTTON      "Print Print Custom Template Button", psh14, 4, 130, 217, 
+                    14, WS_GROUP
+    PUSHBUTTON      "&Help", psh15, 144, 52, 78, 14, WS_GROUP
+    GROUPBOX        "Copies Options", 101, 142, 71, 78, 51
+END
+
+PRTEMP2 DIALOG 9, 29, 299, 91
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Print Setup Custom Template"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "&Printer:", stc1, 4, 6, 31, 9
+    COMBOBOX        cmb1, 38, 5, 190, 81, CBS_DROPDOWNLIST | WS_BORDER | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Orientation", grp1, 4, 20, 91, 45
+    ICON            "", ico1, 7, 36, 29, 16
+    RADIOBUTTON     "Po&rtrait", rad1, 41, 31, 51, 12, WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "&Landscape", rad2, 41, 43, 51, 12
+    GROUPBOX        "Paper", grp2, 98, 20, 130, 45
+    LTEXT           "&Form:", stc2, 102, 33, 26, 9
+    COMBOBOX        cmb2, 131, 30, 94, 112, CBS_DROPDOWNLIST | WS_BORDER | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 233, 3, 59, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 233, 19, 59, 14, WS_GROUP
+    PUSHBUTTON      "&More...", ctlFirst, 233, 35, 59, 14, WS_GROUP
+    PUSHBUTTON      "Print Setup Custom Template Button", psh14, 4, 72, 182, 
+                    14, WS_GROUP
+    PUSHBUTTON      "&Help", psh15, 233, 51, 59, 14, WS_GROUP
+    AUTOCHECKBOX    "&Print Setup Option Box", 101, 206, 74, 87, 10
+END

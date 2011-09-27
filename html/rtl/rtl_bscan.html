@@ -1,0 +1,80 @@
+<HTML>
+<!--
+	Copyright (c) 2001 by Digital Mars
+	All Rights Reserved
+	Written by Walter Bright
+	www.digitalmars.com
+  -->
+
+<HEAD>
+	<TITLE>Runtime Library Reference</TITLE>
+</HEAD>
+<BODY>
+
+<h2>Inline Bit Scan</h2>
+
+<h4>Header</h4>
+<pre>
+	bitops.h
+</pre>
+<h4>Prototype</h4>
+<pre>
+	int _inline_bsf(unsigned v);
+	int _inline_bsr(unsigned v);
+</pre>
+<h4>Description</h4>
+	<b>_inline_bsf</b> scans the bits in v starting with bit 0, looking
+	for the first set bit.
+<p>
+	<b>_inline_bsr</b> scans the bits in v from the most significant bit
+	to the least significant bit, looking
+	for the first set bit.
+<p>
+	These functions are inlined by the compiler, bringing to bear
+	the full power of the code generator on them. This can result
+	in some surprising speedups when they are used as part of a bit
+	array solution.
+<p>
+<b>Return Value</b><br> 
+	Both return the bit number of the first set bit.
+	The return value is undefined if v is zero.
+<p>
+<b>Compatibility</b><br> 
+	DOS, Windows 3.x, Phar Lap, DOSX, Win32 
+<p>
+<b>See Also</b><br> 
+	<a href="rtl_bt.html">_inline_bt</a>, 
+	<a href="rtl_bt.html">_inline_btc</a>, 
+	<a href="rtl_bt.html">_inline_bts</a>,
+	<a href="rtl_bt.html">_inline_btr</a> 
+<p>
+<b>Example</b><br> 
+<pre>
+<code>
+	#include &lt;stdio.h&gt;
+	#include &lt;bitops.h&gt; 
+
+	int main()
+	{   
+	    unsigned v;
+	    int x;
+
+	    v = 0x21;
+	    x = <b>_inline_bsf</b>(v);
+	    printf(&quot;bsf(x%x) = %d\n&quot;, v, x);
+	    x = <b>_inline_bsr</b>(v);
+	    printf(&quot;bsr(x%x) = %d\n&quot;, v, x);
+	    return 0;
+	} 
+</code>
+</pre>
+<b>Output</b><br>
+<pre>
+	bsf(x21) = 0
+	bsr(x21) = 5
+</pre>
+
+</BODY>
+</HTML>
+
+

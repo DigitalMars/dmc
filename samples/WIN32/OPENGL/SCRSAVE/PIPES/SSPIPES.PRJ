@@ -1,0 +1,29 @@
+82572
+C:\sc\samples\win32\opengl\scrsave\pipes\sspipes.prj
+sspipes.OPN
+novcs
+sspipes.DEF
+16
+852907800
+0 0 0 0 0 "dialog.c" ""
+0 0 0 0 0 "eval.cxx" ""
+0 0 0 0 0 "fpipe.cxx" ""
+0 0 0 0 0 "fstate.cxx" ""
+0 0 0 0 0 "node.cxx" ""
+0 0 0 0 0 "npipe.cxx" ""
+0 0 0 0 0 "nstate.cxx" ""
+0 0 0 0 0 "objects.cxx" ""
+0 0 0 0 0 "pipe.cxx" ""
+0 0 0 0 0 "sspipes.cxx" ""
+0 0 0 0 0 "state.cxx" ""
+0 0 0 0 0 "view.cxx" ""
+0 0 0 0 0 "xc.cxx" ""
+0 0 0 0 0 "sspipes.rc" ""
+0 0 0 0 0 "sspipes.DEF" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "sscommon.lib" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "comctl32.lib" ""

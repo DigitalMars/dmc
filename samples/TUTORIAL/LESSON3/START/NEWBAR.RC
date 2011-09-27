@@ -1,0 +1,11 @@
+//
+// SYMANTEC Resource Editor generated resource file
+//
+
+#include <afxres.h>
+#include <ver.h>
+#include "newbar.k"
+
+IDB_NEWBAR	BITMAP	MOVEABLE PURE LOADONCALL DISCARDABLE	"NEWBAR.BMP"
+
+

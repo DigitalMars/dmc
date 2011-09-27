@@ -1,0 +1,16 @@
+82572
+C:\SC\samples\win32\WIN32S\FRACTAL\SEG32.PRJ
+SEG32.OPN
+novcs
+seg32.def
+20
+812035224
+0 0 0 0 0 "bfparam.cpp" ""
+0 0 0 0 0 "butterf.cpp" ""
+0 0 0 0 0 "cdib.cpp" ""
+0 0 0 0 0 "dib.cpp" ""
+0 0 0 0 0 "fractal.cpp" ""
+0 0 0 0 0 "frparam.cpp" ""
+0 0 0 0 0 "sbnch.cpp" ""
+0 0 0 0 0 "seg32.def" ""
+0 0 0 0 0 "sthrash.rc" ""

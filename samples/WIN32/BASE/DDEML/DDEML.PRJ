@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\BASE\DDEML\DDEML.PRJ
+DDEML.OPN
+novcs
+DDEML.DEF
+16
+853272438
+0 0 0 0 0 "client\client.prj" ""
+0 0 0 0 0 "ddemo\ddemo.prj" ""
+0 0 0 0 0 "server\server.prj" ""
+0 0 0 0 0 "CLOCK1\CLOCK.PRJ" ""

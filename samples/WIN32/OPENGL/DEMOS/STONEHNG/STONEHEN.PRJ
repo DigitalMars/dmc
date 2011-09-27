@@ -1,0 +1,27 @@
+82572
+C:\sc\samples\win32\opengl\demos\stonehng\stonehen.prj
+stonehen.OPN
+novcs
+stonehen.DEF
+16
+852907800
+0 0 0 0 0 "atmosphe.cxx" ""
+0 0 0 0 0 "callback.cxx" ""
+0 0 0 0 0 "ellipse.cxx" ""
+0 0 0 0 0 "point.cxx" ""
+0 0 0 0 0 "rgbimage.cxx" ""
+0 0 0 0 0 "ring.cxx" ""
+0 0 0 0 0 "roundwal.cxx" ""
+0 0 0 0 0 "scene.cxx" ""
+0 0 0 0 0 "setpixel.cxx" ""
+0 0 0 0 0 "stone.cxx" ""
+0 0 0 0 0 "stonehen.cxx" ""
+0 0 0 0 0 "telescop.cxx" ""
+0 0 0 0 0 "timedate.cxx" ""
+0 0 0 0 0 "stonehen.rc" ""
+0 0 0 0 0 "stonehen.DEF" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "glaux.lib" ""

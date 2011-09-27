@@ -1,0 +1,82 @@
+// db.odl : type library source for OLE Custom Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (db.tlb) that will become a resource in
+// db.ocx.
+
+// This is a part of the Microsoft Foundation Classes C++ library.
+// Copyright (C) 1992-1995 Microsoft Corporation
+// All rights reserved.
+//
+// This source code is only intended as a supplement to the
+// Microsoft Foundation Classes Reference and the
+// Books Online documentation provided with the library.
+// See these sources for detailed information regarding the
+// Microsoft Foundation Classes product.
+
+#include <olectl.h>
+
+[ uuid(EFF01748-7825-101B-8375-00AA00373FB9), version(1.0),
+  helpstring("Db OLE Custom Control module"), control ]
+library DbLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+	
+	//  Primary dispatch interface for CDbCtrl
+	
+	[ uuid(EFF01746-7825-101B-8375-00AA00373FB9),
+	  helpstring("Dispatch interface for Db Control"), hidden ]
+	dispinterface _DDb
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDbCtrl)
+			[id(2)] BSTR DataSource;
+			[id(3)] BSTR TableName;
+			[id(4)] BSTR ColumnName;
+			[id(5)] BSTR UserName;
+			[id(6)] BSTR Password;
+			[id(1)] BSTR Query;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDbCtrl)
+			[id(7)] void ReQuery();
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CDbCtrl
+	
+	[ uuid(EFF01747-7825-101B-8375-00AA00373FB9),
+	  helpstring("Event interface for Db Control") ]
+	dispinterface _DDbEvents
+	{
+		properties:
+			//  Event interface has no properties
+			
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CDbCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CDbCtrl
+	
+	[ uuid(EFF01745-7825-101B-8375-00AA00373FB9),
+	  helpstring("Db Control"), control ]
+	coclass Db
+	{
+		[default] dispinterface _DDb;
+		[default, source] dispinterface _DDbEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+};

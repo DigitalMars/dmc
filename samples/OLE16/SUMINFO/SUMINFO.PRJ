@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\ole16\SUMINFO\SUMINFO.PRJ
+SUMINFO.OPN
+novcs
+suminfo.def
+5
+812035224
+0 0 0 0 0 "testsumi.cpp" ""
+0 0 0 0 0 "suminfo.def" ""
+0 0 0 0 0 "loleuicd.lib" ""
+0 0 0 0 0 "compobj.lib" ""
+0 0 0 0 0 "ole2.lib" ""
+0 0 0 0 0 "storage.lib" ""

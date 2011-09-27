@@ -1,0 +1,13 @@
+82572
+C:\SC\Samples\WIN32\opengl\book\simple.prj
+simple.OPN
+novcs
+simple.DEF
+19
+853544938
+0 0 0 0 0 "simple.c" ""
+0 0 0 0 0 "simple.DEF" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "advapi32.lib" ""

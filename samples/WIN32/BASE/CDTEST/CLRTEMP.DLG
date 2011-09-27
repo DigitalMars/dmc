@@ -1,0 +1,41 @@
+1 DLGINCLUDE "colors.h"
+
+CLRTEMP DIALOG 10, 29, 309, 185
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Color Custom Template"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "&Basic Colors:", -1, 4, 4, 140, 9
+    CONTROL         "", 720, "Static", SS_SIMPLE | WS_GROUP | WS_TABSTOP, 4, 
+                    14, 140, 83
+    LTEXT           "&Custom Colors:", -1, 4, 102, 76, 9
+    CONTROL         "", 721, "Static", SS_SIMPLE | WS_GROUP | WS_TABSTOP, 4, 
+                    116, 140, 28
+    PUSHBUTTON      "&Define Custom Colors...", 719, 4, 150, 141, 14, 
+                    WS_GROUP
+    DEFPUSHBUTTON   "OK", IDOK, 4, 166, 33, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 40, 166, 33, 14, WS_GROUP
+    PUSHBUTTON      "&Template Help", 1038, 76, 166, 69, 14, WS_GROUP
+    CONTROL         "", 710, "Static", SS_BLACKFRAME, 157, 4, 118, 93
+    CONTROL         "", 702, "Static", SS_SIMPLE, 279, 4, 13, 93
+    CONTROL         "", 709, "Static", SS_BLACKFRAME, 162, 113, 40, 26
+    RTEXT           "Color|", -1, 162, 140, 20, 9
+    LTEXT           "S&olid", -1, 182, 140, 20, 9
+    PUSHBUTTON      "&o", 713, 270, 166, 4, 14, WS_GROUP
+    RTEXT           "&Hue:", 723, 204, 115, 20, 9
+    EDITTEXT        703, 226, 113, 18, 12, WS_GROUP
+    RTEXT           "&Sat:", 724, 204, 129, 20, 9
+    EDITTEXT        704, 226, 127, 18, 12, WS_GROUP
+    RTEXT           "&Lum:", 725, 204, 143, 20, 9
+    EDITTEXT        705, 226, 141, 18, 12, WS_GROUP
+    RTEXT           "&Red:", 726, 253, 115, 24, 9
+    EDITTEXT        706, 279, 113, 18, 12, WS_GROUP
+    RTEXT           "&Green:", 727, 253, 129, 24, 9
+    EDITTEXT        707, 279, 127, 18, 12, WS_GROUP
+    RTEXT           "Bl&ue:", 728, 253, 143, 24, 9
+    EDITTEXT        708, 279, 141, 18, 12, WS_GROUP
+    PUSHBUTTON      "&Add to Custom Colors", 712, 157, 166, 148, 14, 
+                    WS_GROUP
+    GROUPBOX        "Custom Template Group", 101, 157, 100, 147, 58
+END

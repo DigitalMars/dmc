@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\OPENGL\BOOK\SURFACE.PRJ
+SURFACE.OPN
+novcs
+surface.def
+4
+812035224
+0 0 0 0 0 "surface.c" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "surface.def" ""
+0 0 0 0 0 "advapi32.lib" ""

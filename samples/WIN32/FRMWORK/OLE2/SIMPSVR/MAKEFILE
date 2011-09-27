@@ -1,0 +1,61 @@
+# THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+# ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+# PARTICULAR PURPOSE.
+#
+# Copyright (C) 1993 - 1995  Microsoft Corporation.  All Rights Reserved.
+#
+#
+# Processor independent makefile
+
+# Nmake macros for building Windows 32-Bit apps
+!include <ntwin32.mak>
+
+PROJ = SIMPSVR
+
+all: $(PROJ).exe
+
+# Define project specific macros
+PROJ_OBJS  =  app.obj doc.obj icf.obj ido.obj iec.obj ioipao.obj ioipo.obj \
+              ioo.obj ips.obj obj.obj simpsvr.obj simpui.obj
+BASE_OBJS  =
+EXTRA_LIBS =
+GLOBAL_DEP = resource.h simpsvr.h
+RC_DEP     = resource.h
+
+# Dependencies
+
+app.obj:     app.cpp     $(GLOBAL_DEP)
+doc.obj:     doc.cpp     $(GLOBAL_DEP)
+icf.obj:     icf.cpp     $(GLOBAL_DEP)
+ido.obj:     ido.cpp     $(GLOBAL_DEP)
+iec.obj:     iec.cpp     $(GLOBAL_DEP)
+ioipao.obj:  ioipao.cpp  $(GLOBAL_DEP)
+ioipo.obj:   ioipo.cpp   $(GLOBAL_DEP)
+ioo.obj:     ioo.cpp     $(GLOBAL_DEP)
+ips.obj:     ips.cpp     $(GLOBAL_DEP)
+obj.obj:     obj.cpp     $(GLOBAL_DEP)
+simpsvr.obj: simpsvr.cpp $(GLOBAL_DEP)
+simpui.obj:  simpui.cpp  $(GLOBAL_DEP)
+
+
+
+# Inference rule for updating the object files
+.cpp.obj:
+  $(cc) $(cdebug) $(cflags4) $(cvars) $*.cpp
+
+# Build rule for resource file
+$(PROJ).res: $(PROJ).rc $(RC_DEP)
+    $(rc) $(rcflags) $(rcvars) /fo $(PROJ).res $(PROJ).rc
+
+# Build rule for EXE
+$(PROJ).EXE: $(BASE_OBJS) $(PROJ_OBJS) $(PROJ).res
+    $(link) $(linkdebug) $(guilflags4) \
+    $(BASE_OBJS) $(PROJ_OBJS) $(PROJ).res $(olelibs) $(EXTRA_LIBS) \
+    -out:$(PROJ).exe $(MAPFILE)
+
+
+
+# Rules for cleaning out those old files
+clean:
+    del *.bak *.pdb *.obj *.res *.exp *.map *.sbr *.bsc

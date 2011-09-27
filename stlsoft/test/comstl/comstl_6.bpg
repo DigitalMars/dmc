@@ -1,0 +1,64 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = interface_cast_test.exe allocator_test.exe bstr_functions_test.exe \
+  enumerator_sequence_test.exe functionals_test.exe memory_functions_test.exe \
+  olestring_functions_test.exe refcount_functions_test.exe rot_functions_test.exe \
+  security_initialisers_test.exe string_access_test.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+interface_cast_test.exe: interface_cast_test\cppbldr6\interface_cast_test.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+allocator_test.exe: allocator_test\cppbldr6\allocator_test.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+bstr_functions_test.exe: bstr_functions_test\cppbldr6\bstr_functions_test.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+enumerator_sequence_test.exe: enumerator_sequence_test\cppbldr6\enumerator_sequence_test.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+functionals_test.exe: functionals_test\cppbldr6\functionals_test.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+memory_functions_test.exe: memory_functions_test\cppbldr6\memory_functions_test.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+olestring_functions_test.exe: olestring_functions_test\cppbldr6\olestring_functions_test.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+refcount_functions_test.exe: refcount_functions_test\cppbldr6\refcount_functions_test.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+rot_functions_test.exe: rot_functions_test\cppbldr6\rot_functions_test.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+security_initialisers_test.exe: security_initialisers_test\cppbldr6\security_initialisers_test.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+string_access_test.exe: string_access_test\cppbldr6\string_access_test.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+

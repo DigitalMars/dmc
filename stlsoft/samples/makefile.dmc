@@ -1,0 +1,89 @@
+################################################################################
+# File:        makefile.dmc
+#
+# Purpose:     makefile for Digital Mars compiler, STLSoft v1.6.3 samples.
+#
+# Created:     30th May 2003
+# Updated:     11th June 2003
+#
+# Author:      Matthew Wilson, Synesis Software (c) 2003. All rights reserved.
+#
+# Copyright:   .
+#
+# Home:        http://www.stlsoft.org/
+#
+################################################################################
+
+################################################################################
+# Commands
+
+CC		=	dmc
+LD		=	dmc
+INC		=	.. # stlsoft libraries directory
+LIB		=	-L$(LIB)
+
+CPPCARGS	=	-c -I"$(INCLUDE)" -I$(INC)
+
+################################################################################
+# Objects
+
+OBJS		=	\
+				\
+				hardlink\dm\hardlink.obj \
+				pathchk\dm\pathchk.obj \
+				whereis\dm\whereis.obj
+
+################################################################################
+# Suffix rules
+
+.cpp.obj:
+	$(CPPC) $(CPPCARGS) -o$@ $?
+
+################################################################################
+# Targets
+
+usage:
+	-@echo "make [all | usage | clean]"
+
+all: target
+
+target:	hardlink\dm\hardlink.exe \
+		pathchk\dm\pathchk.exe \
+		whereis\dm\whereis.exe
+
+clean_target:
+  @if exist hardlink\dm\hardlink.exe del hardlink\dm\hardlink.exe
+  @if exist pathchk\dm\pathchk.exe del pathchk\dm\pathchk.exe
+  @if exist whereis\dm\whereis.exe del whereis\dm\whereis.exe
+	@del $(OBJS) 2>NUL
+
+clean:	clean_target
+	@if exist *.exe del *.exe
+	@if exist *.map del *.map
+	@if exist *.tds del *.tds
+	@if exist *.obj del *.obj
+	@if exist *.err del *.err
+
+# objects - hard-coded, since object files are in separate directory to .cpp
+
+hardlink\dm\hardlink.obj:	hardlink\hardlink.cpp
+	$(CC) $(CPPCARGS) -o$@ $?
+
+pathchk\dm\pathchk.obj:		pathchk\pathchk.cpp
+	$(CC) $(CPPCARGS) -o$@ $?
+
+whereis\dm\whereis.obj:		whereis\whereis.cpp
+	$(CC) $(CPPCARGS) -o$@ $?
+
+# executables
+
+hardlink\dm\hardlink.exe:	hardlink\dm\hardlink.obj
+	$(CC) $? -o$@
+
+pathchk\dm\pathchk.exe:		pathchk\dm\pathchk.obj
+	$(CC) $? -o$@
+
+whereis\dm\whereis.exe:		whereis\dm\whereis.obj
+	$(CC) $? -o$@
+
+################################################################################

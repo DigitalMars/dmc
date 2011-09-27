@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\ole16\HANDLER\INSTALLR\INSTALLR.PRJ
+INSTALLR.OPN
+novcs
+installr.def
+0
+812035224
+0 0 0 0 0 "installd.cpp" ""
+0 0 0 0 0 "stdafx.cpp" ""
+0 0 0 0 0 "installr.def" ""
+0 0 0 0 0 "installr.rc" ""

@@ -1,0 +1,129 @@
+//Microsoft App Studio generated resource script.
+//
+
+// This is a part of the Microsoft Foundation Classes C++ library.
+// Copyright (C) 1992-1994 Microsoft Corporation
+// All rights reserved.
+//
+// This source code is only intended as a supplement to the
+// Microsoft Foundation Classes Reference and the
+// Books Online documentation provided with the library.
+// See these sources for detailed information regarding the
+// Microsoft Foundation Classes product.
+
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE
+BEGIN
+	"resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE
+BEGIN
+	"#include ""afxres.h""\r\n"
+	"\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE
+BEGIN
+	"#include ""localize.rc2""  // non-App Studio edited resources\r\n"
+	"#if 0\r\n"
+	"#include "".\\tlb16\\localize.tlb""  // 16-bit: force dependency on .TLB file\r\n"
+	"#endif\r\n"
+	"\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_ABOUTDLL            ICON    DISCARDABLE     "LOCALIZE.ICO"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LOCALIZE            BITMAP  DISCARDABLE     "LOCALCTL.BMP"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_LOCALIZE DIALOG DISCARDABLE  34, 22, 260, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Localize Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+	LTEXT           "Localize Control, Version 1.0",IDC_STATIC,40,10,170,8
+	LTEXT           "Copyright \251 1994, Microsoft Corporation",IDC_STATIC,
+					40,25,170,8
+	DEFPUSHBUTTON   "OK",IDOK,220,10,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_LOCALIZE DIALOG DISCARDABLE  0, 0, 250, 62
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "&Invert",IDC_CHECK1,"Button",BS_AUTOCHECKBOX |
+					WS_TABSTOP,10,10,90,11
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_LOCALIZE            "Localize Control"
+	IDS_LOCALIZE_PPG        "Localize Property Page"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_LOCALIZE_PPG_CAPTION "General"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CAPTION             "English"
+END
+
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "localize.rc2"  // non-App Studio edited resources
+#if 0
+#include ".\tlb16\localize.tlb"  // 16-bit: force dependency on .TLB file
+#endif
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

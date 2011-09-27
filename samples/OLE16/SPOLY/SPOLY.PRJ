@@ -1,0 +1,16 @@
+82572
+C:\SC\samples\ole16\SPOLY\SPOLY.PRJ
+SPOLY.OPN
+novcs
+spoly.def
+0
+812035224
+0 0 0 0 0 "clsid.c" ""
+0 0 0 0 0 "cenumpt.cpp" ""
+0 0 0 0 0 "cpoint.cpp" ""
+0 0 0 0 0 "cpoly.cpp" ""
+0 0 0 0 0 "misc.cpp" ""
+0 0 0 0 0 "statbar.cpp" ""
+0 0 0 0 0 "winmain.cpp" ""
+0 0 0 0 0 "spoly.def" ""
+0 0 0 0 0 "spoly.rc" ""

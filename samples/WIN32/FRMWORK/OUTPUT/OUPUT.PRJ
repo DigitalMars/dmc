@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\FRMWORK\OUTPUT\OUPUT.PRJ
+OUPUT.OPN
+novcs
+ouput.def
+16
+812035224
+0 0 0 0 0 "init.c" ""
+0 0 0 0 0 "output.c" ""
+0 0 0 0 0 "winmain.c" ""
+0 0 0 0 0 "output.rc" ""
+0 0 0 0 0 "ouput.def" ""
+0 0 0 0 0 "version.lib" ""

@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\ole32\MFRACT\ENGINES\ENGINES.PRJ
+ENGINES.OPN
+novcs
+ENGINES.DEF
+2
+812035224
+0 0 0 0 0 "julia\julia.prj" ""
+0 0 0 0 0 "mandel\mandel.prj" ""
+0 0 0 0 0 "plasma\plasma.prj" ""
+0 0 0 0 0 "quad\quad.prj" ""
+0 0 0 0 0 "rgen\rgen.prj" ""
+0 0 0 0 0 "engines.def" ""

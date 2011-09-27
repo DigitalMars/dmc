@@ -1,0 +1,43 @@
+#_ makefile   Thu Mar  1 1990   Modified by: Walter Bright */
+# modified Tue Feb 19 2002 by Cesar Rabak 
+#_ makefile for Windows versions using WINC libraries
+
+MODEL=S
+CFLAGS= -DMSDOS -o+space -W  -I..\include
+LFLAGS=-L/nod
+LIBS=$(MODEL)windos.lib sw$(MODEL).lib libw.lib commdlg.lib
+ 
+.c.obj:
+	sc -c -m$(MODEL) $(CFLAGS) $*
+
+all: clean archivew.exe updatew.exe makedepw.exe
+
+clean:
+     del *.obj
+     del *.bak
+     del *.def
+     del *.map
+     del *.exe
+
+FILE=filedire.obj filecopy.obj fileexis.obj filesett.obj \
+	filetime.obj filesear.obj
+
+archivew.exe : archive.obj mem.obj filespec.obj filedire.obj filecopy.obj \
+	filesett.obj filetime.obj 
+	sc -b -ms -W archive.obj mem.obj filespec.obj filedire.obj filecopy.obj \
+     filesett.obj filetime.obj -oarchivew.exe $(LFLAGS) $(LIBS) \
+      
+	
+updatew.exe : update.obj mem.obj filespec.obj filedire.obj filecopy.obj \
+	filesett.obj filetime.obj 
+	sc -ms -W update.obj mem.obj filespec.obj filedire.obj filecopy.obj \
+        filesett.obj filetime.obj -oupdatew.exe $(LFLAGS) $(LIBS)
+	
+makedepw.exe : makedep.obj mem.obj list.obj filespec.obj filesear.obj 
+     sc -gl -ms -W makedep.obj mem.obj list.obj filespec.obj filesear.obj \
+       -omakedepw.exe $(LFLAGS) $(LIBS)
+	
+	
+$(FILE) : ..\include\file.h file.c
+	sc -ms -c $(CFLAGS) -DA$* file -o$*.obj
+

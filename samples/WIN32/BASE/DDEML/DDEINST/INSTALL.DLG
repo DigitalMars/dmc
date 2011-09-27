@@ -1,0 +1,41 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+1 DLGINCLUDE "DDEINST.H"
+
+ABOUTBOX DIALOG 16, 16, 192, 96
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CAPTION
+CAPTION "About"
+BEGIN
+    CTEXT           "Microsoft Windows NT", -1, 0, 8, 192, 8
+    CTEXT           "DDEML Installer", -1, 0, 25, 192, 8
+    CTEXT           "Version 1.00", -1, 0, 43, 192, 8
+    DEFPUSHBUTTON   "OK!", IDOK, 71, 60, 50, 14
+END
+
+100 DIALOG 6, 18, 242, 76
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Installer Progress"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Executable Path", 101, 1, 10, 61, 8
+    EDITTEXT        102, 68, 6, 173, 12, ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER
+    LTEXT           "Program Item Name", 103, 1, 25, 70, 8
+    EDITTEXT        104, 68, 21, 173, 12, ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER
+    CONTROL         "", 105, "Static", SS_BLACKFRAME, 0, 59, 241, 16
+    EDITTEXT        106, 104, 39, 32, 12, ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+END

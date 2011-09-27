@@ -1,0 +1,72 @@
+.\svroutl\outline.SYM: \
+	outline.h \
+	outlrc.h \
+	defguid.h
+precomp.OBJ: \
+	precomp.c 
+debug2.OBJ: \
+	debug2.c 
+dialogs.OBJ: \
+	dialogs.c 
+main.OBJ: \
+	main.c \
+	status.h \
+	..\include\ctl3d.h \
+	e:\sc\include\initguid.h \
+	defguid.h
+memmgr.OBJ: \
+	memmgr.c 
+outlapp.OBJ: \
+	outlapp.c \
+	status.h
+outldoc.OBJ: \
+	outldoc.c 
+outlline.OBJ: \
+	outlline.c 
+outllist.OBJ: \
+	outllist.c 
+outlname.OBJ: \
+	outlname.c 
+outlntbl.OBJ: \
+	outlntbl.c 
+outltxtl.OBJ: \
+	outltxtl.c 
+debug.OBJ: \
+	debug.c 
+heading.OBJ: \
+	heading.c 
+frametls.OBJ: \
+	frametls.c 
+status.OBJ: \
+	status.c \
+	message.h \
+	status.h
+oleapp.OBJ: \
+	oleapp.c 
+oledoc.OBJ: \
+	oledoc.c 
+classfac.OBJ: \
+	classfac.c 
+clipbrd.OBJ: \
+	clipbrd.c 
+dragdrop.OBJ: \
+	dragdrop.c 
+linking.OBJ: \
+	linking.c 
+svrbase.OBJ: \
+	svrbase.c 
+svrpsobj.OBJ: \
+	svrpsobj.c 
+svroutl.RES: \
+	svroutl.rc \
+	e:\sc\include\windows.h \
+	e:\sc\include\win16\windows.h \
+	outlrc.h \
+	selcross.cur \
+	dragmove.cur \
+	svroutl.ico \
+	image72.bmp \
+	image96.bmp \
+	image120.bmp \
+	ole2.bmp \
+	dialogs.dlg

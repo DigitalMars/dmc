@@ -1,0 +1,63 @@
+# This is a part of the Microsoft Foundation Classes C++ library.
+# Copyright (C) 1992 Microsoft Corporation
+# All rights reserved.
+#
+# This source code is only intended as a supplement to the
+# Microsoft Foundation Classes Reference and Microsoft
+# QuickHelp and/or WinHelp documentation provided with the library.
+# See these sources for detailed information regarding the
+# Microsoft Foundation Classes product.
+#
+
+# Build hello1 application and Tracer DLL
+
+goal: hello1.exe tracer.dll
+
+WINLIBS=libw commdlg shell
+
+#############################################################################
+# hello1 application is medium model DEBUG
+
+hello1.obj: hello1.cpp resource.h traceapi.h
+	sc -DWINVER=0x0300 -ml -WA -g -C -a -D_DEBUG -c hello1.cpp
+
+hello1.exe: hello1.obj hello1.def hello1.res tracer.lib
+	link @<<
+/NOLOGO /AL:16 /NOD /CO /DE /RC -30 -t :hello1.res hello1,
+hello1.exe,
+hello1.map,
+lafxcwd swl tracer $(WINLIBS),
+hello1.def;
+<<
+
+hello1.res: hello1.rc resource.h hello1.ico
+
+#############################################################################
+# Tracer is a large model DLL built with MFC large model USRDLL version
+# of the debug library
+
+# -WD option automatically defines -D_WINDLL
+
+tracer.obj: tracer.cpp traceapi.h
+	sc -DWINVER=0x0300 -mlw -g -C -WD -D_USRDLL -w -a -D_DEBUG -c tracer.cpp
+
+tracer.dll tracer.lib: tracer.obj tracer.def tracer.res
+	link  @<<
+/NOLOGO /AL:16 /NOD /DE /CO /PACKDATA /MAP:FULL /IMPL:tracer.lib /RC -30 -k -t :tracer.res tracer.obj,
+tracer.dll,
+tracer.map,
+lafxdwd swl $(WINLIBS),
+tracer.def;
+<<
+
+#############################################################################
+
+clean:
+	-del *.exe 
+	-del *.dll 
+	-del *.res
+	-del *.obj
+	-del *.lib
+	-del *.map
+
+#############################################################################

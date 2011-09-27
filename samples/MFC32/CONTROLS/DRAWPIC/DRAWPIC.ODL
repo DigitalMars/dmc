@@ -1,0 +1,67 @@
+// DrawPic.odl : type library source for OLE Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (DrawPic.tlb) that will become a resource in
+// DrawPic.ocx.
+
+#include <olectl.h>
+
+[ uuid(57F5A420-A324-11CF-B4A4-444553540000), version(1.0),
+  helpstring("DrawPic OLE Control module"), control ]
+library DRAWPICLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CDrawPicCtrl
+
+	[ uuid(57F5A421-A324-11CF-B4A4-444553540000),
+	  helpstring("Dispatch interface for DrawPic Control"), hidden ]
+	dispinterface _DDrawPic
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDrawPicCtrl)
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDrawPicCtrl)
+			[id(1)] boolean AddPicture(IPictureDisp* NewPic);
+			[id(2)] void ClearImageList();
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CDrawPicCtrl
+
+	[ uuid(57F5A422-A324-11CF-B4A4-444553540000),
+	  helpstring("Event interface for DrawPic Control") ]
+	dispinterface _DDrawPicEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CDrawPicCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CDrawPicCtrl
+
+	[ uuid(57F5A423-A324-11CF-B4A4-444553540000),
+	  helpstring("DrawPic Control"), control ]
+	coclass DrawPic
+	{
+		[default] dispinterface _DDrawPic;
+		[default, source] dispinterface _DDrawPicEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+};

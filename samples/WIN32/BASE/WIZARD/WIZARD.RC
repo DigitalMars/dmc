@@ -1,0 +1,250 @@
+//Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "wizard.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+EXE_ICON                ICON    DISCARDABLE     "wizard.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+WIZARDMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&Run Performance Review Wizard...", IDM_WIZARD
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ABOUTBOX DIALOG DISCARDABLE  160, 78, 144, 77
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About the Wizard Sample"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,54,51,40,14
+    LTEXT           "Review Wizard version 1.0",-1,28,17,92,8
+    LTEXT           "written by Nancy Cluts",-1,36,27,76,8,NOT WS_GROUP
+    LTEXT           "Microsoft Developer Network",-1,25,37,99,8,NOT WS_GROUP
+END
+
+IDD_WORKHABITS DIALOG DISCARDABLE  0, 0, 276, 140
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Work Habits"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Check the box which most appropriately describes your typical working day.",
+                    IDC_STATIC,7,12,243,13
+    CONTROL         "I come in early, stay late, and work during lunch and on weekends.",
+                    IDC_WORKHAB1,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,11,
+                    39,239,11
+    CONTROL         "Nine to Five. Period.",IDC_WORKHAB2,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,11,60,170,10
+    CONTROL         "Hey, I'm on flex time. Don't hassle me!",IDC_WORKHAB3,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,11,81,164,10
+    CONTROL         "I come in to pick up my paycheck and for a free soda.",
+                    IDC_WORKHAB4,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,11,
+                    100,199,10
+END
+
+IDD_TEAMWORK DIALOG DISCARDABLE  0, 0, 276, 140
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Team Work"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Check the statement that most accurately describes how well you work ",
+                    IDC_STATIC,23,9,223,10
+    LTEXT           "with your team mates.",IDC_STATIC,99,21,70,10
+    CONTROL         "I actively mentor and support my co-workers.",
+                    IDC_TEAMWORK1,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,
+                    43,163,10
+    CONTROL         "I can get through meetings without killing anyone.",
+                    IDC_TEAMWORK2,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,8,
+                    62,178,10
+    CONTROL         "I work well by myself.",IDC_TEAMWORK3,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,7,82,166,10
+    CONTROL         "I plagiarize and steal my co-workers work.",
+                    IDC_TEAMWORK4,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,6,
+                    100,162,10
+END
+
+IDD_RELIABILITY DIALOG DISCARDABLE  0, 0, 276, 140
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Reliability"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Pick the statement that most accurately describes your reliability.",
+                    IDC_STATIC,33,14,207,9
+    CONTROL         "I will volunteer for any and all projects, no matter how menial or humiliating.",
+                    IDC_RELIABILITY1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,15,36,248,10
+    CONTROL         "I can be counted on during working hours. Period.",
+                    IDC_RELIABILITY2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,16,56,211,10
+    CONTROL         "I can be counted on to cover my butt.",IDC_RELIABILITY3,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,15,76,209,10
+    CONTROL         "I routinely pass the buck.",IDC_RELIABILITY4,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,15,96,185,10
+END
+
+IDD_GOALS DIALOG DISCARDABLE  0, 0, 276, 140
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Attainment of Goals"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Pick the statement that most accurately describes your goal attainment.",
+                    IDC_STATIC,27,10,234,11
+    CONTROL         "I have exceeded every goal in less time than required.",
+                    IDC_GOALS1,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,9,34,
+                    233,10
+    CONTROL         "I do exactly what my job requires. No more. No less.",
+                    IDC_GOALS2,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,51,
+                    195,10
+    CONTROL         "I only did fun things.",IDC_GOALS3,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,9,70,187,11
+    CONTROL         "I attended a meeting once.",IDC_GOALS4,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,10,89,137,10
+END
+
+IDD_ADAPTATION DIALOG DISCARDABLE  0, 0, 273, 140
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Adaptation"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Pick the statement that most accurately reflects how well you adapt to change.",
+                    IDC_STATIC,8,8,256,11
+    CONTROL         "Change is simply a new and exciting challenge. I thrive on change.",
+                    IDC_ADAPTATION1,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    8,38,255,10
+    CONTROL         "I don't mind change so long as it doesn't affect me.",
+                    IDC_ADAPTATION2,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    9,58,225,9
+    CONTROL         "If I don't get a window office, I quit!",
+                    IDC_ADAPTATION3,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    9,78,221,9
+    CONTROL         "Change is bad. Change is evil. Change things and I'll kill you.",
+                    IDC_ADAPTATION4,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    9,97,252,10
+END
+
+IDD_INFO DIALOG DISCARDABLE  0, 0, 235, 127
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Who Are You?"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Name:",IDC_STATIC,14,15,29,7
+    EDITTEXT        IDE_NAME,45,13,178,12,ES_AUTOHSCROLL
+    LTEXT           "Title:",IDC_STATIC,14,40,29,7
+    EDITTEXT        IDE_TITLE,46,36,177,12,ES_AUTOHSCROLL
+    LTEXT           "Main Project:",IDC_STATIC,13,60,46,14
+    EDITTEXT        IDE_PROJECT,59,58,164,12,ES_AUTOHSCROLL
+    LTEXT           "Department:",IDC_STATIC,13,86,41,10
+    EDITTEXT        IDE_DEPARTMENT,57,83,166,12,ES_AUTOHSCROLL
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""wizard.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_WORKHAB1            "My devotion to my work and my loyalty to the company is evidenced in the long hours that I work.  "
+    IDC_WORKHAB2            "I am able to accomplish my many tasks within normal working hours and without necessitating over time. Thus saving the company money in overtime costs.  "
+    IDC_WORKHAB3            "I finish my work in less than the allotted time in a work day, making me available for other responsibilities.  "
+    IDC_WORKHAB4            "My experiment with telecommuting has been a great success as evidenced by the ease with which my absence has been handled.  "
+    IDC_TEAMWORK1           "My life revolves around my team and I consistently offer them assistance in their daily tasks.  "
+    IDC_TEAMWORK2           "My ability to work well within the team is evidenced by my ability to keep a cool head during times of stress on the team.  "
+    IDC_TEAMWORK3           "My self-sufficiency allows members of the team to work with others thereby provided a more cohesive team.  "
+    IDC_TEAMWORK4           "I excel at sustaining my concentration and avoid confrontation with others.  "
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_RELIABILITY1        "I can be counted on to take on the important and complex projects and to finish them.  "
+    IDC_RELIABILITY2        "Throughout the working day, I am always available for consultation.  "
+    IDC_RELIABILITY3        "I demonstrate the uncanny ability of determining the root cause of problems.  "
+    IDC_RELIABILITY4        "I am able to delegate responsibility with ease.  "
+    IDC_GOALS1              "I find it challenging and exciting to meet and surpass all of the goals that are set for me.  "
+    IDC_GOALS2              "I consistenly meet the expectations that are made for a person in my position.  "
+    IDC_GOALS3              "I demonstrate an exceptional sense of which goals are important and when it is ineffective to continue work on a project.  "
+    IDC_GOALS4              "I accept new job assignments willingly and enthusiastically.  "
+    IDC_ADAPTATION1         "The many reorganizations and changes that have been made in the past year have had an invorating effect upon my work.  "
+    IDC_ADAPTATION2         "I am able to handle the changes within the company in other groups with ease and calm.  "
+    IDC_ADAPTATION3         "In the face of diversity and change, I am able to determine when to bring attention to possible negative outcomes.  "
+    IDC_ADAPTATION4         "I take responsibility for identifying management problems.  "
+END
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

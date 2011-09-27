@@ -1,0 +1,110 @@
+<HTML>
+<!--
+	Copyright (c) 2001 by Digital Mars
+	All Rights Reserved
+	Written by Walter Bright
+	www.digitalmars.com
+  -->
+
+<HEAD>
+	<TITLE>Runtime Library Reference</TITLE>
+</HEAD>
+<BODY>
+
+<h2>Inline Bit Test / Complement / Reset / Set</h2>
+
+<h4>Header</h4>
+<pre>
+	bitops.h
+</pre>
+<h4>Prototype</h4>
+<pre>
+	int <b>_inline_bt</b>(unsigned *p, unsigned index);
+	int <b>_inline_btc</b>(unsigned *p, unsigned index);
+	int <b>_inline_btr</b>(unsigned *p, unsigned index);
+	int <b>_inline_bts</b>(unsigned *p, unsigned index);
+</pre>
+<h4>Description</h4>
+
+	<b>p</b> is a non-NULL pointer to an array of unsigneds.
+	<b>index</b> is a bit number, starting with bit 0 of p[0],
+	and progressing. It addresses bits like the expression:
+<pre>
+	p[index / (sizeof(unsigned)*8)] & (1 << (index & ((sizeof(unsigned)*8) - 1)))
+</pre>
+	<b>_inline_bt</b> tests the bit.
+<p>
+	<b>_inline_btc</b> tests and complements the bit.
+<p>
+	<b>_inline_btr</b> tests and resets (sets to 0) the bit.
+<p>
+	<b>_inline_bts</b> tests and sets the bit.
+<p>
+	These functions are inlined by the compiler, bringing to bear
+	the full power of the code generator on them. This can result
+	in some surprising speedups when they are used as part of a bit
+	array solution.
+<p>
+<b>Return Value</b><br> 
+	All return a non-zero value if the bit was set, and a zero
+	if it was clear.
+<p>
+<b>Compatibility</b><br> 
+	DOS, Windows 3.x, Phar Lap, DOSX, Win32 
+<p>
+<b>See Also</b><br> 
+	<a href="rtl_bscan.html">_inline_bsf</a>, 
+	<a href="rtl_bscan.html">_inline_bsr</a> 
+<p>
+<b>Example</b> 
+<pre>
+<code>
+	#include &lt;stdio.h&gt;
+	#include &lt;bitops.h&gt; 
+
+	int main()
+	{   
+	    unsigned array[2];
+
+	    array[0] = 2;
+	    array[1] = 0x100;
+
+	    printf("btc(array, 35) = %d\n", <b>_inline_btc</b>(array, 35));
+	    printf("array = [0]:x%x, [1]:x%x\n", array[0], array[1]);
+
+	    printf("btc(array, 35) = %d\n", <b>_inline_btc</b>(array, 35));
+	    printf("array = [0]:x%x, [1]:x%x\n", array[0], array[1]);
+
+	    printf("bts(array, 35) = %d\n", <b>_inline_bts</b>(array, 35));
+	    printf("array = [0]:x%x, [1]:x%x\n", array[0], array[1]);
+
+	    printf("btr(array, 35) = %d\n", <b>_inline_btr</b>(array, 35));
+	    printf("array = [0]:x%x, [1]:x%x\n", array[0], array[1]);
+
+	    printf("bt(array, 1) = %d\n", <b>_inline_bt</b>(array, 1));
+	    printf("array = [0]:x%x, [1]:x%x\n", array[0], array[1]);
+
+	    return 0;
+	} 
+</code>
+</pre>
+<b>Output</b>
+<pre>
+	btc(array, 35) = 0
+	array = [0]:x2, [1]:x108
+	btc(array, 35) = -1
+	array = [0]:x2, [1]:x100
+	bts(array, 35) = 0
+	array = [0]:x2, [1]:x108
+	btr(array, 35) = -1
+	array = [0]:x2, [1]:x100
+	bt(array, 1) = -1
+	array = [0]:x2, [1]:x100
+</pre>
+<b>Bugs</b><br>
+	Compiler versions prior to 0x803 would sometimes produce incorrect
+	answers if <b>index</b> was a constant.
+</BODY>
+</HTML>
+
+

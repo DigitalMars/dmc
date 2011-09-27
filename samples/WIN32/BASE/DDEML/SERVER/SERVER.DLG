@@ -1,0 +1,79 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+1 DLGINCLUDE "dialog.h"
+
+DID_ABOUT DIALOG 25, 23, 184, 78
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Server"
+FONT 8, "Helv"
+BEGIN
+    CTEXT           "Microsoft Windows", -1, 0, 5, 184, 8
+    CTEXT           "Server", -1, 0, 15, 184, 8
+    CTEXT           "Version 3.1", -1, 0, 34, 184, 8
+    CTEXT           "Copyright \251 1991-1995 Microsoft Corp.", -1, 0, 47, 184, 9
+    DEFPUSHBUTTON   "OK", IDOK, 76, 60, 32, 14, WS_GROUP
+    ICON            "server", -1, 25, 14, 16, 21
+END
+
+DID_TEXTDATAENTRY DIALOG 8, 26, 184, 90
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Text Data Entry"
+FONT 8, "Helv"
+BEGIN
+    EDITTEXT        IDEF_DATA, 8, 22, 170, 43, ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&Ok", IDOK, 8, 70, 38, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 140, 70, 38, 14
+    PUSHBUTTON      "&Generate Huge", IDBN_GENHUGE, 53, 70, 80, 14
+    CTEXT           "Enter text data to send or size of huge data to generate", 
+                    -1, 8, 2, 169, 18, NOT WS_GROUP
+END
+
+DID_VALUEENTRY DIALOG 13, 69, 137, 46
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Value Entry Dialog"
+FONT 8, "Helv"
+BEGIN
+    EDITTEXT        IDEF_VALUE, 92, 6, 38, 12
+    DEFPUSHBUTTON   "&Ok", IDOK, 22, 26, 38, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 76, 26, 38, 14
+    RTEXT           "Value:", IDTX_VALUE, 6, 8, 85, 8, NOT WS_GROUP
+END
+
+DID_CONTEXT DIALOG 8, 16, 86, 146
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Connection Context"
+FONT 8, "Helv"
+BEGIN
+    EDITTEXT        IDEF_FLAGS, 55, 4, 26, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDEF_COUNTRY, 55, 17, 26, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDEF_CODEPAGE, 55, 30, 26, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDEF_LANG, 55, 43, 26, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDEF_SECURITY, 55, 56, 26, 12, ES_AUTOHSCROLL
+    LTEXT           "flags", -1, 5, 6, 17, 8
+    LTEXT           "Country ID", -1, 5, 19, 35, 8
+    LTEXT           "CodePage", -1, 5, 32, 34, 8
+    LTEXT           "Language ID", -1, 5, 45, 42, 8
+    LTEXT           "Security Code", -1, 5, 58, 46, 8
+    GROUPBOX        "Impersonation Level", 907, 5, 69, 76, 55
+    AUTORADIOBUTTON "Anonymous", IDRB_IL_ANON, 13, 80, 49, 10
+    AUTORADIOBUTTON "Identification", IDRB_IL_ID, 13, 90, 53, 10
+    AUTORADIOBUTTON "Impersonate", IDRB_IL_IMP, 13, 100, 52, 10
+    AUTORADIOBUTTON "Delegate", IDRB_IL_DELEGATE, 13, 110, 40, 10
+    PUSHBUTTON      "Ok", IDOK, 1, 129, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 44, 129, 40, 14
+END

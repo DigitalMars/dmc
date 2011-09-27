@@ -1,0 +1,178 @@
+;;
+;;    ole2ui.def
+;;
+;;    Definition file for ole2ui.dll
+;;
+;;    (c) Copyright Microsoft Corp. 1992 - 1993 All Rights Reserved
+;;
+;;
+
+EXETYPE         WINDOWS
+STUB            'WINSTUB.EXE'
+CODE            MOVEABLE DISCARDABLE
+DATA        MOVEABLE NONDISCARDABLE PRELOAD SINGLE
+
+SEGMENTS
+	_TEXT   MOVEABLE DISCARDABLE PRELOAD
+
+HEAPSIZE        16392
+
+EXPORTS         WEP                                 @1 RESIDENTNAME
+
+SetDCToAnisotropic                                  @2
+SetDCToDrawInHimetricRect                           @3
+ResetOrigDC                                         @4
+XformRectInPixelsToHimetric                         @5
+XformRectInHimetricToPixels                         @6
+XformSizeInPixelsToHimetric                         @7
+XformSizeInHimetricToPixels                         @8
+XformWidthInHimetricToPixels                        @9
+XformWidthInPixelsToHimetric                        @10
+XformHeightInHimetricToPixels                       @11
+XformHeightInPixelsToHimetric                       @12
+
+;; converted to a macro
+;;   AreRectsEqual                                       @13
+ParseCmdLine                                        @14
+OleStdIsOleLink                                     @15
+OleStdQueryInterface                                @16
+OleStdCreateRootStorage                             @17
+OleStdOpenRootStorage                               @18
+OleStdOpenOrCreateRootStorage                       @19
+OleStdCreateChildStorage                            @20
+OleStdOpenChildStorage                              @21
+OleStdCommitStorage                                 @22
+OleStdCreateStorageOnHGlobal                        @23
+OleStdCreateTempStorage                             @24
+OleStdDoConvert                                     @25
+OleStdGetTreatAsFmtUserType                         @26
+OleStdDoTreatAsClass                                @27
+OleStdSetupAdvises                                  @28
+OleStdSwitchDisplayAspect                           @29
+OleStdSetIconInCache                                @30
+OleStdGetData                                       @31
+OleStdMarkPasteEntryList                            @32
+OleStdGetPriorityClipboardFormat                    @33
+OleStdIsDuplicateFormat                             @34
+OleStdRegisterAsRunning                             @35
+OleStdRevokeAsRunning                               @36
+OleStdNoteFileChangeTime                            @37
+OleStdNoteObjectChangeTime                          @38
+OleStdGetOleObjectData                              @39
+OleStdGetLinkSourceData                             @40
+OleStdGetObjectDescriptorData                       @41
+OleStdGetObjectDescriptorDataFromOleObject          @42
+OleStdFillObjectDescriptorFromData                  @43
+;; converted to a macro
+;;   OleStdCopyMetafilePict                              @44
+OleStdGetMetafilePictFromOleObject                  @45
+;; converted to a macro
+;;   OleStdQueryOleObjectData                            @46
+;; converted to a macro
+;;   OleStdQueryLinkSourceData                           @47
+;; converted to a macro
+;;   OleStdQueryObjectDescriptorData                     @48
+;; converted to a macro
+;;   OleStdQueryFormatMedium                             @49
+;; converted to a macro
+;;   OleStdGetDropEffect                                 @50
+OleStdCreateTempFileMoniker                         @51
+OleStdGetFirstMoniker                               @52
+OleStdGetLenFilePrefixOfMoniker                     @53
+OleStdMalloc                                        @54
+OleStdRealloc                                       @55
+OleStdFree                                          @56
+OleStdGetSize                                       @57
+OleStdFreeString                                    @58
+OleStdCopyString                                    @59
+OleStdGetItemToken                                  @60
+OleStdInitVtbl                                      @61
+OleStdCheckVtbl                                     @62
+OleStdVerifyRelease                                 @63
+OleStdRelease                                       @64
+OleStdCreateDC                                      @65
+OleStdCreateIC                                      @66
+OleStdCreateTargetDevice                            @67
+OleStdDeleteTargetDevice                            @68
+OleStdCopyTargetDevice                              @69
+OleStdCopyFormatEtc                                 @70
+OleDbgPrint                                         @71
+OleDbgPrintAlways                                   @72
+OleDbgSetDbgLevel                                   @73
+OleDbgGetDbgLevel                                   @74
+OleDbgIndent                                        @75
+OleDbgPrintRefCnt                                   @76
+OleDbgPrintRefCntAlways                             @77
+OleDbgPrintRect                                     @78
+OleDbgPrintRectAlways                               @79
+OleDbgPrintScodeAlways                              @80
+OleUIInitialize                                     @81
+OleUIUnInitialize                                   @82
+OleUIAddVerbMenu                                    @83
+;; superceeded by OleMetafilePictFromIconAndLabel
+;; OleUIMetafilePictFromIconAndLabel                @84
+OleUIMetafilePictIconFree                           @85
+OleUIMetafilePictIconDraw                           @86
+OleUIMetafilePictExtractLabel                       @87
+OleUIMetafilePictExtractIcon                        @88
+OleUIMetafilePictExtractIconSource                  @89
+OleUIInsertObject                                   @90
+OleUIPasteSpecial                                   @91
+OleUIEditLinks                                      @92
+OleUIChangeIcon                                     @93
+OleUIConvert                                        @94
+OleUIBusy                                           @95
+OleUIUpdateLinks                                    @96
+OleUIDrawHandles                                    @97
+OleUICanConvertOrActivateAs                         @98
+OleUIDrawShading                                    @100
+OleUIShowObject                                     @101
+RegisterHatchWindowClass                            @102
+CreateHatchWindow                                   @103
+GetHatchWidth                                       @104
+GetHatchRect                                        @105
+SetHatchRect                                        @106
+SetHatchWindowSize                                  @107
+_OleUIPromptUser                                    @108
+OleStdEnumFmtEtc_Create                             @109
+;; superceeded by OleGetIconOfFile
+;; GetIconOfFile                                    @110
+;; superceeded by OleGetIconOfClass
+;; GetIconOfClass                                   @111
+OleStdGetAuxUserType                                @112
+OleStdGetUserTypeOfClass                            @113
+OleStdIconLabelTextOut                              @114
+OleStdMsgFilter_Create                              @115
+OleStdMsgFilter_SetInComingCallStatus               @116
+OleStdMsgFilter_GetInComingCallStatus               @117
+OleStdMsgFilter_EnableBusyDialog                    @118
+OleStdMsgFilter_EnableNotRespondingDialog           @119
+OleStdMsgFilter_SetParentWindow                     @120
+OleStdGetMiscStatusOfClass                          @121
+OleStdGetDefaultFileFormatOfClass                   @122
+OleStdDestroyAllElements                            @123
+OleStdCreateDbAlloc                                 @124
+
+OleStdInitSummaryInfo                               @125
+OleStdFreeSummaryInfo                               @126
+OleStdClearSummaryInfo                              @127
+OleStdReadSummaryInfo                               @128
+OleStdWriteSummaryInfo                              @129
+OleStdGetSecurityProperty                           @130
+OleStdSetSecurityProperty                           @131
+OleStdGetStringProperty                             @132
+OleStdSetStringProperty                             @133
+OleStdGetStringZProperty                            @134
+OleStdGetDocProperty                                @135
+OleStdSetDocProperty                                @136
+OleStdGetThumbNailProperty                          @137
+OleStdSetThumbNailProperty                          @138
+OleStdGetDateProperty                               @139
+OleStdSetDateProperty                               @140
+
+OleStdMsgFilter_SetHandleInComingCallbackProc       @141
+OleStdEnumStatData_Create                           @142
+OleStdCopyStatData                                  @143
+OleStdCreateStandardPalette                         @144
+OleStdMkParseDisplayName                            @145
+OleUILockLibrary                                    @146

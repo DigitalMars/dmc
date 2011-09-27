@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\MM\TEXTOUT\TXTOUT32.PRJ
+TXTOUT32.OPN
+novcs
+TXTOUT32.DEF
+17
+812035224
+0 0 0 0 0 "txtout32.def" ""
+0 0 0 0 0 "drvproc.c" ""
+0 0 0 0 0 "txtout.c" ""
+0 0 0 0 0 "winmm.lib" ""
+0 0 0 0 0 "txtout.rc" ""

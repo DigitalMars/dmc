@@ -1,0 +1,17 @@
+82572
+C:\SC\samples\ole32\MFRACT\IDL\FGUIDS.PRJ
+FGUIDS.OPN
+novcs
+fguids.DEF
+13
+812035224
+0 0 0 0 0 "frcngn_i.c" ""
+0 0 0 0 0 "frhost_i.c" ""
+0 0 0 0 0 "qudcln_i.c" ""
+0 0 0 0 0 "qudngn_i.c" ""
+0 0 0 0 0 "juliacid.cxx" ""
+0 0 0 0 0 "mandcid.cxx" ""
+0 0 0 0 0 "plasmcid.cxx" ""
+0 0 0 0 0 "quadcid.cxx" ""
+0 0 0 0 0 "rgencid.cxx" ""
+0 0 0 0 0 "fguids.def" ""

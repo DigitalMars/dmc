@@ -1,0 +1,13 @@
+[Params]
+	WndTitle   = Microsoft ODBC Setup
+	WndMess    = Initializing Setup...
+	TmpDirSize = 500
+	TmpDirName = ~msodbc.t
+	CmdLine    = odbcstp %s %s
+	DrvModName = ODBCSTP
+
+[Files]
+	odbc.inf     = odbc.inf
+	odbcstp.exe  = odbcstp.exe
+	odbcinst.dll = odbcinst.dll
+	odbcinst.hlp = odbcinst.hlp

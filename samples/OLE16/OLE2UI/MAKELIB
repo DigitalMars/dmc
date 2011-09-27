@@ -1,0 +1,294 @@
+# ============================================================================
+# File: MAKELIB
+#
+# NMAKE description file to build STATIC version of OLE2.0 User Interface LIB
+#
+# Copyright (C) Microsoft Corporation, 1992-1993.  All Rights Reserved.
+# ============================================================================
+#
+# Usage Notes:
+# -----------
+#
+# This makefile is designed to be used in one step.  This makefile does
+# NOT use the file called UIMAKE.INI. This makefile builds the following
+# libraries (depending on the value of "LIBFORDLL" and "DEBUG"):
+#       LOLEUIC.LIB     -- static RETAIL library to be used with EXE's
+#       LOLEUICD.LIB    -- static DEBUG library to be used with EXE's
+#
+#       LOLEUID.LIB     -- static RETAIL library to be used with DLL's
+#       LOLEUIDD.LIB    -- static DEBUG library to be used with DLL's
+#
+#       MOLEUIC.LIB     -- static RETAIL library to be used with EXE's
+#       MOLEUICD.LIB    -- static DEBUG library to be used with EXE's
+#
+#       MOLEUID.LIB     -- static RETAIL library to be used with DLL's
+#       MOLEUIDD.LIB    -- static DEBUG library to be used with DLL's
+#
+# It is NOT necessary to build custom versions of the static
+# library version of OLE2UI. Everyone can use the same static OLE2UI
+# libraries as built by this makefile.
+#
+#       NMAKE -F MAKELIB
+#       NMAKE -F MAKELIB DEBUG=0
+#       NMAKE -F MAKELIB LIBFORDLL=1
+#       NMAKE -F MAKELIB LIBFORDLL=1 DEBUG=0
+#
+#
+# The following lists a few of the settings in this makefile file which
+# you might change, and what effect those changes might have.  For a
+# complete listing of all the available options and how they are used,
+# see the makefile below.
+#
+#   MODEL=[M|L]             --  The memory model. (Default: M)
+#   DEBUG=[0|1]             --  Enable DEBUG or RETAIL version (Default: 1)
+#   LIBFORDLL=[0|1]         --  Enable DEBUG or RETAIL version (Default: 0)
+#   SAMPLIB_DIR             --  Directory to install built .LIB file
+#                               (Default: \ole2\samp\bin)
+#   SAMPINC_DIR             --  Directory to install public header files
+#                               (Default: \ole2\samp\include)
+#
+# Comments:
+# --------
+#
+# In order to use the static library form of the OLE2UI library then you must
+# include "ole2ui.rc" resource file in your application's resource file. Also
+# "OleUIInitialize" must be called before calling any library functions.
+# This is called typically before entering the main message loop in an EXE
+# and called from LibMain for an in-proc server (DLL). Two unique strings
+# should be passed as paramters to OleUIInitialize. These strings are used
+# as class names for two custom controls used in the OLE2UI dialogs.
+# Before shutting down "OleUIUninitialize" must be called in order to clean up
+# resources used by the OLE2UI library. In an EXE, this is typically called
+# after leaving the main message loop; in an DLL, this is typically called
+# from the DLL's WEP function.
+# If the OLE2UI library is used in DLL form then explicitly including the
+# "ole2ui.rc" resource file and calling OleUIInitialize/OleUIUninitialize
+# is NOT necessary.
+# ============================================================================
+
+DEBUG=1
+MODEL=M
+LIBFORDLL=0
+
+DOS=1
+
+!ifndef SAMPINC_DIR
+SAMPINC_DIR=..\include
+!endif
+
+!ifndef SAMPLIB_DIR
+SAMPLIB_DIR=..\lib
+!endif
+
+!if ("$(DEBUG)"=="1")
+LFLAGS=/MAP:FULL /CO /LINE /NOD /NOE /SE:300 /NOPACKCODE
+CC=cl
+AS=masm
+RS=rc
+LK=link
+!if ("$(LIBFORDLL)"=="1")
+#
+# Build DEBUG OLE2UI library for use with DLL's (eg. in-proc server objects)
+#
+LIBNAME=$(MODEL)OLEUIDD
+OBJ=$(MODEL)OLEUIDD
+CFLAGS=-c -Od -Gyfx -GD -GEd -D_WINDLL -W3 -Zpe7 -A$(MODEL) -D_DEBUG
+UILIBS=ldllcew libw ole2 storage shell
+!else
+#
+# Build DEBUG OLE2UI library for use with EXE's
+#
+LIBNAME=$(MODEL)OLEUICD
+OBJ=$(MODEL)OLEUICD
+CFLAGS=-c -Od -Gyfx -GA2s -GEs -W3 -Zpe7 -A$(MODEL) -D_DEBUG
+UILIBS=mlibcew libw ole2 storage shell
+!endif
+
+!else
+
+LFLAGS=/MAP:FULL /LINE /NOD /NOE /SE:300 /NOPACKCODE
+CC=cl
+AS=masm
+RS=rc
+LK=link
+!if ("$(LIBFORDLL)"=="1")
+#
+# Build RETAIL OLE2UI library for use with DLL's (eg. in-proc server objects)
+#
+LIBNAME=$(MODEL)OLEUID
+OBJ=$(MODEL)OLEUID
+CFLAGS=-c -O1 -Gyfx -GD -GEd -D_WINDLL -W3 -Zpe -A$(MODEL)
+UILIBS=ldllcew libw ole2 storage shell
+!else
+#
+# Build RETAIL OLE2UI library for use with EXE's
+#
+LIBNAME=$(MODEL)OLEUIC
+OBJ=$(MODEL)OLEUIC
+CFLAGS=-c -O1 -Gyfx -GA2s -GEs -W3 -Zpe -A$(MODEL)
+UILIBS=mlibcew libw ole2 storage shell
+!endif
+
+!endif
+
+LIBOBJS = $(UI_COBJS) $(UI_NOPCOBJS)
+
+GOAL: $(LIBNAME).LIB
+
+# ----------------------------------------------------------------------------
+#                      O B J E C T   F I L E   L I S T
+# ----------------------------------------------------------------------------
+
+UI_COBJS = \
+	$(OBJ)\busy.obj\
+	$(OBJ)\common.obj\
+	$(OBJ)\convert.obj\
+	$(OBJ)\dbgutil.obj\
+	$(OBJ)\drawicon.obj\
+	$(OBJ)\hatch.obj\
+	$(OBJ)\icon.obj\
+	$(OBJ)\iconbox.obj\
+	$(OBJ)\insobj.obj\
+	$(OBJ)\links.obj\
+	$(OBJ)\msgfiltr.obj\
+	$(OBJ)\enumfetc.obj\
+	$(OBJ)\enumstat.obj\
+	$(OBJ)\objfdbk.obj\
+	$(OBJ)\ole2ui.obj\
+	$(OBJ)\olestd.obj\
+	$(OBJ)\targtdev.obj\
+	$(OBJ)\oleutl.obj\
+	$(OBJ)\pastespl.obj\
+	$(OBJ)\regdb.obj\
+	$(OBJ)\resimage.obj\
+	$(OBJ)\utility.obj\
+
+UI_NOPCOBJS = \
+	$(OBJ)\nopc\geticon.obj\
+	$(OBJ)\nopc\dballoc.obj\
+	$(OBJ)\nopc\suminfo.obj\
+	$(OBJ)\nopc\stdpal.obj\
+
+PRECOMPOBJ= $(O)precomp.obj
+
+PRECOMP=$(O)precomp.pch
+
+# ----------------------------------------------------------------------------
+#                       R E S O U R C E   L I S T
+# ----------------------------------------------------------------------------
+RES =      \
+		   busy.h                           \
+		   common.h                         \
+		   convert.h                        \
+		   edlinks.h                        \
+		   geticon.h                        \
+		   icon.h                           \
+		   iconbox.h                        \
+		   insobj.h                         \
+		   msgfiltr.h                       \
+		   enumfetc.h                       \
+		   ole2ui.h                         \
+		   pastespl.h                       \
+		   resimage.h                       \
+		   dballoc.h                        \
+		   suminfo.h                        \
+		   stdpal.h                         \
+
+
+.SUFFIXES: .c .cpp .obj
+
+O=.\$(OBJ)^\
+
+!if [if not exist $(OBJ)\*. md $(OBJ) >nul]
+!error Object subdirectory $(OBJ)\ could not be created
+!endif
+!if [if not exist $(OBJ)\nopc\*. md $(OBJ)\nopc > nul]
+!error non-precompiled header object subdirectory $(OBJ)\nopc\ could not be created
+!endif
+
+# ----------------------------------------------------------------------------
+#                     I N F E R E N C E   R U L E S
+# ----------------------------------------------------------------------------
+
+# compile C file without precompiled headers into object directory\nopc
+# dont compile c files etc for lcoalized builds.
+{}.c{$(O)nopc\}.obj:
+!ifdef DOS
+	SET CL=$(CFLAGS)
+	$(CC) -Fo$(O)nopc\$(@B) $(@B).c
+!else
+	$(CC) $(CFLAGS) -D_FILE_=\"$(*B).c\" -Fo$(O)nopc\$(@B) $(@B).c
+!endif
+
+# compile C file into object directory
+{}.c{$(O)}.obj:
+!ifdef DOS
+	SET CL=$(CFLAGS) -Yuole2ui.h -Fp$(O)precomp.pch
+	$(CC) -Fo$(O)$(@B) $(@B).c
+!else
+	$(CC) $(CFLAGS) -Yuole2ui.h -Fp$(O)precomp.pch -D_FILE_=\"$(*B).c\" -Fo$(O)$(@B) $(@B).c
+!endif
+
+# compile CPP file without precompiled headers into object directory\nopc
+# dont compile cpp files etc for lcoalized builds.
+{}.cpp{$(O)nopc\}.obj:
+!ifdef DOS
+	SET CL=$(CFLAGS)
+	$(CC) -Fo$(O)nopc\$(@B) $(@B).cpp
+!else
+	$(CC) $(CFLAGS) -D_FILE_=\"$(*B).cpp\" -Fo$(O)nopc\$(@B) $(@B).cpp
+!endif
+
+# compile CPP file into object directory
+{}.cpp{$(O)}.obj:
+!ifdef DOS
+	SET CL=$(CFLAGS) -Yuole2ui.h -Fp$(O)precomp.pch
+	$(CC) -Fo$(O)$(@B) $(@B).cpp
+!else
+	$(CC) $(CFLAGS) -Yuole2ui.h -Fp$(O)precomp.pch -D_FILE_=\"$(*B).cpp\" -Fo$(O)$(@B) $(@B).cpp
+!endif
+
+# ----------------------------------------------------------------------------
+#                        G O A L   T A R G E T S
+# ----------------------------------------------------------------------------
+!include "depend"
+
+CLEAN: CleanUp
+CleanUp:
+	-echo y|del .\$(OBJ)\*.*
+	-echo y | del .\$(OBJ)\nopc\*.*
+	-del $(LIBNAME).lib
+
+$(O)precomp.obj: precomp.c
+!ifdef DOS
+	SET CL=$(CFLAGS) -Fp$(O)precomp.pch -Ycole2ui.h
+	$(CC) -Fo$(O)$(@B) precomp.c
+!else
+	$(CC) $(CFLAGS) -Fp$(O)precomp.pch -Ycole2ui.h -D_FILE_=\"precomp.c\" -Fo$(O)$(@B) precomp.c
+!endif
+
+#
+# Build .LIB static library
+#
+
+$(LIBNAME).lib: $(PRECOMPOBJ) $(LIBOBJS)
+	-del $(O)$(LIBNAME).lib
+	lib @<<
+$(O)$(LIBNAME).lib
+y
+$(PRECOMPOBJ: = +) $(LIBOBJS: = +)
+
+<<
+	copy $(O)$(LIBNAME).lib $(LIBNAME).lib
+
+
+# install built library and public header files to release directories
+install:
+	copy $(LIBNAME).lib $(SAMPLIB_DIR)
+	copy ole2ui.h $(SAMPINC_DIR)
+	copy olestd.h $(SAMPINC_DIR)
+	copy msgfiltr.h $(SAMPINC_DIR)
+	copy enumfetc.h $(SAMPINC_DIR)
+	copy suminfo.h $(SAMPINC_DIR)
+
+# EOF ========================================================================

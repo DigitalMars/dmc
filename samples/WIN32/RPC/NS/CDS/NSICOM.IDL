@@ -1,0 +1,138 @@
+/* --------------------------------------------------------------------
+
+                      Microsoft OS/2 LAN Manager
+                 Copyright(c) Microsoft Corp., 1990-1995
+
+                           RPC locator
+
+
+    This file is just a wrapper for MIDL to get a reference to
+    types used in the interface.
+-------------------------------------------------------------------- */
+
+[
+    uuid (00000000-0000-0000-0000-000000000000),
+    pointer_default (unique)
+]
+    interface NSiTypes
+
+{
+
+/*
+ * Misc commonly used standard types.
+ */
+
+typedef wchar_t  UNSIGNED_CHAR_T;
+typedef unsigned long  UNSIGNED32;
+typedef unsigned short UNSIGNED16;
+typedef unsigned char  UNSIGNED8;
+typedef [string, unique] UNSIGNED_CHAR_T *STRING_T;
+
+typedef [string] UNSIGNED_CHAR_T *NSI_STRING_BINDING_T;
+typedef [context_handle] void * NSI_NS_HANDLE_T;
+
+typedef struct _NSI_UUID_T
+    {
+    UNSIGNED32          time_low;
+    UNSIGNED16          time_mid;
+    UNSIGNED16          time_hi_and_version;
+    UNSIGNED8           clock_seq_hi_and_reserved;
+    UNSIGNED8           clock_seq_low;
+    UNSIGNED8           node[6];
+    } NSI_UUID_T;
+
+typedef [unique] NSI_UUID_T *NSI_UUID_P_T;
+
+typedef struct _NSI_BINDING_T
+    {
+    NSI_STRING_BINDING_T  string;
+    UNSIGNED32            entry_name_syntax;
+    STRING_T              entry_name;
+    } NSI_BINDING_T;
+
+typedef struct _NSI_BINDING_VECTOR_T
+    {
+    UNSIGNED32            count;
+    [size_is(count)]
+    NSI_BINDING_T  binding[*];
+    } NSI_BINDING_VECTOR_T;
+
+typedef [unique] NSI_BINDING_VECTOR_T *NSI_BINDING_VECTOR_P_T;
+
+typedef struct _NSI_SERVER_BINDING_VECTOR_T
+    {
+    UNSIGNED32            count;
+    [size_is(count)]
+    NSI_STRING_BINDING_T  string[*];
+    } NSI_SERVER_BINDING_VECTOR_T;
+
+typedef [unique] NSI_SERVER_BINDING_VECTOR_T *NSI_SERVER_BINDING_VECTOR_P_T;
+
+typedef struct _NSI_UUID_VECTOR_T
+    {
+    UNSIGNED32 count;
+    [size_is(count)]
+    NSI_UUID_P_T uuid[*];
+    } NSI_UUID_VECTOR_T;
+
+typedef [unique] NSI_UUID_VECTOR_T *NSI_UUID_VECTOR_P_T;
+
+typedef struct _NSI_SYNTAX_ID_T
+    {
+    NSI_UUID_T          id;
+    UNSIGNED32          version;
+    } NSI_SYNTAX_ID_T;
+
+typedef [unique] NSI_SYNTAX_ID_T *NSI_IF_ID_P_T;
+
+typedef struct _NSI_INTERFACE_ID_T
+    {
+    NSI_SYNTAX_ID_T Interface;
+    NSI_SYNTAX_ID_T TransferSyntax;
+    } NSI_INTERFACE_ID_T;
+
+typedef [unique] NSI_INTERFACE_ID_T *NSI_INTERFACE_ID_P_T;
+
+typedef struct _NSI_IF_VECTOR_T
+    {
+    UNSIGNED32 count;
+    [size_is(count)]
+    NSI_IF_ID_P_T if_id[*];
+    } NSI_IF_ID_VECTOR_T;
+
+
+// If you change this table, you must update the status mapping vector
+// NsiToRpcStatus in client\util.cxx
+
+enum {
+    NSI_S_OK,
+    NSI_S_NO_MORE_BINDINGS,
+    NSI_S_INTERFACE_NOT_FOUND,
+    NSI_S_ENTRY_NOT_FOUND,
+    NSI_S_NAME_SERVICE_UNAVAILABLE,
+    NSI_S_NO_NS_PRIVILEGE,
+    NSI_S_UNSUPPORTED_NAME_SYNTAX,
+    NSI_S_NOTHING_TO_UNEXPORT,
+    NSI_S_INVALID_NAME_SYNTAX,
+    NSI_S_INVALID_NS_HANDLE,
+    NSI_S_INVALID_OBJECT,
+    NSI_S_NOT_ALL_OBJS_UNEXPORTED,    // Was NSI_S_INVALID_INTERFACE, but this
+                                      // never could be returned by CSD.
+    NSI_S_INVALID_STRING_BINDING,
+    NSI_S_SOME_OTHER_ERROR,
+
+    // New error codes added after 4/92 and v 1.0 of CSD deamon.
+
+    NSI_S_NOTHING_TO_EXPORT,
+    NSI_S_UNIMPLEMENTED_API,
+    NSI_S_NO_INTERFACES_EXPORTED,
+    NSI_S_INCOMPLETE_NAME,
+    NSI_S_INVALID_VERS_OPTION,
+    NSI_S_NO_MORE_MEMBERS,
+    NSI_S_ENTRY_ALREADY_EXISTS,
+    NSI_S_OUT_OF_MEMORY,
+    NSI_S_GROUP_MEMBER_NOT_FOUND,
+    NSI_S_STATUS_MAX,
+};
+
+}

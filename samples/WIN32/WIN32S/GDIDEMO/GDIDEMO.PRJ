@@ -1,0 +1,18 @@
+82572
+C:\SC\samples\win32\WIN32S\GDIDEMO\GDIDEMO.PRJ
+GDIDEMO.OPN
+novcs
+gdidemo.def
+20
+812035224
+0 0 0 0 0 "bounce.c" ""
+0 0 0 0 0 "dialog.c" ""
+0 0 0 0 0 "draw.c" ""
+0 0 0 0 0 "gdidemo.c" ""
+0 0 0 0 0 "init.c" ""
+0 0 0 0 0 "maze.c" ""
+0 0 0 0 0 "poly.c" ""
+0 0 0 0 0 "wininfo.c" ""
+0 0 0 0 0 "xform.c" ""
+0 0 0 0 0 "gdidemo.def" ""
+0 0 0 0 0 "gdidemo.res" ""

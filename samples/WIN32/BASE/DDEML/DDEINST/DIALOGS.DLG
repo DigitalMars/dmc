@@ -1,0 +1,31 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+1 DLGINCLUDE "Dialogs.H"
+
+ProgressDialog DIALOG 15, 18, 241, 76
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Installer Progress"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Executable Path", 101, 1, 9, 61, 9
+    EDITTEXT        IDL_EXEPATH, 68, 9, 173, 9, ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+    LTEXT           "Program Item Name", 103, 1, 25, 70, 8
+    EDITTEXT        IDL_ITEMNAME, 68, 25, 173, 8, ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER
+    CONTROL         "", IDL_PROGRESSBAR, "Static", SS_BLACKFRAME, 0, 50, 241, 
+                    16
+    EDITTEXT        IDL_PERCENTAGE, 104, 39, 32, 9, ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+END

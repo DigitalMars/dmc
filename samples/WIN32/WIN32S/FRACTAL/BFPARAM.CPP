@@ -1,0 +1,2 @@
+
+unsigned wButterflyIters = 32;

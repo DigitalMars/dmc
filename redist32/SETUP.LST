@@ -1,0 +1,54 @@
+[Windows 95 Params]
+        WndTitle   = ODBC Desktop Driver Pack 3.0 
+        WndMess    = Initializing setup
+        TmpDirSize = 600
+        TmpDirName = ~brzstp.t
+        CmdLine    =  acmsetup /T odbcddp.stf /S  %s %s
+        DrvWinClass= Stuff-Shell
+		Require31  = This program requires Windows (R) 3.1 or higher.
+
+
+
+[Windows 95 Files]
+	odbccp32.dll = odbccp32.dll
+    odbcinst.hlp = odbcinst.hlp
+	odbc.inf     = odbc.inf
+	msvcrt20.dll = msvcrt20.dll
+	msvcrt40.dll = msvcrt40.dll
+	acmsetup.exe  = acmsetup.exe
+	odbcddp.stf	  = odbcddp.stf
+	mssetup.dll   = mssetup.dll
+	odbcstf.dll	  = odbcstf.dll
+	odbckey.inf    = odbckey.inf
+	setup.ini	  = setup.ini
+	odbcint.dll = odbcint.dll
+	acmsetup.hlp = acmsetup.hlp
+	odbc32.dll   = odbc32.dll
+	
+[NT Intel Params]
+        WndTitle   = ODBC Desktop Driver Pack 3.0 
+        WndMess    = Initializing setup
+        TmpDirSize = 600
+        TmpDirName = ~brzstp.t
+        CmdLine    =  acmsetup /T odbcddp.stf /S  %s %s
+        DrvWinClass= Stuff-Shell
+		Require31  = This program requires Windows (R) 3.1 or higher.
+
+
+
+[NT Intel Files]
+	odbccp32.dll = odbccp32.dll
+    odbcinst.hlp = odbcinst.hlp
+	odbc.inf     = odbc.inf
+	msvcrt20.dll = msvcrt20.dll
+	msvcrt40.dll = msvcrt40.dll
+	acmsetup.exe  = acmsetup.exe
+	odbcddp.stf	  = odbcddp.stf
+	mssetup.dll   = mssetup.dll
+	odbcstf.dll	  = odbcstf.dll
+	odbckey.inf    = odbckey.inf
+	setup.ini	  = setup.ini
+	odbcint.dll = odbcint.dll
+	acmsetup.hlp = acmsetup.hlp
+	odbc32.dll   = odbc32.dll
+

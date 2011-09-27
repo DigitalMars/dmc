@@ -1,0 +1,32 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1992-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+
+#include "windows.h"
+#include "subclass.h"
+
+subclassIcon  ICON   subclass.ico
+
+
+scMenu MENU
+BEGIN
+    POPUP        "&New Control"
+    BEGIN
+        MENUITEM "&Button",             IDM_BUTTON
+        MENUITEM "&Edit field",         IDM_EDIT
+        MENUITEM "&List box",           IDM_LIST
+    END
+    POPUP        "&Options"
+    BEGIN
+        MENUITEM "&Test mode",          IDM_TEST
+    END
+END

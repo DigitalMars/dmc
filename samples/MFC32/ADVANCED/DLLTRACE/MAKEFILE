@@ -1,0 +1,95 @@
+# This is a part of the Microsoft Foundation Classes C++ library.
+# Copyright (C) 1992-1995 Microsoft Corporation
+# All rights reserved.
+#
+# This source code is only intended as a supplement to the
+# Microsoft Foundation Classes Reference and related
+# electronic documentation provided with the library.
+# See these sources for detailed information regarding the
+# Microsoft Foundation Classes product.
+#
+
+# Build dlltrace application and Trace DLL
+#
+# Options to NMAKE:
+#     "OPT" => use to set custom compile options
+
+!if "$(DEBUG)" == ""
+DEBUG=1
+!endif
+!if "$(DEBUG)" != "0"
+DEBUG_SUFFIX=d
+!endif
+
+CPPFLAGS=-mn -c -w -Ae -D_MT -D_X86_ $(DEBUGFLAGS) $(OPT)
+LINKFLAGS=/subsystem:windows -nologo
+!if "$(DEBUG)" == "0"
+CPPFLAGS=$(CPPFLAGS) -o+time
+!else
+CPPFLAGS=$(CPPFLAGS) -g /D_DEBUG
+!endif
+!if "$(UNICODE)" != "1"
+CPPFLAGS=$(CPPFLAGS) /D_MBCS
+LINKFLAGS=$(LINKFLAGS) /entry:WinMainCRTStartup
+!else
+CPPFLAGS=$(CPPFLAGS) /D_UNICODE
+LINKFLAGS=$(LINKFLAGS) /entry:wWinMainCRTStartup
+!endif
+
+!if "$(CODEVIEW)" != "0"
+CPPFLAGS=$(CPPFLAGS) 
+LINKFLAGS=$(LINKFLAGS) /CO
+!endif
+
+
+goal: dlltrace.exe trace.dll
+
+#############################################################################
+
+dlltrace.obj: dlltrace.cpp resource.h traceapi.h
+        sc $(CPPFLAGS) dlltrace.cpp
+
+dlltrace.exe: dlltrace.obj dlltrace.res trace.lib
+        link $(LINKFLAGS) @<<
+dlltrace.obj
+dlltrace.exe
+,
+trace.lib
+dlltrace.def
+dlltrace.res;
+<<
+
+dlltrace.res: dlltrace.rc resource.h hello.ico
+        rcc -32 -r dlltrace.rc
+
+#############################################################################
+
+trace.obj: trace.cpp traceapi.h
+        sc $(CPPFLAGS) /D_WINDLL /D_USRDLL trace.cpp
+
+trace.dll trace.lib: trace.obj trace.res
+        link -nologo /CO -entry:_DllMainCRTStartup /IMPL:trace.lib @<<
+trace.obj
+trace.dll
+trace.map
+,
+trace.def
+trace.res;
+<<
+
+trace.res: trace.rc traceres.h
+        rcc -32 -r trace.rc
+
+#############################################################################
+
+clean::
+	if exist *.exe erase *.exe
+	if exist *.dll erase *.dll
+        if exist *.sym erase *.aps
+        if exist *.bro erase *.pch
+	if exist *.map erase *.map
+	if exist *.obj erase *.obj
+	if exist *.lib erase *.lib
+	if exist *.res erase *.res
+
+#############################################################################

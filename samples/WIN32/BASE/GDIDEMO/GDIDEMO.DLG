@@ -1,0 +1,23 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+ABOUTBOX DIALOG LOADONCALL MOVEABLE DISCARDABLE 26, 25, 200, 90
+CAPTION "About GDIDEMO"
+STYLE WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_SYSMENU | WS_POPUP
+BEGIN
+    CONTROL ""                    , -1  , "static", SS_WHITERECT | WS_CHILD                 , 48, 17, 104, 56
+    CONTROL "NTWINT"              , -1  , "static", SS_CENTER | WS_CHILD                    , 50, 19, 100,  8
+    CONTROL "Copyright ) 1990"    , -1  , "static", SS_CENTER | WS_CHILD                    , 50, 27, 100,  8
+    CONTROL "May 31, 1991"        , -1  , "static", SS_CENTER | WS_CHILD                    , 50, 35, 100,  8
+    CONTROL "Version 1.00"        , -1  , "static", SS_CENTER | WS_CHILD                    , 50, 43, 100,  8
+    CONTROL "OK"                  , IDOK, "button", BS_DEFPUSHBUTTON | WS_TABSTOP | WS_CHILD, 50, 54, 100, 17
+END

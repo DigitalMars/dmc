@@ -1,0 +1,36 @@
+#define NOKERNEL
+#define NOGDI
+#define NOSOUND
+#define NOCOMM
+#define NODRIVERS
+#include "windows.h"
+#include "dispdemo.h"
+
+DISPDEMO ICON dispdemo.ico
+
+DispDemoMenu MENU
+BEGIN
+    MENUITEM	"&CPoly",			IDM_POLY
+
+    MENUITEM	"CPoly&2",			IDM_POLY2
+
+    POPUP        "&Options"
+    BEGIN
+        MENUITEM "&Trace",			IDM_TRACE
+    END
+
+    POPUP        "&Help"
+    BEGIN
+        MENUITEM "&About IDispatch Demo...",	IDM_ABOUT
+    END
+END
+
+AboutBox DIALOG 22, 17, 144, 75
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About IDispatch Demo App"
+BEGIN
+    CTEXT "Microsoft Windows"		  -1,  0,  5, 144,  8
+    CTEXT "IDispatch Demo Application"	  -1,  0, 14, 144,  8
+    CTEXT "Version 2.0"			  -1,  0, 34, 144,  8
+    DEFPUSHBUTTON "OK"			IDOK, 53, 59,  32, 14, WS_GROUP
+END

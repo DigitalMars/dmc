@@ -1,0 +1,14 @@
+82570
+c:\SamplesMFC32\ADVANCED\MTMDI\mtmdi.prj
+mtmdi.OPN
+novcs
+mtmdi.DEF
+16
+834106340
+0 0 0 0 0 "bounce.cpp" ""
+0 0 0 0 0 "hello.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "mdi.cpp" ""
+0 0 0 0 0 "mtbounce.cpp" ""
+0 0 0 0 0 "mtmdi.DEF" ""
+0 0 0 0 0 "mtmdi.rc" ""

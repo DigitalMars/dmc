@@ -1,0 +1,79 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include "windows.h"
+#include "wxform.h"
+
+
+TransformIcon  ICON   wxform.ico
+
+
+
+TransformDlg DIALOG 10,10, 96, 72
+STYLE WS_MINIMIZEBOX | WS_CLIPSIBLINGS |
+      WS_CHILD | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "World Transform"
+FONT 8, "Helv"
+BEGIN
+    EDITTEXT      IDD_EM11, 4, 4, 24, 12, ES_AUTOHSCROLL | WS_TABSTOP
+    EDITTEXT      IDD_EM12, 36, 4, 24, 12, ES_AUTOHSCROLL | WS_TABSTOP
+    EDITTEXT      IDD_EM21, 4, 20, 24, 12, ES_AUTOHSCROLL | WS_TABSTOP
+    EDITTEXT      IDD_EM22, 36, 20, 24, 12, ES_AUTOHSCROLL | WS_TABSTOP
+    EDITTEXT      IDD_EDX , 4, 36, 24, 12, ES_AUTOHSCROLL | WS_TABSTOP
+    EDITTEXT      IDD_EDY , 36, 36, 24, 12,  ES_AUTOHSCROLL | WS_TABSTOP
+    EDITTEXT      IDD_13  , 68, 4, 24, 12,   ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT      IDD_23  , 68, 20, 24, 12,  ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT      IDD_33  , 68, 36, 24, 12,  ES_READONLY | NOT WS_TABSTOP
+    PUSHBUTTON      "&Identity", IDD_IDENTITY, 12, 54, 30, 12
+    DEFPUSHBUTTON      "&Set", IDD_SETXFORM, 54, 54, 30, 12
+END
+
+
+
+MouseDlg DIALOG 20, 90, 96, 72
+STYLE WS_MINIMIZEBOX | WS_CHILD | WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
+CAPTION "Mouse Position"
+FONT 8, "Helv"
+BEGIN
+    EDITTEXT        IDD_SCREENX, 36, 12, 24, 12, ES_READONLY
+    EDITTEXT        IDD_SCREENY, 68, 12, 24, 12, ES_READONLY
+    EDITTEXT        IDD_DEVICEX, 36, 30, 24, 12, ES_READONLY
+    EDITTEXT        IDD_DEVICEY, 68, 30, 24, 12, ES_READONLY
+    EDITTEXT        IDD_WORLDX, 36, 48, 24, 12, ES_READONLY
+    EDITTEXT        IDD_WORLDY, 68, 48, 24, 12, ES_READONLY
+    LTEXT           "Screen", 301, 4, 14, 28, 10
+    LTEXT           "Device", 302, 4, 32, 28, 10
+    LTEXT           "World", 303, 4, 50, 28, 10
+END
+
+
+
+
+HelpDlg DIALOG 90, 20, 120, 120
+STYLE WS_MINIMIZEBOX | WS_CHILD | WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
+CAPTION "Direct Manipulation Help"
+FONT 8, "Helv"
+BEGIN
+    CONTROL         "", 100, "Static", SS_BLACKFRAME, 10, 10, 100, 100
+    CONTROL         "", 101, "Static", SS_BLACKFRAME, 8, 8, 104, 104
+    CONTROL         "", 102, "Static", SS_BLACKFRAME, 15, 60, 90, 1
+    CONTROL         "", 103, "Static", SS_BLACKFRAME, 60, 15, 1, 90
+    LTEXT           "(L) Move",    106, 15, 20, 35, 10
+    LTEXT           "(L) Size Y",  107, 15, 85, 35, 10
+    LTEXT           "(R) Shear Y", 108, 15, 95, 38, 10
+    LTEXT           "(L) Size X",  110, 68, 15, 35, 10
+    LTEXT           "(R) Shear X", 111, 68, 25, 38, 10
+
+    LTEXT           "(L) Size XY",112, 68, 85, 38, 10
+    LTEXT           "(R) Rotate",  113, 68, 95, 35, 10
+
+END

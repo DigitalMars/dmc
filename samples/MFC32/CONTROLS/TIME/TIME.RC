@@ -1,0 +1,120 @@
+//Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.rc""\r\n"
+    "#include ""time.rc2""  // non-App Studio edited resources\r\n"
+    "#if 0\r\n"
+    "#include "".\\tlb16\\time.tlb""  // 16-bit: force dependency on .TLB file\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_ABOUTDLL            ICON    DISCARDABLE     "TIME.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TIME                BITMAP  DISCARDABLE     "TIMECTL.BMP"
+IDB_CLOCK               BITMAP  DISCARDABLE     "CLOCKPIC.BMP"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_TIME DIALOG DISCARDABLE  34, 22, 260, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Time Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Time Control, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright \251 1994, Microsoft Corporation",IDC_STATIC,
+                    40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,220,10,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_TIME DIALOG DISCARDABLE  0, 0, 250, 62
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Interval:",IDC_STATIC,3,5,32,11
+    EDITTEXT        IDC_INTERVALEDIT,40,3,35,13
+    CONTROL         "&Enabled",IDC_ENABLEDCHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,3,24,42,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TIME                "Time Control"
+    IDS_TIME_PPG            "Time Property Page"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TIME_PPG_CAPTION    "General"
+END
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "afxres.rc"
+#include "time.rc2"  // non-App Studio edited resources
+#if 0
+#include ".\tlb16\time.tlb"  // 16-bit: force dependency on .TLB file
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

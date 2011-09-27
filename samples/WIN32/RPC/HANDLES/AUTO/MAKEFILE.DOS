@@ -1,0 +1,46 @@
+#*************************************************************#
+#**                                                         **#
+#**                 Microsoft RPC Examples                  **#
+#**                    auto Application                     **#
+#**         Copyright(c) Microsoft Corp. 1992-1995          **#
+#**                                                         **#
+#*************************************************************#
+
+cc= cl
+cc_ntenv= cl386
+cflags= -c -AL -Gsw -Oas -Zpe -Zi -D_CRTAPI1=
+linker= link
+lflags= /CO /NOD /STACK:4096
+
+.c.obj:
+   $(cc) $(cflags) $<
+
+all : autoc
+
+idl : auto.h
+
+# Make the client side application autoc
+autoc : autoc.exe
+autoc.exe : autoc.obj auto_c.obj
+        $(linker) $(lflags) /NOE autoc auto_c ,,,\
+        llibce rpc;
+
+# Update the object files if necessary
+
+autoc.obj : autoc.c auto.h
+
+auto_c.obj : auto_c.c auto.h
+
+auto.h auto_c.c : auto.idl auto.acf
+    midl -env dos -oldnames -no_cpp auto.idl
+
+# Clean up everything
+cleanall : clean
+        -del autoc.exe
+
+# Clean up everything but the .EXEs
+clean :
+        -del *.obj
+        -del *.map
+        -del auto_c.c
+        -del auto.h

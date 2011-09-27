@@ -1,0 +1,43 @@
+/************************************************************
+
+   RC file for HFORM.C
+
+
+************************************************************/
+
+#include <windows.h>
+#include "hfres.h"
+
+iconHform ICON hform.ico
+
+menuMain MENU
+BEGIN
+   POPUP "&File"
+   BEGIN
+      MENUITEM "&Clear All", miClearAll
+      MENUITEM "&Dialog...", miSampleDlg
+      MENUITEM SEPARATOR
+      MENUITEM "&Load", miLoad
+      MENUITEM "&Save", miSave
+      MENUITEM SEPARATOR
+      MENUITEM "E&xit", miExit
+   END
+END
+
+
+IDHFORM ACCELERATORS
+   {
+   VK_TAB,  miNextField, VIRTKEY
+   VK_TAB,  miPrecField, VIRTKEY, SHIFT
+   }
+
+STRINGTABLE
+BEGIN
+   rsNoPW,
+"This application requires Pen Windows to be loaded as an installable \
+driver for input with a pen."
+END
+
+//--------- Dialogs -----------------------------------------------------+
+
+rcinclude hform.dlg

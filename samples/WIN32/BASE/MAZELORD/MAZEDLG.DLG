@@ -1,0 +1,58 @@
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "MAZEDLG.H\0"
+END
+
+DRONE_DLG DIALOG 88, 49, 160, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "Drone Settings"
+FONT 8, "Helv"
+BEGIN
+    RTEXT           "Number of Drones", 0x0065, 3, 19, 80, 9
+    RTEXT           "Moves/Second", 0x0066, 3, 31, 80, 8
+    EDITTEXT        DLG_NUMDRONES, 87, 17, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        DLG_MOVESPEED, 87, 29, 32, 12, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 32, 80, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 88, 80, 40, 14
+END
+
+MDLG_ABOUT DIALOG 35, 33, 160, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Maze Lords"
+FONT 8, "Helv"
+BEGIN
+    DEFPUSHBUTTON   "OK", IDOK, 60, 80, 40, 14
+    LTEXT	    "MazeLords Networked", 0x00CA, 34, 12, 90, 8
+    LTEXT           "Version 1.0", 0x00CB, 60, 23, 39, 8
+END
+
+INTONE_DLG DIALOG 64, 33, 267, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Verbal Intonation"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        DLG_INT_SAY, 41, 35, 222, 12, ES_AUTOHSCROLL
+    EDITTEXT        DLG_INT_LOUDNESS, 41, 16, 21, 12, ES_AUTOHSCROLL
+    RTEXT           "Loudness:", 203, 5, 18, 34, 8
+    RTEXT           "Say:", 204, 18, 37, 20, 8
+    PUSHBUTTON      "OK", IDOK, 69, 62, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 125, 62, 40, 14
+    LTEXT           "(Number of squares Intonation can be heard)", 205, 75, 
+                    18, 150, 8
+END
+
+PLAY_CONF_DLG DIALOG 225, 106, 146, 107
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Player Configuration"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         PC_DLG_PIC, 11, 32, 40, 45, LBS_OWNERDRAWFIXED | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX	    PC_DLG_MAZE, 78, 32, 55, 45, LBS_OWNERDRAWFIXED |
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON	    "OK", IDOK, 25, 87, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 81, 87, 40, 14
+    LTEXT           "Character", 105, 15, 19, 32, 8
+    LTEXT           "Home Sub-maze", 106, 81, 19, 53, 8
+END

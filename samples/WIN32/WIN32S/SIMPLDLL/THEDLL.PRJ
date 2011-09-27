@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\WIN32S\SIMPLDLL\THEDLL.PRJ
+THEDLL.OPN
+novcs
+thedll.def
+21
+812035224
+0 0 0 0 0 "thedll.c" ""
+0 0 0 0 0 "thedll.def" ""
+0 0 0 0 0 "thedll.rc" ""

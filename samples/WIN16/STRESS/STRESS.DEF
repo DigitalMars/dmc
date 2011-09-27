@@ -1,0 +1,29 @@
+NAME		SYMANTEC_STRESS WINDOWAPI 
+
+DESCRIPTION	'Symantec !Stress! - (c)1993 Symantec Corporation'
+
+EXETYPE		WINDOWS
+
+PROTMODE
+
+STUB		'WINSTUB.EXE'
+
+CODE		 PRELOAD MOVEABLE IOPL CONFORMING DISCARDABLE EXECUTEONLY
+
+DATA		 PRELOAD MOVEABLE NOIOPL  READONLY
+
+STACKSIZE	4096
+
+HEAPSIZE	1024
+
+IMPORTS
+		"STRESS"."AllocMem"
+		"STRESS"."FreeAllMem"
+		"STRESS"."AllocDiskSpace"
+		"STRESS"."UnAllocDiskSpace"
+		"STRESS"."AllocFileHandles"
+		"STRESS"."UnallocFileHandles"
+		"STRESS"."AllocGDIMem"
+		"STRESS"."FreeAllGDIMem"
+		"STRESS"."AllocUserMem"
+		"STRESS"."FreeAllUserMem"

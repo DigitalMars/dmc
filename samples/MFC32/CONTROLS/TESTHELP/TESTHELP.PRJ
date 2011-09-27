@@ -1,0 +1,13 @@
+82572
+C:\sc\SAMPLES\MFC32\CONTROLS\testhelp\testhelp.prj
+testhelp.OPN
+novcs
+TESTHELP.DEF
+3
+853218298
+0 0 0 0 0 "STDAFX.CPP" ""
+0 0 0 0 0 "TESTHELP.CPP" ""
+0 0 0 0 0 "THELPCTL.CPP" ""
+0 0 0 0 0 "THELPPPG.CPP" ""
+0 0 0 0 0 "TESTHELP.DEF" ""
+0 0 0 0 0 "TESTHELP.RC" ""

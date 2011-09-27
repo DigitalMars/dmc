@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\ole16\DLLSRV\PRGIDMON.PRJ
+PRGIDMON.OPN
+novcs
+prgidmon.def
+1
+812035224
+0 0 0 0 0 "libmain.cpp" ""
+0 0 0 0 0 "prgidmon.cpp" ""
+0 0 0 0 0 "prgidmon.def" ""
+0 0 0 0 1001 "..\bin\movelib.bat" ""

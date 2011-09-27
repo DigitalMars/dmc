@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\RPC\DATA\INOUT\INOUTC.PRJ
+INOUTC.OPN
+novcs
+inoutc.def
+4
+812035224
+0 0 0 0 0 "inout_c.c" ""
+0 0 0 0 0 "inoutc.c" ""
+0 0 0 0 0 "inoutc.def" ""
+0 0 0 0 0 "rpcrt4.lib" ""

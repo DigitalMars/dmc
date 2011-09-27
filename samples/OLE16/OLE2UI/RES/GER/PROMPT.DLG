@@ -1,0 +1,78 @@
+Exclamation ICON    bang.ico
+
+
+IDD_LINKSOURCEUNAVAILABLE DIALOG 21, 34, 175, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON        "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Die Aktion kann nicht beendet werden, da die Quelle der Verkn|pfung momentan nicht verf|gbar ist.", ID_PU_TEXT, 48, 8, 117, 32
+	DEFPUSHBUTTON   "OK", IDOK, 29, 58, 65, 14
+	PUSHBUTTON      "&Verkn|pfungen...", ID_PU_LINKS, 100, 58, 65, 14
+END
+
+
+IDD_CANNOTUPDATELINK DIALOG 21, 34, 175, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON        "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Einige Verkn|pfungen konnten nicht aktualisiert werden, da ihre Quellen momentan nicht verf|gbar sind.", ID_PU_TEXT, 48, 8, 117, 32
+	DEFPUSHBUTTON   "OK", IDOK, 26, 58, 65, 14
+	PUSHBUTTON      "&Verkn|pfungen...", ID_PU_LINKS, 96, 58, 65, 14
+END
+
+
+IDD_SERVERNOTREG DIALOG 39, 30, 198, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Das Anwendungsprogramm, das benvtigt wird, um %s zu vffnen, ist nicht verf|gbar. Sie sollten das Objekt umwandeln oder mit einem anderen Dateiformat vffnen, indem Sie den Befehl ""Umwandeln"" verwenden.", ID_PU_TEXT, 39, 8, 152, 43
+	DEFPUSHBUTTON   "&Umwandeln...", ID_PU_CONVERT, 32, 58, 50, 14
+	PUSHBUTTON      "Abbrechen", IDCANCEL, 86, 58, 50, 14
+	PUSHBUTTON      "&Hilfe", ID_OLEUIHELP, 140, 58, 50, 14
+END
+
+
+IDD_LINKTYPECHANGED DIALOG 39, 30, 198, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Die Verkn|pfung ist nicht mehr eine %s-Verkn|pfung. Wdhlen Sie einen anderen Befehl, der von dem neuen Dateiformat angeben wird.",  ID_PU_TEXT, 39, 8, 152, 36
+	PUSHBUTTON      "OK", IDOK, 79, 58, 40, 14
+END
+
+
+IDD_SERVERNOTFOUND DIALOG 36, 39, 183, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Das Anwendungsprogramm konnte nicht gestartet werden.\n\nStellen Sie sicher, da_ das Anwendungsprogramm korrekt installiert ist, in Ihrem DOS-Pfad ist, und nicht gelvscht, verschoben oder umbenannt worden ist.",  ID_PU_TEXT, 34, 8, 144, 63
+	DEFPUSHBUTTON   "OK", IDOK, 78, 75, 40, 14
+END
+
+
+IDD_UPDATELINKS DIALOG 50, 57, 179, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "", ID_PU_METER, "Static", SS_BLACKFRAME, 5, 40, 122, 9
+	DEFPUSHBUTTON   "&Stop", ID_PU_STOP, 134, 37, 40, 14
+	LTEXT           "Verkn|pfungen aktualisieren...", ID_DUMMY, 5, 7, 122, 8
+	LTEXT           "", ID_PU_PERCENT, 56, 26, 20, 8
+END
+
+
+IDD_OUTOFMEMORY DIALOG 36, 39, 107, 73
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Exclamation", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Nicht ausreichend Arbeitsspeicher!", ID_PU_TEXT, 35, 13,  65, 22
+	DEFPUSHBUTTON   "OK", IDOK, 44, 42, 40, 14
+END

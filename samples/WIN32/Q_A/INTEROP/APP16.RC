@@ -1,0 +1,27 @@
+/***********************************************\
+* app16.rc: Resource script               	*
+*                                               *
+*                                               *
+\***********************************************/
+
+
+#include <windows.h>
+#include "app16.h"
+#include "app16.dlg"
+
+App16Icon ICON App16.ico
+
+App16Menu MENU
+{
+   POPUP "&Send Data"
+   {
+      MENUITEM "&Thunk",             IDM_THUNK
+      MENUITEM "&WM_COPYDATA",       IDM_COPYDATA
+      MENUITEM "E&xit",              IDM_EXIT
+   }
+
+   POPUP "&Help"
+   {
+      MENUITEM "&About",             IDM_ABOUT
+   }
+}

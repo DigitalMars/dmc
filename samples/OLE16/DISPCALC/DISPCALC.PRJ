@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\ole16\DISPCALC\DISPCALC.PRJ
+DISPCALC.OPN
+novcs
+DISPCALC.DEF
+0
+812035224
+0 0 0 0 0 "clsid.c" ""
+0 0 0 0 0 "dispcalc.cpp" ""
+0 0 0 0 0 "idata.cpp" ""
+0 0 0 0 0 "winmain.cpp" ""
+0 0 0 0 0 "dispcalc.def" ""
+0 0 0 0 0 "dispcalc.rc" ""

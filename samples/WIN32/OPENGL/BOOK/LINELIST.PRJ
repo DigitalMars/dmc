@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\OPENGL\BOOK\LINELIST.PRJ
+LINELIST.OPN
+novcs
+linelist.def
+4
+812035224
+0 0 0 0 0 "linelist.c" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "linelist.def" ""
+0 0 0 0 0 "advapi32.lib" ""

@@ -1,0 +1,11 @@
+
+about DIALOG 90, 45, 145, 80
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Microsoft Windows Common Dialogs Sample Application", 
+                    101, 27, 14, 93, 24
+    PUSHBUTTON      "OK", IDCANCEL, 52, 60, 40, 14
+END

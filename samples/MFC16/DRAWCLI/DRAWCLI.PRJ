@@ -1,0 +1,19 @@
+82569
+D:\sc\samples\mfc25\DRAWCLI\DRAWCLI.PRJ
+DRAWCLI.OPN
+novcs
+drawcli.def
+0
+805039278
+0 0 0 0 0 "drawcli.def"
+0 0 0 0 0 "cntritem.cpp"
+0 0 0 0 0 "drawcli.cpp"
+0 0 0 0 0 "drawdoc.cpp"
+0 0 0 0 0 "drawobj.cpp"
+0 0 0 0 0 "drawtool.cpp"
+0 0 0 0 0 "drawvw.cpp"
+0 0 0 0 0 "mainfrm.cpp"
+0 0 0 0 0 "rectdlg.cpp"
+0 0 0 0 0 "splitfrm.cpp"
+0 0 0 0 0 "drawcli.rc"
+0 0 0 0 0 "odbc.lib"

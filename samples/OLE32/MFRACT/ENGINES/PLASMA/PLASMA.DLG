@@ -1,0 +1,16 @@
+1 DLGINCLUDE "plasma.h"
+
+PROPERTIES DIALOG 58, 20, 138, 80
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+STYLE WS_POPUP | WS_DLGFRAME
+BEGIN
+    EDITTEXT        IDM_RANDOMNESS, 71, 47, 59, 12, ES_AUTOHSCROLL
+    RTEXT           "Graininess Factor:", 105, 7, 47, 61, 11, NOT WS_GROUP
+    PUSHBUTTON      "OK", IDOK, 3, 64, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 49, 64, 40, 14
+    PUSHBUTTON      "About", IDM_ABOUT, 95, 64, 40, 14
+    CTEXT           "Plasma Cloud", 101, 0, 5, 138, 8
+    CTEXT           "Randomly generated plasma clouds.", 103, 0, 16, 138, 8
+    CTEXT           "The Graniness Factor is a real", 102, 0, 27, 138, 8
+    CTEXT           "number between 0 and 50 inclusive.", 104, 0, 35, 138, 8
+END

@@ -1,0 +1,433 @@
+:Base hcw.hlp>proc4
+:Title Help Author's Guide
+:Link shed.hlp        ; Help for the Hotspot Editor  SHED.EXE)
+:Link win32.hlp       ; SDK Help file (for WinHelp API)
+1 Getting Started
+2 What is Help Workshop?=BAS_THE_HELP_COMPILER
+2 Help Workshop components=SDK_FILES_DOCS
+2 Notational Conventions=SDK_NOTE_CONVENTION
+1 What's New in Version 4.0
+2 WinHelp 4.0
+3 Redesigned User Interface
+4 New Help Topics dialog box=NEW_WINHELP_INTERFACE
+4 New context menu=NEW_WINHELP_CONTEXT_MENUS
+4 New Options menu=NEW_WINHELP_OPTIONS_MENU
+4 New annotation capabilities=NEW_ANNOTATION
+4 Improved copying=NEW_WINHELP_COPY
+4 New printing options=NEW_WINHELP_PRINTING
+4 New ESC key function=NEW_KEY
+4 Background color override=NEW_COLOR
+4 Context-sensitive Help access=NEW_CONTEXT
+3 Improved Authoring Capabilities
+4 New window-type footnote=NEW_WINDOW_TYPE
+4 Secondary-window features=NEW_AUTHOR_SECONDARY_WND
+4 New macros and enhanced macro processing=NEW_MACROS
+4 Greater color support=NEW_COLOR_SUPPORT
+4 New default buttons=NEW_DEFAULT_BUTTON
+4 Duplicate accelerators=NEW_ACCELERATOR
+4 New topic-linking features=NEW_LINKING
+4 New WinHelp API commands=NEW_API>tables
+3 New Font-Handling Features
+4 New author-specified font capability=NEW_FONT_AUTHOR
+4 Character set as part of font description=NEW_FONT_CHARSET
+4 Longer font names=NEW_FONT_NAMES
+4 New context-sensitive help features=NEW_CONTEXT_SENSITIVE
+3 New Compiling and Testing Features
+4 Help Author command=NEW_HELP_AUTHOR_COMMAND
+4 Easy jumping to topics=NEW_TOPIC_JUMP
+3 New File-Handling Features
+4 Help file search path=NEW_SEARCH_PATH
+2 Help Workshop 4.0
+3 Improved Authoring Capabilities
+4 Graphical interfaces=NEW_AUTHOR_HCW_UI
+4 New topic file features=NEW_TOPIC_FILE
+4 New macros and enhanced macro processing=NEW_MACROS
+4 Bitmaps supplied by Help Workshop=BUILT_IN_BITMAPS
+4 Greater color support=NEW_COLOR_SUPPORT
+4 New default buttons=NEW_DEFAULT_BUTTON
+3 Font-Handling Features
+4 Greater RTF character support=NEW_FONT_SUPPORT
+4 Automatic localization of quotation marks=NEW_AUTO_QUOTES
+4 Character set as part of font description=NEW_FONT_CHARSET
+4 New author-specified font capability=NEW_FONT_AUTHOR
+4 Longer font names=NEW_FONT_NAMES
+3 New Compiling and Testing Features
+4 Report command=NEW_REPORT_COMMAND
+4 New test commands=NEW_TEST_COMMAND
+4 Missing-bitmaps error=NEW_BITMAP_ERROR
+4 Help Author command=NEW_HELP_AUTHOR_COMMAND
+4 Improved error handling=NEW_ERROR_HANDLING
+4 New monitoring of WinHelp messages=NEW_MONITOR_MESSAGE
+3 New File-Handling Features
+4 Bitmap search path=NEW_BITMAP_SEARCH
+1 Designing your Help system
+2 Planning your Help system
+3 Designing for multiple Help files=MULTIPLE_HELP_DESIGN
+3 Help system limits=BAS_SYS_LIMITS>tables
+2 Designing the Contents, Index, and Find tabs
+3 About the contents file=IDH_BAS_CNT_OVERVIEW
+3 Designing an index=INDEX_DESIGN
+3 Overview of full-text search features=IDH_OPTIONS_FTS
+2 Customizing Help windows, menus and buttons
+3 Designing Help windows=WINDOW_DESIGN>tables
+3 Customizing topic windows=BAS_HPJ_CREATE_WINDOW
+3 Customizing Help buttons=REF_CUST_BTN
+3 Customizing main window menus=REF_CUST_MENU
+3 Specifying macros that apply to your entire Help file=IDH_BAS_CONFIG_MACRO
+2 Designing Context-sensitive Help
+3 Designing context-sensitive Help=IDH_BAS_HPJ_ADD_MAP
+2 Designing training card Help
+3 About training card Help=BAS_TRAIN_CARDS
+2 Using graphics, video, and animation
+3 Using graphics in your Help files=BAS_ADDING_GRAPHICS
+3 Multiple color depth graphics=BAS_MULT_COLOR_GRAPHICS
+3 Multiple aspect ratio graphics=BAS_MULT_RESOLUTION
+3 Guidelines for using video and animation=MM_DESIGN
+2 Using Help Workshop
+3 About project files=IDH_BAS_ABOUT_HPJ_FILES
+3 Compiling Help files=IDH_BUILD_HELP_FILE
+3 Features for testing Help files=IDH_BAS_TESTING_HELP_FILES
+3 Compiler messages=BAS_COMPILE_MSG
+3 About Help Author mode=BAS_HELP_AUTHOR_MODE
+2 Designing topics
+3 Designing pop-ups and jumps
+4 Designing pop-up topics=POPUP_TOPICS_DESIGN
+4 Keyword jumps=BAS_ASSOCIATIVE_JUMPS
+2 Localizing Help files
+3 Checklist for translating Help files=BAS_TRANSLATING
+2 Adding tabs to the Help Topics dialog box
+3 Adding tabs=IDH_ADD_NEW_TAB
+1 Step-by-Step Procedures
+2 Creating Topic Files
+3 Writing Basic Topics
+4 To create a topic file =PRO_CREATE_TOPIC_FILE
+4 To add a topic ID to a topic =PRO_ADD_TOPIC_ID
+4 To add a title footnote to a topic =PRO_ADD_TITLE
+4 To mark a topic as an ALink target=PRO_ADD_KEYWORD
+4 To create index entries for a topic=PRO_ADD_INDEX_ENTRIES
+4 To create second-level index entries for a topic=PRO_ADD_LEVEL2_KEYWORDS
+4 To add a topic to a browse sequence=PRO_ADD_BROWSE_CODE
+4 To mark a topic so you can exclude or include it in a Help file=PRO_INSERT_BUILD_TAG
+4 To specify the type of window to display a topic in=PRO_ADD_WINDOW_TYPE
+4 To specify a macro to run when a topic is opened=PRO_ADD_MACRO_COMMAND
+4 To add a nonscrolling region to a topic =PRO_NONSCROLL
+4 To prevent a line of text from wrapping=PRO_NON_WRAP
+3 Linking Topics
+4 To create a jump to a topic or pop-up topic=PRO_INSERT_JUMP
+4 To add a hotspot that runs a macro=PRO_INSERT_MACRO
+4 To create a bitmap that contains multiple hotspots=PRO_MULT_HTSPT_GRPHC
+3 Adding Images to Topics
+4 To add a bitmap to a topic=PRO_ADD_PICTURE
+4 To add video or animation to a topic=PRO_ADD_VIDEO
+4 To configure a bitmap for multiple color depths=PRO_MULT_COLOR_GRAPHICS
+2 Creating a Project File
+3 Basic Project File Settings
+4 To create a new project file=PRO_CREATE_HPJ
+4 To specify the location of bitmap files =PRO_HPJ_BITMAP_LOCATION
+4 To enable a program to display an individual Help topic=PRO_HPJ_ADD_MAP
+4 To alias one topic ID to another=PRO_HPJ_ADD_ALIAS
+4 To specify the title of a Help file=PRO_HPJ_TITLE
+4 To run a macro when an index entry is clicked=PRO_KEYWORD_MACRO
+4 To add browse buttons to a window=PRO_ADD_BROWSE_BUTTONS
+4 To assign a contents file to a Help file=PRO_HPJ_SPECIFY_CNT_FILE
+3 Customizing Help Windows
+4 To define a secondary window=PRO_HPJ_CREATE_WINDOW
+4 To customize the main Help window =PRO_HPJ_CUSTOMIZE_WINDOW
+4 To make a window stay on top by default=PRO_HPJ_STAY_ON_TOP
+4 To specify a title for a window=PRO_ADD_WINDOW_TITLE
+4 To specify the size and position of a window =PRO_HPJ_WINDOW_POSITION
+4 To specify background colors for a window=PRO_HPJ_BACKGROUND_COLOR
+4 To add buttons to a secondary window=PRO_HPJ_ADD_BUTTON_BAR
+4 To add buttons to the main Help window=PRO_HPJ_MAIN_BUTTON_BAR
+4 To run a macro when a window is opened=PRO_HPJ_WINDOW_CONFIG_MACROS
+3 Customizing the Help File
+4 To specify the default topic for the Help file=PRO_HPJ_DEFAULT_TOPIC
+4 To add copyright information=PRO_HPJ_COPYRIGHT_INFO
+4 To run a macro when a Help file is opened=PRO_HPJ_CONFIG_MACRO
+4 To store DLL-related data files within the Help file=PRO_ADD_DATA_FILES
+3 Setting Compiler Options
+4 To specify compression options=PRO_HPJ_COMPRESSION
+4 To suppress compiler messages=PRO_HPJ_CONTROL_ERRORS
+4 To save compiler messages to a file=PRO_HPJ_ERRORLOG
+4 To specify where to store temporary files=PRO_HPJ_TMP_DIR
+4 To specify which topics to include in a build =PRO_HPJ_BUILD_TAGS
+4 To generate an index file for full-text search=PRO_FULLTEXT_INDEX
+4 To change every occurrence of a font used in a Help file=PRO_HPJ_FONT_MAPPING
+4 To change the path to source files if you move your Help project=PRO_HPJ_REPLACE_PATH
+4 To change characters that identify second-level index entries=PRO_SPECIFY_SEP_CHAR
+3 Creating Non-English Help files
+4 To specify the language of the Help file=PRO_HPJ_SORT_SETTINGS
+4 To change the default character set=PRO_HPJ_DEFAULT_CHARSET
+4 To translate the contents file=PRO_CNT_TRANSLATE
+4 To change the font used in WinHelp dialog boxes=pro_hpj_default_font
+4 To run two language versions of a Help file side by side=PRO_HCW_SPLIT_SCREEN
+2 Creating a Contents File
+3 To create a contents file =PRO_CNT_CREATE
+3 To specify a default window in which to display topics =PRO_CNT_DEFAULT_HELP_FILE
+3 To add headings to the Contents tab =PRO_CNT_ADD_BOOK
+3 To add topics to the Contents tab =PRO_CNT_ADD_TOPIC
+3 To change the level of a heading or topic =PRO_CHG_HDG_LEVEL
+3 To include additional contents files=PRO_CNT_DYN
+3 To combine keywords from several Help files =PRO_CNT_COMBINE_HELP_FILES
+3 To enable ALink and KLink jumps to other Help files =PRO_CNT_LINKS
+3 To add another tab to the Help Topics dialog box=PRO_CNT_NEW_TAB
+3 To translate the contents file =PRO_CNT_TRANSLATE
+2 Compiling and Testing a Help File
+3 To compile a Help file =PRO_HPJ_COMPILE
+3 To compile more than one Help file at a time =PRO_COMPILE_MANY_FILES
+3 To view a Help file from the Help Workshop =PRO_RUN_HELP
+3 To generate a report on a Help file=PRO_GEN_REPORT
+3 To test a contents file =PRO_TEST_CNT
+3 To simulate a program call to a WinHelp API=PRO_CALL_API
+3 To monitor WinHelp messages =PRO_TRACK_WINHELP_MSGS
+3 To close all instances of WinHelp =PRO_HCW_CLOSE_ALL_HELP
+1 WinHelp Reference
+2 Using Macros
+3 Help macros =MACRO_OVERVIEW>main
+3 Macro syntax =MACRO_OVERVIEW_SYNTAX>main
+3 Macro error checking =MACRO_OVERVIEW_ERROR_CHECKING>main
+3 Using DLL functions as Help macros =MACRO_OVERVIEW_DLLS>main
+3 Calling macros from a program=MACRO_OVERVIEW_CALLING_FROM_APP>main
+3 Nested macros and nested string parameters=MACRO_OVERVIEW_NESTED>main
+2 Macro Quick Reference
+3 Macro quick reference =MACRO_REF_OVR>tables
+3 Button macros =MACRO_REF_BUTTON>tables
+3 Keyboard macros =MACRO_REF_KEYBOARD>tables
+3 Linking macros =MACRO_REF_LINK>tables
+3 Menu macros =MACRO_REF_MENU>tables
+3 Program macros =MACRO_REF_PROGRAM>tables
+3 Text-marker macros =MACRO_REF_TEXT_MARKER>tables
+3 Window macros =MACRO_REF_WINDOW>tables
+2 Macro Reference
+3 About =About>main
+3 AddAccelerator =AddAccelerator>main
+3 ALink =ALink>main
+3 Annotate =Annotate>main
+3 AppendItem =AppendItem>main
+3 Back =Back>main
+3 BackFlush=BackFlush>main
+3 BookmarkDefine =BookmarkDefine>main
+3 BookmarkMore =BookmarkMore>main
+3 BrowseButtons =BrowseButtons>main
+3 ChangeButtonBinding =ChangeButtonBinding>main
+3 ChangeEnable =ChangeEnable>main
+3 ChangeItemBinding =ChangeItemBinding>main
+3 CheckItem =CheckItem>main
+3 CloseSecondarys =CloseSecondarys>main
+3 CloseWindow =CloseWindow>main
+3 Compare=Compare>main
+3 Contents =Contents>main
+3 ControlPanel =ControlPanel>main
+3 CopyTopic =CopyTopic>main
+3 CreateButton =CreateButton>main
+3 DeleteItem =DeleteItem>main
+3 DeleteMark =DeleteMark>main
+3 DestroyButton =DestroyButton>main
+3 DisableButton =DisableButton>main
+3 DisableItem =DisableItem>main
+3 EnableButton =EnableButton>main
+3 EnableItem =EnableItem>main
+3 EndMPrint =EndMPrint>main
+3 ExecFile =ExecFile>main
+3 ExecProgram =ExecProgram>main
+3 Exit =Exit>main
+3 ExtAbleItem =ExtAbleItem>main
+3 ExtInsertItem =ExtInsertItem>main
+3 ExtInsertMenu =ExtInsertMenu>main
+3 FileExist=FileExist>main
+3 FileOpen =FileOpen>main
+3 Find =Find>main
+3 Finder =Finder>main
+3 FloatingMenu =FloatingMenu>main
+3 Flush =Flush>main
+3 FocusWindow =FocusWindow>main
+3 Generate =Generate>main
+3 GotoMark =GotoMark>main
+3 HelpOn =HelpOn>main
+3 HelpOnTop =HelpOnTop>main
+3 History =History>main
+3 IfThen =IfThen>main
+3 IfThenElse =IfThenElse>main
+3 InitMPrint =InitMPrint>main
+3 InsertItem =InsertItem>main
+3 InsertMenu =InsertMenu>main
+3 IsBook =IsBook>main
+3 IsMark =IsMark>main
+3 IsNotMark =IsNotMark>main
+3 JumpContents =JumpContents>main
+3 JumpContext =JumpContext>main
+3 JumpHash =JumpHash>main
+3 JumpHelpOn =JumpHelpOn>main
+3 JumpId =JumpId>main
+3 JumpKeyword =JumpKeyword>main
+3 KLink =KLink>main
+3 Menu =Menu>main
+3 Next =Next>main
+3 NoShow =NoShow>main
+3 Not =Not>main
+3 PopupContext =PopupContext>main
+3 PopupHash =PopupHash>main
+3 PopupId =PopupId>main
+3 PositionWindow =PositionWindow>main
+3 Prev =Prev>main
+3 Print =Print>main
+3 RegisterRoutine =RegisterRoutine>main
+3 RemoveAccelerator =RemoveAccelerator>main
+3 ResetMenu =ResetMenu>main
+3 SaveMark =SaveMark>main
+3 Search =Search>main
+3 SetContents =SetContents>main
+3 SetPopupColor =SetPopupColor>main
+3 ShellExecute=ShellExecute>main
+3 ShortCut =ShortCut>main
+3 TCard =TCard>main
+3 Test =Test>main
+3 TestALink=TestALink>main
+3 TestKLink=TestKLink>main
+3 UncheckItem =UncheckItem>main
+3 UpdateWindow =UpdateWindow>main
+2 Project File Commands
+3 Project file sections =HPJ_Ref_Sections>main
+3 [ALIAS] section=HPJ_REF_ALIAS>main
+3 [BAGGAGE] section=HPJ_REF_BAGGAGE>main
+3 [BITMAPS] section=HPJ_REF_BITMAPS>main
+3 [BUILDTAGS] section=HPJ_REF_BUILDTAGS>main
+3 [CONFIG] section=HPJ_REF_CONFIG>main
+3 [CONFIG:x] section=HPJ_REF_CONFIG_X>main
+3 [FILES] section=HPJ_REF_FILES>main
+3 [MACROS] section=HPJ_REF_MACROS>main
+3 [MAP] section=HPJ_REF_MAP>main
+3 [OPTIONS] section=HPJ_REF_OPTIONS>main
+3 [WINDOWS] section=HPJ_REF_WINDOWS>main
+2 Topic File Commands
+3 {bmc}, {bml}, {bmr}=RTF_COMMAND_BMX>main
+3 {button}=RTF_COMMAND_BUTTON>main
+3 {ewc}, {ewl}, {ewr}=RTF_COMMAND_EWX>main
+3 {mci}=RTF_COMMAND_MCI>main
+2 WinHelp Buttons and Menus
+3 Standard Help menus=REF_STD_MENU>tables
+3 Standard WinHelp buttons=REF_STD_BTN>tables
+2 WinHelp Initialization Files
+3 Windows Help settings in the Win.ini file=HELP_SETTINGS_WIN_INI>main
+3 Creating a Winhelp.ini file for search paths=WINHELP_SEARCH_PATHS_WINHELP_INI>main
+2 Executable File Commands
+3 HCRTF command-line switches=EXEC_HCRTF>main
+3 HCW command=EXEC_HCW>main
+3 MRBC command=EXEC_MRBC>main
+3 Winhelp.exe command-line switches=EXEC_WINHELP>main
+2 Developer Considerations
+3 Development strategies for Help files =DEV_STRATEGIES>main
+3 How WinHelp finds a file =WINHELP_FIND_FILES>main
+3 Providing context-sensitive Help in a dialog box=PROVIDING_CS_HELP>main
+3 Example code (context-sensitive Help) =CS_HELP_EXAMPLE>main
+3 Adding a tab to the Help Topics dialog box=IDH_ADD_NEW_TAB>main
+2 Help APIs
+3 HELPINFO =HELPINFO>main
+3 HELPWININFO =HELPWININFO>main
+3 MULTIKEYHELP =MULTIKEYHELP>main
+3 WinHelp =WinHelp>main
+3 WM_HELP =WM_HELP>main
+3 WM_TCARD =WM_TCARD>main
+2 Full-Text Search APIs
+3 About full-text search=FTS_About>main
+3 Index construction=FTS_Index_Construction>main
+3 Where files are placed=FTS_File_Placement>main
+3 Searcher=FTS_Searcher>main
+3 Phrase compression=FTS_Phrase_Compression>main
+3 Language support=FTS_Language_Support>main
+3 The stemmer interface=FTS_Stemmer_Interface>main
+3 The word breaker interface=FTS_Word_Breaker_Interface>main
+3 Functions
+4 AnimatorProc=FTS_AnimatorProc>main
+4 CompressText=FTS_CompressText>main
+4 DecompressText=FTS_DecompressText>main
+4 DeleteCompressor=FTS_DeleteCompressor>main
+4 DeleteIndex=FTS_DeleteIndex>main
+4 DeleteSearcher=FTS_DeleteSearcher>main
+4 DiscardIndex=FTS_DiscardIndex>main
+4 FTSWordBreakA=FTS_FTSWordBreakA>main
+4 FTSWordBreakW=FTS_FTSWordBreakW>main
+4 GetPhraseTable=FTS_GetPhraseTable>main
+4 IsValidIndex=FTS_IsValidIndex>main
+4 LoadGroup=FTS_LoadGroup>main
+4 NewCompressor=FTS_NewCompressor>main
+4 NewIndex=FTS_NewIndex>main
+4 NewSearcher=FTS_NewSearcher>main
+4 OpenDialog=FTS_OpenDialog>main
+4 OpenIndex=FTS_OpenIndex>main
+4 QueryOptions=FTS_QueryOptions>main
+4 RegisterAnimator=FTS_RegisterAnimator>main
+4 SaveGroup=FTS_SaveGroup>main
+4 SaveIndex=FTS_SaveIndex>main
+4 ScanText=FTS_ScanText>main
+4 ScanTopicText=FTS_ScanTopicText>main
+4 ScanTopicTitle=FTS_ScanTopicTitle>main
+4 SetPhraseTable=FTS_SetPhraseTable>main
+4 SetDirectoryLocator=FTS_SetDirectoryLocator>main
+4 Stemmer=FTS_Stemmer>main
+3 Messages
+4 MSG_FTS_GET_TITLE=MSG_FTS_GET_TITLE>main
+4 MSG_FTS_JUMP_HASH=MSG_FTS_JUMP_HASH>main
+4 MSG_FTS_JUMP_QWORD=MSG_FTS_JUMP_QWORD>main
+4 MSG_FTS_JUMP_VA=MSG_FTS_JUMP_VA>main
+4 MSG_FTS_WHERE_IS_IT=MSG_FTS_WHERE_IS_IT>main
+4 MSG_REINDEX_REQUEST=MSG_REINDEX_REQUEST>main
+3 Structures
+4 QWordAddress=FTS_QWordAddress>main
+3 Error Codes
+4 ERRORCODE values=FTS_Errorcode_Values>main
+2 Writing DLLs
+3 Overview
+4 Writing DLLs for WinHelp=DLL_WRITE_OVERVIEW>main
+3 Creating Custom Help Macros
+4 Registering DLL functions as Help macros =DLL_REGISTER_CUSTOM_MACROS>main
+4 How Help locates DLLs =DLL_WRITE_HELP_LOCATE>main
+4 WinHelp internal variables =DLL_WRITE_WINHELP_VARIABLES>main
+4 Error handling =DLL_WRITE_ERROR_HANDLING>main
+3 Notifying DLLs of WinHelp Events
+4 Notifying DLLs of WinHelp events =DLL_WRITE_WINHELP_EVENTS>main
+3 WinHelp Internal Functions
+4 Calling WinHelp internal functions =DLL_WRITE_CALL_WH_INTERNAL>main
+4 Accessing WinHelp functions =DLL_WRITE_ACCESS_WH_FUNCTIONS>main
+3 Embedded Windows
+4 Writing DLLs for embedded windows =DLL_WRITE_EMBEDDED_WINDOWS>main
+4 Initialization of embedded windows =DLL_WRITE_INIT_EMBEDDED_WINDOWS>main
+4 Embedded window behavior =DLL_WRITE_EMBEDDED_WINDOW_BEHAVIOR>main
+4 Message processing for embedded windows =DLL_WRITE_MSG_EMBEDDED_WINDOWS>main
+2 RTF Command Reference
+3 General
+4 The RTF file=rtfthertffile>main
+4 Help RTF statements =RTFHelpRTFStatements>main
+4 Rich-text format =RTFRichTextFormat>main
+4 Elements of RTF =RTFElementsofRTF>main
+3 Elements
+4 RTF statement syntax=RTFRTFStatements>main
+4 Control symbols=RTFControlSymbols>main
+4 Groups=RTFGroups>main
+4 Unformatted text=RTFUnformattedText>main
+3 Semantics
+4 RTF semantics=RTFRTFSemantics>main
+4 Acting on control information=RTFActingonControlInformation>main
+4 Acting on symbol table entries=RTFActingonSymbolTableEntries>main
+3 Groups of the RTF File
+4 Sample RTF file=RTFSampleRTFFile>main
+4 Required entries=RTFRequiredEntries>main
+4 Font table=RTFFontTable>main
+4 Color table=RTFColorTable>main
+4 Style sheet=RTFStyleSheet>main
+4 Topic information=RTFTopicInformation>main
+3 RTF Statement Support>main
+4 Overview=RTFOverviewofHelpRTFStatementSupport>main
+4 Overloaded statements=RTFOverloadedStatements>main
+4 Character set=RTFCharacterSet>main
+4 Special characters=RTFSpecialCharacters>main
+4 Destinations=RTFDestinations>main
+4 Paragraph formatting=RTFParagraphFormatting>main
+4 Character formatting=RTFCharacterFormatting>main
+4 Tables=RTFTables>main
+4 Pictures=RTFPictures>main
+4 Fields=RTFFields>main
+4 Unsupported formats=RTFUnsupported>main
+4 Help RTF statement reference=RTFHelpRTFStatementReference>main
+1 Converting from Viewer 2.0
+2 Compiling Viewer 2.0 source files for WinHelp 4.0=V2_OVERVIEW>main

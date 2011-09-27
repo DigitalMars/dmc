@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\Q_A\SD_FLPPY\SD_FLPPY.PRJ
+SD_FLPPY.OPN
+novcs
+SD_FLPPY.DEF
+19
+812035224
+0 0 0 0 0 "sd_flppy.c" ""
+0 0 0 0 0 "sd_flppy.def" ""
+0 0 0 0 0 "advapi32.lib" ""

@@ -1,0 +1,33 @@
+#include "windows.h"
+#include "resource.h"
+
+
+TIBROWSE                ICON    DISCARDABLE     "TIBROWSE.ICO"
+
+TIBROWSE DIALOG DISCARDABLE  -32768, 0, 272, 192
+STYLE WS_MINIMIZEBOX | WS_CAPTION | WS_SYSMENU
+CAPTION "Type Library Browser"
+CLASS "TiBrowse"
+FONT 8, "System"
+BEGIN
+    LTEXT           "&Type",IDC_STATIC,10,10,62,9
+    LISTBOX         IDC_TYPELIST,10,20,80,80,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Members",IDC_STATIC,100,10,62,9
+    LISTBOX         IDC_MEMBERLIST,100,20,80,80,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Parameters",IDC_STATIC,190,10,62,9
+    LISTBOX         IDC_PARAMLIST,190,20,75,80,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_HELPSTRING,60,170,205,18
+    CONTROL         "",IDC_HELPCONTEXT,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,
+                    60,155,140,7
+    LTEXT           "Help String:",IDC_STATIC,10,170,45,8
+    LTEXT           "Help Context:",IDC_STATIC,10,155,45,8
+    LTEXT           "Type Kind:",IDC_STATIC,10,110,45,8
+    LTEXT           "",IDC_TYPEKIND,60,110,140,8
+    LTEXT           "GUID:",IDC_STATIC,10,140,45,8
+    LTEXT           "",IDC_GUID,60,140,160,8
+    LTEXT           "Version:",IDC_STATIC,10,125,45,8
+    LTEXT           "",IDC_VERSION,60,125,140,8
+END

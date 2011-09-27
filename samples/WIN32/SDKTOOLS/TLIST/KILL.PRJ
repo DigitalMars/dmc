@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\SDKTOOLS\TLIST\KILL.PRJ
+KILL.OPN
+novcs
+KILL.DEF
+4
+812035224
+0 0 0 0 0 "common.c" ""
+0 0 0 0 0 "kill.c" ""
+0 0 0 0 0 "advapi32.lib" ""

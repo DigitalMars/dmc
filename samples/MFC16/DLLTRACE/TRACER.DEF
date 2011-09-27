@@ -1,0 +1,28 @@
+; tracer.def : Declares the module parameters for TRACER.DLL
+;
+; This is a part of the Microsoft Foundation Classes C++ library.
+; Copyright (C) 1992 Microsoft Corporation
+; All rights reserved.
+;
+; This source code is only intended as a supplement to the
+; Microsoft Foundation Classes Reference and Microsoft
+; QuickHelp and/or WinHelp documentation provided with the library.
+; See these sources for detailed information regarding the
+; Microsoft Foundation Classes product.
+;
+
+LIBRARY      TRACER
+DESCRIPTION  'Play around with AFX.INI'
+
+EXETYPE      WINDOWS
+
+CODE         PRELOAD MOVEABLE DISCARDABLE
+DATA         PRELOAD MOVEABLE SINGLE
+
+HEAPSIZE     1024
+
+SEGMENTS
+	WEP_TEXT FIXED PRELOAD
+
+EXPORTS
+	WEP @1 RESIDENTNAME ;; required WEP entry point (uses library WEP routine)

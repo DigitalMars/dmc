@@ -1,0 +1,122 @@
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "DEMO.H\0"
+END
+
+DemoTabCtrl DIALOG 108, 10, 236, 220
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+      WS_SYSMENU 
+CAPTION "Tab Control Demo Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "O&k", IDOK, 40, 205, 35, 12
+    PUSHBUTTON      "&Cancel", IDCANCEL, 150, 205, 35, 12
+END
+
+
+FileOpen DIALOG 43, 43, 215, 133
+STYLE WS_CHILD | WS_VISIBLE | WS_TABSTOP
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            FOpenIcon, 101, 195, 120, 16, 16
+    GROUPBOX        "Open", 403, 181, 107, 45, 43
+    EDITTEXT        104, 6, 22, 71, 13, ES_AUTOHSCROLL | WS_TABSTOP
+    LTEXT           "File &Name:", 105, 6, 5, 56, 9
+    LISTBOX         106, 6, 39, 71, 50, LBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        107, 6, 114, 71, 37, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "List Files of &Type:", 108, 6, 99, 72, 8
+    LTEXT           "&Directories:", 109, 86, 5, 49, 9
+    LISTBOX         110, 86, 39, 71, 50, LBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        111, 86, 114, 71, 37, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Dri&ves:", 112, 86, 99, 72, 8
+    DEFPUSHBUTTON   "&Open", IDOK,  184, 38, 35, 14
+    PUSHBUTTON      "C&lose", IDOK, 184, 65, 35, 14
+END
+
+FileSave DIALOG 43, 43, 212, 133
+STYLE WS_CHILD | WS_VISIBLE | WS_TABSTOP
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            SaveIcon, 101, 185, 125, 16, 16
+    GROUPBOX        "Save", 403, 171, 112, 45, 43
+    EDITTEXT        104, 6, 22, 71, 13, ES_AUTOHSCROLL
+    LTEXT           "File &Name:", 105, 6, 5, 56, 9
+    LISTBOX         106, 6, 39, 71, 50, LBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        107, 6, 114, 71, 37, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "List Files of &Type:", 108, 6, 99, 72, 8
+    LTEXT           "&Directories:", 109, 86, 5, 49, 9
+    LISTBOX         110, 86, 39, 71, 50, LBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        111, 86, 114, 71, 37, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Dri&ves:", 112, 86, 99, 72, 8
+    DEFPUSHBUTTON   "&Save", IDOK,   180, 38, 35, 14
+    PUSHBUTTON      "&Unsave", IDOK, 180, 73, 35, 14
+END
+
+PrintFile DIALOG 43, 43, 212, 133
+STYLE WS_CHILD | WS_VISIBLE | WS_TABSTOP
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            PrintIcon, 101, 185, 45, 16, 16
+    GROUPBOX        "Print", 403, 171, 32, 45, 43
+    LTEXT           "Printer:        System Default", 402, 5, 5, 95, 11
+    GROUPBOX        "Print Range", 403, 5, 18, 156, 73
+    CONTROL         "&All", 404, "Button", BS_AUTORADIOBUTTON | WS_TABSTOP, 
+                    11, 34, 39, 10
+    CONTROL         "S&election", 405, "Button", BS_AUTORADIOBUTTON, 11, 48, 
+                    41, 10
+    CONTROL         "&Pages", 406, "Button", BS_AUTORADIOBUTTON, 11, 62, 39, 
+                    10
+    LTEXT           "&From", 407, 45, 75, 20, 8
+    EDITTEXT        408, 69, 73, 28, 12, ES_AUTOHSCROLL
+    LTEXT           "&To", 409, 104, 75, 14, 8
+    EDITTEXT        410, 118, 73, 30, 12, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&Print", IDOK, 10, 145, 35, 14
+    PUSHBUTTON      "&Close",  IDOK,  70, 145, 35, 14
+    PUSHBUTTON      "&Setup",  IDOK, 130, 145, 35, 14
+    LTEXT           "Print &Quality:", 414, 5, 99, 46, 10
+    CONTROL         "Print to &File", 415, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 5, 125, 55, 10
+    CONTROL         "Collate Cop&ies", 416, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 110, 125, 59, 9
+    COMBOBOX        417, 59, 98, 48, 35, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        418, 145, 98, 21, 12, ES_AUTOHSCROLL
+    LTEXT           "&Copies", 419, 114, 99, 25, 9
+END
+
+PrintSetup  DIALOG 43, 43, 212, 133
+STYLE WS_CHILD | WS_VISIBLE | WS_TABSTOP
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            PrSetupIcon, 101, 190, 46, 16, 16
+    GROUPBOX        "Setup", 403, 176, 33, 45, 43
+    LTEXT           "Print Setup:", 402, 5, 5, 66, 11
+    GROUPBOX        "Printer", 403, 5, 18, 156, 64
+    CONTROL         "&Default Printer", 404, "Button", BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP, 11, 28, 70, 10
+    CONTROL         "&Specific Printer", 406, "Button", BS_AUTORADIOBUTTON, 
+                    11, 52, 63, 10
+    DEFPUSHBUTTON   "&Setup", IDOK, 18, 145, 35, 14
+    PUSHBUTTON      "&Close", IDOK, 88, 145 , 35, 14
+    PUSHBUTTON      "&Options" IDOK, 158, 145, 35, 14
+    LTEXT           "(No Default Printer)", 502, 18, 40, 80, 9
+    COMBOBOX        503, 19, 64, 137, 35, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Orientation", 504, 6, 87, 84, 42
+    GROUPBOX        "Paper", 505, 93, 87, 85, 42
+    CONTROL         "Po&rtrait", 506, "Button", BS_AUTORADIOBUTTON, 18, 101, 
+                    39, 10
+    CONTROL         "&Landsape", 507, "Button", BS_AUTORADIOBUTTON, 18, 115, 
+                    51, 10
+    LTEXT           "Si&ze:", 508, 99, 99, 20, 8
+    LTEXT           "&Source:", 509, 99, 114, 27, 8
+    COMBOBOX        510, 127, 96, 48, 35, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        511, 127, 113, 48, 35, CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+

@@ -1,0 +1,236 @@
+//Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "globals.h"
+#include "modal.h"
+#include "listdlg.h"
+#include "version.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_APPICON             ICON    DISCARDABLE     "subcls.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ABOUTBOX DIALOG DISCARDABLE  22, 17, 167, 73
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About Subcls"
+FONT 8, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,132,2,32,14,WS_GROUP
+    ICON            IDI_APPICON,-1,3,2,18,20
+    LTEXT           "CompanyName",IDD_VERFIRST,30,2,100,8
+    LTEXT           "FileDescription",101,30,11,100,8
+    LTEXT           "FileVersion",102,30,20,137,8
+    LTEXT           "LegalCopyright",103,30,29,137,8
+    LTEXT           "LegalTrademarks",IDD_VERLAST,30,47,136,27
+    CONTROL         "",501,"Static",SS_BLACKRECT,29,43,138,1
+END
+
+IDD_SUBCLSDLG DIALOG DISCARDABLE  11, 34, 242, 189
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Subclass Demo"
+FONT 8, "Courier"
+BEGIN
+    DEFPUSHBUTTON   "&Ok",IDOK,16,166,40,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,75,166,40,14
+    EDITTEXT        101,10,41,122,71,ES_MULTILINE | ES_AUTOVSCROLL
+    GROUPBOX        "Mode",102,10,124,106,26
+    PUSHBUTTON      "Insert",IDM_INSERT,19,135,36,10
+    PUSHBUTTON      "Over",IDM_OVERRIDE,73,135,36,10
+    LTEXT           "The Edit Control And The List Box Below Are Subclassed To Incorporate Additional Features Not Present In  A Normal List Box And Edit Control",
+                    105,10,6,212,28
+    LISTBOX         106,149,41,86,111,LBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Insert",IDM_INSITEM,155,166,36,10
+    PUSHBUTTON      "&Delete",IDM_DELETE,196,166,36,10
+    GROUPBOX        "Item",109,148,155,88,26
+END
+
+IDD_INSDIALOG DIALOG DISCARDABLE  22, 36, 221, 77
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Insert Item Dialog"
+FONT 8, "Courier"
+BEGIN
+    EDITTEXT        IDD_INSEDIT,22,14,133,20,ES_AUTOHSCROLL
+    CONTROL         "",102,"Static",SS_BLACKRECT,22,33,133,3
+    CONTROL         "",103,"Static",SS_BLACKRECT,153,14,3,22
+    DEFPUSHBUTTON   "&Insert",IDOK,175,15,41,10
+    PUSHBUTTON      "&Cancel",IDCANCEL,175,35,41,10
+    PUSHBUTTON      "&Clear",IDD_INSCLEAR,175,55,41,10
+    LTEXT           "Enter text into the edit control above. Choose Insert to Insert the text string into the list box. Choosing Clear will Clear the list box",
+                    104,21,42,144,31
+END
+
+IDD_DELDIALOG DIALOG DISCARDABLE  40, 48, 221, 77
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Delete Item Dialog"
+FONT 8, "Courier"
+BEGIN
+    EDITTEXT        IDD_DELEDIT,22,14,133,20,ES_AUTOHSCROLL
+    CONTROL         "",102,"Static",SS_BLACKRECT,22,33,133,3
+    CONTROL         "",103,"Static",SS_BLACKRECT,153,14,3,22
+    DEFPUSHBUTTON   "&Delete",IDOK,175,15,41,10
+    PUSHBUTTON      "&Cancel",IDCANCEL,175,35,41,10
+    PUSHBUTTON      "&Clear",IDD_DELCLEAR,175,55,41,10
+    LTEXT           "Enter text into the edit control above. Choose Insert to Insert the text string into the list box. Choosing Clear will Clear the list box",
+                    104,21,42,144,31
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Data
+//
+
+DLGINCLUDE RCDATA DISCARDABLE 
+BEGIN
+    "listdlg.h\0"
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+SUBCLS MENU DISCARDABLE 
+BEGIN
+    POPUP "&SubCls"
+    BEGIN
+        MENUITEM "&Demo...",                    IDM_DEMO
+        MENUITEM "&Exit",                       IDM_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+SUBCLS ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "Q",            IDM_EXIT,               VIRTKEY, CONTROL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x10001L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Microsoft Corporation\0"
+            VALUE "FileDescription", "SubClass Example Application\0"
+            VALUE "FileVersion", "Version 4.0\0"
+            VALUE "InternalName", "Subcls\0"
+            VALUE "LegalCopyright", "Copyright \251 Microsoft Corp. 1990-1995\0"
+            VALUE "LegalTrademarks", "Microsoft\256 is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation\0"
+            VALUE "OriginalFilename", "\0"
+            VALUE "ProductName", "Subcls\0"
+            VALUE "ProductVersion", "\0"
+            VALUE "ProductVersion", "Version 4.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""globals.h""\r\n"
+    "#include ""modal.h""\r\n"
+    "#include ""listdlg.h""\r\n"
+    "#include ""version.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APPNAME             "Subcls"
+    IDS_DESCRIPTION         "SubClass Example Application"
+END
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

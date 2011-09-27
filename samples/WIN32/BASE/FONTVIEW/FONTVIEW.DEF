@@ -1,0 +1,34 @@
+NAME		"FontView"
+
+DESCRIPTION	'Font Examination Utility - (c) 1991, Microsoft Corporation'
+
+EXETYPE		NT
+
+SUBSYSTEM	WINDOWS
+
+STUB		'WINSTUB.EXE'
+
+VERSION		1.0
+
+CODE		 EXECUTE READ
+
+DATA		 READ WRITE
+
+STACKSIZE	1048576,4096 
+
+HEAPSIZE	1048576,4096 
+
+EXPORTS
+		WndProc
+		SimpleDlgProc
+		ToolsProc
+		StatusProc
+		StatusFieldProc
+		CreateDlgProc
+		ClientProc
+		ClientGlyphProc
+		ClientCharSetProc
+		MetricsDlgProc
+		EnumDlgProc
+		DlgEnumFontSizes
+		DlgEnumFontNames

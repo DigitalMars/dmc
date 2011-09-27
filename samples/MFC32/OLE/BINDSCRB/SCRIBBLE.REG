@@ -1,0 +1,34 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+HKEY_CLASSES_ROOT\.SCB = Scribble.Document.1
+HKEY_CLASSES_ROOT\Scribble.Document.1\shell\open\command = SCRIBBLE.EXE %1
+HKEY_CLASSES_ROOT\Scribble.Document.1\shell\open\ddeexec = [open("%1")]
+HKEY_CLASSES_ROOT\Scribble.Document.1\shell\open\ddeexec\application = SCRIBBLE
+    ; note: the application is optional
+    ;  (it defaults to the app name in "command")
+
+; These lines would not have been included if the tutorial was started
+; from the beginning.  These lines for OLE server capability are included
+; for information purposes only.  The REG file is optional, since Scribble
+; will automatically register itself the first time it is run.
+HKEY_CLASSES_ROOT\Scribble.Document.1 = Scrib Document
+HKEY_CLASSES_ROOT\Scribble.Document.1\protocol\StdFileEditing\server = SCRIBBLE.EXE
+HKEY_CLASSES_ROOT\Scribble.Document.1\protocol\StdFileEditing\verb\0 = &Edit
+HKEY_CLASSES_ROOT\Scribble.Document.1\Insertable =
+HKEY_CLASSES_ROOT\Scribble.Document.1\CLSID = {00027800-0000-0000-C000-000000000046}
+
+HKEY_CLASSES_ROOT\CLSID\{00027800-0000-0000-C000-000000000046} = Scrib Document
+HKEY_CLASSES_ROOT\CLSID\{00027800-0000-0000-C000-000000000046}\DefaultIcon = SCRIBBLE.EXE,0
+HKEY_CLASSES_ROOT\CLSID\{00027800-0000-0000-C000-000000000046}\LocalServer32 = SCRIBBLE.EXE
+HKEY_CLASSES_ROOT\CLSID\{00027800-0000-0000-C000-000000000046}\ProgId = Scribble.Document.1
+HKEY_CLASSES_ROOT\CLSID\{00027800-0000-0000-C000-000000000046}\MiscStatus = 0
+HKEY_CLASSES_ROOT\CLSID\{00027800-0000-0000-C000-000000000046}\AuxUserType\3 = Scribble
+HKEY_CLASSES_ROOT\CLSID\{00027800-0000-0000-C000-000000000046}\AuxUserType\2 = Scrib
+HKEY_CLASSES_ROOT\CLSID\{00027800-0000-0000-C000-000000000046}\Insertable = 
+HKEY_CLASSES_ROOT\CLSID\{00027800-0000-0000-C000-000000000046}\verb\1 = &Open,0,2
+HKEY_CLASSES_ROOT\CLSID\{00027800-0000-0000-C000-000000000046}\verb\0 = &Edit,0,2
+HKEY_CLASSES_ROOT\CLSID\{00027800-0000-0000-C000-000000000046}\InprocHandler32 = ole32.dll

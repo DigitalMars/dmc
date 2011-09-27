@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\Q_A\STREBLT\STREBLT.PRJ
+STREBLT.OPN
+novcs
+STREBLT.DEF
+16
+812035224
+0 0 0 0 0 "streblt.def" ""
+0 0 0 0 0 "bitmap.c" ""
+0 0 0 0 0 "streblt.c" ""
+0 0 0 0 0 "track.c" ""
+0 0 0 0 0 "streblt.rc" ""
+0 0 0 0 0 "comdlg32.lib" ""

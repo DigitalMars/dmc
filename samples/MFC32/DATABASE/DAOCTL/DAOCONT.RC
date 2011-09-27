@@ -1,0 +1,257 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#include ""res\\DAOCont.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\DAOCont.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 187, 51
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About DAO OLE Control Demo"
+FONT 8, "System"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,6,21,20
+    LTEXT           "DAOCont Version 1.0",IDC_STATIC,32,6,119,8
+    LTEXT           "Copyright © Microsoft Corp. 1995",IDC_STATIC,32,17,119,
+                    8
+    DEFPUSHBUTTON   "OK",IDOK,148,6,32,14,WS_GROUP
+    CTEXT           "Written by: Christian Beaumont (VCPU)",IDC_STATIC,17,34,
+                    153,10,SS_SUNKEN
+END
+
+IDD_DAOCONT_DIALOG DIALOGEX 0, 0, 409, 170
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Data Bound OLE Control Demo"
+FONT 8, "MS Sans Serif" //, 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&DAO",IDC_CONNECT_DAO,7,7,50,14
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",WS_BORDER | WS_TABSTOP,
+                    7,27,288,89
+    CONTROL         "",IDC_DAOEDITCTRL1,
+                    "{5FDFC3E3-C360-11CE-A987-00AA006EA4DA}",WS_TABSTOP,7,133,68,14
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_ARROWKEYS |
+                    UDS_HORZ,273,152,22,11
+    LTEXT           "Record:",IDC_STATIC,242,155,26,8
+    CONTROL         "",IDC_DAOEDITCTRL2,
+                    "{5FDFC3E3-C360-11CE-A987-00AA006EA4DA}",WS_TABSTOP,80,133,68,14
+    CONTROL         "",IDC_DAOEDITCTRL3,
+                    "{5FDFC3E3-C360-11CE-A987-00AA006EA4DA}",WS_TABSTOP,155,133,68,14
+    CONTROL         "",IDC_DAOEDITCTRL4,
+                    "{5FDFC3E3-C360-11CE-A987-00AA006EA4DA}",WS_TABSTOP,230,133,68,14
+    LTEXT           "",IDC_COLNAME1,7,125,67,8
+    LTEXT           "",IDC_COLNAME2,80,125,67,8
+    LTEXT           "",IDC_COLNAME3,155,125,67,8
+    LTEXT           "",IDC_COLNAME4,230,125,67,8
+    RTEXT           "",IDC_RECNUM,205,155,32,8
+    CONTROL         "",IDC_ACCESSPICTCTRL1,
+                    "{1F4E7C23-C38F-11CE-9611-00AA004A75CF}",WS_TABSTOP,305,26,92,106
+    CONTROL         "Allow Edits",IDC_ALLOW_EDITS,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,7,153,50,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "DAOCONT MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "DAOCONT\0"
+            VALUE "LegalCopyright", "Copyright © 1995\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "DAOCONT.EXE\0"
+            VALUE "ProductName", "DAOCONT Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 44
+    END
+
+    IDD_DAOCONT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 402
+        VERTGUIDE, 187
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TREEIMAGE           BITMAP  DISCARDABLE     "res\\treeimag.bmp"
+IDB_BITMAP1             BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DAOCONT_DIALOG DLGINIT
+BEGIN
+    IDC_DAOEDITCTRL1, 0x376, 36, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x0a8b, 0x0000, 0x0261, 0x0000, 0x0030,
+0x0000, 0x0100, 0x0000, 0x0000, 0x0069, 0x000c, 0x0000, 0x153c, 0x004d,
+
+    IDC_DAOEDITCTRL2, 0x376, 36, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x0a8b, 0x0000, 0x0261, 0x0000, 0x0030,
+0x0000, 0x0100, 0x0000, 0x0000, 0x0069, 0x000c, 0x0000, 0x153c, 0x004d,
+
+    IDC_DAOEDITCTRL3, 0x376, 36, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x0a8b, 0x0000, 0x0261, 0x0000, 0x0030,
+0x0000, 0x0100, 0x0000, 0x0000, 0x0069, 0x000c, 0x0000, 0x153c, 0x004d,
+
+    IDC_DAOEDITCTRL4, 0x376, 36, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x0a8b, 0x0000, 0x0261, 0x0000, 0x0030,
+0x0000, 0x0100, 0x0000, 0x0000, 0x0069, 0x000c, 0x0000, 0x153c, 0x004d,
+
+    IDC_ACCESSPICTCTRL1, 0x376, 64, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x0e43, 0x0000, 0x11c7, 0x0000, 0x0026,
+0x0000, 0x0000, 0x5203, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00,
+0x51b8, 0x0001, 0x0000, 0x0190, 0x4244, 0x0001, 0x4d0d, 0x2053, 0x6153,
+0x736e, 0x5320, 0x7265, 0x6669, 0x0001,
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_ABOUTBOX            "&About DAOCont..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#include "res\DAOCont.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

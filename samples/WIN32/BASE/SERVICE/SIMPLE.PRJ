@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\BASE\SERVICE\SIMPLE.PRJ
+SIMPLE.OPN
+novcs
+simple.def
+4
+812035224
+0 0 0 0 0 "service.c" ""
+0 0 0 0 0 "simple.c" ""
+0 0 0 0 0 "simple.def" ""
+0 0 0 0 0 "advapi32.lib" ""

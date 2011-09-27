@@ -1,0 +1,16 @@
+82572
+C:\SC\samples\mfc32\database\daoctl\DAOCONT.PRJ
+daocont.OPN
+novcs
+daocont.DEF
+16
+852911400
+0 0 0 0 0 "accpict.cpp" ""
+0 0 0 0 0 "ctrlext.cpp" ""
+0 0 0 0 0 "daocndlg.cpp" ""
+0 0 0 0 0 "daocont.cpp" ""
+0 0 0 0 0 "daoedit.cpp" ""
+0 0 0 0 0 "daocont.rc" ""
+0 0 0 0 0 "daocont.DEF" ""
+0 0 0 0 0 "ACCSPICT\ACCSPICT.PRJ" ""
+0 0 0 0 0 "CONTROL\DAOEDIT.PRJ" ""

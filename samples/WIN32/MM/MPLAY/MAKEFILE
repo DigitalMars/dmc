@@ -1,0 +1,30 @@
+# Nmake macros for building Windows 32-Bit apps
+
+!include <win32.mak>
+
+all: mplay.exe
+
+OBJS= mplay.obj
+
+OTHERCLOPTS=-DWIN32_LEAN_AND_MEAN -nologo -I. -I..\include
+OTHERRCOPTS=-DWIN32_LEAN_AND_MEAN -I. -I..\include
+
+
+# Update the resource if necessary
+
+mplay.res: mplay.rc mplay.h mplay.rcv mplay.ico
+    $(rc) -r -DWIN32 $(OTHERRCOPTS) mplay.rc
+
+
+# Update the object file if necessary
+
+mplay.obj: mplay.c mplay.h
+    $(cc) $(cdebug) $(cflags) $(cvars) $(OTHERCLOPTS) mplay.c
+
+
+# Update the executable file if necessary, and if so, add the resource back in.
+
+mplay.exe:  $(OBJS) mplay.res
+    $(link) $(linkdebug) $(guilflags) -out:mplay.exe $(OBJS) mplay.res $(guilibs) \
+	 winmm.lib vfw32.lib
+

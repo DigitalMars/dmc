@@ -1,0 +1,20 @@
+82572
+C:\SC\samples\ole16\DLLSRV\REALTIME\REALTIME.PRJ
+REALTIME.OPN
+novcs
+realtime.def
+0
+812035224
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "realtdoc.cpp" ""
+0 0 0 0 0 "realtime.cpp" ""
+0 0 0 0 0 "rtcntr.cpp" ""
+0 0 0 0 0 "rtformvi.cpp" ""
+0 0 0 0 0 "rtitem.cpp" ""
+0 0 0 0 0 "utils.cpp" ""
+0 0 0 0 0 "realtime.def" ""
+0 0 0 0 0 "realtime.rc" ""
+0 0 0 0 0 "stdafx.cpp" ""
+0 0 0 0 0 "lafxcwd.lib" ""
+0 0 0 0 0 "prgidmon.lib" ""
+0 0 0 0 0 "..\dataview\dataview.prj" ""

@@ -1,0 +1,9 @@
+REGEDIT
+
+HKEY_CLASSES_ROOT\.chb = chbfile
+HKEY_CLASSES_ROOT\chbfile = ChkBook Data File
+HKEY_CLASSES_ROOT\chbfile\DefaultIcon = CHKBOOK.EXE,-130
+HKEY_CLASSES_ROOT\chbfile\shell\open\command = CHKBOOK.EXE "%1"
+
+
+

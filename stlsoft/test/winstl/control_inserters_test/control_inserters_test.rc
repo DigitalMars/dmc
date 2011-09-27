@@ -1,0 +1,175 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "#include ""afxres.rc""  // Standard components\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "0c0904b0"
+        BEGIN
+            VALUE "CompanyName", "Synesis Software Pty Ltd\0"
+            VALUE "FileDescription", "\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "INSERTERS_TEST\0"
+            VALUE "LegalCopyright", "Copyright © Synesis Software Pty Ltd 2002\0"
+            VALUE "OriginalFilename", "INSERTERS_TEST.DLL\0"
+            VALUE "ProductName", "\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0xc09, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INSERTERS_TEST DIALOG DISCARDABLE  0, 0, 328, 297
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "winstl inserter functors test"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Listbox:",IDC_STATIC,6,13,25,8
+    LISTBOX         IDC_LISTBOX,6,24,316,73,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "front",IDC_LISTBOX_FRONT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,139,11,30,10
+    CONTROL         "back",IDC_LISTBOX_BACK,"Button",BS_AUTORADIOBUTTON,177,
+                    11,32,10
+    CONTROL         "add",IDC_LISTBOX_ADD,"Button",BS_AUTORADIOBUTTON,217,11,
+                    28,10
+    PUSHBUTTON      "&Insert",IDC_LISTBOX_BTN,271,7,50,14,WS_GROUP
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,100,315,1
+    LTEXT           "&Combobox:",IDC_STATIC,6,110,36,8
+    COMBOBOX        IDC_COMBOBOX,6,121,316,73,CBS_SIMPLE | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "front",IDC_COMBOBOX_FRONT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,139,108,30,10
+    CONTROL         "back",IDC_COMBOBOX_BACK,"Button",BS_AUTORADIOBUTTON,177,
+                    108,32,10
+    CONTROL         "add",IDC_COMBOBOX_ADD,"Button",BS_AUTORADIOBUTTON,217,
+                    108,28,10
+    PUSHBUTTON      "I&nsert",IDC_COMBOBOX_BTN,271,104,50,14,WS_GROUP
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,6,197,316,1
+    LTEXT           "List&view:",IDC_STATIC,6,207,28,8
+    CONTROL         "List2",IDC_LISTVIEW,"SysListView32",LVS_LIST | 
+                    WS_BORDER | WS_TABSTOP,6,218,316,73
+    CONTROL         "front",IDC_LISTVIEW_FRONT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,139,205,30,10
+    CONTROL         "back",IDC_LISTVIEW_BACK,"Button",BS_AUTORADIOBUTTON,177,
+                    205,32,10
+    PUSHBUTTON      "In&sert",IDC_LISTVIEW_BTN,271,201,50,14,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_INSERTERS_TEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 322
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 291
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#include "afxres.rc"  // Standard components
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

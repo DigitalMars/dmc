@@ -1,0 +1,11 @@
+IDD_BUSY DIALOG DISCARDABLE  46, 49, 214, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Server beschdftigt"
+FONT 8, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON   "&Wechseln zu...", IDBZ_SWITCHTO, 21, 58, 60, 15
+	PUSHBUTTON      "&Abbrechen", IDCANCEL, 147, 58, 60, 15
+	PUSHBUTTON      "&Wiederholen", IDBZ_RETRY, 84, 58, 60, 15
+	LTEXT           "Die Aktion konnte nicht beendet werden, da das andere Anwendungsprogramm beschdftigt ist. Wdhlen Sie ""Wechseln zu"", um zu diesem Anwendungsprogramm zu wechseln und das Problem zu lvsen.", IDBZ_MESSAGE1, 35, 11, 170, 44
+	ICON            "", IDBZ_ICON, 8, 18, 18, 20
+END

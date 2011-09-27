@@ -1,0 +1,206 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "FONTVIEW.H\0"
+END
+
+CREATEFONT DIALOG 90, 37, 224, 116
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "CreateFont"
+BEGIN
+    RTEXT           "nHeight", 65535, 4, 6, 48, 8
+    RTEXT           "nWidth", 65535, 4, 18, 48, 8
+    RTEXT           "nEscapement", 65535, 4, 30, 48, 8
+    RTEXT           "nOrientation", 65535, 4, 42, 48, 8
+    RTEXT           "nWeight", 65535, 4, 54, 48, 8
+    RTEXT           "cItalic", 65535, 4, 66, 48, 8
+    RTEXT           "cUnderline", 65535, 4, 78, 48, 8
+    RTEXT           "cStrikeOut", 65535, 88, 6, 57, 8
+    RTEXT           "cCharSet", 65535, 88, 18, 57, 8
+    RTEXT           "cOutputPrecision", 65535, 88, 30, 57, 8
+    RTEXT           "cClipPrecision", 65535, 88, 42, 57, 8
+    RTEXT           "cQuality", 65535, 88, 54, 57, 8
+    RTEXT           "cPitchAndFamily", 65535, 88, 66, 57, 8
+    RTEXT           "lpFacename", 65535, 88, 78, 57, 8
+    EDITTEXT        CFD_BASE, 55, 4, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        221, 55, 16, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        222, 55, 28, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        223, 55, 40, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        224, 55, 52, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        225, 55, 64, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        226, 55, 76, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        227, 148, 4, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        228, 148, 16, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        229, 148, 28, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        230, 148, 40, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        231, 148, 52, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        232, 148, 64, 32, 12, ES_AUTOHSCROLL
+    EDITTEXT        233, 148, 76, 74, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "Zero", 234, 71, 98, 40, 14
+    DEFPUSHBUTTON   "Select", IDOK, 141, 98, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 182, 98, 40, 14
+    PUSHBUTTON      "Help", 301, 7, 98, 40, 14, WS_DISABLED
+END
+
+TEXTMETRIC DIALOG 84, 23, 223, 126
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "Text Metrics"
+BEGIN
+    RTEXT           "tmHeight:", 65535, 0, 1, 76, 8
+    RTEXT           "tmAscent:", 65535, 0, 11, 76, 8
+    RTEXT           "tmDescent:", 65535, 0, 21, 76, 8
+    RTEXT           "tmInternalLeading:", 65535, 0, 31, 76, 8
+    RTEXT           "tmExternalLeading:", 65535, 0, 41, 76, 8
+    RTEXT           "tmAveCharWidth:", 65535, 0, 51, 76, 8
+    RTEXT           "tmMaxCharWidth:", 65535, 0, 61, 76, 8
+    RTEXT           "tmWeight:", 65535, 0, 71, 76, 8
+    RTEXT           "tmItalic:", 65535, 0, 81, 76, 8
+    RTEXT           "tmUnderline:", 65535, 0, 91, 76, 8
+    RTEXT           "tmStruckOut:", 65535, 111, 1, 76, 8
+    RTEXT           "tmFirstChar:", 65535, 111, 11, 76, 8
+    RTEXT           "tmLastChar:", 65535, 111, 21, 76, 8
+    RTEXT           "tmDefaultChar:", 65535, 111, 31, 76, 8
+    RTEXT           "tmBreakChar:", 65535, 111, 41, 76, 8
+    RTEXT           "tmPitchAndFamily:", 65535, 111, 51, 76, 8
+    RTEXT           "tmCharSet:", 65535, 111, 61, 76, 8
+    RTEXT           "tmOverhang:", 65535, 111, 71, 76, 8
+    RTEXT           "tmDigitizedAspectX:", 65535, 111, 81, 76, 8
+    RTEXT           "tmDigitizedAspectY:", 65535, 111, 91, 76, 8
+    LTEXT           "#######", TMD_BASE, 80, 1, 29, 8
+    LTEXT           "#######", 241, 80, 11, 29, 8
+    LTEXT           "#######", 242, 80, 21, 29, 8
+    LTEXT           "#######", 243, 80, 31, 29, 8
+    LTEXT           "#######", 244, 80, 41, 29, 8
+    LTEXT           "#######", 245, 80, 51, 29, 8
+    LTEXT           "#######", 246, 80, 61, 29, 8
+    LTEXT           "#######", 247, 80, 71, 29, 8
+    LTEXT           "#######", 248, 80, 81, 29, 8
+    LTEXT           "#######", 249, 80, 91, 29, 8
+    LTEXT           "#######", 250, 191, 1, 29, 8
+    LTEXT           "#######", 251, 191, 11, 29, 8
+    LTEXT           "#######", 252, 191, 21, 29, 8
+    LTEXT           "#######", 253, 191, 31, 29, 8
+    LTEXT           "#######", 254, 191, 41, 29, 8
+    LTEXT           "#######", 255, 191, 51, 29, 8
+    LTEXT           "#######", 256, 191, 61, 29, 8
+    LTEXT           "#######", 257, 191, 71, 29, 8
+    LTEXT           "#######", 258, 191, 81, 29, 8
+    LTEXT           "#######", 259, 191, 91, 29, 8
+    PUSHBUTTON      "Select", IDOK, 131, 108, 40, 14
+    DEFPUSHBUTTON   "Cancel", IDCANCEL, 175, 108, 40, 14
+    PUSHBUTTON      "Help", 301, 9, 108, 40, 14, WS_DISABLED
+END
+
+ENUMFONTS DIALOG 76, 28, 261, 212
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "Enumerate Fonts"
+BEGIN
+    RTEXT           "tmHeight:", 65535, 7, 7, 70, 8
+    RTEXT           "tmAscent:", 65535, 7, 17, 70, 8
+    RTEXT           "tmDescent:", 65535, 7, 27, 70, 8
+    RTEXT           "tmInternalLeading:", 65535, 7, 37, 70, 8
+    RTEXT           "tmExternalLeading:", 65535, 7, 47, 70, 8
+    RTEXT           "tmAveCharWidth:", 65535, 7, 57, 70, 8
+    RTEXT           "tmMaxCharWidth:", 65535, 7, 67, 70, 8
+    RTEXT           "tmWeight:", 65535, 7, 77, 70, 8
+    RTEXT           "tmItalic:", 65535, 7, 87, 70, 8
+    RTEXT           "tmUnderline:", 65535, 7, 97, 70, 8
+    RTEXT           "tmStruckOut:", 65535, 7, 107, 70, 8
+    RTEXT           "tmFirstChar:", 65535, 7, 117, 70, 8
+    RTEXT           "tmLastChar:", 65535, 7, 127, 70, 8
+    RTEXT           "tmDefaultChar:", 65535, 7, 137, 70, 8
+    RTEXT           "tmBreakChar:", 65535, 7, 147, 70, 8
+    RTEXT           "tmPitchAndFamily:", 65535, 7, 157, 70, 8
+    RTEXT           "tmCharSet:", 65535, 7, 167, 70, 8
+    RTEXT           "tmOverhang:", 65535, 7, 177, 70, 8
+    RTEXT           "tmDigitizedAspectX:", 65535, 7, 187, 70, 8
+    RTEXT           "tmDigitizedAspectY:", 65535, 7, 197, 70, 8
+    LTEXT           "#######", TMD_BASE, 81, 8, 29, 8
+    LTEXT           "#######", 241, 81, 18, 29, 8
+    LTEXT           "#######", 242, 81, 28, 29, 8
+    LTEXT           "#######", 243, 81, 38, 29, 8
+    LTEXT           "#######", 244, 81, 48, 29, 8
+    LTEXT           "#######", 245, 81, 58, 29, 8
+    LTEXT           "#######", 246, 81, 67, 29, 8
+    LTEXT           "#######", 247, 81, 77, 29, 8
+    LTEXT           "#######", 248, 81, 87, 29, 8
+    LTEXT           "#######", 249, 81, 97, 29, 8
+    LTEXT           "#######", 250, 81, 107, 29, 8
+    LTEXT           "#######", 251, 81, 117, 29, 8
+    LTEXT           "#######", 252, 81, 127, 29, 8
+    LTEXT           "#######", 253, 81, 137, 29, 8
+    LTEXT           "#######", 254, 81, 147, 29, 8
+    LTEXT           "#######", 255, 81, 157, 29, 8
+    LTEXT           "#######", 256, 81, 167, 29, 8
+    LTEXT           "#######", 257, 81, 177, 29, 8
+    LTEXT           "#######", 258, 81, 187, 29, 8
+    LTEXT           "#######", 259, 81, 197, 29, 8
+    RTEXT           "lfHeight:", 65535, 118, 8, 61, 8
+    RTEXT           "lfWidth:", 65535, 118, 18, 61, 8
+    RTEXT           "lfEscapement:", 65535, 118, 28, 61, 8
+    RTEXT           "lfOrientation:", 65535, 118, 38, 61, 8
+    RTEXT           "lfWeight:", 65535, 118, 48, 61, 8
+    RTEXT           "lfItalic:", 65535, 118, 58, 61, 8
+    RTEXT           "lfUnderline:", 65535, 118, 68, 61, 8
+    RTEXT           "lfStrikeOut:", 65535, 118, 78, 61, 8
+    RTEXT           "lfCharSet:", 65535, 118, 88, 61, 8
+    RTEXT           "lfOutputPrecision:", 65535, 118, 98, 61, 8
+    RTEXT           "lfClipPrecision:", 65535, 118, 108, 61, 8
+    RTEXT           "lfQuality:", 65535, 118, 118, 61, 8
+    RTEXT           "lfPitchAndFamily:", 65535, 118, 128, 61, 8
+    RTEXT           "lfFacename:", 65535, 118, 138, 61, 8
+    LTEXT           "#######", CFD_BASE, 183, 8, 29, 8
+    LTEXT           "#######", 221, 183, 18, 29, 8
+    LTEXT           "#######", 222, 183, 28, 29, 8
+    LTEXT           "#######", 223, 183, 38, 29, 8
+    LTEXT           "#######", 224, 183, 48, 29, 8
+    LTEXT           "#######", 225, 183, 58, 29, 8
+    LTEXT           "#######", 226, 183, 67, 29, 8
+    LTEXT           "#######", 227, 183, 77, 29, 8
+    LTEXT           "#######", 228, 183, 87, 29, 8
+    LTEXT           "#######", 229, 183, 97, 29, 8
+    LTEXT           "#######", 230, 183, 107, 29, 8
+    LTEXT           "#######", 231, 183, 117, 29, 8
+    LTEXT           "#######", 232, 183, 127, 29, 8
+    LTEXT           "##################", 233, 183, 137, 74, 8
+    PUSHBUTTON      "<<", ED_BASE, 217, 9, 17, 14
+    PUSHBUTTON      ">>", 261, 237, 9, 17, 14
+    RTEXT           "FontType:", 65535, 135, 156, 44, 8
+    LTEXT           "#######", 262, 183, 157, 20, 8
+    CONTROL         "Hex", 264, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 217, 
+                    32, 29, 10
+    CONTROL         "", 265, "Static", SS_BLACKFRAME, 113, 169, 136, 37
+    PUSHBUTTON      "Select", IDOK, 217, 49, 37, 14
+    DEFPUSHBUTTON   "Cancel", IDCANCEL, 217, 65, 37, 14
+END
+
+300 DIALOG 6, 18, 160, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog Title"
+FONT 8, "Helv"
+BEGIN
+END
+
+FONTVIEW DIALOG 13, 24, 173, 57
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About FontView..."
+BEGIN
+    LTEXT           "Font Utility v2.1", 65535, 3, 24, 76, 9
+    RTEXT           "Written By: Robert Hess", 65535, 76, 24, 92, 8
+    CTEXT           "Copyright \251 1992-1993 Microsoft Corporation", 65535, 13,
+                    33, 147, 8
+    CTEXT           "All Rights Reserved", 65535, 43, 41, 86, 8
+    DEFPUSHBUTTON   "Ok", IDOK, 139, 41, 32, 14
+    CONTROL         "", 501, "Static", SS_GRAYRECT, 0, 32, 173, 1
+END

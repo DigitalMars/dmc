@@ -1,0 +1,16 @@
+[OPTIONS]
+errorlog = daotable.err
+TITLE=DAOTABLE Application Help
+COMPRESS=true
+WARNING=2
+BMROOT= ..,.
+ROOT= ..,.
+
+[FILES]
+daotable.rtf
+
+[ALIAS]
+HIDD_ABOUTBOX = HID_APP_ABOUT
+
+[MAP]
+#include <DAOTable.hm>

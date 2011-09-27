@@ -1,0 +1,442 @@
+# ##############################################################################
+# File:       ./stlsoft/makefile.gcc32
+#
+# Purpose:    Makefile for the Gnu C/C++ compiler
+#
+# Created     29th June 2003
+# Updated:    29th June 2003
+#
+# Copyright:  Synesis Software Pty Ltd, (c) 2003. All rights reserved.
+#
+# Home:       www.synesis.com.au
+#             www.stlsoft.org
+#
+# ##############################################################################
+
+# ##############################################################################
+# Macros
+
+# tools
+
+CC    = gcc
+CPPC  = g++
+RC    = rc
+LD    = g++
+REL   = gcc32
+
+# environment
+
+INCL  = ..\..# STLSoft directory - change this if you move the relative position of the test programs
+
+LIBS  = kernel32.lib advapi32.lib user32.lib gdi32.lib ole32.lib oleaut32.lib shell32.lib comctl32.lib
+
+# C compiler options
+
+# C++ compiler options
+
+CPPC_F_WARN_AS_ERR   =   -Werror
+CPPC_F_WARN_SUPPRESS =   
+CPPC_F_OPT_SIZE      =   -O1
+CPPC_F_OPT_SPEED     =   -O3
+CPPC_F_TARG_PENTIUM  =
+CPPC_F_NO_ERR_MAX    =
+CPPC_F_COMPILE_ONLY  =   -c
+CPPC_F_NOBANNER      =   
+CPPC_F_EXCEPTIONS    =   
+CPPC_F_COM_EXT       =   
+
+CPPCFLAGS            =   $(CPPC_F_WARN_AS_ERR) $(CPPC_F_WARN_SUPPRESS) $(CPPC_F_NOBANNER) $(CPPC_F_OPT_SIZE) $(CPPC_F_NO_ERR_MAX) $(CPPC_F_EXCEPTIONS) $(CPPC_F_COM_EXT)
+CPPCDEFS             =   \
+                         -DNDEBUG \
+                         -DWIN32 \
+                         \
+#                        -D_STLSOFT_COMPILE_VERBOSE \
+                          \
+                         \
+
+CPPCARGS             =   $(CPPCFLAGS) $(CPPCDEFS) $(F_WARN_AS_ERR)  -I"$(INCL)" -I"$(INCLUDE)"
+
+# Resource compiler options
+
+RCFLAGS              =   -n
+RCARGS               =   $(RCFLAGS) $(INCL) $(INCLUDE)
+
+# Linker options
+
+LD_F_NOBANNER        =   
+LD_F_SUBSYS_CONSOLE  =   -subsystem:console
+
+################################################################################
+# Objects
+
+OBJS_CPP    = \
+              \
+              .\algorithm_test\$(REL)\algorithm_test.obj \
+              .\allocator_test\$(REL)\allocator_test.obj \
+              .\allocator_test_2\$(REL)\allocator_test_2.obj \
+              .\array_proxy_test\$(REL)\array_proxy_test.obj \
+              .\associative_container_veneer_test\$(REL)\associative_container_veneer_test.obj \
+              .\auto_buffer_test\$(REL)\auto_buffer_test.obj \
+              .\auto_destructor_test\$(REL)\auto_destructor_test.obj \
+              .\bit_int_test\$(REL)\bit_int_test.obj \
+              .\compiler_traits_test\$(REL)\compiler_traits_test.obj \
+              .\constraints_test\$(REL)\constraints_test.obj \
+              .\delete_instance_test\$(REL)\delete_instance_test.obj \
+              .\explicit_cast_test\$(REL)\explicit_cast_test.obj \
+              .\fast_string_concatenator_test\$(REL)\fast_string_concatenator_test.obj \
+              .\fixed_array_test\$(REL)\fixed_array_test.obj \
+              .\fixed_substring_test\$(REL)\fixed_substring_test.obj \
+              .\frame_array_test\$(REL)\frame_array_test.obj \
+              .\frame_string_test\$(REL)\frame_string_test.obj \
+              .\has_member_type_test\$(REL)\has_member_type_test.obj \
+              .\inert_test\$(REL)\inert_test.obj \
+              .\inheritance_disambiguator_test\$(REL)\inheritance_disambiguator_test.obj \
+              .\integer_to_string_test\$(REL)\integer_to_string_test.obj \
+              .\meta_test\$(REL)\meta_test.obj \
+              .\mutable_access_test\$(REL)\mutable_access_test.obj \
+              .\null_test\$(REL)\null_test.obj \
+              .\num_elements_test\$(REL)\num_elements_test.obj \
+              .\operator_int_boolean_test\$(REL)\operator_int_boolean_test.obj \
+              .\placement_aid_test\$(REL)\placement_aid_test.obj \
+              .\pod_vector_test\$(REL)\pod_vector_test.obj \
+              .\pod_veneer_test\$(REL)\pod_veneer_test.obj \
+              .\printf_traits_test\$(REL)\printf_traits_test.obj \
+              .\proxy_ptr_test\$(REL)\proxy_ptr_test.obj \
+              .\remove_from_scope_test\$(REL)\remove_from_scope_test.obj \
+              .\return_value_dtor_test\$(REL)\return_value_dtor_test.obj \
+              .\sequence_container_veneer_test\$(REL)\sequence_container_veneer_test.obj \
+              .\simple_string_test\$(REL)\simple_string_test.obj \
+              .\slice_string_test\$(REL)\slice_string_test.obj \
+              .\stlsoft_test\$(REL)\stlsoft_test.obj \
+              .\string_tokeniser_test\$(REL)\string_tokeniser_test.obj \
+              .\true_typedef_test\$(REL)\true_typedef_test.obj \
+              .\type_traits_test\$(REL)\type_traits_test.obj \
+              .\union_cast_test\$(REL)\union_cast_test.obj \
+              .\unordered_sequence_test\$(REL)\unordered_sequence_test.obj \
+              .\unused_return_value_monitor_test\$(REL)\unused_return_value_monitor_test.obj \
+              \
+
+################################################################################
+# Suffix rules
+
+.c.obj:
+	$(CC) $(CCARGS) -Fo$@ $?
+
+.cpp.obj:
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -Fo$@ $?
+
+.rc.res:
+	$(RC) $(RCARGS) -fo$@ $?
+
+.obj.exe:
+	$(LD) $(LD_F_NOBANNER) $(LD_F_SUBSYS_CONSOLE) -out:$@ $? $(LIBS)
+
+################################################################################
+# Targets
+
+usage:
+	-@echo "make [usage | all | clean | rebuild]"
+
+all: target
+
+target:   \
+          \
+          create_dirs \
+          \
+          .\algorithm_test\$(REL)\algorithm_test.obj \
+          .\allocator_test\$(REL)\allocator_test.obj \
+          .\allocator_test_2\$(REL)\allocator_test_2.obj \
+          .\array_proxy_test\$(REL)\array_proxy_test.obj \
+          .\associative_container_veneer_test\$(REL)\associative_container_veneer_test.obj \
+          .\auto_buffer_test\$(REL)\auto_buffer_test.obj \
+          .\auto_destructor_test\$(REL)\auto_destructor_test.obj \
+          .\bit_int_test\$(REL)\bit_int_test.obj \
+          .\compiler_traits_test\$(REL)\compiler_traits_test.obj \
+          .\constraints_test\$(REL)\constraints_test.obj \
+          .\delete_instance_test\$(REL)\delete_instance_test.obj \
+          .\explicit_cast_test\$(REL)\explicit_cast_test.obj \
+          .\fast_string_concatenator_test\$(REL)\fast_string_concatenator_test.obj \
+          .\fixed_array_test\$(REL)\fixed_array_test.obj \
+          .\fixed_substring_test\$(REL)\fixed_substring_test.obj \
+          .\frame_array_test\$(REL)\frame_array_test.obj \
+          .\frame_string_test\$(REL)\frame_string_test.obj \
+          .\has_member_type_test\$(REL)\has_member_type_test.obj \
+          .\inert_test\$(REL)\inert_test.obj \
+          .\inheritance_disambiguator_test\$(REL)\inheritance_disambiguator_test.obj \
+          .\integer_to_string_test\$(REL)\integer_to_string_test.obj \
+          .\meta_test\$(REL)\meta_test.obj \
+          .\mutable_access_test\$(REL)\mutable_access_test.obj \
+          .\null_test\$(REL)\null_test.obj \
+          .\num_elements_test\$(REL)\num_elements_test.obj \
+          .\operator_int_boolean_test\$(REL)\operator_int_boolean_test.obj \
+          .\placement_aid_test\$(REL)\placement_aid_test.obj \
+          .\pod_vector_test\$(REL)\pod_vector_test.obj \
+          .\pod_veneer_test\$(REL)\pod_veneer_test.obj \
+          .\printf_traits_test\$(REL)\printf_traits_test.obj \
+          .\proxy_ptr_test\$(REL)\proxy_ptr_test.obj \
+          .\remove_from_scope_test\$(REL)\remove_from_scope_test.obj \
+          .\return_value_dtor_test\$(REL)\return_value_dtor_test.obj \
+          .\sequence_container_veneer_test\$(REL)\sequence_container_veneer_test.obj \
+          .\simple_string_test\$(REL)\simple_string_test.obj \
+          .\slice_string_test\$(REL)\slice_string_test.obj \
+          .\stlsoft_test\$(REL)\stlsoft_test.obj \
+          .\string_tokeniser_test\$(REL)\string_tokeniser_test.obj \
+          .\true_typedef_test\$(REL)\true_typedef_test.obj \
+          .\type_traits_test\$(REL)\type_traits_test.obj \
+          .\union_cast_test\$(REL)\union_cast_test.obj \
+          .\unordered_sequence_test\$(REL)\unordered_sequence_test.obj \
+          .\unused_return_value_monitor_test\$(REL)\unused_return_value_monitor_test.obj \
+          \
+
+clean_c:
+	@del $(OBJS_C) 2>NUL
+
+clean_cpp:
+	@-del .\algorithm_test\$(REL)\algorithm_test.obj 2>NUL
+	@-del .\allocator_test\$(REL)\allocator_test.obj 2>NUL
+	@-del .\allocator_test_2\$(REL)\allocator_test_2.obj 2>NUL
+	@-del .\array_proxy_test\$(REL)\array_proxy_test.obj 2>NUL
+	@-del .\associative_container_veneer_test\$(REL)\associative_container_veneer_test.obj 2>NUL
+	@-del .\auto_buffer_test\$(REL)\auto_buffer_test.obj 2>NUL
+	@-del .\auto_destructor_test\$(REL)\auto_destructor_test.obj 2>NUL
+	@-del .\bit_int_test\$(REL)\bit_int_test.obj 2>NUL
+	@-del .\compiler_traits_test\$(REL)\compiler_traits_test.obj 2>NUL
+	@-del .\constraints_test\$(REL)\constraints_test.obj 2>NUL
+	@-del .\delete_instance_test\$(REL)\delete_instance_test.obj 2>NUL
+	@-del .\explicit_cast_test\$(REL)\explicit_cast_test.obj 2>NUL
+	@-del .\fast_string_concatenator_test\$(REL)\fast_string_concatenator_test.obj 2>NUL
+	@-del .\fixed_array_test\$(REL)\fixed_array_test.obj 2>NUL
+	@-del .\fixed_substring_test\$(REL)\fixed_substring_test.obj 2>NUL
+	@-del .\frame_array_test\$(REL)\frame_array_test.obj 2>NUL
+	@-del .\frame_string_test\$(REL)\frame_string_test.obj 2>NUL
+	@-del .\has_member_type_test\$(REL)\has_member_type_test.obj 2>NUL
+	@-del .\inert_test\$(REL)\inert_test.obj 2>NUL
+	@-del .\inheritance_disambiguator_test\$(REL)\inheritance_disambiguator_test.obj 2>NUL
+	@-del .\integer_to_string_test\$(REL)\integer_to_string_test.obj 2>NUL
+	@-del .\meta_test\$(REL)\meta_test.obj 2>NUL
+	@-del .\mutable_access_test\$(REL)\mutable_access_test.obj 2>NUL
+	@-del .\null_test\$(REL)\null_test.obj 2>NUL
+	@-del .\num_elements_test\$(REL)\num_elements_test.obj 2>NUL
+	@-del .\operator_int_boolean_test\$(REL)\operator_int_boolean_test.obj 2>NUL
+	@-del .\placement_aid_test\$(REL)\placement_aid_test.obj 2>NUL
+	@-del .\pod_vector_test\$(REL)\pod_vector_test.obj 2>NUL
+	@-del .\pod_veneer_test\$(REL)\pod_veneer_test.obj 2>NUL
+	@-del .\printf_traits_test\$(REL)\printf_traits_test.obj 2>NUL
+	@-del .\proxy_ptr_test\$(REL)\proxy_ptr_test.obj 2>NUL
+	@-del .\remove_from_scope_test\$(REL)\remove_from_scope_test.obj 2>NUL
+	@-del .\return_value_dtor_test\$(REL)\return_value_dtor_test.obj 2>NUL
+	@-del .\sequence_container_veneer_test\$(REL)\sequence_container_veneer_test.obj 2>NUL
+	@-del .\simple_string_test\$(REL)\simple_string_test.obj 2>NUL
+	@-del .\slice_string_test\$(REL)\slice_string_test.obj 2>NUL
+	@-del .\stlsoft_test\$(REL)\stlsoft_test.obj 2>NUL
+	@-del .\string_tokeniser_test\$(REL)\string_tokeniser_test.obj 2>NUL
+	@-del .\true_typedef_test\$(REL)\true_typedef_test.obj 2>NUL
+	@-del .\type_traits_test\$(REL)\type_traits_test.obj 2>NUL
+	@-del .\union_cast_test\$(REL)\union_cast_test.obj 2>NUL
+	@-del .\unordered_sequence_test\$(REL)\unordered_sequence_test.obj 2>NUL
+	@-del .\unused_return_value_monitor_test\$(REL)\unused_return_value_monitor_test.obj 2>NUL
+
+clean_exe:
+	@-del .\algorithm_test\$(REL)\algorithm_test.exe 2>NUL
+	@-del .\allocator_test\$(REL)\allocator_test.exe 2>NUL
+	@-del .\allocator_test_2\$(REL)\allocator_test_2.exe 2>NUL
+	@-del .\array_proxy_test\$(REL)\array_proxy_test.exe 2>NUL
+	@-del .\associative_container_veneer_test\$(REL)\associative_container_veneer_test.exe 2>NUL
+	@-del .\auto_buffer_test\$(REL)\auto_buffer_test.exe 2>NUL
+	@-del .\auto_destructor_test\$(REL)\auto_destructor_test.exe 2>NUL
+	@-del .\bit_int_test\$(REL)\bit_int_test.exe 2>NUL
+	@-del .\compiler_traits_test\$(REL)\compiler_traits_test.exe 2>NUL
+	@-del .\constraints_test\$(REL)\constraints_test.exe 2>NUL
+	@-del .\delete_instance_test\$(REL)\delete_instance_test.exe 2>NUL
+	@-del .\explicit_cast_test\$(REL)\explicit_cast_test.exe 2>NUL
+	@-del .\fast_string_concatenator_test\$(REL)\fast_string_concatenator_test.exe 2>NUL
+	@-del .\fixed_array_test\$(REL)\fixed_array_test.exe 2>NUL
+	@-del .\fixed_substring_test\$(REL)\fixed_substring_test.exe 2>NUL
+	@-del .\frame_array_test\$(REL)\frame_array_test.exe 2>NUL
+	@-del .\frame_string_test\$(REL)\frame_string_test.exe 2>NUL
+	@-del .\has_member_type_test\$(REL)\has_member_type_test.exe 2>NUL
+	@-del .\inert_test\$(REL)\inert_test.exe 2>NUL
+	@-del .\inheritance_disambiguator_test\$(REL)\inheritance_disambiguator_test.exe 2>NUL
+	@-del .\integer_to_string_test\$(REL)\integer_to_string_test.exe 2>NUL
+	@-del .\meta_test\$(REL)\meta_test.exe 2>NUL
+	@-del .\mutable_access_test\$(REL)\mutable_access_test.exe 2>NUL
+	@-del .\null_test\$(REL)\null_test.exe 2>NUL
+	@-del .\num_elements_test\$(REL)\num_elements_test.exe 2>NUL
+	@-del .\operator_int_boolean_test\$(REL)\operator_int_boolean_test.exe 2>NUL
+	@-del .\placement_aid_test\$(REL)\placement_aid_test.exe 2>NUL
+	@-del .\pod_vector_test\$(REL)\pod_vector_test.exe 2>NUL
+	@-del .\pod_veneer_test\$(REL)\pod_veneer_test.exe 2>NUL
+	@-del .\printf_traits_test\$(REL)\printf_traits_test.exe 2>NUL
+	@-del .\proxy_ptr_test\$(REL)\proxy_ptr_test.exe 2>NUL
+	@-del .\remove_from_scope_test\$(REL)\remove_from_scope_test.exe 2>NUL
+	@-del .\return_value_dtor_test\$(REL)\return_value_dtor_test.exe 2>NUL
+	@-del .\sequence_container_veneer_test\$(REL)\sequence_container_veneer_test.exe 2>NUL
+	@-del .\simple_string_test\$(REL)\simple_string_test.exe 2>NUL
+	@-del .\slice_string_test\$(REL)\slice_string_test.exe 2>NUL
+	@-del .\stlsoft_test\$(REL)\stlsoft_test.exe 2>NUL
+	@-del .\string_tokeniser_test\$(REL)\string_tokeniser_test.exe 2>NUL
+	@-del .\true_typedef_test\$(REL)\true_typedef_test.exe 2>NUL
+	@-del .\type_traits_test\$(REL)\type_traits_test.exe 2>NUL
+	@-del .\union_cast_test\$(REL)\union_cast_test.exe 2>NUL
+	@-del .\unordered_sequence_test\$(REL)\unordered_sequence_test.exe 2>NUL
+	@-del .\unused_return_value_monitor_test\$(REL)\unused_return_value_monitor_test.exe 2>NUL
+
+clean_target:
+	@echo Cleaning target file types
+	@-del $(OBJS_CPP) 2>NUL
+
+#clean:  clean_c clean_cpp clean_exe clean_target
+clean:  clean_cpp clean_exe clean_target
+	@echo Cleaning other file types
+	@if exist *.exe del *.exe
+	@if exist *.map del *.map
+	@if exist *.tds del *.tds
+	@if exist *.obj del *.obj
+	@if exist *.err del *.err
+	@if exist *.pch del *.pch
+	@if exist *.pchi del *.pchi
+	@if exist *.dll del *.dll
+	@if exist *.res del *.res
+	@if exist *.exp del *.exp
+
+rebuild: clean target
+
+create_dirs:
+	@if not exist .\algorithm_test\$(REL) md .\algorithm_test\$(REL)
+	@if not exist .\allocator_test\$(REL) md .\allocator_test\$(REL)
+	@if not exist .\allocator_test_2\$(REL) md .\allocator_test_2\$(REL)
+	@if not exist .\array_proxy_test\$(REL) md .\array_proxy_test\$(REL)
+	@if not exist .\associative_container_veneer_test\$(REL) md .\associative_container_veneer_test\$(REL)
+	@if not exist .\auto_buffer_test\$(REL) md .\auto_buffer_test\$(REL)
+	@if not exist .\auto_destructor_test\$(REL) md .\auto_destructor_test\$(REL)
+	@if not exist .\bit_int_test\$(REL) md .\bit_int_test\$(REL)
+	@if not exist .\compiler_traits_test\$(REL) md .\compiler_traits_test\$(REL)
+	@if not exist .\constraints_test\$(REL) md .\constraints_test\$(REL)
+	@if not exist .\delete_instance_test\$(REL) md .\delete_instance_test\$(REL)
+	@if not exist .\explicit_cast_test\$(REL) md .\explicit_cast_test\$(REL)
+	@if not exist .\fast_string_concatenator_test\$(REL) md .\fast_string_concatenator_test\$(REL)
+	@if not exist .\fixed_array_test\$(REL) md .\fixed_array_test\$(REL)
+	@if not exist .\fixed_substring_test\$(REL) md .\fixed_substring_test\$(REL)
+	@if not exist .\frame_array_test\$(REL) md .\frame_array_test\$(REL)
+	@if not exist .\frame_string_test\$(REL) md .\frame_string_test\$(REL)
+	@if not exist .\has_member_type_test\$(REL) md .\has_member_type_test\$(REL)
+	@if not exist .\inert_test\$(REL) md .\inert_test\$(REL)
+	@if not exist .\inheritance_disambiguator_test\$(REL) md .\inheritance_disambiguator_test\$(REL)
+	@if not exist .\integer_to_string_test\$(REL) md .\integer_to_string_test\$(REL)
+	@if not exist .\meta_test\$(REL) md .\meta_test\$(REL)
+	@if not exist .\mutable_access_test\$(REL) md .\mutable_access_test\$(REL)
+	@if not exist .\null_test\$(REL) md .\null_test\$(REL)
+	@if not exist .\num_elements_test\$(REL) md .\num_elements_test\$(REL)
+	@if not exist .\operator_int_boolean_test\$(REL) md .\operator_int_boolean_test\$(REL)
+	@if not exist .\placement_aid_test\$(REL) md .\placement_aid_test\$(REL)
+	@if not exist .\pod_vector_test\$(REL) md .\pod_vector_test\$(REL)
+	@if not exist .\pod_veneer_test\$(REL) md .\pod_veneer_test\$(REL)
+	@if not exist .\printf_traits_test\$(REL) md .\printf_traits_test\$(REL)
+	@if not exist .\proxy_ptr_test\$(REL) md .\proxy_ptr_test\$(REL)
+	@if not exist .\remove_from_scope_test\$(REL) md .\remove_from_scope_test\$(REL)
+	@if not exist .\return_value_dtor_test\$(REL) md .\return_value_dtor_test\$(REL)
+	@if not exist .\sequence_container_veneer_test\$(REL) md .\sequence_container_veneer_test\$(REL)
+	@if not exist .\simple_string_test\$(REL) md .\simple_string_test\$(REL)
+	@if not exist .\slice_string_test\$(REL) md .\slice_string_test\$(REL)
+	@if not exist .\stlsoft_test\$(REL) md .\stlsoft_test\$(REL)
+	@if not exist .\string_tokeniser_test\$(REL) md .\string_tokeniser_test\$(REL)
+	@if not exist .\true_typedef_test\$(REL) md .\true_typedef_test\$(REL)
+	@if not exist .\type_traits_test\$(REL) md .\type_traits_test\$(REL)
+	@if not exist .\union_cast_test\$(REL) md .\union_cast_test\$(REL)
+	@if not exist .\unordered_sequence_test\$(REL) md .\unordered_sequence_test\$(REL)
+	@if not exist .\unused_return_value_monitor_test\$(REL) md .\unused_return_value_monitor_test\$(REL)
+
+
+
+# objects - hard-coded, since object files are in separate directory to .cpp
+
+.\algorithm_test\$(REL)\algorithm_test.obj: .\algorithm_test\algorithm_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\allocator_test\$(REL)\allocator_test.obj: .\allocator_test\allocator_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\allocator_test_2\$(REL)\allocator_test_2.obj: .\allocator_test_2\allocator_test_2.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\array_proxy_test\$(REL)\array_proxy_test.obj: .\array_proxy_test\array_proxy_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\associative_container_veneer_test\$(REL)\associative_container_veneer_test.obj: .\associative_container_veneer_test\associative_container_veneer_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\auto_buffer_test\$(REL)\auto_buffer_test.obj: .\auto_buffer_test\auto_buffer_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\auto_destructor_test\$(REL)\auto_destructor_test.obj: .\auto_destructor_test\auto_destructor_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\bit_int_test\$(REL)\bit_int_test.obj: .\bit_int_test\bit_int_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\compiler_traits_test\$(REL)\compiler_traits_test.obj: .\compiler_traits_test\compiler_traits_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\constraints_test\$(REL)\constraints_test.obj: .\constraints_test\constraints_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\delete_instance_test\$(REL)\delete_instance_test.obj: .\delete_instance_test\delete_instance_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\explicit_cast_test\$(REL)\explicit_cast_test.obj: .\explicit_cast_test\explicit_cast_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\fast_string_concatenator_test\$(REL)\fast_string_concatenator_test.obj: .\fast_string_concatenator_test\fast_string_concatenator_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\fixed_array_test\$(REL)\fixed_array_test.obj: .\fixed_array_test\fixed_array_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\fixed_substring_test\$(REL)\fixed_substring_test.obj: .\fixed_substring_test\fixed_substring_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\frame_array_test\$(REL)\frame_array_test.obj: .\frame_array_test\frame_array_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\frame_string_test\$(REL)\frame_string_test.obj: .\frame_string_test\frame_string_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\has_member_type_test\$(REL)\has_member_type_test.obj: .\has_member_type_test\has_member_type_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\inert_test\$(REL)\inert_test.obj: .\inert_test\inert_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\inheritance_disambiguator_test\$(REL)\inheritance_disambiguator_test.obj: .\inheritance_disambiguator_test\inheritance_disambiguator_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\integer_to_string_test\$(REL)\integer_to_string_test.obj: .\integer_to_string_test\integer_to_string_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\meta_test\$(REL)\meta_test.obj: .\meta_test\meta_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\mutable_access_test\$(REL)\mutable_access_test.obj: .\mutable_access_test\mutable_access_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\null_test\$(REL)\null_test.obj: .\null_test\null_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\num_elements_test\$(REL)\num_elements_test.obj: .\num_elements_test\num_elements_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\operator_int_boolean_test\$(REL)\operator_int_boolean_test.obj: .\operator_int_boolean_test\operator_int_boolean_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\placement_aid_test\$(REL)\placement_aid_test.obj: .\placement_aid_test\placement_aid_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\pod_vector_test\$(REL)\pod_vector_test.obj: .\pod_vector_test\pod_vector_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\pod_veneer_test\$(REL)\pod_veneer_test.obj: .\pod_veneer_test\pod_veneer_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\printf_traits_test\$(REL)\printf_traits_test.obj: .\printf_traits_test\printf_traits_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\proxy_ptr_test\$(REL)\proxy_ptr_test.obj: .\proxy_ptr_test\proxy_ptr_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\remove_from_scope_test\$(REL)\remove_from_scope_test.obj: .\remove_from_scope_test\remove_from_scope_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\return_value_dtor_test\$(REL)\return_value_dtor_test.obj: .\return_value_dtor_test\return_value_dtor_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\sequence_container_veneer_test\$(REL)\sequence_container_veneer_test.obj: .\sequence_container_veneer_test\sequence_container_veneer_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\simple_string_test\$(REL)\simple_string_test.obj: .\simple_string_test\simple_string_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\slice_string_test\$(REL)\slice_string_test.obj: .\slice_string_test\slice_string_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\stlsoft_test\$(REL)\stlsoft_test.obj: .\stlsoft_test\stlsoft_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\string_tokeniser_test\$(REL)\string_tokeniser_test.obj: .\string_tokeniser_test\string_tokeniser_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\true_typedef_test\$(REL)\true_typedef_test.obj: .\true_typedef_test\true_typedef_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\type_traits_test\$(REL)\type_traits_test.obj: .\type_traits_test\type_traits_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\union_cast_test\$(REL)\union_cast_test.obj: .\union_cast_test\union_cast_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\unordered_sequence_test\$(REL)\unordered_sequence_test.obj: .\unordered_sequence_test\unordered_sequence_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+.\unused_return_value_monitor_test\$(REL)\unused_return_value_monitor_test.obj: .\unused_return_value_monitor_test\unused_return_value_monitor_test.cpp
+	$(CPPC) $(CPPC_F_COMPILE_ONLY) $(CPPCARGS) -o$@ $?
+
+# executables
+
+# ##############################################################################

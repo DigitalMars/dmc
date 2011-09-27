@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\BASE\CONGUI\CONGUI.PRJ
+CONGUI.OPN
+novcs
+CONGUI.DEF
+19
+812035224
+0 0 0 0 0 "console.c" ""
+0 0 0 0 0 "gui.c" ""
+0 0 0 0 0 "congui.hpj" ""
+0 0 0 0 0 "congui.rc" ""

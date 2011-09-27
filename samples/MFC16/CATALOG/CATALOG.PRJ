@@ -1,0 +1,16 @@
+82569
+D:\SC\SAMPLES\MFC25\CATALOG\CATALOG.PRJ
+CATALOG.OPN
+novcs
+catalog.def
+0
+805039278
+0 0 0 0 0 "catalog.def"
+0 0 0 0 0 "cataldoc.cpp"
+0 0 0 0 0 "catalog.cpp"
+0 0 0 0 0 "catalvw.cpp"
+0 0 0 0 0 "columnst.cpp"
+0 0 0 0 0 "mainfrm.cpp"
+0 0 0 0 0 "tableset.cpp"
+0 0 0 0 0 "catalog.rc"
+0 0 0 0 0 "odbc.lib"

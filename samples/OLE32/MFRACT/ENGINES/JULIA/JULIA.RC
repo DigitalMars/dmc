@@ -1,0 +1,80 @@
+#include "windows.h"
+#include "julia.h"
+
+#define VER_FILEDESCRIPTION_STR     "Julia Fractal Generator"
+#define VER_INTERNALNAME_STR        "JULIA.DLL"
+#define VER_ORIGINALFILENAME_STR    "JULIA.DLL"
+
+#define VER_PRODUCTVERSION_STR      "3.50"
+#define VER_COMPANYNAME_STR         "Microsoft Corporation"
+#define VER_PRODUCTNAME_STR         "Microsoft\256 Windows NT(TM) Operating System"
+#define VER_LEGALCOPYRIGHT_YEARS    "1981-1995"
+#define VER_LEGALCOPYRIGHT_STR "Copyright \251 Microsoft Corp. " VER_LEGALCOPYRIGHT_YEARS
+#define VER_PRODUCTVERSION 3,50,01,001
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION    VER_PRODUCTVERSION
+PRODUCTVERSION VER_PRODUCTVERSION
+FILEFLAGSMASK  VS_FFI_FILEFLAGSMASK
+FILEFLAGS      0
+FILEOS         VOS_NT_WINDOWS32
+FILETYPE       VFT_DLL
+FILESUBTYPE    VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"   /* LANG_ENGLISH/SUBLANG_ENGLISH_US, Unicode CP */
+        BEGIN
+            VALUE "CompanyName",     VER_COMPANYNAME_STR
+            VALUE "FileDescription", VER_FILEDESCRIPTION_STR
+            VALUE "FileVersion",     VER_PRODUCTVERSION
+            VALUE "InternalName",    VER_INTERNALNAME_STR
+            VALUE "LegalCopyright",  VER_LEGALCOPYRIGHT_STR
+            VALUE "OriginalFilename",VER_ORIGINALFILENAME_STR
+            VALUE "ProductName",     VER_PRODUCTNAME_STR
+            VALUE "ProductVersion",  VER_PRODUCTVERSION_STR
+        END
+
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 0x04B0
+    END
+END
+
+PROPERTIES DIALOG 60, 20, 186, 112
+STYLE WS_POPUP | WS_DLGFRAME
+BEGIN
+    EDITTEXT        IDC_LOWREAL, 32, 24, 65, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDC_LOWIMAGINARY, 108, 24, 65, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDC_HIGHREAL, 32, 41, 65, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDC_HIGHIMAGINARY, 108, 41, 65, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDC_CREAL, 32, 59, 65, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDC_CIMAGINARY, 108, 59, 65, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDC_LIMIT, 32, 75, 65, 12, ES_AUTOHSCROLL
+    RTEXT           "low Z =", 105, 3, 26, 27, 11, NOT WS_GROUP
+    CTEXT           "+", 106, 99, 26, 8, 10, NOT WS_GROUP
+    RTEXT           "high Z =", 107, 2, 43, 29, 11, NOT WS_GROUP
+    CTEXT           "+", 108, 99, 43, 8, 10, NOT WS_GROUP
+    RTEXT           "Limit =", 109, 3, 77, 27, 11, NOT WS_GROUP
+    RTEXT           "Z -> Z", 110, 89, 7, 22, 9, NOT WS_GROUP
+    PUSHBUTTON      "OK", IDOK, 6, 94, 56, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 65, 94, 56, 14
+    PUSHBUTTON      "About", IDC_ABOUT, 124, 94, 56, 14
+    LTEXT           "i", 113, 174, 43, 12, 8, NOT WS_GROUP
+    LTEXT           "i", 114, 174, 26, 10, 8, NOT WS_GROUP
+    CTEXT           "2", 117, 111, 4, 7, 8, NOT WS_GROUP
+    LTEXT           "+ c", 118, 117, 7, 13, 8, NOT WS_GROUP
+    CTEXT           "Julia Set:", 119, 56, 7, 32, 8, NOT WS_GROUP
+    RTEXT           "c =", 120, 16, 60, 14, 8, NOT WS_GROUP
+    CTEXT           "+", 121, 99, 60, 8, 8, NOT WS_GROUP
+    LTEXT           "i", 122, 174, 61, 7, 8, NOT WS_GROUP
+    AUTOCHECKBOX    "Use Bounding Boxes", IDC_USEBOUNDINGBOXES, 101, 76, 80, 10
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUT_TITLE "Julia Set Fractal Engine"
+    IDS_ABOUT_TEXT "Version 1.0 - Written in April of 1994 by Steve Blanding."
+END

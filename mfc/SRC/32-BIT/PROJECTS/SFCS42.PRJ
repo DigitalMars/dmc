@@ -1,0 +1,11 @@
+82570
+E:\cocvs\mfc\src\32-bit\projects\SFCS42.PRJ
+SFCS42.OPN
+novcs
+SFCS42.DEF
+13
+833954720
+0 0 0 0 0 "..\appmodul.cpp" ""
+0 0 0 0 0 "..\dllmodul.cpp" ""
+0 0 0 0 0 "..\nolib.cpp" ""
+0 0 0 0 0 "..\oleexp.cpp" ""

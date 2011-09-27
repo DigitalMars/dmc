@@ -1,0 +1,40 @@
+// Microsoft Developer Studio generated Help ID include file.
+// Used by DAOTable.rc
+//
+#define HIDC_ADD_FIELD                  0x808b0406
+#define HIDC_ADD_INDEX                  0x80810404
+#define HIDC_ADD_QUERY_DEF              0x808c040d
+#define HIDC_BUTTON_CONNECT             0x806603e9
+#define HIDC_BUTTON_DELETE_TABLE        0x80660421
+#define HIDC_BUTTON_QUERY_DEFINITION    0x806603ee
+#define HIDC_BUTTON_TABLE_FIELDS        0x806603eb
+#define HIDC_BUTTON_TABLE_INDEXES       0x806603ec
+#define HIDC_CHECK_ENCRYPT              0x8085041c
+#define HIDC_COMBO_QUERY_NAME           0x80660414
+#define HIDC_COMBO_TABLE_NAME           0x80660413
+#define HIDC_DELETE_FIELD               0x808b03fa
+#define HIDC_DELETE_INDEX               0x80810408
+#define HIDC_DELETE_QUERYDEF            0x808c040e
+#define HIDC_EDIT_DATABASE_NAME         0x808503e8
+#define HIDC_FIELD_LIST                 0x808103fb
+#define HIDC_IGNORE_NULLS               0x808103ff
+#define HIDC_INDEX_NAME                 0x808103fe
+#define HIDC_MODIFY_QUERY_DEF           0x808c0411
+#define HIDC_NEXT_FIELD                 0x808b03ff
+#define HIDC_NEXT_INDEX                 0x80810405
+#define HIDC_PREVIOUS_FIELD             0x808b03f7
+#define HIDC_PREVIOUS_INDEX             0x80810403
+#define HIDC_PRIMARY                    0x80810400
+#define HIDC_RADIO_V10                  0x8085041d
+#define HIDC_RADIO_V11                  0x8085041e
+#define HIDC_RADIO_V20                  0x8085041f
+#define HIDC_RADIO_V30                  0x80850420
+#define HIDC_REQUIRED                   0x808103f3
+#define HIDC_SQL                        0x808c0409
+#define HIDC_STATIC                     0x8081ffff
+#define HIDC_TABLE_NAME                 0x808103e8
+#define HIDC_UNIQUE                     0x80810402
+#define HIDC_VALIDATION_RULE            0x808b03ee
+#define HIDC_VALIDATION_TEXT            0x808b03f1
+#define HIDOK                           0x80850001
+#define HID_HELP                        0x8085e146

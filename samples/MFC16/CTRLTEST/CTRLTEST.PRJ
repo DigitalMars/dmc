@@ -1,0 +1,23 @@
+82569
+D:\sc\samples\mfc25\CTRLTEST\CTRLTEST.PRJ
+CTRLTEST.OPN
+novcs
+CTRLTEST.DEF
+0
+805039278
+0 0 0 0 0 "ctrltest.def"
+0 0 0 0 0 "bbutton.cpp"
+0 0 0 0 0 "ctrltest.cpp"
+0 0 0 0 0 "custlist.cpp"
+0 0 0 0 0 "custmenu.cpp"
+0 0 0 0 0 "derpen.cpp"
+0 0 0 0 0 "dertest.cpp"
+0 0 0 0 0 "dlgpen.cpp"
+0 0 0 0 0 "featpen.cpp"
+0 0 0 0 0 "paredit.cpp"
+0 0 0 0 0 "paredit2.cpp"
+0 0 0 0 0 "spin.cpp"
+0 0 0 0 0 "spintest.cpp"
+0 0 0 0 0 "subtest.cpp"
+0 0 0 0 0 "wclstest.cpp"
+0 0 0 0 0 "ctrltest.rc"

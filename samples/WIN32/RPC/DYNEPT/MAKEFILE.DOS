@@ -1,0 +1,45 @@
+#*************************************************************#
+#**                                                         **#
+#**                 Microsoft RPC Examples                  **#
+#**                   dynept Application                    **#
+#**         Copyright(c) Microsoft Corp. 1992-1995          **#
+#**                                                         **#
+#*************************************************************#
+
+cc= cl
+cflags= -c -AL -Gsw -Oas -Zpe -Zi -D_CRTAPI1=
+linker= link
+lflags= /CO /NOD /STACK:4096
+
+.c.obj:
+   $(cc) $(cflags) $<
+
+all : dyneptc
+
+idl : dynept.h
+
+# Make the client side application dyneptc
+dyneptc : dyneptc.exe
+dyneptc.exe : dyneptc.obj dynept_c.obj
+    $(linker) $(lflags) dyneptc dynept_c ,,,\
+    llibce rpc rpcndr;
+
+# Update the object files if necessary
+
+dyneptc.obj : dyneptc.c dynept.h
+
+dynept_c.obj : dynept_c.c dynept.h
+
+dynept.h dynept_c.c : dynept.idl dynept.acf
+   midl -oldnames -env dos -ms_ext -char ascii7 -no_cpp dynept.idl
+
+# Clean up everything
+cleanall : clean
+    -del dyneptc.exe
+
+# Clean up everything but the .EXEs
+clean :
+    -del *.obj
+    -del *.map
+    -del dynept_c.c
+    -del dynept.h

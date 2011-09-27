@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\BASE\NWLINK\NWLINK.PRJ
+NWLINK.OPN
+novcs
+NWLINK.DEF
+16
+812035224
+0 0 0 0 2 "connect\connect.prj" ""
+0 0 0 0 3 "dgrecv\dgrecv.prj" ""
+0 0 0 0 4 "dgsend\dgsend.prj" ""
+0 0 0 0 5 "ping\ping.prj" ""

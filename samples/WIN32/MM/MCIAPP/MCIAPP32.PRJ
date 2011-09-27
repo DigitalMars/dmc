@@ -1,0 +1,18 @@
+82572
+C:\SC\samples\win32\MM\MCIAPP\MCIAPP32.PRJ
+MCIAPP32.OPN
+novcs
+mciapp32.def
+16
+852911400
+0 0 0 0 0 "app.c" ""
+0 0 0 0 0 "appinit.c" ""
+0 0 0 0 0 "debug.c" ""
+0 0 0 0 0 "mciapp.c" ""
+0 0 0 0 0 "mciapp.rc" ""
+0 0 0 0 0 "mciapp32.def" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "msacm32.lib" ""
+0 0 0 0 0 "shell32.lib" ""
+0 0 0 0 0 "vfw32.lib" ""
+0 0 0 0 0 "winmm.lib" ""

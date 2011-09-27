@@ -1,0 +1,90 @@
+/****************************************************************************
+ *
+ *   captest.rc
+ *
+ *   Microsoft Video for Windows Capture Class Test Program
+ *
+ ***************************************************************************/
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1993 - 1995	Microsoft Corporation.	All Rights Reserved.
+ *
+ **************************************************************************/
+
+
+#include <windows.h>
+#ifndef _WIN32
+#include <ver.h>
+#else
+#include <winver.h>
+#endif
+#include "CapTest.h"
+#include "captest.rcv"
+
+// Dialog definitions...
+#include "captest.dlg"
+
+// Icon specified...
+CapTestIcon ICON "captest.ico"
+
+// Now comes the menu...
+CapTestMenu MENU
+  BEGIN
+    POPUP  "&File"
+      BEGIN
+	MENUITEM "Set Capture &File...", IDM_F_SETCAPTUREFILE
+	MENUITEM "&Allocate File Space...", IDM_F_ALLOCATESPACE
+	MENUITEM "&Save Video As...", IDM_F_SAVEVIDEOAS
+	MENUITEM SEPARATOR
+	MENUITEM "E&xit", IDM_F_EXIT
+      END
+    POPUP  "&Edit"
+      BEGIN
+	MENUITEM "&Copy\t^C", IDM_E_COPY
+	MENUITEM "&Paste Palette", IDM_E_PASTEPALETTE
+      END
+    POPUP  "&Options"
+      BEGIN
+	MENUITEM "&Preview", IDM_O_PREVIEW, CHECKED
+	MENUITEM "&Overlay", IDM_O_OVERLAY
+	MENUITEM SEPARATOR
+	MENUITEM "&Audio Format...", IDM_O_AUDIOFORMAT
+	MENUITEM SEPARATOR
+	MENUITEM "Video &Format...", IDM_O_VIDEOFORMAT
+	MENUITEM "Video &Source...", IDM_O_VIDEOSOURCE
+	MENUITEM "Video &Display...", IDM_O_VIDEODISPLAY
+	MENUITEM SEPARATOR
+	MENUITEM "&Compression...", IDM_O_CHOOSECOMPRESSOR
+	MENUITEM SEPARATOR
+	MENUITEM "&Make Palette...", IDM_O_PALETTE
+	MENUITEM SEPARATOR
+      END
+    POPUP  "&Capture"
+      BEGIN
+	MENUITEM "Capture &Video", IDM_C_CAPTUREVIDEO
+	MENUITEM "Capture &Frame", IDM_C_CAPTUREFRAME
+	MENUITEM "Capture &Settings...", IDM_C_CAPTURESETTINGS
+      END
+    POPUP  "&Help"
+      BEGIN
+	MENUITEM "&About...", IDM_H_ABOUT
+      END
+  END
+
+// Here are the Accelerators...
+CapTestApp ACCELERATORS
+  BEGIN
+    "^C", IDM_E_COPY
+  END
+
+// And string table at last...
+STRINGTABLE
+BEGIN
+  IDS_ERR_CREATE_WINDOW,    "Window creation failed!"
+  IDS_ERR_REGISTER_CLASS,   "Error registering window class"
+END

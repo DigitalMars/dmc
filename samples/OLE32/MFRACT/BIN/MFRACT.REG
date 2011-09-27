@@ -1,0 +1,18 @@
+REGEDIT
+
+ALL LINES THAT DON'T START WITH 'HKEY_CLASSES_ROOT' ARE COMMENTS.
+
+THIS FILE CONSISTS OF A LIST OF <key> <value> PAIRS. THE key AND value SHOULD
+BE SEPERATED BY A "=" mark.
+
+HKEY_CLASSES_ROOT\CLSID\{bf600080-3a8c-101b-b941-00aa001f2ef4} = Quadrant Fractal Engine Helper
+HKEY_CLASSES_ROOT\CLSID\{bf600080-3a8c-101b-b941-00aa001f2ef4}\InprocServer32 = quad.dll
+HKEY_CLASSES_ROOT\CLSID\{aeb94135-39c3-101b-b940-00aa001f2ef4} = Mandelbrot Fractal Engine
+HKEY_CLASSES_ROOT\CLSID\{aeb94135-39c3-101b-b940-00aa001f2ef4}\InprocServer32 = mandel.dll
+HKEY_CLASSES_ROOT\CLSID\{1bf7cc8c-3efd-101b-b94a-00aa001f2ef4} = Julia Set Fractal Engine
+HKEY_CLASSES_ROOT\CLSID\{1bf7cc8c-3efd-101b-b94a-00aa001f2ef4}\InprocServer32 = julia.dll
+HKEY_CLASSES_ROOT\CLSID\{d49bcab0-40d1-101b-b94f-00aa001f2ef4} = Plasma Fractal Engine
+HKEY_CLASSES_ROOT\CLSID\{d49bcab0-40d1-101b-b94f-00aa001f2ef4}\InprocServer32 = plasma.dll
+HKEY_CLASSES_ROOT\CLSID\{7970b884-48f7-101b-b967-00aa001f2ef4} = Recursive Generator Fractal Engine
+HKEY_CLASSES_ROOT\CLSID\{7970b884-48f7-101b-b967-00aa001f2ef4}\InprocServer32 = rgen.dll
+

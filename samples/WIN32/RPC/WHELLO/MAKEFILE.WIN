@@ -1,0 +1,51 @@
+#*************************************************************#
+#**                                                         **#
+#**                 Microsoft RPC Examples                  **#
+#**                   whello Application                    **#
+#**            Copyright(c) Microsoft Corp. 1992-1995       **#
+#**                                                         **#
+#*************************************************************#
+
+cc= cl
+cflags= -c -AL -Gsw -Oas -Zpe -Zi
+linker= link
+lflags= /CO /NOD
+
+.c.obj:
+   $(cc) $(cflags) $<
+
+all: whelloc.exe
+
+idl : whello.h
+
+# Update the resource if necessary
+whello.res: whello.rc whello.dlg whelloc.h
+    rc -r whello.rc
+
+# Update the executable file if necessary, and if so, add the resource back in.
+whelloc.exe: whelloc.obj whello.def whello_c.obj whello.res
+    $(linker) $(lflags) whelloc whello_c,,,\
+    libw llibcew rpcw rpcndrw, whello.def
+    rc whello.res whelloc.exe
+
+# Update the object files if necessary
+
+whelloc.obj: whelloc.c whelloc.h whello.h
+   $(cc) $(cflags) -DWIN16 whelloc.c
+
+whello_c.obj : whello_c.c whelloc.h
+
+whello.h whello_c.c : whello.idl whello.acf
+   midl -oldnames -env win16 -no_cpp whello.idl
+
+# Clean up everything
+cleanall : clean
+    -del *.exe
+
+# Clean up everything but the .EXEs
+clean :
+    -del *.obj
+    -del *.map
+    -del whello.res
+    -del whello_c.c
+    -del whello.h

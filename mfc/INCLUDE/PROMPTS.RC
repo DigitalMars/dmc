@@ -1,0 +1,7 @@
+/* copyright 1994  - Symantec Corporation */
+/* wrapper for the MFC resource script.*/
+
+#include <16-bit\prompts.rc>
+
+
+

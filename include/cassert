@@ -1,0 +1,8 @@
+
+#pragma once
+
+#ifndef __ASSERT_H
+
+#include <assert.h>
+
+#endif

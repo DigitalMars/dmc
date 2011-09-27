@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\BASE\INPUT\INPUT.PRJ
+INPUT.OPN
+novcs
+INPUT.DEF
+20
+812035224
+0 0 0 0 0 "input.c" ""
+0 0 0 0 0 "input.def" ""
+0 0 0 0 0 "input.rc" ""
+0 0 0 0 0 "kernel32.lib" ""

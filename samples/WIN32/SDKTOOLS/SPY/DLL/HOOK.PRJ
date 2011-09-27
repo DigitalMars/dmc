@@ -1,0 +1,9 @@
+82572
+C:\SC\samples\win32\SDKTOOLS\SPY\DLL\HOOK.PRJ
+HOOK.OPN
+novcs
+HOOK.DEF
+3
+812035224
+0 0 0 0 0 "hook.c" ""
+0 0 0 0 0 "hook.def" ""

@@ -1,0 +1,29 @@
+82572
+C:\SC\samples\win32\BASE\CONSOLE\CONSOLE.PRJ
+CONSOLE.OPN
+novcs
+CONSOLE.DEF
+19
+812035224
+0 0 0 0 0 "alocfree.c" ""
+0 0 0 0 0 "codepage.c" ""
+0 0 0 0 0 "coninfo.c" ""
+0 0 0 0 0 "conmode.c" ""
+0 0 0 0 0 "console.c" ""
+0 0 0 0 0 "contitle.c" ""
+0 0 0 0 0 "create.c" ""
+0 0 0 0 0 "cursor.c" ""
+0 0 0 0 0 "fillatt.c" ""
+0 0 0 0 0 "fillchar.c" ""
+0 0 0 0 0 "flush.c" ""
+0 0 0 0 0 "getlrgst.c" ""
+0 0 0 0 0 "getnumev.c" ""
+0 0 0 0 0 "handler.c" ""
+0 0 0 0 0 "numbut.c" ""
+0 0 0 0 0 "readchar.c" ""
+0 0 0 0 0 "readout.c" ""
+0 0 0 0 0 "scroll.c" ""
+0 0 0 0 0 "size.c" ""
+0 0 0 0 0 "writein.c" ""
+0 0 0 0 0 "console.rc" ""
+0 0 0 0 0 "advapi32.lib" ""

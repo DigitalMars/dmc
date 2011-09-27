@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\BASE\NAMEPIPE\NPSERVER\NPSERVER.PRJ
+NPSERVER.OPN
+novcs
+npserver.def
+2
+812035224
+0 0 0 0 0 "npserver.def" ""
+0 0 0 0 0 "server32.c" ""
+0 0 0 0 0 "advapi32.lib" ""

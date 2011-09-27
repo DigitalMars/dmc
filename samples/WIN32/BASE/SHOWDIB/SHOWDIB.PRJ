@@ -1,0 +1,15 @@
+82572
+C:\SC\samples\win32\BASE\SHOWDIB\SHOWDIB.PRJ
+SHOWDIB.OPN
+novcs
+SHOWDIB.DEF
+2
+812035224
+0 0 0 0 0 "dib.c" ""
+0 0 0 0 0 "dlgopen.c" ""
+0 0 0 0 0 "drawdib.c" ""
+0 0 0 0 0 "print.c" ""
+0 0 0 0 0 "showdib.c" ""
+0 0 0 0 0 "showdib.def" ""
+0 0 0 0 0 "showdib.rc" ""
+0 0 0 0 0 "comdlg32.lib" ""

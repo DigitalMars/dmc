@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\SDKTOOLS\ZOOMIN\ZOOMIN.PRJ
+ZOOMIN.OPN
+novcs
+zoomin.def
+16
+812035224
+0 0 0 0 0 "zoomin.c" ""
+0 0 0 0 0 "zoomin.rc" ""
+0 0 0 0 0 "zoomin.def" ""
+0 0 0 0 0 "shell32.lib" ""

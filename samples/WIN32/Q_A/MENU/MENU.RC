@@ -1,0 +1,123 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include "windows.h"
+#include "menu.h"
+
+checkon  BITMAP checkon.bmp
+checkoff BITMAP checkoff.bmp
+menu     ICON   menu.ico
+
+#include "menu.dlg"
+
+MenuMenu MENU
+BEGIN
+  POPUP         "&File"
+    BEGIN
+      MENUITEM  "&Exit",           IDM_EXIT
+      MENUITEM  SEPARATOR
+      MENUITEM  "&About Menu ...", IDM_ABOUT
+    END
+
+  POPUP         "&Colors"
+    BEGIN
+      MENUITEM  "&Owner Draw Colors", IDM_COLOROWNERDR
+      MENUITEM  SEPARATOR
+      MENUITEM  "&Black", IDM_BLACK
+      MENUITEM  "B&lue",  IDM_BLUE
+      MENUITEM  "&Red",   IDM_RED
+      MENUITEM  "&Green", IDM_GREEN
+    END
+
+  POPUP         "&Weapons"
+    BEGIN
+      POPUP     "&Edged"
+        BEGIN
+          MENUITEM  "&Two-Handed Sword", 0
+          MENUITEM  "&Long Sword", 0
+          MENUITEM  "&Short Sword", 0
+          MENUITEM  "&Broad Sword", 0
+          MENUITEM  "&Scimitar", 0
+          MENUITEM  "&Cutlass", 0
+          MENUITEM  "&Dagger", 0
+        END
+
+      POPUP     "&Blunt"
+        BEGIN
+          MENUITEM  "&Mace", 0
+          MENUITEM  "&Flail", 0
+          MENUITEM  "&Club", 0
+          MENUITEM  "&Staff", 0
+          MENUITEM  "&Warhammer", 0
+        END
+
+      POPUP     "&Polearms"
+        BEGIN
+          MENUITEM  "&Spear", 0
+          MENUITEM  "&Trident", 0
+          MENUITEM  "&Morning Star", 0
+          MENUITEM  "&Glaive", 0
+        END
+        
+      POPUP     "&Missle"
+        BEGIN
+          POPUP     "&Bows"
+            BEGIN
+              MENUITEM "&Short Bow", 0
+              MENUITEM "&Long Bow", 0
+              MENUITEM "S&hort Composite Bow", 0
+              MENUITEM "L&ong Composite Bow", 0
+              MENUITEM "L&ight Crossbow", 0
+              MENUITEM "H&eavy Crossbow" ,0
+            END
+          MENUITEM  "Sling", 0
+          MENUITEM  "Darts", 0
+          MENUITEM  "Staff-Sling", 0
+          MENUITEM  "Spear", 0
+        END
+    END
+END
+
+/* Template for the floating popup */
+PopupMenu MENU
+BEGIN
+  POPUP "FOO-Dummy Popup"
+    BEGIN
+      POPUP "Fonts"
+        BEGIN
+          MENUITEM "Courier", IDM_FONT
+          MENUITEM "Times Roman", IDM_FONT
+          MENUITEM "Swiss", IDM_FONT
+          MENUITEM "Helvetica", IDM_FONT
+          MENUITEM "Old English", IDM_FONT
+        END
+      POPUP "Sizes"
+        BEGIN
+          MENUITEM "7", IDM_SIZE
+          MENUITEM "8", IDM_SIZE
+          MENUITEM "9", IDM_SIZE
+          MENUITEM "10", IDM_SIZE
+          MENUITEM "11", IDM_SIZE
+          MENUITEM "12", IDM_SIZE
+          MENUITEM "14", IDM_SIZE
+        END
+      POPUP "Styles"
+        BEGIN
+          MENUITEM "Bold", IDM_STYLE
+          MENUITEM "Italic", IDM_STYLE
+          MENUITEM "Strike Out", IDM_STYLE
+          MENUITEM "Superscript", IDM_STYLE
+          MENUITEM "Subscript", IDM_STYLE
+        END
+    END
+
+END

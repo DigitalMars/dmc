@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\ole16\ILCKBYTS\ILBDLL.PRJ
+ILBDLL.OPN
+novcs
+ilbdll.def
+1
+812035224
+0 0 0 0 0 "memstm.cpp" ""
+0 0 0 0 0 "ilbdll.def" ""
+0 0 0 0 1001 "..\bin\movelib.bat" ""

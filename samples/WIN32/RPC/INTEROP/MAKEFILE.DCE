@@ -1,0 +1,53 @@
+#*************************************************************#
+#**                                                         **#
+#**                 Microsoft RPC Examples                  **#
+#**               OSF DCE Interop Application               **#
+#**           Copyright(c) Microsoft Corp. 1993-1995        **#
+#**                                                         **#
+#*************************************************************#
+
+CC=cc
+
+#
+# You must define LIBS and CFLAGS depending on platform.
+#
+
+# This works on DEC Ultrix DCE
+# LIBS=-ldce -lcma -ldnet -li
+# CFLAGS=-c
+
+# This works on HP-UX Beta DCE
+# LIBS=-L/usr/lib/dce -lbb -ldce -lm -lc /usr/lib/end.o
+# CFLAGS=-c -Aa -D_POSIX_SOURCE -DREENTRANT
+
+# default
+LIBS=-ldce
+CFLAGS=-c
+
+all : client server
+
+client: client.o msg_cstub.o
+        cc -o client client.o msg_cstub.o $(LIBS)
+
+server: server.o manager.o msg_sstub.o
+        cc -o server server.o manager.o msg_sstub.o $(LIBS)
+
+# Update the object files if necessary
+
+client.o : client.c msg.h
+server.o : server.c msg.h
+manager.o : manager.c msg.h
+
+msg.h: msg.idl msg.acf
+        idl msg.idl
+
+# Clean up everything
+cleanall : clean
+        -del *.exe
+
+# Clean up everything but the .EXEs
+clean :
+        -del *.o
+        -del msg_?stub.c
+        -del msg.h
+

@@ -1,0 +1,29 @@
+
+# Nmake macros for building Win32 applications
+!include <ntwin32.mak>
+
+# Inference rules
+.c.obj:
+	$(cc) $(cdebug) $(cflags) $(cvars) $<
+.obj.exe:
+	$(link) $(ldebug) $(conlflags) -out:$*.exe $** $(conlibs) user32.lib
+
+# Target List
+All: tlist.exe kill.exe
+
+# Source Objects
+kill.obj : kill.c
+tlist.obj : tlist.c
+common.obj : common.c
+
+# Executables
+tlist.exe : tlist.obj common.obj
+kill.exe : kill.obj common.obj
+
+# Clean up everything
+cleanall : clean
+	del *.exe
+
+# Clean up everything except .exe files
+clean:
+	del *.obj

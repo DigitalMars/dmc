@@ -1,0 +1,16 @@
+; This help project requires hc 3.1
+[OPTIONS]
+errorlog = MiniHelp.err
+title = MiniHelp Application Help
+compress = 0
+warning = 3
+report = 1
+
+[FILES]
+minihelp.rtf
+
+[BITMAPS]
+minihelp.bmp
+
+[CONFIG]
+BrowseButtons()

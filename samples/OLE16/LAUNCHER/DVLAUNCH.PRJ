@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\ole16\LAUNCHER\DVLAUNCH.PRJ
+DVLAUNCH.OPN
+novcs
+launcher.def
+0
+812035224
+0 0 0 0 0 "classfct.cpp" ""
+0 0 0 0 0 "launcher.cpp" ""
+0 0 0 0 0 "stdafx.cpp" ""
+0 0 0 0 0 "launcher.def" ""
+0 0 0 0 0 "launcher.rc" ""
+0 0 0 0 0 "lafxcwd.lib" ""

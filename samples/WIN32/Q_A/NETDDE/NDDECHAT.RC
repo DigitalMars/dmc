@@ -1,0 +1,82 @@
+#include "windows.h"
+#include "globals.h"
+
+#ifdef WIN32
+#include <winver.h>
+#else
+#include <ver.h>
+#endif
+
+
+APPNAME ICON ICONFILE
+
+; Bring in the dialogs:
+RCINCLUDE ABOUT.DLG
+#include "connect.h"
+RCINCLUDE CONNECT.DLG
+
+APPNAME MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Connect...",                 IDM_CONNECT
+        MENUITEM "&Disconnect...",              IDM_DISCONNECT
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   IDM_ABOUT
+    END
+END
+
+
+
+; String table
+
+STRINGTABLE
+BEGIN
+    IDS_APPNAME,        SZAPPNAME
+    IDS_DESCRIPTION,    SZDESCRIPTION
+    IDS_SHARENAME,      "NDDECHAT$"
+    IDS_TOPIC,          "CHAT"
+    IDS_ITEM,           "TEXT"
+END
+
+
+APPNAME ACCELERATORS
+BEGIN
+    "Q", IDM_EXIT, CONTROL, VIRTKEY
+END
+
+; Version stamping information:
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     4,0,0,0
+PRODUCTVERSION  4,0,0,0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       (VS_FF_PRIVATEBUILD|VS_FF_PRERELEASE|VS_FF_DEBUG)
+FILEOS          VOS_DOS_WINDOWS16
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE SZRCOMPANYNAME,   "Microsoft Corporation\0"
+            VALUE SZRDESCRIPTION,   SZDESCRIPTION "\0"
+            VALUE SZRVERSION,       SZVERSION "\0"
+            VALUE SZRAPPNAME,       SZAPPNAME "\0"
+            VALUE SZRCOPYRIGHT,     "Copyright \251 Microsoft Corp. 1990-1995\0"
+            VALUE SZRTRADEMARK,     "Microsoft\256 is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation"
+            VALUE SZRPRODNAME,      SZAPPNAME "\0"
+            VALUE SZRPRODVER,       SZVERSION "\0"
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END

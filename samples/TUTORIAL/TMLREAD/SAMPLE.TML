@@ -1,0 +1,113 @@
+This file demonstrates various features of the TML Markup Language.<P>
+
+<H2><A name="Contents:">Contents:</A></H2>
+
+<UL>
+<LI> <A href="#Paragraph Types">Paragraph Types</A>
+<UL><LI> <A href="#Ordinary paragraphs">Ordinary paragraphs</A>
+    <LI> <A href="#Numbered lists">Numbered lists</A>
+    <LI> <A href="#Bulleted lists">Bulleted lists</A>
+    <LI> <A href="#Definition lists">Definition lists</A>
+    <LI> <A href="#Block Quotes">Block Quotes</A>
+    <LI> <A href="#Preformatted sections">Preformatted sections</A>
+</UL>
+<LI> <A href="#Headers">Headers</A>
+<LI> <A href="#Horizontal Rules and Images">Horizontal Rules and Images</A>
+<LI> <A href="#Hyperlinks">Hyperlinks</A>
+</UL>
+
+<H2><A name="Paragraph Types">Paragraph Types</A></H2>
+
+<H3><A name="Ordinary paragraphs">Ordinary paragraphs</A></H3>
+This is ordinary paragraph text. Lines are wrapped based on the 
+screen width, so the TML source file does not have to contain lines 
+which are pre-wrapped. Text may contain character style formatting 
+commands; for example, <B>bold,</B> <I>italic,</I>  and 
+<TT>monospace.</TT> Text with these styles is displayed according 
+to the capabilities of the display device.<P>
+
+<H3><A name="Numbered lists">Numbered lists</A></H3>
+Special TML commands are used to create special paragraph formatting. 
+For example, you can create a numbered list:
+<OL>
+<LI>This is the first item.
+<LI>This is the second item.
+<LI>This is the third item. If an item is so long that it does not fit on a single line, it is automatically wrapped and indented properly on subsequent lines.
+<LI>The list can go on and on.
+</OL>
+<H3><A name="Bulleted lists">Bulleted lists</A></H3>
+You can also create bulleted lists. Bulleted lists can be nested. 
+For example:
+<UL>
+<LI>Fruit
+<UL><LI>Bananas
+    <LI>Pears
+</UL>
+<LI>Vegetables
+<UL><LI>Broccoli
+    <LI>Spinach
+    <LI>Carrots
+</UL>
+<LI>Chocolate
+</UL>
+
+<H3><A name="Definition lists">Definition lists</A></H3>
+Definition lists contain terms and their definitions.
+<DL>
+<DT>metronome
+<DD> A clockwork mechanism with an inverted pendulum that beats time at a rate      determined by the position of a sliding weight on the pendulum.
+<DT>metronomic
+<DD>Of or like a metronome.
+<DT>metronymic
+<DD>Derived from the name of the mother or a female ancestor.
+</DL>
+
+<H3><A name="Block Quotes">Block Quotes</A></H3>
+Block quotes are sections of indented text:
+<BLOCKQUOTE>
+This question the Dodo could not answer without a great deal 
+of thought, and it sat for a long time with one finger pressed 
+upon its forehead (the position in which you usually see 
+Shakespeare, in the pictures of him), while the rest waited 
+in silence. At last the Dodo said, <I>&quot;Everybody</I> has won, 
+and all must have prizes.&quot;
+</BLOCKQUOTE>
+
+<H3><A name="Preformatted sections">Preformatted sections</A></H3>
+Source code examples are placed in preformatted sections. Within a 
+preformatted section, unlike any other section in an TML file, 
+spaces and line breaks are significant.
+<PRE>
+main ()
+{
+    printf(&quot;Hello, sailor\n&quot;);
+}
+</PRE>
+
+<H2><A name="Headers">Headers</A></H2>
+Up to six levels of header may be present in a document, although 
+ordinarily two or three are sufficient.  For example:
+<H1>First Level Head</H1>
+<H2>Second Level Head</H2>
+<H3>Third Level Head</H3>
+Headers are often used as the targets of hyperlinks within the 
+document (see below).
+
+<H2><A name="Horizontal Rules and Images">Horizontal Rules and Images</A></H2>
+Two types of graphic objects may be included in TML documents: 
+horizontal rules, and images.  A horizontal rule is just a line 
+across the page:
+<HR>
+An image is a reference to a file containing a Windows 
+<TT>*.bmp</TT> or <TT>*.rle</TT> bitmap file:
+<IMG src="sample.rle">
+
+<H2><A name="Hyperlinks">Hyperlinks</A></H2>
+Hyperlinks are used to jump to other places within the file, 
+or to other files.  For example, the 
+<A href="#Contents:">table of contents</A> 
+at the top of the file allows you to jump to particular 
+sections of this document.  
+And, <A href="complex.tml#">here is a link to another sample document.</A>
+<TITLE>Sample TML document</TITLE>
+

@@ -1,0 +1,73 @@
+This file contains information about the C++ complex number class.<P>
+Click <A href="sample.tml#Hyperlinks">here</A> to return to the main file.
+
+<H1>The Complex Class</H1>
+<H2>Contents:</H2>
+<UL>
+<LI><A href="#Introduction">Introduction</A>
+<LI><A href="#Header Files">Header Files</A>
+<LI><A href="#Example">Example</A>
+</UL>
+<H2><A name="Introduction">Introduction</A></H2>
+The class <TT>complex</TT> is implemented as a set of overloaded
+operators and functions which let you perform general complex mathematics.
+A complex number has two data members:
+a real and an imaginary part. Both are of type <TT>double.</TT><P>
+This class implements complex numbers. Using overloaded functions
+and operators, you can treat
+complex numbers like you treat reals or integers.<P>
+To use complex numbers, you need to add the library <TT>complex</TT>
+to your project.
+<H2><A name="Header Files">Header Files</A></H2>
+<PRE>
+complex.h
+</PRE>
+<H2><A name="Example">Example</A></H2>
+You can declare a complex variable three ways: uninitialized, initialized
+with two numbers, or initialized with another complex number. For example:
+<PRE>
+complex z1;              // Uninitialized
+complex z2(1.0,2.0);     // Initialized with
+                         // two numbers
+complex z3 = z2;         // Initialized with a
+                         // complex number
+</PRE>
+To access the components of a complex number, use the member functions
+<TT>complex::real()</TT> and <TT>complex::imag().</TT> For example:
+<PRE>
+complex z1, z2(5.0,6.0);
+z1.real() = z2.imag();
+z1.imag() = z2.real();
+</PRE>
+To print out or read a complex number, use the stream operators
+<TT>operator&gt;&gt;</TT> and <TT>operator&lt;&lt;</TT>.
+For example, this program:
+<PRE>
+#include &lt;complex.h&gt;
+#include &lt;iostream.h&gt;
+
+main()
+{
+  complex z1(1.1, 2.0), z2;
+  cout &lt;&lt; &quot;Enter z2: &quot;;
+  cin &gt;&gt; z2;
+  cout &lt;&lt; &quot;z1 = &quot; &lt;&lt; z1 &lt;&lt; '\n';
+  cout &lt;&lt; &quot;z2 = &quot; &lt;&lt; z2 &lt;&lt; '\n';
+  return 0;
+}
+</PRE>
+prints this:
+<PRE>
+Enter z2: 10 9.8
+z1 = (1.1,2)
+z2 = (10,9.8)
+</PRE>
+You can also use a complex number in the middle of a statement.
+For example, this line prints out the sine of (1, 1):
+<PRE>
+cout &lt;&lt; sin( complex(1,1) );
+</PRE>
+To invoke the complex version of a function, one of its arguments must be
+complex. For example, to figure the square root of -1, you must use
+<TT>sqrt(complex(-1,0)).</TT>
+<TITLE>The Complex Class</TITLE>

@@ -1,0 +1,30 @@
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "browse.h\0"
+END
+
+BrowseDlg DIALOG 66, 39, 230, 148
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Browse Window"
+FONT 8, "Courier"
+BEGIN
+    CONTROL         "", 101, "Static", SS_BLACKFRAME, 20, 9, 194, 93
+    CONTROL         "", 102, "Static", SS_BLACKRECT, 64, 9, 1, 93
+    LTEXT           "Right-Click On Window To Browse", 103, 20, 116, 95, 16
+    PUSHBUTTON      "&Cancel", IDCANCEL, 121, 116, 38, 16
+    LTEXT           "Window:",104,  30, 15, 32, 10
+    LTEXT           "Class:", 105,  30, 30, 31, 10
+    LTEXT           "Module:",106,  30, 45, 31, 10
+    LTEXT           "Owner:", 107,  30, 60, 32, 10
+    LTEXT           "Parent:",108,  30, 75, 31, 10
+    LTEXT           "Style:", 109,  30, 90, 30, 10
+    LTEXT           "Ex:",    116, 128, 90, 12, 10
+    LTEXT           "hWnd",  IDM_WNDINFO,   75, 15, 130, 10
+    LTEXT           "Class", IDM_CLASSINFO, 75, 30, 130, 10
+    LTEXT           "Module",IDM_MODULEINFO,75, 45, 130, 10
+    LTEXT           "Owner", IDM_OWNER,     75, 60, 130, 10
+    LTEXT           "Parent",IDM_PARENT,    75, 75, 130, 10
+    LTEXT           "Style", IDM_STYLE,     75, 90,  49, 10
+    LTEXT           "xxx",   IDM_EXTENDED, 143, 90,  49, 10
+END
+

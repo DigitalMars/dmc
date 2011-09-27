@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\SDKTOOLS\SPY\SPY.PRJ
+SPY.OPN
+novcs
+SPY.DEF
+2
+812035224
+0 0 0 0 0 "dll\hook.prj" ""
+0 0 0 0 1 "app\spy.prj" ""
+0 0 0 0 0 "spy.def" ""

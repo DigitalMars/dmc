@@ -1,0 +1,29 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1992 - 1995  Microsoft Corporation.  All Rights Reserved.
+ * 
+ **************************************************************************/
+
+#define IDS_STREAMNAME		100
+
+#ifdef RC_INVOKED
+
+/*	-	-	-	-	-	-	-	-	*/
+
+#include <windows.h>
+#include "palmap.rcv"
+
+/*	-	-	-	-	-	-	-	-	*/
+
+STRINGTABLE
+BEGIN
+	IDS_STREAMNAME		"%s converted to %ld colors"
+END
+
+
+#endif

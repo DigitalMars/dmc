@@ -1,0 +1,43 @@
+
+; This is a part of the Microsoft Foundation Classes C++ library.
+; Copyright (C) 1992 Microsoft Corporation
+; All rights reserved.
+;
+; This source code is only intended as a supplement to the
+; Microsoft Foundation Classes Reference and Microsoft
+; QuickHelp and/or WinHelp documentation provided with the library.
+; See these sources for detailed information regarding the
+; Microsoft Foundation Classes product.
+
+LIBRARY TESTDLL2
+DESCRIPTION  'TEST DLL containing CListOutputFrame class'
+EXETYPE      WINDOWS
+
+CODE         LOADONCALL MOVEABLE DISCARDABLE
+DATA         PRELOAD MOVEABLE SINGLE
+
+SEGMENTS
+	_TEXT   PRELOAD MOVEABLE DISCARDABLE
+	WEP_TEXT PRELOAD MOVEABLE DISCARDABLE
+
+HEAPSIZE     1024
+
+EXPORTS
+	WEP @1 RESIDENTNAME PRIVATE ;; required WEP entry point (uses library WEP)
+
+	; Explicitly exported initialization routine
+	INITTESTDLL2 @2 NONAME
+
+; CListOutputFrame
+	; Constructor and Destructor
+	??0CListOutputFrame@@REC@XZ @100 NONAME
+	??1CListOutputFrame@@VEC@XZ @101 NONAME
+	; Operations
+	?Create@CListOutputFrame@@RECHPFDKAFUtagRECT@@PEVCMDIFrameWnd@@@Z @102 NONAME
+	?AddString@CListOutputFrame@@RECXPFD@Z @103 NONAME
+	?Clear@CListOutputFrame@@RECXXZ @104 NONAME
+	; other info for CRuntimeClass and Message maps
+	?classCListOutputFrame@CListOutputFrame@@2UCRuntimeClass@@E @105 NONAME
+	?messageMap@CListOutputFrame@@1UAFX_MSGMAP@@E @106 NONAME
+
+	; other explicit exports can go here

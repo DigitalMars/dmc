@@ -1,0 +1,222 @@
+// Symantec AppExpress generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+__RCC__	TEXTINCLUDE	MOVEABLE PURE LOADONCALL DISCARDABLE
+{
+	0x6572, 0x6f73, 0x7275, 0x6563, 0x682e, "\0"
+};
+
+
+2 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "#include ""res\\tmlread.rc2""  // non-App Studio edited resources\r\n"
+    "\r\n"
+    "#include ""afxres.rc""  // Standard components\r\n"
+    "#include ""afxprint.rc""  // printing/print preview resources\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDR_MAINFRAME	ICON	MOVEABLE PURE LOADONCALL DISCARDABLE	"RES\\tmlread.ICO"
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME	MENU MOVEABLE PURE PRELOAD DISCARDABLE
+{
+    POPUP "&File"
+    {
+        MENUITEM "&Open...	Ctrl+O", ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...	Ctrl+P", ID_FILE_PRINT
+        MENUITEM "Print Pre&view", ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...", ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File", ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit", ID_APP_EXIT
+    }
+    POPUP "&View"
+    {
+        MENUITEM "&Toolbar", ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar", ID_VIEW_STATUS_BAR
+    }
+    POPUP "&Help"
+    {
+        MENUITEM "&About TMLRead...", ID_APP_ABOUT
+    }
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME	ACCELERATORS MOVEABLE PURE PRELOAD
+BEGIN
+	"O",	ID_FILE_OPEN,	VIRTKEY,	CONTROL
+	"P",	ID_FILE_PRINT,	VIRTKEY,	CONTROL
+END
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG MOVEABLE PURE LOADONCALL DISCARDABLE	10, 10, 235, 55
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU | WS_POPUP
+CAPTION "About SDIAPP Application"
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON	IDR_MAINFRAME, IDC_STATIC	10,14,18,20
+	LTEXT                "TMLRead Application Version 1.0", IDC_STATIC, 	38,12,119,8
+	LTEXT                "Copyright © XYZ Corp., 1994. All Rights Reserved.", IDC_STATIC, 	38,22,138,18
+	DEFPUSHBUTTON        "OK", IDOK, 	184,5,44,14, WS_GROUP
+END
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE MOVEABLE PURE PRELOAD DISCARDABLE
+BEGIN
+IDR_MAINFRAME,	"TMLRead Windows Application\nDoc Title\nDocbase\nFilterName (*.ext)\n.ext\n RegFileTypeId\nRegFileTypeName"
+AFX_IDS_APP_TITLE,	"TMLRead Windows Application"
+AFX_IDS_IDLEMESSAGE,	"For Help, press F1"
+AFX_IDS_HELPMODEMESSAGE,	"Select an object on which to get Help"
+ID_FILE_NEW,	"Create a new document"
+ID_FILE_OPEN,	"Open an existing document"
+ID_FILE_CLOSE,	"Close the active document"
+ID_FILE_SAVE,	"Save the active document"
+ID_FILE_SAVE_AS,	"Save the active document with a new name"
+ID_FILE_PAGE_SETUP,	"Change the printing options"
+ID_FILE_PRINT_SETUP,	"Change the printer and printing options"
+ID_FILE_PRINT,	"Print the active document"
+ID_FILE_PRINT_PREVIEW,	"Display full pages"
+ID_FILE_MRU_FILE1,	"Open this document"
+ID_FILE_MRU_FILE2,	"Open this document"
+ID_FILE_MRU_FILE3,	"Open this document"
+ID_FILE_MRU_FILE4,	"Open this document"
+ID_EDIT_CLEAR,	"Erase the selection"
+ID_EDIT_CLEAR_ALL,	"Erase everything"
+ID_EDIT_COPY,	"Copy the selection and put it on the Clipboard"
+ID_EDIT_CUT,	"Cut the selection and put it on the Clipboard"
+ID_EDIT_FIND,	"Find the specified text"
+ID_EDIT_PASTE,	"Insert Clipboard contents"
+ID_EDIT_REPEAT,	"Repeat the last action"
+ID_EDIT_REPLACE,	"Replace specific text with different text"
+ID_EDIT_SELECT_ALL,	"Select the entire document"
+ID_EDIT_UNDO,	"Undo the last action"
+ID_EDIT_REDO,	"Redo the previously undone action"
+ID_APP_ABOUT,	"Display program information, version number and copyright"
+ID_APP_EXIT,	"Quit the application; prompts to save documents"
+ID_HELP_INDEX,	"List Help topics"
+ID_HELP_USING,	"Display instructions about how to use help"
+ID_CONTEXT_HELP,	"Display help for clicked on buttons, menus and windows"
+ID_HELP,	"Display help for current task or command"
+ID_NEXT_PANE,	"Switch to the next window pane"
+ID_PREV_PANE,	"Switch back to the previous window pane"
+ID_INDICATOR_EXT,	"EXT"
+ID_INDICATOR_CAPS,	"CAP"
+ID_INDICATOR_NUM,	"NUM"
+ID_INDICATOR_SCRL,	"SCRL"
+ID_INDICATOR_OVR,	"OVR"
+ID_INDICATOR_REC,	"REC"
+ID_VIEW_TOOLBAR,	"Show or hide the toolbar"
+ID_VIEW_STATUS_BAR,	"Show or hide the status bar"
+AFX_IDS_SCSIZE,	"Change the window size"
+AFX_IDS_SCMOVE,	"Change the window position"
+AFX_IDS_SCMINIMIZE,	"Reduce the window to an icon"
+AFX_IDS_SCMAXIMIZE,	"Enlarge the window to full size"
+AFX_IDS_SCNEXTWINDOW,	"Switch to the next document window"
+AFX_IDS_SCPREVWINDOW,	"Switch to the previous document window"
+AFX_IDS_SCCLOSE,	"Close the active window and prompts to save the documents"
+AFX_IDS_SCRESTORE,	"Restore the window to normal size"
+AFX_IDS_SCTASKLIST,	"Activate Task List"
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\tmlread.rc2"  // non-App Studio edited resources
+
+#include "afxres.rc"  // Standard components
+#include "afxprint.rc"  // printing/print preview resources
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
+IDR_MAINFRAME	BITMAP	MOVEABLE PURE LOADONCALL DISCARDABLE	"MAINFRAM.BMP"
+

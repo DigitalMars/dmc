@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\RPC\INTEROP\CLIENT.PRJ
+CLIENT.OPN
+novcs
+client.DEF
+4
+812035224
+0 0 0 0 0 "client.c" ""
+0 0 0 0 0 "midluser.c" ""
+0 0 0 0 0 "msg_c.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "client.def" ""

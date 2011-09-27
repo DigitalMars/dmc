@@ -1,0 +1,42 @@
+// 
+// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+// KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR 
+// PURPOSE.
+// 
+// Copyright 1993-1995 Microsoft Corporation, all rights reserved.
+/* Version Numbering stuff */
+
+#include <ver.h>
+
+#define VER_PRODUCTVERSION_STR      "1.00.150"
+#define VER_PRODUCTVERSION          1,0,0,150
+
+VS_VERSION_INFO VERSIONINFO 
+FILEVERSION    VER_PRODUCTVERSION
+PRODUCTVERSION VER_PRODUCTVERSION
+FILEFLAGSMASK  VS_FF_DEBUG | VS_FF_PRERELEASE
+FILEFLAGS      VS_FF_DEBUG | VS_FF_PRERELEASE
+FILEOS         VOS__WINDOWS16
+FILETYPE       VER_TYPE
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN 
+            VALUE "CompanyName",     "Microsoft Corporation", "\0"
+            VALUE "FileDescription", VER_FILEDESCRIPTION_STR, "\0"
+            VALUE "FileVersion",     VER_PRODUCTVERSION_STR, "\0"
+            VALUE "InternalName",    VER_INTERNALNAME_STR, "\0"
+            VALUE "LegalCopyright",  "Copyright 1992,93 Microsoft Corp", "\0"
+            VALUE "OriginalFilename",VER_ORIGINALFILENAME_STR, "\0"
+            VALUE "ProductName",     "Windows Telephony", "\0"
+            VALUE "ProductVersion",  VER_PRODUCTVERSION_STR, "\0"
+        END 
+    END
+    BLOCK "VarFileInfo" 
+    BEGIN 
+        /* the following line should be extended for localized versions */
+        VALUE "Translation", 0x0409, 0x04E4
+    END 
+END 

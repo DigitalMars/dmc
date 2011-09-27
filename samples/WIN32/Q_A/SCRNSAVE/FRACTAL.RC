@@ -1,0 +1,43 @@
+#include            <windows.h>
+#include            <scrnsave.h>
+#include            "fractal.h"
+
+ID_APP              ICON        fractal.ico
+
+STRINGTABLE PRELOAD
+BEGIN
+    IDS_DESCRIPTION     "Fractal Display"
+    idsName             "Fractal"
+    idsAppName          "Screen Saver.Fractal"
+    idsIniFile          "control.ini"
+    idsScreenSaver      "ScreenSaver"
+    idsXFrom            "XFrom"
+    idsYFrom            "YFrom"
+    idsXTo              "XTo"
+    idsYTo              "YTo"
+    idsSaveAs           "SaveFile"
+    idsIteration        "Iteration"
+    idsHelpFile         "control.hlp"
+    idsNoHelpMemory     "Insufficient memory for help application."
+
+END
+
+DLG_SCRNSAVECONFIGURE DIALOG 182, 149, 293, 116
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Fractal Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "xFrom", 1001, 46, 35, 26, 11
+    EDITTEXT        ID_XFROM, 75, 34, 32, 12, ES_AUTOHSCROLL
+    LTEXT           "xTo", 1003, 46, 53, 26, 11
+    EDITTEXT        ID_XTO, 75, 52, 32, 12, ES_AUTOHSCROLL
+    LTEXT           "yFrom", 1005, 176, 35, 26, 11
+    EDITTEXT        ID_YFROM, 205, 34, 32, 12, ES_AUTOHSCROLL
+    LTEXT           "yTo", 1007, 176, 53, 26, 11
+    EDITTEXT        ID_YTO, 205, 52, 32, 12, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 141, 89, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 195, 89, 40, 14
+    PUSHBUTTON      "Save As...", ID_SAVEAS, 67, 89, 40, 14
+    LTEXT           "Iternation", 1009, 36, 16, 36, 8
+    EDITTEXT        ID_ITERATION, 75, 14, 32, 12, ES_AUTOHSCROLL
+END

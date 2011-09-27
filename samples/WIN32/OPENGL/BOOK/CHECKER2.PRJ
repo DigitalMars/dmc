@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\OPENGL\BOOK\CHECKER2.PRJ
+CHECKER2.OPN
+novcs
+checker2.def
+4
+812035224
+0 0 0 0 0 "checker2.c" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "checker2.def" ""
+0 0 0 0 0 "advapi32.lib" ""

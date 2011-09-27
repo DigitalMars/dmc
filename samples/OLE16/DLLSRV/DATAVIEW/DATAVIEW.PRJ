@@ -1,0 +1,19 @@
+82572
+C:\SC\samples\ole16\DLLSRV\DATAVIEW\DATAVIEW.PRJ
+DATAVIEW.OPN
+novcs
+dataview.def
+1
+812035224
+0 0 0 0 0 "dataview.cpp" ""
+0 0 0 0 0 "dvcache.cpp" ""
+0 0 0 0 0 "dvrun.cpp" ""
+0 0 0 0 0 "dvstock.cpp" ""
+0 0 0 0 0 "libmain.cpp" ""
+0 0 0 0 0 "stockdlg.cpp" ""
+0 0 0 0 0 "stockutl.cpp" ""
+0 0 0 0 0 "dataview.def" ""
+0 0 0 0 0 "stockrc.rc" ""
+0 0 0 0 1001 "..\..\bin\movelib.bat" ""
+0 0 0 0 0 "loleuic.lib" ""
+0 0 0 0 0 "..\prgidmon.prj" ""

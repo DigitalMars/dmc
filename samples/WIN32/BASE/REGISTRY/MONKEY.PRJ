@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\BASE\REGISTRY\MONKEY.PRJ
+MONKEY.OPN
+novcs
+MONKEY.DEF
+16
+812035224
+0 0 0 0 0 "monkey.c" ""
+0 0 0 0 0 "monkey.rc" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "advapi32.lib" ""

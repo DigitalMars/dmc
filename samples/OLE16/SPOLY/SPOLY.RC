@@ -1,0 +1,15 @@
+#define NOKERNEL
+#define NOGDI
+#define NOSOUND
+#define NOCOMM
+#define NODRIVERS
+#include "windows.h"
+#include "spoly.h"
+
+SPOLY ICON spoly.ico
+
+SPolyMenu MENU
+BEGIN
+    MENUITEM	"&Clear"			IDM_CLEAR
+    MENUITEM	"&Dump"				IDM_DUMP
+END

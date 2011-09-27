@@ -1,0 +1,18 @@
+#include "genglrc.h"
+
+OpenGLGeneric ICON gengl.ICO
+
+OpenGLGeneric MENU
+BEGIN
+        POPUP "&File"
+        {
+                MENUITEM "E&xit",	IDM_EXIT
+        }
+
+        POPUP "&Draw"
+        {
+                MENUITEM "&Cone",	IDM_CONE
+                MENUITEM "&Pyramid",    IDM_PYRAMID 
+        }
+
+END

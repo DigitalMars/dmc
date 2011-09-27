@@ -1,0 +1,245 @@
+# Microsoft Developer Studio Generated Build File, Format Version 50001
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (x86) Application" 0x0101
+
+CFG=vcterm - Win32 Debug
+!MESSAGE "vcterm - Win32 Release" (based on "Win32 (x86) Application")
+!MESSAGE "vcterm - Win32 Debug" (based on "Win32 (x86) Application")
+
+# Begin Project
+# PROP Target_Last_Scanned "vcterm - Win32 Debug"
+RSC=rc.exe
+MTL=mktyplib.exe
+CPP=cl.exe
+F90=fl32.exe
+
+!IF  "$(CFG)" == "vcterm - Win32 Release"
+
+# PROP BASE Use_MFC 6
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "Release"
+# PROP BASE Intermediate_Dir "Release"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 6
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "Release"
+# PROP Intermediate_Dir "Release"
+# PROP Target_Dir ""
+# ADD BASE F90 /I "Release/"
+# ADD F90 /I "Release/"
+# ADD BASE CPP /nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /c
+# ADD CPP /nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /c
+# ADD BASE MTL /nologo /D "NDEBUG" /win32
+# ADD MTL /nologo /D "NDEBUG" /win32
+# ADD BASE RSC /l 0x409 /d "NDEBUG" /d "_AFXDLL"
+# ADD RSC /l 0x409 /d "NDEBUG" /d "_AFXDLL"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 /nologo /subsystem:windows /machine:I386
+# ADD LINK32 /nologo /subsystem:windows /machine:I386
+
+!ELSEIF  "$(CFG)" == "vcterm - Win32 Debug"
+
+# PROP BASE Use_MFC 6
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "Debug"
+# PROP BASE Intermediate_Dir "Debug"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 6
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "Debug"
+# PROP Intermediate_Dir "Debug"
+# PROP Target_Dir ""
+# ADD BASE F90 /I "Debug/"
+# ADD F90 /I "Debug/"
+# ADD BASE CPP /nologo /MDd /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /c
+# ADD CPP /nologo /MDd /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /c
+# ADD BASE MTL /nologo /D "_DEBUG" /win32
+# ADD MTL /nologo /D "_DEBUG" /win32
+# ADD BASE RSC /l 0x409 /d "_DEBUG" /d "_AFXDLL"
+# ADD RSC /l 0x409 /d "_DEBUG" /d "_AFXDLL"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 /nologo /subsystem:windows /debug /machine:I386
+# ADD LINK32 /nologo /subsystem:windows /debug /machine:I386
+
+!ENDIF 
+
+# Begin Target
+
+# Name "vcterm - Win32 Release"
+# Name "vcterm - Win32 Debug"
+
+!IF  "$(CFG)" == "vcterm - Win32 Release"
+
+!ELSEIF  "$(CFG)" == "vcterm - Win32 Debug"
+
+!ENDIF 
+
+# Begin Source File
+
+SOURCE=.\ReadMe.txt
+
+!IF  "$(CFG)" == "vcterm - Win32 Release"
+
+!ELSEIF  "$(CFG)" == "vcterm - Win32 Debug"
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\vcterm.cpp
+DEP_CPP_VCTER=\
+	".\commctrl.h"\
+	".\mainfrm.h"\
+	".\StdAfx.h"\
+	".\termedit.h"\
+	".\vcterm.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\StdAfx.cpp
+DEP_CPP_STDAF=\
+	".\StdAfx.h"\
+	
+# ADD CPP /Yc"stdafx.h"
+# End Source File
+# Begin Source File
+
+SOURCE=.\mainfrm.cpp
+
+!IF  "$(CFG)" == "vcterm - Win32 Release"
+
+DEP_CPP_MAINF=\
+	".\commctrl.h"\
+	".\InputDlg.h"\
+	".\mainfrm.h"\
+	".\setdlg.h"\
+	".\StdAfx.h"\
+	".\termedit.h"\
+	".\vcterm.h"\
+	
+
+!ELSEIF  "$(CFG)" == "vcterm - Win32 Debug"
+
+DEP_CPP_MAINF=\
+	".\CanDlg.h"\
+	".\commctrl.h"\
+	".\InputDlg.h"\
+	".\mainfrm.h"\
+	".\setdlg.h"\
+	".\StdAfx.h"\
+	".\termedit.h"\
+	".\vcterm.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\vcterm.rc
+
+!IF  "$(CFG)" == "vcterm - Win32 Release"
+
+DEP_RSC_VCTERM=\
+	".\res\termdoc.ico"\
+	".\res\Toolbar.bmp"\
+	".\res\vcterm.ico"\
+	".\res\vcterm.rc2"\
+	
+
+!ELSEIF  "$(CFG)" == "vcterm - Win32 Debug"
+
+DEP_RSC_VCTERM=\
+	".\res\Toolbar.bmp"\
+	".\res\vcterm.ico"\
+	".\res\vcterm.rc2"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\commctrl.cpp
+DEP_CPP_COMMC=\
+	".\commctrl.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\termedit.cpp
+DEP_CPP_TERME=\
+	".\commctrl.h"\
+	".\mainfrm.h"\
+	".\StdAfx.h"\
+	".\termedit.h"\
+	".\vcterm.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\setdlg.cpp
+DEP_CPP_SETDL=\
+	".\commctrl.h"\
+	".\mainfrm.h"\
+	".\setdlg.h"\
+	".\StdAfx.h"\
+	".\termedit.h"\
+	".\vcterm.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\InputDlg.cpp
+DEP_CPP_INPUT=\
+	".\InputDlg.h"\
+	".\StdAfx.h"\
+	".\vcterm.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\CanDlg.cpp
+
+!IF  "$(CFG)" == "vcterm - Win32 Release"
+
+!ELSEIF  "$(CFG)" == "vcterm - Win32 Debug"
+
+DEP_CPP_CANDL=\
+	".\CanDlg.h"\
+	".\commctrl.h"\
+	".\mainfrm.h"\
+	".\StdAfx.h"\
+	".\termedit.h"\
+	".\vcterm.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# End Target
+# End Project
+# Section OLE Controls
+# 	{648A5600-2C6E-101B-82B6-000000000014}
+# End Section
+# Section vcterm : {648A5601-2C6E-101B-82B6-000000000014}
+# 	2:5:Class:CCommCtrl
+# 	2:10:HeaderFile:commctrl.h
+# 	2:8:ImplFile:commctrl.cpp
+# End Section
+# Section vcterm : {648A5600-2C6E-101B-82B6-000000000014}
+# 	0:15:CMSCommCtrl.cpp:D:\MSDEV\Projects\vcterm\CMSCommCtrl.cpp
+# 	0:13:CMSCommCtrl.h:D:\MSDEV\Projects\vcterm\CMSCommCtrl.h
+# 	2:21:DefaultSinkHeaderFile:commctrl.h
+# 	2:16:DefaultSinkClass:CCommCtrl
+# End Section

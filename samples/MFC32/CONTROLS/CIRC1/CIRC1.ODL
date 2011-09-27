@@ -1,0 +1,75 @@
+// circ1.odl : type library source for OLE Custom Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (circ1.tlb) that will become a resource in
+// circ1.ocx.
+
+// This is a part of the Microsoft Foundation Classes C++ library.
+// Copyright (C) 1992-1995 Microsoft Corporation
+// All rights reserved.
+//
+// This source code is only intended as a supplement to the
+// Microsoft Foundation Classes Reference and the
+// Books Online documentation provided with the library.
+// See these sources for detailed information regarding the
+// Microsoft Foundation Classes product.
+
+#include <olectl.h>
+
+[ uuid(9DBAFCC8-592F-101B-85CE-00608CEC297B), version(1.0),
+  helpstring("Circ1 OLE Custom Control module"), control ]
+library Circ1Lib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CCirc1Ctrl
+
+	[ uuid(9DBAFCC6-592F-101B-85CE-00608CEC297B),
+	  helpstring("Dispatch interface for Circ1 Control"), hidden ]
+	dispinterface _DCirc1
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CCirc1Ctrl)
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CCirc1Ctrl)
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CCirc1Ctrl
+
+	[ uuid(9DBAFCC7-592F-101B-85CE-00608CEC297B),
+	  helpstring("Event interface for Circ1 Control") ]
+	dispinterface _DCirc1Events
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CCirc1Ctrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CCirc1Ctrl
+
+	[ uuid(9DBAFCC5-592F-101B-85CE-00608CEC297B),
+	  helpstring("Circ1 Control"), control ]
+	coclass Circ1
+	{
+		[default] dispinterface _DCirc1;
+		[default, source] dispinterface _DCirc1Events;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+};

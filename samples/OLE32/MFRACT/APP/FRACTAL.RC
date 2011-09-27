@@ -1,0 +1,161 @@
+#include "windows.h"
+#include "fractal.h"
+
+#define VER_PRODUCTVERSION_STR      "3.50"
+#define VER_COMPANYNAME_STR         "Microsoft Corporation"
+#define VER_PRODUCTNAME_STR         "Microsoft\256 Windows NT(TM) Operating System"
+#define VER_FILEDESCRIPTION_STR     "Windows NT Modular Fractal Generator"
+#define VER_INTERNALNAME_STR        "MFract"
+#define VER_ORIGINALFILENAME_STR    "MFract.exe"
+#define VER_LEGALCOPYRIGHT_YEARS    "1981-1995"
+#define VER_LEGALCOPYRIGHT_STR "Copyright \251 Microsoft Corp. " VER_LEGALCOPYRIGHT_YEARS
+#define VER_PRODUCTNAME_STR "Microsoft\256 Windows NT(TM) Operating System"
+#define VER_PRODUCTVERSION 3,50,01,001
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION    VER_PRODUCTVERSION
+PRODUCTVERSION VER_PRODUCTVERSION
+FILEFLAGSMASK  VS_FFI_FILEFLAGSMASK
+FILEFLAGS      0
+FILEOS         VOS_NT_WINDOWS32
+FILETYPE       VFT_APP
+FILESUBTYPE    VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"   /* LANG_ENGLISH/SUBLANG_ENGLISH_US, Unicode CP */
+        BEGIN
+            VALUE "CompanyName",     VER_COMPANYNAME_STR
+            VALUE "FileDescription", VER_FILEDESCRIPTION_STR
+            VALUE "FileVersion",     VER_PRODUCTVERSION
+            VALUE "InternalName",    VER_INTERNALNAME_STR
+            VALUE "LegalCopyright",  VER_LEGALCOPYRIGHT_STR
+            VALUE "OriginalFilename",VER_ORIGINALFILENAME_STR
+            VALUE "ProductName",     VER_PRODUCTNAME_STR
+            VALUE "ProductVersion",  VER_PRODUCTVERSION_STR
+        END
+
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 0x04B0
+    END
+END
+
+AppIcon ICON fractal.ico
+
+CFractalWindowMenu MENU
+BEGIN
+  POPUP "&File"
+  BEGIN
+    MENUITEM "&Open...",IDM_LOAD
+    MENUITEM "&Save...",IDM_SAVE
+    MENUITEM "Save as &Bitmap...",IDM_SAVEBMP
+    MENUITEM "E&xit",IDM_EXIT
+  END
+  POPUP "&Graph"
+  BEGIN
+    MENUITEM "&Start Graph Engine  \aF5",IDM_START
+    MENUITEM "Sto&p Graph Engine  \aF6",IDM_STOP
+    MENUITEM "&Full Screen Mode",IDM_BRING_FORWARD
+    MENUITEM SEPARATOR
+    MENUITEM "&Choose Fractal Type",IDM_SELECT_TYPE
+    MENUITEM "&Edit Fractal Properties...", IDM_EDIT_PROPERTIES
+    MENUITEM SEPARATOR
+    MENUITEM "Change &Graph Size...",IDM_CHANGEDIM
+    MENUITEM SEPARATOR
+    MENUITEM "&Zoom  \aF7",IDM_ZOOM
+  END
+  POPUP "&Colors"
+  BEGIN
+    MENUITEM "&Load Palette...", IDM_LOADPAL
+    MENUITEM "&Save Palette...", IDM_SAVEPAL
+    MENUITEM "&Default Colors", IDM_DEFAULTCOLORS
+    MENUITEM SEPARATOR
+    MENUITEM "Cycle &In  \aF9", IDM_CYCLEIN
+    MENUITEM "Sto&p Cycling", IDM_CYCLESTOP
+    MENUITEM "Cycle &Out  \aF10", IDM_CYCLEOUT
+  END
+  POPUP "&Help"
+  BEGIN
+    MENUITEM "&Contents...  \aF1",IDM_HELP
+    MENUITEM SEPARATOR
+    MENUITEM "&About MFract...",IDM_ABOUT
+  END
+END
+
+IDM_ABOUT DIALOG 26, 15, 179, 64
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+STYLE DS_SYSMODAL | DS_MODALFRAME | WS_POPUP | WS_BORDER
+BEGIN
+    LTEXT           "Modular Fractal Generator for Windows NT", 100, 35, 2,
+                    139, 8, NOT WS_GROUP
+    LTEXT           "NT Sample Version 1.1 - July 1994", 101, 35, 22, 114,
+                    10, NOT WS_GROUP
+    LTEXT           "written by Steve Blanding", 102, 35, 12, 84, 10, NOT
+                    WS_GROUP
+    PUSHBUTTON      "OK", IDOK, 77, 44, 24, 14
+    ICON            "AppIcon", 104, 10, 7, 16, 15
+    LTEXT           "Copyright © 1994-1995 - Microsoft Corporation", 206, 35, 32,
+                    144, 8
+END
+
+IDM_CHANGEDIM DIALOG 10, 18, 173, 131
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Change Graph Size"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Width:", 301, 14, 8, 23, 8
+    EDITTEXT        IDC_WIDTH, 42, 6, 40, 12, ES_AUTOHSCROLL
+    LTEXT           "&Height:", 303, 88, 8, 25, 8
+    EDITTEXT        IDC_HEIGHT, 119, 6, 40, 12, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Resize Using &Existing Coordinates", IDC_RESIZE, 22, 78,
+                    129, 14
+    PUSHBUTTON      "&Resize and Reset Coordinates", IDC_RESET, 22, 95, 129,
+                    14
+    PUSHBUTTON      "C&ancel", IDCANCEL, 22, 112, 129, 14
+    CONTROL         "&Quick Draw Mode", IDC_QUICKDRAW, "Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,
+                    20, 36, 71, 10
+    CONTROL         "&VGA", IDC_VGA, "Button", BS_AUTORADIOBUTTON,
+                    20, 47, 48, 10
+    CONTROL         "&Super VGA", IDC_SVGA, "Button", BS_AUTORADIOBUTTON,
+                    20, 58, 50, 10
+    CONTROL         "1024x768", IDC_1024, "Button", BS_AUTORADIOBUTTON,
+                    105, 36, 48, 10
+    CONTROL         "1280x1024", IDC_1280, "Button", BS_AUTORADIOBUTTON,
+                    105, 47, 50, 10
+    CONTROL         "C&ustom", IDC_CUSTOM, "Button", BS_AUTORADIOBUTTON,
+                    105, 58, 36, 10
+    GROUPBOX        "Sizes", 313, 13, 23, 146, 50
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ERROR                   "Error"
+    IDS_OLEINCOMPATIBLE         "This program is incompatible with the version of OLE installed on this system."
+    IDS_OLEINITFAILED           "OLE initizlization failed."
+    IDS_TOOMANYTIMERS           "Too many timers."
+    IDS_GRAPHICSEVENTFAILED     "Couldn't create an event required by the graphics engine."
+    IDS_TITLEEVENTFAILED        "Couldn't create an event required for full screen mode."
+    IDS_NOFRACTALENGINE         "Couldn't create an instance of the requested fractal engine."
+    IDS_NOHELPFILE              "Can't find help file."
+    IDS_SAVEBMPFAILED           "Unable to save bitmap."
+    IDS_SAVEBMPSUCCEEDED        "Bitmap saved."
+    IDS_LOADFRACTALFAILED       "Unable to open fractal file."
+    IDS_SAVEFRACTALFAILED       "Unable to save fractal file."
+    IDS_SAVEFRACTALSUCCEEDED    "Fractal file saved."
+    IDS_REGISTRYERROR           "Couldn't retrieve the list of fractal engines.\nProbably due to an error accessing the system registry."
+END
+
+AppAccel ACCELERATORS
+BEGIN
+    VK_F1,      IDM_HELP        ,VIRTKEY
+    VK_F5,      IDM_START       ,VIRTKEY
+    VK_F6,      IDM_STOP        ,VIRTKEY
+    VK_F7,      IDM_ZOOM        ,VIRTKEY
+    VK_F9,      IDM_CYCLEIN     ,VIRTKEY
+    VK_F10,     IDM_CYCLEOUT    ,VIRTKEY
+END

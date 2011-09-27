@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\Q_A\INTEROP\APP16.PRJ
+APP16.OPN
+novcs
+app16.def
+0
+812035224
+0 0 0 0 0 "app16.c" ""
+0 0 0 0 0 "app16.def" ""
+0 0 0 0 0 "app16.obj" ""
+0 0 0 0 0 "app16.rc" ""
+0 0 0 0 0 "dll16.lib" ""
+0 0 0 0 0 "dll16.prj" ""

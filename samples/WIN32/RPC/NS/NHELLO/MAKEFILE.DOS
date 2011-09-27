@@ -1,0 +1,45 @@
+#*************************************************************#
+#**                                                         **#
+#**                 Microsoft RPC Examples                  **#
+#**              Name Service Hello Application             **#
+#**            Copyright(c) Microsoft Corp. 1992-1995       **#
+#**                                                         **#
+#*************************************************************#
+
+cc= cl
+cflags= -c -AL -Gsw -Oas -Zpe -Zi -D_CRTAPI1=
+linker= link
+lflags= /CO /NOD
+
+.c.obj:
+   $(cc) $(cflags) $<
+
+all : nhelloc
+
+idl : nhello.h
+
+# Make the client side application nhelloc
+nhelloc : nhelloc.exe
+nhelloc.exe : nhelloc.obj nhello_c.obj
+    $(linker) $(lflags) nhelloc nhello_c ,,,\
+    llibce rpc rpcndr;
+
+# Update the object files if necessary
+
+nhelloc.obj : nhelloc.c nhello.h
+
+nhello_c.obj : nhello_c.c nhello.h
+
+nhello.h nhello_c.c : nhello.idl
+   midl -env dos -no_cpp -ms_ext nhello.idl
+
+# Clean up everything
+cleanall : clean
+    -del nhelloc.exe
+
+# Clean up everything but the .EXEs
+clean :
+    -del *.obj
+    -del *.map
+    -del nhello_c.c
+    -del nhello.h

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?codewarrior exportversion="1.0" ideversion="5.0" success="y" ?>
+
+<!DOCTYPE MWIDEWORKSPACE [
+<!ELEMENT MWIDEWORKSPACE (WINDOW*, COMWINDOW*)>
+<!ELEMENT WINDOW (SESSION, EDOCTYPE, PATH, FRAMELOC, FRAMESIZE, DOCKINFO)>
+<!ELEMENT COMWINDOW (SESSION, CLSID, OWNERPROJECT, DATA, FRAMELOC, FRAMESIZE, DOCKINFO)>
+<!ELEMENT SESSION (#PCDATA)>
+<!ELEMENT EDOCTYPE (#PCDATA)>
+<!ELEMENT DEFAULT (#PCDATA)>
+<!ELEMENT MAXIMIZED (#PCDATA)>
+<!ELEMENT PATH (#PCDATA)>
+<!ATTLIST PATH USERELATIVEPATHS (true | false) "true">
+<!ELEMENT FRAMELOC (X, Y)>
+<!ELEMENT X (#PCDATA)>
+<!ELEMENT Y (#PCDATA)>
+<!ELEMENT FRAMESIZE (W, H)>
+<!ELEMENT W (#PCDATA)>
+<!ELEMENT H (#PCDATA)>
+<!ELEMENT DOCKINFO (STATUS, ROW, COLUMN, DOCKBARID, PCTWIDTH, HGT)>
+<!ELEMENT STATUS (#PCDATA)>
+<!ELEMENT ROW (#PCDATA)>
+<!ELEMENT COLUMN (#PCDATA)>
+<!ELEMENT DOCKBARID (#PCDATA)>
+<!ELEMENT PCTWIDTH (#PCDATA)>
+<!ELEMENT HGT (#PCDATA)>
+<!ELEMENT CLSID (#PCDATA)>
+<!ELEMENT OWNERPROJECT (#PCDATA)>
+<!ATTLIST OWNERPROJECT USERELATIVEPATHS (true | false) "true">
+<!ELEMENT DATA (#PCDATA)>
+<!ATTLIST DATA BINARYFORMAT (true | false) "true">
+]>
+
+<MWIDEWORKSPACE>
+    <WINDOW>
+        <SESSION>-1</SESSION>
+        <EDOCTYPE>0</EDOCTYPE>
+        <DEFAULT>true</DEFAULT>
+        <PATH USERELATIVEPATHS = "true">thread_mutex_test\cw8\thread_mutex_test.mcp</PATH>
+        <FRAMELOC>
+            <X>-492</X>
+            <Y>46</Y>
+        </FRAMELOC>
+        <FRAMESIZE>
+            <W>476</W>
+            <H>1028</H>
+        </FRAMESIZE>
+        <DOCKINFO>
+            <STATUS>1</STATUS>
+            <ROW>0</ROW>
+            <COLUMN>0</COLUMN>
+            <DOCKBARID>59420</DOCKBARID>
+            <PCTWIDTH>1.000000</PCTWIDTH>
+            <HGT>490</HGT>
+        </DOCKINFO>
+    </WINDOW>
+    <WINDOW>
+        <SESSION>-1</SESSION>
+        <EDOCTYPE>0</EDOCTYPE>
+        <PATH USERELATIVEPATHS = "true">system_version_test\cw8\system_version_test.mcp</PATH>
+        <FRAMELOC>
+            <X>-492</X>
+            <Y>46</Y>
+        </FRAMELOC>
+        <FRAMESIZE>
+            <W>544</W>
+            <H>1028</H>
+        </FRAMESIZE>
+        <DOCKINFO>
+            <STATUS>1</STATUS>
+            <ROW>0</ROW>
+            <COLUMN>0</COLUMN>
+            <DOCKBARID>59420</DOCKBARID>
+            <PCTWIDTH>1.000000</PCTWIDTH>
+            <HGT>490</HGT>
+        </DOCKINFO>
+    </WINDOW>
+    <WINDOW>
+        <SESSION>-1</SESSION>
+        <EDOCTYPE>0</EDOCTYPE>
+        <PATH USERELATIVEPATHS = "true">system_info_test\cw8\system_info_test.mcp</PATH>
+        <FRAMELOC>
+            <X>-492</X>
+            <Y>46</Y>
+        </FRAMELOC>
+        <FRAMESIZE>
+            <W>544</W>
+            <H>1028</H>
+        </FRAMESIZE>
+        <DOCKINFO>
+            <STATUS>1</STATUS>
+            <ROW>0</ROW>
+            <COLUMN>0</COLUMN>
+            <DOCKBARID>59420</DOCKBARID>
+            <PCTWIDTH>1.000000</PCTWIDTH>
+            <HGT>490</HGT>
+        </DOCKINFO>
+    </WINDOW>
+    <WINDOW>
+        <SESSION>-1</SESSION>
+        <EDOCTYPE>0</EDOCTYPE>
+        <PATH USERELATIVEPATHS = "true">searchpath_sequence_test\cw8\reg_value_sequence_test.mcp</PATH>
+        <FRAMELOC>
+            <X>-492</X>
+            <Y>46</Y>
+        </FRAMELOC>
+        <FRAMESIZE>
+            <W>544</W>
+            <H>1028</H>
+        </FRAMESIZE>
+        <DOCKINFO>
+            <STATUS>1</STATUS>
+            <ROW>0</ROW>
+            <COLUMN>0</COLUMN>
+            <DOCKBARID>59420</DOCKBARID>
+            <PCTWIDTH>1.000000</PCTWIDTH>
+            <HGT>490</HGT>
+        </DOCKINFO>
+    </WINDOW>
+    <WINDOW>
+        <SESSION>-1</SESSION>
+        <EDOCTYPE>0</EDOCTYPE>
+        <PATH USERELATIVEPATHS = "true">reg_value_sequence_test\cw8\reg_value_sequence_test.mcp</PATH>
+        <FRAMELOC>
+            <X>-492</X>
+            <Y>46</Y>
+        </FRAMELOC>
+        <FRAMESIZE>
+            <W>476</W>
+            <H>1028</H>
+        </FRAMESIZE>
+        <DOCKINFO>
+            <STATUS>1</STATUS>
+            <ROW>0</ROW>
+            <COLUMN>0</COLUMN>
+            <DOCKBARID>59420</DOCKBARID>
+            <PCTWIDTH>1.000000</PCTWIDTH>
+            <HGT>490</HGT>
+        </DOCKINFO>
+    </WINDOW>
+    <WINDOW>
+        <SESSION>-1</SESSION>
+        <EDOCTYPE>0</EDOCTYPE>
+        <PATH USERELATIVEPATHS = "true">reg_key_sequence_test\cw8\reg_key_sequence_test.mcp</PATH>
+        <FRAMELOC>
+            <X>-492</X>
+            <Y>46</Y>
+        </FRAMELOC>
+        <FRAMESIZE>
+            <W>476</W>
+            <H>1028</H>
+        </FRAMESIZE>
+        <DOCKINFO>
+            <STATUS>1</STATUS>
+            <ROW>0</ROW>
+            <COLUMN>0</COLUMN>
+            <DOCKBARID>59420</DOCKBARID>
+            <PCTWIDTH>1.000000</PCTWIDTH>
+            <HGT>490</HGT>
+        </DOCKINFO>
+    </WINDOW>
+    <WINDOW>
+        <SESSION>-1</SESSION>
+        <EDOCTYPE>0</EDOCTYPE>
+        <PATH USERELATIVEPATHS = "true">findvolume_sequence_test\cw8\findvolume_sequence_test.mcp</PATH>
+        <FRAMELOC>
+            <X>-492</X>
+            <Y>46</Y>
+        </FRAMELOC>
+        <FRAMESIZE>
+            <W>476</W>
+            <H>1028</H>
+        </FRAMESIZE>
+        <DOCKINFO>
+            <STATUS>1</STATUS>
+            <ROW>0</ROW>
+            <COLUMN>0</COLUMN>
+            <DOCKBARID>59420</DOCKBARID>
+            <PCTWIDTH>1.000000</PCTWIDTH>
+            <HGT>490</HGT>
+        </DOCKINFO>
+    </WINDOW>
+    <WINDOW>
+        <SESSION>-1</SESSION>
+        <EDOCTYPE>0</EDOCTYPE>
+        <PATH USERELATIVEPATHS = "true">findfile_sequence_test\cw8\findfile_sequence_test.mcp</PATH>
+        <FRAMELOC>
+            <X>-492</X>
+            <Y>46</Y>
+        </FRAMELOC>
+        <FRAMESIZE>
+            <W>476</W>
+            <H>1028</H>
+        </FRAMESIZE>
+        <DOCKINFO>
+            <STATUS>1</STATUS>
+            <ROW>0</ROW>
+            <COLUMN>0</COLUMN>
+            <DOCKBARID>59420</DOCKBARID>
+            <PCTWIDTH>1.000000</PCTWIDTH>
+            <HGT>490</HGT>
+        </DOCKINFO>
+    </WINDOW>
+    <WINDOW>
+        <SESSION>-1</SESSION>
+        <EDOCTYPE>0</EDOCTYPE>
+        <PATH USERELATIVEPATHS = "true">file_path_buffer_test\cw8\file_path_buffer_test.mcp</PATH>
+        <FRAMELOC>
+            <X>-492</X>
+            <Y>46</Y>
+        </FRAMELOC>
+        <FRAMESIZE>
+            <W>476</W>
+            <H>1028</H>
+        </FRAMESIZE>
+        <DOCKINFO>
+            <STATUS>1</STATUS>
+            <ROW>0</ROW>
+            <COLUMN>0</COLUMN>
+            <DOCKBARID>59420</DOCKBARID>
+            <PCTWIDTH>1.000000</PCTWIDTH>
+            <HGT>490</HGT>
+        </DOCKINFO>
+    </WINDOW>
+    <WINDOW>
+        <SESSION>-1</SESSION>
+        <EDOCTYPE>0</EDOCTYPE>
+        <PATH USERELATIVEPATHS = "true">control_inserters_test\cw8\control_inserters_test.mcp</PATH>
+        <FRAMELOC>
+            <X>-492</X>
+            <Y>46</Y>
+        </FRAMELOC>
+        <FRAMESIZE>
+            <W>476</W>
+            <H>1028</H>
+        </FRAMESIZE>
+        <DOCKINFO>
+            <STATUS>1</STATUS>
+            <ROW>0</ROW>
+            <COLUMN>0</COLUMN>
+            <DOCKBARID>59420</DOCKBARID>
+            <PCTWIDTH>1.000000</PCTWIDTH>
+            <HGT>490</HGT>
+        </DOCKINFO>
+    </WINDOW>
+</MWIDEWORKSPACE>

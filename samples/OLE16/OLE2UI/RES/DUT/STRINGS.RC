@@ -1,0 +1,124 @@
+/*
+ * STRINGS.RC
+ *
+ * strings for the OLE 2.0 UI Support Library.
+ *
+ * Copyright (c)1992 Microsoft Corporation, All Right Reserved
+ */
+
+
+#include "ole2ui.h"
+
+
+//Stringtable common for all dialogs.
+STRINGTABLE
+	BEGIN
+	 IDS_FILTERS,               "Alle bestanden (*.*)|*.*|"
+	 IDS_ICONFILTERS,           "Pictogrambestanden|*.exe;*.dll;*.ico|Toepassingen (*.exe)|*.exe|Bibliotheekbestanden (*.dll)|Pictogrammen (*.ico)|Alle bestanden (*.*)|*.*|"
+	END
+
+// browse dialog
+STRINGTABLE
+	BEGIN
+	 IDS_BROWSE         "Bladeren"
+	END
+
+
+//Insert Object stringtable.
+STRINGTABLE
+	BEGIN
+	 IDS_IORESULTNEW,                "Een nieuw %s-object in het document invoegen"
+	 IDS_IORESULTNEWICON,            "Een nieuw %s-object wordt in het document ingevoegd en weergegeven als pictogram."
+	 IDS_IORESULTFROMFILE1,          "De inhoud van het bestand wordt als een object in het document ingevoegd zodat u het bestand kunt "
+	 IDS_IORESULTFROMFILE2,          "activeren in de toepassing waarin dit gemaakt is."
+	 IDS_IORESULTFROMFILEICON2,      "activeren in de toepassing waarin dit gemaakt is. Het object wordt weergegeven als pictogram."
+	 IDS_IORESULTLINKFILE1,          "Een figuur met de bestandsinhoud wordt in het document ingevoegd. De figuur wordt gekoppeld aan "
+	 IDS_IORESULTLINKFILE2,          "het bronbestand zodat wijzigingen in dit bestand worden weergegeven in het document."
+	 IDS_IORESULTLINKFILEICON1,      "Een pictogram van het bestand wordt in het document ingevoegd. Het pictogram wordt gekoppeld aan "
+	 IDS_IORESULTLINKFILEICON2,      "het bronbestand zodat wijzigingen in dit bestand worden weergegeven in het document."
+	END
+
+//Change Icon stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_CINOICONSINFILE,        "Er zijn geen pictogrammen in %s."
+	 IDS_CIINVALIDFILE,          "%s is geen bestaand bestand."
+	 IDS_CIFILEACCESS,           "Het bestand %s kan niet worden geopend. Toegang geweigerd."
+	 IDS_CIFILESHARE,            "Het bestand %s kan niet worden geopend. Inbreuk op gemeenschappelijk gebruik."
+	 IDS_CIFILEOPENFAIL,         "Het bestand %s kan niet worden geopend. Algemene storing."
+	END
+
+// Convert stringtable.
+STRINGTABLE
+	BEGIN
+	 IDS_CVRESULTCONVERTLINK,     "Een gekoppeld object moet in de brontoepassing geconverteerd worden."
+	 IDS_CVRESULTCONVERTTO,       "Het geselecteerde %s-object wordt gewijzigd in een %s-object."
+	 IDS_CVRESULTNOCHANGE,        "Het geselecteerde %s-object wordt niet geconverteerd."
+	 IDS_CVRESULTDISPLAYASICON,   "  Het object wordt weergegeven als een pictogram."
+	 IDS_CVRESULTACTIVATEAS,      "Elk %s-object wordt geactiveerd als een %s-object "
+	 IDS_CVRESULTACTIVATEDIFF,    "maar het object wordt niet geconverteerd."
+	END
+
+//Paste Special stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_PSPASTEDATA,         "De inhoud van het Klembord wordt in het document ingevoegd als %s."
+	 IDS_PSPASTEOBJECT,       "De inhoud van het Klembord wordt in het document ingevoegd zodat u deze met %s kunt activeren."
+	 IDS_PSPASTEOBJECTASICON, "De inhoud van het Klembord wordt in het document ingevoegd zodat u het met %s kunt activeren. De inhoud  wordt weergegeven als pictogram."
+	 IDS_PSPASTELINKDATA,     "De inhoud van het Klembord wordt in het document ingevoegd als %s.  Met Koppeling plakken maakt u een koppeling met het bronbestand zodat wijzigingen in het bronbestand worden weergegeven in het document."
+	 IDS_PSPASTELINKOBJECT,   "Een figuur van de inhoud van het Klembord wordt in het document ingevoegd als %s.  Met Koppeling plakken maakt u een koppeling met het bronbestand zodat wijzigingen in het bronbestand worden weergegeven in het document."
+	 IDS_PSPASTELINKOBJECTASICON, "Een pictogram van de inhoud van het Klembord wordt in het document ingevoegd als %s.  Met Koppeling plakken maakt u een koppeling met het bronbestand zodat wijzigingen in het bronbestand worden weergegeven in het document."
+	 IDS_PSNONOLE,            "De inhoud van het Klembord wordt in het document ingevoegd."
+	 IDS_PSUNKNOWNTYPE,       "Onbekend type"
+	 IDS_PSUNKNOWNSRC,        "Onbekend bronbestand"
+	 IDS_PSUNKNOWNAPP,        "de toepassing waarin het gemaakt is"
+	END
+
+// Busy/Blocked dialog stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_BZRESULTTEXTBUSY          "Deze bewerking kan niet worden voltooid omdat de %s-brontoepassing (%s) in gebruik is. Kies Taakoverzicht om %s te activeren en het probleem op te lossen."
+	 IDS_BZRESULTTEXTNOTRESPONDING "Deze bewerking kan niet worden voltooid omdat de %s-brontoepassing (%s) niet beschikbaar is. Kies Taakoverzicht om %s te activeren en het probleem op te lossen."
+	END
+
+// OLESTD stringtable
+STRINGTABLE
+	BEGIN
+	  IDS_OLESTDNOCREATEFILE, "Bestand kan niet gemaakt worden."
+	  IDS_OLESTDNOOPENFILE,   "Bestand kan niet geopend worden."
+	  IDS_OLESTDDISKFULL,     "Schijf is vol. Het opslaan is niet voltooid."
+	END
+
+// OLE2UI stringtable
+STRINGTABLE
+	BEGIN
+	   IDS_OLE2UIEDITNOOBJCMD, "&Object"
+	   IDS_OLE2UIEDITLINKCMD_1VERB, "1Gekoppeld %s-&object %s"
+	   IDS_OLE2UIEDITOBJECTCMD_1VERB, "1%s-&object %s"
+	   IDS_OLE2UIEDITLINKCMD_NVERB, "Gekoppeld %s-&object"
+	   IDS_OLE2UIEDITOBJECTCMD_NVERB, "%s-&object"
+	   IDS_OLE2UIUNKNOWN, "Onbekend"
+	   IDS_OLE2UILINK,    "Koppelen"
+	   IDS_OLE2UIOBJECT,  "Object"
+	   IDS_OLE2UIEDIT,    "Be&werken"
+	   IDS_OLE2UICONVERT, "&Converteren..."
+	   IDS_DEFICONLABEL,  "Document"
+	   IDS_OLE2UIPASTELINKEDTYPE, "Gekoppeld %s"
+	END
+
+// LINKS stringtable
+STRINGTABLE
+	BEGIN
+	 IDS_LINK_AUTO              "Automatisch"
+	 IDS_LINK_MANUAL            "Handmatig"
+	 IDS_LINK_UNKNOWN           "Niet beschikbaar"
+	 IDS_LINKS                  "Koppelingen"
+	 IDS_FAILED                 "Bewerking is mislukt."
+	 IDS_CHANGESOURCE           "Bronbestand wijzigen"
+	 IDS_INVALIDSOURCE          "Ongeldig bronbestand: Wilt u dit corrigeren?"
+	 IDS_CHANGEADDITIONALLINKS  "De geselecteerde koppeling is gewijzigd.\nDit document is ook gekoppeld aan \n%s.\n\nWilt u deze koppelingen wijzigen?"
+	 IDS_ERR_GETLINKSOURCE      "Het gekoppelde bronbestand is niet beschikbaar."
+	 IDS_ERR_GETLINKUPDATEOPTIONS   "De koppeling kan niet worden bijgewerkt."
+	 IDS_ERR_ADDSTRING          "Er kan geen onderdeel aan de keuzelijst worden toegevoegd."
+	 IDS_CLOSE              "Sluiten"
+	END

@@ -1,0 +1,20 @@
+/*************************************************************/
+/**                                                         **/
+/**                 Microsoft RPC Examples                  **/
+/**            OSF DCE Interop Sample Application           **/
+/**           Copyright(c) Microsoft Corp. 1993-1995        **/
+/**                                                         **/
+/*************************************************************/
+
+[
+uuid(0E8BDF58-B3BF-101A-A116-08002B2B8CD3),
+version(1.0)
+]
+interface interop
+{
+
+void ClientMessage([in, string, ref] unsigned char *pszMessage);
+
+void ShutdownServer(void);
+
+}

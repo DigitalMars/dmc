@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\Q_A\THREADS\THREADS.PRJ
+THREADS.OPN
+novcs
+THREADS.DEF
+16
+812035224
+0 0 0 0 0 "threads.c" ""
+0 0 0 0 0 "threads.def" ""
+0 0 0 0 0 "threads.rc" ""

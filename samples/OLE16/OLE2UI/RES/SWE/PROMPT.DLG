@@ -1,0 +1,78 @@
+Exclamation ICON    bang.ico
+
+
+IDD_LINKSOURCEUNAVAILABLE DIALOG 21, 34, 175, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON        "Ett fel uppstod", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Det ger inte att slutfvra denna operation eftersom kdllan till den markerade ldnken inte dr tillgdnglig.", ID_PU_TEXT, 48, 8, 117, 32
+	DEFPUSHBUTTON   "OK", IDOK, 39, 58, 40, 14
+	PUSHBUTTON      "&Ldnkar...", ID_PU_LINKS, 95, 58, 40, 14
+END
+
+
+IDD_CANNOTUPDATELINK DIALOG 21, 34, 175, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON        "Ett fel uppstod", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Det ger inte att uppdatera vissa ldnkar eftersom deras kdlla inte dr tillgdnglig.", ID_PU_TEXT, 48, 8, 117, 32
+	DEFPUSHBUTTON   "OK", IDOK, 39, 58, 40, 14
+	PUSHBUTTON      "&Ldnkar...", ID_PU_LINKS, 95, 58, 40, 14
+END
+
+
+IDD_SERVERNOTREG DIALOG 39, 30, 198, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Ett fel uppstod", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Det program som behvvs fvr att aktivera %s dr inte tillgdngligt. Du kan behvva aktivera det som en annan objekttyp bland de typer som visas ndr du vdljer knappen Konvertera...", ID_PU_TEXT, 39, 8, 152, 36
+	DEFPUSHBUTTON   "&Konvertera...", ID_PU_CONVERT, 10, 58, 53, 14
+	PUSHBUTTON      "Avbryt", IDCANCEL, 73, 58, 53, 14
+	PUSHBUTTON      "&Hjdlp", ID_OLEUIHELP, 136, 58, 53, 14
+END
+
+
+IDD_LINKTYPECHANGED DIALOG 39, 30, 198, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Ett fel uppstod", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Ldnken dr inte ldngre %s. Vdlj ett annat kommando som anges fvr den nya typen.",  ID_PU_TEXT, 39, 8, 152, 36
+	PUSHBUTTON      "OK", IDOK, 79, 58, 40, 14
+END
+
+
+IDD_SERVERNOTFOUND DIALOG 36, 39, 183, 90
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Ett fel uppstod", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Det ger inte att hitta serverprogrammet.\n\nKontrollera att programmet dr korrekt installerat och finns i svkvdgen i DOS. Kontrollera ockse att den inte har tagits bort, flyttats eller bytt namn.",  ID_PU_TEXT, 38, 8, 136, 52
+	DEFPUSHBUTTON   "OK", IDOK, 71, 70, 40, 14
+END
+
+
+IDD_UPDATELINKS DIALOG 50, 57, 179, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "", ID_PU_METER, "Static", SS_BLACKFRAME, 5, 40, 122, 9
+	DEFPUSHBUTTON   "&Stopp", ID_PU_STOP, 134, 37, 40, 14
+	LTEXT           "Uppdatera ldnkar...", ID_DUMMY, 5, 7, 97, 8
+	LTEXT           "", ID_PU_PERCENT, 56, 26, 20, 8
+END
+
+
+IDD_OUTOFMEMORY DIALOG 36, 39, 107, 73
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            "Ett fel uppstod", ID_DUMMY, 8, 8, 0, 0, SS_ICON
+	LTEXT           "Minnet dr slut.", ID_PU_TEXT, 41, 13, 57, 12
+	DEFPUSHBUTTON   "OK", IDOK, 33, 53, 40, 14
+END

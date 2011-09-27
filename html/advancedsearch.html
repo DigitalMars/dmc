@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Digital Mars - Advanced Search</title>
+</head>
+<body bgcolor="white">
+
+<a href="http://www.digitalmars.com/"><IMG SRC="dmlogo.gif" BORDER=0 WIDTH=270 HEIGHT=53 ALT="www.digitalmars.com"></a>
+<br>
+
+<!-- Atomz Advanced Search HTML for Digital Mars -->
+<form method="get" action="http://search.atomz.com/search/">
+<table cellspacing=0 cellpadding=1 border=0><tr><td colspan=4><p>
+<b>Search Digital Mars Site For:</b><br><input size=35 name="sp-q"><!-- The "Search" button -->
+<input type=submit value="Search">
+<input type=hidden name="sp-a" value="sp1000ce79"></p></td></tr>
+<input type=hidden name="sp-advanced" value=1>
+<!-- Allow "any," "all," or "phrase" --><tr><td valign=top><p>
+<b>Match:&nbsp;</b></p></td><td colspan=4><p>
+<input type=radio name="sp-p" value="any" checked>Any&nbsp;word
+<input type=radio name="sp-p" value="all">All&nbsp;words
+<input type=radio name="sp-p" value="phrase">Exact&nbsp;phrase<br>
+<!-- Checkbox enables sound-alike matching -->
+<input type=hidden name="sp-w-control" value=1>
+<input type=checkbox name="sp-w" value="alike" checked>Sound-alike&nbsp;matching
+</p></td></tr><!-- Date range criteria --><tr><td><p><b>Dated:</b></p></td>
+<td colspan=4><p><input type=radio name="sp-d" value="custom" checked>
+<select name="sp-date-range" size=1><option value=-1 selected>Anytime</option>
+<option value=7>Within&nbsp;the&nbsp;last&nbsp;week</option>
+<option value=14>Within&nbsp;the&nbsp;last&nbsp;2&nbsp;weeks</option>
+<option value=30>Within&nbsp;the&nbsp;last&nbsp;30&nbsp;days</option>
+<option value=60>Within&nbsp;the&nbsp;last&nbsp;60&nbsp;days</option>
+<option value=90>Within&nbsp;the&nbsp;last&nbsp;90&nbsp;days</option>
+<option value=180>Within&nbsp;the&nbsp;last&nbsp;180&nbsp;days</option>
+<option value=365>Within&nbsp;the&nbsp;last&nbsp;year</option>
+<option value=730>Within&nbsp;the&nbsp;last&nbsp;two&nbsp;years</option>
+</select></p></td></tr><tr><td><p>&nbsp;</p></td><td rowspan=2><p>
+<input type=radio name="sp-d" value=specific></p></td>
+<td align=right><p>From:</p></td><td><p><select name="sp-start-month" size=1>
+<option value=0 selected></option><option value=1>January</option>
+<option value=2>February</option><option value=3>March</option>
+<option value=4>April</option><option value=5>May</option>
+<option value=6>June</option><option value=7>July</option>
+<option value=8>August</option><option value=9>September</option>
+<option value=10>October</option><option value=11>November</option>
+<option value=12>December</option></select><select name="sp-start-day" size=1>
+<option value=0 selected></option><option value=1>1</option>
+<option value=2>2</option><option value=3>3</option><option value=4>4</option>
+<option value=5>5</option><option value=6>6</option><option value=7>7</option>
+<option value=8>8</option><option value=9>9</option><option value=10>10</option>
+<option value=11>11</option><option value=12>12</option>
+<option value=13>13</option><option value=14>14</option>
+<option value=15>15</option><option value=16>16</option>
+<option value=17>17</option><option value=18>18</option>
+<option value=19>19</option><option value=20>20</option>
+<option value=21>21</option><option value=22>22</option>
+<option value=23>23</option><option value=24>24</option>
+<option value=25>25</option><option value=26>26</option>
+<option value=27>27</option><option value=28>28</option>
+<option value=29>29</option><option value=30>30</option>
+<option value=31>31</option></select><!--comma-->,
+<input size=4 name="sp-start-year"></p></td></tr>
+<tr><td><p>&nbsp;</p></td><td align=right><p>To:</p></td><td><p>
+<select name="sp-end-month" size=1><option value=0 selected></option>
+<option value=1>January</option><option value=2>February</option>
+<option value=3>March</option><option value=4>April</option>
+<option value=5>May</option><option value=6>June</option>
+<option value=7>July</option><option value=8>August</option>
+<option value=9>September</option><option value=10>October</option>
+<option value=11>November</option><option value=12>December</option></select>
+<select name="sp-end-day" size=1><option value=0 selected></option>
+<option value=1>1</option><option value=2>2</option><option value=3>3</option>
+<option value=4>4</option><option value=5>5</option><option value=6>6</option>
+<option value=7>7</option><option value=8>8</option><option value=9>9</option>
+<option value=10>10</option><option value=11>11</option>
+<option value=12>12</option><option value=13>13</option>
+<option value=14>14</option><option value=15>15</option>
+<option value=16>16</option><option value=17>17</option>
+<option value=18>18</option><option value=19>19</option>
+<option value=20>20</option><option value=21>21</option>
+<option value=22>22</option><option value=23>23</option>
+<option value=24>24</option><option value=25>25</option>
+<option value=26>26</option><option value=27>27</option>
+<option value=28>28</option><option value=29>29</option>
+<option value=30>30</option><option value=31>31</option></select><!--comma-->,
+<input size=4 name="sp-end-year"></p></td></tr>
+<!-- List box selects the search field --><tr><td valign=top><p>
+<b>Within:&nbsp;</b></p></td><td colspan=4><p><select name="sp-x" size=1>
+<option value="any" selected>Anywhere</option>
+<option value="title">Title</option><option value="desc">Description</option>
+<option value="keys">Keywords</option><option value="body">Body</option>
+<option value="alt">Alternate text</option><option value="url">URL</option>
+<option value="target">Target</option></select></p></td></tr>
+<!-- List box selects number of results to show per page -->
+<tr><td valign=top><p><b>Show:&nbsp;</b>
+</p></td><td colspan=4><p><select name="sp-c" size=1><option value=5>5</option>
+<option value=10 selected>10</option><option value=25>25</option>
+<option value=50>50</option><option value=100>100</option>
+</select>&nbsp;results&nbsp;<!-- Show or hide summaries in search results -->
+<select name="sp-m" size=1><option value=1 selected>with</option>
+<option value=0>without</option></select>&nbsp;summaries<br></p></td></tr>
+<!-- Sort results by score or by date --><tr><td valign=top><p>
+<b>Sort&nbsp;by:&nbsp;</b></p></td><td colspan=4><p><select name="sp-s" size=1>
+<option value=0 selected>score</option><option value=1>date</option>
+</select>
+</p></td></tr>
+</table>
+</form>
+
+</body>
+</html>

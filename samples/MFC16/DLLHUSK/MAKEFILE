@@ -1,0 +1,82 @@
+# This is a part of the Microsoft Foundation Classes C++ library.
+# Copyright (C) 1992 Microsoft Corporation
+# All rights reserved.
+#
+# This source code is only intended as a supplement to the
+# Microsoft Foundation Classes Reference and Microsoft
+# QuickHelp and/or WinHelp documentation provided with the library.
+# See these sources for detailed information regarding the
+# Microsoft Foundation Classes product.
+
+!ifdef AFXDLL
+!undef AFXDLL
+!endif
+
+AFXDLL=1
+
+EXTRA_LIBS=testdll1.lib testdll2.lib
+goal: $(EXTRA_LIBS) testdll1.dll testdll2.dll dllhusk.exe
+
+PROJ=DLLHUSK
+OBJS=dllhusk.obj mainfrm.obj
+
+clean::
+	-erase $(PROJ).exe 
+	-erase $(PROJ).res
+	-erase *.sym
+	-erase *.map
+	-erase *.obj
+	-erase *.dll 
+	-erase *.lib
+	-erase *.res
+
+!include ..\sample_.mak
+
+#############################################################################
+# Common rules and values for building MFC Extension DLLs
+
+DLL_LINKFLAGS=/NOD /DE /NOE /NOLOGO
+DLL_LIBS=swl libw commdlg shell
+DLL_CPPFLAGS=-mlw -a -WD-r -2 -D_AFXDLL -w
+RFLAGS=$(RFLAGS) -D_AFXDLL
+
+!if "$(DEBUG)"=="0"
+DLL_CPPFLAGS=$(DLL_CPPFLAGS) -o+speed
+DLL_LIBS=smfc25 $(DLL_LIBS)
+!else
+DLL_CPPFLAGS=-D_DEBUG $(DLL_CPPFLAGS) -g -C 
+DLL_LIBS=smfc25d $(DLL_LIBS)
+DLL_LINKFLAGS=$(DLL_LINKFLAGS) /CO
+!endif #//DEBUG
+
+#############################################################################
+# Special rules for building TESTDLL1
+
+testdll1.obj: testdll1.cpp
+	sc $(DLL_CPPFLAGS) -c testdll1.cpp
+
+testdll1.dll testdll1.lib: testdll1.obj testdll1.res testdll1.def
+	link @<<
+$(DLL_LINKFLAGS) /IMPL:testdll1.lib /RC -k -t :testdll1.res testdll1.obj,
+testdll1.dll,
+testdll1.MAP/MAP:FULL,
+$(DLL_LIBS),
+testdll1.def;
+<<
+
+#############################################################################
+# Special rules for building TESTDLL2
+
+testdll2.obj: testdll2.cpp
+	sc $(DLL_CPPFLAGS) -c testdll2.cpp
+
+testdll2.dll testdll2.lib: testdll2.obj testdll2.res testdll2.def
+	link @<<
+$(DLL_LINKFLAGS) /IMPL:testdll2.lib /RC -k -t :testdll2.res testdll2.obj,
+testdll2.dll,
+testdll2.MAP/MAP,
+$(DLL_LIBS),
+testdll2.def;
+<<
+
+#############################################################################

@@ -1,0 +1,29 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1992 - 1994  Microsoft Corporation.  All Rights Reserved.
+ *
+ **************************************************************************/
+
+#include <windows.h>
+#include "writeavi.h"
+#include "writeavi.rcv"
+
+AppIcon ICON   writeavi.ico
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_APPNAME		"WriteAVI Sample App"
+    IDS_APPERR		"WriteAVI Error"
+    IDS_VFWTOOOLD	"Video for Windows version is too old"
+    IDS_INTRO		"This program writes some DIBs into a file called OUTPUT.AVI. \n\nWe apologize for the lack of a user interface."
+    IDS_FILENAME	"output.avi"
+    IDS_WRITEERR	"An error occurred trying to write the output file."
+    IDS_TEXTFORMAT	"This is frame #%d"
+END
+
+

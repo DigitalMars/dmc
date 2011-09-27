@@ -1,0 +1,33 @@
+# Windows-32 TTY Example
+# Copyright (c) 1992 by Microsoft Corporation
+
+!include <WIN32.MAK>
+
+proj = TTY
+
+all: $(proj).exe
+
+# Update the resource if necessary
+$(proj).res: $(proj).rc resource.h
+    rc -r -fo $(proj).res $(cvars) $(proj).rc
+
+
+# Update the object file if necessary
+$(proj).obj: $(proj).c $(proj).h
+    $(cc) $(cdebug) $(cflags) $(cvars) $(proj).c
+
+# Since the link line has some severe differences depending on what
+# platform we are running on, we need to special case this so that
+# we execute the correct commands:
+
+$(proj).exe: $(proj).obj $(proj).res $(proj).def
+!IFDEF CPUTYPE
+# This is for Windows NT:
+    $(link) $(linkdebug) $(guiflags) $(proj).obj  $(guilibs) VERSION.LIB $(proj).res -out:$(proj).exe
+!ENDIF
+!IFNDEF CPUTYPE
+# This is for Windows DOS:
+    $(link) $(guiflags) $(proj).obj $(guilibs) $(proj).DEF
+    rc $(proj).res
+!ENDIF
+!include  <ntwin32.mak>

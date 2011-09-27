@@ -1,0 +1,16 @@
+82572
+C:\SC\samples\win32\RPC\NS\NHELLO\NSSERV.PRJ
+NSSERV.OPN
+novcs
+nsserv.DEF
+4
+812035224
+0 0 0 0 0 "nhello_s.c" ""
+0 0 0 0 0 "nhellop.c" ""
+0 0 0 0 0 "nsserv.c" ""
+0 0 0 0 0 "service.c" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "rpcns4.lib" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "shell32.lib" ""
+0 0 0 0 0 "nsserv.def" ""

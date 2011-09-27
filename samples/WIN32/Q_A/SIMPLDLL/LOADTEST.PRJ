@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\Q_A\SIMPLDLL\LOADTEST.PRJ
+LOADTEST.OPN
+novcs
+loadtest.def
+16
+812035224
+0 0 0 0 0 "loadtest.c" ""
+0 0 0 0 0 "loadtest.def" ""
+0 0 0 0 0 "loadtest.rc" ""
+0 0 0 0 0 "THE_DLL.PRJ" ""

@@ -1,0 +1,17 @@
+The Call Attributed Profiler (CAP)
+
+
+The Call Attributed profiler allows you to profile function calls within an
+application. It consists of the following set of files:
+            
+    cap.dll
+    cap.ini
+    cap.lib
+    capdump.exe
+    capsetup.exe
+    capstats.exe
+
+For more information, see the Win32 SDK documentation. Query on "Call
+Attributed Profiler" or go to Programming and Tools Guides, open Tools Guide,
+open Performance Tuning Win32-based Applications, and go to Call Attributed
+Profiler.

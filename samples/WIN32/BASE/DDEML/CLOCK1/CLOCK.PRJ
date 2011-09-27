@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\BASE\DDEML\CLOCK1\CLOCK.PRJ
+CLOCK.OPN
+novcs
+clock.def
+16
+852911400
+0 0 0 0 0 "clock.c" ""
+0 0 0 0 0 "clock.def" ""
+0 0 0 0 0 "clockres.rc" ""
+0 0 0 0 0 "advapi32.lib" ""

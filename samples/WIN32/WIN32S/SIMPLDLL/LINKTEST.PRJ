@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\WIN32S\SIMPLDLL\LINKTEST.PRJ
+LINKTEST.OPN
+novcs
+LINKTEST.DEF
+20
+812035224
+0 0 0 0 0 "linktest.c" ""
+0 0 0 0 0 "linktest.def" ""
+0 0 0 0 0 "linktest.rc" ""
+0 0 0 0 0 "thedll.lib" ""
+0 0 0 0 0 "thedll.prj" ""

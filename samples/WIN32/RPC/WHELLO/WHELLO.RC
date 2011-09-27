@@ -1,0 +1,20 @@
+#include "windows.h"
+#include "whelloc.h"
+
+GenericMenu MENU
+BEGIN
+    POPUP	 "&Remote Call"
+    BEGIN
+	MENUITEM "&Protocol sequence name", IDM_PROTSEQ
+	MENUITEM "&Server name", IDM_SERVER
+	MENUITEM "&Endpoint name", IDM_ENDPOINT
+	MENUITEM "Make the &call", IDM_SEND
+	MENUITEM SEPARATOR
+	MENUITEM "E&xit", IDM_EXIT
+    END
+    POPUP	 "&Help"
+    BEGIN
+	MENUITEM "&About RPC Hello...", IDM_ABOUT
+    END
+END
+#include "whello.dlg"

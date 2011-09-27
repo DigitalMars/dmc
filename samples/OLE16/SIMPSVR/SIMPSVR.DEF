@@ -1,0 +1,27 @@
+; module-definition file for generic -- used by LINK.EXE
+; application's module name
+; required for all Windows applications
+; Generates error message if application
+; is run without Windows
+;CODE can be moved in memory and discarded/reloaded
+;DATA must be MULTIPLE if program can be invoked more than once
+; All functions that will be called by any Windows routine
+; MUST be exported.
+
+NAME		"SIMPSVR" WINDOWAPI 
+
+DESCRIPTION	'Sample Microsoft Windows Application'
+
+EXETYPE		WINDOWS
+
+PROTMODE
+
+STUB		'WINSTUB.EXE'
+
+CODE		 SHARED PRELOAD MOVEABLE IOPL CONFORMING DISCARDABLE EXECUTEONLY
+
+DATA		 SHARED SINGLE  PRELOAD MOVEABLE NOIOPL  NONDISCARDABLE  READONLY
+
+STACKSIZE	16384
+
+HEAPSIZE	1024

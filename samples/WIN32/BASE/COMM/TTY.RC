@@ -1,0 +1,153 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include <windows.h>
+
+#include "resource.h"
+
+TTYICON ICON     tty.ico
+TTYBITMAP BITMAP tty.bmp
+
+TTYMENU MENU LOADONCALL MOVEABLE PURE DISCARDABLE 
+BEGIN
+   POPUP "&Action"
+   BEGIN
+      MenuItem "&Connect\tShift+PgUp",     IDM_CONNECT
+      MenuItem "&Disconnect\tShift+PgDn",  IDM_DISCONNECT
+      MenuItem  SEPARATOR
+      MenuItem  "E&xit",       IDM_EXIT
+   END
+   MenuItem "&Settings...",       IDM_SETTINGS
+   MenuItem "A&bout",          IDM_ABOUT
+END
+
+TTYACCEL ACCELERATORS
+BEGIN
+  VK_PRIOR, IDM_CONNECT, VIRTKEY, SHIFT
+  VK_NEXT, IDM_DISCONNECT, VIRTKEY, SHIFT
+END
+
+SETTINGSDLGBOX DIALOG 25, 20, 200, 175
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "TTY Settings..."
+FONT 8, "Helv"
+BEGIN
+    GROUPBOX        "&COM Options:", 0xFFFF, 5, 5, 115, 130
+    RTEXT           "&Port:", 0xFFFF, 10, 20, 40, 10
+    COMBOBOX        IDD_PORTCB, 55, 20, 55, 35, CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "&Baud Rate:", 0xFFFF, 10, 35, 40, 10, NOT WS_GROUP
+    COMBOBOX        IDD_BAUDCB, 55, 35, 55, 35, CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "&Data Bits:", 0xFFFF, 10, 50, 40, 10, NOT WS_GROUP
+    COMBOBOX        IDD_DATABITSCB, 55, 50, 55, 35, CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "P&arity:", 0xFFFF, 10, 65, 40, 10, NOT WS_GROUP
+    COMBOBOX        IDD_PARITYCB, 55, 65, 55, 35, CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "&Stop Bits:", 0xFFFF, 10, 80, 40, 10, NOT WS_GROUP
+    COMBOBOX        IDD_STOPBITSCB, 55, 80, 55, 35, CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "F&low:", 0xFFFF, 10, 95, 40, 10, NOT WS_GROUP
+    CONTROL         "DTR/DSR", IDD_DTRDSR, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 55, 95, 50, 10
+    CONTROL         "RTS/CTS", IDD_RTSCTS, "Button", BS_AUTOCHECKBOX, 55, 
+                    105, 50, 10
+    CONTROL         "XON/XOFF", IDD_XONXOFF, "Button", BS_AUTOCHECKBOX, 55, 
+                    115, 50, 10
+    GROUPBOX        "&TTY Options:", 0xFFFF, 125, 5, 70, 55, WS_GROUP
+    CONTROL         "Autowrap", IDD_AUTOWRAP, "Button", BS_AUTOCHECKBOX | 
+                    WS_TABSTOP, 135, 20, 50, 10
+    CONTROL         "New Line", IDD_NEWLINE, "Button", BS_AUTOCHECKBOX, 135, 
+                    30, 50, 10
+    CONTROL         "Local Echo", IDD_LOCALECHO, "Button", BS_AUTOCHECKBOX, 
+                    135, 40, 50, 10
+    GROUPBOX        "Control &Options", 0xFFFF, 5, 135, 190, 35
+    CONTROL         "Use CN_RECEIVE Notifications", IDD_USECNRECEIVE, 
+                    "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 10, 150, 115, 10
+    CONTROL         "Display Errors", IDD_DISPLAYERRORS, "Button", 
+                    BS_AUTOCHECKBOX, 130, 150, 60, 10
+    PUSHBUTTON      "&Font", IDD_FONT, 140, 70, 40, 14, WS_GROUP
+    DEFPUSHBUTTON   "Ok", IDD_OK, 140, 90, 40, 14
+    PUSHBUTTON      "Cancel", IDD_CANCEL, 140, 110, 40, 14
+END
+
+ABOUTDLGBOX DIALOG 10, 25, 220, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About the SDK TTY Sample"
+FONT 8, "Helv"
+BEGIN
+    ICON            TTYICON, IDD_ABOUTICON, 10, 5, 18, 20
+    LTEXT           "Microsoft Windows v.%d.%d", IDD_TITLELINE, 45, 5, 127, 
+                    10, SS_NOPREFIX | NOT WS_GROUP
+    LTEXT           "TTY Sample v.%02d.%02d.%03d", IDD_VERSION, 45, 15, 120, 
+                    10, SS_NOPREFIX | NOT WS_GROUP
+    LTEXT           "Copyright \251 1991-1993 Microsoft Corp.", 0xFFFF, 45, 25, 145, 
+                    10, SS_NOPREFIX | NOT WS_GROUP
+    LTEXT           "", IDD_BYLINE, 45, 35, 145, 20, SS_NOPREFIX | NOT 
+                    WS_GROUP
+    CONTROL         "", 0xFFFF, "Static", SS_BLACKRECT, 45, 60, 172, 1
+    LTEXT           "386 Enhanced Mode", IDD_WINDOWSMODE, 45, 65, 150, 10, 
+                    SS_NOPREFIX | NOT WS_GROUP
+#ifndef WIN32
+    LTEXT           "Memory:", 0xFFFF, 45, 75, 70, 10, SS_NOPREFIX |
+                    NOT WS_GROUP
+    LTEXT           "%lu KB Free", IDD_FREEMEM, 120, 75, 74, 10, SS_NOPREFIX |
+                    NOT WS_GROUP
+    LTEXT           "System Resources:", 0xFFFF, 45, 85, 70, 10, SS_NOPREFIX |
+                    NOT WS_GROUP
+    LTEXT           "%d%%", IDD_RESOURCES, 120, 85, 74, 10, SS_NOPREFIX | 
+                    NOT WS_GROUP
+#endif
+    DEFPUSHBUTTON   "OK", IDD_OK, 177, 5, 40, 14
+END
+
+STRINGTABLE
+BEGIN
+   IDS_COMPREFIX     "COM"
+
+   IDS_BAUD110       "110"
+   IDS_BAUD300       "300"
+   IDS_BAUD600       "600"
+   IDS_BAUD1200      "1200"
+   IDS_BAUD2400      "2400"
+   IDS_BAUD4800      "4800"
+   IDS_BAUD9600      "9600"
+   IDS_BAUD14400     "14.4k"
+   IDS_BAUD19200     "19.2k"
+   IDS_BAUD38400     "38.4k"
+   IDS_BAUD56000     "56k"
+   IDS_BAUD128000    "128k"
+   IDS_BAUD256000    "256k"
+
+   IDS_PARITYNONE    "None"
+   IDS_PARITYEVEN    "Even"
+   IDS_PARITYODD     "Odd"
+   IDS_PARITYMARK    "Mark"
+   IDS_PARITYSPACE   "Space"
+
+   IDS_ONESTOPBIT    "1"
+   IDS_ONE5STOPBITS  "1.5"
+   IDS_TWOSTOPBITS   "2"
+
+   IDS_BYLINE        "Written by Bryan A. Woodruff\nWindows Developer Support Group"
+
+   IDS_MODE_STANDARD "Standard mode"
+   IDS_MODE_ENHANCED "386 Enhanced mode"
+   IDS_MODE_WLO      "WLO Compatibilty mode"
+   IDS_MODE_UNDEF    "Undefined mode"
+END
+
+
+//---------------------------------------------------------------------------
+//  End of File: tty.rc
+//---------------------------------------------------------------------------

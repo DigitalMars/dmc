@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\RPC\DATA\XMIT\XMITS.PRJ
+XMITS.OPN
+novcs
+xmits.DEF
+4
+812035224
+0 0 0 0 0 "xmit_s.c" ""
+0 0 0 0 0 "xmitp.c" ""
+0 0 0 0 0 "xmits.c" ""
+0 0 0 0 0 "xmitu.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "xmits.def" ""

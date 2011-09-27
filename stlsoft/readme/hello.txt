@@ -1,0 +1,145 @@
+Hi everyone
+
+As of version 1.6.2 of STLSoft and 8.34 of DMC++, the STLSoft libraries will
+be bundled with DMC++.
+
+For those of you that don't know anything of STLSoft, you can read all the
+blurb at http://stlsoft.org/, but I'll give you a brief intro. As the logo
+states, it provides
+ "Robust, Lightweight, Cross-platform, Template Software." Robust,
+cross-platform, template are all pretty obvious. It's lightweight in two
+respects, both of which make it a good fit with Digital Mars:
+
+1. it is very easy to use and install. Since it is, and will remain, 100%
+header-only, you simply put it in a directory and add that to the include
+paths. For DMC++, it is going in dm\stlsoft, and I'm pretty sure Walter'll
+be altering SC.INI so that you won't have to do a thing.
+2. it is efficient. There are a number of aspects of the library where it is
+proved to be more efficient to other C/C++ libraries. Notable ones in the
+current version are the integer to string conversions, and the string
+tokeniser.
+
+As well as the main STLSoft project - confusingly called STLSoft - there are
+currently five released sub-projects, each with their own website. They are
+
+- ATLSTL, http://atlstl.org/. Deals with ATL. Currently very small, there
+are a lot of things about to be added
+- COMSTL, http://comstl.org/. All things COM. It is more mature than ATLSTL,
+with some very useful components - check out the simple_enum_sequence
+template, that provides policy-based adaptation of COM IEnumXXX enumerators
+to STL-like sequences supporting Input or Forward Iterator semantics. There
+are still quite a few things that will be added to it in the near future.
+- MFCSTL, http://mfcstl.org/. MFC. Most of the current contents deal with
+making MFC types work seamlessly in an STL. For example, there are adaptive
+templates to make CArrayXxxx, CMapXxxxx and CString all come to the STL
+party.
+- UNIXSTL, http://unixstl.org/. Some UNIX stuff. Like, ATLSTL, this is
+currently quite small, but contains some useful stuff: sequences for
+file-system iteration, and performance counter types. There's nothing else
+currently planned for UNIXSTL, but I'd be very happy to have
+suggestions/requests.
+- WinSTL, http://winstl.org/. All things Win32. This was the guy that kicked
+the whole shabang off, and contains a _lot_ of stuff: file-system, controls,
+performance counters, synchronisation, registry, memory. Check out
+http://winstl.org/libraries.html for the full listing. Taming the Win32 API
+and making it behave like STL has been at once frustrating, interesting and
+rewarding. I think this will be the sub-project that you'll find most
+immediately useful.
+
+
+So you might be wondering what is the purpose of bundling with DMC++. There
+are three primary reasons.
+
+First, DMC++ and STLSoft have many compatible traits, especially efficiency
+and configuration simplicity.
+
+Second, it will bring DMC++ to the attention of the STLSoft users who have
+not yet used Digital Mars. It being one of my favourite three compilers
+(along with Intel and Metrowerks), not to mention being the only free one,
+I'd be very happy if this brings a new set of people into the DM community.
+
+Finally, it will bring STLSoft to the attention of all of you good folks. As
+a member of the various Digital Mars newsgroups over the past year or two, it
+has struck me what a unique newsgroup this is. It has attracted an impressive
+array of talented people - most of whom seem to know more than me on a scarily
+large spectrum of topics - but has attracted virtually none of the petulance,
+pomposity and pointless "religious" fervour that abounds in most of the others
+I've sampled. So I know that whatever feedback I get from you all about STLSoft
+will be constructive, and can only help to improve it further.
+
+
+Before I sign off I just want to mention the resources available.
+
+1. Websites
+
+STLSoft lives at stlsoft.org (and the sub-projects in their respective .orgs)
+
+However, there will also be a site at Digital Mars: http://www.digitalmars.com/~synesis.
+I think for the moment that this will be just the HTML help (which is included in
+the bundle). I guess that as things develop, I'll be able to create a DMC-STLSoft
+site, listing any interesting facts of STLSoft that pertain to DMC++ or to the 
+DM-STLSoft newsgroup, and place the help in a sub-directory.
+
+2. Help/Documentation
+
+With the bundle will come the Doxygen-ated help for all the libraries. This
+comes as a set of HTML & support files, and also as a Compile Help Module (chm).
+Naturally the CHM only works on Windows, but I think that doesn't present a 
+problem to most DM members
+
+3. Magazine articles
+
+I've done quite a few STLSoft-related articles over the last year or so, many
+of which are not yet published, but a few are already out there; some
+are available online
+
+- "C# Performance: A comparison with C, C++, D and Java, part 1", Windows Developer Magazine, June 2003
+- "Win32 Performance Measurement Options", Windows Developer Magazine, May 2003
+- "XML Parser Usability and Performance", Windows Developer Magazine, April 2003 - PDF of magazine available for download now from http://ww.windevnet.com
+- "True-typedefs", C/C++ User's Journal, March 2003
+- "Adapting Windows Enumeration Models to STL Iterator Concepts", Windows Developer Magazine, March 2003, http://www.windevnet.com/documents/win0303a/
+- "Efficient Integer To String Conversions", C/C++ User's Journal, December 2002
+
+There are more coming out over the coming months, in CUJ & WDM. Please bear in mind
+that WDM makes all its new, and most of its previous, articles available online. 
+
+4. Test programs
+
+This is an area where I've been a bit less than fabulous. The test programs that
+are in the current-bundle / stlsoft.org-download do exercise the functionality 
+that they need to, as well as to ensure compiler support, etc., but they're not
+the best examples of my work, to say the least. Naturally I was a bit time poor.
+
+I'm very open to getting questions and feedback from you, not to mention improvements,
+
+5. The C++.STLSoft newsgroup
+
+Naturally I'm going to shoulder the responsibility of answering the posts on the newsgroup
+until the STLSoft experience is widened. I'm hoping you'll all participate, and help me
+make the newsgroup, and the libraries, better than they already are.
+
+I've got a pretty thick skin, so please don't worry about upsetting me: all _constructive_
+criticism is welcome. One aim of the DMC++-STLSoft exercise is to help take STLSoft to
+the next level. Fire at will!
+
+6. The libraries themselves
+
+For the moment, I'm not sure whether Walter's going to bundle with the next
+beta, or wait until 8.34. I think it's likely he'll wait until 8.34 is
+released. In the meantime you can download the latest distribution from
+http://stlsoft.org/downloads.html. (Please note that this does not contain a
+DMC++ makefile, which the bundled version does have, so you're a little bit
+on your own - but then that's what the newsgroup is for, of course.)
+
+
+
+Ok, that's it. Thanks for listening.
+
+Cheers
+
+Matthew Wilson.
+
+admin@stlsoft.org
+
+
+

@@ -1,0 +1,15 @@
+82572
+C:\SC\samples\ole16\DISPDEMO\DISPDEMO.PRJ
+DISPDEMO.OPN
+novcs
+dispdemo.def
+0
+812035224
+0 0 0 0 0 "clsid.c" ""
+0 0 0 0 0 "crempoly.cpp" ""
+0 0 0 0 0 "misc.cpp" ""
+0 0 0 0 0 "winmain.cpp" ""
+0 0 0 0 0 "dispdemo.def" ""
+0 0 0 0 0 "dispdemo.rc" ""
+0 0 0 0 0 "..\spoly\spoly.prj" ""
+0 0 0 0 0 "..\spoly2\spoly2.prj" ""

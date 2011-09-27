@@ -1,0 +1,99 @@
+// ************************************************************************
+//
+//                      Microsoft Developer Support
+//               Copyright (c) 1992-1995 Microsoft Corporation
+//
+// ************************************************************************
+// RESOURCE : MinRec.RC
+// PURPOSE  : A Small Win32 Recorder-like Sample Application Resource
+//            Script
+// ************************************************************************
+#include <Windows.H>
+#include "MinRec.H"
+
+
+// Miscellaneous Included Resources
+// ------------------------------------------------------------------------
+#include "MinRec.Dlg"
+
+MinRecIcon ICON MinRec.Ico
+
+
+// Menus
+// ------------------------------------------------------------------------
+MinRecMenu MENU
+BEGIN
+
+  POPUP "&File"
+  BEGIN
+    MENUITEM "E&xit\tAlt+F4",      IDM_FILE_EXIT
+  END
+
+  POPUP "&Macro"
+  BEGIN
+    MENUITEM "&Playback\tCtrl+P",  IDM_MACRO_PLAYBACK
+    MENUITEM "&Record\tCtrl+R",    IDM_MACRO_RECORD
+    MENUITEM "&Stop\tCtrl+Break",  IDM_MACRO_STOP
+  END
+
+  POPUP "&Help"
+  BEGIN
+    MENUITEM "&About Minimum Recorder...",   IDM_HELP_ABOUT
+  END
+
+END
+
+
+// Accelerator Tables
+// ------------------------------------------------------------------------
+MinRecAccel ACCELERATORS
+BEGIN
+  VK_F4,     IDM_FILE_EXIT,         VIRTKEY, ALT
+  "P",       IDM_MACRO_PLAYBACK, VIRTKEY, CONTROL
+  "R",       IDM_MACRO_RECORD,   VIRTKEY, CONTROL
+  "S",       IDM_MACRO_STOP,     VIRTKEY, CONTROL
+  VK_CANCEL, IDM_MACRO_STOP,     VIRTKEY, CONTROL
+  VK_F1,     IDM_HELP_ABOUT,        VIRTKEY
+END
+
+
+// Version Information
+// ------------------------------------------------------------------------
+#include <winver.h>
+
+VS_VERSION_INFO VERSIONINFO
+  FILEVERSION     1,0
+  PRODUCTVERSION  1,0
+  FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+ #ifdef DEBUG
+  FILEFLAGS       (VS_FF_PRERELEASE|VS_FF_DEBUG)
+ #else
+  FILEFLAGS       (VS_FF_PRERELEASE)
+ #endif
+  FILEOS          VOS_NT_WINDOWS32
+  FILETYPE        VFT_APP
+  FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+   // VALUE "Comments",        "This is just a sample application."
+      VALUE "CompanyName",     "Microsoft Corporation\0"
+      VALUE "FileDescription", "MinRec Sample Windows Application\0"
+      VALUE "FileVersion",     "1.1\0"
+      VALUE "InternalName",    "MinRec\0"
+      VALUE "LegalCopyright",  "Copyright \251 1992-1995 Microsoft Corp.\0"
+      VALUE "LegalTrademarks", "Microsoft\256 is a registered trademark of Microsoft Corporation. Windows(TM) and Windows NT(TM) are trademarks of Microsoft Corporation.\0"
+      VALUE "OriginalFilename","MINREC.EXE"
+   // VALUE "PrivateBuild",    "If FILEFLAGS=VS_FF_PRIVATEBUILD"
+      VALUE "ProductName",     "MinRec\0"
+      VALUE "ProductVersion",  "1.1\0"
+   // VALUE "SpecialBuild",    "If FILEFLAGS=VS_FF_SPECIALBUILD"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+END

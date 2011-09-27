@@ -1,0 +1,223 @@
+RPC Release Notes
+Overview
+Microsoft RPC is a toolkit for developing distributed applications in C/C++.
+The toolkit includes: 
+
+*	MIDL compiler for Microsoft Windows NT.
+*	C/C++ language header files and run-time libraries for Windows NT, 
+	Microsoft Windows 3.x, and MS-DOS. 
+*	Sample programs for Windows NT, Windows 3.x, and MS-DOS. 
+
+
+Layout of this text file:
+	Installation 
+	Documentation 
+	Before Using RPC 
+	MIDL Issues 
+	Run-Time API Issues
+
+
+Installation
+
+The Windows NT SDK provides the components of the RPC toolkit as part of its 
+standard installation. No additional installation is required. 
+To produce MS-DOS and Windows 3.x RPC clients, install version
+1.50 of the Microsoft Visual C/C++ development environment, and then install
+the MS-DOS/Win16 RPC tookit from disk. To install the MS-DOS/Windows 3.x
+version of the RPC toolkit, use the Setup program in the MSTOOLS\RPC_DOS\DISK1 
+directory.
+
+Because the 16-bit MIDL compiler is no longer supported, you must develop 
+applications using the 32-bit MIDL compiler. However, to write MS-DOS or 
+Windows 3.x applications without a 32-bit C/C++ compiler capable of 
+targeting MS-DOS, you must compile the IDL file with a 32-bit MIDL compiler on 
+Windows NT. Then, compile the application and stubs using your C/C++ compiler. 
+To write MS-DOS or Windows 3.x applications using a 32-bit C/C++ compiler that 
+is capable of targeting MS-DOS, compile both the IDL file and C/C++ files on 
+Windows NT.
+
+
+Documentation
+
+The RPC Programmer's Guide and Reference is available in Help and includes 
+conceptual material, MIDL language and command-line references, and run-time 
+API references.
+
+RPC sample program source files are available in the directory 
+MSTOOLS\SAMPLES\RPC. The MSTOOLS\SAMPLES\RPC\README.TXT file describes
+each sample. 
+
+
+Before Using RPC
+
+Read the following section on MIDL and run-time API issues before attempting 
+to use this version of RPC. These sections contain important information 
+that may not have been documented in Help.
+
+
+MIDL Issues
+
+Auxiliary files are obsolete.  Using the /import, /caux, or /saux command line 
+switches will result in an error.
+
+There are interoperability problems with certain uses of unions.  In
+particular, this affects unions embedded in structures.  You can work
+around the problem by passing a pointer to the structure.
+
+The following guidelines apply to proxy DLLs in this release:
+	By using -DNT35_STRICT, you can ensure that your proxy DLLs will 
+	not use new (extended) entry points.  This establishes that 
+	applications will run on Windows NT 3.5 -- even though they are 
+	developed using the NT 3.51 MIDL compiler.
+
+	To obtain a proxy DLL that can self-register:
+	Define -DREGISTER_PROXY_DLL while compiling the dlldata.c file.
+	This creates the DllRegisterServer and DllUnregisterServer
+	entry points, and adds these entry points, along with DllMain,
+	to the .DEF file.  For additional information on using these APIs,
+	see the Visual C++ Developer's Kit.
+
+The 16-bit MIDL compiler for MS-DOS or Windows 3.x is no longer supported. 
+Use the 32-bit MIDL compiler switch /env with either the dos or win16 option.
+ 
+Note the following when using this version of the MIDL compiler: 
+	
+	*	When compiling the generated stubs, warnings about different
+	        levels of pointer indirection or different const
+		specifications are benign.
+	*	When using the dos or win option of the -env switch, the
+		compiler will not set the correct packing level to 2.  In this
+		case, you must explicitly specify the correct packing level
+		by using the /Zp or /pack switch. 
+	*	A structure whose only member is a conformant string results 
+		in a MIDL compiler assert.   
+
+ 
+Run-Time API Issues
+
+RPCDCE4.LIB should be ignored for this release.
+
+When using the ncacn_spx and ncadg_ipx transports, the server name is exactly 
+the same as the Windows NT server name. However, since the names are 
+distributed using Novell protocols, they must conform to the Novell naming 
+conventions. If a server name is not a valid Novell name, servers will not be
+able to create endpoints with the ncacn_spx or ncadg_ipx transports. The
+following is a partial list of characters prohibited in Novell server names: 
+
+
+ "  *  +  .  /  :  ;  <  =  >  ?  [  ]  \  |   
+ 
+When using ncadg_ipx on Windows 3.x or MS-DOS platforms, use the Windows 
+NT 3.1 model of server naming. That is, a tilde, followed by the servers 
+eight-digit network number, followed by its twelve-digit Ethernet address.
+
+The ncacn_spx transport is not supported by the version of NWLink supplied with
+MS Client 3.0; however, ncadg_ipx is supported. 
+
+Backslashes are now optional in the host name for ncacn_np, for consistency
+with the other transports. 
+
+The datagram protocols (ncadg_ipx, ncadg_ip_udp) have the following 
+limitations: 
+*	They do not support callbacks. Any functions using the callback
+        attribute will fail. 
+
+*	They do not support the RPC security API (RpcBindingSetAuthInfo, 
+	RpcImpersonateClient, etc.). 
+ 
+Only the ncacn_spx and ncacn_ip_tcp protocols support cancels. For all other 
+protocols, the cancel routines will return RPC_S_OK, but there will be no
+effect.
+
+Specifically:
+
+*	RpcCancelThread will alert the specified thread, but will not
+	interrupt a pending RPC. 
+
+*	RpcTestCancel will return RPC_S_OK if the current thread has
+	been alerted.
+
+*	RpcMgmtSetCancelTimeout has no visible effect.
+
+RpcTestCancel, RpcMgmtSetCancelTimeout, and RpcCancelThread are only 
+supported on Windows NT platforms; all other platforms return 
+RPC_S_CANNOT_SUPPORT.
+
+The function RpcBindingSetAuthInfo does not accept the value 
+RPC_C_AUTHN_DEFAULT.
+
+To use the RpcBindingSetAuthInfo routine and, in particular, when using MS-
+DOS authentication in this version of RPC, note the following information: 
+*	The constant RPC_C_AUTHN_WINNT has been defined in the header 
+	RPCDCE.H. This constant should be passed as the AuthnSvc parameter
+	to use the NT LAN Manager Security Support Provider (NTLMSSP) service.
+	
+*	When using the RPC_C_AUTHN_WINNT authentication service, the 
+	AuthIdentity parameter should be a pointer to a 
+	SEC_WINNT_AUTH_IDENTITY structure, defined in RPCDCE.H. This 
+	structure contains strings for the user’s domain, username, and
+	password. You can pass a NULL pointer to use the information for
+	the currently logged-in user. 
+
+For MS-DOS, you cannot pass NULL because there is no way for RPC to 
+determine the current user’s logon information. Either a structure or NULL is 
+acceptable, however, for Windows 3.x and Windows NT. 
+ 
+When using authenticated RPC on a system composed of Novell NetWare and 
+Windows 3.x (not Windows for Workgroups), you must run the optional 
+NETBIOS.EXE program before starting Windows.
+
+The 16-bit SDK cannot be installed on a Windows NT computer unless the 
+current user is an administrator.
+
+
+Supported Platforms for Runtime APIs
+
+The following function is supported only by 16-bit Windows 3.x platforms:
+
+RpcWinSetYieldInfo
+
+
+The following functions are supported only by 32-bit Windows NT platforms:
+
+DceErrorInqTest 
+RpcBindingInqAuthClient 
+RpcBindingServerFromClient 
+RpcCancelThread
+RpcEpRegister
+RpcEpUnregister 
+RpcIfIdVectorFree 
+RpcImpersonateClient 
+RpcNetworkInqProtseqs 
+RpcObjectInqType 
+RpcObjectSetInqFn 
+RpcObjectSetType 
+RpcProtseqVectorFree 
+RpcRevertToSelf 
+RpcServerInqBindings 
+RpcServerInqIf 
+RpcServerListen 
+RpcServerRegisterAuthInfo 
+RpcServerRegisterIf 
+RpcServerUnregisterIf 
+RpcServerUse*Protseq* 
+RpcMgmtInqIfIds 
+RpcMgmtInqStats 
+RpcMgmtIsServerListening 
+RpcMgmtInqServerPrincName 
+RpcMgmtSetAuthorizationFn 
+RpcMgmtSetCancelTimeout 
+RpcMgmtSetServerStackSize 
+RpcMgmtStatsVectorFree 
+RpcMgmtStopServerListening 
+RpcMgmtWaitServerListen 
+RpcMgmtEnableIdleCleanup 
+RpcMgmtEpElt* 
+RpcMgmtEpUnregister 
+RpcNsBindingExport 
+RpcNsBindingUnexport 
+RpcTestCancel 
+ 
+All other runtime functions are supported on Windows NT, Windows 3.x, and MS-
+DOS platforms. 
+

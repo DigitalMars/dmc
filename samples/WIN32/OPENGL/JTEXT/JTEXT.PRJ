@@ -1,0 +1,13 @@
+82572
+C:\SC\Samples\WIN32\opengl\jtext\jtext.PRJ
+jtext.OPN
+novcs
+jtext.DEF
+19
+853546116
+0 0 0 0 0 "jtext.c" ""
+0 0 0 0 0 "jtext.DEF" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "advapi32.lib" ""

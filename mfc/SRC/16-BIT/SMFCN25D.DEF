@@ -1,0 +1,124 @@
+; This is a part of the Microsoft Foundation Classes C++ library.
+; Copyright (C) 1992-1993 Microsoft Corporation
+; All rights reserved.
+;
+; This source code is only intended as a supplement to the
+; Microsoft Foundation Classes Reference and Microsoft
+; QuickHelp and/or WinHelp documentation provided with the library.
+; See these sources for detailed information regarding the
+; Microsoft Foundation Classes product.
+
+   LIBRARY SMFCN25D 
+   DESCRIPTION  'SMFCN25D_DLL' 
+EXETYPE      WINDOWS
+
+CODE         LOADONCALL MOVEABLE DISCARDABLE
+DATA         PRELOAD MOVEABLE SINGLE
+
+SEGMENTS
+	_TEXT	PRELOAD MOVEABLE DISCARDABLE
+
+HEAPSIZE     1024
+
+EXPORTS
+	WEP @1 RESIDENTNAME PRIVATE	;; required WEP entry point (uses library WEP)
+
+	??0CAsyncSocket@@REC@XZ @ 257 NONAME
+	??0CSocket@@REC@XZ @ 258 NONAME
+	??0CSocketFile@@REC@PEVCSocket@@H@Z @ 259 NONAME
+	??0CSocketWnd@@REC@XZ @ 260 NONAME
+	??1CAsyncSocket@@VEC@XZ @ 263 NONAME
+	??1CSocket@@VEC@XZ @ 264 NONAME
+	??1CSocketFile@@VEC@XZ @ 265 NONAME
+	??1CSocketWnd@@VEC@XZ @ 266 NONAME
+	?Abort@CSocketFile@@VECXXZ @ 268 NONAME
+	?Accept@CAsyncSocket@@VECHAEV1@PEUsockaddr@@PEH@Z @ 269 NONAME
+	?Accept@CSocket@@VECHAEVCAsyncSocket@@PEUsockaddr@@PEH@Z @ 270 NONAME
+	?AfxSocketInit@@ZAHPEUWSAData@@@Z @ 271 NONAME
+	?AfxSocketTerm@@ZAXXZ @ 272 NONAME
+	?AssertValid@CAsyncSocket@@VFCXXZ @ 273 NONAME
+	?AssertValid@CSocket@@NFCXXZ @ 274 NONAME
+	?AssertValid@CSocketFile@@VFCXXZ @ 275 NONAME
+	?AsyncSelect@CAsyncSocket@@RECHJ@Z @ 276 NONAME
+	?Attach@CAsyncSocket@@RECHIJ@Z @ 277 NONAME
+	?Attach@CSocket@@RECHI@Z @ 278 NONAME
+	?AttachHandle@CAsyncSocket@@TCXIPEV1@H@Z @ 279 NONAME
+	?AuxQueueAdd@CSocket@@LCXIIJ@Z @ 280 NONAME
+	?Bind@CAsyncSocket@@RECHIPFD@Z @ 281 NONAME
+	?Bind@CAsyncSocket@@RECHPFUsockaddr@@H@Z @ 282 NONAME
+	?CancelBlockingCall@CSocket@@RECXXZ @ 283 NONAME
+	?Close@CAsyncSocket@@VECXXZ @ 284 NONAME
+	?Close@CSocket@@VECXXZ @ 285 NONAME
+	?Close@CSocketFile@@VECXXZ @ 286 NONAME
+	?Connect@CAsyncSocket@@RECHPFDI@Z @ 287 NONAME
+	?Connect@CAsyncSocket@@RECHPFUsockaddr@@H@Z @ 288 NONAME
+	?ConnectHelper@CAsyncSocket@@NECHPFUsockaddr@@H@Z @ 289 NONAME
+	?ConnectHelper@CSocket@@NECHPFUsockaddr@@H@Z @ 290 NONAME
+	?Create@CAsyncSocket@@RECHIHJPFD@Z @ 291 NONAME
+	?Create@CSocket@@RECHIHPFD@Z @ 292 NONAME
+	?Detach@CAsyncSocket@@RECIXZ @ 293 NONAME
+	?DetachHandle@CAsyncSocket@@TCXIH@Z @ 294 NONAME
+	?DoCallBack@CAsyncSocket@@TCXIJ@Z @ 295 NONAME
+	?Dump@CAsyncSocket@@VFCXAEVCDumpContext@@@Z @ 296 NONAME
+	?Dump@CSocket@@NFCXAEVCDumpContext@@@Z @ 297 NONAME
+	?Dump@CSocketFile@@VFCXAEVCDumpContext@@@Z @ 298 NONAME
+	?Duplicate@CSocketFile@@VFCPEVCFile@@XZ @ 299 NONAME
+	?Flush@CSocketFile@@VECXXZ @ 300 NONAME
+	?FromHandle@CAsyncSocket@@TCPEV1@I@Z @ 301 NONAME
+	?FromHandle@CSocket@@TCPEV1@I@Z @ 302 NONAME
+	?GetLastError@CAsyncSocket@@TAHXZ @ 303 NONAME
+	?GetLength@CSocketFile@@VFCKXZ @ 304 NONAME
+	?GetMessageMap@CSocketWnd@@NFCPEUAFX_MSGMAP@@XZ @ 305 NONAME
+	?GetPeerName@CAsyncSocket@@RECHAEVCString@@AEI@Z @ 306 NONAME
+	?GetPeerName@CAsyncSocket@@RECHPEUsockaddr@@PEH@Z @ 307 NONAME
+	?GetPosition@CSocketFile@@VFCKXZ @ 308 NONAME
+	?GetRuntimeClass@CAsyncSocket@@VFCPEUCRuntimeClass@@XZ @ 309 NONAME
+	?GetRuntimeClass@CSocket@@VFCPEUCRuntimeClass@@XZ @ 310 NONAME
+	?GetRuntimeClass@CSocketFile@@VFCPEUCRuntimeClass@@XZ @ 311 NONAME
+	?GetSockName@CAsyncSocket@@RECHAEVCString@@AEI@Z @ 312 NONAME
+	?GetSockName@CAsyncSocket@@RECHPEUsockaddr@@PEH@Z @ 313 NONAME
+	?GetSockOpt@CAsyncSocket@@RECHHPEXPEHH@Z @ 314 NONAME
+	?IOCtl@CAsyncSocket@@RECHJPEK@Z @ 315 NONAME
+	?IsBlocking@CSocket@@RECHXZ @ 316 NONAME
+	?KillSocket@CAsyncSocket@@TCXIPEV1@@Z @ 317 NONAME
+	?Listen@CAsyncSocket@@RECHH@Z @ 318 NONAME
+	?LockRange@CSocketFile@@VECXKK@Z @ 319 NONAME
+	?LookupHandle@CAsyncSocket@@TCPEV1@IH@Z @ 320 NONAME
+	?OnAccept@CAsyncSocket@@NECXH@Z @ 321 NONAME
+	?OnClose@CAsyncSocket@@NECXH@Z @ 322 NONAME
+	?OnConnect@CAsyncSocket@@NECXH@Z @ 323 NONAME
+	?OnMessagePending@CSocket@@NECHXZ @ 324 NONAME
+	?OnOutOfBandData@CAsyncSocket@@NECXH@Z @ 325 NONAME
+	?OnReceive@CAsyncSocket@@NECXH@Z @ 326 NONAME
+	?OnSend@CAsyncSocket@@NECXH@Z @ 327 NONAME
+	?OnSocketDead@CSocketWnd@@JECJIJ@Z @ 328 NONAME
+	?OnSocketNotify@CSocketWnd@@JECJIJ@Z @ 329 NONAME
+	?Open@CSocketFile@@VECHPFDIPEVCFileException@@@Z @ 330 NONAME
+	?ProcessAuxQueue@CSocket@@TCHXZ @ 331 NONAME
+	?PumpMessages@CSocket@@NECHI@Z @ 332 NONAME
+	?Read@CSocketFile@@VECIPEXI@Z @ 333 NONAME
+	?Receive@CAsyncSocket@@VECHPEXHH@Z @ 334 NONAME
+	?Receive@CSocket@@VECHPEXHH@Z @ 335 NONAME
+	?ReceiveFrom@CAsyncSocket@@RECHPEXHAEVCString@@AEIH@Z @ 336 NONAME
+	?ReceiveFrom@CAsyncSocket@@RECHPEXHPEUsockaddr@@PEHH@Z @ 337 NONAME
+	?ReceiveFromHelper@CAsyncSocket@@NECHPEXHPEUsockaddr@@PEHH@Z @ 338 NONAME
+	?ReceiveFromHelper@CSocket@@NECHPEXHPEUsockaddr@@PEHH@Z @ 339 NONAME
+	?Seek@CSocketFile@@VECJJI@Z @ 340 NONAME
+	?Send@CAsyncSocket@@VECHPFXHH@Z @ 341 NONAME
+	?Send@CSocket@@VECHPFXHH@Z @ 342 NONAME
+	?SendChunk@CSocket@@RECHPFXHH@Z @ 343 NONAME
+	?SendTo@CAsyncSocket@@RECHPFXHIPFDH@Z @ 344 NONAME
+	?SendTo@CAsyncSocket@@RECHPFXHPFUsockaddr@@HH@Z @ 345 NONAME
+	?SendToHelper@CAsyncSocket@@NECHPFXHPFUsockaddr@@HH@Z @ 346 NONAME
+	?SendToHelper@CSocket@@NECHPFXHPFUsockaddr@@HH@Z @ 347 NONAME
+	?Serialize@CObject@@VECXAEVCArchive@@@Z @ 348 NONAME
+	?SetLength@CSocketFile@@VECXK@Z @ 349 NONAME
+	?SetSockOpt@CAsyncSocket@@RECHHPFXHH@Z @ 350 NONAME
+	?ShutDown@CAsyncSocket@@RECHH@Z @ 351 NONAME
+	?Socket@CAsyncSocket@@RECHHJHH@Z @ 352 NONAME
+	?UnlockRange@CSocketFile@@VECXKK@Z @ 353 NONAME
+	?Write@CSocketFile@@VECXPFXI@Z @ 354 NONAME
+	?classCAsyncSocket@CAsyncSocket@@2UCRuntimeClass@@E @ 355 NONAME
+	?classCSocket@CSocket@@2UCRuntimeClass@@E @ 356 NONAME
+	?classCSocketFile@CSocketFile@@2UCRuntimeClass@@E @ 357 NONAME
+	?messageMap@CSocketWnd@@1UAFX_MSGMAP@@E @ 358 NONAME

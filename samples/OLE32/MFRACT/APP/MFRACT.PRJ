@@ -1,0 +1,26 @@
+82572
+C:\SC\samples\ole32\MFRACT\APP\MFRACT.PRJ
+MFRACT.OPN
+novcs
+fractal.def
+2
+812035224
+0 0 0 0 0 "fractal.def" ""
+0 0 0 0 0 "dib.c" ""
+0 0 0 0 0 "about.cxx" ""
+0 0 0 0 0 "chngdim.cxx" ""
+0 0 0 0 0 "engnlist.cxx" ""
+0 0 0 0 0 "fclass.cxx" ""
+0 0 0 0 0 "fractal.cxx" ""
+0 0 0 0 0 "fractal.rc" ""
+0 0 0 0 0 "fguids.lib" ""
+0 0 0 0 0 "julia.lib" ""
+0 0 0 0 0 "mandel.lib" ""
+0 0 0 0 0 "plasma.lib" ""
+0 0 0 0 0 "quad.lib" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "rgen.lib" ""
+0 0 0 0 0 "winhlprs.lib" ""
+0 0 0 0 0 "..\idl\fguids.prj" ""
+0 0 0 0 0 "..\engines\engines.prj" ""

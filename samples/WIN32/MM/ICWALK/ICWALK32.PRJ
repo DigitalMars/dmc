@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\MM\ICWALK\ICWALK32.PRJ
+ICWALK32.OPN
+novcs
+icwalk32.def
+16
+812035224
+0 0 0 0 0 "icwalk32.def" ""
+0 0 0 0 0 "icwalk.c" ""
+0 0 0 0 0 "icwalk.rc" ""
+0 0 0 0 0 "vfw32.lib" ""
+0 0 0 0 0 "winmm.lib" ""

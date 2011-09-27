@@ -1,0 +1,30 @@
+//==========================================================================;
+//
+//  icwalk.dlg
+//
+//==========================================================================;
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1992 - 1995	Microsoft Corporation.	All Rights Reserved.
+ * 
+ **************************************************************************/
+
+#define ID_LISTBOX 42
+
+#ifdef RC_INVOKED
+
+ICWalkDialog DIALOG 35, 25, 400, 163
+
+STYLE DS_NOIDLEMSG | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "ICWalk"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX ID_LISTBOX, 5, 5, 390, 150, LBS_NOINTEGRALHEIGHT | LBS_USETABSTOPS| LBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+#endif

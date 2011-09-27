@@ -1,0 +1,16 @@
+..\stripper stripper.dfn < ..\precomp.c > precomp.c
+..\stripper stripper.dfn < ..\main.c > main.c
+..\stripper stripper.dfn < ..\memmgr.c > memmgr.c
+..\stripper stripper.dfn < ..\status.c > status.c
+..\stripper stripper.dfn < ..\frametls.c > frametls.c
+..\stripper stripper.dfn < ..\dialogs.c > dialogs.c
+..\stripper stripper.dfn < ..\debug.c > debug.c
+..\stripper stripper.dfn < ..\debug2.c > debug2.c
+..\stripper stripper.dfn < ..\outlapp.c > outlapp.c
+..\stripper stripper.dfn < ..\outldoc.c > outldoc.c
+..\stripper stripper.dfn < ..\heading.c > heading.c
+..\stripper stripper.dfn < ..\outllist.c > outllist.c
+..\stripper stripper.dfn < ..\outlline.c > outlline.c
+..\stripper stripper.dfn < ..\outltxtl.c > outltxtl.c
+..\stripper stripper.dfn < ..\outlntbl.c > outlntbl.c
+..\stripper stripper.dfn < ..\outlname.c > outlname.c

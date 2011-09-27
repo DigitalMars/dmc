@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\RPC\NS\NHELLO\NHELLOS.PRJ
+NHELLOS.OPN
+novcs
+nhellos.DEF
+4
+812035224
+0 0 0 0 0 "nhello_s.c" ""
+0 0 0 0 0 "nhellop.c" ""
+0 0 0 0 0 "nhellos.c" ""
+0 0 0 0 0 "rpcns4.lib" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "nhellos.def" ""

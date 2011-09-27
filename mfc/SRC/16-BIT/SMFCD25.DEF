@@ -1,0 +1,150 @@
+; This is a part of the Microsoft Foundation Classes C++ library.
+; Copyright (C) 1992-1993 Microsoft Corporation
+; All rights reserved.
+;
+; This source code is only intended as a supplement to the
+; Microsoft Foundation Classes Reference and Microsoft
+; QuickHelp and/or WinHelp documentation provided with the library.
+; See these sources for detailed information regarding the
+; Microsoft Foundation Classes product.
+
+   LIBRARY SMFCD25 
+   DESCRIPTION  'SMFCD25_DLL' 
+EXETYPE      WINDOWS
+
+CODE         LOADONCALL MOVEABLE DISCARDABLE
+DATA         PRELOAD MOVEABLE SINGLE
+
+SEGMENTS
+	_TEXT	PRELOAD MOVEABLE DISCARDABLE
+
+HEAPSIZE     1024
+
+EXPORTS
+	WEP @1 RESIDENTNAME PRIVATE	;; required WEP entry point (uses library WEP)
+
+	??0CDBException@@REC@F@Z @ 256 NONAME
+	??0CDatabase@@REC@XZ @ 257 NONAME
+	??0CFieldExchange@@REC@IPEVCRecordset@@PEX@Z @ 258 NONAME
+	??0CLongBinary@@REC@XZ @ 259 NONAME
+	??0CRecordView@@JEC@I@Z @ 260 NONAME
+	??0CRecordView@@JEC@PFD@Z @ 261 NONAME
+	??0CRecordset@@JEC@PEVCDatabase@@@Z @ 262 NONAME
+	??1CDBException@@VEC@XZ @ 264 NONAME
+	??1CDatabase@@VEC@XZ @ 265 NONAME
+	??1CLongBinary@@VEC@XZ @ 266 NONAME
+	??1CRecordView@@VEC@XZ @ 267 NONAME
+	??1CRecordset@@VEC@XZ @ 268 NONAME
+;REMOVED	??8CTime@@RFCHV0@@Z @ 269 NONAME
+	?AddNew@CRecordset@@RECXXZ @ 271 NONAME
+	?AfxThrowDBException@@ZCXFPEVCDatabase@@PEX@Z @ 272 NONAME
+	?AllocConnect@CDatabase@@JECXXZ @ 273 NONAME
+	?AllocFlags@CRecordset@@RECXXZ @ 274 NONAME
+	?AppendNames@CRecordset@@RECIPEVCString@@PFD@Z @ 275 NONAME
+	?AppendNamesValues@CRecordset@@RECIPEXPEVCString@@PFD@Z @ 276 NONAME
+	?AppendValues@CRecordset@@RECIPEXPEVCString@@PFD@Z @ 277 NONAME
+	?BeginTrans@CDatabase@@RECHXZ @ 278 NONAME
+	?BindFieldsToColumns@CRecordset@@RECIXZ @ 279 NONAME
+	?BindParams@CRecordset@@RECIPEX@Z @ 280 NONAME
+	?BuildErrorString@CDBException@@RECXPEVCDatabase@@PEX@Z @ 281 NONAME
+	?BuildTableQuery@CRecordset@@JECXXZ @ 282 NONAME
+	?Cancel@CDatabase@@RECXXZ @ 283 NONAME
+	?Cancel@CRecordset@@RECXXZ @ 284 NONAME
+	?Check@CDatabase@@VFCHF@Z @ 285 NONAME
+	?Check@CRecordset@@VFCHF@Z @ 286 NONAME
+	?ClearFieldFlags@CRecordset@@RECXIEI@Z @ 287 NONAME
+	?Close@CDatabase@@VECXXZ @ 288 NONAME
+	?Close@CRecordset@@VECXXZ @ 289 NONAME
+	?CommitTrans@CDatabase@@RECHXZ @ 290 NONAME
+	?DDX_FieldCBString@@ZCXPEVCDataExchange@@HAEVCString@@PEVCRecordset@@@Z @ 291 NONAME
+	?DDX_FieldCBStringExact@@ZCXPEVCDataExchange@@HAEVCString@@PEVCRecordset@@@Z @ 292 NONAME
+	?DDX_FieldCheck@@ZCXPEVCDataExchange@@HAEHPEVCRecordset@@@Z @ 293 NONAME
+	?DDX_FieldLBString@@ZCXPEVCDataExchange@@HAEVCString@@PEVCRecordset@@@Z @ 294 NONAME
+	?DDX_FieldLBStringExact@@ZCXPEVCDataExchange@@HAEVCString@@PEVCRecordset@@@Z @ 295 NONAME
+	?DDX_FieldRadio@@ZCXPEVCDataExchange@@HAEHPEVCRecordset@@@Z @ 296 NONAME
+	?DDX_FieldText@@ZCXPEVCDataExchange@@HAEEPEVCRecordset@@@Z @ 297 NONAME
+	?DDX_FieldText@@ZCXPEVCDataExchange@@HAEHPEVCRecordset@@@Z @ 298 NONAME
+	?DDX_FieldText@@ZCXPEVCDataExchange@@HAEIPEVCRecordset@@@Z @ 299 NONAME
+	?DDX_FieldText@@ZCXPEVCDataExchange@@HAEJPEVCRecordset@@@Z @ 300 NONAME
+	?DDX_FieldText@@ZCXPEVCDataExchange@@HAEKPEVCRecordset@@@Z @ 301 NONAME
+	?DDX_FieldText@@ZCXPEVCDataExchange@@HAEMPEVCRecordset@@@Z @ 302 NONAME
+	?DDX_FieldText@@ZCXPEVCDataExchange@@HAENPEVCRecordset@@@Z @ 303 NONAME
+	?DDX_FieldText@@ZCXPEVCDataExchange@@HAEVCString@@PEVCRecordset@@@Z @ 304 NONAME
+	?Default@CFieldExchange@@RECXPFDPEXPEJHII@Z @ 305 NONAME
+	?Delete@CRecordset@@RECXXZ @ 306 NONAME
+	?DoDataExchange@CWnd@@NECXPEVCDataExchange@@@Z @ 307 NONAME
+	?Edit@CRecordset@@RECXXZ @ 308 NONAME
+	?Empty@CDBException@@RECXXZ @ 309 NONAME
+	?ExecuteSQL@CDatabase@@RECHPFD@Z @ 310 NONAME
+	?Fixups@CRecordset@@RECXXZ @ 311 NONAME
+	?Free@CDatabase@@JECXXZ @ 312 NONAME
+	?GetColumnType@CFieldExchange@@RECHHPEIPEH1@Z @ 313 NONAME
+	?GetDatabaseName@CDatabase@@RFC?EVCString@@XZ @ 314 NONAME
+	?GetDefaultConnect@CRecordset@@VEC?EVCString@@XZ @ 315 NONAME
+	?GetFieldFlags@CRecordset@@RECEII@Z @ 316 NONAME
+	?GetFieldInfo@CRecordset@@RECHIPEUCFieldInfo@@@Z @ 317 NONAME
+	?GetFieldInfo@CRecordset@@RECHPEXPEUCFieldInfo@@@Z @ 318 NONAME
+	?GetFieldLength@CRecordset@@RECPEJPEVCFieldExchange@@@Z @ 319 NONAME
+	?GetMessageMap@CRecordView@@NFCPEUAFX_MSGMAP@@XZ @ 320 NONAME
+	?GetRuntimeClass@CDBException@@VFCPEUCRuntimeClass@@XZ @ 321 NONAME
+	?GetRuntimeClass@CDatabase@@VFCPEUCRuntimeClass@@XZ @ 322 NONAME
+	?GetRuntimeClass@CLongBinary@@VFCPEUCRuntimeClass@@XZ @ 323 NONAME
+	?GetRuntimeClass@CRecordView@@VFCPEUCRuntimeClass@@XZ @ 324 NONAME
+	?GetRuntimeClass@CRecordset@@VFCPEUCRuntimeClass@@XZ @ 325 NONAME
+	?InWaitForDataSource@CDatabase@@TCHXZ @ 326 NONAME
+	?InitRecord@CRecordset@@RECXXZ @ 327 NONAME
+	?IsFieldDirty@CRecordset@@RECHPEX@Z @ 328 NONAME
+	?IsFieldNull@CRecordset@@RECHPEX@Z @ 329 NONAME
+	?IsFieldNullable@CRecordset@@RECHPEX@Z @ 330 NONAME
+	?IsFieldType@CFieldExchange@@RECHPEI@Z @ 331 NONAME
+	?IsOnFirstRecord@CRecordView@@RECHXZ @ 332 NONAME
+	?IsOnLastRecord@CRecordView@@RECHXZ @ 333 NONAME
+	?LoadFields@CRecordset@@RECXXZ @ 334 NONAME
+	?MarkForAddNew@CRecordset@@RECXXZ @ 335 NONAME
+	?MarkForUpdate@CRecordset@@RECXXZ @ 336 NONAME
+	?Move@CRecordset@@VECXJ@Z @ 337 NONAME
+	?OnInitialUpdate@CRecordView@@VECXXZ @ 338 NONAME
+	?OnMove@CRecordView@@VECHI@Z @ 339 NONAME
+	?OnSetOptions@CDatabase@@VECXPEX@Z @ 340 NONAME
+	?OnSetOptions@CRecordset@@VECXPEX@Z @ 341 NONAME
+	?OnUpdateRecordFirst@CRecordView@@JECXPEVCCmdUI@@@Z @ 342 NONAME
+	?OnUpdateRecordLast@CRecordView@@JECXPEVCCmdUI@@@Z @ 343 NONAME
+	?OnUpdateRecordNext@CRecordView@@JECXPEVCCmdUI@@@Z @ 344 NONAME
+	?OnUpdateRecordPrev@CRecordView@@JECXPEVCCmdUI@@@Z @ 345 NONAME
+	?OnWaitForDataSource@CDatabase@@VECXH@Z @ 346 NONAME
+	?OnWaitForDataSource@CRecordset@@VECXH@Z @ 347 NONAME
+	?Open@CDatabase@@VECHPFDHH0@Z @ 348 NONAME
+	?Open@CRecordset@@VECHIPFDK@Z @ 349 NONAME
+	?PreBindFields@CRecordset@@VECXXZ @ 350 NONAME
+	?QuoteName@CDatabase@@REC?EVCString@@PFD@Z @ 351 NONAME
+	?RFX_Binary@@ZCXPEVCFieldExchange@@PFDAEVCByteArray@@H@Z @ 352 NONAME
+	?RFX_Bool@@ZCXPEVCFieldExchange@@PFDAEH@Z @ 353 NONAME
+	?RFX_Byte@@ZCXPEVCFieldExchange@@PFDAEE@Z @ 354 NONAME
+	?RFX_Date@@ZCXPEVCFieldExchange@@PFDAEVCTime@@@Z @ 355 NONAME
+	?RFX_Double@@ZCXPEVCFieldExchange@@PFDAEN@Z @ 356 NONAME
+	?RFX_Int@@ZCXPEVCFieldExchange@@PFDAEH@Z @ 357 NONAME
+	?RFX_Long@@ZCXPEVCFieldExchange@@PFDAEJ@Z @ 358 NONAME
+	?RFX_LongBinary@@ZCXPEVCFieldExchange@@PFDAEVCLongBinary@@@Z @ 359 NONAME
+	?RFX_Single@@ZCXPEVCFieldExchange@@PFDAEM@Z @ 360 NONAME
+	?RFX_Text@@ZCXPEVCFieldExchange@@PFDAEVCString@@HH@Z @ 361 NONAME
+	?ReleaseCopyBuffer@CRecordset@@JECXXZ @ 362 NONAME
+	?Requery@CRecordset@@VECHXZ @ 363 NONAME
+	?Rollback@CDatabase@@RECHXZ @ 364 NONAME
+	?Serialize@CObject@@VECXAEVCArchive@@@Z @ 365 NONAME
+	?SetFieldDirty@CRecordset@@RECXPEXH@Z @ 366 NONAME
+	?SetFieldFlags@CRecordset@@RECXIEI@Z @ 367 NONAME
+	?SetFieldNull@CRecordset@@RECXPEXH@Z @ 368 NONAME
+	?SetLockingMode@CRecordset@@RECXI@Z @ 369 NONAME
+	?StoreFields@CRecordset@@RECXXZ @ 370 NONAME
+	?UnboundFieldInfo@CRecordset@@RECHIPEUCFieldInfo@@@Z @ 371 NONAME
+	?Update@CRecordset@@RECHXZ @ 372 NONAME
+	?UpdateInsertDelete@CRecordset@@JECHXZ @ 373 NONAME
+	?classCDBException@CDBException@@2UCRuntimeClass@@E @ 374 NONAME
+	?classCDatabase@CDatabase@@2UCRuntimeClass@@E @ 375 NONAME
+	?classCLongBinary@CLongBinary@@2UCRuntimeClass@@E @ 376 NONAME
+	?classCRecordView@CRecordView@@2UCRuntimeClass@@E @ 377 NONAME
+	?classCRecordset@CRecordset@@2UCRuntimeClass@@E @ 378 NONAME
+;REMOVED	?henvAllConnections@CDatabase@@1PEXE @ 379 NONAME
+	?messageMap@CRecordView@@1UAFX_MSGMAP@@E @ 380 NONAME
+;REMOVED	?nAllocatedConnections@CDatabase@@1HE @ 381 NONAME
+	?RebindDateParams@CRecordset@@RECXPEX@Z @ 382 NONAME

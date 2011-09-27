@@ -1,0 +1,41 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include <windows.h>
+#include "monkey.h"
+
+MonkeyDlg DIALOG 19, -26, 346, 223
+//LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Registry Monkey Utility"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Key Name", -1, 5, 20, 40, 8
+    EDITTEXT        IDE_NAME, 5, 30, 125, 12, ES_AUTOHSCROLL
+    LTEXT           "Class", -1, 5, 45, 20, 8
+    LTEXT           "ACL", -1, 5, 70, 75, 8
+    EDITTEXT        IDE_CLASS, 5, 55, 125, 12, ES_AUTOHSCROLL
+    EDITTEXT        IDE_ACL, 5, 80, 125, 12, ES_AUTOHSCROLL
+    LTEXT           "Value: Data Type", -1, 5, 175, 65, 8
+    LTEXT           "Value: Data Entry", -1, 5, 198, 65, 8
+    EDITTEXT        IDE_VALUE1, 5, 185, 336, 12, ES_AUTOHSCROLL|ES_READONLY
+    EDITTEXT        IDE_VALUE2, 5, 208, 336, 12, ES_AUTOHSCROLL|ES_READONLY
+    LISTBOX         IDL_LISTBOX, 135, 19, 100, 150, WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDL_LISTBOX2, 240, 19, 100, 150, WS_VSCROLL | WS_TABSTOP
+    LTEXT           "CHILD KEYS:", -1, 162, 165, 45, 8
+    LTEXT           "VALUES:", -1, 265, 165, 30, 8
+    PUSHBUTTON      "Next/Down", IDB_NEXT, 79, 137, 51, 14
+    PUSHBUTTON      "Back/Up", IDB_BACK, 79, 118, 51, 14
+    EDITTEXT        IDE_CVALUES, 296, 165, 31, 12, ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+    EDITTEXT        IDE_TEXTOUT, 5, 3, 341, 12, ES_READONLY | NOT WS_BORDER
+END

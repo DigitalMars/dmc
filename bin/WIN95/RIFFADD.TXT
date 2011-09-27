@@ -1,0 +1,66 @@
+RIFFADD:
+========
+
+This is an utility that can be used to add text information 
+or Bitmaps to RIFF files.
+
+Features:
+---------
+Riffadd has both an interactive and batch mode. Riffadd works
+only on Windows 95 now. It can be used to set text into DISP
+and all known INFO chunks, and Bitmaps into DISP chunks. The 
+user needs to specify an input and an output file (and an optional
+script file for the batch mode). Riffadd adds/replaces info 
+in the input file and writes to the output file. Riffadd can
+handle text with extended characters or DBCS characters.
+
+Command Line:
+-------------
+(1) Riffadd //prompts you for the Input and output files before 
+	    //showing the UI
+
+(2) Riffadd <input file> <output file>
+
+(3) Riffadd /b <script file> //you will be prompted for other files
+
+(4) Riffadd /b <script file> <input file> <output file>
+
+Batch mode:
+-----------
+The batch mode uses a script file like the one shown below.
+TEST.SCR is a sample script file.
+
+For INFO chunks the format is
+
+<Chunk type>=<<STRING:>/<FILE:>>,<<TEXT>/<File name>>
+
+For DISP chunks use DISP_DIB or DISP_TEXT depending
+on if you want CF_DIB or CF_TEXT to be the format of the
+DISP chunk.
+
+Script file processing uses Profile String API's. So
+the script has to be in the [RIFFADD] section. Use 
+"\r\n" to force a line break in the text.
+
+
+[RIFFADD]
+ISBJ=STRING,"This is the Subject, dude"
+DISP_TEXT=FILE,e:\motown\riffadd\tmp\t1.txt
+ITCH=STRING,"Who cares who the technician is"
+ICMT=STRING,"This is the first line\r\nand this is next line"
+DISP_DIB=FILE,e:\motown\riffadd\tmp\s1.dib
+ICMS=FILE,e:\motown\riffadd\tmp\t2.txt
+IPLT=STRING,"Screw the palette"
+
+Notes:
+------
+(1) The maximum length of text is 512 bytes (not chars).
+(2) When entering text in the edit window of the UI, if you
+	need line breaks, use Ctrl+Return. If you just hit
+	return the Prop. Sheet code eats the Return.
+(3) We don't yet support other types of data (eg. Icons, Small
+	Icons, etc).
+(4) While the input and output files may have relative or absolute
+pathnames, the script file must have the absolute path name unless it is
+in the Windows directory.
+

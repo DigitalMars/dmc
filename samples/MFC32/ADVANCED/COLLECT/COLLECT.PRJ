@@ -1,0 +1,22 @@
+82570
+c:\SamplesMFC32\ADVANCED\COLLECT\collect.prj
+collect.OPN
+novcs
+collect.DEF
+16
+834106324
+0 0 0 0 0 "collect.cpp" ""
+0 0 0 0 0 "colledoc.cpp" ""
+0 0 0 0 0 "collevw.cpp" ""
+0 0 0 0 0 "dwarryvw.cpp" ""
+0 0 0 0 0 "intlstvw.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "mapdwvw.cpp" ""
+0 0 0 0 0 "mapssvw.cpp" ""
+0 0 0 0 0 "ptarryvw.cpp" ""
+0 0 0 0 0 "strlstvw.cpp" ""
+0 0 0 0 0 "typaryvw.cpp" ""
+0 0 0 0 0 "typlstvw.cpp" ""
+0 0 0 0 0 "typtrmap.cpp" ""
+0 0 0 0 0 "collect.DEF" ""
+0 0 0 0 0 "collect.rc" ""

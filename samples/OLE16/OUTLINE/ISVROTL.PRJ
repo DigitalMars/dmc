@@ -1,0 +1,40 @@
+82572
+C:\SC\samples\ole16\OUTLINE\ISVROTL.PRJ
+ISVROTL.OPN
+novcs
+isvrotl.def
+0
+812035224
+0 0 0 0 0 "isvrotl.def" ""
+0 0 0 0 0 "isvrotl.rc" ""
+0 0 0 0 0 "classfac.c" ""
+0 0 0 0 0 "clipbrd.c" ""
+0 0 0 0 0 "debug.c" ""
+0 0 0 0 0 "debug2.c" ""
+0 0 0 0 0 "dialogs.c" ""
+0 0 0 0 0 "dragdrop.c" ""
+0 0 0 0 0 "frametls.c" ""
+0 0 0 0 0 "heading.c" ""
+0 0 0 0 0 "linking.c" ""
+0 0 0 0 0 "main.c" ""
+0 0 0 0 0 "memmgr.c" ""
+0 0 0 0 0 "oleapp.c" ""
+0 0 0 0 0 "oledoc.c" ""
+0 0 0 0 0 "outlapp.c" ""
+0 0 0 0 0 "outldoc.c" ""
+0 0 0 0 0 "outlline.c" ""
+0 0 0 0 0 "outllist.c" ""
+0 0 0 0 0 "outlname.c" ""
+0 0 0 0 0 "outlntbl.c" ""
+0 0 0 0 0 "outltxtl.c" ""
+0 0 0 0 0 "precomp.c" ""
+0 0 0 0 0 "status.c" ""
+0 0 0 0 0 "svrbase.c" ""
+0 0 0 0 0 "svrinpl.c" ""
+0 0 0 0 0 "svrpsobj.c" ""
+0 0 0 0 0 "bttncur.lib" ""
+0 0 0 0 0 "ctl3d.lib" ""
+0 0 0 0 0 "gizmobar.lib" ""
+0 0 0 0 0 "outlui.lib" ""
+0 0 0 0 0 "..\ole2ui\outlui.prj" ""
+0 0 0 0 0 "..\gizmobar\gizmobar.prj" ""

@@ -1,0 +1,54 @@
+# makefile - Handy makefile for command-line use
+#
+# Usage:
+#   nmake [options] [all|clean]
+#
+# Options:
+#   DEBUG=0     Build retail version
+#   DEBUG=1     Build debug version (default)
+#   STATIC=0    Build against static MFC libraries
+#   STATIC=1    Build against shared MFC libraries
+
+# This is a part of the Microsoft Foundation Classes C++ library.
+# Copyright (C) 1992-1995 Microsoft Corporation
+# All rights reserved.
+#
+# This source code is only intended as a supplement to the
+# Microsoft Foundation Classes Reference and related
+# electronic documentation provided with the library.
+# See these sources for detailed information regarding the
+# Microsoft Foundation Classes product.
+
+!ifndef STATIC
+STATIC=0
+!endif
+
+!ifndef DEBUG
+DEBUG=1
+!endif
+
+!if "$(STATIC)" == "1"
+!if "$(DEBUG)" == "1"
+all:
+        nmake -f Tear.mak CFG="Tear - Win32 Static Debug"
+clean:
+        @-if exist UniDebug\*.* echo y | erase SDebug\*.*
+!else
+all:
+        nmake -f Tear.mak CFG="Tear - Win32 Static Release"
+clean:
+        @-if exist UniRelease\*.* echo y | erase SRelease\*.*
+!endif
+!else
+!if "$(DEBUG)" == "1"
+all:
+        nmake -f Tear.mak CFG="Tear - Win32 Debug"
+clean:
+	@-if exist Debug\*.* echo y | erase Debug\*.*
+!else
+all:
+        nmake -f Tear.mak CFG="Tear - Win32 Release"
+clean:
+	@-if exist Release\*.* echo y | erase Release\*.*
+!endif
+!endif

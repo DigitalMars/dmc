@@ -1,0 +1,300 @@
+[Source Media Descriptions]
+"1", "ODBC Network Setup", "setup.exe", "."
+
+[ODBC Drivers]
+"Microsoft Text Driver (*.txt; *.csv)"=
+"Microsoft Paradox Driver (*.db )"=
+"Microsoft Excel Driver (*.xls)"=
+"Microsoft dBase Driver (*.dbf)"=
+"Microsoft Btrieve Driver (file.ddf)"=
+"Microsoft FoxPro Driver (*.dbf)"=
+"Microsoft Access Driver (*.mdb)"=
+"SQL Server" =
+"Oracle" =
+"Oracle7" =
+
+[Microsoft Access Driver (*.mdb)]
+"vbajet.dll" = 1, vbajet.dll,,,, 1994-11-18,,,,,,,,,, 1984,,,, 2.0.0.2420,
+"stdole.tlb" = 1, stdole.tlb,,,, 1994-11-18,,,,,,,,, SHARED, 4304,,,,,
+"ole2.reg" = 1, ole2.reg,,,, 1994-11-18,,,,,,,,, SHARED, 27026,,,,,
+"Error" = 1, msjeterr.dll,,,, 1994-11-18,,,,,,,,,, 11232,,,, 2.50.0.1111,
+"Internat" = 1, msjetint.dll,,,, 1994-11-18,,,,,,,,,, 15936,,,, 2.50.0.1111,
+"ole2prox.dll" = 1, ole2prox.dll,,,, 1994-11-18,,,,,,,,, SHARED, 51712,,,, 2.2.120.122,
+"vaen2.olb" = 1, vaen2.olb,,,, 1994-11-18,,,,,,,,, SHARED, 41124,,,, 2.0.0.2430,
+"ole2conv.dll" = 1, ole2conv.dll,,,, 1994-11-18,,,,,,,,, SHARED, 57328,,,, 2.1.0.1,
+"Tools" = 1, odbctl16.dll,,,, 1994-11-18,,,,,,,,,, 64080,,,, 1.0.23.9,
+"compobj.dll" = 1, compobj.dll,,,, 1994-11-18,,,,,,,,, SHARED, 108544,,,, 2.2.120.123,
+"ole2nls.dll" = 1, ole2nls.dll,,,, 1994-11-18,,,,,,,,, SHARED, 150976,,,, 2.2.3002.1,
+"Changes" = 1, odbcjtnw.hlp,,,, 1994-11-18,,,,,,,,,, 83833,,,,,
+"ole2disp.dll" = 1, ole2disp.dll,,,, 1994-11-18,,,,,,,,, SHARED, 164832,,,, 2.2.3002.1,
+"storage.dll" = 1, storage.dll,,,, 1994-11-18,,,,,,,,, SHARED, 157696,,,, 2.2.120.120,
+"Help" = 1, odbcjet.hlp,,,, 1994-11-18,,,,,,,,,, 113064,,,,,
+"typelib.dll" = 1, typelib.dll,,,, 1994-11-18,,,,,,,,, SHARED, 177216,,,, 2.2.3002.0,
+"Driver" = 1, odbcjt16.dll,,,, 1994-11-18,,,,,,,,,, 246928,,,, 2.0.23.17,
+"ole2.dll" = 1, ole2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 302592,,,, 2.2.120.122,
+"vbar2.dll" = 1, vbar2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 298880,,,, 2.0.0.2420,
+"Engine" = 1, msajt200.dll,,,, 1994-11-18,,,,,,,,,, 995056,,,, 2.50.0.1117,
+"Setup" = 1, odbcjt16.dll,,,, 1994-11-18,,,,,,,,,, 246928,,,, 2.0.23.17,
+
+[Microsoft dBase Driver (*.dbf)]
+"Setup" = 1, oddbse16.dll,,,, 1994-11-18,,,,,,,,,, 4080,,,, 2.0.23.1,
+"IISAM" = 1, xbs200.dll,,,, 1994-11-18,,,,,,,,,, 296832,,,, 2.50.0.1117,
+"vbajet.dll" = 1, vbajet.dll,,,, 1994-11-18,,,,,,,,,, 1984,,,, 2.0.0.2420,
+"stdole.tlb" = 1, stdole.tlb,,,, 1994-11-18,,,,,,,,, SHARED, 4304,,,,,
+"ole2.reg" = 1, ole2.reg,,,, 1994-11-18,,,,,,,,, SHARED, 27026,,,,,
+"ole2.dll" = 1, ole2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 302592,,,, 2.2.120.122,
+"ole2nls.dll" = 1, ole2nls.dll,,,, 1994-11-18,,,,,,,,, SHARED, 150976,,,, 2.2.3002.1,
+"ole2disp.dll" = 1, ole2disp.dll,,,, 1994-11-18,,,,,,,,, SHARED, 164832,,,, 2.2.3002.1,
+"ole2conv.dll" = 1, ole2conv.dll,,,, 1994-11-18,,,,,,,,, SHARED, 57328,,,, 2.1.0.1,
+"ole2prox.dll" = 1, ole2prox.dll,,,, 1994-11-18,,,,,,,,, SHARED, 51712,,,, 2.2.120.122,
+"compobj.dll" = 1, compobj.dll,,,, 1994-11-18,,,,,,,,, SHARED, 108544,,,, 2.2.120.123,
+"storage.dll" = 1, storage.dll,,,, 1994-11-18,,,,,,,,, SHARED, 157696,,,, 2.2.120.120,
+"vaen2.olb" = 1, vaen2.olb,,,, 1994-11-18,,,,,,,,, SHARED, 41124,,,, 2.0.0.2430,
+"typelib.dll" = 1, typelib.dll,,,, 1994-11-18,,,,,,,,, SHARED, 177216,,,, 2.2.3002.0,
+"vbar2.dll" = 1, vbar2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 298880,,,, 2.0.0.2420,
+"Error" = 1, msjeterr.dll,,,, 1994-11-18,,,,,,,,,, 11232,,,, 2.50.0.1111,
+"Internat" = 1, msjetint.dll,,,, 1994-11-18,,,,,,,,,, 15936,,,, 2.50.0.1111,
+"Tools" = 1, odbctl16.dll,,,, 1994-11-18,,,,,,,,,, 64080,,,, 1.0.23.9,
+"Changes" = 1, odbcjtnw.hlp,,,, 1994-11-18,,,,,,,,,, 83833,,,,,
+"Help" = 1, odbcjet.hlp,,,, 1994-11-18,,,,,,,,,, 113064,,,,,
+"Driver" = 1, odbcjt16.dll,,,, 1994-11-18,,,,,,,,,, 246928,,,, 2.0.23.17,
+"Engine" = 1, msajt200.dll,,,, 1994-11-18,,,,,,,,,, 995056,,,, 2.50.0.1117,
+
+[Microsoft Paradox Driver (*.db )]
+"Setup" = 1, odpdx16.dll,,,, 1994-11-18,,,,,,,,,, 4096,,,, 2.0.23.1,
+"IISAM" = 1, pdx200.dll,,,, 1994-11-18,,,,,,,,,, 233328,,,, 2.50.0.1117,
+"vbajet.dll" = 1, vbajet.dll,,,, 1994-11-18,,,,,,,,,, 1984,,,, 2.0.0.2420,
+"stdole.tlb" = 1, stdole.tlb,,,, 1994-11-18,,,,,,,,, SHARED, 4304,,,,,
+"ole2.reg" = 1, ole2.reg,,,, 1994-11-18,,,,,,,,, SHARED, 27026,,,,,
+"ole2.dll" = 1, ole2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 302592,,,, 2.2.120.122,
+"ole2nls.dll" = 1, ole2nls.dll,,,, 1994-11-18,,,,,,,,, SHARED, 150976,,,, 2.2.3002.1,
+"ole2disp.dll" = 1, ole2disp.dll,,,, 1994-11-18,,,,,,,,, SHARED, 164832,,,, 2.2.3002.1,
+"ole2conv.dll" = 1, ole2conv.dll,,,, 1994-11-18,,,,,,,,, SHARED, 57328,,,, 2.1.0.1,
+"ole2prox.dll" = 1, ole2prox.dll,,,, 1994-11-18,,,,,,,,, SHARED, 51712,,,, 2.2.120.122,
+"compobj.dll" = 1, compobj.dll,,,, 1994-11-18,,,,,,,,, SHARED, 108544,,,, 2.2.120.123,
+"storage.dll" = 1, storage.dll,,,, 1994-11-18,,,,,,,,, SHARED, 157696,,,, 2.2.120.120,
+"vaen2.olb" = 1, vaen2.olb,,,, 1994-11-18,,,,,,,,, SHARED, 41124,,,, 2.0.0.2430,
+"typelib.dll" = 1, typelib.dll,,,, 1994-11-18,,,,,,,,, SHARED, 177216,,,, 2.2.3002.0,
+"vbar2.dll" = 1, vbar2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 298880,,,, 2.0.0.2420,
+"Error" = 1, msjeterr.dll,,,, 1994-11-18,,,,,,,,,, 11232,,,, 2.50.0.1111,
+"Internat" = 1, msjetint.dll,,,, 1994-11-18,,,,,,,,,, 15936,,,, 2.50.0.1111,
+"Tools" = 1, odbctl16.dll,,,, 1994-11-18,,,,,,,,,, 64080,,,, 1.0.23.9,
+"Changes" = 1, odbcjtnw.hlp,,,, 1994-11-18,,,,,,,,,, 83833,,,,,
+"Help" = 1, odbcjet.hlp,,,, 1994-11-18,,,,,,,,,, 113064,,,,,
+"Driver" = 1, odbcjt16.dll,,,, 1994-11-18,,,,,,,,,, 246928,,,, 2.0.23.17,
+"Engine" = 1, msajt200.dll,,,, 1994-11-18,,,,,,,,,, 995056,,,, 2.50.0.1117,
+
+[Microsoft Excel Driver (*.xls)]
+"Setup" = 1, odexl16.dll,,,, 1994-11-18,,,,,,,,,, 4080,,,, 2.0.23.1,
+"IISAM" = 1, msxl2016.dll,,,, 1994-11-18,,,,,,,,,, 149344,,,, 2.50.0.1117,
+"vbajet.dll" = 1, vbajet.dll,,,, 1994-11-18,,,,,,,,,, 1984,,,, 2.0.0.2420,
+"stdole.tlb" = 1, stdole.tlb,,,, 1994-11-18,,,,,,,,, SHARED, 4304,,,,,
+"ole2.reg" = 1, ole2.reg,,,, 1994-11-18,,,,,,,,, SHARED, 27026,,,,,
+"ole2.dll" = 1, ole2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 302592,,,, 2.2.120.122,
+"ole2nls.dll" = 1, ole2nls.dll,,,, 1994-11-18,,,,,,,,, SHARED, 150976,,,, 2.2.3002.1,
+"ole2disp.dll" = 1, ole2disp.dll,,,, 1994-11-18,,,,,,,,, SHARED, 164832,,,, 2.2.3002.1,
+"ole2conv.dll" = 1, ole2conv.dll,,,, 1994-11-18,,,,,,,,, SHARED, 57328,,,, 2.1.0.1,
+"ole2prox.dll" = 1, ole2prox.dll,,,, 1994-11-18,,,,,,,,, SHARED, 51712,,,, 2.2.120.122,
+"compobj.dll" = 1, compobj.dll,,,, 1994-11-18,,,,,,,,, SHARED, 108544,,,, 2.2.120.123,
+"storage.dll" = 1, storage.dll,,,, 1994-11-18,,,,,,,,, SHARED, 157696,,,, 2.2.120.120,
+"vaen2.olb" = 1, vaen2.olb,,,, 1994-11-18,,,,,,,,, SHARED, 41124,,,, 2.0.0.2430,
+"typelib.dll" = 1, typelib.dll,,,, 1994-11-18,,,,,,,,, SHARED, 177216,,,, 2.2.3002.0,
+"vbar2.dll" = 1, vbar2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 298880,,,, 2.0.0.2420,
+"Error" = 1, msjeterr.dll,,,, 1994-11-18,,,,,,,,,, 11232,,,, 2.50.0.1111,
+"Internat" = 1, msjetint.dll,,,, 1994-11-18,,,,,,,,,, 15936,,,, 2.50.0.1111,
+"Tools" = 1, odbctl16.dll,,,, 1994-11-18,,,,,,,,,, 64080,,,, 1.0.23.9,
+"Changes" = 1, odbcjtnw.hlp,,,, 1994-11-18,,,,,,,,,, 83833,,,,,
+"Help" = 1, odbcjet.hlp,,,, 1994-11-18,,,,,,,,,, 113064,,,,,
+"Driver" = 1, odbcjt16.dll,,,, 1994-11-18,,,,,,,,,, 246928,,,, 2.0.23.17,
+"Engine" = 1, msajt200.dll,,,, 1994-11-18,,,,,,,,,, 995056,,,, 2.50.0.1117,
+
+[Microsoft Btrieve Driver (file.ddf)]
+"Setup" = 1, odbtrv16.dll,,,, 1994-11-18,,,,,,,,,, 4096,,,, 2.0.23.1,
+"IISAM" = 1, btrv200.dll,,,, 1994-11-18,,,,,,,,,, 111616,,,, 2.50.0.1117,
+"vbajet.dll" = 1, vbajet.dll,,,, 1994-11-18,,,,,,,,,, 1984,,,, 2.0.0.2420,
+"stdole.tlb" = 1, stdole.tlb,,,, 1994-11-18,,,,,,,,, SHARED, 4304,,,,,
+"ole2.reg" = 1, ole2.reg,,,, 1994-11-18,,,,,,,,, SHARED, 27026,,,,,
+"ole2.dll" = 1, ole2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 302592,,,, 2.2.120.122,
+"ole2nls.dll" = 1, ole2nls.dll,,,, 1994-11-18,,,,,,,,, SHARED, 150976,,,, 2.2.3002.1,
+"ole2disp.dll" = 1, ole2disp.dll,,,, 1994-11-18,,,,,,,,, SHARED, 164832,,,, 2.2.3002.1,
+"ole2conv.dll" = 1, ole2conv.dll,,,, 1994-11-18,,,,,,,,, SHARED, 57328,,,, 2.1.0.1,
+"ole2prox.dll" = 1, ole2prox.dll,,,, 1994-11-18,,,,,,,,, SHARED, 51712,,,, 2.2.120.122,
+"compobj.dll" = 1, compobj.dll,,,, 1994-11-18,,,,,,,,, SHARED, 108544,,,, 2.2.120.123,
+"storage.dll" = 1, storage.dll,,,, 1994-11-18,,,,,,,,, SHARED, 157696,,,, 2.2.120.120,
+"vaen2.olb" = 1, vaen2.olb,,,, 1994-11-18,,,,,,,,, SHARED, 41124,,,, 2.0.0.2430,
+"typelib.dll" = 1, typelib.dll,,,, 1994-11-18,,,,,,,,, SHARED, 177216,,,, 2.2.3002.0,
+"vbar2.dll" = 1, vbar2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 298880,,,, 2.0.0.2420,
+"Error" = 1, msjeterr.dll,,,, 1994-11-18,,,,,,,,,, 11232,,,, 2.50.0.1111,
+"Internat" = 1, msjetint.dll,,,, 1994-11-18,,,,,,,,,, 15936,,,, 2.50.0.1111,
+"Tools" = 1, odbctl16.dll,,,, 1994-11-18,,,,,,,,,, 64080,,,, 1.0.23.9,
+"Changes" = 1, odbcjtnw.hlp,,,, 1994-11-18,,,,,,,,,, 83833,,,,,
+"Help" = 1, odbcjet.hlp,,,, 1994-11-18,,,,,,,,,, 113064,,,,,
+"Driver" = 1, odbcjt16.dll,,,, 1994-11-18,,,,,,,,,, 246928,,,, 2.0.23.17,
+"Engine" = 1, msajt200.dll,,,, 1994-11-18,,,,,,,,,, 995056,,,, 2.50.0.1117,
+
+[Microsoft Text Driver (*.txt; *.csv)]
+"Setup" = 1, odtext16.dll,,,, 1994-11-18,,,,,,,,,, 4096,,,, 2.0.23.1,
+"IISAM" = 1, mstx2016.dll,,,, 1994-11-18,,,,,,,,,, 102080,,,, 2.50.0.1117,
+"vbajet.dll" = 1, vbajet.dll,,,, 1994-11-18,,,,,,,,,, 1984,,,, 2.0.0.2420,
+"stdole.tlb" = 1, stdole.tlb,,,, 1994-11-18,,,,,,,,, SHARED, 4304,,,,,
+"ole2.reg" = 1, ole2.reg,,,, 1994-11-18,,,,,,,,, SHARED, 27026,,,,,
+"ole2.dll" = 1, ole2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 302592,,,, 2.2.120.122,
+"ole2nls.dll" = 1, ole2nls.dll,,,, 1994-11-18,,,,,,,,, SHARED, 150976,,,, 2.2.3002.1,
+"ole2disp.dll" = 1, ole2disp.dll,,,, 1994-11-18,,,,,,,,, SHARED, 164832,,,, 2.2.3002.1,
+"ole2conv.dll" = 1, ole2conv.dll,,,, 1994-11-18,,,,,,,,, SHARED, 57328,,,, 2.1.0.1,
+"ole2prox.dll" = 1, ole2prox.dll,,,, 1994-11-18,,,,,,,,, SHARED, 51712,,,, 2.2.120.122,
+"compobj.dll" = 1, compobj.dll,,,, 1994-11-18,,,,,,,,, SHARED, 108544,,,, 2.2.120.123,
+"storage.dll" = 1, storage.dll,,,, 1994-11-18,,,,,,,,, SHARED, 157696,,,, 2.2.120.120,
+"vaen2.olb" = 1, vaen2.olb,,,, 1994-11-18,,,,,,,,, SHARED, 41124,,,, 2.0.0.2430,
+"typelib.dll" = 1, typelib.dll,,,, 1994-11-18,,,,,,,,, SHARED, 177216,,,, 2.2.3002.0,
+"vbar2.dll" = 1, vbar2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 298880,,,, 2.0.0.2420,
+"Error" = 1, msjeterr.dll,,,, 1994-11-18,,,,,,,,,, 11232,,,, 2.50.0.1111,
+"Internat" = 1, msjetint.dll,,,, 1994-11-18,,,,,,,,,, 15936,,,, 2.50.0.1111,
+"Tools" = 1, odbctl16.dll,,,, 1994-11-18,,,,,,,,,, 64080,,,, 1.0.23.9,
+"Changes" = 1, odbcjtnw.hlp,,,, 1994-11-18,,,,,,,,,, 83833,,,,,
+"Help" = 1, odbcjet.hlp,,,, 1994-11-18,,,,,,,,,, 113064,,,,,
+"Driver" = 1, odbcjt16.dll,,,, 1994-11-18,,,,,,,,,, 246928,,,, 2.0.23.17,
+"Engine" = 1, msajt200.dll,,,, 1994-11-18,,,,,,,,,, 995056,,,, 2.50.0.1117,
+
+[Microsoft FoxPro Driver (*.dbf)]
+"Setup" = 1, odfox16.dll,,,, 1994-11-18,,,,,,,,,, 4096,,,, 2.0.23.1,
+"vbajet.dll" = 1, vbajet.dll,,,, 1994-11-18,,,,,,,,,, 1984,,,, 2.0.0.2420,
+"stdole.tlb" = 1, stdole.tlb,,,, 1994-11-18,,,,,,,,, SHARED, 4304,,,,,
+"ole2.reg" = 1, ole2.reg,,,, 1994-11-18,,,,,,,,, SHARED, 27026,,,,,
+"ole2.dll" = 1, ole2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 302592,,,, 2.2.120.122,
+"ole2nls.dll" = 1, ole2nls.dll,,,, 1994-11-18,,,,,,,,, SHARED, 150976,,,, 2.2.3002.1,
+"ole2disp.dll" = 1, ole2disp.dll,,,, 1994-11-18,,,,,,,,, SHARED, 164832,,,, 2.2.3002.1,
+"ole2conv.dll" = 1, ole2conv.dll,,,, 1994-11-18,,,,,,,,, SHARED, 57328,,,, 2.1.0.1,
+"ole2prox.dll" = 1, ole2prox.dll,,,, 1994-11-18,,,,,,,,, SHARED, 51712,,,, 2.2.120.122,
+"compobj.dll" = 1, compobj.dll,,,, 1994-11-18,,,,,,,,, SHARED, 108544,,,, 2.2.120.123,
+"storage.dll" = 1, storage.dll,,,, 1994-11-18,,,,,,,,, SHARED, 157696,,,, 2.2.120.120,
+"vaen2.olb" = 1, vaen2.olb,,,, 1994-11-18,,,,,,,,, SHARED, 41124,,,, 2.0.0.2430,
+"typelib.dll" = 1, typelib.dll,,,, 1994-11-18,,,,,,,,, SHARED, 177216,,,, 2.2.3002.0,
+"vbar2.dll" = 1, vbar2.dll,,,, 1994-11-18,,,,,,,,, SHARED, 298880,,,, 2.0.0.2420,
+"Error" = 1, msjeterr.dll,,,, 1994-11-18,,,,,,,,,, 11232,,,, 2.50.0.1111,
+"Internat" = 1, msjetint.dll,,,, 1994-11-18,,,,,,,,,, 15936,,,, 2.50.0.1111,
+"Tools" = 1, odbctl16.dll,,,, 1994-11-18,,,,,,,,,, 64080,,,, 1.0.23.9,
+"Changes" = 1, odbcjtnw.hlp,,,, 1994-11-18,,,,,,,,,, 83833,,,,,
+"Help" = 1, odbcjet.hlp,,,, 1994-11-18,,,,,,,,,, 113064,,,,,
+"Driver" = 1, odbcjt16.dll,,,, 1994-11-18,,,,,,,,,, 246928,,,, 2.0.23.17,
+"Engine" = 1, msajt200.dll,,,, 1994-11-18,,,,,,,,,, 995056,,,, 2.50.0.1117,
+"IISAM" = 1, xbs200.dll,,,, 1994-11-18,,,,,,,,,, 296832,,,, 2.50.0.1117,
+
+[SQL Server]
+"Setup"=1,sqlsrvr.dll,,,,1994-07-12,,,,,,,,,,161392,,,,02.00.19.12,
+"Driver"=1,sqlsrvr.dll,,,,1994-07-12,,,,,,,,,,161392,,,,02.00.19.12,
+"Ctl3d"=1,ctl3dv2.dll,,,,1993-08-16,,,,,,,,,SHARED,21648,,,,02.26.0.0,
+"Help"=1,drvssrvr.hlp,,,,1994-07-12,,,,,,,,,,105964,,,,02.00.19.06,
+"Network"=1,dbnmp3.dll,,,,1994-01-26,,,,,,,,,SHARED,10944,,,,1994.01.26.00,
+
+[Oracle]
+"Help" = 1, drvoracl.hlp,,,, 1993-05-20,,,,,,,,,, 45610,,,,,
+"Network" = 1, ora6win.dll,,,, 1993-05-20,,,, ,,,,, SHARED, 285573,,,,,
+"Text" = 1, oracle.txt,,,, 1993-05-20,,,,,,,,,, 13914,,,,,
+"Driver" = 1, sqora.dll,,,, 1993-07-12,,,,,,,,,, 144096,,,, 1.0.31.12,
+"Setup" = 1, sqorastp.dll,,,, 1993-07-06,,,,,,,,,, 9632,,,, 1.0.31.6,
+"Ctl3d" = 1, ctl3d.dll,,,, 1993-08-27,,,,,,,,,, 20976,,,, 2.26.0.0,
+
+[Oracle7]
+"Setup"   = 1,sqorast7.dll,,,,1994-10-18,,,,,,,,,,9552,,,, 1.11.00.00,
+"Driver"  = 1,  sqora7.dll,,,,1994-10-18,,,,,,,,,,181520,,,, 1.11.00.00,
+"Help"    = 1, drvora7.hlp,,,,1994-10-18,,,,,,,,,,47470,,,,,
+
+[ODBC Translators]
+"MS Code Page Translator"=
+
+[MS Code Page Translator]
+"Setup"=1,mscpxlt.dll,,,,1994-07-12,,,,,,,,,,10304,,,,02.00.19.12,
+"Translator"=1,mscpxlt.dll,,,,1994-07-12,,,,,,,,,,10304,,,,02.00.19.12,
+"Code Page 850"=1,12520850.cpx,,,,1994-07-12,,,,,,,,,,2233,,,,02.00.19.12,
+"Code Page 863"=1,12520863.cpx,,,,1994-07-12,,,,,,,,,,2173,,,,02.00.19.12,
+"Code Page 861"=1,12520861.cpx,,,,1994-07-12,,,,,,,,,,2162,,,,02.00.19.12,
+"Code Page 865"=1,12520865.cpx,,,,1994-07-12,,,,,,,,,,2147,,,,02.00.19.12,
+"Code Page 860"=1,12520860.cpx,,,,1994-07-12,,,,,,,,,,2167,,,,02.00.19.12,
+"Code Page 437"=1,12520437.cpx,,,,1994-07-12,,,,,,,,,,2151,,,,02.00.19.12,
+"Code Page 852"=1,12500852.cpx,,,,1994-07-12,,,,,,,,,,2320,,,,02.00.19.12,
+"Code Page 866"=1,12510866.cpx,,,,1994-07-12,,,,,,,,,,2318,,,,02.00.19.12,
+"Ctl3d"=1,ctl3dv2.dll,,,,1993-08-16,,,,,,,,,SHARED,21648,,,,02.26.0.0,
+
+[ODBC]
+"Help" = 1, odbcinst.hlp,,,, 1994-12-07,  ,,,  ,,,,,, 17412,,,,,
+"Main" = 1, odbcinst.dll,,,, 1994-12-07,  ,,,  ,,,,, SHARED, 92576,,,, 2.10.24.1,
+
+[ODBC Driver Manager]
+"Ctl3dv2" = 1, ctl3dv2.dll,,,, 1994-12-07,  ,,,  ,,,,, SHARED, 26832,,,, 2.26.0.0,
+"Driver" = 1, odbc.dll,,,, 1994-12-07,  ,,,  ,,,,, SHARED, 56240,,,, 2.10.24.1,
+"CrsrLib" = 1, odbccurs.dll,,,, 1994-12-07,  ,,,  ,,,,, SHARED, 88896,,,, 2.10.23.23,
+
+[Win32s ODBC]
+"Thunk" = 1, cpn16ut.dll,,,, 1994-12-07,  ,,,  ,,,,, SHARED, 3264,,,,,
+"Main" = 1, odbccp32.dll,,,, 1994-12-07,  ,,,  ,,,,, SHARED, 5632,,,,,
+
+[Win32s ODBC Driver Manager]
+"Thunk" = 1, odbc16ut.dll,,,, 1994-12-07,  ,,,,,,,, SHARED, 5792,,,,,
+"Driver" = 1, odbc32.dll,,,, 1994-12-07,  ,,,,,,,, SHARED, 12800,,,,,
+
+[ODBC Administrator]
+"Windows00"=1,odbcadm.exe,,,,1994-12-07,,,,,,,,,,6464,,,,02.10.23.09,
+
+[Microsoft Text Driver (*.txt; *.csv)-Keys]
+SQLLevel=0
+FileExtns=*.,*.asc,*.csv,*.tab,*.txt
+FileUsage=1
+DriverODBCVer=02.01
+ConnectFunctions=YYN
+APILevel=1
+
+[Microsoft Excel Driver (*.xls)-Keys]
+SQLLevel=0
+FileExtns=*.xls
+FileUsage=1
+DriverODBCVer=02.01
+ConnectFunctions=YYN
+APILevel=1
+
+[Microsoft Dbase Driver (*.dbf)-Keys]
+SQLLevel=0
+FileExtns=*.dbf,*.ndx,*.mdx
+FileUsage=1
+DriverODBCVer=02.01
+ConnectFunctions=YYN
+APILevel=1
+
+[Microsoft Btrieve Driver (file.ddf)-Keys]
+SQLLevel=0
+FileExtns=*.ddf
+FileUsage=2
+DriverODBCVer=02.01
+ConnectFunctions=YYN
+APILevel=1
+
+[Microsoft Paradox Driver (*.db )-Keys]
+SQLLevel=0
+FileExtns=*.db
+FileUsage=1
+DriverODBCVer=02.01
+ConnectFunctions=YYN
+APILevel=1
+
+[Microsoft Access Driver (*.mdb)-Keys]
+SQLLevel=0
+FileExtns=*.mdb
+FileUsage=2
+DriverODBCVer=02.01
+ConnectFunctions=YYN
+APILevel=1
+
+[Microsoft FoxPro Driver (*.dbf)-Keys]
+SQLLevel=0
+FileExtns=*.dbf,*.cdx,*.idx,*.ftp
+FileUsage=1
+DriverODBCVer=02.01
+ConnectFunctions=YYN
+APILevel=1
+
+[SQL Server-Keys]
+APILevel=1
+ConnectFunctions=YYY
+DriverODBCVer=02.01
+FileUsage=0
+SQLLevel=1

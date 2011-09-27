@@ -1,0 +1,14 @@
+82572
+C:\SC\samples\ole32\MFRACT\ENGINES\JULIA\JULIA.PRJ
+JULIA.OPN
+novcs
+julia.def
+3
+812035224
+0 0 0 0 0 "julia.cxx" ""
+0 0 0 0 0 "juliaob.cxx" ""
+0 0 0 0 0 "julia.rc" ""
+0 0 0 0 0 "julia.def" ""
+0 0 0 0 0 "winhlprs.lib" ""
+0 0 0 0 0 "..\..\..\winhlprs\winhlprs.prj" ""
+0 0 0 0 0 "fguids.lib" ""

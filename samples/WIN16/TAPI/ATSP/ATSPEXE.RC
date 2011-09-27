@@ -1,0 +1,34 @@
+// 
+// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+// KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR 
+// PURPOSE.
+// 
+// Copyright 1993-1995 Microsoft Corporation, all rights reserved.
+#include <windows.h>
+#include "atsprc.h"
+
+IDD_TALKDROP DIALOG DISCARDABLE  20, 15, 140, 81
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "ATSP Call Status"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Talk",IDTALK,10,60,52,17
+    PUSHBUTTON      "Hang &Up",IDDROP,78,60,52,17
+    ICON            IDI_MODEM,ID_STATIC,6,10,18,20
+    LTEXT           "Lift the receiver and\nclick Talk.\n\nTo disconnect, click Hang Up\nand replace the receiver.",
+                    ID_STATIC,30,10,147,48
+END
+
+IDI_MODEM	ICON	DISCARDABLE	"ATSP.ICO"
+
+
+/* Version Numbering stuff */
+
+#define VER_FILEDESCRIPTION_STR     "ATSP hidden app"
+#define VER_INTERNALNAME_STR        "atsp applet"
+#define VER_ORIGINALFILENAME_STR    "ATSPEXE.EXE"
+#define VER_TYPE                    VFT_APP
+
+#include "version.rc"
+

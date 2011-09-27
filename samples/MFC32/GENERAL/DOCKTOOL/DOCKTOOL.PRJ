@@ -1,0 +1,17 @@
+82572
+C:\SC\samples\mfc32\general\docktool\DOCKTOOL.PRJ
+docktool.OPN
+novcs
+docktool.DEF
+16
+834102816
+0 0 0 0 0 "dockdoc.cpp" ""
+0 0 0 0 0 "docktool.cpp" ""
+0 0 0 0 0 "dockvw.cpp" ""
+0 0 0 0 0 "editbar.cpp" ""
+0 0 0 0 0 "mainfrm.cpp" ""
+0 0 0 0 0 "palette.cpp" ""
+0 0 0 0 0 "searchbx.cpp" ""
+0 0 0 0 0 "tooldlg.cpp" ""
+0 0 0 0 0 "docktool.DEF" ""
+0 0 0 0 0 "docktool.rc" ""

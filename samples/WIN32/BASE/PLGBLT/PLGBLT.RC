@@ -1,0 +1,117 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+
+#include "windows.h"
+#include "plgblt.h"
+
+plgbltIcon  ICON   plgblt.ico
+
+
+
+plgbltMenu MENU
+BEGIN
+
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New Src" ,          DID_NEWSRC
+        MENUITEM "New &Mask",          DID_NEWMASK
+    END
+
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Copy \tCtrl+Ins",   IDM_COPY
+        MENUITEM "&Paste \tShft+Ins",  IDM_PASTE
+        MENUITEM "&Both \tAlt+Ins",    IDM_BOTH
+    END
+
+    POPUP "&Spin"
+    BEGIN
+        MENUITEM "&Flip Once \tF3"     IDM_FLIPONCE
+        MENUITEM SEPARATOR
+        MENUITEM "&Off"                IDM_SPINOFF
+        MENUITEM SEPARATOR
+        MENUITEM "&5 degrees"          IDM_SPIN5 , GRAYED // slow when turned on
+        MENUITEM "&10 degrees"         IDM_SPIN10, GRAYED // slow when turned on
+        MENUITEM "&30 degrees"         IDM_SPIN30
+        MENUITEM "&60 degrees"         IDM_SPIN60
+        MENUITEM "&90 degrees"         IDM_SPIN90
+        MENUITEM SEPARATOR
+        MENUITEM "&top-left"           IDM_SPINTOPLEFT
+        MENUITEM "&center"             IDM_SPINCENTER
+    END
+
+    POPUP "StretchBlt&Mode"
+    BEGIN
+        MENUITEM "&BLACKONWHITE",      IDM_MODE_BLACKONWHITE
+        MENUITEM "&COLORONCOLOR",      IDM_MODE_COLORONCOLOR
+        MENUITEM "&WHITEONBLACK",      IDM_MODE_WHITEONBLACK
+        MENUITEM "&HALFTONE    ",      IDM_MODE_HALFTONE
+    END
+
+    MENUITEM "&About!",                IDM_ABOUT
+
+END
+
+bltAccel ACCELERATORS
+BEGIN
+  VK_INSERT, IDM_COPY , CONTROL, VIRTKEY
+  VK_INSERT, IDM_PASTE, SHIFT  , VIRTKEY
+  VK_INSERT, IDM_BOTH , ALT    , VIRTKEY
+  VK_F3    , IDM_FLIPONCE, VIRTKEY
+END
+
+
+
+plgbltDlg DIALOG 2, 3, 363, 54
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "Helv"
+BEGIN
+    LTEXT          "PlgBlt(hdcDest, lpPoint,      hdcSrc,      XSrc, YSrc, nWidth, nHeight,   hbmMask,   XMask, YMask);",
+                   300, 16, 3, 333, 11
+    EDITTEXT       DID_P1X    , 54, 14, 20, 12, ES_AUTOHSCROLL
+    EDITTEXT       DID_P1Y    , 77, 14, 20, 12, ES_AUTOHSCROLL
+    EDITTEXT       DID_P2X    , 54, 27, 20, 12, ES_AUTOHSCROLL
+    EDITTEXT       DID_P2Y    , 77, 27, 20, 12, ES_AUTOHSCROLL
+    EDITTEXT       DID_P3X    , 54, 40, 20, 12, ES_AUTOHSCROLL
+    EDITTEXT       DID_P3Y    , 77, 40, 20, 12, ES_AUTOHSCROLL
+
+    PUSHBUTTON     "New Src",  DID_NEWSRC, 102, 16, 40, 14
+    EDITTEXT       DID_XSRC   , 146, 14, 20, 12, ES_AUTOHSCROLL
+    EDITTEXT       DID_YSRC   , 168, 14, 20, 12, ES_AUTOHSCROLL
+    EDITTEXT       DID_WIDTH  , 195, 14, 20, 12, ES_AUTOHSCROLL
+    EDITTEXT       DID_HEIGHT , 217, 14, 20, 12, ES_AUTOHSCROLL
+
+    PUSHBUTTON     "New Mask", DID_NEWMASK, 243, 16, 40, 14
+    EDITTEXT       DID_XMASK  , 288, 14, 20, 12, ES_AUTOHSCROLL
+    EDITTEXT       DID_YMASK  , 310, 14, 20, 12, ES_AUTOHSCROLL
+
+    DEFPUSHBUTTON  "Draw", DID_DRAW, 333, 28, 30, 26
+END
+
+
+
+
+aboutBox DIALOG 30, 14, 136, 90
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About PlgBlt"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            "plgbltIcon", 101, 8, 20, 18, 20
+    CTEXT           "Microsoft Developer Support", 104, 0, 63, 136, 8
+    CTEXT           "Copyright \251 1992-1993 Microsoft", 105, 0, 74, 136, 8
+    LTEXT           "PlgBlt Win32 SDK sample ", 103, 40, 25, 95, 8
+    LTEXT           "version 1.2", 106, 40, 35, 95, 8
+    DEFPUSHBUTTON   "OK", IDOK, 95, 6, 40, 14
+    CONTROL         "", 108, "Static", SS_BLACKRECT, 0, 53, 136, 2
+END

@@ -1,0 +1,37 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;   THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+;   KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+;   IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+;   PURPOSE.
+;
+;   Copyright (c) 1992 - 1995  Microsoft Corporation.  All Rights Reserved.
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+LIBRARY		"WAVEF32"
+
+DESCRIPTION	'Microsoft WAVE file reader/writer'
+
+EXETYPE		NT
+
+SUBSYSTEM	WINDOWS
+
+STUB		'WINSTUB.EXE'
+
+VERSION		1.0
+
+CODE		 SHARED EXECUTE
+
+DATA		 SHARED READ WRITE
+
+HEAPSIZE	1048576,4096 
+
+SECTIONS
+		 ".bss" READ WRITE
+		 ".data" READ WRITE
+		 ".idata" READ WRITE
+
+EXPORTS
+		DllGetClassObject
+		DllCanUnloadNow

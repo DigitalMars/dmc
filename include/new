@@ -1,0 +1,6 @@
+
+#pragma once
+
+#ifndef __NEW_H
+#include "new.h"
+#endif

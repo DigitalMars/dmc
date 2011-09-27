@@ -1,0 +1,289 @@
+#include <windows.h>
+#include <winver.h>
+#include "globals.h"
+#include "hooks.h"
+#include "listbx.h"
+#include "toolbar.h"
+#include "statbar.h"
+#include "treeview.h"
+#include "propsht.h"
+
+
+
+
+APPNAME    ICON    ICONFILE
+Folders    BITMAP  folders.bmp
+IDB_BMP    BITMAP  toolbar.bmp
+splitcur   CURSOR  hooks.cur
+
+; Bring in the dialogs:
+RCINCLUDE PROPSHT.DLG
+RCINCLUDE ABOUT.DLG
+RCINCLUDE BROWSE.DLG
+ 
+APPNAME MENU
+BEGIN
+  POPUP "&File"
+    BEGIN
+      POPUP "&Browse"
+        BEGIN
+          MENUITEM "&Window...",        IDM_WINDOW
+;         MENUITEM "&All Windows",      IDM_ALLWNDS
+        END
+      MENUITEM "Capture &On"            IDM_CAPON
+      MENUITEM "Capture O&ff"           IDM_CAPOFF
+      MENUITEM "E&xit",                 IDM_EXIT
+    END
+
+  POPUP "&View"
+    BEGIN
+      MENUITEM "&Messages",             IDM_MESSAGES,   CHECKED
+      MENUITEM "&Window Information",   IDM_WNDINF
+      MENUITEM "Wnd and Msg &Info",     IDM_WNDMSG
+      MENUITEM "&Properties...",        IDM_PPTIES
+    END
+
+  POPUP "&Window"
+    BEGIN
+      MENUITEM "&Clear",                IDM_CLEARWND
+      MENUITEM "Change &Font...",       IDM_FONT
+    END
+
+  POPUP "&Help"
+    BEGIN
+      MENUITEM "&About...",             IDM_ABOUT
+    END
+END
+
+
+; String table for appname.
+
+STRINGTABLE
+BEGIN
+    IDS_APPNAME,        SZAPPNAME
+    IDS_DESCRIPTION,    SZDESCRIPTION
+END
+
+
+;String table for the styles part of treeview.
+
+STRINGTABLE
+BEGIN
+    IDS_WSMAXIMIZEBOXORTAB,          "WS_MAXIMIZEBOX or WS_TABSTOP"
+    IDS_WSTABSTOP,                   "WS_TABSTOP"
+    IDS_WSMINIMIZEBOXORGRP,          "WS_MINIMIZEBOX or WS_GROUP"
+    IDS_WSGROUP,                     "WS_GROUP"
+    IDS_WSTHICKFRAME,                "WS_THICKFRAME"
+    IDS_WSSYSMENU,                   "WS_SYSMENU"
+    IDS_WSHSCROLL,                   "WS_HSCROLL"
+    IDS_WSVSCROLL,                   "WS_VSCROLL" 
+    IDS_WSDLGFRAME,                  "WS_DLGFRAME"
+    IDS_WSBORDER,                    "WS_BORDER"
+    IDS_WSCAPTION,                   "WS_CAPTION"
+    IDS_WSMAXIMIZE,                  "WS_MAXIMIZE"
+    IDS_WSCLIPCHILDREN,              "WS_CLIPCHILDREN"
+    IDS_WSCLIPSIBLINGS,              "WS_CLIPSIBLINGS"
+    IDS_WSDISABLED,                  "WS_DISABLED"
+    IDS_WSVISIBLE,                   "WS_VISIBLE"
+    IDS_WSMINIMIZE,                  "WS_MINIMIZE"
+    IDS_WSCHILD,                     "WS_CHILD"
+    IDS_WSPOPUP,                     "WS_POPUP"
+
+    IDS_WSEXDLGMODALFRAME,           "WS_EX_DLGMODALFRAME"
+    IDS_WSEXNOPARENTNOTIFY,          "WS_EX_NOPARENTNOTIFY"
+    IDS_WSEXTOPMOST,                 "WS_EX_TOPMOST"
+    IDS_WSEXACCEPTFILES,             "WS_EX_ACCEPTFILES"
+    IDS_WSEXTRANSPARENT,             "WS_EX_TRANSPARENT"
+
+    IDS_WSEXMDICHILD ,               "WS_EX_MDICHILD"
+    IDS_WSEXSMCAPTION,               "WS_EX_SMCAPTION"
+
+    IDS_WSEXEDGEMASK,                "WS_EX_EDGEMASK"
+    IDS_WSEXWINDOWEDGE,              "WS_EX_WINDOWEDGE"
+    IDS_WSEXCLIENTEDGE,              "WS_EX_CLIENTEDGE"
+    IDS_WSEXRIGHT,                   "WS_EX_RIGHT"
+    IDS_WSEXLEFT,                    "WS_EX_LEFT"
+    IDS_WSEXRTLREADING,              "WS_EX_RTLREADING"
+    IDS_WSEXLTRREADING,              "WS_EX_LTRREADING"
+    IDS_WSEXLEFTSCROLLBAR,           "WS_EX_LEFTSCROLLBAR"
+    IDS_WSEXRIGHTSCROLLBAR,          "WS_EX_RIGHTSCROLLBAR"
+
+    IDS_CSVREDRAW,                   "CS_VREDRAW"
+    IDS_CSHREDRAW,                   "CS_HREDRAW"
+    IDS_CSKEYCVTWINDOW,              "CS_KEYCVTWINDOW"
+    IDS_CSDBLCLKS,                   "CS_DBLCLKS"
+    IDS_CSOWNDC,                     "CS_OWNDC"
+    IDS_CSCLASSDC,                   "CS_CLASSDC"
+    IDS_CSPARENTDC,                  "CS_PARENTDC"
+    IDS_CSNOKEYCVT,                  "CS_NOKEYCVT"
+    IDS_CSNOCLOSE,                   "CS_NOCLOSE"
+    IDS_CSSAVEBITS,                  "CS_SAVEBITS"
+    IDS_CSBYTEALIGNCLIENT,           "CS_BYTEALIGNCLIENT"
+    IDS_CSBYTEALIGNWINDOW,           "CS_BYTEALIGNWINDOW"
+    IDS_CSGLOBALCLASS,               "CS_GLOBALCLASS"
+
+    IDS_ESLEFT,                      "ES_LEFT"
+    IDS_ESCENTER,                    "ES_CENTER"
+    IDS_ESRIGHT,                     "ES_RIGHT"
+    IDS_ESMULTILINE,                 "ES_MULTILINE"
+    IDS_ESUPPERCASE,                 "ES_UPPERCASE"
+    IDS_ESLOWERCASE,                 "ES_LOWERCASE"
+    IDS_ESPASSWORD,                  "ES_PASSWORD"
+    IDS_ESAUTOVSCROLL,               "ES_AUTOVSCROLL"
+    IDS_ESAUTOHSCROLL,               "ES_AUTOHSCROLL"
+    IDS_ESNOHIDESEL,                 "ES_NOHIDESEL"
+    IDS_ESOEMCONVERT,                "ES_OEMCONVERT"
+    IDS_ESREADONLY,                  "ES_READONLY"
+    IDS_ESWANTRETURN,                "ES_WANTRETURN"
+
+    IDS_SBSVERT,                     "SBS_VERT"
+    IDS_SBSTOPALIGNORLEFT,           "SBS_TOPALIGN or SBS_LEFTALIGN"
+    IDS_SBSBOTTOMALIGNORRIGHT,       "SBS_BOTTOMALIGN or SBS_RIGHTALIGN"
+    IDS_SBSSIZEBOXTOPLEFTALIGN,      "SBS_SIZEBOXTOPLEFTALIGN"
+    IDS_SBSSIZEBOXBOTTOMRIGHTALIGN,  "SBS_SIZEBOXBOTTOMRIGHTALIGN"
+    IDS_SBSSIZEBOX,                  "SBS_SIZEBOX"
+
+
+    IDS_LBSNOTIFY,                   "LBS_NOTIFY"
+    IDS_LBSSORT,                     "LBS_SORT"
+    IDS_LBSNOREDRAW,                 "LBS_NOREDRAW"
+    IDS_LBSMULTIPLESEL,              "LBS_MULTIPLESEL"
+    IDS_LBSOWNERDRAWFIXED,           "LBS_OWNERDRAWFIXED"
+    IDS_LBSOWNERDRAWVARIABLE,        "LBS_OWNERDRAWVARIABLE"
+    IDS_LBSHASSTRINGS,               "LBS_HASSTRINGS"
+    IDS_LBSUSETABSTOPS,              "LBS_USETABSTOPS"
+    IDS_LBSNOINTEGRALHEIGHT,         "LBS_NOINTEGRALHEIGHT"
+    IDS_LBSMULTICOLUMN,              "LBS_MULTICOLUMN"
+    IDS_LBSWANTKEYBOARDINPUT,        "LBS_WANTKEYBOARDINPUT"
+    IDS_LBSEXTENDEDSEL,              "LBS_EXTENDEDSEL"
+    IDS_LBSDISABLENOSCROLL,          "LBS_DISABLENOSCROLL"
+    IDS_LBSNODATA,                   "LBS_NODATA"                     
+
+    IDS_CBSSIMPLE,                   "CBS_SIMPLE"
+    IDS_CBSDROPDOWN,                 "CBS_DROPDOWN"
+    IDS_CBSDROPDOWNLIST,             "CBS_DROPDOWNLIST"
+    IDS_CBSOWNERDRAWFIXED,           "CBS_OWNERDRAWFIXED"
+    IDS_CBSOWNERDRAWVARIABLE,        "CBS_OWNERDRAWVARIABLE"
+    IDS_CBSAUTOHSCROLL,              "CBS_AUTOHSCROLL"
+    IDS_CBSOEMCONVERT,               "CBS_OEMCONVERT"
+    IDS_CBSSORT,                     "CBS_SORT"
+    IDS_CBSHASSTRINGS,               "CBS_HASSTRINGS"
+    IDS_CBSNOINTEGRALHEIGHT,         "CBS_NOINTEGRALHEIGHT"
+    IDS_CBSDISABLENOSCROLL,          "CBS_DISABLENOSCROLL"
+    IDS_CBSUPPERCASE                 "CBS_UPPERCASE"
+    IDS_CBSLOWERCASE                 "CBS_LOWERCASE"
+
+    IDS_BSPUSHBUTTON,                "BS_PUSHBUTTON"
+    IDS_BSDEFPUSHBUTTON,             "BS_DEFPUSHBUTTON"
+    IDS_BSCHECKBOX,                  "BS_CHECKBOX"
+    IDS_BSAUTOCHECKBOX,              "BS_AUTOCHECKBOX"
+    IDS_BSRADIOBUTTON,               "BS_RADIOBUTTON"
+    IDS_BS3STATE,                    "BS_3STATE"
+    IDS_BSAUTO3STATE,                "BS_AUTO3STATE"
+    IDS_BSGROUPBOX,                  "BS_GROUPBOX"
+    IDS_BSUSERBUTTON,                "BS_USERBUTTON"
+    IDS_BSAUTORADIOBUTTON,           "BS_AUTORADIOBUTTON"
+    IDS_BSOWNERDRAW,                 "BS_OWNERDRAW"
+
+    IDS_BSMONO,                      "BS_MONO"       
+    IDS_BSRIGHTBUTTON,               "BS_RIGHTBUTTON"
+    IDS_BSICON,                      "BS_ICON"       
+    IDS_BSBITMAP,                    "BS_BITMAP"     
+    IDS_BSPUSHLIKE,                  "BS_PUSHLIKE"   
+    IDS_BSMULTILINE,                 "BS_MULTILINE"  
+    IDS_BSNOTIFY,                    "BS_NOTIFY"     
+
+    IDS_BSLEFT,                      "BS_LEFT"
+    IDS_BSRIGHT,                     "BS_RIGHT"
+    IDS_BSCENTER,                    "BS_CENTER"
+    IDS_BSTOP,                       "BS_TOP"
+    IDS_BSBOTTOM,                    "BS_BOTTOM"
+    IDS_BSVCENTER,                   "BS_VCENTER"
+END
+
+
+STRINGTABLE 
+BEGIN
+     IDM_TEST1,         "Hopper\tDennis\tLBS_NOREDRAW\tLPARAM1"
+     IDM_TEST2,         "Vadney\tGeorge\tLBS_STANDARD\tLPARAM2"
+     IDM_TEST3,         "Khan\tMoiz\tLBS_EXTENDEDSEL\tLPARAM3"
+     IDM_TEST4,         "Hobbs\tCindy\tLBS_HASSTRINGS\tLPARAM4"
+     IDM_TEST5,         "Kane\tMike\tLBS_NOTIFY\tLPARAM5"
+     IDM_TEST6,         "Shatner\tBill\tLBS_MULTIPLESEL\tLPARAM6"
+     IDM_TEST7,         "Nimoy\tLeonard\tLBS_MULTICOLUMN\tLPARAM7"
+     IDM_TEST8,         "Walli\tShelina\tLBS_NONINTEGRAL\tLPARAM8"
+     IDM_TEST9,         "Noor Mohd\tAbdullah\tLBS_SORT\tLPAMAM9"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SYSMENU,        "Move, size, or close application window"
+    IDS_SCSIZE,         "Changes the size of the window"
+    IDS_SCMOVE,         "Changes the position of the window"
+    IDS_SCMINIMIZE,     "Minimizes the window to an icon"
+    IDS_SCMAXIMIZE,     "Enlarges the window to full size"
+    IDS_SCCLOSE,        "Closes the window"
+    IDS_SCRESTORE,      "Restores the window to normal size"
+    IDS_SCTASKLIST,     "Switches to another application through the Windows Task Manager"
+
+    IDS_FILEMENU,       "File Options"
+    IDM_BROWSE,         "Browse Options"
+    IDM_WINDOW,         "Browse on Window"
+;    IDM_ALLWNDS,        "Browse on all Windows"
+    IDM_CAPON,          "Begin capturing messages"
+    IDM_CAPOFF,         "Stop capturing messages"
+    IDM_EXIT,           "Terminate application"
+    
+    IDS_VIEWMENU,       "View Options"
+    IDM_MESSAGES,       "View message information"
+    IDM_WNDINF,         "View window information"
+    IDM_WNDMSG,         "View msgs/window information"
+    IDM_PPTIES,         "Display application properties"
+
+    IDS_WINDOWMENU,     "Window Options"
+    IDM_CLEARWND,       "Clear message window"
+    IDM_FONT,           "Select font"
+
+    IDS_HELPMENU,       "Get help"
+    IDM_ABOUT,          "Displays information about this application"
+END
+
+
+APPNAME ACCELERATORS
+BEGIN
+    "Q", IDM_EXIT, CONTROL, VIRTKEY
+END
+
+
+; Version stamping information:
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     4,0,0,0
+PRODUCTVERSION  4,0,0,0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       (VS_FF_PRIVATEBUILD|VS_FF_PRERELEASE|VS_FF_DEBUG)
+FILEOS          VOS__WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE SZRCOMPANYNAME,   "Microsoft Corporation\0"
+            VALUE SZRDESCRIPTION,   SZDESCRIPTION "\0"
+            VALUE SZRVERSION,       SZVERSION "\0"
+            VALUE SZRAPPNAME,       SZAPPNAME "\0"
+            VALUE SZRCOPYRIGHT,     "Copyright \251 Microsoft Corp. 1990-1995\0"
+            VALUE SZRTRADEMARK,     "Microsoft\256 is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation"
+            VALUE SZRPRODNAME,      SZAPPNAME "\0"
+            VALUE SZRPRODVER,       SZVERSION "\0"
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+

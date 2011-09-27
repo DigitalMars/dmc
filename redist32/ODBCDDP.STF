@@ -1,0 +1,155 @@
+App Name	ODBCJT32.DLL
+App Version	3.0.1.001
+Frame Caption	ODBC Driver Pack 3.0 Setup
+Dialog Caption Base	ODBC Driver Pack 3.0
+About Box String	ODBC Driver Pack 3.0 (C) 1995 Microsoft Corp.
+Inf File Name	odbc.inf
+Maximum Object ID	700
+Check Modules	odbcad32,ODBC administrator,odbcjt32, ODBC Driver
+MSAPPS Mode	local
+Source Directory	
+Floppy Mode Root Object ID	3
+Network Mode Root Object ID	3
+Maintenance Mode Root Object ID	3
+Batch Mode Root Object ID	5
+Setup Version	1.20.0.1305
+Suppress Serial Number Dialog
+Suppress Copy Disincentive Dialogs
+Admin Mode Root Object ID	3
+
+ObjID	Install During Batch Mode	Title	Description	Object Type	Object Data	Bitmap Id	Vital Attribute	Shared Attribute	Configurable Directory	Destination Directory	Check Directory	Installed By	Install Data
+
+
+3		Floppy Installation		AppMainDlg	9 5				yes	%M
+
+4	yes	C&omplete	Install all ODBC drivers	CustomAction	odbcstf.dll,AcmeComplianceCheck,odbckey.inf:Office;Access;Excel;MS Project;Visual C++;Visual C++ 2.0;Word;Fox;VisualFoxPro;Visual Basic 4.0;Developer;MSSQLServer
+5	yes	C&omplete	Install all ODBC drivers	Group	 6	"odbcstf.dll,101"
+6	yes	C&omplete	Install all ODBC drivers	Group	30 40 50 60 70 90 94 100  200 120 130 115 110 	"odbcstf.dll,101"			no	%M
+
+9	yes	&Custom	Install the ODBC drivers that you select	CustomDlg	10 20  25 200 : 94 110	"odbcstf.dll,102"			no	%M
+10	yes	Desktop Drivers	Drivers for Access, Paradox, Text, Excel, dBase, and FoxPro. 	CustomDlg	30 40 50 60 70  90 100  : 110	
+20	yes	SQLServer	Driver for Microsoft SQL Server. 	CustomDlg	120  115
+25	yes	Oracle	Driver for Oracle data sources. 	CustomDlg	130 
+
+30	yes	MS Access Driver	ODBC Driver for MS Access.	Group	31 32  
+31	yes			CustomAction	odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA Access:Y
+32	yes			InstallShared	"DA Access,IIsam"					%31
+
+40	yes	Fox and dBase Driver	ODBC Driver for dBase and Microsoft FoxPro files.	Group	41 42 43 44 45
+41	yes			CustomAction	odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA FoxPro:Y
+42	yes			InstallShared	"DA FoxProDbase,Setup"					%41
+43	yes			CustomAction	odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA dBase:Y
+44	yes			InstallShared	"DA FoxProDbase-IISAM,IIsam"					%41
+45	yes			InstallShared	"DA FoxProDbase,Setup2"					%41
+50	yes	Paradox Driver	ODBC Driver for Paradox data.	Group	51 52   53
+51	yes			CustomAction	odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA Paradox:Y
+52	yes			InstallShared	"DA Paradox,Setup"					%51
+53	yes			InstallShared	"DA Paradox-IISAM,IIsam"			
+
+60	yes	Text Driver	ODBC Driver for text files.	Group	61 62   63
+61	yes			CustomAction	odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA Text:Y
+62	yes			InstallShared	"DA Text,Setup"					%61
+63	yes			InstallShared	"DA Text-IISAM,IIsam"					%61
+
+70	yes	Excel Driver	ODBC Driver for Excel spreadsheets.	Group	71 72   73
+71	yes			CustomAction	odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA Excel:Y
+72	yes			InstallShared	"DA Excel,Setup"					%71
+73	yes			InstallShared	"DA Excel-IISAM,IIsam"			
+
+
+
+90	yes	Engine components	Desktop driver engine components.	Group	550 500 		vital
+
+93	yes			CustomAction	odbcstf.dll,AcmeDetectOS,Windows/NT
+94	yes			Depend	93 ? 95 : 400
+95	yes			Group	96 97 
+96	yes	MSVC components		InstallSysFile	"DA Shared MSVC Components,msvcrt20.dll"		vital	shared
+97	yes	3-D controls   		InstallSysFile	"DA CTL3D-NT,Ctl3d"		vital	shared
+
+100	yes	Help Files	Desktop driver help files.	Group	101 102 103
+101	yes	Help Files	Desktop driver help files.	CopySection	"DA Desktop Help Files"
+102	yes			AddProgmanItem	"ODBC,ODBC DDP3.0 Changes,%s/odbcjtnw.hlp"
+103	yes			AddProgmanItem	"ODBC,ODBC DDP3.0 Help,%s/odbcjet.hlp"
+
+110	no 			CustomAction	odbcstf.dll,AcmeManageDataSources,odbckey.inf
+
+115	yes	Help File	SQLServer help file.	Group	116 117
+116	yes	Help File	SQLServer help file.	CopySection	"DA SQLServer Help Files"
+117	yes			AddProgmanItem	"ODBC,ODBC DDP3.0 SQLServer,%s/drvssrvr.hlp"
+
+
+120	yes	SQL Server	ODBC Driver for SQLServer.	Group	121 122 124 150  630
+121	yes			CustomAction	odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA SQLServer
+122	yes			InstallShared	"DA SQLServer,Driver"					%121
+124	yes			InstallShared	"DA SQLServer,Network"					%121
+
+
+130	yes	Oracle	ODBC Driver for Oracle.	Group	132 138 420 150 136 137 139
+132	yes	Oracle Setup	ODBC Driver for Oracle.	Group	 134 
+134	yes	Oracle Setup		CustomAction	odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA Oracle
+
+136	yes	Oracle Main		InstallShared	"DA Oracle,Driver"					%134
+137	yes	Oracle Main		InstallShared	"DA Oracle,Setup"					%134
+
+138	yes	Help File	Oracle help file.	Group	140 142
+139	yes	Oracle Main		InstallShared	"DA Oracle,Strings"					%134
+140	yes	Help File	Oracle help file.	CopySection	"DA Oracle Help Files"
+142	yes			AddProgmanItem	"ODBC,ODBC DDP3.0 Oracle,%s/vsorac.hlp"
+
+
+
+150	yes	Translators	ODBC code page translators.	Group	160 170 175 173
+160	yes			CustomAction	odbcstf.dll,AcmeInstallTranslator,odbckey.inf:DA Translators
+170	yes			InstallShared	"DA MS CP Translators,Setup"					%160
+173	yes			InstallShared	"DA MS CP Translators,CP1"					%160
+175	yes			InstallShared	"DA MS CP Translators,CP2"					%160 
+
+200	yes	ODBC components	ODBC Driver manager	Group	210  220 225 230 235 240 250 253 255 260 270 273 275 276 277 280		vital
+210	yes			CustomAction	odbcstf.dll,AcmeInstallDriverManager,odbckey.inf
+220	yes			InstallSysFile	"DA Generic Thunk ODBC,Thunk1"		vital			%210
+225	yes			InstallSysFile	"DA Generic Thunk ODBC,Thunk2"		vital			%210
+230	yes			InstallSysFile	"DA Generic Thunk ODBC Driver Manager,Thunk1"		vital			%210
+235	yes			InstallSysFile	"DA Generic Thunk ODBC Driver Manager,Thunk2"		vital			%210
+240	yes			InstallSysFile	"DA ODBC Administrator,Windows00"		vital			%210
+250	yes			InstallSysFile	"DA ODBC Driver Manager,Driver"		vital			%210
+253	yes			InstallSysFile	"DA ODBC Driver Manager,Cursor"		vital			%210
+255	yes			InstallSysFile	"DA ODBC Driver Manager,Resource"		vital			%210
+260	yes			AddProgmanItem	"ODBC,32bit ODBC Administrator,%s/odbcad32.exe"
+270	yes			InstallSysFile	"DA ODBC,cpanel"		vital			%210
+273	yes			InstallSysFile	"DA ODBC,cpl"		vital			%210
+275	yes			InstallShared	"DA ODBCHELP,Help1"		vital			%210
+276	yes			InstallShared	"DA ODBCHELP,Help2"		vital			%210
+277	yes			InstallShared	"DA ODBCHELP,Help3"		vital			%210
+280	yes			AddProgmanItem	"ODBC,ODBC 25 Notes,%s/ReadMe25.txt"
+
+*** Win95 VRedirector ***
+400				Group	403					%d,%d\OS\SYSTEM		
+402				DetectOlderFile	"""vredir.vxd"",""4.00.954.0"""		
+	%m,%d
+403				Depend	"402  ? 404 405 "
+404				InstallSysFile	"DA Win95QFE,Win95QFE"
+
+405				CustomAction	"odbcstf.dll,NoAdminSyncEXECallout,%m\qfeupd.exe"
+
+*** Win95 ctl3d for Visigenics Oracle driver ***
+419	yes			CustomAction	odbcstf.dll,AcmeDetectOS,Win95
+420	yes			Depend	"419 ? 421"
+421	yes	3-D controls   		InstallSysFile	"DA CTL3D-W95-VSORA,Ctl3d"		vital	shared
+
+**** VBA components ****
+500	yes	VBA components		Group	510 520		vital	shared
+510	yes	VBA components		InstallSysFile	"DA Shared VBA Components,share1"		vital	shared
+520	yes	VBA components		InstallSysFile	"DA Shared VBA Components,share2"		vital	shared
+
+**** Jet components ****
+550	yes	Access components		Group	560 570 580 590 600 610 620		vital	shared
+560	yes	Access components		InstallShared	"DA Desktop Driver Components,Driver1"		vital	
+570	yes	Access components		InstallShared	"DA Desktop Driver Components,Driver2"		vital	
+580	yes	Access components		InstallShared	"DA Desktop Driver Components,Driver3"		vital	
+590	yes	Access components		InstallSysFile	"DA Desktop Driver Components,Jet1"		vital	
+600	yes	Access components		InstallSysFile	"DA Desktop Driver Components,Jet2"		vital	
+610	yes	Access components		InstallSysFile	"DA Desktop Driver Components,Jet3"		vital	
+620	yes	Access components		InstallSysFile	"DA Desktop Driver Components,Jet4"		vital	
+
+**** msvcrt40 for SQLServer ***
+630	yes	MSVC components		InstallSysFile	"DA Shared MSVC Components,msvcrt40.dll"		vital	shared

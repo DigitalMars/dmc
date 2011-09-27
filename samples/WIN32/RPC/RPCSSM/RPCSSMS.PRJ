@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\RPC\RPCSSM\RPCSSMS.PRJ
+RPCSSMS.OPN
+novcs
+rpcssms.DEF
+4
+812035224
+0 0 0 0 0 "rpcssm_s.c" ""
+0 0 0 0 0 "rpcssmp.c" ""
+0 0 0 0 0 "rpcssms.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "rpcssms.def" ""

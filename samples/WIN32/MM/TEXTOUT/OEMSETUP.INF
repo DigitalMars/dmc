@@ -1,0 +1,9 @@
+;
+; OEMSETUP.INF
+;
+; For textout Win32 SDK sample
+;
+
+[Installable.Drivers32]
+    txts.DRAW = 1:txtout32.dll, "txts.DRAW", "Textout Win32 SDK sample",,
+

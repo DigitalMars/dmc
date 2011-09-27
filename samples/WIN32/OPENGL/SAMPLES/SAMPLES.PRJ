@@ -1,0 +1,31 @@
+82572
+C:\SC\Samples\WIN32\opengl\samples\samples.prj
+SAMPLES.OPN
+novcs
+samples.def
+4
+853546422
+0 0 0 0 0 "tbitmap1.prj" ""
+0 0 0 0 0 "tbitmap2.prj" ""
+0 0 0 0 0 "tdepth.prj" ""
+0 0 0 0 0 "teval.prj" ""
+0 0 0 0 0 "tfog.prj" ""
+0 0 0 0 0 "tline.prj" ""
+0 0 0 0 0 "tlogo.prj" ""
+0 0 0 0 0 "tpoint.prj" ""
+0 0 0 0 0 "tprim.prj" ""
+0 0 0 0 0 "tselect.prj" ""
+0 0 0 0 0 "tstar.prj" ""
+0 0 0 0 0 "tstencil.prj" ""
+0 0 0 0 0 "ttri.prj" ""
+0 0 0 0 0 "twave.prj" ""
+0 0 0 0 0 "samples.def" ""
+0 0 0 0 0 "advapi32.lib" ""
+0 0 0 0 0 "taccum.prj" ""
+0 0 0 0 0 "tcopy.prj" ""
+0 0 0 0 0 "tnurb.PRJ" ""
+0 0 0 0 0 "tquad.prj" ""
+0 0 0 0 0 "tspeed.prj" ""
+0 0 0 0 0 "tsphere.prj" ""
+0 0 0 0 0 "tstretch.PRJ" ""
+0 0 0 0 0 "ttexture.prj" ""

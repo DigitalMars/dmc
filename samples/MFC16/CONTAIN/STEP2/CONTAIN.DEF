@@ -1,0 +1,11 @@
+; contain.def : Declares the module parameters for the application.
+
+NAME         CONTAIN
+DESCRIPTION  'CONTAIN Windows Application'
+EXETYPE      WINDOWS
+
+CODE         PRELOAD MOVEABLE DISCARDABLE
+DATA         PRELOAD MOVEABLE MULTIPLE
+
+STACKSIZE    10240
+HEAPSIZE     1024   ; initial heap size

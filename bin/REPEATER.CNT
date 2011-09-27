@@ -1,0 +1,18 @@
+:Index (no name) =repeater.hlp
+1 REPEATER.TSP
+2 REPEATER.TSP =_win32_REPEATER.TSP@repeater.hlp
+2 COMPONENTS
+3 COMPONENTS =_win32_COMPONENTS@repeater.hlp
+3 USING REPEATER =_win32_USING_REPEATER@repeater.hlp
+3 FORMAT OF LOG FILE
+4 FORMAT OF LOG FILE =_win32_FORMAT_OF_LOG_FILE@repeater.hlp
+4 Each record in the file consists of =_win32_Each_record_in_the_file_consists_of@repeater.hlp
+4 Order for line messages, phone messages, and async completions: =_win32_Order_for_line_messages_phone_messages_and_async_completions_@repeater.hlp
+4 Order for TSPI calls =_win32_Order_for_TSPI_calls@repeater.hlp
+2 DESCRIPTION OF RECORD COMPONENTS
+3 Header =_win32_Header@repeater.hlp
+3 Types (used in the header) =_win32_Types_used_in_the_header_@repeater.hlp
+3 Body: =_win32_Body_@repeater.hlp
+3 SPFUNCs =_win32_SPFUNCs@repeater.hlp
+3 Result =_win32_Result@repeater.hlp
+3 Structures =_win32_Structures@repeater.hlp

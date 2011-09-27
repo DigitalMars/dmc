@@ -1,0 +1,431 @@
+# Makefile : Builds a Foundation class library variant.
+#
+# This is a part of the Microsoft Foundation Classes C++ library.
+# Copyright (C) 1992-1993 Microsoft Corporation
+# All rights reserved.
+#
+# This source code is only intended as a supplement to the
+# Microsoft Foundation Classes Reference and Microsoft
+# QuickHelp and/or WinHelp documentation provided with the library.
+# See these sources for detailed information regarding the
+# Microsoft Foundation Classes product.
+#
+# Usage: SMAKE CLEAN        (removes all intermediary files)
+#    or: SMAKE options      (builds one library variant (see below))
+# Note that an SMAKE CLEAN should be performed before building a new variant.
+#
+# 'Options' are one of each of:
+#   "TARGET=W"           (defaults to W)
+#           Any of the following platforms are accepted: R (real-mode DOS),
+#           W (windows).
+#   "DLL"              (defaults to 0)
+#           If this item is 0, then a normal library is generated.
+#           If this item is 1, a DLL version of the library is generated.
+#           If this item is 2, a stand alone DLL is generated.
+#           Only Large model versions of DLLs are supported.
+#   "DEBUG"             (defaults to 1)
+#           If this item is 1, debugging support is compiled into
+#           the library.  If this item is 0, then debugging support
+#           is disabled.  Debug support does not include CodeView information.
+#   "CODEVIEW=0"           (defaults to 1, always)
+#           If this item is 1 CodeView information is compiled into
+#           the library.  You must use the /CODEVIEW link option
+#           in addition, when linking your executable.  If this item
+#           is 2, then only selected modules will be compiled with
+#           CodeView information.  You must use the link option /CODEVIEW.
+#           A value of 0 indicates that no CodeView information is to be
+#           generated.
+#   "OBJ=.\obj"          (defaults to '$$(MODEL)$(TARGET)$(DEBUG)'
+#           This optional specification specifies where temporary OBJ files
+#           are stored during the build process.  The directory is created or
+#           removed as necessary.
+#   "OPT="               (no default value)
+#           This allows additional compiler options to be added to the build.
+#           If more than one switch is desired, put double-quotes around the
+#           whole OPT= argument, e.g., "OPT=-J -w".
+#   "NO_PCH=1"
+#           Set this item to override the default use of precompiled headers
+#
+#   The default is to build TARGET=W DEBUG=1
+#
+#
+#############################################################################
+# Define Default values if not defined
+
+
+# Default to DEBUG mode
+!ifndef DEBUG
+DEBUG=1
+!endif
+
+# Default to NOT DLL
+!ifndef DLL
+DLL=0
+!endif
+
+# Default Target to Windows
+!ifndef TARGET
+TARGET=W
+!endif
+
+# Default to full Codeview Info
+!ifndef CODEVIEW
+CODEVIEW=1
+!endif
+
+
+#############################################################################
+# normalize cases of parameters
+
+#  don't need to do this
+# !if "$(TARGET)"=="W"
+# !undef TARGET
+# TARGET=w
+# !else if "$(TARGET)"=="R"
+# !undef TARGET
+# TARGET=r
+# !endif
+
+#############################################################################
+# Parse these options:
+
+#
+# DEBUG OPTIONS
+#
+!if "$(DEBUG)" != "0"
+DEBUGSUF=D
+DEBDEFS=-D_DEBUG
+DEBOPTS=
+!else
+
+#
+# NON-DEBUG OPTIONS
+#
+DEBUGSUF=
+DEBDEFS=
+DEBOPTS=-o+speed
+!endif
+
+#
+# CODEVIEW options
+#
+
+!if "$(CODEVIEW)" == "1"
+DEBOPTS=$(DEBOPTS) -g -C
+!endif
+
+# CVEXTRA used for select CodeView information (main files only)
+!if "$(CODEVIEW)" == "2"
+CVEXTRA=-g -C
+!endif
+
+#
+# MODEL options
+#
+CL_MODEL = -NTAFX_MSVC_TEXT -ml
+!if "$(DLL)" == "2"
+CL_MODEL=$(CL_MODEL)W
+!endif
+
+#
+# TARGET options
+#
+!if "$(TARGET)"=="R"
+TARGDEFS=$(TARGDEFS) -D_DOS
+TARGOPTS=-Nc
+!else if "$(TARGET)"=="W"
+TARGDEFS=$(TARGDEFS)
+TARGOPTS=-WA -2 -Nc 
+MKWIN=1
+EXPEXTRA=-WAe -H-
+!else
+!error TARGET must be one of W, R.
+!endif
+
+# TYPE = Library Type Designator
+#       c = normal C library
+#       d = DLL library
+#       e = Standalone DLL (MFCO250.DLL)
+TYPE=C
+
+#
+# Object File Directory
+#
+!if "$(OBJ)" == ""
+D=$$l$(TARGET)$(DEBUGSUF)    # subdirectory specific to variant
+!else
+D=$(OBJ)                            # User specified directory
+!endif
+
+#
+# COMPILER OPTIONS
+#
+CL_OPT=-w2 -w7 -w6 -wx -a $(DEBOPTS) $(TARGOPTS)
+
+#
+# DLL Variants
+#
+!if "$(DLL)" == "1"
+# _USRDLL library (SS!=DS)
+TYPE=D
+!if "$(OBJ)" == ""
+D=$D.dll
+!endif
+CL_MODEL=$(CL_MODEL)W
+TARGOPTS=-WD -2 -Nc -D_USRDLL
+EXPEXTRA=-WDe -H-
+# -WD will define _WINDLL
+!endif
+
+!if "$(DLL)" == "2"
+# stand alone DLL (SS!=DS, large model, everything linked, everything exported)
+TYPE=E
+!if "$(OBJ)" == ""
+!if "$(AFXCTL)" == "1"
+D=$$CTL$(DEBUGSUF)$(DEXT)
+!else
+D=$$DLL$(DEBUGSUF)$(DEXT)
+!endif
+!endif
+EXPEXTRA=
+TARGOPTS=-WD-r -2 
+TARGDEFS=$(TARGDEFS) -D_AFXDLL
+# Compile with optimizations ON !
+!if "$(DEBUG)" == "1"
+DEBOPTS=
+!else
+DEBOPTS=-o+speed 
+!endif
+!if "$(CODEVIEW)" == "1"
+DEBOPTS=$(DEBOPTS) -g -C
+!endif
+!endif
+
+#
+# VBX Runtime Library Support
+#
+!if "$(DLL)" != "1" && "$(AFXCTL)" != "1"
+# _USRDLL cannot have VBX support
+
+VBX_LIB=lvbx$(TYPE)w.lib
+VBX_OBJ=$D\vbctrl.obj $D\vbddx.obj $D\vbddxf.obj $D\vbfloat.obj $(VBX_LIB)
+!else
+VBX_LIB=
+VBX_OBJ=
+!endif
+
+#############################################################################
+# Options always built from above conditionals
+
+DEFS=$(DEBDEFS) $(TARGDEFS)
+GOAL=LAFX$(TYPE)$(TARGET)$(DEBUGSUF)
+
+#############################################################################
+# Library Components
+
+OBJECT=$D\objcore.obj $D\except.obj $D\afxver.obj \
+	$D\validadd.obj $D\dumpcont.obj $D\dumpflt.obj \
+	$D\arccore.obj $D\arcobj.obj $D\arcex.obj
+
+# non-shared diagnostics
+OBJDIAG=$D\dumpinit.obj $D\dumpout.obj \
+	$D\afxasert.obj $D\afxmem.obj $D\afxabort.obj
+
+FILES=$D\filecore.obj $D\filetxt.obj $D\filemem.obj $D\filex.obj $D\filest.obj
+
+COLLECTIONS1=$D\array_b.obj $D\array_d.obj $D\array_p.obj $D\array_o.obj \
+	$D\array_s.obj $D\array_u.obj $D\array_w.obj \
+	$D\list_o.obj $D\list_p.obj $D\list_s.obj
+
+COLLECTIONS2=$D\map_pp.obj $D\map_pw.obj $D\map_so.obj \
+	$D\map_sp.obj $D\map_ss.obj $D\map_wo.obj $D\map_wp.obj $D\plex.obj
+
+MISC=$D\strcore1.obj $D\strcore2.obj $D\strex.obj $D\timecore.obj
+
+WINDOWS=\
+	$D\wincore.obj $D\winfrm.obj $D\winfrmx.obj $D\winmdi.obj $D\winhand.obj \
+	$D\winmain.obj $D\barcore.obj $D\bartool.obj $D\bardlg.obj \
+	$D\dcprev.obj $D\dcmeta.obj $D\trckrect.obj $D\fileshrd.obj
+
+DIALOG=\
+	$D\dlgcore.obj $D\dlgdata.obj $D\dlgfloat.obj \
+	$D\winctrl.obj $D\winbtn.obj $D\penctrl.obj \
+	$D\dlgfile.obj $D\dlgprnt.obj $D\dlgclr.obj $D\dlgfnt.obj $D\dlgfr.obj \
+	$D\dlgprop.obj
+
+WINMISC=\
+	$D\wingdi.obj $D\wingdix.obj $D\winstr.obj $D\winmenu.obj \
+	$D\auxdata.obj $D\afxtrace.obj $D\winutil.obj
+
+DOCVIEW=\
+	$D\cmdtarg.obj $D\doccore.obj $D\doctempl.obj \
+	$D\docsingl.obj $D\docmulti.obj $D\docmapi.obj \
+	$D\viewcore.obj $D\viewprnt.obj $D\winsplit.obj $D\viewscrl.obj \
+	$D\viewform.obj $D\viewedit.obj $D\viewprev.obj
+
+APPLICATION=\
+	$D\appcore.obj $D\appinit.obj $D\appterm.obj $D\appui.obj $D\appui2.obj \
+	$D\appgray.obj $D\appdlg.obj $D\appprnt.obj \
+	$D\apphelp.obj $D\apphelpx.obj $D\appdata.obj
+
+DB=$D\dbcore.obj $D\dbrfx.obj $D\dbflt.obj $D\dbview.obj
+
+SOCKETS=$D\sockcore.obj
+
+OLEREQ=$D\olelock1.obj $D\olelock2.obj $D\oledata.obj
+
+OLEDLL=\
+	$D\oleinit.obj $D\olebar.obj $D\olecli1.obj $D\olecli2.obj \
+	$D\olecli3.obj $D\oledobj1.obj $D\oledobj2.obj $D\oledisp1.obj \
+	$D\oledisp2.obj $D\oledlgs1.obj $D\oledlgs2.obj $D\oledoc1.obj \
+	$D\oledoc2.obj $D\oledrop1.obj $D\oledrop2.obj $D\olemsgf.obj \
+	$D\oleenum.obj $D\olefact.obj $D\oleipfrm.obj $D\olelink.obj \
+	$D\olemisc.obj $D\olestrm.obj $D\olesvr1.obj $D\olesvr2.obj \
+	$D\olereg.obj $D\oletsvr.obj $D\oleui1.obj $D\oleui2.obj $D\oleunk.obj
+
+!if "$(DLL)" == "1"
+OLEREQ=$D\oledll.obj $(OLEREQ)
+!endif
+
+OLEASM=olecallf.obj
+
+OLE=$(OLEREQ) $(OLEDLL) $(OLEASM)
+
+!if "$(DEBUG)" == "1"
+INLINES=$D\afxinl1.obj
+!ifdef MKWIN
+INLINES=$(INLINES) $D\afxinl2.obj $D\afxinl3.obj
+!endif
+!else
+INLINES=
+!endif
+
+OBJS=$(OBJECT) $(OBJDIAG) $(INLINES) $(FILES) $(COLLECTIONS1) $(COLLECTIONS2) $(MISC)
+!ifdef MKWIN
+OBJS=$(OBJS) $(WINDOWS) $(DIALOG) $(WINMISC) $(DOCVIEW) $(APPLICATION) \
+	$(DB) $(SOCKETS) $(OLE) $(VBX_OBJ)
+!endif
+
+#############################################################################
+# Standard tools
+
+#############################################################################
+# Set CPPFLAGS for use with .cpp.obj and .c.obj rules
+# Define rule for use with OBJ directory
+# C++ uses a PCH file
+
+CPP = sc
+CPPFLAGS=$(CPPFLAGS) $(CL_MODEL) $(CL_OPT) $(DEFS) $(OPT)
+
+!ifndef TARG
+TARG=$(GOAL)
+!endif
+
+!ifndef NO_PCH
+!ifndef PCH_FILE
+PCH_FILE=$D\stdafx.sym
+!endif
+!ifndef PCH_CPP
+PCH_CPP=stdafx
+!endif
+
+CPPFLAGS=$(CPPFLAGS) -H -HD$D
+!else
+PCH_FILE=
+!endif
+
+.SUFFIXES: .cpp
+
+.cpp{$D}.obj:
+	$(CPP) -c $< @<<$(TARG).OPT
+$(CPPFLAGS) -o$D\ 
+<<
+
+
+#############################################################################
+# Goals to build
+
+goal: create.dir ..\..\lib\$(GOAL).lib
+
+create.dir:
+	@-if not exist $D\*.* mkdir $D
+
+clean:
+	-if exist $D\*.obj erase $D\*.obj
+	-if exist $D\*.sym erase $D\*.sym
+	-if exist $D\*.* rmdir $D
+
+#############################################################################
+# Precompiled header file
+
+!ifndef NO_PCH
+HDRS =..\..\include\mfc25\*.h ..\..\include\mfc25\*.inl
+
+$(PCH_FILE): $(PCH_CPP).h $(HDRS)
+	$(CPP) -c -cpp $(PCH_CPP).h @<<$(TARG).OPT
+-HF$(PCH_FILE) $(CL_MODEL) $(CL_OPT) $(DEFS) $(CVEXTRA) $(OPT) -o$D\$(PCH_CPP).obj 
+<<
+!endif
+
+############################################################################
+# CodeView for select files
+
+!if "$(CODEVIEW)"=="2"
+
+$D\afxmem.obj : afxmem.cpp
+	$(CPP) -c afxmem.cpp @<<$(TARG).OPT
+$(CPPFLAGS) $(CVEXTRA) -o$D\afxmem.obj 
+<<
+
+
+!ifdef MKWIN
+$D\winmain.obj : winmain.cpp
+	$(CPP) -c winmain.cpp @<<$(TARG).OPT
+$(CPPFLAGS) $(CVEXTRA) -o$D\winmain.obj 
+<<
+
+$D\wincore.obj : wincore.cpp
+	$(CPP) -c wincore.cpp @<<$(TARG).OPT
+$(CPPFLAGS) $(CVEXTRA) -o$D\wincore.obj 
+<<
+
+$D\appcore.obj : appcore.cpp
+	$(CPP) -c appcore.cpp @<<$(TARG).OPT
+$(CPPFLAGS) $(CVEXTRA) -o$D\appcore.obj 
+<<
+!endif
+!endif
+
+#############################################################################
+# ASM files
+
+# OLECALLF.OBJ is pre-built using the following MASM rules
+
+MASM_OPT=
+
+olecallf.obj: olecall_.asm
+	masm /Mx /D_LARGE_CODE $(MASM_OPT) olecall_.asm,olecallf.obj;
+
+#############################################################################
+# Windows 3.0 loader export/version number
+
+$D\afxver.obj : afxver.cpp
+	$(CPP) -c afxver.cpp @<<$(TARG).OPT
+$(CPPFLAGS) $(EXPEXTRA) -o$D\ 
+<<
+
+#############################################################################
+# Build the library from the up-to-date objs
+
+..\..\lib\$(GOAL).lib: $(PCH_FILE) $(OBJS)
+	@-if exist $@ erase $@
+	@echo.
+	@echo Creating library: $@
+	lib /PAGESIZE:64 /NOLOGO @<<$(GOAL).RSP
+$@
+y
+$(OBJS)
+;
+<<
+
+#############################################################################

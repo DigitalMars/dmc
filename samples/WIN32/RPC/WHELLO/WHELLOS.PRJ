@@ -1,0 +1,12 @@
+82572
+C:\SC\samples\win32\RPC\WHELLO\WHELLOS.PRJ
+WHELLOS.OPN
+novcs
+whellos.DEF
+4
+812035224
+0 0 0 0 0 "whello_s.c" ""
+0 0 0 0 0 "whellop.c" ""
+0 0 0 0 0 "whellos.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "whellos.def" ""

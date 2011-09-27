@@ -1,0 +1,121 @@
+# THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+# ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+# PARTICULAR PURPOSE.
+#
+# Copyright (C) 1993 - 1995  Microsoft Corporation.  All Rights Reserved.
+#
+#
+# Processor independent makefile
+
+# Nmake macros for building Windows 32-Bit apps
+!include <ntwin32.mak>
+
+PROJ    = HOOKS
+DLLNAME1 = SYSHOOK
+DLLNAME2 = DLLSKEL
+
+all: $(PROJ).exe $(DLLNAME1).dll $(DLLNAME2).dll
+
+# Define project specific macros
+PROJ_OBJS  = browse.obj header.obj list.obj split.obj treeview.obj \
+             toolbar.obj statbar.obj propsht.obj
+BASE_OBJS  = winmain.obj dispatch.obj init.obj misc.obj about.obj $(PROJ).obj
+EXTRA_LIBS = version.lib comctl32.lib
+GLOBAL_DEP = globals.h
+RC_DEP     = globals.h about.dlg browse.dlg $(PROJ).ico treeview.h toolbar.h \
+             statbar.h listbx.h $(PROJ).h
+
+DLL1_OBJS   = Syshook.obj Syshook2.obj
+DLL1_DEP    = Syshook.h
+
+DLL2_OBJS   = dllmain.obj exports.obj
+DLL2_DEP    = dllglob.h
+
+
+# Dependencies
+winmain.obj:  winmain.c  $(GLOBAL_DEP)
+dispatch.obj: dispatch.c $(GLOBAL_DEP)
+init.obj:     init.c     $(GLOBAL_DEP)
+$(PROJ).obj:  $(PROJ).c  $(GLOBAL_DEP) header.h toolbar.h \
+                                       statbar.h $(PROJ).h \
+                                       listbx.h treeview.h \
+                                       propsht.h syshook.h
+misc.obj:     misc.c     $(GLOBAL_DEP)
+about.obj:    about.c    $(GLOBAL_DEP)
+browse.obj:   browse.c   $(GLOBAL_DEP) $(PROJ).h
+header.obj:   header.c   $(GLOBAL_DEP) header.h
+list.obj:     list.c     $(GLOBAL_DEP) listbx.h
+split.obj:    split.c    $(GLOBAL_DEP) split.h
+treeview.obj: treeview.c $(GLOBAL_DEP) treeview.h syshook.h
+toolbar.obj:  toolbar.c  $(GLOBAL_DEP) toolbar.h
+statbar.obj:  statbar.c  $(GLOBAL_DEP) statbar.h
+propsht.obj:  propsht.c  $(GLOBAL_DEP) propsht.h
+
+Syshook.obj:  SysHook.c  $(DLL1_DEP)
+Syshook2.obj: SysHook2.c $(DLL1_DEP)
+
+dllmain.obj:  dllmain.c  $(DLL2_DEP)
+exports.obj:  exports.c  $(DLL2_DEP)
+
+
+
+# Inference rule for updating the object files
+.c.obj:
+  $(cc) $(cdebug) $(cflags4) $(cvarsdll) $*.c
+
+
+
+# Build rule for import library
+$(DLLNAME1).lib: $(DLL1_OBJS) $(DLLNAME1).def
+     $(implib) \
+     -machine:$(CPU) \
+     -def:$(DLLNAME1).def \
+     -out:$(DLLNAME1).lib \
+     $(DLL1_OBJS)
+
+
+# Build rule for the first DLL
+$(DLLNAME1).dll: $(DLL1_OBJS) $(DLLNAME1).res
+    $(link) \
+    $(linkdebug) $(dlllflags) \
+    -base:0x1C000000 \
+    -out:$(DLLNAME1).dll \
+    -def:$(DLLNAME1).def \
+    $(DLL1_OBJS) $(guilibsdll) $(DLLNAME1).res
+
+# Build rule for the other DLL
+$(DLLNAME2).dll: $(DLL2_OBJS) $(DLLNAME2).res
+    $(link) \
+    $(linkdebug) $(dlllflags) \
+    -base:0x1C000000 \
+    -out:$(DLLNAME2).dll \
+    -def:$(DLLNAME2).def \
+    -implib:$(DLLNAME2).lib \
+    $(DLL2_OBJS) $(guilibsdll) $(DLLNAME2).res
+
+
+# Build rule for resource file
+$(PROJ).res: $(PROJ).rc $(RC_DEP)
+    $(rc) $(rcflags) $(rcvars) /fo $(PROJ).res $(PROJ).rc
+
+# Build rule for DLL2 resource file
+$(DLLNAME2).res: $(DLLNAME2).rc $(DLL2_DEP)
+    $(rc) $(rcflags) $(rcvars) /fo $(DLLNAME2).res $(DLLNAME2).rc
+
+# Build rule for DLL1 resource file
+$(DLLNAME1).res: $(DLLNAME1).rc $(DLL1_DEP)
+    $(rc) $(rcflags) $(rcvars) /fo $(DLLNAME1).res $(DLLNAME1).rc
+
+# Build rule for EXE
+$(PROJ).EXE: $(BASE_OBJS) $(PROJ_OBJS) $(PROJ).res $(DLLNAME1).lib
+    $(link) $(linkdebug) $(guilflags4) \
+    $(BASE_OBJS) $(PROJ_OBJS) $(PROJ).res $(guilibsdll) $(EXTRA_LIBS) \
+    $(DLLNAME1).lib \
+    -out:$(PROJ).exe $(MAPFILE)
+
+
+
+# Rules for cleaning out those old files
+clean:
+    del *.bak *.pdb *.obj *.res *.exp *.map *.sbr *.bsc

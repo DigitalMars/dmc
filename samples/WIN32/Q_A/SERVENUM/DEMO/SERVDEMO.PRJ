@@ -1,0 +1,14 @@
+82572
+C:\SC\samples\win32\Q_A\SERVENUM\DEMO\SERVDEMO.PRJ
+SERVDEMO.OPN
+novcs
+SERVDEMO.DEF
+2
+812035224
+0 0 0 0 0 "makefile" ""
+0 0 0 0 0 "browse.c" ""
+0 0 0 0 0 "dispatch.c" ""
+0 0 0 0 0 "init.c" ""
+0 0 0 0 0 "misc.c" ""
+0 0 0 0 0 "winmain.c" ""
+0 0 0 0 0 "browse.rc" ""

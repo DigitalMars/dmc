@@ -1,0 +1,13 @@
+82572
+C:\SC\samples\win32\MM\LANGPLAY\LANGPL32.PRJ
+LANGPL32.OPN
+novcs
+langpl32.def
+16
+812035224
+0 0 0 0 0 "langpl32.def" ""
+0 0 0 0 0 "langplay.c" ""
+0 0 0 0 0 "langplay.rc" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "vfw32.lib" ""
+0 0 0 0 0 "winmm.lib" ""

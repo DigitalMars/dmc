@@ -1,0 +1,57 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+1 DLGINCLUDE "ConGUI.H"
+
+CL DIALOG 95, 134, 272, 173
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "C Compiler Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Memory Model:", -1, 7, 39, 50, 8
+    COMBOBOX        402, 7, 48, 66, 43, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Processor:", -1, 77, 39, 35, 8
+    COMBOBOX        404, 78, 48, 50, 43, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Calling Convention:", -1, 134, 39, 64, 8
+    COMBOBOX        406, 134, 48, 79, 43, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Warning Level:", -1, 7, 69, 50, 8
+    COMBOBOX        408, 7, 78, 64, 51, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    AUTOCHECKBOX    "Warnings Fatal", 409, 7, 92, 81, 10
+    LTEXT           "Debug Information:", -1, 77, 69, 63, 8
+    COMBOBOX        411, 77, 78, 79, 51, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Windows Entry Exit Code:", -1, 7, 107, 84, 8
+    COMBOBOX        413, 7, 117, 98, 48, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Standard Options:", -1, 7, 4, 59, 8
+    COMBOBOX        415, 7, 14, 206, 65, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "", -1, "Static", SS_BLACKRECT, 0, 31, 212, 1
+    LTEXT           "Language:", -1, 161, 70, 35, 8
+    COMBOBOX        418, 162, 79, 51, 51, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Defines:", -1, 7, 138, 28, 8
+    EDITTEXT        420, 37, 136, 176, 12, ES_AUTOHSCROLL
+    LTEXT           "Include Path:", -1, 7, 154, 44, 8
+    EDITTEXT        422, 56, 153, 157, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "Additional Options...", 423, 139, 99, 74, 14, 
+                    WS_DISABLED
+    PUSHBUTTON      "Optimizations...", 424, 139, 117, 74, 14, WS_DISABLED
+    PUSHBUTTON      "OK", IDOK, 225, 7, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 225, 22, 40, 14
+    PUSHBUTTON      "Help", T_HELP, 225, 44, 40, 14
+END

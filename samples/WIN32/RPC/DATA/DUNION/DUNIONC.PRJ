@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\RPC\DATA\DUNION\DUNIONC.PRJ
+DUNIONC.OPN
+novcs
+dunionc.DEF
+4
+812035224
+0 0 0 0 0 "dunion_c.c" ""
+0 0 0 0 0 "dunionc.c" ""
+0 0 0 0 0 "rpcrt4.lib" ""
+0 0 0 0 0 "dunionc.def" ""

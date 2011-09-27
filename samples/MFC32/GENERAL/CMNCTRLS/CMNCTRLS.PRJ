@@ -1,0 +1,23 @@
+82572
+C:\SC\samples\mfc32\general\cmnctrls\CMNCTRLS.PRJ
+cmnctrls.OPN
+novcs
+cmnctrls.DEF
+16
+834102808
+0 0 0 0 0 "animctrl.cpp" ""
+0 0 0 0 0 "ctrldemo.cpp" ""
+0 0 0 0 0 "listcpg.cpp" ""
+0 0 0 0 0 "mlistctl.cpp" ""
+0 0 0 0 0 "mtreectl.cpp" ""
+0 0 0 0 0 "notifwdw.cpp" ""
+0 0 0 0 0 "progctrl.cpp" ""
+0 0 0 0 0 "propsht.cpp" ""
+0 0 0 0 0 "slidctrl.cpp" ""
+0 0 0 0 0 "spinctrl.cpp" ""
+0 0 0 0 0 "toolbar1.cpp" ""
+0 0 0 0 0 "toolbar2.cpp" ""
+0 0 0 0 0 "toolpage.cpp" ""
+0 0 0 0 0 "treecpg.cpp" ""
+0 0 0 0 0 "cmnctrls.DEF" ""
+0 0 0 0 0 "cmnctrls.rc" ""

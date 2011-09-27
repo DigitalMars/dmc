@@ -1,0 +1,12 @@
+82570
+c:\SamplesMFC32\CONTROLS\PUSH\push.prj
+push.OPN
+novcs
+push.def
+17
+837039800
+0 0 0 0 0 "push.cpp" ""
+0 0 0 0 0 "pushctl.cpp" ""
+0 0 0 0 0 "pushppg.cpp" ""
+0 0 0 0 0 "push.def" ""
+0 0 0 0 0 "push.rc" ""

@@ -1,0 +1,21 @@
+82572
+E:\dm\SAMPLES\TUTORIAL\LESSON1\START\TMLDOS.PRJ
+TMLDOS.OPN
+novcs
+TMLDOS.def
+6
+852897000
+0 0 0 0 0 "main.c" ""
+0 0 0 0 0 "parse.c" ""
+0 0 0 0 0 "display.c" ""
+0 0 0 0 0 "tmldos.def" ""
+0 -1 0 0 0 "..\..\..\..\include\stdio.h" ""
+0 -1 0 0 0 "..\..\..\..\include\stdlib.h" ""
+0 -1 0 0 0 "..\..\..\..\include\disp.h" ""
+0 -1 0 0 0 "..\..\..\..\include\bios.h" ""
+0 -1 0 0 0 "TMLDOS.h" ""
+0 -1 0 0 0 "..\..\..\..\include\dir.h" ""
+0 -1 0 0 0 "..\..\..\..\include\direct.h" ""
+0 -1 0 0 0 "..\..\..\..\include\setjmp.h" ""
+0 -1 0 0 0 "..\..\..\..\include\ctype.h" ""
+0 -1 0 0 0 "..\..\..\..\include\string.h" ""

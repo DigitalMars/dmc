@@ -1,0 +1,67 @@
+1 DLGINCLUDE "OPEN.H"
+
+ID_OPENDIALOG DIALOG 46, -38, 234, 266
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "GetOpenFileName( )"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "lStructSize", 604, 6, 6, 36, 8
+    EDITTEXT        ID_STRUCTSIZEO, 65, 3, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "hwndOwner", 605, 6, 19, 39, 8
+    EDITTEXT        ID_HWNDOWNERO, 65, 16, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "hInstance", ID_OPENDIALOG, 6, 32, 33, 8
+    EDITTEXT        ID_HINSTANCEO, 65, 29, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "lpstrFilter", 103, 6, 45, 33, 8
+    COMBOBOX        ID_FILTERO, 65, 42, 78, 80, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "lpstrCustFilter", 104, 6, 58, 47, 8
+    COMBOBOX        ID_CUSTFILTO, 65, 56, 78, 80, CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "nMaxCustFilter", 105, 6, 71, 51, 8
+    EDITTEXT        ID_MAXCUSTFILTO, 65, 69, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "nFilterIndex", 106, 6, 84, 41, 8
+    EDITTEXT        ID_FILTINDEXO, 65, 82, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "lpstrFile", 107, 6, 97, 28, 8
+    EDITTEXT        ID_SZFILEO, 65, 95, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "nMaxFile", 108, 6, 110, 32, 8
+    EDITTEXT        ID_MAXSZFILEO, 65, 108, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "lpstrFileTitle", 109, 6, 123, 43, 8
+    EDITTEXT        ID_SZFILETITLEO, 65, 121, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "nMaxFileTitle", 110, 6, 136, 46, 8
+    EDITTEXT        ID_MAXSZFILETITLEO, 65, 134, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "lpstrInitialDir", 111, 6, 149, 44, 8
+    EDITTEXT        ID_SZINITDIRO, 65, 147, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "lpstrTitle", 112, 6, 162, 31, 8
+    EDITTEXT        ID_SZTITLEO, 65, 160, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "Flags", 113, 6, 175, 30, 8
+    EDITTEXT        ID_FLAGSO, 65, 173, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "nFileOffset", 114, 6, 188, 38, 8
+    EDITTEXT        ID_FILEOFFO, 65, 186, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "nFileExtension", 115, 6, 201, 50, 8
+    EDITTEXT        ID_FILEEXTO, 65, 199, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "lpstrDefExt", 116, 6, 214, 39, 8
+    EDITTEXT        ID_SZDEFEXTO, 65, 212, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "lCustData", 609, 6, 227, 32, 8
+    EDITTEXT        ID_CUSTDATAO, 65, 225, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "lpfnHook", -1, 6, 240, 30, 8
+    EDITTEXT        ID_HOOKO, 65, 238, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "lpTemplateName", 612, 6, 253, 55, 8
+    EDITTEXT        ID_TEMPLATEO, 65, 251, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "Error:", 117, 153, 73, 78, 8
+    EDITTEXT        ID_ERRORO, 153, 83, 78, 12, ES_AUTOHSCROLL
+    LTEXT           "Return:", 132, 153, 99, 78, 8
+    EDITTEXT        ID_RETURNO, 153, 108, 78, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "OK", IDOK, 153, 3, 78, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 153, 18, 78, 14
+    PUSHBUTTON      "Add1", ID_ADD1O, 158, 42, 35, 13
+    PUSHBUTTON      "Clear1", ID_CLEAR1O, 195, 42, 35, 13
+    PUSHBUTTON      "Add2", ID_ADD2O, 158, 56, 35, 13
+    PUSHBUTTON      "Clear2", ID_CLEAR2O, 195, 56, 35, 13
+    PUSHBUTTON      "&Reset", ID_RESETOPEN, 153, 127, 78, 14
+    AUTOCHECKBOX    "&NULL Structure", ID_NULLSTRUCTO, 153, 177, 78, 10
+    AUTOCHECKBOX    "Preloaded Template", ID_USEHINSTO, 153, 189, 78, 10
+    PUSHBUTTON      "&MultiThread", ID_MULTIOPEN, 153, 144, 78, 14
+    CONTROL         "", 611, "Static", SS_BLACKRECT, 144, 61, 13, 2
+    CONTROL         "", 610, "Static", SS_BLACKRECT, 144, 46, 13, 2
+END

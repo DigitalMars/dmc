@@ -1,0 +1,642 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.rc""  // Standard components\r\n"
+    "#include ""afxprint.rc""  // printing/print preview resources\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDR_MAINFRAME           ICON    DISCARDABLE     "RES\\CHKBOOK.ICO"
+IDR_BOOKFRAME           ICON    DISCARDABLE     "RES\\DOC.ICO"
+IDR_CHECKFRAME          ICON    DISCARDABLE     "RES\\CHECKVW.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "RES\\TOOLBAR.BMP"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+#if defined(APSTUDIO_INVOKED) || !defined(_MAC)
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New...\tCtrl+N",             ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   ID_APP_ABOUT
+    END
+END
+#endif
+
+#if defined(APSTUDIO_INVOKED) || !defined(_MAC)
+IDR_BOOKFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&New Check",                  ID_EDIT_NEW_CHECK
+        MENUITEM "Ne&xt Check",                 ID_NEXT_CHECK
+        MENUITEM "&Prev Check",                 ID_PREV_CHECK
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Check",                      ID_VIEW_CHECK
+        MENUITEM "Book",                        ID_VIEW_BOOK
+        MENUITEM SEPARATOR
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   ID_APP_ABOUT
+    END
+END
+#endif
+
+#if defined(APSTUDIO_INVOKED) || !defined(_MAC)
+IDR_CHECKFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&New Check",                  ID_EDIT_NEW_CHECK
+        MENUITEM "&Commit Check",               ID_EDIT_COMMIT_CHECK
+        MENUITEM "Ne&xt Check",                 ID_NEXT_CHECK
+        MENUITEM "&Prev Check",                 ID_PREV_CHECK
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Check",                      ID_VIEW_CHECK
+        MENUITEM "&Book",                       ID_VIEW_BOOK
+        MENUITEM SEPARATOR
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   ID_APP_ABOUT
+    END
+END
+#endif
+
+#if defined(APSTUDIO_INVOKED) || defined(_MAC)
+#if defined(APSTUDIO_INVOKED)
+IDR_MAINFRAME$(_MAC) MENU PRELOAD DISCARDABLE 
+#else
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+#endif
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\t\021N",                 ID_FILE_NEW
+        MENUITEM "&Open...\t\021O",             ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Document Setup...",          ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Quit\t\021Q",                ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+END
+#endif
+
+#if defined(APSTUDIO_INVOKED) || defined(_MAC)
+#if defined(APSTUDIO_INVOKED)
+IDR_BOOKFRAME$(_MAC) MENU PRELOAD DISCARDABLE 
+#else
+IDR_BOOKFRAME MENU PRELOAD DISCARDABLE 
+#endif
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Document Setup...",          ID_FILE_PRINT_SETUP
+        MENUITEM "&Print...\t\021P",            ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM SEPARATOR
+        MENUITEM "&Close\t\021W",               ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Quit\t\021Q",                ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&New Check",                  ID_EDIT_NEW_CHECK
+        MENUITEM "Ne&xt Check",                 ID_NEXT_CHECK
+        MENUITEM "&Prev Check",                 ID_PREV_CHECK
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Check",                      ID_VIEW_CHECK
+        MENUITEM "Book",                        ID_VIEW_BOOK
+        MENUITEM SEPARATOR
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+    END
+END
+#endif
+
+#if defined(APSTUDIO_INVOKED) || defined(_MAC)
+#if defined(APSTUDIO_INVOKED)
+IDR_CHECKFRAME$(_MAC) MENU PRELOAD DISCARDABLE 
+#else
+IDR_CHECKFRAME MENU PRELOAD DISCARDABLE 
+#endif
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Close\t\021W",               ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Quit\t\021Q",                ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&New Check",                  ID_EDIT_NEW_CHECK
+        MENUITEM "&Commit Check",               ID_EDIT_COMMIT_CHECK
+        MENUITEM "Ne&xt Check",                 ID_NEXT_CHECK
+        MENUITEM "&Prev Check",                 ID_PREV_CHECK
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Check",                      ID_VIEW_CHECK
+        MENUITEM "&Book",                       ID_VIEW_BOOK
+        MENUITEM SEPARATOR
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+    END
+END
+#endif
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+#if defined(APSTUDIO_INVOKED) || !defined(_MAC)
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+#endif
+
+#if defined(APSTUDIO_INVOKED) || defined(_MAC)
+#if defined(APSTUDIO_INVOKED)
+IDR_MAINFRAME$(_MAC) ACCELERATORS PRELOAD MOVEABLE PURE 
+#else
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+#endif
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, ALT, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, ALT, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, ALT, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, ALT, NOINVERT
+    "W",            ID_FILE_CLOSE,          VIRTKEY, ALT, NOINVERT
+    "Q",            ID_APP_EXIT,            VIRTKEY, ALT, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, ALT, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, ALT, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, ALT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+END
+#endif
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  34, 22, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About CHKBOOK"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,18,20
+    LTEXT           "ChkBook Application Version 3.0",IDC_STATIC,40,10,119,8
+    LTEXT           "Copyright © 1994-1995",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,176,6,32,14,WS_GROUP
+END
+
+IDD_CHECK DIALOG DISCARDABLE  0, 0, 322, 112
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_DATE,257,17,54,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PAYTO,39,36,195,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_AMOUNTNUM,257,36,54,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MEMO,39,92,147,12,ES_AUTOHSCROLL
+    RTEXT           "Date:",IDC_STATIC,229,19,22,9
+    RTEXT           "$",IDC_STATIC,241,39,11,9
+    LTEXT           "Pay To:",IDC_STATIC,6,39,28,9
+    RTEXT           "",IDC_AMOUNTTEXT,14,53,295,32
+    LTEXT           "Memo:",IDC_STATIC,6,95,23,9
+    RTEXT           "#",IDC_STATIC,241,5,10,9
+    LTEXT           "",IDC_CHECKNO,259,5,47,9
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+IDR_VERSION1 VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "MFC\0"
+            VALUE "FileDescription", "CHKBOOK\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "CHKBOOK\0"
+            VALUE "LegalCopyright", "Copyright © 1994-1995\0"
+            VALUE "OriginalFilename", "CHKBOOK.exe\0"
+            VALUE "ProductName", "MFC CHKBOOK\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CHECK, DIALOG
+    BEGIN
+        RIGHTMARGIN, 321
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "CHKBOOK Application"
+    IDR_BOOKFRAME           "Book\nchecks\nCheck Book\nCheck Book File (*.chb)\n.chb\nChkBookFileType\nCheck Book File Type\nCHBK\nCheck Book Files"
+    IDR_CHECKFRAME          "Check\nchecks\n\n\n\nChkBookFileType\nCheck Book File Type"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INVALID_DOLLAR_CENT "Enter the amount of the check in dollars and cents, such as 19.95."
+    IDS_TOO_MANY_ROWS       "WARNING:  Limit exceeded.  Cannot display/print one or more checks."
+    IDS_PROMPT_COMMIT_DIRTY_CHECK "Save changes to current check?"
+    IDS_CANNOT_READ_UNICODE_FILE 
+                            "Cannot read checkbook file.\nUnicode version of checkbook file expected."
+    IDS_NEW_CHECKBOOK       "New CheckBook"
+    IDS_CANNOT_OPEN_CHECKBOOK 
+                            "%1 cannot be opened, or is not a checkbook file."
+    IDS_CANNOT_CREATE_CHECKBOOK 
+                            "%1 cannot be created.  Make sure to create new files on read-write media."
+    IDS_CANNOT_READ_ANSI_FILE 
+                            "Cannot read checkbook file.\nANSI version of checkbook file expected."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "CHKBOOK Application"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document"
+    ID_FILE_OPEN            "Open an existing document"
+    ID_FILE_CLOSE           "Close the active document"
+    ID_FILE_SAVE            "Save the active document"
+    ID_FILE_SAVE_AS         "Save the active document with a new name"
+    ID_FILE_PAGE_SETUP      "Change the printing options"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options"
+    ID_FILE_PRINT           "Print the active document"
+    ID_FILE_PRINT_PREVIEW   "Display full pages"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright"
+    ID_APP_EXIT             "Quit the application; prompts to save documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane"
+    ID_PREV_PANE            "Switch back to the previous window pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles"
+    ID_WINDOW_SPLIT         "Split the active window into panes"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection"
+    ID_EDIT_CLEAR_ALL       "Erase everything"
+    ID_EDIT_COPY            "Copy the selection and puts it on the Clipboard"
+    ID_EDIT_CUT             "Cut the selection and puts it on the Clipboard"
+    ID_EDIT_FIND            "Find the specified text"
+    ID_EDIT_PASTE           "Insert Clipboard contents"
+    ID_EDIT_REPEAT          "Repeat the last action"
+    ID_EDIT_REPLACE         "Replace specific text with different text"
+    ID_EDIT_SELECT_ALL      "Select the entire document"
+    ID_EDIT_UNDO            "Undo the last action"
+    ID_EDIT_REDO            "Redo the previously undone action"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_DESKACCESSORY   "Opens the selected item"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_CHECK           "Go to next check"
+    ID_PREV_CHECK           "Go to previous check"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_NEW_CHECK       "Create a new check"
+    ID_EDIT_COMMIT_CHECK    "Update check book with data entered in check form"
+    ID_VIEW_CHECK           "Show check form"
+    ID_VIEW_BOOK            "List check book entries"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TEENS_10            "Ten"
+    IDS_TEENS_11            "Eleven"
+    IDS_TEENS_12            "Twelve"
+    IDS_TEENS_13            "Thirteen"
+    IDS_TEENS_14            "Fourteen"
+    IDS_TEENS_15            "Fifteen"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TEENS_16            "Sixteen"
+    IDS_TEENS_17            "Seventeen"
+    IDS_TEENS_18            "Eighteen"
+    IDS_TEENS_19            "Nineteen"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TENS_0              "?"
+    IDS_TENS_10             "Ten"
+    IDS_TENS_20             "Twenty"
+    IDS_TENS_30             "Thirty"
+    IDS_TENS_40             "Fourty"
+    IDS_TENS_50             "Fifty"
+    IDS_TENS_60             "Sixty"
+    IDS_TENS_70             "Seventy"
+    IDS_TENS_80             "Eighty"
+    IDS_TENS_90             "Ninety"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ONES_0              "Zero"
+    IDS_ONES_1              "One"
+    IDS_ONES_2              "Two"
+    IDS_ONES_3              "Three"
+    IDS_ONES_4              "Four"
+    IDS_ONES_5              "Five"
+    IDS_ONES_6              "Six"
+    IDS_ONES_7              "Seven"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ONES_8              "Eight"
+    IDS_ONES_9              "Nine"
+    IDS_UNKNOWN             "???"
+    IDS_MILLION             "Million"
+    IDS_THOUSAND            "Thousand"
+    IDS_AND                 "and"
+    IDS_HUNDRETHS_DOLLARS   "/100ths Dollars"
+    IDS_HUNDRED             "Hundred"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "afxres.rc"  // Standard components
+#include "afxprint.rc"  // printing/print preview resources
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

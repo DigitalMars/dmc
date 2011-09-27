@@ -1,0 +1,71 @@
+ActiveX Redistributable Installation Kit: AXDist.exe and WINTDist.exe
+-----------------------------------------------
+
+This section refers to redistributable installing executables in the ActiveX SDK.  
+
+WINTDist.exe will install WinInet and dependencies, and make required registry settings
+on Windows NT 4.0 and Windows 95.
+* WinInet.dll
+* InLoader.dll
+* SChannel.dll
+
+WINT351.exe will install WinInet and dependencies, and make required registry settings
+on Windows NT 3.51.
+* WinInet.dll
+* InLoader.dll
+
+AXDist.exe will install URLMon.dll and dependencies, and make required registry settings
+on Windows NT 4.0 and Windows 95.
+* WinInet.dll
+* InLoader.dll
+* URLMon.dll
+* HLink.dll
+* HLinkPrx.dll
+* OLEAut32.dll
+* STDOLE2.tlb
+
+CCDist.exe will install ComCat.dll and dependencies, and make required registry settings
+for Windows NT 4.0 and Windows 95.
+* ComCat.dll
+
+CCDist35.exe will install ComCat.dll and dependencies, and make required registry settings
+for Windows NT 3.51.
+* ComCat.dll
+
+APRXDist.exe will install ActXPrxy.dll and dependencies, and make required registry settings
+for Windows NT 4.0 and Windows 95.
+* ActXPrxy.dll
+
+
+
+For the purposes of this section, "The DLLs" shall mean all of the DLLs and the TLB file listed above.
+
+AXDist.exe, WINTDist.exe, WINT351.exe, CCDist.exe, CCDist35.exe, and APRXDist.exe are self 
+extracting installation files which are intended to be the only vehicle through which 
+ISVs can redistribute and install The DLLs with their ActiveX code.  Their 
+purpose is to allow ISVs to ship code without being dependent on the presence of 
+Internet Explorer 3.0 on the target machine.  
+
+These files are in release form.  This agreement supersedes all other agreements with respect to 
+AXDist.exe, WINTDist.exe, WINT351.exe, CCDist.exe, CCDist35.exe, and APRXDist.exe, and 
+The DLLs.  In addition to the rights granted in Section 1 of the Development License Agreement 
+("Agreement"), you have the right to redistribute AXDist.exe, WINTDist.exe, WINT351.exe, CCDist.exe, 
+CCDist35.exe, and APRXDist.exe subject to the following non-exclusive stipulations.
+
+You may not modify AXDist.exe or WINTDist.exe, or The DLLs it installs.
+
+You may not redistribute The DLLs under any other circumstances except by using AXDist.exe, 
+WINTDist.exe, WINT351.exe, CCDist.exe, CCDist35.exe, or APRXDist.exe
+
+If you have shipped previous version of these installation files, you must now upgrade your
+installed base with your next product release. 
+
+You may freely distribute these files within your company for development purposes of your 
+ActiveX project.
+
+This licensing agreement is subject to change without warning.
+
+If AXDist.exe, WINTDist.exe, WINT351.exe, CCDist.exe, CCDist35.exe, and APRXDist.exe do not meet 
+your distribution needs of The DLLs, you must send detailed feedback to the AXDistB1@microsoft.com 
+(that is for "ActiveX SDK Redistributables, Beta 1").
+

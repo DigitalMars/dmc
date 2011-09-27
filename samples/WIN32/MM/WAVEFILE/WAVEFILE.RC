@@ -1,0 +1,38 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1992 - 1995  Microsoft Corporation.  All Rights Reserved.
+ *
+ **************************************************************************/
+
+
+
+#define IDS_STREAMNAME		100
+#define IDS_FILETYPE		101
+
+#ifdef RC_INVOKED
+
+/*	-	-	-	-	-	-	-	-	*/
+
+#include <windows.h>
+#include "wavefile.rcv"
+
+/*	-	-	-	-	-	-	-	-	*/
+
+//
+// Strings for the stream name in AVISTREAMINFO and file type in AVIFILEINFO
+//
+
+STRINGTABLE
+BEGIN
+	IDS_STREAMNAME		"Microsoft Waveform: %s"
+	IDS_FILETYPE		"Microsoft Waveform"
+END
+
+
+#endif
+

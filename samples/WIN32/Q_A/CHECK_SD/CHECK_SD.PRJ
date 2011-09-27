@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\Q_A\CHECK_SD\CHECK_SD.PRJ
+CHECK_SD.OPN
+novcs
+check_sd.def
+19
+812035224
+0 0 0 0 0 "check_sd.c" ""
+0 0 0 0 0 "check_sd.def" ""
+0 0 0 0 0 "advapi32.lib" ""

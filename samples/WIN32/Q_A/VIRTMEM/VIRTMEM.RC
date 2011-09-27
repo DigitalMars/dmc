@@ -1,0 +1,67 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1992-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include "windows.h"
+#include "virtmem.h"
+
+VirtMem_Menu MENU
+    BEGIN
+     POPUP   "State"
+      BEGIN
+        MENUITEM "Commit",     IDM_COMMIT
+        MENUITEM "Reserve ",   IDM_RESERVE
+        MENUITEM "Free",       IDM_FREE
+      END
+     POPUP   "Access"
+      BEGIN
+        MENUITEM "Read Write", IDM_READWRITE
+        MENUITEM "Read Only",  IDM_READONLY
+        MENUITEM "No Access",  IDM_NOACCESS
+      END
+     POPUP   "Lock"
+       BEGIN
+         MENUITEM "Lock",      IDM_LOCK
+         MENUITEM "UnLock",    IDM_UNLOCK
+       END
+     POPUP   "Test"
+      BEGIN
+        MENUITEM "Write to mem.", IDM_WRITE
+      END
+     MENUITEM "Show Page",     IDM_SHOW
+    END
+
+
+
+
+Page_Info DIALOG 6, 18, 156, 86
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Page Information"
+FONT 8, "Helv"
+BEGIN
+    EDITTEXT        IDE_BASEADDR, 4, 64, 66, 12, ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Base Address", 65535, 5, 55, 46, 8
+
+    LTEXT           "Current Protection", 65535, 76, 2, 66, 8
+    EDITTEXT        IDE_PROTECT, 75, 11, 77, 12, ES_READONLY | NOT WS_TABSTOP
+
+    LTEXT           "Initial Protection", 65535, 5, 29, 60, 8
+    EDITTEXT        IDE_INITPROT, 4, 38, 66, 12, ES_READONLY | NOT WS_TABSTOP
+
+    LTEXT           "Size in bytes", 65535, 76, 29, 66, 8
+    EDITTEXT        IDE_SIZE, 75, 38, 77, 12, ES_READONLY | NOT WS_TABSTOP
+
+    LTEXT           "Page State", 65535, 5, 2, 55, 8
+    EDITTEXT        IDE_STATE, 4, 11, 66, 12, ES_READONLY | NOT WS_TABSTOP
+
+    LTEXT           "Allocation Base", 65535, 76, 55, 67, 8
+    EDITTEXT        IDE_ALLOCBASE, 75, 64, 77, 12, ES_READONLY | NOT WS_TABSTOP
+END

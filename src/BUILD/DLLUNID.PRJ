@@ -1,0 +1,31 @@
+82572
+C:\source\75\rtl\src\build\dllunid.PRJ
+dllunid.opn
+novcs
+dllunid.DEF
+13
+841767362
+0 0 0 0 0 "..\core\wcschr.c" ""
+0 0 0 0 0 "..\core\wcsdup.c" ""
+0 0 0 0 0 "..\core\wcsnicmp.c" ""
+0 0 0 0 0 "..\win32\wgetenv.c" ""
+0 0 0 0 0 "..\core\wputenv.c" ""
+0 0 0 0 0 "..\core\wcscpy.c" ""
+0 0 -1 0 0 "..\include\ehsup.h" ""
+0 0 -1 0 0 "..\include\mt.h" ""
+0 0 -1 0 0 "..\include\semlock.h" ""
+0 0 -1 0 0 "..\..\include\wchar.h" ""
+0 0 -1 0 0 "..\..\include\fenv.h" ""
+0 0 -1 0 0 "..\..\include\fltenv.h" ""
+0 0 -1 0 0 "..\..\include\float.h" ""
+0 0 -1 0 0 "..\include\lcapi32.h" ""
+0 0 -1 0 0 "..\include\setlocal.h" ""
+0 0 -1 0 0 "..\..\include\locale.h" ""
+0 0 -1 0 0 "..\..\include\heapstat.h" ""
+0 0 -1 0 0 "..\..\include\malloc.h" ""
+0 0 -1 0 0 "..\..\include\time.h" ""
+0 0 -1 0 0 "..\..\include\stdio.h" ""
+0 0 -1 0 0 "..\..\include\sys\stat.h" ""
+0 0 -1 0 0 "..\..\include\process.h" ""
+0 0 -1 0 0 "..\..\include\io.h" ""
+0 0 -1 0 0 "..\..\include\direct.h" ""

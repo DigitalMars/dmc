@@ -1,0 +1,14 @@
+1 DLGINCLUDE "phtest.h"
+
+DID_PHTEST DIALOG 6, 18, 258, 54
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Progman DDE Helper library test"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDEF_EXECTEXT, 6, 15, 246, 12, ES_AUTOHSCROLL
+    LTEXT           "Enter a command to send to Progman:", 102, 7, 3, 124,
+                    10
+    PUSHBUTTON      "Execute it dude!", IDOK, 61, 35, 137, 14
+END
+

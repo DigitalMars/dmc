@@ -1,0 +1,64 @@
+1 DLGINCLUDE "print.h"
+
+ID_PRINTDIALOG DIALOG 51, -28, 234, 257
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "PrintDlg()"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "lStructSize", 101, 5, 7, 36, 8
+    EDITTEXT        ID_STRUCTSIZEP, 55, 6, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "hwndOwner", 102, 5, 20, 39, 8
+    EDITTEXT        ID_HWNDOWNERP, 55, 19, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "hDevMode", 103, 5, 33, 36, 8
+    EDITTEXT        ID_HDEVMODEP, 55, 32, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "hDevNames", 104, 5, 46, 40, 8
+    EDITTEXT        ID_HDEVNAMESP, 55, 45, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "hDC", 105, 5, 59, 15, 8
+    EDITTEXT        ID_HDCP, 55, 58, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "Flags", 106, 5, 72, 18, 8
+    EDITTEXT        ID_FLAGSP, 55, 71, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "nFromPage", 107, 5, 85, 37, 8
+    EDITTEXT        ID_FROMPAGEP, 55, 84, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "nToPage", 108, 5, 98, 30, 8
+    EDITTEXT        ID_TOPAGEP, 55, 97, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "nMinPage", 109, 5, 111, 33, 8
+    EDITTEXT        ID_MINPAGEP, 55, 110, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "nMaxPage", 110, 5, 124, 35, 8
+    EDITTEXT        ID_MAXPAGEP, 55, 123, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "nCopies", 111, 5, 137, 27, 8
+    EDITTEXT        ID_COPIESP, 55, 136, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "hInstance", 112, 5, 150, 33, 8
+    EDITTEXT        ID_HINSTANCEP, 55, 149, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "lCustData", 113, 5, 163, 32, 8
+    EDITTEXT        ID_CUSTDATAP, 55, 162, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "szPrintTemp", 115, 5, 176, 40, 8
+    EDITTEXT        ID_LPPRINTTEMPP, 55, 175, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "szSetupTemp", 116, 5, 189, 44, 8
+    EDITTEXT        ID_LPSETUPTEMPP, 55, 188, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "lpfnPrintHook", 114, 5, 202, 45, 8
+    EDITTEXT        ID_PRINTHOOKP, 55, 201, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "lpfnSetupHook", 623, 5, 215, 49, 8
+    EDITTEXT        ID_SETUPHOOKP, 55, 214, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "hPrintTemp", 117, 5, 228, 38, 8
+    EDITTEXT        ID_HPRINTTEMPP, 55, 227, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "hSetupTemp", 118, 5, 241, 42, 8
+    EDITTEXT        ID_HSETUPTEMPP, 55, 241, 64, 12, ES_AUTOHSCROLL
+    LTEXT           "Error:", 619, 134, 135, 95, 8
+    EDITTEXT        ID_ERRORP, 134, 145, 95, 12, ES_AUTOHSCROLL
+    LTEXT           "Return:", 620, 134, 162, 95, 8
+    EDITTEXT        ID_RETURNP, 134, 175, 95, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "OK", IDOK, 134, 69, 95, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 134, 85, 95, 14
+    PUSHBUTTON      "Edit Devmode", ID_EDITDEVMODE, 134, 29, 95, 14
+    PUSHBUTTON      "Edit Devnames", ID_EDITDEVNAMES, 134, 45, 95, 14
+    PUSHBUTTON      "Reset", ID_RESETPRINT, 134, 101, 95, 14
+    AUTOCHECKBOX    "NULL Structure", ID_NULLSTRUCTP, 134, 194, 95, 10
+    AUTOCHECKBOX    "Preloaded Setup Template", ID_PRESETUPP, 134, 217, 99, 
+                    10
+    AUTOCHECKBOX    "Preloaded Print Template", ID_PREPRINTP, 134, 206, 95, 
+                    10
+    PUSHBUTTON      "MultiThread", ID_MULTITHREADPRINT, 134, 117, 95, 14
+    CONTROL         "", 630, "Static", SS_BLACKRECT, 121, 37, 10, 2
+    CONTROL         "", 631, "Static", SS_BLACKRECT, 121, 49, 10, 2
+END

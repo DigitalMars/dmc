@@ -1,0 +1,16 @@
+82572
+C:\SC\samples\ole32\DEFO2V\DEFO2V.PRJ
+DEFO2V.OPN
+novcs
+defo2v.def
+3
+812035224
+0 0 0 0 0 "iadvsi_a.cpp" ""
+0 0 0 0 0 "idatao_a.cpp" ""
+0 0 0 0 0 "idisp_a.cpp" ""
+0 0 0 0 0 "tofile_a.cpp" ""
+0 0 0 0 0 "util_a.cpp" ""
+0 0 0 0 0 "defo2v.def" ""
+0 0 0 0 0 "defo2v.rc" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 1001 "..\bin\movelib.bat" ""

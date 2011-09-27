@@ -1,0 +1,31 @@
+82572
+C:\source\75\rtl\src\build\dllasmd.prj
+dllasmd.OPN
+novcs
+dllasmd.DEF
+13
+841268476
+0 0 0 0 0 "..\win32\CLEARBSS.ASM" ""
+0 0 0 0 0 "..\core32\MEMCPY.ASM" ""
+0 0 0 0 0 "..\core32\ITOA.ASM" ""
+0 0 0 0 0 "..\core32\STRCAT.ASM" ""
+0 0 0 0 0 "..\win32\EXCPTLST.ASM" ""
+0 0 0 0 0 "..\core32\FATERR.ASM" ""
+0 0 0 0 0 "..\core32\LLMATH.ASM" ""
+0 0 0 0 0 "..\core32\_EXIT.ASM" ""
+0 0 0 0 0 "..\win32\GETTHD.ASM" ""
+0 0 0 0 0 "..\core32\CINIT.ASM" ""
+0 0 0 0 0 "..\win32\_8087.ASM" ""
+0 0 0 0 0 "..\core32\FLT87.ASM" ""
+0 0 0 0 0 "..\core32\LDEXP.ASM" ""
+0 0 0 0 0 "..\core32\MEMICMP.ASM" ""
+0 0 0 0 0 "..\core32\DOUBLE.ASM" ""
+0 0 0 0 0 "..\core32\PATCH32.ASM" ""
+0 0 0 0 0 "..\core32\STRNCPY.ASM" ""
+0 0 0 0 0 "..\core32\write.asm" ""
+0 0 0 0 0 "..\win32\chkstk.asm" ""
+0 0 0 0 0 "..\core32\read.asm" ""
+0 0 0 0 0 "..\core32\fputc.asm" ""
+0 0 0 0 0 "..\CORE32\STRCMPL.ASM" ""
+0 0 0 0 0 "..\CORE32\ATOI.ASM" ""
+0 0 0 0 0 "..\CORE32\ATOL.ASM" ""

@@ -1,0 +1,59 @@
+
+#include <windows.h>
+#include "cdtest.h"
+#include "dlgs.h"
+#include "open.h"
+#include "find.h"
+#include "font.h"
+#include "colors.h"
+#include "print.h"
+#include "dlgs.h"
+#include "devnames.h"
+#include "devmode.h"
+#include "logfont.h"
+#include "title.h"
+
+theicon ICON cdtest.ico
+
+themenu MENU
+BEGIN
+    POPUP      "&Dialogs"
+    BEGIN
+      MENUITEM "Choose&Color",         IDM_COLOR
+      MENUITEM "Choose&Font",          IDM_FONT
+      MENUITEM "Find&Text",            IDM_FIND
+      MENUITEM "GetFileTit&le",        IDM_TITLE
+      MENUITEM "Get&OpenFileName",     IDM_OPEN
+      MENUITEM "Get&SaveFileName",     IDM_SAVE
+      MENUITEM "&PrintDlg",            IDM_PRINT
+      MENUITEM "&ReplaceText",         IDM_REPLACE
+      MENUITEM SEPARATOR
+      MENUITEM "&About This Program",  IDM_ABOUT
+      MENUITEM SEPARATOR
+      MENUITEM "E&xit",                IDM_EXIT
+    END
+
+    POPUP "&Options"
+      BEGIN
+        MENUITEM "&Hex Mode",          IDM_HEXMODE
+        MENUITEM "&Decimal Mode",      IDM_DECIMALMODE
+      END
+END
+
+#include "colors.dlg"
+#include "open.dlg"
+#include "font.dlg"
+#include "find.dlg"
+#include "title.dlg"
+#include "print.dlg"
+#include "devnames.dlg"
+#include "devmode.dlg"
+#include "logfont.dlg"
+
+#include "opentemp.dlg"   //Open/Save custom template
+#include "fttemp.dlg"
+#include "prtemp.dlg"
+#include "fonttemp.dlg"
+#include "clrtemp.dlg"
+
+#include "about.dlg"

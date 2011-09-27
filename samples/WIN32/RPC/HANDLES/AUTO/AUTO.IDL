@@ -1,0 +1,12 @@
+[ uuid (6B29FC40-CA47-1067-B31D-00DD010662DA),
+  version(1.0),
+  pointer_default(unique)
+]
+interface autoh
+{
+
+void GetTime([out] long * time);
+
+void Shutdown(void);
+
+}

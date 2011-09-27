@@ -1,0 +1,94 @@
+/* Copyright (C) 2003 by Digital Mars.
+ * www.digitalmars.com
+ * All Rights Reserved.
+ */
+
+#if __DMC__ || __RCC__
+#pragma once
+#endif
+
+#ifndef __EXCEPTION
+#define __EXCEPTION	1
+
+#ifndef __cplusplus
+#error Use C++ compiler for exception
+#endif
+
+//class Type_info;
+
+#ifndef __TYPE_INFO__
+#define __TYPE_INFO__ 1
+
+namespace std
+{
+    class type_info
+    {
+      public:
+	void *pdata;
+
+      public:
+	virtual __cdecl ~type_info();
+	bool __cdecl operator==(const type_info& rhs) const;
+	bool __cdecl operator!=(const type_info& rhs) const;
+	bool __cdecl before(const type_info& rhs) const;
+	const char* __cdecl name() const;
+      protected:
+	type_info();
+      private:
+	__cdecl type_info(const type_info& rhs);
+	type_info& __cdecl operator=(const type_info& rhs);
+    };
+}
+
+// Type_info is for link compatibility with old code
+class Type_info : public std::type_info
+{
+    private:
+	__cdecl Type_info(const Type_info&);
+	Type_info& __cdecl operator=(const Type_info&);
+
+    public:
+	virtual __cdecl ~Type_info();
+
+	int __cdecl operator==(const Type_info&) const;
+	int __cdecl operator!=(const Type_info&) const;
+	int __cdecl before(const Type_info&) const;
+	const char * __cdecl name() const;
+};
+
+#endif
+
+namespace std
+{
+    typedef void (__cdecl *unexpected_handler)();
+    unexpected_handler __cdecl set_unexpected(unexpected_handler f) throw();
+    void __cdecl unexpected();
+
+    typedef void (__cdecl *terminate_handler)();
+    terminate_handler __cdecl set_terminate(terminate_handler f) throw();
+    void __cdecl terminate();
+
+    bool __cdecl uncaught_exception();
+
+    class exception
+    {
+      public:
+	exception() throw() { }
+	exception(const exception&) throw() { }
+	exception& operator=(const exception&) throw() { return *this; }
+	virtual ~exception() throw();
+	virtual const char* what() const throw();
+    };
+
+    class bad_exception : public exception
+    {
+      public:
+	bad_exception() throw() { }
+	bad_exception(const bad_exception&) throw() { }
+	bad_exception& operator=(const bad_exception&) throw() { return *this; }
+	virtual ~bad_exception() throw();
+	virtual const char* what() const throw();
+    };
+}
+
+#endif

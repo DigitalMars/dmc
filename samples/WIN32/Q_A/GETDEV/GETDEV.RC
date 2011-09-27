@@ -1,0 +1,23 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1992-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include "windows.h"
+#include "getdev.h"
+
+
+getdevDlg DIALOG 30, 30, 120, 210
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "GetDeviceCaps"
+FONT 10,"Courier"
+BEGIN
+  LISTBOX  DID_LISTBOX  , 0, 0, 120, 210, WS_VSCROLL
+END

@@ -1,0 +1,81 @@
+// circ2.odl : type library source for OLE Custom Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (circ2.tlb) that will become a resource in
+// circ2.ocx.
+
+// This is a part of the Microsoft Foundation Classes C++ library.
+// Copyright (C) 1992-1994 Microsoft Corporation
+// All rights reserved.
+//
+// This source code is only intended as a supplement to the
+// Microsoft Foundation Classes Reference and the
+// Books Online documentation provided with the library.
+// See these sources for detailed information regarding the
+// Microsoft Foundation Classes product.
+
+#include <olectl.h>
+
+[ uuid(9DBAFCCD-592F-101B-85CE-00608CEC297B), version(1.0),
+  helpstring("Circ2 OLE Custom Control module"), control ]
+library Circ2Lib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CCirc2Ctrl
+
+	[ uuid(9DBAFCCB-592F-101B-85CE-00608CEC297B),
+	  helpstring("Dispatch interface for Circ2 Control"), hidden ]
+	dispinterface _DCirc2
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CCirc2Ctrl)
+			[id(DISPID_BACKCOLOR), bindable, requestedit] OLE_COLOR BackColor;
+			[id(2)] boolean CircleShape;
+			[id(3)] short CircleOffset;
+			[id(1)] OLE_COLOR FlashColor;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CCirc2Ctrl)
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CCirc2Ctrl
+
+	[ uuid(9DBAFCCC-592F-101B-85CE-00608CEC297B),
+	  helpstring("Event interface for Circ2 Control") ]
+	dispinterface _DCirc2Events
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CCirc2Ctrl)
+			[id(1)] void ClickIn(OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(2)] void ClickOut();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CCirc2Ctrl
+
+	[ uuid(9DBAFCCA-592F-101B-85CE-00608CEC297B),
+	  helpstring("Circ2 Control"), control ]
+	coclass Circ2
+	{
+		[default] dispinterface _DCirc2;
+		[default, source] dispinterface _DCirc2Events;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+};

@@ -1,0 +1,74 @@
+
+
+all: \
+	allocator_test \
+	auto_buffer_test \
+	auto_destructor_test \
+	file_path_buffer_test \
+	findfile_sequence_test \
+	findvolume_sequence_test \
+	reg_key_sequence_test \
+	reg_value_sequence_test \
+	system_info_test \
+	system_version_test \
+	\
+
+allocator_test:
+	-cd $@\bc55
+	-@make target
+	-@make run
+	-@cd ..\..
+
+auto_buffer_test:
+	-cd $@\bc55
+	-@make target
+	-@make run
+	-@cd ..\..
+
+auto_destructor_test:
+	-cd $@\bc55
+	-@make target
+	-@make run
+	-@cd ..\..
+
+file_path_buffer_test:
+	-cd $@\bc55
+	-@make target
+	-@make run
+	-@cd ..\..
+
+findfile_sequence_test:
+	-cd $@\bc55
+	-@make target
+	-@make run
+	-@cd ..\..
+
+findvolume_sequence_test:
+	-cd $@\bc55
+	-@make target
+	-@make run
+	-@cd ..\..
+
+reg_key_sequence_test:
+	-cd $@\bc55
+	-@make target
+	-@make run
+	-@cd ..\..
+
+reg_value_sequence_test:
+	-cd $@\bc55
+	-@make target
+	-@make run
+	-@cd ..\..
+
+system_info_test:
+	-cd $@\bc55
+	-@make target
+	-@make run
+	-@cd ..\..
+
+system_version_test:
+	-cd $@\bc55
+	-@make target
+	-@make run
+	-@cd ..\..

@@ -1,0 +1,74 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993-1995 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include "windows.h"
+#include "clock.h"
+
+cckk    ICON PRELOAD DISCARDABLE clock.ico
+
+IDD_ABOUT DIALOG 25, 23, 184, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Client"
+FONT 8, "Helv"
+BEGIN
+    CTEXT           "Microsoft Windows", -1, 0, 5, 184, 8
+    CTEXT           "DDEML Clock", -1, 0, 15, 184, 8
+    CTEXT           "Version 3.1", -1, 0, 34, 184, 8
+    CTEXT           "Copyright \251 1992-1995 Microsoft Corp.", -1, 0, 47, 184, 9
+    DEFPUSHBUTTON   "OK", IDOK, 76, 60, 32, 14, WS_GROUP
+    ICON            "cckk", -1, 25, 14, 16, 21
+END
+
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+;Attention localizers!  Only the following lines need to be
+;localized!
+
+    IDS_APPNAME,    "DDEML Clock"
+; Note: We can not split the following line into two because it is used in a
+; hardsysmodal dialogbox.
+    IDS_TOOMANY,    "Cannot use timer necessary to run Clock; close some applications and try again."
+;    IDS_FONTFILE,  "digital.fon"   /* File containing digital font. */
+    IDS_FONTFILE,   "helve08.fnt"   /* File containing digital font. */
+    IDS_TOPMOST,    "Always on &Top"
+
+;DO NOT LOCALIZE THESE!
+; Below: Names of the keys in the file "win.ini" that
+;        contain the international time and date settings
+
+    IDS_DATA,       "data"
+    IDS_INTL,       "intl"
+    IDS_ITIME,      "iTime"
+    IDS_S1159,      "s1159"
+    IDS_S2359,      "s2359"
+    IDS_STIME,      "sTime"
+    IDS_TIMESEP     ":"
+    IDS_CLKFORMAT,  "iFormat"
+    IDS_INIFILE,    "DDEMLclk.ini"
+
+    IDS_USNAME,     "DDEML Clock"
+
+;End of non-localized strings.
+END
+
+Clock MENU PRELOAD DISCARDABLE
+    BEGIN
+        POPUP    "&Settings"
+            BEGIN
+                MENUITEM "&Analog",         IDM_ANALOG
+                MENUITEM "&Digital",        IDM_DIGITAL
+                MENUITEM SEPARATOR
+                MENUITEM "&No Title",       IDM_NOTITLE
+                MENUITEM SEPARATOR
+                MENUITEM "A&bout Clock...", IDM_ABOUT
+            END
+    END

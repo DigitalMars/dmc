@@ -1,0 +1,14 @@
+82572
+C:\SC\Samples\WIN32\opengl\samples\tnurb.PRJ
+tnurb.OPN
+novcs
+tnurb.DEF
+19
+853547094
+0 0 0 0 0 "tnurb.c" ""
+0 0 0 0 0 "tnurb.DEF" ""
+0 0 0 0 0 "glaux.lib" ""
+0 0 0 0 0 "glu32.lib" ""
+0 0 0 0 0 "opengl32.lib" ""
+0 0 0 0 0 "taccum.def" ""
+0 0 0 0 0 "advapi32.lib" ""

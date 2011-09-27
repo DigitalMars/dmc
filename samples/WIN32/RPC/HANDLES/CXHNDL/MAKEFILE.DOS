@@ -1,0 +1,46 @@
+#*************************************************************#
+#**                                                         **#
+#**                 Microsoft RPC Examples                  **#
+#**                    cxhndl Application                   **#
+#**          Copyright(c) Microsoft Corp. 1992-1995         **#
+#**                                                         **#
+#*************************************************************#
+
+cc_ntenv = cl386
+cc = cl
+cflags= -c -AL -Gsw -Oas -Zpe -Zi -D_CRTAPI1=
+linker= link
+lflags= /CO /NOD
+
+.c.obj:
+   $(cc) $(cflags) $<
+
+all : cxhndlc
+
+idl : cxhndl.h
+
+# Make the client side application cxhndlc
+cxhndlc : cxhndlc.exe
+cxhndlc.exe : cxhndlc.obj cxhndl_c.obj
+    $(linker) $(lflags) cxhndlc cxhndl_c ,,,\
+    llibce rpc rpcndr;
+
+# Update the object files if necessary
+
+cxhndlc.obj : cxhndlc.c cxhndl.h
+
+cxhndl_c.obj : cxhndl_c.c cxhndl.h
+
+cxhndl.h cxhndl_c.c : cxhndl.idl cxhndl.acf
+   midl -env dos -oldnames cxhndl.idl -no_cpp
+
+# Clean up everything
+cleanall : clean
+    -del cxhndlc.exe
+
+# Clean up everything but the .EXEs
+clean :
+    -del *.obj
+    -del *.map
+    -del cxhndl_c.c
+    -del cxhndl.h

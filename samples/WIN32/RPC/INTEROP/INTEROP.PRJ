@@ -1,0 +1,10 @@
+82572
+C:\SC\samples\win32\RPC\INTEROP\INTEROP.PRJ
+INTEROP.OPN
+novcs
+interop.DEF
+4
+812035224
+0 0 0 0 0 "client.prj" ""
+0 0 0 0 0 "server.prj" ""
+0 0 0 0 0 "interop.def" ""

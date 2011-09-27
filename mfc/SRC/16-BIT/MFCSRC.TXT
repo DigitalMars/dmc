@@ -1,0 +1,188 @@
+=====================================================================
+	MICROSOFT FOUNDATION CLASSES 2.53 - SOURCE CODE
+=====================================================================
+
+This directory contains the source code to the MFC library.
+
+These files have been included for reference purposes, in
+conjunction with the Class Library reference manual and tutorial.
+
+These files are compiled to form the Microsoft Foundation Classes 2.53
+(MFC 2.53).  The library may be built in a number of configurations,
+depending upon operating system, memory usage or model, and whether
+or not debugging and diagnostic aids are to be included in applications 
+which link with the library.
+
+
+===========================================
+ 1.  BUILDING A STATIC LINK LIBRARY VARIANT
+===========================================
+
+The makefile provided can be used to build the static link library
+variants of MFC 2.53.  See section 2 for instructions on building
+the shared DLL variant.  The makefile can be used from either the
+MS-DOS command line (in a Windows 3.1x DOS "box") or as an External
+Project file in the Integrated Development and Debugging Environment.
+
+To build a library in a particular configuration, use the SMAKE tool
+and the makefile which is in this directory.  The following arguments
+can be given to SMAKE to build a specific library variant.
+
+	SMAKE {TARGET=[W|R]} {DEBUG=[0|1]} {DLL=[0|1]} \
+		{CODEVIEW=[0|1|2]} {OBJ=path} \
+		{OPT=<SC command line switches>}
+
+To set these options from the Integrated Environment, use the Project 
+Settings menu command and set them in the External Make section.  For 
+example, to build with pointer check enabled in the debug build use 
+the following settings:
+
+	Debug Build:   SMAKE DEBUG=1 TARGET=W OPT="-gp" CODEVIEW=1
+	Release Build: SMAKE DEBUG=0 TARGET=W 
+
+Note: On some systems there may not be enough real mode DOS memory to
+complete the build of the static link library.  Due to the overhead
+of the Integrated Environment, an additional 40K of DOS real mode memory
+is required in order to build as an External Project.  If you experience
+an "out of memory" message in the LIB phase of the build, then you
+should first try building from a DOS box.  If that does not succeed
+then you will need to remove any real mode memory clients from
+your CONFIG.SYS.  Approximately 500K DOS memory is required.
+The MEM command can tell you the amount of memory available for a
+running application.
+
+
+TARGET=[W|R]
+	The "TARGET" argument specifies the operating-system on which 
+	your compiled programs will run.  This may be one of W or R (for
+	Windows or Real-mode DOS, respectively).  R should be used only
+	for MS-DOS targets (i.e. command line tools).
+
+DLL=[0|1]
+	The "DLL" argument specifies whether or not to compile the library
+	so that it may subsequently be used for developing a dynamic link
+	library (DLL).  The default is DLL=0 (do not include DLL support).
+	If DLL=1, MODEL must be L (large).
+
+	Note: Use the MFCDLL.MAK file for building the shared DLL (_AFXDLL).
+	The DLL=1 variant is for building your own DLL that contains MFC
+	classes and exports a C interface.  This is described in technical 
+	note TN011 and is known as _USRDLL.
+
+DEBUG=[0|1]
+	The "DEBUG" argument specifies whether or not to include diagnostic
+	support code for the library.  This may be 0 (for no diagnostics)
+	or 1 (for full diagnostics).
+
+CODEVIEW=[0|1|2]
+	The "CODEVIEW" argument specifies whether to compile the library with
+	CodeView information or not.  You need to compile the library with
+	CodeView information if you want to trace into MFC code using the
+	Symantec C++ Debugger.  You should also compile your application 
+	files with the -g option, and link your executable with the 
+	/CODEVIEW option.
+
+	Setting CODEVIEW does not affect the DEBUG argument.  A value of 0 
+	indicates that no CodeView information is to be compiled into the 
+	library.  A value of 1 says to compile in full CodeView information 
+	for all modules of the library.  A value of 2 compiles CodeView 
+	information only into a select set of the most commonly referenced 
+	modules (WinMain, diagnostic memory allocator, message map, main 
+	message loop, and the application class.)
+
+	The default value is CODEVIEW=1, for maximum CodeView information.
+
+OBJ=[path]
+	We recommend storing .OBJ files in a separate directory so that you
+	may compile different versions of the MFC library concurrently.
+	The "OBJ" argument allows you to specify where these files are stored
+	during the build process.  The directory specified is created and
+	removed automatically as required.  This defaults to a combination
+	of the model, target, and debug status, preceded by a '$' (i.e. $MWD).
+
+OPT=[switches]
+	If your library needs to be built with custom compiler switches, then
+	these may be included in the "OPT" argument.  Note that switches need
+	to be separated by spaces, so when including more than one extra
+	compiler switch, enclose the whole OPT= argument in double-quotes.
+	This is an advanced feature; read the makefile and the details on 
+	each of the switches concerned in the Symantec C++ Compiler and 
+	Tools Guide before using this option.
+
+Defaults
+	The default is:
+	smake TARGET=W DEBUG=1 CODEVIEW=2 OBJ=$LWD
+
+Note:  If you wish to use only the non-Windows classes then build an 'R' 
+(real-mode) library variant. There are three MFC sample applications
+that do not require Microsoft Windows, and use the real-mode libraries.
+See the WinHelp file MFCSAMP.HLP for details about each sample and
+which variant of the library each requires.
+
+Note:  MFC 2.53 requires an additional static link library that is 
+installed in the SRC directory.  This .LIB file contains some of the 
+VBX control implementation.  You cannot regenerate this file yourself.  
+Should you accidentally delete it, you will need to retrieve the file 
+from the Symantec C++ installation diskettes.  
+
+
+============================
+ 2.  BUILDING THE SHARED DLL
+============================
+
+Building the shared DLL is very similar to the static link variants.  You 
+must, however, use MFCDLL.MAK, which is also an External Project file.
+
+To build the shared DLL components that contain the implementation
+for OLE 2.0 and ODBC use MFCOLE.MAK and MFCDB.MAK respectively.
+These additional DLLs are required only if your application utilizes
+the database or OLE 2.0 classes.
+
+Technical note TN033 explains in detail how to build the shared DLL 
+and how to build an application that uses the shared DLL.
+
+
+===============================
+ 3. AFTER BUILDING THE LIBRARY
+===============================
+
+Once the library has been built successfully, you may want to delete
+object files with:
+
+	SMAKE CLEAN OBJ=[path]
+
+Note that if you used the "OBJ" argument while building the library,
+specify the same sub directory in the cleanup command.
+
+This will remove all of the temporary .OBJ files created by building 
+the library, and remove the directory where they were stored.
+
+Always perform a cleanup before building a new variant of the library,
+or use different object paths for each variant.  Note that the OBJ files
+are necessary only during the building process.
+
+
+======================================
+ 4. SOURCE CODE FORMATTING CONVENTION
+======================================
+
+All MFC source code has been formatted such that leading whitespace
+on a line is made up of physical tabs, while embedded whitespace is
+physical spaces.  MFC source code assumes that your editor is set to
+display a physical tab as four blanks.
+
+For example:
+
+int FormatExample()
+{
+/*
+Statements below should start in column 5 if tabs are set correctly
+Comment should start in column 20
+0        1         2
+12345678901234567890
+*/
+	int i;
+	i = 5;         // whitespace between statement and comment is spaces
+
+	return i;
+}

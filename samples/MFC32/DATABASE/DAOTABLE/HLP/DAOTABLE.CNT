@@ -1,0 +1,9 @@
+:Base DAOTable.hlp
+1 General Information
+2 General Description of DAOTable=HID_GENERAL
+1 DAOTable Dialogs
+2 Main Dialog=HIDD_DAOTABLE_DIALOG
+2 Database Definition Dialog=HIDD_ADD_DATABASE_DLG
+2 Table Definition Dialog=HIDD_ADD_TABLE_DLG
+2 Add Indexes Dialog=HIDD_ADD_INDEX_DLG
+2 Query Definition Dialog=HIDD_ADD_QUERYDEF_DLG

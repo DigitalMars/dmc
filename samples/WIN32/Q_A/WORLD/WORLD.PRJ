@@ -1,0 +1,11 @@
+82572
+C:\SC\samples\win32\Q_A\WORLD\WORLD.PRJ
+WORLD.OPN
+novcs
+world.def
+16
+812035224
+0 0 0 0 0 "world.c" ""
+0 0 0 0 0 "world.def" ""
+0 0 0 0 0 "comdlg32.lib" ""
+0 0 0 0 0 "world.rc" ""

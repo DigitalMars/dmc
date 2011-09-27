@@ -1,0 +1,24 @@
+82570
+E:\cocvs\mfc\src\32-bit\PROJECTS\SFCd42d.prj
+SFCD42D.OPN
+novcs
+SFCD42D.DEF
+3
+834078892
+0 0 0 0 0 "SFCD42D.DEF" ""
+0 0 0 0 0 "uuid.lib" ""
+0 0 0 0 0 "uuid2.lib" ""
+0 0 0 0 0 "..\mfcdb.rc" ""
+0 0 0 0 1001 "movelib.bat" ""
+0 0 0 0 0 "..\dlldb.cpp" ""
+0 0 0 0 0 "..\dbcore.cpp" ""
+0 0 0 0 0 "..\dbrfx.cpp" ""
+0 0 0 0 0 "..\dbview.cpp" ""
+0 0 0 0 0 "..\dbflt.cpp" ""
+0 0 0 0 0 "..\dblong.cpp" ""
+0 0 0 0 0 "..\dbvar.cpp" ""
+0 0 0 0 0 "..\..\..\LIB\SFC42D.LIB" ""
+0 0 0 0 0 "..\daocore.cpp" ""
+0 0 0 0 0 "..\daodfx.cpp" ""
+0 0 0 0 0 "..\daoview.cpp" ""
+0 0 0 0 0 "SFCo42d.lib" ""
