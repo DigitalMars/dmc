@@ -7,6 +7,7 @@
 #include	<string.h>
 #include	<io.h>
 #if MSDOS || __OS2__ || _WINDOWS || __NT__
+#include        <scrtl.h>
 #include	<dos.h>
 #endif
 #include	"mt.h"
@@ -72,12 +73,27 @@ size_t fread(void *pi,size_t bytesper,size_t numitems,FILE *fp)
 	{
 	    if (cnt == 0)		/* if end of file	*/
 	    {
-		fp->_flag |= _IOEOF;
+            L2: fp->_flag |= _IOEOF;
 		if (fp->_flag & _IORW)
 		    fp->_flag &= ~_IOERR;
 	    }
 	    else
-		fp->_flag |= _IOERR;
+            {
+                    /* Note, this can occur for various reasons, */
+                    /* one of which is a broken pipe.  This error*/
+                    /* simply means EOF for a pipe               */
+                    switch(GetLastError())
+                    {
+                    case ERROR_BROKEN_PIPE:
+                        /* must clear errno */
+                        __set_errno(0);
+                        goto L2;
+
+                    default:
+			fp->_flag |= _IOERR;
+                        break;
+                    }
+            }
 
 	    numitems = 0;
 	    goto ret;
