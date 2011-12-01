@@ -10,6 +10,7 @@
 #include	<stdlib.h>
 #include	<io.h>
 #if MSDOS || __OS2__ || _WINDOWS || __NT__
+#include        <scrtl.h>
 #include	<dos.h>
 #endif
 #include	"mt.h"
@@ -362,12 +363,28 @@ int __cdecl _fillwbuf (FILE *fp)
 
 	if (fp->_cnt <= 0)		/* if unsuccessful read	*/
 	{	if (fp->_cnt == 0)	/* if end of file	*/
-		{	fp->_flag |= _IOEOF;
+		{
+                    L5: fp->_flag |= _IOEOF;
 			if (fp->_flag & _IORW)
 				fp->_flag &= ~_IOERR;
 		}
 		else
+                {
+                    /* Note, this can occur for various reasons, */
+                    /* one of which is a broken pipe.  This error*/
+                    /* simply means EOF for a pipe               */
+                    switch(GetLastError())
+                    {
+                    case ERROR_BROKEN_PIPE:
+                        /* must clear errno */
+                        __set_errno(0);
+                        goto L5;
+
+                    default:
 			fp->_flag |= _IOERR;
+                        break;
+                    }
+                }
 
 	    L2:	fp->_cnt = 0;	/* force no chars left in buffer */
 		return _TEOF;
