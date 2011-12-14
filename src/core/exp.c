@@ -201,7 +201,7 @@ long double expl(long double x)
 	fstsw	AX
 	fstp	ST(0)
     }
-    switch (_EAX & _CCC_MASK)
+    switch (_AX & _CCC_MASK)
     {
 	case _CCC_ZERO:
 	    return 1;

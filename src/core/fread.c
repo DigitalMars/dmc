@@ -79,6 +79,7 @@ size_t fread(void *pi,size_t bytesper,size_t numitems,FILE *fp)
 	    }
 	    else
             {
+#if __NT__
                     /* Note, this can occur for various reasons, */
                     /* one of which is a broken pipe.  This error*/
                     /* simply means EOF for a pipe               */
@@ -93,6 +94,9 @@ size_t fread(void *pi,size_t bytesper,size_t numitems,FILE *fp)
 			fp->_flag |= _IOERR;
                         break;
                     }
+#else
+		fp->_flag |= _IOERR;
+#endif
             }
 
 	    numitems = 0;

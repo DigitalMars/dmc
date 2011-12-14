@@ -17,7 +17,7 @@
 
 #if __SMALL__ || __MEDIUM__
 #if __INTSIZE == 4
-#if M_UNIX || M_XENIX || __NT__ || __OS2__
+#if M_UNIX || M_XENIX || __NT__ || __OS2__ || DOS386
 #define ALWAYS_NEAR_DATA 1
 #define FAR
 #define FSTRLEN _tcslen

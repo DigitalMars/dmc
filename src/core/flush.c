@@ -370,6 +370,7 @@ int __cdecl _fillwbuf (FILE *fp)
 		}
 		else
                 {
+#if __NT__
                     /* Note, this can occur for various reasons, */
                     /* one of which is a broken pipe.  This error*/
                     /* simply means EOF for a pipe               */
@@ -384,6 +385,9 @@ int __cdecl _fillwbuf (FILE *fp)
 			fp->_flag |= _IOERR;
                         break;
                     }
+#else
+		    fp->_flag |= _IOERR;
+#endif
                 }
 
 	    L2:	fp->_cnt = 0;	/* force no chars left in buffer */

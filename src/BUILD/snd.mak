@@ -42,7 +42,7 @@ CREATEOUTPUTDIR	=
 CREATEOUTPUTDIR	= if not exist $O\*.* md $O
 !ENDIF
 
-OBJS1=  $O\inttypes.OBJ $O\strtoll.OBJ $O\wcstoll.OBJ $O\wcstoull.OBJ $O\hypot.OBJ $O\u64_ldbl.obj $O\ldblullng $O\wmem.obj \
+OBJS1=  $O\inttypes.OBJ $O\strtoll.OBJ $O\wcstoll.OBJ $O\wcstoull.OBJ $O\hypot.OBJ $O\u64_ldbl.obj $O\ldblullng.obj $O\wmem.obj \
 	$O\math2.obj
 POBJS1= $O\inttypes.OBJ+$O\strtoll.OBJ+$O\wcstoll.OBJ+$O\wcstoull.OBJ+$O\hypot.OBJ+$O\u64_ldbl.obj+$O\ldblullng+$O\wmem.obj
 

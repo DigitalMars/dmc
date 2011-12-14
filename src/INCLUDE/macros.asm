@@ -646,6 +646,7 @@ ELF	equ	0
 _FLAT	equ	0		;FLAT memory model
 _STDCALL equ	0		;default to _stdcall
 _RETST0	equ	0		;return floating point results in ST0
+LONGDOUBLE equ  0		;defined if memory model supports 80 bit long doubles
 endif	;DOS386
 
 ifdef X386

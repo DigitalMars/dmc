@@ -166,6 +166,8 @@ long double tanl(long double x)
   double y,xn,f,g,xnum,xden,result;
   int sgn = 0;
   long n;
+#undef C1
+#undef C2
   static double C1 = 1.57080078125;		/* octal 1.4442		*/
   static double C2 = -4.454455103380768678308e-6;
   static double p[3] =

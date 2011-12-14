@@ -10,6 +10,7 @@
 #include	<stdlib.h>
 #include 	<limits.h>
 #include	<inttypes.h>
+#include	<wchar.h>
 
 intmax_t imaxabs(intmax_t i)
 {

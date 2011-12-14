@@ -26,6 +26,13 @@
 #include <iostream.h>
 #include <oldcomplex.h>
 
+#if !__INLINE_8087
+extern "C"
+{
+double		__CLIB sqrt(double);
+}
+#endif
+
 double abs( const complex& z)
 {
   double ret;

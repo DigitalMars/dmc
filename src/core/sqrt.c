@@ -118,6 +118,8 @@ static long infinite[2]  = {0x00000000, 0x7ff00000};
 #undef sqrt
 #undef sqrtl
 
+double sqrt(double x);
+
 float sqrtf(float x)
 {
   return (float)sqrt((double)x);

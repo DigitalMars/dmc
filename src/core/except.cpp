@@ -1519,6 +1519,8 @@ match:
 
 /* ===================== C++ 98 Support ======================== */
 
+#if _WIN32
+
 namespace std
 {
 
@@ -1561,3 +1563,4 @@ namespace std
     const char* bad_exception::what() const throw() { return "class bad_exception"; }
 }
 
+#endif
