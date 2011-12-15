@@ -9,18 +9,18 @@ NDEBUG		= 1
 
 PROJ		= snn
 
-CC		= SC
-CPP		= SPP
-MAKE		= SMAKE
-RC		= RCC
-HC		= HC31
-ASM		= SC
+CC		= dmc
+CPP		= spp
+MAKE		= smake
+RC		= rcc
+HC		= hc31
+ASM		= dmc
 
 DEFFILE		= snn.def
 COMFLAGS	= -NL -wx -w- -w12 -r -Ae -Ar -c
-O		= SNN
+O		= snn
 
-!IF EXIST (SNN)
+!IF EXIST (snn)
 CREATEOUTPUTDIR	=
 !ELSE
 CREATEOUTPUTDIR	= if not exist $O\*.* md $O
@@ -35,19 +35,16 @@ CREATETARGETDIR	= if not exist $(TARGETDIR)\*.* md $(TARGETDIR)
 !ENDIF
 
 
-SYMROOT		=  SNN\precomp 
-SYMS		= $(SYMROOT).SYM 
+SYMROOT		=  snn\precomp 
+SYMS		= $(SYMROOT).sym 
 LIBS		= ..\win32\trace.lib snnuni.lib 
-
-OBJS1 = $O\inttypes.obj $O\strtoll.obj $O\wcstoll.obj $O\wcstoull.obj $O\hypot.obj $O\file.obj $O\u64_ldbl.obj $O\ldblullng.obj \
-	$O\wmem.obj $O\math2.obj
 
 DEFINES		= -D_MT -D_MBCS
 DEFINES_49	= -D_MT
 
 !IF $(DEBUG)
 
-CFLAGS		=  $(COMFLAGS) -g -HIprecomp.h -H -HDSNN -HO-
+CFLAGS		=  $(COMFLAGS) -g -HIprecomp.h -H -HDsnn -HO-
 CFLAGS_1	=  $(COMFLAGS) -g -cpp
 CFLAGS_5	=  $(COMFLAGS) -g -f
 CFLAGS_6	=  $(COMFLAGS) -g -Aa
@@ -59,7 +56,7 @@ LFLAGS		=  /CO /NOI /DE /PACKF /XN /A:512
 
 !ELSE
 
-CFLAGS		=  $(COMFLAGS) -Nc -o -HIprecomp.h -H -HDSNN -HO- 
+CFLAGS		=  $(COMFLAGS) -Nc -o -HIprecomp.h -H -HDsnn -HO- 
 CFLAGS_1	=  $(COMFLAGS) -Nc -o -cpp 
 CFLAGS_5	=  $(COMFLAGS) -Nc -o -f
 CFLAGS_6	=  $(COMFLAGS) -Nc -o -Aa
@@ -167,13 +164,13 @@ OBJS		=  $O\_8087.obj $O\_exit.obj $O\_exit2.obj $O\atoi.obj \
 		 $O\fgetwc.obj $O\fgetws.obj $O\flushwbu.obj $O\fputwc.obj \
 		 $O\fputws.obj $O\getws.obj $O\isctype.obj $O\iswctype.obj \
 		 $O\itow.obj $O\lcapi32.obj $O\lccrtdr.obj $O\lccrtfl.obj \
-		 $O\LCCRTPC.obj $O\LCDELFL.obj $O\LCFNDFL.obj $O\LCGETCD.obj \
-		 $O\LCGETCL.obj $O\LCGETFA.obj $O\LCGETMF.obj $O\LCMOVFL.obj \
-		 $O\LCRMVDR.obj $O\LCSETCD.obj $O\LCSETFA.obj $O\LTOW.obj \
-		 $O\MBTOWC.obj $O\NLSDATA.obj $O\NULDATA.obj $O\PUTWS.obj \
-		 $O\SETCHARS.obj $O\STRCOLL.obj $O\STRICOLL.obj $O\STRNCOLL.obj \
-		 $O\STRNICOL.obj $O\TIMDATA.obj $O\TNODATA.obj $O\TOWLOWER.obj \
-		 $O\TOWUPPER.obj $O\ULTOW.obj $O\UNGETWC.obj $O\_fopen.obj \
+		 $O\lccrtpc.obj $O\lcdelfl.obj $O\lcfndfl.obj $O\lcgetcd.obj \
+		 $O\lcgetcl.obj $O\lcgetfa.obj $O\lcgetmf.obj $O\lcmovfl.obj \
+		 $O\lcrmvdr.obj $O\lcsetcd.obj $O\lcsetfa.obj $O\ltow.obj \
+		 $O\mbtowc.obj $O\nlsdata.obj $O\nuldata.obj $O\putws.obj \
+		 $O\setchars.obj $O\strcoll.obj $O\stricoll.obj $O\strncoll.obj \
+		 $O\strnicol.obj $O\timdata.obj $O\tnodata.obj $O\towlower.obj \
+		 $O\towupper.obj $O\ultow.obj $O\ungetwc.obj $O\_fopen.obj \
 		 $O\flush.obj $O\asctime.obj $O\ctime.obj $O\execl.obj \
 		 $O\execle.obj $O\execlp.obj $O\execlpe.obj $O\execv.obj \
 		 $O\execve.obj $O\execvp.obj $O\execvpe.obj $O\fdopen.obj \
@@ -186,27 +183,31 @@ OBJS		=  $O\_8087.obj $O\_exit.obj $O\_exit2.obj $O\atoi.obj \
 		 $O\chsize.obj $O\constart.obj $O\exec2.obj $O\find.obj \
 		 $O\getcwd.obj $O\io.obj $O\setargv.obj $O\unlink.obj \
 		 $O\utime.obj $O\winstart.obj $O\thsup.obj $O\ehdata.obj \
-		 $O\_ISMBSLD.obj $O\_ISMBSTL.obj $O\ISMBALNU.obj $O\ISMBALPH.obj \
-		 $O\ISMBBYTE.obj $O\ISMBCL0.obj $O\ISMBCL1.obj $O\ISMBCL2.obj \
-		 $O\ISMBDIGI.obj $O\ISMBGRAP.obj $O\ISMBHIRA.obj $O\ISMBKATA.obj \
-		 $O\ISMBLEGA.obj $O\ISMBLOWE.obj $O\ISMBPRIN.obj $O\ISMBPUNC.obj \
-		 $O\ISMBSPAC.obj $O\ISMBSYMB.obj $O\ISMBUPPE.obj $O\MBBTOMBC.obj \
-		 $O\MBBTYPE.obj $O\MBCCPY.obj $O\MBCLEN.obj $O\MBCPINFO.obj \
-		 $O\MBJISJMS.obj $O\MBJMSJIS.obj $O\MBLEN.obj $O\MBSBTYPE.obj \
-		 $O\MBSCHR.obj $O\MBSCMP.obj $O\MBSCOLL.obj $O\MBSCSPN.obj \
-		 $O\MBSDEC.obj $O\MBSICMP.obj $O\MBSICOLL.obj $O\MBSINC.obj \
-		 $O\MBSLEN.obj $O\MBSLWR.obj $O\MBSNBCAT.obj $O\MBSNBCMP.obj \
-		 $O\MBSNBCNT.obj $O\MBSNBCOL.obj $O\MBSNBCPY.obj $O\MBSNBICM.obj \
-		 $O\MBSNBICO.obj $O\MBSNBSET.obj $O\MBSNCAT.obj $O\MBSNCCNT.obj \
-		 $O\MBSNCMP.obj $O\MBSNCOLL.obj $O\MBSNCPY.obj $O\MBSNEXTC.obj \
-		 $O\MBSNICMP.obj $O\MBSNICOL.obj $O\MBSNINC.obj $O\MBSNSET.obj \
-		 $O\MBSPBRK.obj $O\MBSRCHR.obj $O\MBSREV.obj $O\MBSSET.obj \
-		 $O\MBSSPN.obj $O\MBSSPNP.obj $O\MBSSTR.obj $O\MBSTOK.obj \
-		 $O\MBSTRLEN.obj $O\MBSUPR.obj $O\MBTOHIRA.obj $O\MBTOKATA.obj \
-		 $O\MBTOLOWE.obj $O\MBTOUPPE.obj $O\w32fater.obj \
+		 $O\_ismbsld.obj $O\_ismbstl.obj $O\ismbalnu.obj $O\ismbalph.obj \
+		 $O\ismbbyte.obj $O\ismbcl0.obj $O\ismbcl1.obj $O\ismbcl2.obj \
+		 $O\ismbdigi.obj $O\ismbgrap.obj $O\ismbhira.obj $O\ismbkata.obj \
+		 $O\ismblega.obj $O\ismblowe.obj $O\ismbprin.obj $O\ismbpunc.obj \
+		 $O\ismbspac.obj $O\ismbsymb.obj $O\ismbuppe.obj $O\mbbtombc.obj \
+		 $O\mbbtype.obj $O\mbccpy.obj $O\mbclen.obj $O\mbcpinfo.obj \
+		 $O\mbjisjms.obj $O\mbjmsjis.obj $O\mblen.obj $O\mbsbtype.obj \
+		 $O\mbschr.obj $O\mbscmp.obj $O\mbscoll.obj $O\mbscspn.obj \
+		 $O\mbsdec.obj $O\mbsicmp.obj $O\mbsicoll.obj $O\mbsinc.obj \
+		 $O\mbslen.obj $O\mbslwr.obj $O\mbsnbcat.obj $O\mbsnbcmp.obj \
+		 $O\mbsnbcnt.obj $O\mbsnbcol.obj $O\mbsnbcpy.obj $O\mbsnbicm.obj \
+		 $O\mbsnbico.obj $O\mbsnbset.obj $O\mbsncat.obj $O\mbsnccnt.obj \
+		 $O\mbsncmp.obj $O\mbsncoll.obj $O\mbsncpy.obj $O\mbsnextc.obj \
+		 $O\mbsnicmp.obj $O\mbsnicol.obj $O\mbsninc.obj $O\mbsnset.obj \
+		 $O\mbspbrk.obj $O\mbsrchr.obj $O\mbsrev.obj $O\mbsset.obj \
+		 $O\mbsspn.obj $O\mbsspnp.obj $O\mbsstr.obj $O\mbstok.obj \
+		 $O\mbstrlen.obj $O\mbsupr.obj $O\mbtohira.obj $O\mbtokata.obj \
+		 $O\mbtolowe.obj $O\mbtouppe.obj $O\w32fater.obj \
 		 $O\ldclass.obj $O\cmath.obj $O\complex2.obj \
 		 $O\strtold.obj $O\ldexpl.obj $O\regexp.obj $O\_find.obj \
-		 $O\frexpl.obj $O\fwide.obj $O\thunk.obj $(OBJS1)
+		 $O\frexpl.obj $O\fwide.obj $O\thunk.obj \
+		 $O\inttypes.obj $O\strtoll.obj $O\wcstoll.obj $O\wcstoull.obj \
+		 $O\hypot.obj $O\file.obj $O\u64_ldbl.obj $O\ldblullng.obj \
+		 $O\wmem.obj $O\math2.obj
+
 
 PRECOMPILE	=  snnuni?Pprj  trace?Pmak  TLSSEG?PMAK 
 
@@ -214,21 +215,21 @@ POSTCOMPILE	=
 
 POSTLINK	= 
 
-.SUFFIXES: .C .CP .CPP .CXX .CC .H .HPP .HXX .COM .EXE .DLL .LIB .RTF .DLG .ASM .RES .RC .obj 
+.SUFFIXES: .c .cp .cpp .cxx .cc .h .hpp .hxx .com .exe .dll .lib .rtf .dlg .asm .res .rc .obj 
 
-.C.obj:
+.c.obj:
 	$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -o$*.obj $*.c
 
-.CPP.obj:
+.cpp.obj:
 	$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -o$*.obj $*.cpp
 
-.H.SYM:
-	$(CC) $(HFLAGS) $(DEFINES) $(INCLUDES) -HF -oSNN\$(*B).sym $*.h
+.h.sym:
+	$(CC) $(HFLAGS) $(DEFINES) $(INCLUDES) -HF -osnn\$(*B).sym $*.h
 
-.HPP.SYM:
-	$(CC) $(HFLAGS) $(DEFINES) $(INCLUDES) -HF -oSNN\$(*B).sym $*.hpp
+.hpp.sym:
+	$(CC) $(HFLAGS) $(DEFINES) $(INCLUDES) -HF -osnn\$(*B).sym $*.hpp
 
-.ASM.obj:
+.asm.obj:
 	$(ASM) $(AFLAGS) $(DEFINES) $(INCLUDES) -o$*.obj $*.asm
 
 
@@ -259,12 +260,12 @@ buildall:	clean	all
 
 clean:
 		-del $(TARGETDIR)\$$SCW$$.lib
-		-del $(TARGETDIR)\$(PROJ).CLE
-		-del $O\SCPH.SYM
+		-del $(TARGETDIR)\$(PROJ).cle
+		-del $O\scph.sym
 		-del snn.dpd
 		-del $(OBJS)
-		-del $(SYMROOT).SYM
-		-del $(SYMROOT).PCO
+		-del $(SYMROOT).sym
+		-del $(SYMROOT).pco
 		$(MAKE) -fsnnuni.mak $(MFLAGS) "SUB_DEBUG=$(DEBUG)" $@
 		$(MAKE) -ftrace.mak $(MFLAGS) "SUB_DEBUG=$(DEBUG)" $@
 		$(MAKE) -ftlsseg.mak $(MFLAGS) "SUB_DEBUG=$(DEBUG)" $@
