@@ -111,15 +111,30 @@ L1:
  */
 
 FILE *tmpfile(void)
-{   FILE *fp;
+{
+#if MSDOS
     char name[L_tmpnam];
 
-    fp = fopen(tmpnam(name),"wb+");
+    FILE *fp = fopen(tmpnam(name),"wb+");
     if (fp)
     {
 	_tmpnum(fp) = __tmpnum;
     }
     return fp;
+#endif
+#if __NT__
+    char *dir = getenv("TEMP");
+    char *name = tempnam(dir, "tmp");
+    if (!name)
+	return NULL;
+    FILE *fp = fopen(name,"wb+");
+    if (fp)
+    {
+	_tmpnum(fp) = __tmpnum;
+    }
+    free(name);
+    return fp;
+#endif
 }
 
 #endif
