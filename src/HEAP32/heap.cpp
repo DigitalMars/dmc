@@ -328,10 +328,8 @@ void *RTLHeap::Realloc(void *ap, unsigned long Size)
 //
 RTLHeapBlock *RTLHeap::MoreCore(size_t Size)
 {
-    if (Size < kCoreSize)
-        Size = kCoreSize;
-    else
-	    Size += Size/5;  // Allocate 20% more to eliminate fragmentation
+    Size = ((Size + sizeof(Size) + Size/5 + (kCoreSize-1)) & ~(kCoreSize-1)) - sizeof(Size);
+    // 4 is added in call to sbrk
 
     char *cp = (char *)sbrk(Size + sizeof(Size));
 
