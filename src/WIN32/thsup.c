@@ -1,5 +1,5 @@
 /* _ thsup.c
- * Copyright (C) 1995-2003 by Digital Mars
+ * Copyright (C) 1995-2013 by Digital Mars
  * All rights reserved.
  * www.digitalmars.com
  */
@@ -111,7 +111,8 @@ void _removethreadtableentry(unsigned id)
     _free_crt(thd->t_envptr);   
     if (thd->t_hndl)
         CloseHandle((HANDLE)thd->t_hndl);
-    _free_crt(thd);
+    if (thd != &_thread1)
+	_free_crt(thd);
 }
 
 
