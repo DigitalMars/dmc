@@ -16,7 +16,7 @@
 typedef struct _IMAXDIV { intmax_t  quot,rem; } imaxdiv_t;
 #pragma pack()
 
-#if !defined(__cplusplus) || defined(__STDC_LIMIT_MACROS)
+#if !defined(__cplusplus) || defined(__STDC_FORMAT_MACROS)
 
 #define PRId8		"hhd"
 #define PRId16		"hd"

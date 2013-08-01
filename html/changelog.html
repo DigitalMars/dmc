@@ -3,7 +3,7 @@
 <html lang="en-US">
 
 <!--
-	Copyright (c) 1999-2010 by Digital Mars
+	Copyright (c) 1999-2013 by Digital Mars
 	All Rights Reserved
 	Written by Walter Bright
 	http://www.digitalmars.com
@@ -34,7 +34,7 @@
 	&nbsp; <a href="gift/index.html" title="Cool Stuff"><img src="gifts.png" border=0></a>
 	&nbsp; <a href="d/index.html" title="D programming language"><img src="d.png" border=0></a>
 </table>
-	<div id="lastupdate">Last update Sat Aug 21 16:55:38 2010
+	<div id="lastupdate">Last update Thu Aug  1 12:49:47 2013
 </div>
 </div>
 
@@ -156,6 +156,10 @@
   
 <ul>
 	<li> Download <A HREF="ftp://ftp.digitalmars.com/dmc.zip" title="download dmc.zip">latest version</a> for Win32.</li>
+	<li>  What's new for <a href="#new857">C/C++ 8.57</a> </li>
+	<li>  What's new for <a href="#new856">C/C++ 8.56</a> </li>
+	<li>  What's new for <a href="#new855">C/C++ 8.55</a> </li>
+	<li>  What's new for <a href="#new854">C/C++ 8.54</a> </li>
 	<li>  What's new for <a href="#new853">C/C++ 8.53</a> </li>
 	<li>  What's new for <a href="#new852">C/C++ 8.52</a> </li>
 	<li>  What's new for <a href="#new851">C/C++ 8.51</a> </li>
@@ -205,10 +209,94 @@
 </ul>
 
 <hr><!-- ======================================================= -->
-<h3><a name="new853">WHAT'S NEW FOR C/C++ 8.53</a></h3>
+<h3><a name="new857">WHAT'S NEW FOR C/C++ 8.57</a></h3>
+
+
+<small><i>Aug 1, 2013</i></small>
+
+<ul>	<li>New/Changed</li>
+	<ul>	<li>Numerous code gen improvements, including faster switch tables
+	and divides.</li>
+	</ul>
+</ul>
+
+<hr><!-- ======================================================= -->
+<h3><a name="new856">WHAT'S NEW FOR C/C++ 8.56</a></h3>
+
+
+<small><i>Nov 9, 2012</i></small>
+
+<ul>	<li>C++0x</li>
+	<ul>	</ul>
+
+	<li>New/Changed</li>
+	<ul>	</ul>
+
+	<li>Bug fixes</li>
+	<ul>8796 - Optimizer bug on 64bit: *p++=1 where p is a parameter
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=8986">Bugzilla 8986</a>: The PVS-Studio analyzer has something for you</li>
+8987 - Compiling using -O -release options yield Internal error: backend\cgcod.c 1663
+9171 - error optimization of expression
+	</ul>
+</ul>
+
+<hr><!-- ======================================================= -->
+<h3><a name="new855">WHAT'S NEW FOR C/C++ 8.55</a></h3>
+
+
+<small><i>Oct 20, 2012</i></small>
+
+<ul>	<li>C++0x</li>
+	<ul>	</ul>
+
+	<li>New/Changed</li>
+	<ul>	</ul>
+
+	<li>Bug fixes</li>
+	<ul>	<li><a href="http://bugzilla.digitalmars.com/issues/show_bug.cgi?id=89">Bugzilla 89</a>
+: InterlockedCompareExchange has incorrect signature in winbase.h</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=6505">Bugzilla 6505</a>: Wrong code for expression involving 8 floats, only with -O</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=8840">Bugzilla 8840</a>: calculating minimum of longs with following comparison compiles to wrong code when enabling the optimizer</li>
+	<li>Fixed bit rot in building library</li>
+	<li>Fixed uninitialized field</li>
+	<li>tmpfile() now uses TEMP environment variable</li>
+	<li>MAKE now handles spaces in paths</li>
+	</ul>
+</ul>
+
+<hr><!-- ======================================================= -->
+<h3><a name="new854">WHAT'S NEW FOR C/C++ 8.54</a></h3>
 
 
 <small><i>Aug 21, 2010</i></small>
+
+<ul>	<li>C++0x</li>
+	<ul>	</ul>
+
+	<li>New/Changed</li>
+	<ul>	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=5741">Bugzilla 5741</a>: Add the SYSCALL and SYSRET opcodes to the inline assembler</li>
+	</ul>
+
+	<li>Bug fixes</li>
+	<ul>	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=2436">Bugzilla 2436</a>: Unexpected OPTLINK termination EIP = 00425303 with /co</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=3372">Bugzilla 3372</a>: optlink silently mistreats object files with more than 16384 symbols</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=3681">Bugzilla 3681</a>: ICE(go.c): when function takes too long to optimize, only with -O.</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=4275">Bugzilla 4275</a>: Unexpected optlink termination when 'export' attribute is missing</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=4379">Bugzilla 4379</a>: ICE(blockopt.c): foreach over huge tuple, only with -O</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=4486">Bugzilla 4486</a>: CodeView debug info should contain absolute path names</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=5294">Bugzilla 5294</a>: -O optimization breaks for loop</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=5455">Bugzilla 5455</a>: ICE(cgcod.c): Optimization (register allocation?) regression in DMD 1.065</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=5581">Bugzilla 5581</a>: [64-bit] Wrong code with bitwise operations on bools</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=5670">Bugzilla 5670</a>: Optlink 8.00.11 crash</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=5672">Bugzilla 5672</a>: ICE(cod2.c): incorrect optimization of (long &amp;1) == 1</li>
+	</ul>
+</ul>
+
+<hr><!-- ======================================================= -->
+<h3><a name="new853">WHAT'S NEW FOR C/C++ 8.53</a></h3>
+
+
+<small><i>Dec 26, 2010</i></small>
 
 <ul>	<li>C++0x</li>
 	<ul>	</ul>
@@ -219,7 +307,9 @@
 	<li>Bug fixes</li>
 	<ul>	<li><a href="http://bugzilla.digitalmars.com/issues/show_bug.cgi?id=79">Bugzilla 79</a>
 : Error comparing double to long long int's.</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=4009">Bugzilla 4009</a>: OPTLINK ruins the day yet again</li>
 	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=4443">Bugzilla 4443</a>: Optimizer produces wrong code for || or &amp;&amp; with struct arrays</li>
+	<li><a href="http://d.puremagic.com/bugzilla/show_bug.cgi?id=4645">Bugzilla 4645</a>: to!string(const char*) in library causes Optlink to issue warning</li>
 	</ul>
 </ul>
 
@@ -1422,7 +1512,7 @@ regarding integral promotions vs integral conversions.
 
 <div id="copyright">
 
-Copyright &copy; 1997-2010 by Digital Mars &reg;, All Rights Reserved
+Copyright &copy; 1997-2013 by Digital Mars &reg;, All Rights Reserved
  |
 Page generated by <a href="http://www.digitalmars.com/d/2.0/ddoc.html">Ddoc</a>.
 </div>
