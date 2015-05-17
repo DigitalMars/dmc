@@ -10,10 +10,24 @@
 #include <setlocal.h>
 #include <lcapi32.h>
 
+typedef WINBASEAPI DWORD WINAPI fnGetCurrentDirectoryW(
+    DWORD nBufferLength, LPWSTR lpBuffer);
+
+static fnGetCurrentDirectoryW* pGetCurrentDirectoryW;
+static int initGetCurrentDirectoryW;
+
 DWORD __cdecl __wGetCurrentDirectory (UINT cPage, DWORD nD, LPWSTR pD) {
  BOOL		ret;
  size_t		sz;
  char *		dp = NULL;
+
+  if (!initGetCurrentDirectoryW) {
+   pGetCurrentDirectoryW = (fnGetCurrentDirectoryW*)GetProcAddress(GetModuleHandle("kernel32"), "GetCurrentDirectoryW");
+   initGetCurrentDirectoryW = 1;
+  }
+  if (pGetCurrentDirectoryW)
+    return (*pGetCurrentDirectoryW)(nD, pD);
+
   if (cPage == 0) {
     cPage = __locale_codepage;
   }

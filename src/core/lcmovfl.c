@@ -10,11 +10,25 @@
 #include <setlocal.h>
 #include <lcapi32.h>
 
+typedef WINBASEAPI BOOL WINAPI fnMoveFileW(LPCWSTR lpExistingFileName,
+    LPCWSTR lpNewFileName);
+
+static fnMoveFileW* pMoveFileW;
+static int initMoveFileW;
+
 BOOL __cdecl __wMoveFile (UINT cPage, LPCWSTR pS, LPCWSTR pD) {
  BOOL		ret;
  size_t		sz;
  char *		sp = NULL;
  char *		dp = NULL;
+
+  if (!initMoveFileW) {
+   pMoveFileW = (fnMoveFileW*)GetProcAddress(GetModuleHandle("kernel32"), "MoveFileW");
+   initMoveFileW = 1;
+  }
+  if (pMoveFileW)
+    return (*pMoveFileW)(pS, pD);
+
   if (cPage == 0) {
     cPage = __locale_codepage;
   }

@@ -10,10 +10,23 @@
 #include <setlocal.h>
 #include <lcapi32.h>
 
+typedef WINBASEAPI BOOL WINAPI fnRemoveDirectoryW(LPCWSTR lpFileName);
+
+static fnRemoveDirectoryW* pRemoveDirectoryW;
+static int initRemoveDirectoryW;
+
 BOOL __cdecl __wRemoveDirectory (UINT cPage, LPCWSTR pD) {
  BOOL		ret;
  size_t		sz;
  char *		cp = NULL;
+
+  if (!initRemoveDirectoryW) {
+   pRemoveDirectoryW = (fnRemoveDirectoryW*)GetProcAddress(GetModuleHandle("kernel32"), "RemoveDirectoryW");
+   initRemoveDirectoryW = 1;
+  }
+  if (pRemoveDirectoryW)
+    return (*pRemoveDirectoryW)(pD);
+
   if (cPage == 0) {
     cPage = __locale_codepage;
   }

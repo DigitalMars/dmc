@@ -29,12 +29,27 @@ static BOOL ConvertAsciiToWide (LPWIN32_FIND_DATAW pW, LPWIN32_FIND_DATAA pA) {
   return TRUE;
 }
 
+typedef WINBASEAPI HANDLE WINAPI fnFindFirstFileW(
+    LPCWSTR lpFileName,
+    LPWIN32_FIND_DATAW lpFindFileData);
+
+static fnFindFirstFileW* pFindFirstFileW;
+static int initFindFirstFileW;
+
 HANDLE __cdecl __wFindFirstFile
 (UINT cPage, LPCWSTR pF, LPWIN32_FIND_DATAW pD) {
  HANDLE			ret;
  WIN32_FIND_DATAA	aD;
  size_t			sz;
  char *			cp = NULL;
+  
+  if (!initFindFirstFileW) {
+   pFindFirstFileW = (fnFindFirstFileW*)GetProcAddress(GetModuleHandle("kernel32"), "FindFirstFileW");
+   initFindFirstFileW = 1;
+  }
+  if (pFindFirstFileW)
+    return (*pFindFirstFileW)(pF, pD);
+
   if (cPage == 0) {
     cPage = __locale_codepage;
   }
@@ -65,9 +80,24 @@ error:
   goto done;
 }
 
+typedef WINBASEAPI BOOL WINAPI fnFindNextFileW(
+    HANDLE hFindFile,
+    LPWIN32_FIND_DATAW lpFindFileData);
+
+static fnFindNextFileW* pFindNextFileW;
+static int initFindNextFileW;
+
 BOOL __cdecl __wFindNextFile (UINT cPage, HANDLE hF, LPWIN32_FIND_DATAW pD) {
  BOOL			ret;
  WIN32_FIND_DATAA	aD;
+
+  if (!initFindNextFileW) {
+   pFindNextFileW = (fnFindNextFileW*)GetProcAddress(GetModuleHandle("kernel32"), "FindNextFileW");
+   initFindNextFileW = 1;
+  }
+  if (pFindNextFileW)
+    return (*pFindNextFileW)(hF, pD);
+
   if (cPage == 0) {
     cPage = __locale_codepage;
   }

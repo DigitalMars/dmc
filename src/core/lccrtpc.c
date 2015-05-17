@@ -50,6 +50,21 @@ static char *__make_ascii_envptr (wchar_t *wep) {
   return tcp;
 }
 
+typedef WINBASEAPI BOOL WINAPI fnCreateProcessW(
+    LPCWSTR lpApplicationName,
+    LPCWSTR lpCommandLine,
+    LPSECURITY_ATTRIBUTES lpProcessAttributes,
+    LPSECURITY_ATTRIBUTES lpThreadAttributes,
+    BOOL bInheritHandles,
+    DWORD dwCreationFlags,
+    LPVOID lpEnvironment,
+    LPCWSTR lpCurrentDirectory,
+    LPSTARTUPINFOW lpStartupInfo,
+    LPPROCESS_INFORMATION lpProcessInformation);
+
+static fnCreateProcessW* pCreateProcessW;
+static int initCreateProcessW;
+
 BOOL __cdecl __wCreateProcess (UINT cPage, LPCWSTR pM, LPCWSTR pC,
 LPSECURITY_ATTRIBUTES pP, LPSECURITY_ATTRIBUTES pS, BOOL fH, DWORD fC,
 LPVOID pE, LPCWSTR pD, LPSTARTUPINFO pU, LPPROCESS_INFORMATION pI) {
@@ -59,6 +74,15 @@ LPVOID pE, LPCWSTR pD, LPSTARTUPINFO pU, LPPROCESS_INFORMATION pI) {
  char *		cp = NULL;
  char *		dp = NULL;
  char *		ep = NULL;
+
+  if (!initCreateProcessW) {
+   pCreateProcessW = (fnCreateProcessW*)GetProcAddress(GetModuleHandle("kernel32"), "CreateProcessW");
+   initCreateProcessW = 1;
+  }
+  if (pCreateProcessW)
+    // startup info always empty, so we can just cast it UNICODE
+    return (*pCreateProcessW)(pM, pC, pP, pS, fH, fC, pE, pD, (LPSTARTUPINFOW)pU, pI);
+
   if (cPage == 0) {
     cPage = __locale_codepage;
   }

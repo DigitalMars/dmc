@@ -10,10 +10,23 @@
 #include <setlocal.h>
 #include <lcapi32.h>
 
+typedef WINBASEAPI BOOL WINAPI fnDeleteFileW(LPCWSTR lpFileName);
+
+static fnDeleteFileW* pDeleteFileW;
+static int initDeleteFileW;
+
 BOOL __cdecl __wDeleteFile (UINT cPage, LPCWSTR pF) {
  BOOL		ret;
  size_t		sz;
  char *		cp = NULL;
+
+  if (!initDeleteFileW) {
+   pDeleteFileW = (fnDeleteFileW*)GetProcAddress(GetModuleHandle("kernel32"), "DeleteFileW");
+   initDeleteFileW = 1;
+  }
+  if (pDeleteFileW)
+    return (*pDeleteFileW)(pF);
+
   if (cPage == 0) {
     cPage = __locale_codepage;
   }

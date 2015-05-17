@@ -10,10 +10,23 @@
 #include <setlocal.h>
 #include <lcapi32.h>
 
+typedef WINBASEAPI BOOL WINAPI fnSetFileAttributesW(LPCWSTR pF, DWORD fA);
+
+static fnSetFileAttributesW* pSetFileAttributesW;
+static int initSetFileAttributesW;
+
 BOOL __cdecl __wSetFileAttributes (UINT cPage, LPCWSTR pF, DWORD fA) {
  BOOL		ret;
  size_t		sz;
  char *		cp = NULL;
+
+  if (!initSetFileAttributesW) {
+   pSetFileAttributesW = (fnSetFileAttributesW*)GetProcAddress(GetModuleHandle("kernel32"), "SetFileAttributesW");
+   initSetFileAttributesW = 1;
+  }
+  if (pSetFileAttributesW)
+    return (*pSetFileAttributesW)(pF, fA);
+  
   if (cPage == 0) {
     cPage = __locale_codepage;
   }
