@@ -80,12 +80,12 @@ void __fp_unlock(FILE *fp)
 {
 #if _MT
    int iIdx;
-	int bOpen, bDelete;
+//	int bOpen, bDelete;
 	iIdx = (int)(fp - _iob) + _semFpBase;
-   bOpen = fp->_flag & (_IOREAD | _IOWRT | _IORW);  /* Is File Open */
-	bDelete = !bOpen;
-
-	UnlockSemaphoreNested(iIdx, bDelete)
+//   bOpen = fp->_flag & (_IOREAD | _IOWRT | _IORW);  /* Is File Open */
+//	bDelete = !bOpen;
+//	UnlockSemaphoreNested(iIdx, bDelete)
+	UnlockSemaphoreNested(iIdx, 0)
 #endif
 }
 

@@ -128,6 +128,7 @@ usDone:	;
 	_asm	{mov	edx, Number}														\
 	_asm	{push	edx}																	\
 	_asm	{call _DestroySemaphore}												\
+	_asm	{add	esp, 4}																\
 usDone:	;
 
 #else
