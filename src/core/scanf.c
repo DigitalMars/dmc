@@ -41,24 +41,48 @@ int vscanf(const char * restrict format, va_list args)
  * Need a couple functions to make the string look like fgetc, ungetc.
  */
 
+struct Sscanf
+{
+    const char *s;
+    char c;		// the ungetc character
+};
+
 static int sgetc(void *ps)
 {
-    return (*(*(char **) ps)) ? *(*(char **) ps)++ : EOF;
+    struct Sscanf *psc = (struct Sscanf *)ps;
+    if (psc->c)
+    {
+	char c = psc->c;
+	psc->c = 0;
+	return c;
+    }
+    return *psc->s ? *psc->s++ : EOF;
 }
 
 static int sungetc(int c, void *ps)
 {
-    return (c == EOF) ? c : (*--(*(char **) ps) = c);
+    if (c != EOF)
+    {
+	struct Sscanf *psc = (struct Sscanf *)ps;
+	psc->c = c;
+    }
+    return c;
 }
 
 int sscanf(const char *s, const char *format,...)
 {
-    return _sfmt((fp_t) sungetc, (fp2_t) sgetc, &s, format, (va_list) & (format) + sizeof(format));
+    struct Sscanf sc;
+    sc.s = s;
+    sc.c = 0;
+    return _sfmt((fp_t) sungetc, (fp2_t) sgetc, &sc, format, (va_list) & (format) + sizeof(format));
 }
 
 int vsscanf(const char * restrict s, const char * restrict format, va_list args)
 {
-    return _sfmt((fp_t) sungetc, (fp2_t) sgetc, &s, format, args);
+    struct Sscanf sc;
+    sc.s = s;
+    sc.c = 0;
+    return _sfmt((fp_t) sungetc, (fp2_t) sgetc, &sc, format, args);
 }
 
 #endif
