@@ -123,10 +123,15 @@ static void __dummy() {}
 
 void __fcloseall()
 {   FILE _near *fp;
-    for (fp = &_iob[_NSYSFILE]; fp < &_iob[_NFILE]; fp++)
+    for (fp = &_iob[0]; fp < &_iob[_NFILE]; fp++)
     {	__fp_lock(fp);
 	if (fp->_flag & (_IOREAD | _IOWRT | _IORW))	/* if file is open */
-	    fclose(fp);
+	{
+	    if (fp >= &_iob[_NSYSFILE])
+		fclose(fp); // regular file
+	    else if (!(fp->_flag & _IONBF))
+		fflush(fp); // flush, but do not close system handle
+	}
 	__fp_unlock(fp);
     }
 }
