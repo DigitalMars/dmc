@@ -70,6 +70,8 @@ FILE _iob[_NFILE] =
 	{0,0,0,_IOWRT ,1},		/* stdout	*/
 	{0,0,0,_IOWRT | _IONBF,2},	/* stderr	*/
 
+#define _NSYSFILE  3  /* This is the index into _iob where non-system files begin */
+
 #elif __OS2__ && __INTSIZE == 4
 
 FILE _iob[_NFILE] =
@@ -80,6 +82,8 @@ FILE _iob[_NFILE] =
 	{0,0,0,_IOTRAN | _IORW	,3,1},	/* stdaux	*/
 	{0,0,0,_IOTRAN | _IOWRT ,4,1},	/* stdprn	*/
 
+#define _NSYSFILE  5  /* This is the index into _iob where non-system files begin */
+
 #elif __NT__
 
 FILE __cdecl _iob[_NFILE] =
@@ -87,6 +91,9 @@ FILE __cdecl _iob[_NFILE] =
 	{0,0,0,_IOREAD,0},		/* stdin	*/
 	{0,0,0,_IOWRT ,1},		/* stdout	*/
 	{0,0,0,_IOWRT | _IONBF ,2},	/* stderr	*/
+
+#define _NSYSFILE  3  /* This is the index into _iob where non-system files begin */
+
 #else
 FILE _iob[_NFILE] =
 {
@@ -95,6 +102,9 @@ FILE _iob[_NFILE] =
 	{0,0,0,_IOWRT | _IONBF ,2,1},	/* stderr	*/
 	{0,0,0,_IOTRAN | _IORW	,3,1},	/* stdaux	*/
 	{0,0,0,_IOTRAN | _IOWRT ,4,1},	/* stdprn	*/
+
+#define _NSYSFILE  5  /* This is the index into _iob where non-system files begin */
+
 #endif
 
 	/* the rest have all 0 entries	*/
@@ -116,7 +126,12 @@ void __fcloseall()
     for (fp = &_iob[0]; fp < &_iob[_NFILE]; fp++)
     {	__fp_lock(fp);
 	if (fp->_flag & (_IOREAD | _IOWRT | _IORW))	/* if file is open */
-	    fclose(fp);
+	{
+	    if (fp >= &_iob[_NSYSFILE])
+		fclose(fp); // regular file
+	    else if (!(fp->_flag & _IONBF))
+		fflush(fp); // flush, but do not close system handle
+	}
 	__fp_unlock(fp);
     }
 }
