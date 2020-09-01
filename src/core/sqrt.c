@@ -122,7 +122,12 @@ double sqrt(double x);
 
 float sqrtf(float x)
 {
+#if _WIN32
+  float f = (float)sqrt((double)x);
+  return f;
+#else
   return (float)sqrt((double)x);
+#endif
 }
 
 double sqrt(double x)
@@ -141,7 +146,8 @@ double sqrt(double x)
   if (x < 0)				/* sqrt of negative number?	*/
     return __trigerr(DOMAIN, NAN, x, 3);
 #if __INLINE_8087
-  return _sqrt87(x);			/* use the 8087			*/
+  double d = _sqrt87(x);
+  return d;
 #else
   {
   double f,y;
