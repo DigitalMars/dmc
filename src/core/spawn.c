@@ -329,7 +329,7 @@ static int __near pascal execute_via_path (int mode, const _TCHAR *cmd, const _T
   int status;
 
   status = execute (mode, cmd, argv, envblock);
-  if (status >= 0 || errno != ENOENT || cmd[0] == _T('\\') || cmd[0] == _T('/') || cmd[0] == _T('.') || (cmd[0] && cmd[1] == _T(':')))
+  if (status != -1 || errno != ENOENT || cmd[0] == _T('\\') || cmd[0] == _T('/') || cmd[0] == _T('.') || (cmd[0] && cmd[1] == _T(':')))
     return status;
   p = _tgetenv (_T("PATH"));
   if (!p)
@@ -368,7 +368,7 @@ static int __near pascal execute_via_path (int mode, const _TCHAR *cmd, const _T
       *pc++ = _T('\\');
     _tcscpy (pc, cmd);
     status = execute (mode, cmdbuf, argv, envblock);
-    if (status >= 0 || errno != ENOENT)
+    if (status != -1 || errno != ENOENT)
       break;
   }
   return status;
